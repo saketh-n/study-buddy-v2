@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { getCurriculum, getLearningProgress, generateLesson, generateQuiz, generateNewQuiz, submitQuiz } from '../api';
-import type { Curriculum, LearningProgress, Lesson, Quiz, QuizAssessment, FlatTopic } from '../types';
+import { getCurriculum, getLearningProgress, generateLesson } from '../api';
+import type { Curriculum, LearningProgress, Lesson, FlatTopic } from '../types';
 import { flattenTopics, findTopicByKey } from '../types';
 import { LessonView } from '../components/LessonView';
-import { QuizView } from '../components/QuizView';
-import { QuizResults } from '../components/QuizResults';
 import { AiTutor } from '../components/AiTutor';
 import { TopicSidebar } from '../components/TopicSidebar';
 import { SelectionContextMenu } from '../components/SelectionContextMenu';
-
-type LearnMode = 'lesson' | 'quiz' | 'results' | 'review-quiz';
 
 export function LearnPage() {
   const { id, topicKey: routeTopicKey } = useParams<{ id: string; topicKey?: string }>();
@@ -23,18 +19,13 @@ export function LearnPage() {
   
   // Current topic
   const [currentTopicKey, setCurrentTopicKey] = useState<string | null>(null);
-  const [mode, setMode] = useState<LearnMode>('lesson');
   
-  // Lesson & Quiz
+  // Lesson
   const [lesson, setLesson] = useState<Lesson | null>(null);
-  const [quiz, setQuiz] = useState<Quiz | null>(null);
-  const [assessment, setAssessment] = useState<QuizAssessment | null>(null);
-  const [reviewingQuizVersion, setReviewingQuizVersion] = useState<number | null>(null);
   
   // Loading states
   const [isLoadingData, setIsLoadingData] = useState(true);
   const [isLoadingLesson, setIsLoadingLesson] = useState(false);
-  const [isLoadingQuiz, setIsLoadingQuiz] = useState(false);
   
   const [error, setError] = useState<string | null>(null);
   const [isTutorOpen, setIsTutorOpen] = useState(false);
@@ -93,10 +84,6 @@ export function LearnPage() {
       
       setIsLoadingLesson(true);
       setLesson(null);
-      setQuiz(null);
-      setAssessment(null);
-      setReviewingQuizVersion(null);
-      setMode('lesson');
       
       try {
         const lessonData = await generateLesson(
@@ -117,132 +104,6 @@ export function LearnPage() {
 
   const currentTopic = currentTopicKey ? findTopicByKey(flatTopics, currentTopicKey) : null;
   const isTopicCompleted = currentTopic && progress?.topics[currentTopic.topicKey]?.completed;
-
-  const handleStartQuiz = async () => {
-    if (!id || !currentTopic) return;
-    
-    setIsLoadingQuiz(true);
-    
-    try {
-      const quizData = await generateQuiz(
-        id,
-        currentTopic.clusterIndex,
-        currentTopic.topicIndex
-      );
-      setQuiz(quizData);
-      setReviewingQuizVersion(null);
-      setMode('quiz');
-    } catch (err) {
-      setError('Failed to load quiz');
-    } finally {
-      setIsLoadingQuiz(false);
-    }
-  };
-
-  const handleTakeNewQuiz = async () => {
-    if (!id || !currentTopic) return;
-    
-    setIsLoadingQuiz(true);
-    
-    try {
-      const quizData = await generateNewQuiz(
-        id,
-        currentTopic.clusterIndex,
-        currentTopic.topicIndex
-      );
-      setQuiz(quizData);
-      setReviewingQuizVersion(null);
-      setMode('quiz');
-    } catch (err) {
-      setError('Failed to generate new quiz');
-    } finally {
-      setIsLoadingQuiz(false);
-    }
-  };
-
-  const handleViewQuiz = async (version: number) => {
-    if (!id || !currentTopic) return;
-    
-    setIsLoadingQuiz(true);
-    
-    try {
-      // Fetch specific quiz version
-      const response = await fetch(
-        `http://localhost:8000/api/quiz/${id}/${currentTopic.clusterIndex}/${currentTopic.topicIndex}/${version}`
-      );
-      if (!response.ok) throw new Error('Failed to fetch quiz');
-      const quizData = await response.json();
-      
-      setQuiz(quizData);
-      setReviewingQuizVersion(version);
-      setMode('review-quiz');
-    } catch (err) {
-      setError('Failed to load quiz');
-    } finally {
-      setIsLoadingQuiz(false);
-    }
-  };
-
-  const handleSubmitQuiz = async (answers: number[]) => {
-    if (!id || !quiz || !currentTopic) return;
-    
-    try {
-      const result = await submitQuiz(
-        id,
-        currentTopic.clusterIndex,
-        currentTopic.topicIndex,
-        answers
-      );
-      setAssessment(result);
-      setMode('results');
-      
-      // Refresh progress if passed
-      if (result.passed) {
-        const newProgress = await getLearningProgress(id);
-        setProgress(newProgress);
-      }
-    } catch (err) {
-      setError('Failed to submit quiz');
-    }
-  };
-
-  const handleNextTopic = () => {
-    if (!currentTopic) return;
-    const nextIndex = currentTopic.globalIndex + 1;
-    if (nextIndex < flatTopics.length) {
-      setCurrentTopicKey(flatTopics[nextIndex].topicKey);
-    }
-  };
-
-  const handleRetryQuiz = async () => {
-    if (!id || !currentTopic) return;
-    
-    setIsLoadingQuiz(true);
-    setAssessment(null);
-    
-    try {
-      // Generate a new quiz for retry
-      const quizData = await generateNewQuiz(
-        id,
-        currentTopic.clusterIndex,
-        currentTopic.topicIndex
-      );
-      setQuiz(quizData);
-      setReviewingQuizVersion(null);
-      setMode('quiz');
-    } catch (err) {
-      setError('Failed to generate new quiz');
-    } finally {
-      setIsLoadingQuiz(false);
-    }
-  };
-
-  const handleBackToLesson = () => {
-    setMode('lesson');
-    setQuiz(null);
-    setAssessment(null);
-    setReviewingQuizVersion(null);
-  };
 
   const handleSelectTopic = (topicKey: string) => {
     setCurrentTopicKey(topicKey);
@@ -360,7 +221,7 @@ export function LearnPage() {
           )}
 
           {/* Tip for highlight feature */}
-          {mode === 'lesson' && lesson && (
+          {lesson && (
             <div className="mb-6 p-3 rounded-xl glass text-white/40 text-sm flex items-center gap-2">
               <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -381,35 +242,14 @@ export function LearnPage() {
                 <span>Loading your lesson...</span>
               </div>
             </div>
-          ) : mode === 'lesson' && lesson && currentTopic ? (
+          ) : lesson && currentTopic ? (
             <LessonView
               lesson={lesson}
-              onStartQuiz={handleStartQuiz}
-              onTakeNewQuiz={handleTakeNewQuiz}
-              onViewQuiz={handleViewQuiz}
-              isLoadingQuiz={isLoadingQuiz}
               isCompleted={isTopicCompleted || false}
               curriculumId={id!}
               clusterIndex={currentTopic.clusterIndex}
               topicIndex={currentTopic.topicIndex}
-            />
-          ) : (mode === 'quiz' || mode === 'review-quiz') && quiz ? (
-            <QuizView
-              quiz={quiz}
-              onSubmit={handleSubmitQuiz}
-              onBack={handleBackToLesson}
-              isReviewMode={mode === 'review-quiz'}
-              reviewVersion={reviewingQuizVersion}
-            />
-          ) : mode === 'results' && assessment ? (
-            <QuizResults
-              assessment={assessment}
-              onNextTopic={handleNextTopic}
-              onRetryQuiz={handleRetryQuiz}
-              onBackToLesson={handleBackToLesson}
-              isLastTopic={currentTopic ? currentTopic.globalIndex >= flatTopics.length - 1 : true}
-              curriculumId={id!}
-              isLoadingRetry={isLoadingQuiz}
+              topicKey={currentTopic.topicKey}
             />
           ) : null}
         </div>

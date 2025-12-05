@@ -22,15 +22,18 @@ export function QuizHistory({
   const [history, setHistory] = useState<QuizHistoryItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedAssessment, setExpandedAssessment] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadHistory = async () => {
       setIsLoading(true);
+      setLoadError(null);
       try {
         const data = await getQuizHistory(curriculumId, clusterIndex, topicIndex);
         setHistory(data.history);
       } catch (e) {
         console.error('Failed to load quiz history:', e);
+        setLoadError('Failed to load quiz history');
       } finally {
         setIsLoading(false);
       }
@@ -48,6 +51,22 @@ export function QuizHistory({
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
           </svg>
         </div>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="p-6 rounded-2xl glass-strong text-center">
+        <p className="text-coral-400 mb-4">{loadError}</p>
+        <button
+          onClick={onTakeNewQuiz}
+          className="px-6 py-3 rounded-xl font-semibold
+                     bg-gradient-to-r from-electric-500 to-electric-400 text-midnight-950
+                     hover:from-electric-400 hover:to-electric-500 transition-all"
+        >
+          Take a Quiz
+        </button>
       </div>
     );
   }
@@ -222,4 +241,3 @@ export function QuizHistory({
     </div>
   );
 }
-

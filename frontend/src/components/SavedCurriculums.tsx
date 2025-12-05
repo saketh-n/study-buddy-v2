@@ -56,6 +56,11 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
     });
   };
 
+  const getProgressPercent = (completed: number, total: number) => {
+    if (total === 0) return 0;
+    return Math.round((completed / total) * 100);
+  };
+
   if (isLoading) {
     return (
       <div className="animate-pulse space-y-3">
@@ -91,73 +96,112 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
 
   return (
     <div className="space-y-3">
-      {curriculums.map((curriculum, index) => (
-        <button
-          key={curriculum.id}
-          onClick={() => onSelect(curriculum.id)}
-          disabled={deletingId === curriculum.id}
-          className="w-full text-left p-4 rounded-xl glass hover:glass-strong 
-                     transition-all duration-300 group animate-fade-in
-                     hover:scale-[1.01] active:scale-[0.99]
-                     disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{ animationDelay: `${index * 50}ms` }}
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-semibold text-white/90 truncate group-hover:text-white transition-colors">
-                  {curriculum.subject}
-                </h3>
-                <svg 
-                  className="w-4 h-4 text-white/30 group-hover:text-electric-400 transition-colors flex-shrink-0"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+      {curriculums.map((curriculum, index) => {
+        const progressPercent = getProgressPercent(curriculum.completed_topics, curriculum.topic_count);
+        const isComplete = progressPercent === 100;
+        const hasStarted = curriculum.completed_topics > 0;
+        
+        return (
+          <button
+            key={curriculum.id}
+            onClick={() => onSelect(curriculum.id)}
+            disabled={deletingId === curriculum.id}
+            className="w-full text-left p-4 rounded-xl glass hover:glass-strong 
+                       transition-all duration-300 group animate-fade-in
+                       hover:scale-[1.01] active:scale-[0.99]
+                       disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ animationDelay: `${index * 50}ms` }}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-semibold text-white/90 truncate group-hover:text-white transition-colors">
+                    {curriculum.subject}
+                  </h3>
+                  {isComplete && (
+                    <span className="flex-shrink-0 px-2 py-0.5 rounded-full bg-electric-500/20 text-electric-400 text-xs font-medium">
+                      ✓ Complete
+                    </span>
+                  )}
+                  <svg 
+                    className="w-4 h-4 text-white/30 group-hover:text-electric-400 transition-colors flex-shrink-0 ml-auto"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+                <p className="text-white/50 text-sm line-clamp-1 mb-3">
+                  {curriculum.description}
+                </p>
+                
+                {/* Progress Bar */}
+                <div className="mb-2">
+                  <div className="flex items-center justify-between text-xs mb-1">
+                    <span className="text-white/40">
+                      {hasStarted 
+                        ? `${curriculum.completed_topics}/${curriculum.topic_count} topics completed`
+                        : 'Not started yet'}
+                    </span>
+                    {hasStarted && (
+                      <span className={`font-medium ${isComplete ? 'text-electric-400' : 'text-white/60'}`}>
+                        {progressPercent}%
+                      </span>
+                    )}
+                  </div>
+                  <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div 
+                      className={`h-full rounded-full transition-all duration-500 ${
+                        isComplete 
+                          ? 'bg-electric-500' 
+                          : hasStarted 
+                            ? 'bg-gradient-to-r from-electric-500 to-electric-400' 
+                            : 'bg-white/20'
+                      }`}
+                      style={{ width: `${Math.max(progressPercent, hasStarted ? 0 : 0)}%` }}
+                    />
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 text-xs text-white/40">
+                  <span className="flex items-center gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-electric-400"></div>
+                    {curriculum.cluster_count} clusters
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-coral-400"></div>
+                    {curriculum.topic_count} topics
+                  </span>
+                  <span className="text-white/30">
+                    {formatDate(curriculum.created_at)}
+                  </span>
+                </div>
               </div>
-              <p className="text-white/50 text-sm line-clamp-1 mb-2">
-                {curriculum.description}
-              </p>
-              <div className="flex items-center gap-4 text-xs text-white/40">
-                <span className="flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-electric-400"></div>
-                  {curriculum.cluster_count} clusters
-                </span>
-                <span className="flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-coral-400"></div>
-                  {curriculum.topic_count} topics
-                </span>
-                <span className="text-white/30">
-                  {formatDate(curriculum.created_at)}
-                </span>
-              </div>
+              
+              {/* Delete button */}
+              <button
+                onClick={(e) => handleDelete(e, curriculum.id)}
+                disabled={deletingId === curriculum.id}
+                className="p-2 rounded-lg opacity-0 group-hover:opacity-100 
+                           hover:bg-red-500/20 text-white/40 hover:text-red-400
+                           transition-all duration-200 flex-shrink-0"
+                title="Delete curriculum"
+              >
+                {deletingId === curriculum.id ? (
+                  <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                )}
+              </button>
             </div>
-            
-            {/* Delete button */}
-            <button
-              onClick={(e) => handleDelete(e, curriculum.id)}
-              disabled={deletingId === curriculum.id}
-              className="p-2 rounded-lg opacity-0 group-hover:opacity-100 
-                         hover:bg-red-500/20 text-white/40 hover:text-red-400
-                         transition-all duration-200"
-              title="Delete curriculum"
-            >
-              {deletingId === curriculum.id ? (
-                <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </button>
-      ))}
+          </button>
+        );
+      })}
     </div>
   );
 }
-

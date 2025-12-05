@@ -166,7 +166,18 @@ def get_assessments(curriculum_id: str, cluster_index: int, topic_index: int) ->
     assessments = []
     for path in sorted(assessment_dir.glob("quiz_*.json"), reverse=True):
         try:
-            assessments.append(json.loads(path.read_text()))
+            data = json.loads(path.read_text())
+            # Ensure quiz_version is present (extract from filename if not in data)
+            # Filename format: quiz_{version}_{timestamp}.json
+            if "quiz_version" not in data:
+                filename = path.stem  # e.g., "quiz_0_20241205_120000"
+                parts = filename.split("_")
+                if len(parts) >= 2 and parts[0] == "quiz":
+                    try:
+                        data["quiz_version"] = int(parts[1])
+                    except ValueError:
+                        data["quiz_version"] = 0
+            assessments.append(data)
         except:
             pass
     
