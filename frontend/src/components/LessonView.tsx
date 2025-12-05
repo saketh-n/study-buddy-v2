@@ -1,33 +1,41 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { Lesson } from '../types';
 import { QuizHistory } from './QuizHistory';
 
 interface LessonViewProps {
   lesson: Lesson;
-  onStartQuiz: () => void;
-  onTakeNewQuiz: () => void;
-  onViewQuiz: (version: number) => void;
-  isLoadingQuiz: boolean;
   isCompleted: boolean;
   curriculumId: string;
   clusterIndex: number;
   topicIndex: number;
+  topicKey: string;
 }
 
 type TabType = 'lesson' | 'quizzes';
 
 export function LessonView({ 
   lesson, 
-  onStartQuiz,
-  onTakeNewQuiz,
-  onViewQuiz,
-  isLoadingQuiz, 
   isCompleted,
   curriculumId,
   clusterIndex,
-  topicIndex
+  topicIndex,
+  topicKey
 }: LessonViewProps) {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<TabType>('lesson');
+
+  const handleStartQuiz = () => {
+    navigate(`/curriculum/${curriculumId}/quiz/${topicKey}`);
+  };
+
+  const handleTakeNewQuiz = () => {
+    navigate(`/curriculum/${curriculumId}/quiz/${topicKey}?new=true`);
+  };
+
+  const handleViewQuiz = (version: number) => {
+    navigate(`/curriculum/${curriculumId}/quiz/${topicKey}?review=${version}`);
+  };
 
   return (
     <div className="animate-fade-in">
@@ -141,26 +149,14 @@ export function LessonView({
             </p>
             <div className="flex gap-4 justify-center">
               <button
-                onClick={onStartQuiz}
-                disabled={isLoadingQuiz}
+                onClick={handleStartQuiz}
                 className="px-8 py-4 rounded-xl font-bold text-lg
                            bg-gradient-to-r from-electric-500 to-electric-400 text-midnight-950
                            hover:from-electric-400 hover:to-electric-500
-                           disabled:opacity-50 disabled:cursor-not-allowed
                            transform hover:scale-[1.02] active:scale-[0.98]
                            transition-all duration-200 glow"
               >
-                {isLoadingQuiz ? (
-                  <span className="flex items-center gap-3">
-                    <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                    </svg>
-                    Loading Quiz...
-                  </span>
-                ) : (
-                  'Take Quiz'
-                )}
+                Take Quiz
               </button>
               
               {isCompleted && (
@@ -179,9 +175,9 @@ export function LessonView({
           curriculumId={curriculumId}
           clusterIndex={clusterIndex}
           topicIndex={topicIndex}
-          onViewQuiz={onViewQuiz}
-          onTakeNewQuiz={onTakeNewQuiz}
-          isLoadingNewQuiz={isLoadingQuiz}
+          onViewQuiz={handleViewQuiz}
+          onTakeNewQuiz={handleTakeNewQuiz}
+          isLoadingNewQuiz={false}
         />
       )}
     </div>
