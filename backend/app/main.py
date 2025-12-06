@@ -142,6 +142,184 @@ async def start_learning(curriculum_id: str):
     return progress
 
 
+# ============ Content Preparation ============
+
+@app.get("/api/curriculums/{curriculum_id}/content-status")
+async def get_content_status(curriculum_id: str):
+    """Check what content is already cached for a curriculum."""
+    record = storage.get_curriculum(curriculum_id)
+    if not record:
+        raise HTTPException(status_code=404, detail="Curriculum not found")
+    
+    curriculum = record["curriculum"]
+    
+    # Count all topics and check cache status
+    total_topics = 0
+    lessons_cached = 0
+    quizzes_cached = 0
+    missing_lessons = []
+    missing_quizzes = []
+    
+    for ci, cluster in enumerate(curriculum["clusters"]):
+        for ti, topic in enumerate(cluster["topics"]):
+            total_topics += 1
+            
+            # Check lesson cache
+            if content_cache.get_cached_lesson(curriculum_id, ci, ti):
+                lessons_cached += 1
+            else:
+                missing_lessons.append({
+                    "cluster_index": ci,
+                    "topic_index": ti,
+                    "topic_name": topic["name"],
+                    "cluster_name": cluster["name"]
+                })
+            
+            # Check quiz cache (at least one quiz exists)
+            if content_cache.get_quiz_count(curriculum_id, ci, ti) > 0:
+                quizzes_cached += 1
+            else:
+                missing_quizzes.append({
+                    "cluster_index": ci,
+                    "topic_index": ti,
+                    "topic_name": topic["name"],
+                    "cluster_name": cluster["name"]
+                })
+    
+    ready = (lessons_cached == total_topics and quizzes_cached == total_topics)
+    
+    return {
+        "total_topics": total_topics,
+        "lessons_cached": lessons_cached,
+        "quizzes_cached": quizzes_cached,
+        "missing_lessons": missing_lessons,
+        "missing_quizzes": missing_quizzes,
+        "ready": ready
+    }
+
+
+# Semaphore to limit concurrent LLM calls during batch preparation
+# 4 concurrent allows fast generation while keeping server responsive
+_prepare_semaphore = asyncio.Semaphore(4)
+
+
+@app.post("/api/curriculums/{curriculum_id}/prepare")
+async def prepare_curriculum_content(curriculum_id: str):
+    """
+    Batch generate all missing lessons and quizzes for a curriculum.
+    Runs up to 4 generations in parallel for speed.
+    Streams progress via SSE.
+    """
+    record = storage.get_curriculum(curriculum_id)
+    if not record:
+        raise HTTPException(status_code=404, detail="Curriculum not found")
+    
+    async def generate_content():
+        curriculum = record["curriculum"]
+        
+        # Build list of all generation tasks needed
+        tasks = []
+        for ci, cluster in enumerate(curriculum["clusters"]):
+            for ti, topic in enumerate(cluster["topics"]):
+                # Check if lesson needs generating
+                if not content_cache.get_cached_lesson(curriculum_id, ci, ti):
+                    tasks.append({
+                        "type": "lesson",
+                        "cluster_index": ci,
+                        "topic_index": ti,
+                        "topic_name": topic["name"]
+                    })
+                
+                # Check if quiz needs generating
+                if content_cache.get_quiz_count(curriculum_id, ci, ti) == 0:
+                    tasks.append({
+                        "type": "quiz",
+                        "cluster_index": ci,
+                        "topic_index": ti,
+                        "topic_name": topic["name"]
+                    })
+        
+        total = len(tasks)
+        
+        if total == 0:
+            yield f"data: {json.dumps({'type': 'complete', 'generated_count': 0, 'message': 'All content already prepared'})}\n\n"
+            return
+        
+        logger.info(f"📦 Starting batch preparation: {total} items for {curriculum_id}")
+        
+        # Send initial status
+        yield f"data: {json.dumps({'type': 'start', 'total': total})}\n\n"
+        
+        generated_count = 0
+        errors = []
+        completed = 0
+        
+        # Process in batches of 4 for parallel generation
+        BATCH_SIZE = 4
+        
+        async def run_task(task):
+            """Run a single generation task with semaphore."""
+            async with _prepare_semaphore:
+                if task["type"] == "lesson":
+                    await learning.generate_lesson(
+                        curriculum_id,
+                        task["cluster_index"],
+                        task["topic_index"]
+                    )
+                else:
+                    await learning.generate_quiz(
+                        curriculum_id,
+                        task["cluster_index"],
+                        task["topic_index"]
+                    )
+                return task
+        
+        # Process tasks in batches
+        for batch_start in range(0, total, BATCH_SIZE):
+            batch_end = min(batch_start + BATCH_SIZE, total)
+            batch = tasks[batch_start:batch_end]
+            
+            # Send batch start update
+            batch_names = [t["topic_name"] for t in batch]
+            batch_types = [t["type"] for t in batch]
+            yield f"data: {json.dumps({'type': 'batch_start', 'batch_size': len(batch), 'current': batch_start + 1, 'total': total, 'items': [{'type': t['type'], 'topic_name': t['topic_name']} for t in batch]})}\n\n"
+            
+            # Run batch in parallel
+            batch_results = await asyncio.gather(
+                *[run_task(task) for task in batch],
+                return_exceptions=True
+            )
+            
+            # Process results
+            for i, result in enumerate(batch_results):
+                completed += 1
+                task = batch[i]
+                
+                if isinstance(result, Exception):
+                    logger.error(f"❌ Failed to generate {task['type']} for {task['topic_name']}: {result}")
+                    errors.append({
+                        "type": task["type"],
+                        "topic_name": task["topic_name"],
+                        "error": str(result)
+                    })
+                else:
+                    generated_count += 1
+            
+            # Send batch complete update
+            yield f"data: {json.dumps({'type': 'batch_complete', 'completed': completed, 'total': total, 'generated_count': generated_count})}\n\n"
+        
+        # Send completion
+        yield f"data: {json.dumps({'type': 'complete', 'generated_count': generated_count, 'errors': errors})}\n\n"
+        
+        logger.info(f"✅ Batch preparation complete: {generated_count}/{total} items generated")
+    
+    return StreamingResponse(
+        generate_content(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "Connection": "keep-alive"}
+    )
+
+
 # ============ Lessons ============
 
 @app.post("/api/lesson")

@@ -94,6 +94,86 @@ export async function startLearning(curriculumId: string): Promise<LearningProgr
   return response.json();
 }
 
+// ============ Content Preparation ============
+
+export interface MissingContent {
+  cluster_index: number;
+  topic_index: number;
+  topic_name: string;
+  cluster_name: string;
+}
+
+export interface ContentStatus {
+  total_topics: number;
+  lessons_cached: number;
+  quizzes_cached: number;
+  missing_lessons: MissingContent[];
+  missing_quizzes: MissingContent[];
+  ready: boolean;
+}
+
+export async function getContentStatus(curriculumId: string): Promise<ContentStatus> {
+  const response = await fetch(`${API_BASE_URL}/api/curriculums/${curriculumId}/content-status`);
+  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  return response.json();
+}
+
+export interface BatchItem {
+  type: 'lesson' | 'quiz';
+  topic_name: string;
+}
+
+export interface PreparationUpdate {
+  type: 'start' | 'batch_start' | 'batch_complete' | 'complete';
+  total?: number;
+  current?: number;
+  batch_size?: number;
+  items?: BatchItem[];
+  completed?: number;
+  generated_count?: number;
+  message?: string;
+  errors?: Array<{ type: string; topic_name: string; error: string }>;
+}
+
+export async function prepareCurriculumContent(
+  curriculumId: string,
+  onProgress: (update: PreparationUpdate) => void
+): Promise<void> {
+  const response = await fetch(`${API_BASE_URL}/api/curriculums/${curriculumId}/prepare`, {
+    method: 'POST',
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const reader = response.body?.getReader();
+  if (!reader) throw new Error('No response body');
+
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split('\n\n');
+    buffer = lines.pop() || '';
+
+    for (const line of lines) {
+      if (line.startsWith('data: ')) {
+        try {
+          const update = JSON.parse(line.slice(6)) as PreparationUpdate;
+          onProgress(update);
+        } catch (e) {
+          console.error('Failed to parse SSE data:', e);
+        }
+      }
+    }
+  }
+}
+
 // ============ Lessons ============
 
 export async function generateLesson(
