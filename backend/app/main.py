@@ -39,7 +39,7 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://localhost:5175", "http://localhost:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -397,24 +397,24 @@ async def get_quiz_by_version(curriculum_id: str, cluster_index: int, topic_inde
 @app.post("/api/quiz/submit")
 async def submit_quiz(submission: QuizSubmission):
     """Submit quiz answers and get AI-powered assessment."""
+    # Get the quiz (latest version or specific version if provided)
+    quiz = content_cache.get_cached_quiz(
+        submission.curriculum_id,
+        submission.cluster_index,
+        submission.topic_index
+    )
+    
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz not found")
+    
+    quiz_version = content_cache.get_quiz_count(
+        submission.curriculum_id,
+        submission.cluster_index,
+        submission.topic_index
+    ) - 1
+    
+    # Try AI assessment, fall back to basic assessment if it fails
     try:
-        # Get the quiz (latest version or specific version if provided)
-        quiz = content_cache.get_cached_quiz(
-            submission.curriculum_id,
-            submission.cluster_index,
-            submission.topic_index
-        )
-        
-        if not quiz:
-            raise HTTPException(status_code=404, detail="Quiz not found")
-        
-        quiz_version = content_cache.get_quiz_count(
-            submission.curriculum_id,
-            submission.cluster_index,
-            submission.topic_index
-        ) - 1
-        
-        # Get AI assessment
         assessment = await learning.assess_quiz_answers(
             submission.curriculum_id,
             submission.cluster_index,
@@ -423,22 +423,86 @@ async def submit_quiz(submission: QuizSubmission):
             quiz_version,
             submission.answers
         )
-        
-        # Update progress if passed
-        if assessment["passed"]:
-            storage.update_topic_progress(
-                submission.curriculum_id,
-                submission.cluster_index,
-                submission.topic_index,
-                completed=True,
-                quiz_score=assessment["score"]
-            )
-        
-        return assessment
-        
     except Exception as e:
-        logger.error(f"❌ Quiz submission error: {e}")
-        raise HTTPException(status_code=500, detail="Failed to assess quiz")
+        logger.error(f"❌ AI assessment failed, using fallback: {e}")
+        
+        # Create fallback assessment without AI
+        assessment = _create_fallback_assessment(quiz, quiz_version, submission.answers, str(e))
+    
+    # Update progress if passed
+    if assessment["passed"]:
+        storage.update_topic_progress(
+            submission.curriculum_id,
+            submission.cluster_index,
+            submission.topic_index,
+            completed=True,
+            quiz_score=assessment["score"]
+        )
+    
+    # Cache the assessment
+    content_cache.save_assessment(
+        submission.curriculum_id,
+        submission.cluster_index,
+        submission.topic_index,
+        quiz_version,
+        assessment
+    )
+    
+    return assessment
+
+
+def _create_fallback_assessment(quiz, quiz_version: int, answers: list[int], error_message: str) -> dict:
+    """Create a basic assessment when AI is unavailable."""
+    
+    # Calculate score
+    correct_count = 0
+    question_feedback = []
+    
+    for i, (question, answer) in enumerate(zip(quiz.questions, answers)):
+        is_correct = answer == question.correct_index
+        if is_correct:
+            correct_count += 1
+        
+        question_feedback.append({
+            "question_num": i + 1,
+            "is_correct": is_correct,
+            "student_choice": question.options[answer] if 0 <= answer < len(question.options) else "No answer",
+            "correct_answer": question.options[question.correct_index],
+            "analysis": "Great job!" if is_correct else f"The correct answer was: {question.options[question.correct_index]}",
+            "explanation": question.explanation
+        })
+    
+    score = int((correct_count / len(quiz.questions)) * 100)
+    passed = score >= quiz.passing_score
+    
+    # Determine error type for user-friendly message
+    is_credits_error = "credit" in error_message.lower() or "rate" in error_message.lower() or "quota" in error_message.lower() or "billing" in error_message.lower()
+    
+    if is_credits_error:
+        encouragement = "⚠️ AI feedback unavailable (API credits exhausted). But don't worry - your score has been calculated and saved!"
+    else:
+        encouragement = "⚠️ AI feedback temporarily unavailable. Your score has been calculated and progress saved."
+    
+    if passed:
+        encouragement += f" Congratulations on passing with {score}%! 🎉"
+    else:
+        encouragement += f" You scored {score}%. Review the explanations below and try again!"
+    
+    return {
+        "score": score,
+        "correct_count": correct_count,
+        "total_questions": len(quiz.questions),
+        "passed": passed,
+        "quiz_version": quiz_version,
+        "fallback_mode": True,  # Flag to indicate AI wasn't used
+        "question_feedback": question_feedback,
+        "summary": {
+            "misconceptions": [] if passed else ["Review the questions you missed above"],
+            "focus_areas": [] if passed else ["Check the explanations for each incorrect answer"],
+            "encouragement": encouragement,
+            "recommendation": "Continue to the next topic!" if passed else "Review the lesson and try a new quiz when ready."
+        }
+    }
 
 
 @app.get("/api/assessments/{curriculum_id}/{cluster_index}/{topic_index}")

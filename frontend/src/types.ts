@@ -94,6 +94,7 @@ export interface QuizAssessment {
   quiz_version: number;
   question_feedback: QuestionFeedback[];
   summary: AssessmentSummary;
+  fallback_mode?: boolean;  // True when AI assessment failed
 }
 
 export interface TopicProgress {
