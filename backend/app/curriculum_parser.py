@@ -1,8 +1,8 @@
 import json
 import logging
 import re
-from typing import Generator
-from anthropic import Anthropic
+from typing import AsyncGenerator
+from anthropic import AsyncAnthropic
 from dotenv import load_dotenv
 from .models import Curriculum, Cluster, Topic
 
@@ -18,7 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize Anthropic client
-client = Anthropic()
+client = AsyncAnthropic()
 
 SYSTEM_PROMPT = """You are an expert curriculum designer and educational content organizer. Your task is to analyze a raw list of topics and organize them into a structured learning curriculum.
 
@@ -61,7 +61,7 @@ Rules:
 Respond ONLY with the JSON object, no additional text."""
 
 
-def parse_curriculum_with_progress(raw_text: str) -> Generator[dict, None, None]:
+async def parse_curriculum_with_progress(raw_text: str) -> AsyncGenerator[dict, None]:
     """
     Parse raw text containing topics into a structured curriculum using Claude.
     Yields progress updates and final result.
@@ -72,29 +72,36 @@ def parse_curriculum_with_progress(raw_text: str) -> Generator[dict, None, None]
     logger.info(f"   Input preview: {input_preview.replace(chr(10), ' ')}")
     logger.info(f"   Input length: {len(raw_text)} characters")
     
-    yield {"status": "processing", "message": "Analyzing your topics...", "progress": 10}
+    yield {"status": "processing", "message": "Analyzing your topics...", "progress": 1}
     
-    yield {"status": "processing", "message": "Sending to AI for organization...", "progress": 25}
+    yield {"status": "processing", "message": "Sending to AI for organization...", "progress": 2}
     
     try:
         logger.info(f"🤖 Calling Claude API (model: claude-sonnet-4-20250514)")
         
-        message = client.messages.create(
+        # Use stream instead of create
+        async with client.messages.stream(
             model="claude-sonnet-4-20250514",
             max_tokens=4096,
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Please organize the following topics into a structured learning curriculum:\n\n{raw_text}"
-                }
-            ],
+            messages=[{
+                "role": "user",
+                "content": f"Please organize the following topics into a structured learning curriculum:\n\n{raw_text}"
+            }],
             system=SYSTEM_PROMPT
-        )
+        ) as stream:
+            
+            response_text = ""
+            progress = 2
+            async for text in stream.text_stream:
+                response_text += text
+                progress = min(96, progress + 1)
+                # Optional: yield progress as tokens arrive
+                yield {"status": "processing", "message": "Receiving AI response...", "progress": progress}
+            
+            message = await stream.get_final_message()
         
         logger.info(f"✅ Claude API Response received")
-        logger.info(f"   Usage: {message.usage.input_tokens} input tokens, {message.usage.output_tokens} output tokens")
-        
-        yield {"status": "processing", "message": "AI response received, parsing structure...", "progress": 60}
+        yield {"status": "processing", "message": "AI response received, parsing...", "progress": 97}
         
     except Exception as e:
         logger.error(f"❌ Claude API Error: {str(e)}")
@@ -105,7 +112,7 @@ def parse_curriculum_with_progress(raw_text: str) -> Generator[dict, None, None]
     response_text = message.content[0].text
     logger.info(f"📤 Response preview: {response_text[:300].replace(chr(10), ' ')}...")
     
-    yield {"status": "processing", "message": "Building curriculum structure...", "progress": 75}
+    yield {"status": "processing", "message": "Building curriculum structure...", "progress": 98}
     
     # Parse the JSON response
     try:
@@ -120,7 +127,7 @@ def parse_curriculum_with_progress(raw_text: str) -> Generator[dict, None, None]
             yield {"status": "error", "message": "Failed to parse curriculum from AI response", "progress": 0}
             return
     
-    yield {"status": "processing", "message": "Finalizing curriculum...", "progress": 90}
+    yield {"status": "processing", "message": "Finalizing curriculum...", "progress": 99}
     
     # Convert to Pydantic models
     clusters = []

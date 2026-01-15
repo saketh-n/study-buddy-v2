@@ -58,18 +58,11 @@ async def health_check():
 # ============ Curriculum Parsing ============
 
 async def generate_progress_events(raw_text: str):
-    """Generator for SSE progress events - runs parsing in thread to not block."""
+    """Generator for SSE progress events."""
     logger.info(f"🚀 New curriculum request received ({len(raw_text)} chars)")
     
-    loop = asyncio.get_event_loop()
-    
-    # Run the generator in a thread-safe way
-    def run_parser():
-        return list(parse_curriculum_with_progress(raw_text))
-    
-    updates = await loop.run_in_executor(_executor, run_parser)
-    
-    for update in updates:
+    # Remove all the executor code - just use async for directly
+    async for update in parse_curriculum_with_progress(raw_text):
         if update.get("status") == "complete" and update.get("curriculum"):
             curriculum = Curriculum(**update["curriculum"])
             saved_id = storage.save_curriculum(curriculum)
