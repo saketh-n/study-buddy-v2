@@ -102,15 +102,28 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
         const hasStarted = curriculum.completed_topics > 0;
         
         return (
-          <button
+          <div
             key={curriculum.id}
-            onClick={() => onSelect(curriculum.id)}
-            disabled={deletingId === curriculum.id}
+            onClick={() => deletingId !== curriculum.id && onSelect(curriculum.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (deletingId !== curriculum.id) {
+                  onSelect(curriculum.id);
+                }
+              }
+            }}
             className="w-full text-left p-4 rounded-xl glass hover:glass-strong 
                        transition-all duration-300 group animate-fade-in
-                       hover:scale-[1.01] active:scale-[0.99]
-                       disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{ animationDelay: `${index * 50}ms` }}
+                       hover:scale-[1.01] active:scale-[0.99] cursor-pointer
+                       focus:outline-none focus:ring-2 focus:ring-electric-500/50"
+            style={{ 
+              animationDelay: `${index * 50}ms`,
+              opacity: deletingId === curriculum.id ? 0.5 : 1,
+              pointerEvents: deletingId === curriculum.id ? 'none' : 'auto'
+            }}
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
@@ -183,8 +196,10 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
                 disabled={deletingId === curriculum.id}
                 className="p-2 rounded-lg opacity-0 group-hover:opacity-100 
                            hover:bg-red-500/20 text-white/40 hover:text-red-400
-                           transition-all duration-200 flex-shrink-0"
+                           transition-all duration-200 flex-shrink-0
+                           focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:opacity-100"
                 title="Delete curriculum"
+                aria-label="Delete curriculum"
               >
                 {deletingId === curriculum.id ? (
                   <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24">
@@ -199,7 +214,7 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
                 )}
               </button>
             </div>
-          </button>
+          </div>
         );
       })}
     </div>
