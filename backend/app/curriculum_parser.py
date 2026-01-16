@@ -91,17 +91,18 @@ async def parse_curriculum_with_progress(raw_text: str) -> AsyncGenerator[dict, 
         ) as stream:
             
             response_text = ""
-            progress = 2
+            progress = 5
             async for text in stream.text_stream:
                 response_text += text
-                progress = min(96, progress + 1)
-                # Optional: yield progress as tokens arrive
-                yield {"status": "processing", "message": "Receiving AI response...", "progress": progress}
+                progress = min(297, progress + 1)
+
+                if progress % 3 == 0:
+                    yield {"status": "processing", "message": "Receiving AI response...", "progress": progress/3}
             
             message = await stream.get_final_message()
         
         logger.info(f"✅ Claude API Response received")
-        yield {"status": "processing", "message": "AI response received, parsing...", "progress": 97}
+        yield {"status": "processing", "message": "AI response received, parsing...", "progress": 99}
         
     except Exception as e:
         logger.error(f"❌ Claude API Error: {str(e)}")
@@ -112,7 +113,7 @@ async def parse_curriculum_with_progress(raw_text: str) -> AsyncGenerator[dict, 
     response_text = message.content[0].text
     logger.info(f"📤 Response preview: {response_text[:300].replace(chr(10), ' ')}...")
     
-    yield {"status": "processing", "message": "Building curriculum structure...", "progress": 98}
+    yield {"status": "processing", "message": "Building curriculum structure...", "progress": 99}
     
     # Parse the JSON response
     try:
