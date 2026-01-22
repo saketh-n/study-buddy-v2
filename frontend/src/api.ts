@@ -121,6 +121,8 @@ export async function getContentStatus(curriculumId: string): Promise<ContentSta
 export interface BatchItem {
   type: 'lesson' | 'quiz';
   topic_name: string;
+  cluster_index: number;
+  topic_index: number;
 }
 
 export interface PreparationUpdate {

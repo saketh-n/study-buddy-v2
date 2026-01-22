@@ -272,10 +272,8 @@ async def prepare_curriculum_content(curriculum_id: str):
             batch_end = min(batch_start + BATCH_SIZE, total)
             batch = tasks[batch_start:batch_end]
             
-            # Send batch start update
-            batch_names = [t["topic_name"] for t in batch]
-            batch_types = [t["type"] for t in batch]
-            yield f"data: {json.dumps({'type': 'batch_start', 'batch_size': len(batch), 'current': batch_start + 1, 'total': total, 'items': [{'type': t['type'], 'topic_name': t['topic_name']} for t in batch]})}\n\n"
+            # Send batch start update with cluster/topic indices for frontend tracking
+            yield f"data: {json.dumps({'type': 'batch_start', 'batch_size': len(batch), 'current': batch_start + 1, 'total': total, 'items': [{'type': t['type'], 'topic_name': t['topic_name'], 'cluster_index': t['cluster_index'], 'topic_index': t['topic_index']} for t in batch]})}\n\n"
             
             # Run batch in parallel
             batch_results = await asyncio.gather(
