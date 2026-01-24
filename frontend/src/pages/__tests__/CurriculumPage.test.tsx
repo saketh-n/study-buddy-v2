@@ -12,10 +12,10 @@ const getContentStatusMock = vi.fn();
 const prepareCurriculumContentMock = vi.fn();
 
 vi.mock('../../api', () => ({
-  getCurriculum: (...args: any[]) => getCurriculumMock(...args),
-  getLearningProgress: (...args: any[]) => getLearningProgressMock(...args),
-  getContentStatus: (...args: any[]) => getContentStatusMock(...args),
-  prepareCurriculumContent: (...args: any[]) => prepareCurriculumContentMock(...args),
+  getCurriculum: (...args: unknown[]) => getCurriculumMock(...args),
+  getLearningProgress: (...args: unknown[]) => getLearningProgressMock(...args),
+  getContentStatus: (...args: unknown[]) => getContentStatusMock(...args),
+  prepareCurriculumContent: (...args: unknown[]) => prepareCurriculumContentMock(...args),
 }));
 
 function makeCurriculum() {

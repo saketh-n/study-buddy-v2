@@ -14,16 +14,16 @@ const generateNewQuizMock = vi.fn();
 const submitQuizMock = vi.fn();
 
 vi.mock('../../api', () => ({
-  getCurriculum: (...args: any[]) => getCurriculumMock(...args),
-  getLearningProgress: (...args: any[]) => getLearningProgressMock(...args),
-  generateQuiz: (...args: any[]) => generateQuizMock(...args),
-  generateNewQuiz: (...args: any[]) => generateNewQuizMock(...args),
-  submitQuiz: (...args: any[]) => submitQuizMock(...args),
+  getCurriculum: (...args: unknown[]) => getCurriculumMock(...args),
+  getLearningProgress: (...args: unknown[]) => getLearningProgressMock(...args),
+  generateQuiz: (...args: unknown[]) => generateQuizMock(...args),
+  generateNewQuiz: (...args: unknown[]) => generateNewQuizMock(...args),
+  submitQuiz: (...args: unknown[]) => submitQuizMock(...args),
 }));
 
 // --- Mock child components ---
 vi.mock('../../components/QuizView', () => ({
-  QuizView: ({ onSubmit }: any) => (
+  QuizView: ({ onSubmit }: { onSubmit: (answers: number[]) => void }) => (
     <div>
       <div data-testid="quiz-view" />
       <button onClick={() => onSubmit([0, 1, 2])}>Submit Quiz</button>

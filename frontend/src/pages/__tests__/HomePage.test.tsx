@@ -5,17 +5,18 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 
 import { HomePage } from '../HomePage';
+import type { ProgressUpdate } from '../../api';
 
 // --- Mock API ---
 const parseCurriculumStreamMock = vi.fn();
 
 vi.mock('../../api', () => ({
-  parseCurriculumStream: (...args: any[]) => parseCurriculumStreamMock(...args),
+  parseCurriculumStream: (...args: unknown[]) => parseCurriculumStreamMock(...args),
 }));
 
 // --- Mock components to avoid brittle UI coupling ---
 vi.mock('../../components/TextInput', () => ({
-  TextInput: ({ onSubmit, isLoading }: any) => (
+  TextInput: ({ onSubmit, isLoading }: { onSubmit: (text: string) => void; isLoading: boolean }) => (
     <div>
       <div data-testid="textinput-loading">{String(isLoading)}</div>
       <button onClick={() => onSubmit('my topics')}>Submit</button>
@@ -24,13 +25,13 @@ vi.mock('../../components/TextInput', () => ({
 }));
 
 vi.mock('../../components/ProgressBar', () => ({
-  ProgressBar: ({ progress, message }: any) => (
+  ProgressBar: ({ progress, message }: { progress: number; message: string }) => (
     <div data-testid="progressbar">{progress}:{message}</div>
   ),
 }));
 
 vi.mock('../../components/SavedCurriculums', () => ({
-  SavedCurriculums: ({ onSelect }: any) => (
+  SavedCurriculums: ({ onSelect }: { onSelect: (id: string) => void }) => (
     <div>
       <div data-testid="saved-curriculums">Saved</div>
       <button onClick={() => onSelect('abc')}>Open Saved</button>
@@ -61,7 +62,7 @@ describe('HomePage', () => {
   it('navigates to the new curriculum when parseCurriculumStream reports complete', async () => {
     const user = userEvent.setup();
 
-    parseCurriculumStreamMock.mockImplementation(async (_text: string, onProgress: any) => {
+    parseCurriculumStreamMock.mockImplementation(async (_text: string, onProgress: (update: ProgressUpdate) => void) => {
       onProgress({ status: 'processing', progress: 10, message: 'Starting...' });
       onProgress({ status: 'complete', progress: 100, message: 'Done', saved_id: 'new123' });
     });
@@ -82,7 +83,7 @@ describe('HomePage', () => {
   it('shows an error message when parseCurriculumStream reports error', async () => {
     const user = userEvent.setup();
 
-    parseCurriculumStreamMock.mockImplementation(async (_text: string, onProgress: any) => {
+    parseCurriculumStreamMock.mockImplementation(async (_text: string, onProgress: (update: ProgressUpdate) => void) => {
       onProgress({ status: 'error', progress: 0, message: 'Bad input' });
     });
 

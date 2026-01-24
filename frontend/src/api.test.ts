@@ -20,10 +20,10 @@ import {
 
 // ---- Helpers ----
 
-type MockFetchResponse = {
+type MockFetchResponse<TJson = unknown> = {
   ok: boolean;
   status: number;
-  json?: () => Promise<any>;
+  json?: () => Promise<TJson>;
   body?: {
     getReader: () => {
       read: () => Promise<{ done: boolean; value?: Uint8Array }>;
@@ -52,7 +52,7 @@ function makeSseResponse(chunks: string[], status = 200): MockFetchResponse {
 }
 
 // Create a basic JSON response
-function makeJsonResponse(data: any, status = 200): MockFetchResponse {
+function makeJsonResponse<T>(data: T, status = 200): MockFetchResponse<T> {
   return {
     ok: status >= 200 && status < 300,
     status,

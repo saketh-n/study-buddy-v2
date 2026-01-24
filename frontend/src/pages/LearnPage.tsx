@@ -92,7 +92,7 @@ export function LearnPage() {
           currentTopic.topicIndex
         );
         setLesson(lessonData);
-      } catch (err) {
+      } catch {
         setError('Failed to load lesson');
       } finally {
         setIsLoadingLesson(false);

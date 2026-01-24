@@ -19,7 +19,6 @@ export function CurriculumPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatingItems, setGeneratingItems] = useState<Set<string>>(new Set());
   const [generationError, setGenerationError] = useState<string | null>(null);
-  const [generationProgress, setGenerationProgress] = useState({ completed: 0, total: 0 });
   const generationStartedRef = useRef(false);
   const currentBatchRef = useRef<BatchItem[]>([]);
 
@@ -38,9 +37,7 @@ export function CurriculumPage() {
     
     try {
       await prepareCurriculumContent(id, (update: PreparationUpdate) => {
-        if (update.type === 'start') {
-          setGenerationProgress({ completed: 0, total: update.total || 0 });
-        } else if (update.type === 'batch_start' && update.items) {
+        if (update.type === 'batch_start' && update.items) {
           // Track which items are currently being generated
           currentBatchRef.current = update.items;
           setGeneratingItems(prev => {
@@ -84,10 +81,6 @@ export function CurriculumPage() {
             return newStatus;
           });
           
-          setGenerationProgress({ 
-            completed: update.completed || 0, 
-            total: update.total || 0 
-          });
           currentBatchRef.current = [];
         } else if (update.type === 'complete') {
           setIsGenerating(false);
@@ -96,7 +89,7 @@ export function CurriculumPage() {
           setContentStatus(prev => prev ? { ...prev, ready: true } : prev);
         }
       });
-    } catch (e) {
+    } catch {
       setGenerationError('Failed to generate content');
       setIsGenerating(false);
     }

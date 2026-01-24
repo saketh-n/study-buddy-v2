@@ -89,7 +89,7 @@ export function AiTutor({
       
       // Use the full history from server to stay in sync
       setMessages(result.history);
-    } catch (err) {
+    } catch {
       const errorMessage: ChatMessage = { 
         role: 'assistant', 
         content: 'Sorry, I encountered an error. Please try again.' 

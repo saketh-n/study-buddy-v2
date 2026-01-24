@@ -11,9 +11,9 @@ const getLearningProgressMock = vi.fn();
 const generateLessonMock = vi.fn();
 
 vi.mock('../../api', () => ({
-  getCurriculum: (...args: any[]) => getCurriculumMock(...args),
-  getLearningProgress: (...args: any[]) => getLearningProgressMock(...args),
-  generateLesson: (...args: any[]) => generateLessonMock(...args),
+  getCurriculum: (...args: unknown[]) => getCurriculumMock(...args),
+  getLearningProgress: (...args: unknown[]) => getLearningProgressMock(...args),
+  generateLesson: (...args: unknown[]) => generateLessonMock(...args),
 }));
 
 // --- Mock child components (reduce brittleness) ---

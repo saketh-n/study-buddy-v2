@@ -45,7 +45,7 @@ export function QuizPage() {
         setCurriculum(record.curriculum);
         setProgress(progressData);
         setFlatTopics(flattenTopics(record.curriculum));
-      } catch (err) {
+      } catch {
         setError('Failed to load curriculum');
       } finally {
         setIsLoading(false);
@@ -84,7 +84,7 @@ export function QuizPage() {
           const quizData = await generateQuiz(id, topic.clusterIndex, topic.topicIndex);
           setQuiz(quizData);
         }
-      } catch (err) {
+      } catch {
         setError('Failed to load quiz');
       } finally {
         setIsLoading(false);
@@ -112,7 +112,7 @@ export function QuizPage() {
         const newProgress = await getLearningProgress(id);
         setProgress(newProgress);
       }
-    } catch (err) {
+    } catch {
       setError('Failed to submit quiz');
     }
   };
@@ -131,7 +131,7 @@ export function QuizPage() {
         currentTopic.topicIndex
       );
       setQuiz(quizData);
-    } catch (err) {
+    } catch {
       setError('Failed to generate new quiz');
     } finally {
       setIsLoading(false);

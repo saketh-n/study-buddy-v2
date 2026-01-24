@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, Page } from '@playwright/test'
 
 test.describe('Learning Flow', () => {
   // Helper to navigate to a learn page if a curriculum exists
-  async function navigateToLearnPage(page: any) {
+  async function navigateToLearnPage(page: Page) {
     await page.goto('/')
     await page.waitForTimeout(500)
     
@@ -101,7 +101,7 @@ test.describe('Learning Flow', () => {
 })
 
 test.describe('Quiz Flow', () => {
-  async function navigateToQuiz(page: any) {
+  async function navigateToQuiz(page: Page) {
     await page.goto('/')
     await page.waitForTimeout(500)
     
