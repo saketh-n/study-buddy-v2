@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 venv/
 .env
+.coverage
+htmlcov/
+.pytest_cache/
 
 # Data storage (curriculums)
 data/

@@ -199,7 +199,7 @@ The app will be available at `http://localhost:5173`
 - `POST /api/quiz` - Get or generate quiz
 - `POST /api/quiz/new` - Force generate new quiz
 - `POST /api/quiz/submit` - Submit quiz for AI assessment
-- `GET /api/quiz/history/{id}/{cluster}/{topic}` - Get quiz history
+- `GET /api/history/quiz/{id}/{cluster}/{topic}` - Get quiz history
 
 ### Progress
 - `GET /api/curriculums/{id}/progress` - Get learning progress
@@ -228,6 +228,26 @@ When using Docker, mount a volume to `/app/data` to persist data.
 - **Backend**: FastAPI, Pydantic, Anthropic Claude API
 - **Styling**: Custom glassmorphism design with Syne & JetBrains Mono fonts
 - **AI**: Claude claude-sonnet-4-20250514 for curriculum parsing, lesson generation, and assessment
+
+## Testing
+# Backend tests
+cd backend
+pytest tests/ -v
+pytest tests/ --cov=app --cov-report=html  # With coverage
+
+# Frontend tests
+cd frontend
+npm run test        # Watch mode
+npm run test:run    # Single run
+npm run test:coverage  # With coverage
+
+# E2E tests (from root)
+npm run test:e2e
+npm run test:e2e:ui     # With Playwright UI
+npm run test:e2e:headed # In headed browser
+
+# NOTE (if frontend is running on a port other than 5173, please run the following)
+
 
 ## License
 

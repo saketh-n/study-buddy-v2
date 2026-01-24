@@ -3,7 +3,7 @@ import type {
   Lesson, Quiz, QuizAssessment, LearningProgress, ChatMessage
 } from './types';
 
-const API_BASE_URL = 'http://localhost:8000';
+export const API_BASE_URL = 'http://localhost:8000';
 
 export interface ProgressUpdate {
   status: 'processing' | 'complete' | 'error';
@@ -271,7 +271,7 @@ export async function getQuizHistory(
   topicIndex: number
 ): Promise<QuizHistory> {
   const response = await fetch(
-    `${API_BASE_URL}/api/quiz/history/${curriculumId}/${clusterIndex}/${topicIndex}`
+    `${API_BASE_URL}/api/history/quiz/${curriculumId}/${clusterIndex}/${topicIndex}`
   );
   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
   return response.json();

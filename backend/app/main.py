@@ -1,6 +1,7 @@
 import json
 import logging
 import asyncio
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -18,6 +19,14 @@ from . import content_cache
 
 # Load environment variables
 load_dotenv()
+
+DEFAULT_PORT = "5173"
+port = os.getenv("FRONTEND_PORT", DEFAULT_PORT).strip()
+
+FRONTEND_ORIGINS = [
+    f"http://localhost:{port}",
+    f"http://127.0.0.1:{port}",
+]
 
 # Configure logging
 logging.basicConfig(
@@ -39,7 +48,7 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://localhost:5175", "http://localhost:5174"],
+    allow_origins=[o.strip() for o in FRONTEND_ORIGINS],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -502,7 +511,7 @@ async def get_assessments(curriculum_id: str, cluster_index: int, topic_index: i
     return {"assessments": content_cache.get_assessments(curriculum_id, cluster_index, topic_index)}
 
 
-@app.get("/api/quiz/history/{curriculum_id}/{cluster_index}/{topic_index}")
+@app.get("/api/history/quiz/{curriculum_id}/{cluster_index}/{topic_index}")
 async def get_quiz_history(curriculum_id: str, cluster_index: int, topic_index: int):
     """Get quiz history including all versions and assessments for a topic."""
     quiz_count = content_cache.get_quiz_count(curriculum_id, cluster_index, topic_index)

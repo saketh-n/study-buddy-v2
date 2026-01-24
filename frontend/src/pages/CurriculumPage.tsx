@@ -360,7 +360,7 @@ export function CurriculumPage() {
           </p>
           
           {/* Stats */}
-          <div className="flex gap-6 mt-4">
+          <div className="flex gap-6 mt-4" data-testid="curriculum-stats">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-electric-400"></div>
               <span className="text-white/50 text-sm">

@@ -40,7 +40,7 @@ export function QuizView({ quiz, onSubmit, onBack, isReviewMode, reviewVersion }
   const answeredCount = answers.filter(a => a !== null).length;
 
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in" data-testid="quiz-view">
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <button

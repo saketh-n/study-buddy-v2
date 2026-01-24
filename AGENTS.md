@@ -1,1 +1,2 @@
 * Please make minimal and only necessary changes to the codebase.
+* All features have tests! When adding a new feature, carefully account for what tests need to be updated/deleted or perhaps even created!

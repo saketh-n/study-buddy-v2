@@ -38,7 +38,7 @@ export function LessonView({
   };
 
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in" data-testid="lesson-view">
       {/* Tab Navigation */}
       <div className="flex gap-2 mb-6">
         <button

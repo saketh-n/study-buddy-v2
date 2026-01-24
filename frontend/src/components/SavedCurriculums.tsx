@@ -103,6 +103,7 @@ export function SavedCurriculums({ onSelect, refreshTrigger }: SavedCurriculumsP
         
         return (
           <div
+            data-testid="curriculum-card"
             key={curriculum.id}
             onClick={() => deletingId !== curriculum.id && onSelect(curriculum.id)}
             role="button"

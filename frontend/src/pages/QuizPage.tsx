@@ -5,6 +5,7 @@ import type { Curriculum, Quiz, QuizAssessment, FlatTopic, LearningProgress } fr
 import { flattenTopics, findTopicByKey } from '../types';
 import { QuizView } from '../components/QuizView';
 import { QuizResults } from '../components/QuizResults';
+import { API_BASE_URL } from '../api';
 
 type QuizMode = 'quiz' | 'results';
 
@@ -69,7 +70,7 @@ export function QuizPage() {
         if (isReviewMode) {
           // Load specific version for review
           const response = await fetch(
-            `http://localhost:8000/api/quiz/${id}/${topic.clusterIndex}/${topic.topicIndex}/${reviewVersion}`
+            `${API_BASE_URL}/api/quiz/${id}/${topic.clusterIndex}/${topic.topicIndex}/${reviewVersion}`
           );
           if (!response.ok) throw new Error('Quiz not found');
           const quizData = await response.json();
