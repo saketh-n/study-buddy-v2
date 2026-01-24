@@ -111,9 +111,6 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Install root dependencies
-        run: npm install
-
       - name: Run E2E tests
         run: npm run test:e2e
         env:
