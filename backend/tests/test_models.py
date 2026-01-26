@@ -8,7 +8,7 @@ from app.models import (
     Topic, Cluster, Curriculum, ParseRequest, ParseResponse,
     LessonSection, Lesson, QuizQuestion, Quiz,
     LessonRequest, QuizRequest, QuizSubmission, QuizResult,
-    TopicProgress, LearningProgress, ChatMessage, TutorRequest
+    TopicProgress, LearningProgress
 )
 
 
@@ -283,41 +283,6 @@ class TestProgressModels:
         )
         assert progress.curriculum_id == "abc123"
         assert len(progress.topics) == 2
-
-
-class TestChatModels:
-    """Tests for chat-related models."""
-    
-    def test_chat_message(self):
-        """Test ChatMessage model."""
-        message = ChatMessage(
-            role="user",
-            content="Hello, can you explain this?"
-        )
-        assert message.role == "user"
-        assert "explain" in message.content
-    
-    def test_tutor_request(self):
-        """Test TutorRequest model."""
-        request = TutorRequest(
-            curriculum_id="abc123",
-            cluster_index=0,
-            topic_index=0,
-            message="Help me understand this concept"
-        )
-        assert request.curriculum_id == "abc123"
-        assert request.highlighted_context == ""
-    
-    def test_tutor_request_with_context(self):
-        """Test TutorRequest with highlighted context."""
-        request = TutorRequest(
-            curriculum_id="abc123",
-            cluster_index=0,
-            topic_index=0,
-            message="What does this mean?",
-            highlighted_context="Binary search divides the array in half"
-        )
-        assert request.highlighted_context == "Binary search divides the array in half"
 
 
 class TestParseModels:

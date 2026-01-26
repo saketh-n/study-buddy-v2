@@ -4,9 +4,7 @@ import { getCurriculum, getLearningProgress, generateLesson } from '../api';
 import type { Curriculum, LearningProgress, Lesson, FlatTopic } from '../types';
 import { flattenTopics, findTopicByKey } from '../types';
 import { LessonView } from '../components/LessonView';
-import { AiTutor } from '../components/AiTutor';
 import { TopicSidebar } from '../components/TopicSidebar';
-import { SelectionContextMenu } from '../components/SelectionContextMenu';
 
 export function LearnPage() {
   const { id, topicKey: routeTopicKey } = useParams<{ id: string; topicKey?: string }>();
@@ -28,8 +26,6 @@ export function LearnPage() {
   const [isLoadingLesson, setIsLoadingLesson] = useState(false);
   
   const [error, setError] = useState<string | null>(null);
-  const [isTutorOpen, setIsTutorOpen] = useState(false);
-  const [highlightedContext, setHighlightedContext] = useState<string>('');
 
   // Load curriculum and progress
   useEffect(() => {
@@ -109,15 +105,6 @@ export function LearnPage() {
     setCurrentTopicKey(topicKey);
   };
 
-  const handleAddToTutor = (text: string) => {
-    setHighlightedContext(text);
-    setIsTutorOpen(true);
-  };
-
-  const handleClearHighlight = () => {
-    setHighlightedContext('');
-  };
-
   if (isLoadingData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -151,9 +138,6 @@ export function LearnPage() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Selection Context Menu */}
-      <SelectionContextMenu onAddToTutor={handleAddToTutor} />
-
       {/* Sidebar */}
       <TopicSidebar
         curriculum={curriculum}
@@ -168,7 +152,7 @@ export function LearnPage() {
       <div className="flex-1 min-w-0 p-6 lg:p-8">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6">
             <Link 
               to={`/curriculum/${id}`}
               className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
@@ -178,23 +162,6 @@ export function LearnPage() {
               </svg>
               Exit Learning
             </Link>
-            
-            {/* Tutor toggle */}
-            <button
-              onClick={() => setIsTutorOpen(!isTutorOpen)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all
-                         ${isTutorOpen ? 'bg-electric-500 text-midnight-950' : 'glass hover:glass-strong text-white/70 hover:text-white'}
-                         ${highlightedContext && !isTutorOpen ? 'ring-2 ring-electric-500 ring-offset-2 ring-offset-midnight-950' : ''}`}
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              AI Tutor
-              {highlightedContext && !isTutorOpen && (
-                <span className="w-2 h-2 rounded-full bg-electric-400 animate-pulse"></span>
-              )}
-            </button>
           </div>
 
           {/* Topic Header */}
@@ -217,17 +184,6 @@ export function LearnPage() {
                 )}
               </div>
               <h1 className="text-3xl font-bold text-white">{currentTopic.topic.name}</h1>
-            </div>
-          )}
-
-          {/* Tip for highlight feature */}
-          {lesson && (
-            <div className="mb-6 p-3 rounded-xl glass text-white/40 text-sm flex items-center gap-2">
-              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Tip: Highlight any text and right-click to ask the AI Tutor about it</span>
             </div>
           )}
 
@@ -254,20 +210,6 @@ export function LearnPage() {
           ) : null}
         </div>
       </div>
-
-      {/* AI Tutor */}
-      {currentTopic && (
-        <AiTutor
-          isOpen={isTutorOpen}
-          onClose={() => setIsTutorOpen(false)}
-          curriculumId={id!}
-          clusterIndex={currentTopic.clusterIndex}
-          topicIndex={currentTopic.topicIndex}
-          topicName={currentTopic.topic.name}
-          highlightedContext={highlightedContext}
-          onClearHighlight={handleClearHighlight}
-        />
-      )}
     </div>
   );
 }

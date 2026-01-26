@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from .models import (
     ParseRequest, Curriculum, LessonRequest, QuizRequest, 
-    QuizSubmission, TutorRequest
+    QuizSubmission
 )
 from .curriculum_parser import parse_curriculum_with_progress
 from . import storage
@@ -534,34 +534,3 @@ async def get_quiz_history(curriculum_id: str, cluster_index: int, topic_index: 
         "total_quizzes": quiz_count,
         "history": history
     }
-
-
-# ============ AI Tutor ============
-
-@app.get("/api/chat/{curriculum_id}/{cluster_index}/{topic_index}")
-async def get_chat_history(curriculum_id: str, cluster_index: int, topic_index: int):
-    """Get chat history for a topic."""
-    history = learning.get_chat_history(curriculum_id, cluster_index, topic_index)
-    return {"messages": history}
-
-
-@app.post("/api/tutor")
-async def chat_with_tutor(request: TutorRequest):
-    """Chat with the AI tutor about a topic."""
-    try:
-        response, history = await learning.chat_with_tutor(
-            request.curriculum_id,
-            request.cluster_index,
-            request.topic_index,
-            request.message,
-            request.highlighted_context
-        )
-        return {
-            "response": response,
-            "history": history
-        }
-    except ValueError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        logger.error(f"❌ Tutor error: {e}")
-        raise HTTPException(status_code=500, detail="Failed to get tutor response")

@@ -5,7 +5,7 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 from anthropic import Anthropic
 from dotenv import load_dotenv
-from .models import Lesson, LessonSection, Quiz, QuizQuestion, ChatMessage
+from .models import Lesson, LessonSection, Quiz, QuizQuestion
 from . import storage
 from . import content_cache
 
@@ -306,86 +306,3 @@ Respond ONLY with the JSON."""
     logger.info(f"✅ Assessment complete for quiz v{quiz_version}")
     
     return assessment
-
-
-async def chat_with_tutor(
-    curriculum_id: str,
-    cluster_index: int,
-    topic_index: int,
-    message: str,
-    highlighted_context: str = ""
-) -> tuple[str, list[dict]]:
-    """
-    Chat with the AI tutor about a specific topic.
-    Returns (response, updated_history).
-    Chat history is automatically persisted.
-    """
-    
-    record = storage.get_curriculum(curriculum_id)
-    if not record:
-        raise ValueError("Curriculum not found")
-    
-    curriculum = record["curriculum"]
-    cluster = curriculum["clusters"][cluster_index]
-    topic = cluster["topics"][topic_index]
-    
-    # Load existing chat history
-    history = content_cache.get_chat_history(curriculum_id, cluster_index, topic_index)
-    
-    logger.info(f"💬 Tutor chat for: {topic['name']} - '{message[:50]}...'")
-    
-    context_section = ""
-    if highlighted_context:
-        context_section = f"""
-The student has highlighted this specific text for context:
----
-{highlighted_context}
----
-Please address their question with this context in mind.
-"""
-    
-    system_prompt = f"""You are a friendly, encouraging AI tutor helping a student learn about {topic['name']}.
-
-Context:
-- Subject: {curriculum['subject']}
-- Current topic: {topic['name']}
-- Topic description: {topic['description']}
-{context_section}
-
-Your role:
-1. Answer questions clearly and concisely
-2. Use analogies and examples to explain concepts
-3. When relevant, explain the PROBLEM a concept solves and WHY the solution is elegant
-4. Encourage curiosity and deeper exploration
-5. If the student seems confused, break things down further
-6. Keep responses focused and not too long (2-3 paragraphs max)
-7. Be warm and supportive
-8. Use markdown formatting for clarity (bold, lists, code blocks where appropriate)
-
-If the student asks about something unrelated to the subject, gently guide them back to the topic at hand."""
-
-    # Build messages for API
-    api_messages = []
-    for msg in history:
-        api_messages.append({"role": msg["role"], "content": msg["content"]})
-    api_messages.append({"role": "user", "content": message})
-    
-    response = await _call_llm(api_messages, system=system_prompt, max_tokens=1024)
-    
-    # Save both messages to history
-    content_cache.append_chat_message(
-        curriculum_id, cluster_index, topic_index,
-        {"role": "user", "content": message}
-    )
-    updated_history = content_cache.append_chat_message(
-        curriculum_id, cluster_index, topic_index,
-        {"role": "assistant", "content": response}
-    )
-    
-    logger.info(f"✅ Tutor responded")
-    return response, updated_history
-
-
-def get_chat_history(curriculum_id: str, cluster_index: int, topic_index: int) -> list[dict]:
-    """Get chat history for a topic (sync wrapper for cache access)."""
-    return content_cache.get_chat_history(curriculum_id, cluster_index, topic_index)

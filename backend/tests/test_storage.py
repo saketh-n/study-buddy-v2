@@ -293,46 +293,6 @@ class TestContentCacheModule:
         assessments = content_cache.get_assessments("nonexistent", 0, 0)
         assert assessments == []
     
-    def test_chat_history(self, temp_content_dir):
-        """Test saving and retrieving chat history."""
-        curriculum_id = "test123"
-        
-        # Initially empty
-        history = content_cache.get_chat_history(curriculum_id, 0, 0)
-        assert history == []
-        
-        # Append messages
-        history = content_cache.append_chat_message(
-            curriculum_id, 0, 0,
-            {"role": "user", "content": "Hello!"}
-        )
-        assert len(history) == 1
-        
-        history = content_cache.append_chat_message(
-            curriculum_id, 0, 0,
-            {"role": "assistant", "content": "Hi there!"}
-        )
-        assert len(history) == 2
-        
-        # Retrieve history
-        history = content_cache.get_chat_history(curriculum_id, 0, 0)
-        assert len(history) == 2
-        assert history[0]["role"] == "user"
-        assert history[1]["role"] == "assistant"
-    
-    def test_save_chat_history_directly(self, temp_content_dir):
-        """Test saving chat history directly."""
-        curriculum_id = "test123"
-        messages = [
-            {"role": "user", "content": "Question"},
-            {"role": "assistant", "content": "Answer"}
-        ]
-        
-        content_cache.save_chat_history(curriculum_id, 0, 0, messages)
-        
-        history = content_cache.get_chat_history(curriculum_id, 0, 0)
-        assert len(history) == 2
-    
     def test_delete_curriculum_content(self, temp_content_dir, sample_lesson, sample_quiz):
         """Test deleting all content for a curriculum."""
         curriculum_id = "test123"
@@ -340,10 +300,6 @@ class TestContentCacheModule:
         # Create some content
         content_cache.save_lesson(curriculum_id, 0, 0, sample_lesson)
         content_cache.save_quiz(curriculum_id, 0, 0, sample_quiz)
-        content_cache.append_chat_message(
-            curriculum_id, 0, 0,
-            {"role": "user", "content": "test"}
-        )
         
         # Verify content exists
         curriculum_dir = temp_content_dir / curriculum_id

@@ -1,6 +1,6 @@
 # Study Buddy
 
-An AI-powered application that transforms your learning topics into structured, optimized curricula with interactive lessons, quizzes, and an AI tutor.
+An AI-powered application that transforms your learning topics into structured, optimized curricula with interactive lessons and quizzes.
 
 ## Project Structure
 
@@ -32,7 +32,6 @@ study-buddy-v2/
 - **Curriculum Generation**: Paste topics → AI organizes them into a structured learning path
 - **Interactive Lessons**: AI-generated lessons with problem/solution framing
 - **Mastery Quizzes**: Test your understanding with AI-powered assessment
-- **AI Tutor**: Chat with a tutor, highlight text to ask questions
 - **Progress Tracking**: Track your learning progress across topics
 - **Quiz History**: Review past quizzes and assessments
 
@@ -204,10 +203,6 @@ The app will be available at `http://localhost:5173`
 ### Progress
 - `GET /api/curriculums/{id}/progress` - Get learning progress
 
-### AI Tutor
-- `POST /api/tutor` - Chat with AI tutor
-- `GET /api/chat/{id}/{cluster}/{topic}` - Get chat history
-
 ## Environment Variables
 
 | Variable | Description | Required |
@@ -218,7 +213,7 @@ The app will be available at `http://localhost:5173`
 
 All data is stored in the `data/` directory:
 - `data/curriculums/` - Saved curriculum JSON files
-- `data/content/` - Cached lessons, quizzes, and chat history
+- `data/content/` - Cached lessons and quizzes
 
 When using Docker, mount a volume to `/app/data` to persist data.
 

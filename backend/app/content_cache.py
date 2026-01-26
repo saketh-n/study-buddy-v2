@@ -1,5 +1,5 @@
 """
-Cache for lesson plans, quizzes, chat history, and assessments per curriculum.
+Cache for lesson plans, quizzes, and assessments per curriculum.
 
 Storage structure:
 backend/data/content/<curriculum_id>/
@@ -10,11 +10,9 @@ backend/data/content/<curriculum_id>/
 │       ├── quiz_0.json  (original quiz)
 │       ├── quiz_1.json  (retry quiz)
 │       └── ...
-├── assessments/
-│   └── <cluster_idx>-<topic_idx>/
-│       └── <quiz_version>_<timestamp>.json
-└── chat_history/
-    └── <cluster_idx>-<topic_idx>.json
+└── assessments/
+    └── <cluster_idx>-<topic_idx>/
+        └── <quiz_version>_<timestamp>.json
 """
 
 import json
@@ -22,7 +20,7 @@ import logging
 from pathlib import Path
 from typing import Optional
 from datetime import datetime
-from .models import Lesson, Quiz, ChatMessage
+from .models import Lesson, Quiz
 
 logger = logging.getLogger(__name__)
 
@@ -43,11 +41,6 @@ def _get_lesson_path(curriculum_id: str, cluster_index: int, topic_index: int) -
 def _get_quiz_dir(curriculum_id: str, cluster_index: int, topic_index: int) -> Path:
     """Get the directory for quizzes for a topic."""
     return _get_curriculum_dir(curriculum_id) / "quizzes" / f"{cluster_index}-{topic_index}"
-
-
-def _get_chat_history_path(curriculum_id: str, cluster_index: int, topic_index: int) -> Path:
-    """Get the path to chat history for a topic."""
-    return _get_curriculum_dir(curriculum_id) / "chat_history" / f"{cluster_index}-{topic_index}.json"
 
 
 def _get_assessment_dir(curriculum_id: str, cluster_index: int, topic_index: int) -> Path:
@@ -182,38 +175,6 @@ def get_assessments(curriculum_id: str, cluster_index: int, topic_index: int) ->
             pass
     
     return assessments
-
-
-# ============ Chat History ============
-
-def get_chat_history(curriculum_id: str, cluster_index: int, topic_index: int) -> list[dict]:
-    """Get chat history for a topic."""
-    path = _get_chat_history_path(curriculum_id, cluster_index, topic_index)
-    
-    if path.exists():
-        try:
-            return json.loads(path.read_text())
-        except:
-            pass
-    
-    return []
-
-
-def save_chat_history(curriculum_id: str, cluster_index: int, topic_index: int, messages: list[dict]) -> None:
-    """Save chat history for a topic."""
-    path = _get_chat_history_path(curriculum_id, cluster_index, topic_index)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    
-    path.write_text(json.dumps(messages, indent=2))
-    logger.info(f"💾 Saved chat history: {curriculum_id}/{cluster_index}-{topic_index}")
-
-
-def append_chat_message(curriculum_id: str, cluster_index: int, topic_index: int, message: dict) -> list[dict]:
-    """Append a message to chat history and return the full history."""
-    history = get_chat_history(curriculum_id, cluster_index, topic_index)
-    history.append(message)
-    save_chat_history(curriculum_id, cluster_index, topic_index, history)
-    return history
 
 
 # ============ Cleanup ============

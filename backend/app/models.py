@@ -115,19 +115,3 @@ class LearningProgress(BaseModel):
     topics: dict[str, TopicProgress] = {}  # key: "cluster_index-topic_index"
     started_at: str
     last_activity: str
-
-
-class ChatMessage(BaseModel):
-    """A chat message for the AI tutor"""
-    role: str  # "user" or "assistant"
-    content: str
-
-
-class TutorRequest(BaseModel):
-    """Request to the AI tutor"""
-    curriculum_id: str
-    cluster_index: int
-    topic_index: int
-    message: str
-    history: List[ChatMessage] = []
-    highlighted_context: str = ""  # Optional highlighted text for context

@@ -1,6 +1,6 @@
 import type { 
   Curriculum, CurriculumSummary, SavedCurriculumRecord,
-  Lesson, Quiz, QuizAssessment, LearningProgress, ChatMessage
+  Lesson, Quiz, QuizAssessment, LearningProgress
 } from './types';
 
 export const API_BASE_URL = 'http://localhost:8000';
@@ -273,43 +273,6 @@ export async function getQuizHistory(
   const response = await fetch(
     `${API_BASE_URL}/api/history/quiz/${curriculumId}/${clusterIndex}/${topicIndex}`
   );
-  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-  return response.json();
-}
-
-// ============ AI Tutor ============
-
-export async function getChatHistory(
-  curriculumId: string,
-  clusterIndex: number,
-  topicIndex: number
-): Promise<ChatMessage[]> {
-  const response = await fetch(
-    `${API_BASE_URL}/api/chat/${curriculumId}/${clusterIndex}/${topicIndex}`
-  );
-  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-  const data = await response.json();
-  return data.messages;
-}
-
-export async function chatWithTutor(
-  curriculumId: string,
-  clusterIndex: number,
-  topicIndex: number,
-  message: string,
-  highlightedContext: string = ""
-): Promise<{ response: string; history: ChatMessage[] }> {
-  const response = await fetch(`${API_BASE_URL}/api/tutor`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      curriculum_id: curriculumId,
-      cluster_index: clusterIndex,
-      topic_index: topicIndex,
-      message,
-      highlighted_context: highlightedContext
-    }),
-  });
   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
   return response.json();
 }

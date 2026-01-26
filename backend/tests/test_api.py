@@ -321,60 +321,6 @@ class TestAssessmentEndpoints:
         assert data["assessments"] == []
 
 
-class TestTutorEndpoints:
-    """Tests for AI tutor endpoints."""
-    
-    def test_get_chat_history_empty(self, client, saved_curriculum):
-        """Test getting chat history when none exists."""
-        response = client.get(
-            f"/api/chat/{saved_curriculum}/0/0"
-        )
-        assert response.status_code == 200
-        data = response.json()
-        assert data["messages"] == []
-    
-    @patch("app.learning.chat_with_tutor")
-    def test_chat_with_tutor_not_found(self, mock_chat, client):
-        """Test chatting with tutor for non-existent curriculum."""
-        mock_chat.side_effect = ValueError("Curriculum not found")
-        
-        response = client.post(
-            "/api/tutor",
-            json={
-                "curriculum_id": "nonexistent",
-                "cluster_index": 0,
-                "topic_index": 0,
-                "message": "Hello!"
-            }
-        )
-        assert response.status_code == 404
-    
-    @patch("app.learning.chat_with_tutor")
-    def test_chat_with_tutor_success(self, mock_chat, client, saved_curriculum):
-        """Test successful chat with tutor."""
-        mock_chat.return_value = (
-            "Here's my response!",
-            [
-                {"role": "user", "content": "Hello!"},
-                {"role": "assistant", "content": "Here's my response!"}
-            ]
-        )
-        
-        response = client.post(
-            "/api/tutor",
-            json={
-                "curriculum_id": saved_curriculum,
-                "cluster_index": 0,
-                "topic_index": 0,
-                "message": "Hello!"
-            }
-        )
-        assert response.status_code == 200
-        data = response.json()
-        assert data["response"] == "Here's my response!"
-        assert len(data["history"]) == 2
-
-
 class TestParseStreamEndpoint:
     """Tests for the curriculum parsing stream endpoint."""
     

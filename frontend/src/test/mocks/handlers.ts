@@ -204,23 +204,5 @@ export const handlers = [
         }
       ]
     })
-  }),
-
-  // Get chat history
-  http.get(`${API_BASE_URL}/api/chat/:curriculumId/:clusterIndex/:topicIndex`, () => {
-    return HttpResponse.json({
-      messages: []
-    })
-  }),
-
-  // Chat with tutor
-  http.post(`${API_BASE_URL}/api/tutor`, () => {
-    return HttpResponse.json({
-      response: 'Here is my helpful response about the topic!',
-      history: [
-        { role: 'user', content: 'Hello' },
-        { role: 'assistant', content: 'Here is my helpful response about the topic!' }
-      ]
-    })
   })
 ]

@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
@@ -17,14 +16,8 @@ vi.mock('../../api', () => ({
 }));
 
 // --- Mock child components (reduce brittleness) ---
-vi.mock('../../components/SelectionContextMenu', () => ({
-  SelectionContextMenu: () => <div data-testid="selection-menu" />,
-}));
 vi.mock('../../components/TopicSidebar', () => ({
   TopicSidebar: () => <div data-testid="sidebar" />,
-}));
-vi.mock('../../components/AiTutor', () => ({
-  AiTutor: () => <div data-testid="tutor" />,
 }));
 vi.mock('../../components/LessonView', () => ({
   LessonView: () => <div data-testid="lesson-view" />,

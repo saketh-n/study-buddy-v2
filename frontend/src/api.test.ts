@@ -13,8 +13,6 @@ import {
   generateNewQuiz,
   submitQuiz,
   getQuizHistory,
-  getChatHistory,
-  chatWithTutor,
   API_BASE_URL,
 } from './api';
 
@@ -288,51 +286,6 @@ describe('api.ts', () => {
         `${API_BASE_URL}/api/history/quiz/cid/1/2`
       );
       expect(result).toEqual({ total_quizzes: 1, history: [] });
-    });
-  });
-
-  describe('Tutor', () => {
-    it('getChatHistory returns data.messages', async () => {
-      fetchMock.mockResolvedValueOnce(makeJsonResponse({ messages: [{ role: 'assistant', content: 'hi' }] }));
-
-      const result = await getChatHistory('cid', 1, 2);
-
-      expect(fetchMock).toHaveBeenCalledWith(
-        `${API_BASE_URL}/api/chat/cid/1/2`
-      );
-      expect(result).toEqual([{ role: 'assistant', content: 'hi' }]);
-    });
-
-    it('chatWithTutor POSTs to /api/tutor', async () => {
-      fetchMock.mockResolvedValueOnce(makeJsonResponse({ response: 'ok', history: [] }));
-
-      const result = await chatWithTutor('cid', 1, 2, 'hello', 'ctx');
-
-      expect(fetchMock).toHaveBeenCalledWith(
-        `${API_BASE_URL}/api/tutor`,
-        expect.objectContaining({
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            curriculum_id: 'cid',
-            cluster_index: 1,
-            topic_index: 2,
-            message: 'hello',
-            highlighted_context: 'ctx',
-          }),
-        })
-      );
-
-      expect(result).toEqual({ response: 'ok', history: [] });
-    });
-
-    it('chatWithTutor uses default highlightedContext="" when omitted', async () => {
-      fetchMock.mockResolvedValueOnce(makeJsonResponse({ response: 'ok', history: [] }));
-
-      await chatWithTutor('cid', 1, 2, 'hello');
-
-      const [, init] = fetchMock.mock.calls.at(-1)!;
-      expect(JSON.parse(init.body)).toMatchObject({ highlighted_context: '' });
     });
   });
 });
