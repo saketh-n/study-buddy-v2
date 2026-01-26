@@ -1,0 +1,61 @@
+{
+  "topic_name": "Seven Years' War and the Plains of Abraham",
+  "questions": [
+    {
+      "question": "What strategic factor best explains why the Battle of the Plains of Abraham was so decisive in determining the outcome of French rule in Canada?",
+      "options": [
+        "It was the largest battle fought in North America during the Seven Years' War",
+        "The death of both commanding generals made it impossible to continue fighting",
+        "Quebec City was the administrative and military heart of New France, making its capture catastrophic",
+        "The French lost their entire navy in the St. Lawrence River during the battle"
+      ],
+      "correct_index": 2,
+      "explanation": "Quebec City's capture was decisive because it served as the capital and strategic center of New France. Controlling Quebec meant controlling the St. Lawrence River route and the colony's administration, making continued French resistance nearly impossible."
+    },
+    {
+      "question": "Why did General Wolfe choose to attack Quebec via the Plains of Abraham rather than attempting a direct assault on the heavily fortified Lower Town?",
+      "options": [
+        "The Plains of Abraham were undefended because Montcalm had concentrated all forces in Lower Town",
+        "Attacking from the plains forced the French into open field combat where British military superiority could be decisive",
+        "The British navy could provide artillery support only on the plains above the city",
+        "Wolfe wanted to avoid civilian casualties in the densely populated Lower Town"
+      ],
+      "correct_index": 1,
+      "explanation": "Wolfe's strategy was to force the French into a conventional European-style battle on open ground, where British discipline, training, and tactics would have maximum advantage over the French forces who were better suited to defensive positions."
+    },
+    {
+      "question": "In what way did the Seven Years' War represent a shift from earlier conflicts between Britain and France in North America?",
+      "options": [
+        "It was the first war where Native American allies played a significant role",
+        "It focused primarily on maritime battles rather than land campaigns",
+        "It was fought as part of a global conflict with coordinated European and colonial strategies",
+        "It was the first conflict where colonial militias fought without European regular troops"
+      ],
+      "correct_index": 2,
+      "explanation": "The Seven Years' War was truly global, with coordinated campaigns in Europe, North America, India, and the Caribbean. This represented a shift from earlier, more localized colonial conflicts to imperial warfare with worldwide strategic planning."
+    },
+    {
+      "question": "When analyzing the long-term consequences of the Treaty of Paris (1763), which outcome most directly shaped the future political development of North America?",
+      "options": [
+        "France's loss of Louisiana to Spain disrupted the fur trade",
+        "Britain's acquisition of all French territory east of the Mississippi created a unified colonial framework",
+        "Spain's control of Florida provided a new base for challenging British expansion",
+        "The elimination of French military threat reduced colonial dependence on British protection"
+      ],
+      "correct_index": 3,
+      "explanation": "Removing the French threat reduced colonial dependence on British military protection, which became a crucial factor leading to the American Revolution. Colonists felt less need for British oversight and were more willing to challenge British authority."
+    },
+    {
+      "question": "How should a historian evaluate Montcalm's decision to leave the safety of Quebec's fortifications and engage Wolfe's forces on the Plains of Abraham?",
+      "options": [
+        "It was a strategic error because time favored the French, as winter would force British withdrawal",
+        "It was necessary because Wolfe's position threatened French supply lines to Montreal",
+        "It was tactically sound because French forces outnumbered the British significantly",
+        "It was inevitable because the British artillery made the fortified city untenable"
+      ],
+      "correct_index": 0,
+      "explanation": "Montcalm's decision was strategically questionable because the approaching winter would have forced the British to withdraw or face severe supply problems. Remaining in the fortifications and waiting would likely have been more advantageous for the French."
+    }
+  ],
+  "passing_score": 80
+}

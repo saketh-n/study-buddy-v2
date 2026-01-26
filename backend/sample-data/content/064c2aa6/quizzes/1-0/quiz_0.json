@@ -1,0 +1,61 @@
+{
+  "topic_name": "Founding of Quebec and Early Settlements",
+  "questions": [
+    {
+      "question": "Why did Samuel de Champlain choose the location of Quebec City in 1608 rather than establishing the settlement further downstream near the Atlantic coast?",
+      "options": [
+        "The narrow point of the St. Lawrence River provided strategic military control and access to inland fur trade routes",
+        "The area had the largest Indigenous population to convert to Christianity",
+        "The climate was warmer and better for growing European crops",
+        "It was the furthest point ships could travel up the St. Lawrence River"
+      ],
+      "correct_index": 0,
+      "explanation": "Quebec's location at the narrowing of the St. Lawrence River (kebec meaning 'where the river narrows') provided strategic control over river traffic and served as an ideal base for fur trading expeditions into the interior."
+    },
+    {
+      "question": "The early French settlements along the St. Lawrence River developed a distinctive land division system. What was the primary reason for adopting the seigneurial system in New France?",
+      "options": [
+        "To maximize agricultural production by creating large plantations",
+        "To ensure river access for all settlers while maintaining French feudal social structure",
+        "To prevent conflicts with Indigenous peoples by concentrating settlements",
+        "To make land surveying easier in the dense forests"
+      ],
+      "correct_index": 1,
+      "explanation": "The seigneurial system created long, narrow lots (rangs) perpendicular to the river, ensuring each habitant had water access for transportation and irrigation while preserving the familiar French feudal hierarchy of seigneurs and habitants."
+    },
+    {
+      "question": "When comparing the early French settlement strategy in Canada to that of other European powers, which factor most influenced France's approach to colonization along the St. Lawrence?",
+      "options": [
+        "Focus on large-scale agricultural colonies to feed Europe",
+        "Emphasis on fur trade partnerships requiring cooperation with Indigenous peoples",
+        "Priority on finding gold and silver deposits",
+        "Goal of establishing manufacturing centers"
+      ],
+      "correct_index": 1,
+      "explanation": "Unlike Spanish conquistadors seeking gold or English settlers focused on agriculture, French colonists prioritized the lucrative fur trade, which required maintaining good relations with Indigenous partners and establishing trading posts rather than displacing native populations."
+    },
+    {
+      "question": "A historian is analyzing why Quebec City survived as a permanent settlement when earlier French attempts like Charlesbourg-Royal (1541) had failed. Which combination of factors best explains Quebec's success?",
+      "options": [
+        "Better military technology and superior location",
+        "Sustained financial support from France and successful Indigenous alliances",
+        "Discovery of precious metals and favorable climate",
+        "Larger initial population and better farming techniques"
+      ],
+      "correct_index": 1,
+      "explanation": "Quebec's survival depended on consistent backing from French trading companies and the Crown, plus crucial partnerships with Huron and Algonquin peoples for fur trade and survival knowledge, unlike earlier attempts that lacked sustained support."
+    },
+    {
+      "question": "By 1663, when New France became a royal colony, the population was still only about 3,000 people despite 55 years of settlement. What does this demographic pattern reveal about the nature of early French colonization?",
+      "options": [
+        "French settlers had high mortality rates due to harsh winters",
+        "The colony prioritized trade relationships over large-scale immigration",
+        "France lacked the naval capacity to transport large numbers of colonists",
+        "Religious conflicts prevented Catholic settlers from emigrating"
+      ],
+      "correct_index": 1,
+      "explanation": "The small population reflects France's initial strategy of maintaining trading posts and alliances rather than mass settlement. The fur trade required relatively few Europeans and benefited from cooperation with Indigenous peoples rather than territorial displacement."
+    }
+  ],
+  "passing_score": 80
+}

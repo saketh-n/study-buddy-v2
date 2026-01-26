@@ -1,0 +1,61 @@
+{
+  "topic_name": "Acadia and Maritime Settlements",
+  "questions": [
+    {
+      "question": "Why did early Acadian settlers choose to establish communities in tidal marshlands rather than clearing forested uplands like other colonial groups?",
+      "options": [
+        "The marshlands provided natural defense against Indigenous attacks",
+        "Dyking the marshlands created fertile farmland without the labor-intensive process of clearing forests",
+        "The French government required settlements to be located near waterways for easier taxation",
+        "Marshlands were the only areas where the Mi'kmaq people permitted European settlement"
+      ],
+      "correct_index": 1,
+      "explanation": "Acadians developed innovative dyking systems to reclaim tidal marshlands, creating fertile farmland without the enormous labor required to clear forests. This agricultural technique became a defining characteristic of Acadian settlement patterns."
+    },
+    {
+      "question": "When analyzing the survival of Acadian communities during the period of contested sovereignty (1654-1710), which factor was most crucial to their persistence?",
+      "options": [
+        "Strong military fortifications protecting each settlement",
+        "A policy of neutrality that allowed them to avoid taking sides in imperial conflicts",
+        "Exclusive trading relationships with French merchants",
+        "Large population numbers that deterred attacks"
+      ],
+      "correct_index": 1,
+      "explanation": "Acadians survived multiple changes in imperial control by maintaining neutrality, refusing to take loyalty oaths that would require them to fight against either French or Indigenous peoples. This 'neutrality policy' was essential to their survival during contested periods."
+    },
+    {
+      "question": "A historian studying 17th-century Acadia discovers that many settlements had unusually cooperative relationships with Indigenous peoples compared to other European colonies. What best explains this pattern?",
+      "options": [
+        "French colonial policy legally prohibited conflict with Indigenous groups",
+        "Acadians depended on Indigenous knowledge for survival and maintained beneficial trade relationships",
+        "The Mi'kmaq were less numerous and therefore less threatening to settlers",
+        "French missionaries had already converted most Indigenous peoples to Christianity"
+      ],
+      "correct_index": 1,
+      "explanation": "Acadians developed cooperative relationships with the Mi'kmaq and other Indigenous groups through intermarriage, trade partnerships, and shared Catholic faith. This cooperation was practical and beneficial for survival in the Maritime environment."
+    },
+    {
+      "question": "If you were to explain why Acadian society developed differently from other French colonial settlements like those in the St. Lawrence Valley, which combination of factors would be most accurate?",
+      "options": [
+        "Geographic isolation, agricultural innovation, and imperial neglect allowed for unique cultural development",
+        "Strict French government control and regular communication with France maintained traditional patterns",
+        "Conflict with Indigenous peoples forced Acadians to develop more militaristic communities",
+        "The fur trade dominated the economy, preventing agricultural development"
+      ],
+      "correct_index": 0,
+      "explanation": "Acadia's geographic isolation from both France and other French colonies, combined with their innovative marsh agriculture and relative neglect by imperial authorities, allowed Acadians to develop a distinct culture and society."
+    },
+    {
+      "question": "When the British gained control of Acadia in 1710 but allowed Acadians to remain, what does this decision reveal about colonial priorities in the early 18th century?",
+      "options": [
+        "The British valued Acadian agricultural productivity and wanted to maintain economic stability in the region",
+        "British colonial policy always emphasized religious tolerance above political loyalty",
+        "The British feared that removing the Acadians would provoke French military retaliation",
+        "Colonial authorities lacked the military resources to enforce population removal"
+      ],
+      "correct_index": 0,
+      "explanation": "The British initially allowed Acadians to remain because they were productive farmers who contributed to the colonial economy. The British valued this agricultural output and hoped to gradually assimilate the population rather than disrupt economic productivity through immediate removal."
+    }
+  ],
+  "passing_score": 80
+}

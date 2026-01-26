@@ -1,0 +1,61 @@
+{
+  "topic_name": "Acadia and Maritime Settlements",
+  "questions": [
+    {
+      "question": "What was the primary strategic reason for France establishing settlements in Acadia rather than focusing all colonial efforts in the St. Lawrence Valley?",
+      "options": [
+        "To control fishing grounds and maritime trade routes",
+        "To establish tobacco plantations like those in Virginia",
+        "To create a buffer against Spanish expansion from Florida",
+        "To exploit gold deposits discovered in Nova Scotia"
+      ],
+      "correct_index": 0,
+      "explanation": "France established Acadia primarily to control the rich fishing grounds of the Grand Banks and secure maritime trade routes, making it a strategic complement to their St. Lawrence settlements rather than competition with them."
+    },
+    {
+      "question": "Why did Acadian agricultural practices, particularly their dyke system, represent an innovative adaptation to their environment?",
+      "options": [
+        "They copied Indigenous slash-and-burn techniques",
+        "They transformed tidal marshlands into fertile farmland without displacing Indigenous peoples",
+        "They introduced European crop rotation to prevent soil depletion",
+        "They used slave labor to clear dense forests quickly"
+      ],
+      "correct_index": 1,
+      "explanation": "Acadians developed sophisticated dyke systems to reclaim salt marshes from the Bay of Fundy's extreme tides, creating fertile farmland while avoiding conflict with Indigenous peoples over traditional hunting and farming areas."
+    },
+    {
+      "question": "The frequent changes in control between France and Britain over Acadian territories (1604-1763) most directly resulted in which challenge for settlers?",
+      "options": [
+        "Constant warfare between French and British colonists",
+        "Difficulty maintaining cultural and religious identity under changing governments",
+        "Economic collapse due to disrupted trade relationships",
+        "Forced relocation to Quebec each time control changed"
+      ],
+      "correct_index": 1,
+      "explanation": "The alternating French and British control created ongoing challenges for Acadians in maintaining their Catholic faith, French language, and cultural practices, especially under British Protestant rule, ultimately contributing to their tragic deportation."
+    },
+    {
+      "question": "When British officials demanded Acadians take an unconditional oath of allegiance in the 1750s, why was this request particularly problematic from the Acadian perspective?",
+      "options": [
+        "It required them to convert to Protestantism",
+        "It would force them to fight against other French colonists and Indigenous allies",
+        "It demanded they give up their lands to British settlers",
+        "It required payment of back taxes to the British crown"
+      ],
+      "correct_index": 1,
+      "explanation": "Acadians had maintained neutrality in conflicts between France and Britain, and an unconditional oath would have required them to take up arms against French forces and their Indigenous allies, violating their pacifist principles and relationships."
+    },
+    {
+      "question": "How did the geographic isolation of Acadian settlements contribute to the development of a distinct Acadian identity separate from other French colonial populations?",
+      "options": [
+        "It prevented any contact with Indigenous peoples, creating a purely European culture",
+        "It forced closer economic dependence on British markets rather than French ones",
+        "It allowed development of unique cultural practices while maintaining core French Catholic traditions",
+        "It resulted in complete assimilation into Indigenous maritime cultures"
+      ],
+      "correct_index": 2,
+      "explanation": "The relative isolation of Acadian settlements allowed them to develop distinctive cultural practices, dialect, and community structures while preserving their fundamental French language and Catholic religious identity, creating a unique Acadian culture."
+    }
+  ],
+  "passing_score": 80
+}

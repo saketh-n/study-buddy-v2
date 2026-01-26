@@ -1,0 +1,61 @@
+{
+  "topic_name": "Deportation of the Acadians",
+  "questions": [
+    {
+      "question": "What was the primary strategic reason the British authorities decided to deport the Acadians in 1755?",
+      "options": [
+        "The Acadians were actively participating in raids against British settlements",
+        "The British feared the Acadians would support French military efforts due to their refusal to take an unconditional oath of allegiance",
+        "The Acadians were preventing British settlers from accessing fertile farmland",
+        "The Acadians were secretly planning to establish an independent nation"
+      ],
+      "correct_index": 1,
+      "explanation": "The British were primarily concerned about Acadian loyalty during wartime. The Acadians had maintained neutrality and refused to take an unconditional oath that would require them to bear arms against France and their Mi'kmaq allies, leading British authorities to view them as a potential security threat."
+    },
+    {
+      "question": "Why did the Acadians' farming techniques make their deportation particularly economically damaging to the region?",
+      "options": [
+        "They had developed advanced crop rotation methods that took decades to perfect",
+        "They had created an extensive dyke system that reclaimed marshland, which required specialized knowledge to maintain",
+        "They controlled all the major trade routes between settlements",
+        "They were the only group that knew how to preserve food for long sea voyages"
+      ],
+      "correct_index": 1,
+      "explanation": "The Acadians had developed sophisticated dyke systems to reclaim salt marshes for agriculture. This technology and knowledge was lost with their deportation, leading to the deterioration of valuable farmland that took generations to restore."
+    },
+    {
+      "question": "If you were analyzing the long-term demographic impact of the Acadian deportation, which consequence would be most significant for understanding Maritime Canada's development?",
+      "options": [
+        "The complete elimination of French language and culture from the region",
+        "The creation of permanent ethnic tensions between French and English populations",
+        "The disruption of established trading relationships with Indigenous peoples",
+        "The loss of a stable, agriculturally-skilled population that had adapted to local conditions"
+      ],
+      "correct_index": 3,
+      "explanation": "The deportation removed a population that had spent 150 years adapting to the Maritime environment, developing sustainable agricultural practices, and establishing stable communities. This loss significantly impacted the region's economic and social development for generations."
+    },
+    {
+      "question": "The policy of family separation during the deportation was implemented because British authorities believed it would:",
+      "options": [
+        "Reduce the cost of transportation by using smaller ships",
+        "Prevent coordinated resistance and make permanent resettlement elsewhere more likely",
+        "Allow for better medical care during the voyage",
+        "Enable faster processing of deportees at embarkation points"
+      ],
+      "correct_index": 1,
+      "explanation": "Family separation was a deliberate strategy to break community bonds, prevent organized resistance, and make it more difficult for Acadians to maintain their cultural identity or plan coordinated returns to their homeland."
+    },
+    {
+      "question": "When modern historians evaluate whether the Acadian deportation constitutes ethnic cleansing, which aspect of the event is most relevant to this assessment?",
+      "options": [
+        "The total number of people removed from their homes",
+        "The systematic intent to permanently remove a specific ethnic group from a territory through forced displacement",
+        "The economic motivations behind the British policy",
+        "The military context of the Seven Years' War"
+      ],
+      "correct_index": 1,
+      "explanation": "The key criterion for ethnic cleansing is the systematic and deliberate removal of an ethnic group from a territory with the intent of making that removal permanent. The British policy specifically targeted Acadians as an ethnic group and included measures like family separation designed to prevent their return and cultural continuity."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "King George's War and Fortress Louisbourg",
+  "questions": [
+    {
+      "question": "Why was the location of Fortress Louisbourg particularly strategic for France's colonial empire in North America?",
+      "options": [
+        "It provided the shortest route between France and Quebec City",
+        "It controlled access to the St. Lawrence River and protected the sea approaches to New France",
+        "It was the largest French settlement in the Maritime provinces",
+        "It served as the primary trading post for the French fur trade"
+      ],
+      "correct_index": 1,
+      "explanation": "Louisbourg's strategic value lay in its position guarding the entrance to the St. Lawrence River, making it a crucial defensive point for protecting New France from seaborne attacks and controlling maritime trade routes."
+    },
+    {
+      "question": "During King George's War (1744-1748), what does the successful siege of Louisbourg by New England colonists in 1745 reveal about colonial military capabilities?",
+      "options": [
+        "Colonial forces were only effective with extensive British naval support",
+        "American colonists could organize and execute complex military operations independently",
+        "The fortress was poorly designed and easily conquered",
+        "French defenders were significantly outnumbered"
+      ],
+      "correct_index": 1,
+      "explanation": "The 1745 capture of Louisbourg demonstrated that colonial militias could plan and carry out sophisticated siege warfare, showing growing military competence and coordination among the American colonies, even though they had limited formal military training."
+    },
+    {
+      "question": "When the Treaty of Aix-la-Chapelle (1748) returned Louisbourg to France, what strategic principle was the British government prioritizing?",
+      "options": [
+        "Rewarding colonial military achievements",
+        "Maintaining balance of power in Europe over North American interests",
+        "Establishing permanent peace with France",
+        "Focusing resources on Caribbean sugar colonies"
+      ],
+      "correct_index": 1,
+      "explanation": "Britain returned Louisbourg to secure European territorial concessions and maintain the balance of power in Europe, demonstrating that European diplomatic considerations often took precedence over colonial conquests during this period."
+    },
+    {
+      "question": "If you were a French military strategist in 1744, what would be the most compelling reason to heavily fortify Louisbourg rather than other North American settlements?",
+      "options": [
+        "It had the largest civilian population to protect",
+        "It was the most economically productive settlement",
+        "Its fall would expose the heart of New France to naval attack",
+        "It was closest to hostile British territories"
+      ],
+      "correct_index": 2,
+      "explanation": "Louisbourg functioned as the key to New France's maritime defenses. Its capture would leave the St. Lawrence River and Quebec vulnerable to British naval forces, potentially leading to the collapse of the entire French colonial system in North America."
+    },
+    {
+      "question": "The repeated conflicts over Louisbourg during King George's War illustrate which broader pattern in 18th-century colonial warfare?",
+      "options": [
+        "European wars automatically extended to colonial territories with similar outcomes",
+        "Colonial conflicts were primarily driven by local economic competition",
+        "Strategic locations became focal points where European rivalries played out globally",
+        "Native American alliances determined the outcomes of colonial conflicts"
+      ],
+      "correct_index": 2,
+      "explanation": "Louisbourg exemplifies how certain strategic locations became contested prizes in the global extension of European conflicts, where control of key fortresses and trade routes reflected broader imperial competition between major powers."
+    }
+  ],
+  "passing_score": 80
+}

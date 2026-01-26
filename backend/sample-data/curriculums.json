@@ -1,0 +1,224 @@
+[
+  {
+    "id": "064c2aa6",
+    "created_at": "2026-01-22T11:58:51.072926",
+    "curriculum": {
+      "subject": "History of French Settlement in Canada",
+      "description": "A comprehensive study of French colonization, settlement patterns, cultural development, and eventual transition of French territories in Canada from the early 1600s through British conquest and beyond.",
+      "clusters": [
+        {
+          "name": "Pre-Colonial Context and Early Exploration",
+          "description": "The background conditions and initial French exploration that led to permanent settlement attempts in Canada.",
+          "order": 1,
+          "topics": [
+            {
+              "name": "European Context and Motivations for Colonization",
+              "description": "The political, economic, and religious factors driving French overseas expansion in the 16th-17th centuries.",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Early French Explorers and Voyages",
+              "description": "Jacques Cartier, Samuel de Champlain, and other early explorers who mapped and claimed French territories in North America.",
+              "order": 2,
+              "prerequisites": [
+                "European Context and Motivations for Colonization"
+              ]
+            },
+            {
+              "name": "Indigenous Peoples Before European Contact",
+              "description": "The diverse Native American societies, cultures, and territories that existed in Canada before French colonization.",
+              "order": 3,
+              "prerequisites": []
+            }
+          ]
+        },
+        {
+          "name": "Establishment of New France",
+          "description": "The founding and early development of French colonial settlements and administrative structures in Canada.",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Founding of Quebec and Early Settlements",
+              "description": "The establishment of Quebec City (1608) and other early French settlements along the St. Lawrence River.",
+              "order": 1,
+              "prerequisites": [
+                "Early French Explorers and Voyages"
+              ]
+            },
+            {
+              "name": "Colonial Government and Administration",
+              "description": "The development of French colonial administrative systems, royal government, and governance structures in New France.",
+              "order": 2,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            },
+            {
+              "name": "The Fur Trade and Economic Foundations",
+              "description": "The central role of fur trading in French colonial economy and its impact on settlement patterns and Indigenous relations.",
+              "order": 3,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements",
+                "Indigenous Peoples Before European Contact"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Colonial Society and Culture",
+          "description": "The development of distinctive French-Canadian society, culture, and institutions in New France.",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Seigneurial System and Land Distribution",
+              "description": "The feudal-style land tenure system used to organize rural settlement and society in New France.",
+              "order": 1,
+              "prerequisites": [
+                "Colonial Government and Administration"
+              ]
+            },
+            {
+              "name": "French Immigration and Population Growth",
+              "description": "Patterns of French immigration to Canada, including the filles du roi and demographic development of the colony.",
+              "order": 2,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            },
+            {
+              "name": "Catholic Church and Religious Life",
+              "description": "The central role of Catholicism in French colonial society, missions to Indigenous peoples, and religious institutions.",
+              "order": 3,
+              "prerequisites": [
+                "French Immigration and Population Growth"
+              ]
+            },
+            {
+              "name": "French-Indigenous Relations and Intermarriage",
+              "description": "The complex relationships between French colonists and Indigenous peoples, including alliances, conflicts, and cultural mixing.",
+              "order": 4,
+              "prerequisites": [
+                "The Fur Trade and Economic Foundations",
+                "Indigenous Peoples Before European Contact"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Expansion and Territorial Development",
+          "description": "The geographic spread of French influence and settlement across North America beyond the St. Lawrence Valley.",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Exploration of the Great Lakes and Interior",
+              "description": "French exploration and establishment of trading posts throughout the Great Lakes region and interior waterways.",
+              "order": 1,
+              "prerequisites": [
+                "The Fur Trade and Economic Foundations",
+                "French-Indigenous Relations and Intermarriage"
+              ]
+            },
+            {
+              "name": "Louisiana Territory and Mississippi Valley",
+              "description": "French exploration and settlement of the Mississippi River system and establishment of Louisiana colony.",
+              "order": 2,
+              "prerequisites": [
+                "Exploration of the Great Lakes and Interior"
+              ]
+            },
+            {
+              "name": "Acadia and Maritime Settlements",
+              "description": "The development of French settlements in Nova Scotia, New Brunswick, and surrounding maritime regions.",
+              "order": 3,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Imperial Conflicts and Competition",
+          "description": "The military and political struggles between French and British colonial powers that shaped the fate of New France.",
+          "order": 5,
+          "topics": [
+            {
+              "name": "King William's War and Early Anglo-French Conflicts",
+              "description": "The first major conflicts between French and British colonial forces in North America (1689-1697).",
+              "order": 1,
+              "prerequisites": [
+                "Colonial Government and Administration",
+                "Acadia and Maritime Settlements"
+              ]
+            },
+            {
+              "name": "Queen Anne's War and Treaty of Utrecht",
+              "description": "The War of Spanish Succession in North America and the 1713 treaty that transferred Acadia to Britain.",
+              "order": 2,
+              "prerequisites": [
+                "King William's War and Early Anglo-French Conflicts"
+              ]
+            },
+            {
+              "name": "King George's War and Fortress Louisbourg",
+              "description": "The strategic importance of Louisbourg and conflicts over control of maritime approaches to New France.",
+              "order": 3,
+              "prerequisites": [
+                "Queen Anne's War and Treaty of Utrecht"
+              ]
+            },
+            {
+              "name": "Seven Years' War and the Plains of Abraham",
+              "description": "The decisive conflict that ended French rule in Canada, including key battles and military campaigns.",
+              "order": 4,
+              "prerequisites": [
+                "King George's War and Fortress Louisbourg"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "End of French Rule and Legacy",
+          "description": "The transition from French to British rule and the lasting impact of French colonization on Canadian development.",
+          "order": 6,
+          "topics": [
+            {
+              "name": "British Conquest and Treaty of Paris",
+              "description": "The formal transfer of New France to British control in 1763 and its immediate consequences.",
+              "order": 1,
+              "prerequisites": [
+                "Seven Years' War and the Plains of Abraham"
+              ]
+            },
+            {
+              "name": "Deportation of the Acadians",
+              "description": "The forced removal of French Acadians from Maritime provinces and its long-term consequences.",
+              "order": 2,
+              "prerequisites": [
+                "Queen Anne's War and Treaty of Utrecht",
+                "British Conquest and Treaty of Paris"
+              ]
+            },
+            {
+              "name": "French-Canadian Society Under British Rule",
+              "description": "How French-Canadian culture, language, and institutions adapted and persisted under British administration.",
+              "order": 3,
+              "prerequisites": [
+                "British Conquest and Treaty of Paris"
+              ]
+            },
+            {
+              "name": "Legacy of French Settlement in Modern Canada",
+              "description": "The lasting impact of French colonization on Canadian geography, culture, language, and identity.",
+              "order": 4,
+              "prerequisites": [
+                "French-Canadian Society Under British Rule",
+                "Deportation of the Acadians"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

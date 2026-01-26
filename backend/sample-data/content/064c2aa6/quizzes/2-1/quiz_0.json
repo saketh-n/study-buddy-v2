@@ -1,0 +1,61 @@
+{
+  "topic_name": "French Immigration and Population Growth",
+  "questions": [
+    {
+      "question": "What was the primary demographic challenge that led to the implementation of the filles du roi program in New France?",
+      "options": [
+        "High mortality rates due to disease outbreaks",
+        "Severe gender imbalance with far more men than women",
+        "Lack of skilled craftsmen and artisans",
+        "Competition with English colonies for settlers"
+      ],
+      "correct_index": 1,
+      "explanation": "The filles du roi program was created to address the severe gender imbalance in New France, where male settlers (fur traders, soldiers, laborers) far outnumbered women, limiting natural population growth through marriage and childbirth."
+    },
+    {
+      "question": "Why did New France's population growth rely more heavily on natural increase (births) rather than continued immigration after 1760?",
+      "options": [
+        "The French government banned further emigration to focus on European wars",
+        "British conquest ended organized French immigration programs",
+        "Economic opportunities in France became more attractive than colonial life",
+        "Disease epidemics made the Atlantic crossing too dangerous"
+      ],
+      "correct_index": 1,
+      "explanation": "After the British conquest of New France in 1760, organized French immigration programs ended, and the population growth of French Canadians became almost entirely dependent on natural increase due to high birth rates."
+    },
+    {
+      "question": "Which factor best explains why French immigration to Canada remained relatively limited compared to British immigration patterns?",
+      "options": [
+        "French settlers faced more hostile relationships with Indigenous peoples",
+        "The French colonial system prioritized fur trading over agricultural settlement",
+        "Religious restrictions prevented French Protestants from emigrating",
+        "Geographic barriers made access to French territories more difficult"
+      ],
+      "correct_index": 1,
+      "explanation": "The French colonial system emphasized the fur trade, which required fewer settlers, unlike British colonies that focused on agricultural settlement requiring large populations. This economic model limited the need for and encouragement of mass immigration."
+    },
+    {
+      "question": "A colonial administrator in 1665 notices that despite sending more male workers, the population growth remains slow. Based on historical patterns, what policy intervention would be most effective?",
+      "options": [
+        "Increase wages for male laborers to attract more immigrants",
+        "Implement the filles du roi program to bring marriageable women",
+        "Establish more missions to convert Indigenous peoples",
+        "Build more forts to protect existing settlements"
+      ],
+      "correct_index": 1,
+      "explanation": "The filles du roi program addressed the core demographic problem by bringing women to balance the gender ratio, enabling family formation and natural population growth, which was more sustainable than continued male immigration alone."
+    },
+    {
+      "question": "How did the demographic development of New France differ from other North American colonies in terms of population composition by 1750?",
+      "options": [
+        "New France had a more urbanized population concentrated in major cities",
+        "New France maintained stronger cultural and linguistic homogeneity",
+        "New France developed a more ethnically diverse population through intermarriage",
+        "New France attracted more wealthy merchant families than other colonies"
+      ],
+      "correct_index": 1,
+      "explanation": "Due to limited and controlled French immigration, New France maintained greater cultural and linguistic homogeneity compared to British colonies, which received more diverse immigrant populations from various European countries and had different settlement patterns."
+    }
+  ],
+  "passing_score": 80
+}

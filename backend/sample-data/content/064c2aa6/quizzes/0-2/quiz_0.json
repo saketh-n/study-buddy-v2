@@ -1,0 +1,61 @@
+{
+  "topic_name": "Indigenous Peoples Before European Contact",
+  "questions": [
+    {
+      "question": "Which factor BEST explains why Indigenous peoples in the Pacific Northwest developed complex societies with permanent settlements, while many Plains peoples remained more nomadic?",
+      "options": [
+        "The Pacific Northwest had superior technology and tools",
+        "Environmental resources like salmon runs provided reliable, abundant food sources",
+        "Pacific Northwest peoples were more advanced culturally",
+        "Plains peoples were constantly at war and couldn't settle"
+      ],
+      "correct_index": 1,
+      "explanation": "The abundance of predictable resources like salmon, cedar, and marine life in the Pacific Northwest allowed for food surplus and permanent settlements, while Plains peoples adapted to following bison herds for survival."
+    },
+    {
+      "question": "An archaeologist studying pre-contact Indigenous societies would MOST likely use pottery styles and agricultural techniques to understand:",
+      "options": [
+        "Military conquests between different groups",
+        "Trade relationships and cultural exchange patterns",
+        "The exact population numbers of each community",
+        "Which groups were most similar to European societies"
+      ],
+      "correct_index": 1,
+      "explanation": "Pottery styles and agricultural techniques spread through trade and cultural contact, making them excellent indicators of interaction patterns and cultural exchange between Indigenous groups."
+    },
+    {
+      "question": "The Haudenosaunee (Iroquois) Confederacy's political system is significant for understanding pre-contact Indigenous societies because it demonstrates:",
+      "options": [
+        "That all Indigenous peoples had identical governmental structures",
+        "How agricultural societies developed complex political alliances and governance",
+        "That Indigenous peoples copied European political models",
+        "The superiority of Eastern Woodland cultures over others"
+      ],
+      "correct_index": 1,
+      "explanation": "The Haudenosaunee Confederacy shows how agricultural Indigenous societies independently developed sophisticated political systems with democratic elements, federalism, and complex diplomatic relationships."
+    },
+    {
+      "question": "When French explorers first encountered Indigenous peoples who practiced agriculture alongside hunting and gathering, this MOST likely indicated:",
+      "options": [
+        "These societies had recently abandoned nomadic lifestyles",
+        "The groups lived in regions with diverse ecosystems supporting multiple subsistence strategies",
+        "European influence had already changed their traditional ways",
+        "These were the most 'advanced' of all Indigenous societies"
+      ],
+      "correct_index": 1,
+      "explanation": "Mixed subsistence strategies typically developed in areas with diverse ecosystems where people could take advantage of multiple food sources seasonally, representing sophisticated adaptation to environmental conditions."
+    },
+    {
+      "question": "Understanding the diversity of pre-contact Indigenous languages and cultures is MOST important for historians studying French colonization because it helps explain:",
+      "options": [
+        "Why French colonization was more successful than other European efforts",
+        "How different Indigenous responses to European contact reflected existing cultural values and social structures",
+        "Which Indigenous groups were naturally allies or enemies",
+        "The predetermined outcome of European-Indigenous encounters"
+      ],
+      "correct_index": 1,
+      "explanation": "The diverse cultural backgrounds, political structures, and belief systems of Indigenous peoples shaped how each group interpreted and responded to French contact, leading to varied outcomes rather than uniform reactions."
+    }
+  ],
+  "passing_score": 80
+}
