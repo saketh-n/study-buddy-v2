@@ -43,6 +43,20 @@ class TestRootEndpoints:
         response = client.get("/health")
         assert response.status_code == 200
         assert response.json() == {"status": "healthy"}
+    
+    @patch.dict("os.environ", {"ANTHROPIC_API_KEY": "test-key-123"})
+    def test_get_api_status_with_key(self, client):
+        """Test API status endpoint when API key is present."""
+        response = client.get("/api/status")
+        assert response.status_code == 200
+        assert response.json() == {"has_api_key": True}
+    
+    @patch.dict("os.environ", {}, clear=True)
+    def test_get_api_status_without_key(self, client):
+        """Test API status endpoint when API key is absent."""
+        response = client.get("/api/status")
+        assert response.status_code == 200
+        assert response.json() == {"has_api_key": False}
 
 
 class TestCurriculumEndpoints:
@@ -299,13 +313,74 @@ class TestQuizSubmission:
                 "curriculum_id": saved_curriculum,
                 "cluster_index": 0,
                 "topic_index": 0,
-                "answers": [1, 1]  # Both correct
+                "answers": [1, 1],  # Both correct
+                "use_ai_grading": True
             }
         )
         assert response.status_code == 200
         data = response.json()
         assert data["score"] == 100
         assert data["passed"] is True
+        # Verify AI grading was attempted
+        mock_assess.assert_called_once()
+    
+    @patch("app.content_cache.save_assessment")
+    @patch("app.content_cache.get_quiz_count")
+    @patch("app.content_cache.get_cached_quiz")
+    def test_submit_quiz_without_ai_grading(
+        self, mock_get_quiz, mock_count, mock_save,
+        client, saved_curriculum, sample_quiz
+    ):
+        """Test quiz submission without AI grading (uses fallback directly)."""
+        mock_get_quiz.return_value = sample_quiz
+        mock_count.return_value = 1
+        
+        response = client.post(
+            "/api/quiz/submit",
+            json={
+                "curriculum_id": saved_curriculum,
+                "cluster_index": 0,
+                "topic_index": 0,
+                "answers": [1, 1],  # Both correct
+                "use_ai_grading": False
+            }
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert data["score"] == 100
+        assert data["passed"] is True
+        assert data["fallback_mode"] is True
+    
+    @patch("app.content_cache.save_assessment")
+    @patch("app.content_cache.get_quiz_count")
+    @patch("app.content_cache.get_cached_quiz")
+    @patch("app.learning.assess_quiz_answers")
+    def test_submit_quiz_with_ai_grading_fallback_on_error(
+        self, mock_assess, mock_get_quiz, mock_count, mock_save,
+        client, saved_curriculum, sample_quiz
+    ):
+        """Test quiz submission with AI grading that falls back on error."""
+        mock_get_quiz.return_value = sample_quiz
+        mock_count.return_value = 1
+        mock_assess.side_effect = Exception("API error")
+        
+        response = client.post(
+            "/api/quiz/submit",
+            json={
+                "curriculum_id": saved_curriculum,
+                "cluster_index": 0,
+                "topic_index": 0,
+                "answers": [1, 1],  # Both correct
+                "use_ai_grading": True
+            }
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert data["score"] == 100
+        assert data["passed"] is True
+        assert data["fallback_mode"] is True
+        # Verify AI grading was attempted before fallback
+        mock_assess.assert_called_once()
 
 
 class TestAssessmentEndpoints:

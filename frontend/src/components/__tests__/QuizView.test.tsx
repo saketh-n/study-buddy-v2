@@ -234,4 +234,106 @@ describe('QuizView', () => {
       expect(screen.getByText(/binary search only works correctly on sorted/i)).toBeInTheDocument()
     })
   })
+
+  describe('AI Grading Toggle', () => {
+    it('should render AI grading toggle when hasApiKey is true', () => {
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={true}
+          useAiGrading={false}
+          onToggleAiGrading={vi.fn()}
+        />
+      )
+
+      expect(screen.getByText('Grade with AI')).toBeInTheDocument()
+      expect(screen.getByText(/Get detailed feedback and personalized analysis/i)).toBeInTheDocument()
+    })
+
+    it('should disable AI grading toggle when hasApiKey is false', () => {
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={false}
+          useAiGrading={false}
+          onToggleAiGrading={vi.fn()}
+        />
+      )
+
+      const toggle = screen.getByRole('switch', { name: /toggle ai grading/i })
+      expect(toggle).toBeDisabled()
+    })
+
+    it('should show disabled state explanation when API key is missing', () => {
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={false}
+          useAiGrading={false}
+          onToggleAiGrading={vi.fn()}
+        />
+      )
+
+      expect(screen.getByText(/AI grading unavailable \(no API key configured\)/i)).toBeInTheDocument()
+    })
+
+    it('should call onToggleAiGrading when toggle is clicked', async () => {
+      const user = userEvent.setup()
+      const mockToggle = vi.fn()
+
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={true}
+          useAiGrading={false}
+          onToggleAiGrading={mockToggle}
+        />
+      )
+
+      const toggle = screen.getByRole('switch', { name: /toggle ai grading/i })
+      await user.click(toggle)
+
+      expect(mockToggle).toHaveBeenCalledWith(true)
+    })
+
+    it('toggle should default to off', () => {
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={true}
+          useAiGrading={false}
+          onToggleAiGrading={vi.fn()}
+        />
+      )
+
+      const toggle = screen.getByRole('switch', { name: /toggle ai grading/i })
+      expect(toggle).toHaveAttribute('aria-checked', 'false')
+    })
+
+    it('toggle should be on when useAiGrading is true', () => {
+      render(
+        <QuizView
+          quiz={mockQuiz}
+          onSubmit={mockOnSubmit}
+          onBack={mockOnBack}
+          hasApiKey={true}
+          useAiGrading={true}
+          onToggleAiGrading={vi.fn()}
+        />
+      )
+
+      const toggle = screen.getByRole('switch', { name: /toggle ai grading/i })
+      expect(toggle).toHaveAttribute('aria-checked', 'true')
+    })
+  })
 })

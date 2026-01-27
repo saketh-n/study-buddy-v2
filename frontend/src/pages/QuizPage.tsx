@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link, useSearchParams } from 'react-router-dom';
-import { getCurriculum, getLearningProgress, generateQuiz, generateNewQuiz, submitQuiz } from '../api';
+import { getCurriculum, getLearningProgress, generateQuiz, generateNewQuiz, submitQuiz, getApiStatus } from '../api';
 import type { Curriculum, Quiz, QuizAssessment, FlatTopic, LearningProgress } from '../types';
 import { flattenTopics, findTopicByKey } from '../types';
 import { QuizView } from '../components/QuizView';
@@ -28,8 +28,25 @@ export function QuizPage() {
   
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  const [hasApiKey, setHasApiKey] = useState(false);
+  const [useAiGrading, setUseAiGrading] = useState(false);
 
   const currentTopic = topicKey ? findTopicByKey(flatTopics, topicKey) : null;
+
+  // Check API status on mount
+  useEffect(() => {
+    const checkApiStatus = async () => {
+      try {
+        const status = await getApiStatus();
+        setHasApiKey(status.has_api_key);
+      } catch {
+        // If API status check fails, assume no API key
+        setHasApiKey(false);
+      }
+    };
+    checkApiStatus();
+  }, []);
 
   // Load curriculum data
   useEffect(() => {
@@ -102,7 +119,8 @@ export function QuizPage() {
         id,
         currentTopic.clusterIndex,
         currentTopic.topicIndex,
-        answers
+        answers,
+        useAiGrading
       );
       setAssessment(result);
       setMode('results');
@@ -223,6 +241,9 @@ export function QuizPage() {
             onBack={handleBackToLesson}
             isReviewMode={isReviewMode}
             reviewVersion={isReviewMode ? parseInt(reviewVersion!) : null}
+            hasApiKey={hasApiKey}
+            useAiGrading={useAiGrading}
+            onToggleAiGrading={setUseAiGrading}
           />
         ) : assessment ? (
           <QuizResults

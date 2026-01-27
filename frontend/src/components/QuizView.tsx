@@ -7,9 +7,21 @@ interface QuizViewProps {
   onBack: () => void;
   isReviewMode?: boolean;
   reviewVersion?: number | null;
+  hasApiKey?: boolean;
+  useAiGrading?: boolean;
+  onToggleAiGrading?: (value: boolean) => void;
 }
 
-export function QuizView({ quiz, onSubmit, onBack, isReviewMode, reviewVersion }: QuizViewProps) {
+export function QuizView({ 
+  quiz, 
+  onSubmit, 
+  onBack, 
+  isReviewMode, 
+  reviewVersion,
+  hasApiKey = false,
+  useAiGrading = false,
+  onToggleAiGrading
+}: QuizViewProps) {
   const [answers, setAnswers] = useState<(number | null)[]>(
     new Array(quiz.questions.length).fill(null)
   );
@@ -217,31 +229,71 @@ export function QuizView({ quiz, onSubmit, onBack, isReviewMode, reviewVersion }
             )}
           </div>
         ) : (
-          <button
-            onClick={handleSubmit}
-            disabled={!allAnswered || isSubmitting}
-            className="w-full py-4 px-6 rounded-xl font-bold text-lg
-                       bg-gradient-to-r from-electric-500 to-electric-400 text-midnight-950
-                       hover:from-electric-400 hover:to-electric-500
-                       disabled:from-midnight-700 disabled:to-midnight-600 disabled:text-white/30
-                       disabled:cursor-not-allowed
-                       transform hover:scale-[1.01] active:scale-[0.99]
-                       transition-all duration-200 glow"
-          >
-            {isSubmitting ? (
-              <span className="flex items-center justify-center gap-3">
-                <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
-                Checking answers...
-              </span>
-            ) : allAnswered ? (
-              'Submit Quiz'
-            ) : (
-              `Answer all questions (${answeredCount}/${quiz.questions.length})`
-            )}
-          </button>
+          <div className="space-y-4">
+            {/* AI Grading Toggle */}
+            <div className="p-4 rounded-xl glass-strong">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <svg className="w-5 h-5 text-electric-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    <span className={`font-semibold ${hasApiKey ? 'text-white' : 'text-white/40'}`}>
+                      Grade with AI
+                    </span>
+                  </div>
+                  <p className="text-sm text-white/60">
+                    {hasApiKey 
+                      ? 'Get detailed feedback and personalized analysis' 
+                      : 'AI grading unavailable (no API key configured)'}
+                  </p>
+                </div>
+                <button
+                  onClick={() => onToggleAiGrading?.(!useAiGrading)}
+                  disabled={!hasApiKey}
+                  className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors
+                            ${useAiGrading && hasApiKey ? 'bg-electric-500' : 'bg-white/20'}
+                            ${!hasApiKey ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
+                  role="switch"
+                  aria-checked={useAiGrading && hasApiKey}
+                  aria-label="Toggle AI grading"
+                >
+                  <span
+                    className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform
+                              ${useAiGrading && hasApiKey ? 'translate-x-6' : 'translate-x-1'}`}
+                  />
+                </button>
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              onClick={handleSubmit}
+              disabled={!allAnswered || isSubmitting}
+              className="w-full py-4 px-6 rounded-xl font-bold text-lg
+                         bg-gradient-to-r from-electric-500 to-electric-400 text-midnight-950
+                         hover:from-electric-400 hover:to-electric-500
+                         disabled:from-midnight-700 disabled:to-midnight-600 disabled:text-white/30
+                         disabled:cursor-not-allowed
+                         transform hover:scale-[1.01] active:scale-[0.99]
+                         transition-all duration-200 glow"
+            >
+              {isSubmitting ? (
+                <span className="flex items-center justify-center gap-3">
+                  <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  Checking answers...
+                </span>
+              ) : allAnswered ? (
+                'Submit Quiz'
+              ) : (
+                `Answer all questions (${answeredCount}/${quiz.questions.length})`
+              )}
+            </button>
+          </div>
         )}
       </div>
     </div>

@@ -4,6 +4,7 @@ import {
   listCurriculums,
   getCurriculum,
   deleteCurriculum,
+  getApiStatus,
   getLearningProgress,
   startLearning,
   getContentStatus,
@@ -158,6 +159,25 @@ describe('api.ts', () => {
     });
   });
 
+  describe('API Status', () => {
+    it('getApiStatus fetches status endpoint', async () => {
+      fetchMock.mockResolvedValueOnce(makeJsonResponse({ has_api_key: true }));
+
+      const result = await getApiStatus();
+
+      expect(fetchMock).toHaveBeenCalledWith(`${API_BASE_URL}/api/status`);
+      expect(result).toEqual({ has_api_key: true });
+    });
+
+    it('getApiStatus handles no API key', async () => {
+      fetchMock.mockResolvedValueOnce(makeJsonResponse({ has_api_key: false }));
+
+      const result = await getApiStatus();
+
+      expect(result).toEqual({ has_api_key: false });
+    });
+  });
+
   describe('Learning progress', () => {
     it('getLearningProgress fetches progress', async () => {
       fetchMock.mockResolvedValueOnce(makeJsonResponse({ started: true }));
@@ -255,7 +275,7 @@ describe('api.ts', () => {
       );
     });
 
-    it('submitQuiz POSTs answers', async () => {
+    it('submitQuiz POSTs answers with default useAiGrading false', async () => {
       fetchMock.mockResolvedValueOnce(makeJsonResponse({ score: 100, passed: true }));
 
       const result = await submitQuiz('cid', 3, 4, [0, 1, 2]);
@@ -270,6 +290,30 @@ describe('api.ts', () => {
             cluster_index: 3,
             topic_index: 4,
             answers: [0, 1, 2],
+            use_ai_grading: false,
+          }),
+        })
+      );
+
+      expect(result).toEqual({ score: 100, passed: true });
+    });
+
+    it('submitQuiz POSTs answers with useAiGrading true', async () => {
+      fetchMock.mockResolvedValueOnce(makeJsonResponse({ score: 100, passed: true }));
+
+      const result = await submitQuiz('cid', 3, 4, [0, 1, 2], true);
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        `${API_BASE_URL}/api/quiz/submit`,
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            curriculum_id: 'cid',
+            cluster_index: 3,
+            topic_index: 4,
+            answers: [0, 1, 2],
+            use_ai_grading: true,
           }),
         })
       );

@@ -1,6 +1,6 @@
 import type { 
   Curriculum, CurriculumSummary, SavedCurriculumRecord,
-  Lesson, Quiz, QuizAssessment, LearningProgress
+  Lesson, Quiz, QuizAssessment, LearningProgress, ApiStatus
 } from './types';
 
 export const API_BASE_URL = 'http://localhost:8000';
@@ -76,6 +76,14 @@ export async function deleteCurriculum(id: string): Promise<void> {
     method: 'DELETE',
   });
   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+}
+
+// ============ API Status ============
+
+export async function getApiStatus(): Promise<ApiStatus> {
+  const response = await fetch(`${API_BASE_URL}/api/status`);
+  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  return response.json();
 }
 
 // ============ Learning Progress ============
@@ -238,7 +246,8 @@ export async function submitQuiz(
   curriculumId: string,
   clusterIndex: number,
   topicIndex: number,
-  answers: number[]
+  answers: number[],
+  useAiGrading: boolean = false
 ): Promise<QuizAssessment> {
   const response = await fetch(`${API_BASE_URL}/api/quiz/submit`, {
     method: 'POST',
@@ -247,7 +256,8 @@ export async function submitQuiz(
       curriculum_id: curriculumId,
       cluster_index: clusterIndex,
       topic_index: topicIndex,
-      answers
+      answers,
+      use_ai_grading: useAiGrading
     }),
   });
   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

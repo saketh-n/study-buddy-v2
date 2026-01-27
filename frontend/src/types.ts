@@ -110,6 +110,10 @@ export interface LearningProgress {
   last_activity: string;
 }
 
+export interface ApiStatus {
+  has_api_key: boolean;
+}
+
 // Helper to get topic key
 export function getTopicKey(clusterIndex: number, topicIndex: number): string {
   return `${clusterIndex}-${topicIndex}`;

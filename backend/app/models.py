@@ -91,6 +91,7 @@ class QuizSubmission(BaseModel):
     cluster_index: int
     topic_index: int
     answers: List[int]  # Index of selected answer for each question
+    use_ai_grading: bool = False  # Whether to use AI for grading
 
 
 class QuizResult(BaseModel):

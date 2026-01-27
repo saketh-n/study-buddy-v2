@@ -236,6 +236,28 @@ class TestQuizModels:
             answers=[1, 2, 0, 3, 1]
         )
         assert len(submission.answers) == 5
+        assert submission.use_ai_grading is False  # Default value
+    
+    def test_quiz_submission_with_ai_grading(self):
+        """Test QuizSubmission with use_ai_grading enabled."""
+        submission = QuizSubmission(
+            curriculum_id="abc123",
+            cluster_index=0,
+            topic_index=0,
+            answers=[1, 2, 0, 3, 1],
+            use_ai_grading=True
+        )
+        assert submission.use_ai_grading is True
+    
+    def test_quiz_submission_default_ai_grading_false(self):
+        """Test QuizSubmission defaults use_ai_grading to False."""
+        submission = QuizSubmission(
+            curriculum_id="abc123",
+            cluster_index=0,
+            topic_index=0,
+            answers=[1, 2, 0]
+        )
+        assert submission.use_ai_grading is False
     
     def test_quiz_result(self):
         """Test QuizResult model."""

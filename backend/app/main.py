@@ -64,6 +64,14 @@ async def health_check():
     return {"status": "healthy"}
 
 
+@app.get("/api/status")
+async def get_api_status():
+    """Return API status including whether AI features are available."""
+    import os
+    has_api_key = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    return {"has_api_key": has_api_key}
+
+
 # ============ Curriculum Parsing ============
 
 async def generate_progress_events(raw_text: str):
@@ -413,21 +421,25 @@ async def submit_quiz(submission: QuizSubmission):
         submission.topic_index
     ) - 1
     
-    # Try AI assessment, fall back to basic assessment if it fails
-    try:
-        assessment = await learning.assess_quiz_answers(
-            submission.curriculum_id,
-            submission.cluster_index,
-            submission.topic_index,
-            quiz,
-            quiz_version,
-            submission.answers
-        )
-    except Exception as e:
-        logger.error(f"❌ AI assessment failed, using fallback: {e}")
-        
-        # Create fallback assessment without AI
-        assessment = _create_fallback_assessment(quiz, quiz_version, submission.answers, str(e))
+    # Use AI assessment if requested and available, otherwise use fallback
+    if submission.use_ai_grading:
+        try:
+            assessment = await learning.assess_quiz_answers(
+                submission.curriculum_id,
+                submission.cluster_index,
+                submission.topic_index,
+                quiz,
+                quiz_version,
+                submission.answers
+            )
+        except Exception as e:
+            logger.error(f"❌ AI assessment failed, using fallback: {e}")
+            
+            # Create fallback assessment without AI
+            assessment = _create_fallback_assessment(quiz, quiz_version, submission.answers, str(e))
+    else:
+        # Skip AI, use fallback directly
+        assessment = _create_fallback_assessment(quiz, quiz_version, submission.answers, "AI grading not requested")
     
     # Update progress if passed
     if assessment["passed"]:
