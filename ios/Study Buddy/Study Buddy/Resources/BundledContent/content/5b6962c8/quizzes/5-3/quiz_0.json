@@ -1,0 +1,61 @@
+{
+  "topic_name": "Security Monitoring and SIEM",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using a SIEM system over traditional log analysis tools for security monitoring?",
+      "options": [
+        "SIEM systems store more data than traditional tools",
+        "SIEM systems correlate events from multiple sources to identify patterns and anomalies",
+        "SIEM systems are always cloud-based and more secure",
+        "SIEM systems automatically fix security vulnerabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "The key advantage of SIEM systems is their ability to aggregate, normalize, and correlate security events from multiple sources (firewalls, servers, applications, etc.) to identify patterns that might indicate security threats, which individual log analysis tools cannot effectively accomplish."
+    },
+    {
+      "question": "A company's SIEM system generates an alert for multiple failed login attempts from the same IP address targeting different user accounts. What type of attack pattern does this most likely indicate?",
+      "options": [
+        "SQL injection attack",
+        "Password spraying attack",
+        "Man-in-the-middle attack",
+        "Cross-site scripting attack"
+      ],
+      "correct_index": 1,
+      "explanation": "Password spraying is an attack where an attacker tries a few common passwords against many user accounts from the same source, which matches the pattern of multiple failed logins from one IP targeting different accounts. This differs from brute force attacks that target one account with many passwords."
+    },
+    {
+      "question": "When implementing a SIEM solution, why is it crucial to establish baseline behavior before deploying alerting rules?",
+      "options": [
+        "To comply with regulatory requirements",
+        "To reduce false positives by understanding normal network and user behavior patterns",
+        "To ensure the SIEM system has enough storage capacity",
+        "To validate that all security devices are properly connected"
+      ],
+      "correct_index": 1,
+      "explanation": "Establishing baseline behavior is essential to configure accurate alerting thresholds and rules. Without understanding what normal activity looks like, the SIEM will generate too many false positives (alerting on normal behavior) or false negatives (missing actual threats), making it ineffective for security monitoring."
+    },
+    {
+      "question": "In which scenario would real-time SIEM monitoring be MOST critical compared to batch processing of security logs?",
+      "options": [
+        "Generating monthly compliance reports",
+        "Detecting an active data exfiltration attempt",
+        "Analyzing historical attack trends",
+        "Performing routine system maintenance"
+      ],
+      "correct_index": 1,
+      "explanation": "Real-time monitoring is most critical when immediate response is needed to prevent or minimize damage. An active data exfiltration attempt requires immediate detection and response to stop the breach, while the other scenarios involve historical analysis or routine activities that don't require real-time processing."
+    },
+    {
+      "question": "A security analyst notices that their SIEM system's correlation rules are not detecting a sophisticated multi-stage attack. What is the most likely underlying issue?",
+      "options": [
+        "The SIEM system needs more storage capacity",
+        "The correlation rules are not configured to detect relationships between seemingly unrelated events across time",
+        "The SIEM system is missing antivirus integration",
+        "The log retention period is too short"
+      ],
+      "correct_index": 1,
+      "explanation": "Sophisticated multi-stage attacks often involve seemingly unrelated activities spread across time that, when correlated, reveal the attack pattern. If correlation rules only look at immediate events or don't account for temporal relationships between different types of activities, they will miss these complex attack chains."
+    }
+  ],
+  "passing_score": 80
+}

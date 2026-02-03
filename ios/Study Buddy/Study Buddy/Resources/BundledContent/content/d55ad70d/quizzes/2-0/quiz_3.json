@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!",
+  "questions": [
+    {
+      "question": "What is the fundamental characteristic that distinguishes block storage from file storage?",
+      "options": [
+        "Block storage is always faster than file storage",
+        "Block storage operates at the raw sector level without a file system layer",
+        "Block storage can only be used locally, not over networks",
+        "Block storage requires special applications to access data"
+      ],
+      "correct_index": 1,
+      "explanation": "Block storage provides raw, unformatted storage at the block/sector level, allowing the operating system to format it with any file system. This is different from file storage which presents a pre-formatted file system interface."
+    },
+    {
+      "question": "A company needs to provide shared storage for multiple database servers that require consistent, low-latency access to the same data volumes. Which block storage solution would be most appropriate?",
+      "options": [
+        "Local SSDs in each server",
+        "iSCSI over regular Ethernet",
+        "Fibre Channel SAN",
+        "Network-attached file shares"
+      ],
+      "correct_index": 2,
+      "explanation": "Fibre Channel SAN provides the highest performance, lowest latency, and most reliable shared block storage for mission-critical applications like databases. It uses dedicated storage networks and supports advanced features like multipathing."
+    },
+    {
+      "question": "When implementing iSCSI storage, what is the primary advantage over local storage, and what is a key consideration?",
+      "options": [
+        "Always faster performance; requires more CPU resources",
+        "Centralized management and shared storage; network bandwidth becomes a bottleneck",
+        "Lower cost; reduced reliability",
+        "Simpler configuration; limited scalability"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI allows storage centralization and sharing across multiple servers, but performance depends heavily on network bandwidth and latency. Unlike local storage, data must traverse the network, making network infrastructure critical."
+    },
+    {
+      "question": "Why would a virtualization environment prefer block storage over file-based storage for virtual machine disk images?",
+      "options": [
+        "Block storage is always cheaper to implement",
+        "Block storage provides better random I/O performance and allows direct control over disk formatting",
+        "Block storage automatically provides data deduplication",
+        "Block storage eliminates the need for backups"
+      ],
+      "correct_index": 1,
+      "explanation": "Block storage allows the hypervisor to control the exact layout and formatting of virtual disks, providing better performance for random access patterns typical in VMs. It also enables features like thin provisioning and snapshots at the block level."
+    },
+    {
+      "question": "A small business wants to upgrade from local storage but has budget constraints and existing Ethernet infrastructure. They need shared storage for file servers and backup systems. What would be the most cost-effective block storage approach?",
+      "options": [
+        "Implement a full Fibre Channel SAN",
+        "Deploy iSCSI storage using existing network infrastructure",
+        "Install larger local drives in each server",
+        "Use only cloud-based block storage"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI leverages existing Ethernet infrastructure, making it the most cost-effective way to implement shared block storage for small businesses. It provides centralization benefits without requiring expensive Fibre Channel equipment."
+    }
+  ],
+  "passing_score": 80
+}

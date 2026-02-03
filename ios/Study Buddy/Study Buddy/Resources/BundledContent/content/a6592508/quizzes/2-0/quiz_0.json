@@ -1,0 +1,61 @@
+{
+  "topic_name": "Treatment Categories",
+  "questions": [
+    {
+      "question": "A 25-year-old male shows early signs of male pattern baldness with thinning at the crown. Which treatment approach would most directly target the underlying hormonal mechanism causing his hair loss?",
+      "options": [
+        "Topical minoxidil application",
+        "Oral finasteride therapy",
+        "Low-level laser therapy",
+        "Nutritional supplements with biotin"
+      ],
+      "correct_index": 1,
+      "explanation": "Oral finasteride directly blocks 5-alpha reductase, preventing conversion of testosterone to DHT, which is the primary hormonal driver of male pattern baldness. Minoxidil improves blood flow but doesn't address the hormonal cause."
+    },
+    {
+      "question": "Why might a dermatologist recommend combining topical and oral treatments for androgenetic alopecia rather than using either approach alone?",
+      "options": [
+        "Topical treatments work faster, so oral medications aren't needed long-term",
+        "They target different mechanisms - vascular vs. hormonal - providing synergistic effects",
+        "Oral medications are only effective for women, while topical work for men",
+        "Combining treatments reduces the total time needed from 12 months to 3 months"
+      ],
+      "correct_index": 1,
+      "explanation": "Topical minoxidil primarily improves blood circulation and extends growth phases, while oral treatments like finasteride address hormonal causes. This multi-mechanism approach often yields better results than single treatments."
+    },
+    {
+      "question": "A 35-year-old woman with diffuse hair thinning has tried topical minoxidil for 8 months with minimal improvement. Her blood tests show low iron and vitamin D levels. What should be the next priority in her treatment plan?",
+      "options": [
+        "Switch to oral minoxidil for better absorption",
+        "Begin hair transplant consultation immediately",
+        "Address nutritional deficiencies through lifestyle and supplementation",
+        "Start laser therapy sessions three times weekly"
+      ],
+      "correct_index": 2,
+      "explanation": "When nutritional deficiencies are identified, addressing these root causes should be prioritized as they can significantly impact hair growth. Correcting iron and vitamin D deficiencies may improve treatment responsiveness."
+    },
+    {
+      "question": "Under what circumstances would surgical hair restoration be considered premature or inappropriate for treating hair loss?",
+      "options": [
+        "When the patient is over 45 years old with stable hair loss patterns",
+        "When the patient has aggressive, ongoing hair loss that hasn't been medically stabilized",
+        "When the patient has tried topical treatments for less than 2 years",
+        "When the patient's hair loss is limited to the crown area only"
+      ],
+      "correct_index": 1,
+      "explanation": "Surgery should typically be delayed until hair loss is stabilized through medical treatment. Performing transplants during active, progressive loss can lead to poor aesthetic outcomes as surrounding native hair continues to thin."
+    },
+    {
+      "question": "A patient asks why their doctor emphasized stress management and sleep hygiene as part of their hair loss treatment plan, alongside medical therapies. What is the scientific rationale for including these lifestyle modifications?",
+      "options": [
+        "Lifestyle changes work faster than medications and can replace them entirely",
+        "Chronic stress and poor sleep can disrupt hair growth cycles and worsen treatment outcomes",
+        "These modifications help patients save money by reducing medication dosages needed",
+        "Lifestyle approaches only work for stress-induced hair loss, not genetic types"
+      ],
+      "correct_index": 1,
+      "explanation": "Chronic stress elevates cortisol levels and can push hair follicles into telogen (resting) phase prematurely, while poor sleep affects growth hormone release. These factors can undermine medical treatments and should be addressed for optimal outcomes."
+    }
+  ],
+  "passing_score": 80
+}

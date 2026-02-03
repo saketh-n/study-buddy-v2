@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!",
+  "questions": [
+    {
+      "question": "What is the fundamental characteristic that distinguishes block storage from file storage?",
+      "options": [
+        "Block storage provides faster data transfer speeds",
+        "Block storage presents raw storage volumes that can be partitioned and formatted by the operating system",
+        "Block storage only works with SSD drives",
+        "Block storage requires a network connection to function"
+      ],
+      "correct_index": 1,
+      "explanation": "Block storage presents raw, unformatted storage volumes to the operating system, which then manages partitioning, formatting, and file systems. This is different from file storage which presents a ready-to-use file system interface."
+    },
+    {
+      "question": "A database administrator needs to provide high-performance storage for a mission-critical database that requires consistent low latency and high IOPS. Multiple database servers need shared access to the same storage volumes. Which solution would be most appropriate?",
+      "options": [
+        "Local NVMe SSDs on each server",
+        "Network File System (NFS)",
+        "Fibre Channel SAN with shared LUNs",
+        "Object storage with REST API"
+      ],
+      "correct_index": 2,
+      "explanation": "A Fibre Channel SAN provides the high performance, low latency, and shared access capabilities needed for mission-critical databases. Local storage can't be shared, NFS adds file system overhead, and object storage isn't suitable for database workloads."
+    },
+    {
+      "question": "An organization is implementing iSCSI for their storage infrastructure. What is the primary advantage of iSCSI compared to traditional Fibre Channel SAN?",
+      "options": [
+        "iSCSI provides better performance than Fibre Channel",
+        "iSCSI uses existing Ethernet infrastructure, reducing implementation costs",
+        "iSCSI only works with local storage devices",
+        "iSCSI automatically encrypts all data transfers"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI's main advantage is leveraging existing Ethernet networks and infrastructure, making it more cost-effective to implement than Fibre Channel which requires specialized hardware and switches."
+    },
+    {
+      "question": "Why would a virtualization administrator choose block storage over file storage for virtual machine disk images?",
+      "options": [
+        "Block storage is always cheaper than file storage",
+        "Block storage provides better performance and allows direct control over storage allocation and formatting",
+        "Block storage automatically backs up virtual machines",
+        "Block storage only works with specific hypervisor brands"
+      ],
+      "correct_index": 1,
+      "explanation": "Block storage gives the hypervisor direct control over raw storage blocks, enabling better performance optimization, custom formatting, and efficient space allocation for VM disk images compared to file-based storage."
+    },
+    {
+      "question": "A company needs to decide between local block storage and SAN-based block storage for their new application servers. In which scenario would SAN-based block storage be the better choice?",
+      "options": [
+        "When the application requires the absolute lowest possible latency",
+        "When storage needs to be shared across multiple servers and high availability is required",
+        "When the budget is extremely limited",
+        "When the servers only need small amounts of storage"
+      ],
+      "correct_index": 1,
+      "explanation": "SAN-based storage excels when multiple servers need access to shared storage resources and when high availability features like replication, snapshots, and failover capabilities are required. Local storage offers lower latency but can't be shared."
+    }
+  ],
+  "passing_score": 80
+}

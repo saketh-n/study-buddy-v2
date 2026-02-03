@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Core Networking",
+  "questions": [
+    {
+      "question": "A company wants to host a web application where the web servers need internet access for software updates, but the database servers should never be directly accessible from the internet. What is the most appropriate subnet configuration?",
+      "options": [
+        "Place both web servers and database servers in public subnets with security groups for access control",
+        "Place web servers in public subnets and database servers in private subnets",
+        "Place both web servers and database servers in private subnets and use a load balancer",
+        "Create a single subnet and use NACLs to control traffic flow"
+      ],
+      "correct_index": 1,
+      "explanation": "Public subnets have direct internet access via an Internet Gateway, making them suitable for web servers that need to serve internet traffic. Private subnets don't have direct internet routes, providing the isolation needed for database servers while still allowing internal communication."
+    },
+    {
+      "question": "Your organization has multiple VPCs across different AWS regions that need to communicate with each other and with on-premises networks. Currently, you're using VPC peering, but the network topology is becoming complex to manage. What would be the best solution to simplify this architecture?",
+      "options": [
+        "Create more VPC peering connections to establish full mesh connectivity",
+        "Implement AWS Transit Gateway to act as a central hub for all connections",
+        "Use Internet Gateways to route traffic through the public internet",
+        "Set up VPN connections directly between each VPC"
+      ],
+      "correct_index": 1,
+      "explanation": "Transit Gateway acts as a central hub that simplifies network topology by allowing multiple VPCs and on-premises networks to connect through a single point, eliminating the need for complex mesh peering relationships and providing better scalability and management."
+    },
+    {
+      "question": "An application running in a private subnet needs to download software packages from the internet, but you want to ensure no inbound internet traffic can reach the subnet. What components are required to achieve this?",
+      "options": [
+        "Internet Gateway and route table modification",
+        "NAT Gateway in a public subnet, Internet Gateway, and proper route table entries",
+        "VPC Endpoint and Internet Gateway",
+        "Only security group rules allowing outbound HTTPS traffic"
+      ],
+      "correct_index": 1,
+      "explanation": "A NAT Gateway must be placed in a public subnet to have internet access via the Internet Gateway. The private subnet's route table directs internet-bound traffic to the NAT Gateway, which performs network address translation to allow outbound connections while preventing inbound internet access."
+    },
+    {
+      "question": "You need to design a VPC for a three-tier application (web, application, database) that requires high availability across multiple Availability Zones. What is the minimum number of subnets needed if you want to follow AWS best practices for security and availability?",
+      "options": [
+        "3 subnets (one for each tier)",
+        "4 subnets (public and private pairs)",
+        "6 subnets (three tiers across two AZs)",
+        "9 subnets (three tiers across three AZs)"
+      ],
+      "correct_index": 2,
+      "explanation": "Following AWS best practices, you need public subnets for the web tier and private subnets for application and database tiers. To achieve high availability, each tier should span at least two AZs, requiring 6 subnets minimum: 2 public (web tier) + 2 private (app tier) + 2 private (database tier)."
+    },
+    {
+      "question": "A company is experiencing slow performance when accessing S3 buckets from EC2 instances in their VPC. The traffic is currently routing through the Internet Gateway. What would be the most effective solution to improve performance and reduce costs?",
+      "options": [
+        "Upgrade the EC2 instance types to have better network performance",
+        "Implement VPC Endpoints for S3 to keep traffic within AWS network",
+        "Increase the bandwidth allocation for the Internet Gateway",
+        "Use CloudFront as a caching layer for S3 access"
+      ],
+      "correct_index": 1,
+      "explanation": "VPC Endpoints for S3 create a direct, private connection between the VPC and S3 service, eliminating the need for traffic to traverse the Internet Gateway. This reduces latency, improves performance, and eliminates data transfer costs for S3 access while keeping traffic within the AWS network."
+    }
+  ],
+  "passing_score": 80
+}

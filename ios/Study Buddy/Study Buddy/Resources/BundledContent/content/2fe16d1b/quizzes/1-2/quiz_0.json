@@ -1,0 +1,61 @@
+{
+  "topic_name": "Model Evaluation and Validation",
+  "questions": [
+    {
+      "question": "You have a dataset with 1,000 samples and want to evaluate your model's performance. Your colleague suggests using 80% for training and 20% for testing, but you're concerned about getting a reliable estimate of model performance. What approach would provide the most robust evaluation?",
+      "options": [
+        "Use a larger test set (50-50 split) to get more reliable results",
+        "Implement 5-fold cross-validation to get multiple performance estimates",
+        "Train on the full dataset and test on the same data for maximum accuracy",
+        "Use 90-10 split to maximize training data and minimize variance"
+      ],
+      "correct_index": 1,
+      "explanation": "5-fold cross-validation provides multiple performance estimates by training and testing on different subsets, giving a more robust and less biased estimate of model performance than a single train-test split."
+    },
+    {
+      "question": "Your model achieves 99% accuracy on a binary classification problem, but your manager is concerned about its real-world performance. Upon investigation, you find that 95% of your dataset belongs to one class. Which metric would best reveal the true performance issue?",
+      "options": [
+        "Increase the test set size to get more reliable accuracy measurements",
+        "Calculate precision and recall for each class separately",
+        "Use mean squared error instead of accuracy",
+        "Focus on reducing the training time to improve efficiency"
+      ],
+      "correct_index": 1,
+      "explanation": "With imbalanced classes (95%-5%), accuracy is misleading. Precision and recall for each class reveal whether the model is simply predicting the majority class, providing insight into performance on both classes."
+    },
+    {
+      "question": "During model development, you notice that training accuracy reaches 98% while validation accuracy plateaus at 75% after a few epochs. The gap continues to widen with more training. What is the most appropriate next step?",
+      "options": [
+        "Continue training longer to allow validation accuracy to catch up",
+        "Reduce model complexity by removing layers or reducing parameters",
+        "Increase the learning rate to help the model converge faster",
+        "Add more training data to improve the training accuracy further"
+      ],
+      "correct_index": 1,
+      "explanation": "The widening gap between training (98%) and validation (75%) accuracy indicates overfitting. Reducing model complexity helps the model generalize better by preventing it from memorizing training data."
+    },
+    {
+      "question": "You're comparing two models: Model A has high bias and low variance, while Model B has low bias and high variance. Given a moderate-sized dataset and the need for consistent performance across different data samples, which approach would be most effective?",
+      "options": [
+        "Choose Model A because high bias ensures better generalization",
+        "Choose Model B because low bias means higher accuracy",
+        "Use ensemble methods to combine multiple Model B instances",
+        "Increase Model A's complexity while using regularization techniques"
+      ],
+      "correct_index": 3,
+      "explanation": "Model A (high bias, low variance) is underfitting, while Model B (low bias, high variance) is overfitting. Increasing Model A's complexity while adding regularization can achieve better bias-variance balance for optimal performance."
+    },
+    {
+      "question": "Your team is developing a medical diagnosis model where false negatives (missing a disease) are much more costly than false positives (false alarms). You have a model with 85% precision and 60% recall. What should be your optimization strategy?",
+      "options": [
+        "Focus on improving precision to reduce false positives and minimize unnecessary treatments",
+        "Focus on improving recall to catch more true cases, even if it increases false positives",
+        "Aim to balance precision and recall equally using F1-score optimization",
+        "Use accuracy as the primary metric since it provides the most comprehensive view"
+      ],
+      "correct_index": 1,
+      "explanation": "In medical diagnosis where missing a disease (false negative) is more costly than false alarms, recall is more critical. Higher recall ensures fewer cases are missed, even if it means more false positives."
+    }
+  ],
+  "passing_score": 80
+}

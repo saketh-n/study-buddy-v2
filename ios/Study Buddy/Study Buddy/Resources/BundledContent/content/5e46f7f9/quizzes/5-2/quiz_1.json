@@ -1,0 +1,61 @@
+{
+  "topic_name": "Next-Generation Firewalls",
+  "questions": [
+    {
+      "question": "What is the primary advantage of Next-Generation Firewalls (NGFWs) over traditional stateful firewalls when dealing with modern web applications?",
+      "options": [
+        "They can block traffic based on port numbers",
+        "They can inspect and control traffic based on application identity regardless of port or protocol",
+        "They provide faster packet forwarding through hardware acceleration",
+        "They support more simultaneous network connections"
+      ],
+      "correct_index": 1,
+      "explanation": "NGFWs can identify applications through deep packet inspection and application signatures, allowing control based on what the application actually is (like Zoom or Slack) rather than just which port it uses, since modern apps often use dynamic ports or tunnel through common ports like 80/443."
+    },
+    {
+      "question": "A company wants to allow Zoom video calls but block Zoom file sharing features. Which NGFW capability makes this granular control possible?",
+      "options": [
+        "Port-based filtering with custom rules",
+        "Application awareness with function-level control",
+        "Bandwidth throttling per user",
+        "SSL certificate inspection"
+      ],
+      "correct_index": 1,
+      "explanation": "NGFWs with application awareness can identify not just that traffic is Zoom, but can distinguish between different functions within the same application (video calling vs. file sharing), enabling granular policy control at the feature level."
+    },
+    {
+      "question": "When would deep packet inspection (DPI) in an NGFW be most critical for network security?",
+      "options": [
+        "When users frequently change their passwords",
+        "When malware attempts to hide in legitimate application traffic",
+        "When the network has high bandwidth utilization",
+        "When employees work different shift schedules"
+      ],
+      "correct_index": 1,
+      "explanation": "DPI is crucial for detecting threats that try to evade detection by hiding within or mimicking legitimate application traffic. Traditional firewalls looking only at headers would miss malware tunneled through HTTPS or disguised as legitimate application data."
+    },
+    {
+      "question": "What is the key difference between how IPS (Intrusion Prevention System) and IDS (Intrusion Detection System) capabilities function within an NGFW?",
+      "options": [
+        "IPS works at Layer 3, while IDS works at Layer 7",
+        "IPS actively blocks threats in real-time, while IDS primarily monitors and alerts",
+        "IPS requires more CPU resources than IDS",
+        "IPS uses signature-based detection, while IDS uses behavioral analysis"
+      ],
+      "correct_index": 1,
+      "explanation": "The fundamental difference is in response: IPS operates inline and can actively block or prevent malicious traffic in real-time, while IDS typically operates in monitoring mode, detecting threats and generating alerts for administrators to respond to manually."
+    },
+    {
+      "question": "A network administrator notices that employees are using multiple collaboration tools (Teams, Slack, Discord) for business communications, creating policy management challenges. How should NGFW application recognition capabilities be leveraged to address this scenario?",
+      "options": [
+        "Block all applications except one approved tool using application-based policies",
+        "Use bandwidth limiting to make unapproved applications too slow to use effectively",
+        "Create separate VLANs for each application type",
+        "Implement user-based authentication for each application separately"
+      ],
+      "correct_index": 0,
+      "explanation": "NGFW application recognition allows administrators to create policies based on application identity, making it straightforward to allow approved collaboration tools while blocking others, regardless of ports used or encryption. This provides clear, enforceable policies aligned with business requirements."
+    }
+  ],
+  "passing_score": 80
+}

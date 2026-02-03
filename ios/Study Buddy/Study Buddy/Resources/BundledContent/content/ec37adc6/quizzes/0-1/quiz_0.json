@@ -1,0 +1,61 @@
+{
+  "topic_name": "Glucose Homeostasis",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes has persistently elevated postprandial glucose levels despite adequate basal insulin control. Which physiological mechanism would a GLP-1 receptor agonist primarily target to address this specific problem?",
+      "options": [
+        "Increasing hepatic glucose production during meals",
+        "Enhancing glucose-dependent insulin secretion from pancreatic beta cells",
+        "Blocking glucose reabsorption in the kidneys",
+        "Directly stimulating muscle glucose uptake independent of insulin"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists enhance glucose-dependent insulin secretion, meaning they stimulate insulin release only when glucose levels are elevated, making them particularly effective for postprandial glucose control while minimizing hypoglycemia risk."
+    },
+    {
+      "question": "During the fasting state, why would endogenous GLP-1 activity naturally decrease, and how does this relate to normal glucose homeostasis?",
+      "options": [
+        "GLP-1 would interfere with necessary glucagon secretion needed to maintain blood glucose",
+        "High GLP-1 during fasting would cause dangerous hypoglycemia by continuously stimulating insulin",
+        "GLP-1 receptors become desensitized after 8 hours without food intake",
+        "Fasting triggers GLP-1 degradation to conserve energy for vital organs"
+      ],
+      "correct_index": 0,
+      "explanation": "During fasting, the body needs glucagon to stimulate hepatic glucose production to maintain blood glucose. High GLP-1 activity would suppress this necessary glucagon secretion and inappropriately stimulate insulin, disrupting the normal fasting glucose homeostasis."
+    },
+    {
+      "question": "A patient asks why their GLP-1 receptor agonist helps with weight loss in addition to glucose control. Which interconnected metabolic mechanism best explains this dual benefit?",
+      "options": [
+        "GLP-1 directly blocks fat absorption in the intestines while lowering glucose",
+        "The medication increases metabolic rate, burning both glucose and fat more rapidly",
+        "GLP-1 slows gastric emptying and promotes satiety, reducing caloric intake and subsequent glucose excursions",
+        "GLP-1 converts excess glucose directly into muscle protein instead of fat storage"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptor agonists slow gastric emptying and act on satiety centers in the brain, reducing food intake. This leads to weight loss and also helps with glucose control by slowing nutrient absorption and reducing meal-related glucose spikes."
+    },
+    {
+      "question": "In normal glucose homeostasis, insulin and glucagon work as counter-regulatory hormones. How do GLP-1 receptor agonists affect this balance, and why is this mechanism advantageous?",
+      "options": [
+        "They block both insulin and glucagon equally, requiring the liver to control glucose independently",
+        "They stimulate insulin and suppress glucagon, but only when glucose levels are elevated",
+        "They enhance glucagon sensitivity to prevent hypoglycemia while maintaining insulin action",
+        "They replace the need for both hormones by directly controlling cellular glucose uptake"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists have glucose-dependent effects: they enhance insulin secretion and suppress glucagon secretion only when glucose is elevated. This preserves the natural counter-regulatory response during hypoglycemia, maintaining physiological balance."
+    },
+    {
+      "question": "A clinician is considering GLP-1 therapy for a patient with dawn phenomenon (early morning glucose elevation). Which aspect of normal circadian glucose regulation would this medication most likely help restore?",
+      "options": [
+        "Blocking cortisol-induced insulin resistance that peaks in early morning",
+        "Restoring the normal suppression of hepatic glucose production by improving incretin signaling",
+        "Increasing melatonin production to regulate circadian insulin sensitivity",
+        "Enhancing growth hormone's positive effects on glucose metabolism during sleep"
+      ],
+      "correct_index": 1,
+      "explanation": "Dawn phenomenon involves inappropriate hepatic glucose production in the morning. GLP-1 receptor agonists help suppress excessive glucagon signaling and hepatic glucose output, helping to restore normal glucose regulation during this period."
+    }
+  ],
+  "passing_score": 80
+}

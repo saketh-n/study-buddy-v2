@@ -1,0 +1,61 @@
+{
+  "topic_name": "Calculus",
+  "questions": [
+    {
+      "question": "In machine learning, why are derivatives fundamentally important for training neural networks?",
+      "options": [
+        "They determine the final accuracy of the model",
+        "They measure how much the loss function changes with respect to parameter changes",
+        "They calculate the number of training iterations needed",
+        "They determine the optimal network architecture"
+      ],
+      "correct_index": 1,
+      "explanation": "Derivatives show how the loss function changes when parameters change, which is essential for gradient descent to know which direction and how much to adjust weights to minimize error."
+    },
+    {
+      "question": "What does the gradient vector represent in the context of multivariable optimization for machine learning?",
+      "options": [
+        "The minimum value of the loss function",
+        "The direction of steepest ascent and the rate of change in that direction",
+        "The optimal learning rate for the algorithm",
+        "The number of parameters in the model"
+      ],
+      "correct_index": 1,
+      "explanation": "The gradient vector points in the direction where the function increases most rapidly, which is why gradient descent moves in the negative gradient direction to find minima."
+    },
+    {
+      "question": "When would you choose to use stochastic gradient descent (SGD) instead of batch gradient descent in practice?",
+      "options": [
+        "When you have a very small dataset",
+        "When you need the most accurate gradient calculations",
+        "When you have large datasets and want faster iterations with acceptable approximation",
+        "When the loss function is convex"
+      ],
+      "correct_index": 2,
+      "explanation": "SGD uses random subsets of data for faster iterations, making it practical for large datasets where computing the full gradient would be computationally expensive, despite being a noisier approximation."
+    },
+    {
+      "question": "In backpropagation, why is the chain rule of calculus essential?",
+      "options": [
+        "It calculates the final output of the network",
+        "It determines the network architecture",
+        "It enables computing gradients of composite functions by breaking them into simpler parts",
+        "It sets the initial weights of the network"
+      ],
+      "correct_index": 2,
+      "explanation": "Neural networks are composite functions (functions of functions), and the chain rule allows us to compute derivatives through multiple layers by multiplying the derivatives of each component function."
+    },
+    {
+      "question": "What problem does adaptive learning rate methods like Adam solve that fixed learning rate gradient descent cannot?",
+      "options": [
+        "They eliminate the need for derivatives entirely",
+        "They automatically adjust step sizes based on historical gradient information to handle different parameter scales",
+        "They guarantee finding the global minimum",
+        "They reduce the number of parameters in the model"
+      ],
+      "correct_index": 1,
+      "explanation": "Adam and similar methods adapt learning rates for each parameter based on past gradients, helping handle parameters that need different step sizes and improving convergence in complex optimization landscapes."
+    }
+  ],
+  "passing_score": 80
+}

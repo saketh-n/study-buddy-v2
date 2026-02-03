@@ -1,0 +1,61 @@
+{
+  "topic_name": "Regulatory Approval Process",
+  "questions": [
+    {
+      "question": "A pharmaceutical company developing a novel GLP-1 receptor agonist has completed Phase II trials showing efficacy for weight management. What would be the most appropriate regulatory pathway to pursue for expedited FDA approval?",
+      "options": [
+        "Submit for Priority Review designation based on weight loss efficacy",
+        "Apply for Breakthrough Therapy designation if it shows substantial improvement over existing treatments",
+        "Request Fast Track designation since obesity is a serious condition",
+        "Proceed directly to standard BLA submission after Phase III"
+      ],
+      "correct_index": 1,
+      "explanation": "Breakthrough Therapy designation requires preliminary clinical evidence of substantial improvement over existing treatments on clinically significant endpoints. Priority Review and Fast Track have different criteria, and weight loss efficacy alone doesn't automatically qualify for expedited pathways."
+    },
+    {
+      "question": "During post-market surveillance of a newly approved GLP-1 receptor agonist, reports emerge of potential thyroid C-cell tumors. Which regulatory action would be most appropriate at this stage?",
+      "options": [
+        "Immediately withdraw the drug from the market",
+        "Issue a Dear Healthcare Provider letter and update the prescribing information",
+        "Conduct additional Phase IV studies and implement a Risk Evaluation and Mitigation Strategy (REMS)",
+        "Wait for more definitive data before taking any action"
+      ],
+      "correct_index": 2,
+      "explanation": "When serious but uncertain safety signals emerge post-market, regulators typically require additional studies and may implement REMS to ensure benefits outweigh risks while maintaining patient access. Immediate withdrawal would only occur with clear, immediate danger."
+    },
+    {
+      "question": "Why do regulatory agencies require cardiovascular outcome trials (CVOTs) specifically for GLP-1 receptor agonists intended for diabetes treatment?",
+      "options": [
+        "Because GLP-1 agonists have inherent cardiotoxic properties",
+        "Due to historical concerns about cardiovascular risks with diabetes medications following rosiglitazone safety issues",
+        "Because diabetes patients always have cardiovascular comorbidities",
+        "To demonstrate superiority over existing diabetes treatments"
+      ],
+      "correct_index": 1,
+      "explanation": "The FDA's 2008 diabetes guidance requiring cardiovascular safety assessment was triggered by the rosiglitazone controversy, establishing the need to rule out unacceptable cardiovascular risk for new diabetes medications, not because of inherent issues with GLP-1 agonists."
+    },
+    {
+      "question": "A GLP-1 receptor agonist approved in the EU under the centralized procedure is being considered for approval in the US. How does this prior approval impact the FDA review process?",
+      "options": [
+        "FDA automatically grants approval based on EMA decision",
+        "FDA can expedite review but must conduct independent evaluation of the same data",
+        "FDA only needs to review manufacturing and labeling differences",
+        "Prior EU approval has no bearing on FDA review process"
+      ],
+      "correct_index": 1,
+      "explanation": "While FDA may expedite review for drugs already approved by stringent regulatory authorities, they maintain independent evaluation standards. Prior approvals can inform but don't determine FDA decisions, as agencies may reach different conclusions from the same data."
+    },
+    {
+      "question": "During Phase III trials for a GLP-1 receptor agonist, interim analysis shows the drug meets the primary endpoint but reveals an unexpected safety signal. What is the most likely regulatory consultation approach?",
+      "options": [
+        "Continue trials without modification since primary endpoint is met",
+        "Immediately terminate all trials and submit available data",
+        "Conduct a planned interim safety analysis with regulatory agencies to determine if trials should continue with modifications",
+        "Switch to a different primary endpoint to avoid the safety issue"
+      ],
+      "correct_index": 2,
+      "explanation": "When unexpected safety signals emerge during pivotal trials, sponsors typically engage in regulatory consultation through planned interim analyses to evaluate benefit-risk and determine appropriate trial modifications, rather than stopping or continuing unchanged."
+    }
+  ],
+  "passing_score": 80
+}

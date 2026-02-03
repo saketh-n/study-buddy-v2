@@ -1,0 +1,61 @@
+{
+  "topic_name": "CAP theorem !!",
+  "questions": [
+    {
+      "question": "According to the CAP theorem, which statement best describes the fundamental constraint in distributed systems?",
+      "options": [
+        "A distributed system can guarantee at most two of the three properties: Consistency, Availability, and Partition tolerance",
+        "A distributed system must always sacrifice Consistency to achieve high Availability",
+        "A distributed system can achieve all three properties (Consistency, Availability, Partition tolerance) with sufficient hardware",
+        "A distributed system should prioritize Partition tolerance over Consistency and Availability in all scenarios"
+      ],
+      "correct_index": 0,
+      "explanation": "The CAP theorem states that in the presence of a network partition, a distributed system must choose between Consistency and Availability - it cannot guarantee both simultaneously while maintaining Partition tolerance."
+    },
+    {
+      "question": "A banking system needs to ensure that account balances are always accurate across all nodes, even if some transactions take longer to process. During a network partition, which CAP properties should this system prioritize?",
+      "options": [
+        "Availability and Partition tolerance (AP)",
+        "Consistency and Partition tolerance (CP)",
+        "Consistency and Availability (CA)",
+        "All three properties equally"
+      ],
+      "correct_index": 1,
+      "explanation": "Banking systems require strong consistency to prevent issues like double-spending or incorrect balances. During network partitions, they should maintain consistency and partition tolerance, even if it means some operations become temporarily unavailable."
+    },
+    {
+      "question": "Why is the 'CA' combination (Consistency + Availability without Partition tolerance) generally considered impractical in real-world distributed systems?",
+      "options": [
+        "It requires too much computational power to maintain consistency",
+        "Network partitions are inevitable in distributed systems, so partition tolerance cannot be ignored",
+        "Availability always conflicts with consistency in any system design",
+        "Most applications don't actually need consistent data"
+      ],
+      "correct_index": 1,
+      "explanation": "Network partitions are a reality in distributed systems due to hardware failures, network issues, or geographical separation. Since partitions will occur, systems must be designed to handle them, making partition tolerance essential rather than optional."
+    },
+    {
+      "question": "A social media platform allows users to post updates that should be visible immediately to provide good user experience, and temporary inconsistencies in the news feed are acceptable. Which CAP combination best fits this scenario?",
+      "options": [
+        "CP (Consistency + Partition tolerance) - ensure all users see identical content",
+        "CA (Consistency + Availability) - maintain perfect sync without downtime",
+        "AP (Availability + Partition tolerance) - prioritize user experience and uptime",
+        "Focus only on Consistency to prevent any data conflicts"
+      ],
+      "correct_index": 2,
+      "explanation": "Social media platforms typically choose AP systems because user experience and continuous availability are more important than having perfectly synchronized feeds across all users. Temporary inconsistencies (like seeing slightly different posts) are acceptable trade-offs."
+    },
+    {
+      "question": "In the context of CAP theorem, what does 'eventual consistency' typically represent, and when might it be chosen?",
+      "options": [
+        "A way to achieve all three CAP properties simultaneously by delaying some operations",
+        "A consistency model often used in AP systems where data will become consistent over time when partitions are resolved",
+        "A backup strategy that only activates when the primary consistency mechanism fails",
+        "A requirement that all distributed systems must implement to comply with CAP theorem"
+      ],
+      "correct_index": 1,
+      "explanation": "Eventual consistency is commonly used in AP (Available and Partition-tolerant) systems. It allows the system to accept writes and remain available during partitions, with the guarantee that once partitions are healed and no new updates occur, all nodes will converge to the same state."
+    }
+  ],
+  "passing_score": 80
+}

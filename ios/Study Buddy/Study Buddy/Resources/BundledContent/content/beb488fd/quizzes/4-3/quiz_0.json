@@ -1,0 +1,61 @@
+{
+  "topic_name": "Monitoring and Logging",
+  "questions": [
+    {
+      "question": "Your data pipeline processes customer orders and occasionally fails silently, causing revenue loss. Which observability approach would be MOST effective for detecting this issue early?",
+      "options": [
+        "Increasing log verbosity to capture all database queries",
+        "Implementing business metric monitoring with alerting on order count drops",
+        "Adding more CPU and memory monitoring to pipeline servers",
+        "Enabling debug-level logging for all pipeline components"
+      ],
+      "correct_index": 1,
+      "explanation": "Business metric monitoring tracks the actual business impact (order counts) and would detect silent failures that don't trigger system-level alerts. System resource monitoring and verbose logging might miss silent business logic failures."
+    },
+    {
+      "question": "When designing logging for a high-throughput data ingestion pipeline processing millions of events per hour, which strategy balances observability with performance?",
+      "options": [
+        "Log every single event with full payload details for complete traceability",
+        "Use sampling to log a representative subset of events plus all errors and anomalies",
+        "Only log system-level metrics like CPU and memory usage",
+        "Log only the first and last event of each batch with summary statistics"
+      ],
+      "correct_index": 1,
+      "explanation": "Sampling provides visibility into normal operations without overwhelming storage and performance, while ensuring all errors are captured. Logging every event is prohibitively expensive, while logging only system metrics or batch boundaries loses important business context."
+    },
+    {
+      "question": "A data transformation job shows normal CPU/memory usage but users report stale data. Which monitoring metric would have detected this issue?",
+      "options": [
+        "Peak memory utilization during processing",
+        "Data freshness and processing lag time",
+        "Network bandwidth consumption",
+        "Thread pool utilization rates"
+      ],
+      "correct_index": 1,
+      "explanation": "Data freshness metrics track how current the processed data is, which directly addresses the 'stale data' problem. System resource metrics (CPU, memory, network, threads) can appear normal even when business logic issues cause data staleness."
+    },
+    {
+      "question": "Your team needs to troubleshoot a complex data pipeline spanning multiple services. Which logging practice would make distributed tracing most effective?",
+      "options": [
+        "Using the same log format across all services for consistency",
+        "Implementing correlation IDs that propagate through the entire request flow",
+        "Centralizing all logs in a single database table",
+        "Setting all services to the same log level for uniformity"
+      ],
+      "correct_index": 1,
+      "explanation": "Correlation IDs allow you to trace a single request's journey across multiple services, making distributed debugging possible. Consistent formats and centralized storage help with analysis but don't enable tracing. Uniform log levels can actually hurt by creating too much or too little detail."
+    },
+    {
+      "question": "When would you choose pull-based monitoring (like Prometheus) over push-based monitoring for a data pipeline system?",
+      "options": [
+        "When you need real-time alerting on critical failures",
+        "When pipeline components are short-lived and frequently created/destroyed",
+        "When you want centralized control over what metrics are collected and how often",
+        "When the network between components is unreliable"
+      ],
+      "correct_index": 2,
+      "explanation": "Pull-based monitoring gives the monitoring system control over collection frequency and targets, making it easier to manage at scale. Push-based is better for short-lived processes, unreliable networks, and real-time alerting since it doesn't rely on the monitoring system being able to reach targets."
+    }
+  ],
+  "passing_score": 80
+}

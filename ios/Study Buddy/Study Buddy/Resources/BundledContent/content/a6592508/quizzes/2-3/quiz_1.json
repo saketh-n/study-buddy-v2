@@ -1,0 +1,61 @@
+{
+  "topic_name": "Treatment Selection and Expectations",
+  "questions": [
+    {
+      "question": "A 25-year-old male with early-stage male pattern baldness (Norwood II) asks about treatment options. What would be the MOST appropriate first-line approach and realistic expectation?",
+      "options": [
+        "Hair transplant surgery with expectation of full hair restoration",
+        "Finasteride with expectation of slowing progression and possible regrowth",
+        "Topical steroids with expectation of reversing genetic baldness",
+        "Waiting until more advanced stages for better treatment outcomes"
+      ],
+      "correct_index": 1,
+      "explanation": "For early-stage androgenetic alopecia, finasteride is typically first-line treatment. Realistic expectations include slowing progression and potential modest regrowth, not dramatic restoration. Hair transplants are usually reserved for more advanced cases."
+    },
+    {
+      "question": "Why is it important to identify the underlying cause of hair loss before selecting treatment?",
+      "options": [
+        "All hair loss treatments work the same regardless of cause",
+        "Different causes require different mechanisms of action for effective treatment",
+        "Insurance only covers treatments that match the diagnosed cause",
+        "Patients prefer to know the cause even if treatment is the same"
+      ],
+      "correct_index": 1,
+      "explanation": "Different types of hair loss have different underlying mechanisms (hormonal, autoimmune, nutritional, etc.) and therefore require targeted treatments. Androgenetic alopecia treatments won't help alopecia areata, for example."
+    },
+    {
+      "question": "A patient has been using minoxidil for 8 months and reports 'no improvement.' What is the most likely explanation and appropriate next step?",
+      "options": [
+        "The treatment has failed and should be discontinued immediately",
+        "The patient needs a higher concentration or different formulation",
+        "This timeframe is insufficient to judge efficacy; continue treatment",
+        "The patient should switch to oral medications immediately"
+      ],
+      "correct_index": 2,
+      "explanation": "Minoxidil typically requires 6-12 months to show visible results, and initial shedding may make hair appear worse initially. Many patients expect faster results and may discontinue effective treatments prematurely."
+    },
+    {
+      "question": "When would combination therapy be most appropriate for treating hair loss?",
+      "options": [
+        "Only when single treatments have completely failed",
+        "When targeting multiple pathways of the same hair loss mechanism",
+        "As first-line treatment for all types of hair loss",
+        "Only for patients over 40 years old"
+      ],
+      "correct_index": 1,
+      "explanation": "Combination therapy (e.g., finasteride + minoxidil) can be more effective because they target different aspects of androgenetic alopecia - hormonal reduction and increased blood flow respectively, providing synergistic effects."
+    },
+    {
+      "question": "What is the most important factor to consider when setting treatment expectations with a hair loss patient?",
+      "options": [
+        "Patient's age and gender only",
+        "Cost and insurance coverage",
+        "Stage of hair loss, treatment mechanism, and individual response variability",
+        "Patient's desired timeline for results"
+      ],
+      "correct_index": 2,
+      "explanation": "Realistic expectations depend on multiple factors: how advanced the hair loss is, how the treatment works, and individual biological variation in response. Age, gender, cost, and patient desires are relevant but secondary to these biological realities."
+    }
+  ],
+  "passing_score": 80
+}

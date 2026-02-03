@@ -1,0 +1,61 @@
+{
+  "topic_name": "Valley big storage companies: NetApp, Pure, Brocade switches,..; Disks: Western Digital, Hitachi, San Disk,..",
+  "questions": [
+    {
+      "question": "A company needs to implement a storage solution that provides both high-performance flash storage and traditional spinning disk storage in a unified system. Which type of vendor solution would be most appropriate?",
+      "options": [
+        "Pure Storage all-flash arrays",
+        "NetApp hybrid storage systems",
+        "Brocade Fibre Channel switches",
+        "SanDisk standalone SSDs"
+      ],
+      "correct_index": 1,
+      "explanation": "NetApp offers hybrid storage systems that can combine flash and traditional disk storage in unified arrays, providing both performance and cost-effectiveness. Pure Storage focuses on all-flash solutions, while Brocade provides networking infrastructure and SanDisk provides individual storage components."
+    },
+    {
+      "question": "An enterprise is experiencing storage performance bottlenecks in their SAN environment despite having fast storage arrays. The issue is most likely in the network layer. Which vendor specializes in addressing this type of problem?",
+      "options": [
+        "Western Digital",
+        "Pure Storage",
+        "Brocade",
+        "Hitachi"
+      ],
+      "correct_index": 2,
+      "explanation": "Brocade specializes in Fibre Channel switches and SAN networking infrastructure. Network bottlenecks in SAN environments are typically resolved by upgrading or optimizing the switch infrastructure, which is Brocade's core competency."
+    },
+    {
+      "question": "Why would a data center choose Pure Storage over traditional storage vendors like NetApp for a database application requiring consistent low-latency performance?",
+      "options": [
+        "Pure Storage offers better data deduplication",
+        "Pure Storage provides all-flash architecture with predictable performance",
+        "Pure Storage has lower acquisition costs",
+        "Pure Storage supports more protocols"
+      ],
+      "correct_index": 1,
+      "explanation": "Pure Storage's all-flash architecture provides consistent, predictable low-latency performance without the performance variability that can occur in hybrid systems. While other vendors offer flash options, Pure's focus on all-flash delivers more predictable performance characteristics."
+    },
+    {
+      "question": "A storage administrator needs to replace failed drives in existing storage arrays from multiple vendors. Which factor is most critical when selecting replacement drives?",
+      "options": [
+        "Choosing the fastest available drive regardless of vendor",
+        "Ensuring compatibility with existing array firmware and support matrix",
+        "Selecting the drive with the highest capacity available",
+        "Always using the same brand as the storage array manufacturer"
+      ],
+      "correct_index": 1,
+      "explanation": "Storage arrays have specific firmware and compatibility requirements. Drives must be certified and compatible with the array's support matrix, regardless of the drive manufacturer. Speed and capacity are secondary to compatibility and proper firmware support."
+    },
+    {
+      "question": "When would Western Digital's enterprise-class hard drives be preferred over SanDisk SSDs in a storage solution design?",
+      "options": [
+        "When maximum IOPS performance is required",
+        "When lowest latency is the primary concern",
+        "When large capacity storage with cost-effectiveness is prioritized",
+        "When the smallest physical footprint is needed"
+      ],
+      "correct_index": 2,
+      "explanation": "Enterprise hard drives from Western Digital provide high capacity storage at lower cost per GB compared to SSDs, making them ideal for applications where large capacity and cost-effectiveness are more important than maximum performance. SSDs excel in performance metrics but at higher cost per GB."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "iNode : direct data block address, single indirect, .. triple indirect, \u2014> determines max file size",
+  "questions": [
+    {
+      "question": "Why does an inode use a combination of direct blocks, single indirect, double indirect, and triple indirect addressing rather than just using one addressing method?",
+      "options": [
+        "To make the inode structure more complex and secure",
+        "To optimize for both small files (fast access) and large files (maximum capacity)",
+        "To ensure all files use exactly the same amount of metadata space",
+        "To prevent file fragmentation on the disk"
+      ],
+      "correct_index": 1,
+      "explanation": "The hybrid approach allows small files to be accessed quickly through direct blocks while still supporting very large files through multiple levels of indirection, balancing performance and capacity."
+    },
+    {
+      "question": "If an inode has 12 direct blocks, and each block is 4KB, with block addresses being 4 bytes each, what is the maximum number of additional blocks that can be addressed through a single indirect block?",
+      "options": [
+        "1024 blocks",
+        "1012 blocks",
+        "4096 blocks",
+        "1000 blocks"
+      ],
+      "correct_index": 0,
+      "explanation": "A 4KB block can hold 4096 bytes \u00f7 4 bytes per address = 1024 block addresses, so a single indirect block can address 1024 additional data blocks."
+    },
+    {
+      "question": "In what scenario would a file system designer most likely increase the number of direct block pointers in an inode?",
+      "options": [
+        "When most files in the system are very large (>100MB)",
+        "When most files in the system are small and performance for small files is critical",
+        "When the system has limited RAM for caching",
+        "When the disk storage capacity needs to be maximized"
+      ],
+      "correct_index": 1,
+      "explanation": "More direct blocks reduce the number of disk accesses needed for small files, improving performance when the workload consists primarily of small files that can fit within the direct addressing range."
+    },
+    {
+      "question": "Given an inode with 10 direct blocks, 1 single indirect, 1 double indirect, and 1 triple indirect pointer, with 4KB blocks and 4-byte addresses, what happens to the maximum file size if the block size is increased to 8KB?",
+      "options": [
+        "File size roughly doubles",
+        "File size increases by approximately 8 times",
+        "File size increases by approximately 64 times",
+        "File size remains the same"
+      ],
+      "correct_index": 2,
+      "explanation": "Doubling block size doubles the data per block AND doubles the number of addresses per indirect block. The effect compounds: 2\u00d7 for data blocks, 2\u00b2 for single indirect, 2\u00b3 for double indirect, and 2\u2074 for triple indirect, with the largest files being dominated by triple indirect capacity."
+    },
+    {
+      "question": "Why might a file system choose to limit the maximum file size below the theoretical maximum possible with triple indirect addressing?",
+      "options": [
+        "To reduce the complexity of the inode structure",
+        "To prevent excessive metadata overhead and improve reliability",
+        "To ensure compatibility with older hardware",
+        "To make file deletion operations faster"
+      ],
+      "correct_index": 1,
+      "explanation": "Very large files with deep indirection require multiple disk reads just to locate data and create complex metadata structures that are harder to maintain and recover from corruption. Practical limits balance usability with reliability."
+    }
+  ],
+  "passing_score": 80
+}

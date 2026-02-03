@@ -1,0 +1,61 @@
+{
+  "topic_name": "Dimensionality Reduction",
+  "questions": [
+    {
+      "question": "A data scientist has a dataset with 1000 features and notices that many machine learning models are performing poorly with high variance. The dataset has 500 samples. What is the most likely reason dimensionality reduction would help in this scenario?",
+      "options": [
+        "The curse of dimensionality is causing overfitting due to sparse data in high-dimensional space",
+        "The features contain too much noise that needs to be filtered out",
+        "The computational cost of 1000 features is too expensive for any algorithm",
+        "The visualization of 1000 dimensions is impossible for human interpretation"
+      ],
+      "correct_index": 0,
+      "explanation": "With 500 samples and 1000 features, the data becomes sparse in high-dimensional space, leading to overfitting and poor generalization. This is a classic manifestation of the curse of dimensionality where the ratio of samples to features is too low."
+    },
+    {
+      "question": "When comparing PCA and t-SNE for exploratory data analysis, which statement best describes their fundamental difference in approach?",
+      "options": [
+        "PCA preserves global structure while t-SNE preserves local neighborhoods",
+        "PCA is supervised while t-SNE is unsupervised",
+        "PCA works only with continuous data while t-SNE works with categorical data",
+        "PCA reduces to any number of dimensions while t-SNE only reduces to 2 or 3"
+      ],
+      "correct_index": 0,
+      "explanation": "PCA is a linear technique that preserves global variance and structure, while t-SNE is a non-linear technique focused on preserving local neighborhood relationships, making it excellent for visualizing clusters but potentially misleading for global structure."
+    },
+    {
+      "question": "You apply PCA to a dataset and find that the first principal component explains 95% of the variance. What does this most likely indicate about your original features?",
+      "options": [
+        "The features are highly correlated and contain redundant information",
+        "The dataset has significant outliers that need to be removed",
+        "The features are perfectly independent and uncorrelated",
+        "The dataset requires non-linear dimensionality reduction instead"
+      ],
+      "correct_index": 0,
+      "explanation": "When one principal component captures 95% of variance, it indicates that most features are highly correlated and move together, creating redundancy. PCA has successfully identified this underlying linear relationship that explains most of the data's variation."
+    },
+    {
+      "question": "A researcher wants to reduce dimensionality before applying a neural network to image data, but needs to preserve the ability to reconstruct the original images with minimal loss. Which approach would be most appropriate?",
+      "options": [
+        "Autoencoders with reconstruction loss optimization",
+        "t-SNE for non-linear mapping",
+        "Random feature selection to maintain interpretability",
+        "PCA to capture maximum variance"
+      ],
+      "correct_index": 0,
+      "explanation": "Autoencoders are specifically designed for reconstruction tasks and can learn non-linear representations while optimizing for minimal reconstruction error. While PCA could work, autoencoders are more flexible for complex image data and can capture non-linear patterns."
+    },
+    {
+      "question": "When would you choose NOT to apply dimensionality reduction to your dataset before training a machine learning model?",
+      "options": [
+        "When working with text data where individual words carry unique semantic meaning",
+        "When you have more features than samples in your dataset",
+        "When computational resources are limited and training time is a concern",
+        "When you need to visualize high-dimensional data in 2D or 3D"
+      ],
+      "correct_index": 0,
+      "explanation": "In text analysis, individual features (words/tokens) often carry unique and important semantic information that shouldn't be compressed. Dimensionality reduction might lose crucial meaning-bearing features that are essential for tasks like sentiment analysis or document classification."
+    }
+  ],
+  "passing_score": 80
+}

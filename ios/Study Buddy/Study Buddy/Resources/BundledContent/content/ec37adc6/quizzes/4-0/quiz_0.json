@@ -1,0 +1,61 @@
+{
+  "topic_name": "Pharmaceutical Manufacturing",
+  "questions": [
+    {
+      "question": "Why are GLP-1 receptor agonists typically produced using recombinant protein technology rather than direct chemical synthesis?",
+      "options": [
+        "Chemical synthesis is more expensive than recombinant production",
+        "The complex secondary and tertiary structure required for bioactivity cannot be reliably achieved through chemical synthesis",
+        "Chemical synthesis produces too many impurities",
+        "Recombinant production is faster than chemical synthesis"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists are complex peptides/proteins requiring specific folding patterns and post-translational modifications for bioactivity. Recombinant systems can provide proper protein folding machinery and modifications that chemical synthesis cannot reliably reproduce."
+    },
+    {
+      "question": "During purification of recombinant GLP-1 receptor agonists, what is the primary reason for implementing multiple chromatographic steps?",
+      "options": [
+        "To increase the final yield of the product",
+        "To remove host cell proteins, DNA, and product-related variants while maintaining bioactivity",
+        "To concentrate the product to the final formulation strength",
+        "To add stabilizing excipients to the formulation"
+      ],
+      "correct_index": 1,
+      "explanation": "Multiple chromatographic steps are essential for removing diverse impurities including host cell proteins, residual DNA, endotoxins, and product variants (aggregates, truncated forms) while preserving the native structure and bioactivity of the GLP-1 receptor agonist."
+    },
+    {
+      "question": "A formulation scientist observes protein aggregation during stability testing of a GLP-1 receptor agonist. Which formulation strategy would be MOST appropriate to address this issue?",
+      "options": [
+        "Increase the protein concentration to improve stability",
+        "Add surfactants and adjust pH to minimize protein-protein interactions",
+        "Store the product at room temperature instead of refrigerated conditions",
+        "Remove all excipients to create a pure protein solution"
+      ],
+      "correct_index": 1,
+      "explanation": "Protein aggregation is often caused by protein-protein interactions and surface adsorption. Adding surfactants (like polysorbate) reduces surface interactions, while pH optimization can minimize electrostatic attractions between protein molecules that lead to aggregation."
+    },
+    {
+      "question": "When would extractable and leachable (E&L) studies be particularly critical in GLP-1 receptor agonist manufacturing?",
+      "options": [
+        "Only when using glass vials for final packaging",
+        "When implementing new container closure systems or manufacturing equipment that contacts the drug product",
+        "Only during the initial recombinant protein expression phase",
+        "When the drug concentration exceeds 10 mg/mL"
+      ],
+      "correct_index": 1,
+      "explanation": "E&L studies are crucial when introducing new materials that contact the drug product, as extractables and leachables can cause protein degradation, aggregation, or toxicity. This is especially important for biologics like GLP-1 agonists which are sensitive to chemical modifications."
+    },
+    {
+      "question": "Why is bioactivity testing particularly important in the quality control of GLP-1 receptor agonists compared to traditional analytical methods like HPLC?",
+      "options": [
+        "Bioactivity testing is more precise than HPLC methods",
+        "HPLC cannot detect the presence of the active pharmaceutical ingredient",
+        "Structural integrity measurable by HPLC does not guarantee biological function at the receptor level",
+        "Bioactivity testing is required by all regulatory agencies while HPLC is optional"
+      ],
+      "correct_index": 2,
+      "explanation": "While HPLC can confirm structural integrity and purity, it cannot assess whether the protein maintains its ability to bind and activate GLP-1 receptors. Subtle conformational changes invisible to HPLC could render the protein biologically inactive, making functional bioassays essential for biologics."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Identity Federation and Single Sign-On",
+  "questions": [
+    {
+      "question": "A multinational corporation with employees using various cloud applications wants to reduce password fatigue and improve security. Which approach would be most appropriate and why?",
+      "options": [
+        "Implement Single Sign-On (SSO) because it centralizes authentication and reduces the attack surface by eliminating multiple passwords",
+        "Deploy multi-factor authentication on each application separately to ensure maximum security isolation",
+        "Create shared service accounts for teams to use across all applications to simplify access management",
+        "Require users to change passwords monthly on all systems to maintain security through frequent rotation"
+      ],
+      "correct_index": 0,
+      "explanation": "SSO centralizes authentication, reduces password fatigue, and actually improves security by eliminating weak or reused passwords across multiple systems while providing centralized access control and audit capabilities."
+    },
+    {
+      "question": "In OAuth 2.0, what is the primary role of the authorization server, and why is this separation important?",
+      "options": [
+        "It stores user passwords and validates them directly for each application request",
+        "It issues access tokens after verifying the client's credentials and user consent, separating authorization logic from resource access",
+        "It acts as a proxy server that forwards all application requests to the appropriate backend services",
+        "It maintains session cookies for all connected applications to enable seamless user experience"
+      ],
+      "correct_index": 1,
+      "explanation": "The authorization server's primary role is to issue access tokens after proper authentication and authorization, which separates the concerns of identity verification from resource access, improving security and scalability."
+    },
+    {
+      "question": "When would SAML be preferred over OAuth for an enterprise identity solution?",
+      "options": [
+        "When building mobile applications that need to access social media APIs",
+        "When integrating with legacy enterprise applications that require XML-based assertions and detailed attribute sharing",
+        "When creating a simple web application that only needs basic user identification",
+        "When implementing machine-to-machine communication between microservices"
+      ],
+      "correct_index": 1,
+      "explanation": "SAML is preferred for enterprise scenarios requiring rich attribute exchange, XML-based assertions, and integration with legacy systems that support SAML's comprehensive identity federation capabilities."
+    },
+    {
+      "question": "A security architect is designing an identity federation system for a company that frequently acquires other businesses. What would be the most critical design consideration?",
+      "options": [
+        "Ensuring all acquired companies immediately adopt the same identity provider technology",
+        "Designing the federation to support multiple identity providers with standardized claim mapping and trust relationships",
+        "Requiring all users to create new accounts in the parent company's directory service",
+        "Implementing separate SSO solutions for each acquired company to maintain independence"
+      ],
+      "correct_index": 1,
+      "explanation": "Supporting multiple identity providers with standardized claim mapping allows for flexible integration of acquired companies while maintaining centralized access control and user experience, without forcing immediate technology migrations."
+    },
+    {
+      "question": "What is a key security risk that SSO introduces, and how should organizations mitigate it?",
+      "options": [
+        "SSO increases network latency, which should be mitigated by using faster servers",
+        "SSO creates a single point of failure where compromising one account grants access to all connected systems; this should be mitigated with strong MFA and continuous monitoring",
+        "SSO prevents users from having unique passwords for each system, which should be mitigated by requiring longer passwords",
+        "SSO reduces encryption strength across all applications, which should be mitigated by using stronger cipher suites"
+      ],
+      "correct_index": 1,
+      "explanation": "SSO's main security risk is that a single compromised account can access all federated systems. This requires robust authentication (like MFA), continuous monitoring, and strong access governance to mitigate the expanded blast radius."
+    }
+  ],
+  "passing_score": 80
+}

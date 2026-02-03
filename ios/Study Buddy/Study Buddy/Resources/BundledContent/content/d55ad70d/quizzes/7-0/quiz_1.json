@@ -1,0 +1,61 @@
+{
+  "topic_name": "CAPSTONE: AWS S3 design (IAM/Tenancy, URI design, Action Verbs, Interface API model, backend design, name space, operations, integration). .. USE OF STORAGE AND NETWORKING CONCEPTS",
+  "questions": [
+    {
+      "question": "When designing IAM policies for a multi-tenant S3-like system where different organizations need isolated access to their data, which approach best balances security and scalability?",
+      "options": [
+        "Create separate IAM users for each file and grant specific permissions per file",
+        "Use bucket-level policies with tenant-specific prefixes and condition statements checking request context",
+        "Store all tenant data in a single bucket with application-level access control only",
+        "Create identical IAM roles for all tenants and rely on application logic for isolation"
+      ],
+      "correct_index": 1,
+      "explanation": "Bucket-level policies with tenant-specific prefixes and condition statements provide proper isolation while remaining scalable. This approach leverages IAM's native capabilities to enforce boundaries without creating excessive IAM entities or relying solely on application logic."
+    },
+    {
+      "question": "In designing the URI structure for an S3-like API, why is the path-style format 'https://s3.region.amazonaws.com/bucket-name/key-name' sometimes preferred over virtual-hosted style 'https://bucket-name.s3.region.amazonaws.com/key-name'?",
+      "options": [
+        "Path-style provides better performance due to fewer DNS lookups",
+        "Virtual-hosted style cannot handle bucket names with special characters or dots",
+        "Path-style offers stronger security through domain isolation",
+        "Virtual-hosted style requires additional SSL certificates for each bucket"
+      ],
+      "correct_index": 1,
+      "explanation": "Virtual-hosted style has limitations with bucket names containing dots or special characters due to DNS naming restrictions and SSL certificate validation issues. Path-style avoids these constraints by treating the bucket name as part of the URL path rather than the hostname."
+    },
+    {
+      "question": "When implementing the backend storage layer for an S3-like system, what is the primary reason for using consistent hashing for data distribution across storage nodes?",
+      "options": [
+        "To encrypt data automatically as it's distributed",
+        "To minimize data movement when storage nodes are added or removed",
+        "To ensure all storage nodes have equal amounts of data",
+        "To provide faster lookup times compared to traditional hashing"
+      ],
+      "correct_index": 1,
+      "explanation": "Consistent hashing minimizes data redistribution when nodes are added or removed from the cluster. Unlike traditional hashing, it only requires remapping a small portion of keys, making the system more resilient to topology changes and reducing operational overhead."
+    },
+    {
+      "question": "In the context of S3 API design, when should you use a PUT operation versus a POST operation for object uploads?",
+      "options": [
+        "PUT for small files (<5MB), POST for large files (>5MB)",
+        "PUT when the client specifies the exact key name, POST for server-generated key names",
+        "POST for creating new objects, PUT for updating existing objects",
+        "PUT for binary data, POST for text-based data"
+      ],
+      "correct_index": 1,
+      "explanation": "PUT is idempotent and used when the client knows and specifies the exact resource identifier (key name). POST is used when the server should generate the identifier or when using presigned URLs for browser-based uploads where the key might be dynamically determined."
+    },
+    {
+      "question": "When integrating an S3-like storage system with a CDN for global content delivery, which strategy best addresses the challenge of cache invalidation while maintaining performance?",
+      "options": [
+        "Set very short TTL values (1-2 minutes) on all cached objects",
+        "Use object versioning with immutable keys and update references at the application layer",
+        "Implement synchronous cache invalidation across all CDN edge locations",
+        "Cache only static content and serve all dynamic content directly from origin"
+      ],
+      "correct_index": 1,
+      "explanation": "Object versioning with immutable keys eliminates cache invalidation complexity entirely. When content changes, a new version with a different key is created, allowing long cache TTLs while ensuring users always get the latest version through updated application references."
+    }
+  ],
+  "passing_score": 80
+}

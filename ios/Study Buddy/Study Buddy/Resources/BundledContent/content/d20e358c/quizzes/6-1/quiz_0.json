@@ -1,0 +1,61 @@
+{
+  "topic_name": "Persistent Storage",
+  "questions": [
+    {
+      "question": "A development team needs to deploy a stateful database application in Kubernetes that requires data to persist across pod restarts and rescheduling. Which combination of Kubernetes resources should they use?",
+      "options": [
+        "emptyDir volume and Deployment",
+        "PersistentVolume, PersistentVolumeClaim, and StatefulSet",
+        "hostPath volume and DaemonSet",
+        "configMap and Deployment"
+      ],
+      "correct_index": 1,
+      "explanation": "PersistentVolumes provide durable storage that persists beyond pod lifecycle, PersistentVolumeClaims allow pods to request storage, and StatefulSets are designed for stateful applications that need stable storage and network identities."
+    },
+    {
+      "question": "Your organization runs a multi-region Kubernetes cluster and needs a storage solution that provides high availability and automatic replication across multiple nodes. Which storage backend would be most appropriate?",
+      "options": [
+        "NFS with a single server",
+        "Local hostPath volumes",
+        "CEPH distributed storage",
+        "Individual EBS volumes per node"
+      ],
+      "correct_index": 2,
+      "explanation": "CEPH is a distributed storage system that provides built-in replication, high availability, and can span multiple nodes and regions, making it ideal for multi-region deployments requiring resilient storage."
+    },
+    {
+      "question": "When a PersistentVolumeClaim is deleted in Kubernetes, what happens to the underlying PersistentVolume depends on which property?",
+      "options": [
+        "The storage class provisioner",
+        "The reclaim policy",
+        "The access mode",
+        "The volume capacity"
+      ],
+      "correct_index": 1,
+      "explanation": "The reclaim policy (Retain, Delete, or Recycle) determines what happens to the PersistentVolume when its associated PersistentVolumeClaim is deleted, controlling whether data is preserved or destroyed."
+    },
+    {
+      "question": "A pod requires read-write access to a volume, but only one pod should be able to mount it at a time. Another set of pods needs read-only access to shared configuration data from multiple nodes simultaneously. Which access modes should be used respectively?",
+      "options": [
+        "ReadWriteOnce for both scenarios",
+        "ReadWriteMany for the first, ReadOnlyMany for the second",
+        "ReadWriteOnce for the first, ReadOnlyMany for the second",
+        "ReadWriteMany for both scenarios"
+      ],
+      "correct_index": 2,
+      "explanation": "ReadWriteOnce allows read-write access by a single node (suitable for exclusive database access), while ReadOnlyMany allows read-only access from multiple nodes simultaneously (perfect for shared configuration data)."
+    },
+    {
+      "question": "Your application experiences varying storage performance requirements and you're using EBS volumes in AWS. The application occasionally needs high IOPS for batch processing but normally operates with standard performance. What is the most cost-effective approach?",
+      "options": [
+        "Always use io2 volumes for consistent high performance",
+        "Use gp3 volumes and dynamically adjust IOPS when needed",
+        "Use multiple storage classes and migrate data between volume types",
+        "Use local SSD storage for all operations"
+      ],
+      "correct_index": 1,
+      "explanation": "EBS gp3 volumes allow you to dynamically adjust IOPS and throughput independently of storage size, providing cost-effective performance scaling without over-provisioning or complex data migration."
+    }
+  ],
+  "passing_score": 80
+}

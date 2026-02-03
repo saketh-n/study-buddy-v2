@@ -1,0 +1,61 @@
+{
+  "topic_name": "Accelerated Virtualization",
+  "questions": [
+    {
+      "question": "A company is experiencing significant performance overhead when running multiple VMs on their servers, with the hypervisor consuming excessive CPU cycles for basic VM operations. Which hardware feature would most directly address this bottleneck?",
+      "options": [
+        "Intel VT-x/AMD-V processor extensions",
+        "SR-IOV network interface cards",
+        "Hardware page table assistance",
+        "NUMA topology optimization"
+      ],
+      "correct_index": 0,
+      "explanation": "Intel VT-x/AMD-V extensions provide hardware-assisted virtualization that eliminates the need for binary translation and reduces hypervisor overhead for VM entry/exit operations, directly addressing CPU overhead issues."
+    },
+    {
+      "question": "In a virtualized environment with heavy memory workloads, what is the primary benefit of Extended Page Tables (EPT) or Rapid Virtualization Indexing (RVI)?",
+      "options": [
+        "Increases total available memory capacity",
+        "Eliminates the need for shadow page tables and reduces memory translation overhead",
+        "Provides automatic memory compression",
+        "Enables memory sharing between different physical hosts"
+      ],
+      "correct_index": 1,
+      "explanation": "EPT/RVI hardware features eliminate the hypervisor's need to maintain shadow page tables by providing hardware-assisted two-dimensional page walks, significantly reducing memory translation overhead and improving performance."
+    },
+    {
+      "question": "A high-performance computing environment needs to minimize I/O latency for network-intensive applications running in VMs. When would SR-IOV be the most appropriate solution?",
+      "options": [
+        "When you need to share a single network port among many VMs with basic connectivity",
+        "When VMs require direct hardware access with near-native performance and can sacrifice some migration flexibility",
+        "When implementing software-defined networking with complex virtual topologies",
+        "When running legacy applications that don't support modern network drivers"
+      ],
+      "correct_index": 1,
+      "explanation": "SR-IOV allows VMs to directly access physical network hardware through Virtual Functions (VFs), bypassing the hypervisor's virtual switch and providing near-native performance, but it reduces VM mobility since VMs become tied to specific hardware."
+    },
+    {
+      "question": "Why might an organization choose NOT to implement SR-IOV despite having compatible hardware and performance requirements?",
+      "options": [
+        "SR-IOV increases CPU overhead compared to software virtualization",
+        "SR-IOV reduces VM mobility and complicates live migration between different hardware",
+        "SR-IOV only works with specific guest operating systems",
+        "SR-IOV requires separate physical networks for each VM"
+      ],
+      "correct_index": 1,
+      "explanation": "While SR-IOV provides excellent performance, it creates hardware dependencies that make live migration more complex and limit VM mobility between hosts with different hardware configurations, which may conflict with operational flexibility requirements."
+    },
+    {
+      "question": "A virtualization administrator notices that VMs experience performance degradation when the hypervisor handles interrupt processing for virtual devices. Which combination of technologies would best address this issue?",
+      "options": [
+        "VT-x with shadow page tables",
+        "SR-IOV with hardware page table assistance",
+        "IOMMU with interrupt remapping and SR-IOV",
+        "CPU pinning with software-based virtual devices"
+      ],
+      "correct_index": 2,
+      "explanation": "IOMMU with interrupt remapping allows the hardware to route interrupts directly to the appropriate VM without hypervisor intervention, and when combined with SR-IOV's direct hardware access, it minimizes interrupt-related performance overhead."
+    }
+  ],
+  "passing_score": 80
+}

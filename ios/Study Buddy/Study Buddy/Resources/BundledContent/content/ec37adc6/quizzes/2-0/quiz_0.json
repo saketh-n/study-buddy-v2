@@ -1,0 +1,61 @@
+{
+  "topic_name": "Drug Development and Design",
+  "questions": [
+    {
+      "question": "Why was the development of DPP-4 resistant GLP-1 receptor agonists necessary for therapeutic use?",
+      "options": [
+        "Native GLP-1 has poor oral bioavailability",
+        "Native GLP-1 is rapidly degraded by DPP-4, resulting in a half-life of only 1-2 minutes",
+        "Native GLP-1 causes severe hypoglycemia",
+        "Native GLP-1 cannot cross the blood-brain barrier"
+      ],
+      "correct_index": 1,
+      "explanation": "Native GLP-1 is rapidly cleaved by the enzyme DPP-4 at the N-terminus, resulting in an extremely short half-life of 1-2 minutes, making it impractical for therapeutic use without modification."
+    },
+    {
+      "question": "Which structural modification strategy was employed in exenatide to achieve DPP-4 resistance?",
+      "options": [
+        "Addition of a fatty acid chain for albumin binding",
+        "Substitution of amino acids at positions 8 and 35",
+        "Use of a peptide sequence derived from Gila monster venom with natural DPP-4 resistance",
+        "Pegylation of the N-terminus"
+      ],
+      "correct_index": 2,
+      "explanation": "Exenatide is derived from exendin-4, a peptide found in Gila monster venom that naturally resists DPP-4 degradation due to its unique amino acid sequence, particularly at the N-terminus."
+    },
+    {
+      "question": "A pharmaceutical company wants to develop a once-weekly GLP-1 agonist. Which combination of modifications would be MOST appropriate?",
+      "options": [
+        "DPP-4 resistance only",
+        "DPP-4 resistance + albumin binding through fatty acid conjugation",
+        "Albumin binding only",
+        "DPP-4 resistance + receptor selectivity enhancement"
+      ],
+      "correct_index": 1,
+      "explanation": "For once-weekly dosing, both DPP-4 resistance (to prevent enzymatic degradation) and albumin binding (to extend circulation time through reduced renal clearance) are essential, as seen in drugs like semaglutide."
+    },
+    {
+      "question": "What is the primary mechanism by which fatty acid conjugation extends the half-life of GLP-1 agonists like liraglutide?",
+      "options": [
+        "It prevents DPP-4 from accessing the cleavage site",
+        "It increases receptor binding affinity",
+        "It enables reversible binding to albumin, slowing renal clearance",
+        "It promotes tissue storage of the drug"
+      ],
+      "correct_index": 2,
+      "explanation": "Fatty acid conjugation allows the GLP-1 agonist to reversibly bind to albumin in the bloodstream, creating a circulating reservoir that slowly releases active drug and reduces renal filtration."
+    },
+    {
+      "question": "When comparing first-generation (exenatide) vs. second-generation (semaglutide) GLP-1 agonists, what represents the key advancement in drug design philosophy?",
+      "options": [
+        "Moving from injection to oral formulation",
+        "Combining multiple half-life extension strategies rather than relying on a single approach",
+        "Increasing receptor selectivity for GLP-1 over other incretin receptors",
+        "Reducing manufacturing costs through simplified synthesis"
+      ],
+      "correct_index": 1,
+      "explanation": "Second-generation GLP-1 agonists like semaglutide combine multiple strategies (DPP-4 resistance through amino acid substitution AND albumin binding through fatty acid conjugation) to achieve superior pharmacokinetic profiles compared to first-generation drugs that relied primarily on natural DPP-4 resistance."
+    }
+  ],
+  "passing_score": 80
+}

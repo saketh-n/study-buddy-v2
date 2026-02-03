@@ -1,0 +1,61 @@
+{
+  "topic_name": "Persistent Storage",
+  "questions": [
+    {
+      "question": "Why does Kubernetes require Persistent Volumes (PVs) instead of just mounting host directories directly to containers?",
+      "options": [
+        "To improve container startup performance",
+        "To provide storage abstraction that survives pod lifecycle and enables portability across nodes",
+        "To automatically backup data to cloud storage",
+        "To reduce memory usage of running containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Persistent Volumes provide an abstraction layer that decouples storage from pod lifecycle, allowing data to persist even when pods are deleted or rescheduled to different nodes. This abstraction also enables portability across different storage backends."
+    },
+    {
+      "question": "A stateful application running in Kubernetes needs to store user-uploaded files that must be accessible from multiple pods simultaneously. Which storage backend would be most appropriate?",
+      "options": [
+        "Amazon EBS volumes",
+        "Local node storage",
+        "NFS-backed Persistent Volumes",
+        "Container filesystem"
+      ],
+      "correct_index": 2,
+      "explanation": "NFS (Network File System) supports ReadWriteMany access mode, allowing multiple pods to simultaneously read and write to the same storage volume. EBS only supports ReadWriteOnce, limiting access to a single pod at a time."
+    },
+    {
+      "question": "What happens to data stored in a Persistent Volume when the PersistentVolumeClaim (PVC) that was bound to it is deleted?",
+      "options": [
+        "Data is immediately deleted from all storage backends",
+        "Data is automatically backed up to object storage",
+        "Behavior depends on the PV's reclaimPolicy (Retain, Delete, or Recycle)",
+        "Data is migrated to a new PV automatically"
+      ],
+      "correct_index": 2,
+      "explanation": "The reclaimPolicy determines what happens to the PV and its data when the PVC is deleted. 'Retain' preserves the data, 'Delete' removes the PV and underlying storage, and 'Recycle' was deprecated but would clear the data for reuse."
+    },
+    {
+      "question": "When would you choose CEPH over EBS for backing Persistent Volumes in a Kubernetes cluster?",
+      "options": [
+        "When you need the fastest possible I/O performance",
+        "When you want to avoid vendor lock-in and need distributed storage across multiple availability zones",
+        "When you only need single-pod access to storage",
+        "When storage cost is the only consideration"
+      ],
+      "correct_index": 1,
+      "explanation": "CEPH is an open-source distributed storage system that provides vendor independence and can distribute data across multiple availability zones or regions. While EBS ties you to AWS and is limited to single AZ attachment, CEPH offers more flexibility for multi-zone deployments."
+    },
+    {
+      "question": "A database pod keeps getting rescheduled to different nodes due to resource constraints, but the application requires the database to maintain its data. How should storage be configured?",
+      "options": [
+        "Use hostPath volumes to store data on the local node filesystem",
+        "Configure a Persistent Volume with appropriate storage class and use PVC in the pod specification",
+        "Store data in the container's writable layer",
+        "Use emptyDir volumes shared between containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Persistent Volumes with PVCs are designed exactly for this scenario. They provide storage that follows the pod across node rescheduling. hostPath ties data to a specific node, emptyDir is deleted when pods terminate, and container writable layers don't persist beyond container lifecycle."
+    }
+  ],
+  "passing_score": 80
+}

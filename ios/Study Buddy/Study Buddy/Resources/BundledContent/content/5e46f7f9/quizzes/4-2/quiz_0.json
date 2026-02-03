@@ -1,0 +1,61 @@
+{
+  "topic_name": "MPLS Label Switching",
+  "questions": [
+    {
+      "question": "What is the primary advantage of MPLS label switching over traditional IP routing for packet forwarding within an ISP network?",
+      "options": [
+        "Labels provide better security encryption than IP headers",
+        "Label lookups are faster than longest prefix matching in routing tables",
+        "Labels can carry more addressing information than IP addresses",
+        "Labels eliminate the need for Quality of Service implementations"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS uses simple label lookups instead of complex longest prefix matching algorithms used in IP routing tables, resulting in faster packet forwarding decisions."
+    },
+    {
+      "question": "In which scenario would an ISP most likely implement MPLS instead of pure IP routing?",
+      "options": [
+        "When connecting small branch offices with low bandwidth requirements",
+        "When managing high-volume traffic across a backbone network with strict performance requirements",
+        "When providing basic internet access to residential customers",
+        "When setting up a simple point-to-point connection between two offices"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS is most beneficial for high-volume backbone networks where fast forwarding, traffic engineering, and QoS guarantees are critical for performance."
+    },
+    {
+      "question": "How does MPLS handle packet forwarding differently from traditional IP routing at intermediate routers?",
+      "options": [
+        "It encrypts the IP header and uses the encrypted value for routing decisions",
+        "It replaces IP addresses with MAC addresses for faster Layer 2 switching",
+        "It uses pre-established label mappings instead of consulting IP routing tables",
+        "It fragments packets into smaller labeled segments for parallel processing"
+      ],
+      "correct_index": 2,
+      "explanation": "MPLS routers (LSRs) use pre-established Label Forwarding Information Bases (LFIB) to make forwarding decisions based on labels, avoiding IP routing table lookups."
+    },
+    {
+      "question": "What happens to MPLS labels as a packet traverses through an MPLS network from ingress to egress?",
+      "options": [
+        "Labels remain unchanged throughout the entire path to maintain consistency",
+        "Labels are swapped at each hop according to pre-established label mappings",
+        "Labels are incrementally modified by adding routing information at each hop",
+        "Labels are removed at the first router and reinstalled at the last router"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS uses label swapping where each LSR replaces the incoming label with an outgoing label based on its Label Forwarding Information Base (LFIB)."
+    },
+    {
+      "question": "Why might MPLS be preferred over pure IP routing when implementing traffic engineering in an ISP network?",
+      "options": [
+        "MPLS automatically balances traffic across all available paths without configuration",
+        "MPLS allows explicit path control through Label Switched Paths (LSPs) independent of IP routing decisions",
+        "MPLS provides built-in load balancing that IP routing cannot achieve",
+        "MPLS eliminates the need for routing protocols like OSPF or BGP"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS enables traffic engineering by allowing network operators to create explicit Label Switched Paths (LSPs) that can follow specific routes regardless of what IP routing protocols would choose, enabling better network utilization."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Access Control Models",
+  "questions": [
+    {
+      "question": "A large hospital needs to ensure that doctors can only access patient records for patients under their direct care, nurses can access basic patient information but not financial records, and billing staff can only access financial information. Which access control model would be MOST appropriate for this scenario?",
+      "options": [
+        "Role-Based Access Control (RBAC)",
+        "Mandatory Access Control (MAC)",
+        "Attribute-Based Access Control (ABAC)",
+        "Discretionary Access Control (DAC)"
+      ],
+      "correct_index": 2,
+      "explanation": "ABAC is most appropriate because it can dynamically evaluate multiple attributes (user role, patient assignment, data type, department) to make fine-grained access decisions. While RBAC could handle basic role separation, it cannot easily handle the dynamic relationship between doctors and their specific patients."
+    },
+    {
+      "question": "In a government defense contractor's system, files are classified as 'Secret' and 'Top Secret,' and users have clearance levels of 'Secret' or 'Top Secret.' A user with Secret clearance attempts to access a Top Secret file. What would happen in a properly implemented Mandatory Access Control (MAC) system?",
+      "options": [
+        "Access would be granted if the user has a business need",
+        "Access would be denied automatically by the system",
+        "The file owner would be notified to approve or deny access",
+        "Access would be granted but logged for audit purposes"
+      ],
+      "correct_index": 1,
+      "explanation": "In MAC systems, access decisions are based on security labels and clearance levels, enforced automatically by the system. The 'no read up' rule prevents users from accessing information classified at a higher level than their clearance, regardless of business need or owner permissions."
+    },
+    {
+      "question": "A software development company wants to implement an access control system where developers can access development servers, QA staff can access testing environments, and managers can access project documentation. However, senior developers should also have QA access during release periods. What is the PRIMARY advantage of using RBAC for this scenario?",
+      "options": [
+        "It provides the strongest security by preventing any privilege escalation",
+        "It allows users to grant permissions to other users as needed",
+        "It simplifies administration by grouping permissions into manageable roles",
+        "It automatically adjusts permissions based on current project context"
+      ],
+      "correct_index": 2,
+      "explanation": "RBAC's main advantage is administrative simplification through role-based permission grouping. Users can be assigned multiple roles (developer + QA), and permissions are managed centrally through roles rather than individually. This makes it easier to maintain and audit compared to individual permission assignments."
+    },
+    {
+      "question": "An organization currently uses RBAC but is experiencing challenges because they need to consider factors like time of day, location of access, device type, and project involvement when making access decisions. Why is their current RBAC system insufficient, and what should they consider?",
+      "options": [
+        "RBAC is too secure; they should switch to DAC for more flexibility",
+        "RBAC cannot easily incorporate dynamic contextual factors; ABAC would be more suitable",
+        "RBAC requires too many roles; MAC would be simpler to manage",
+        "RBAC is outdated; they should implement a hybrid MAC-DAC system"
+      ],
+      "correct_index": 1,
+      "explanation": "Traditional RBAC struggles with dynamic, contextual access decisions because it primarily focuses on static role assignments. ABAC can evaluate multiple attributes in real-time (location, time, device, project status) to make more nuanced access control decisions that adapt to changing contexts."
+    },
+    {
+      "question": "A financial institution is designing an access control system for their trading platform. They need to ensure that trades can only be executed during market hours, from authorized devices, by certified traders, and only for instruments they are licensed to trade. The system must also prevent any user from overriding these restrictions. Which combination of access control principles is MOST important for this scenario?",
+      "options": [
+        "Dynamic attribute evaluation with non-discretionary enforcement",
+        "Role-based permissions with user-delegated authority",
+        "Clearance-based access with owner-controlled sharing",
+        "Static role assignment with administrative override capability"
+      ],
+      "correct_index": 0,
+      "explanation": "This scenario requires dynamic evaluation of multiple attributes (time, device, certification, license) combined with non-discretionary enforcement to prevent users from overriding security policies. This combines ABAC's dynamic attribute evaluation with MAC's principle of non-discretionary, system-enforced access control."
+    }
+  ],
+  "passing_score": 80
+}

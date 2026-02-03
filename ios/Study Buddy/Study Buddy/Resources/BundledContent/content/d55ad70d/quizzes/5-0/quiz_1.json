@@ -1,0 +1,61 @@
+{
+  "topic_name": "CAP theorem !!",
+  "questions": [
+    {
+      "question": "According to the CAP theorem, why is it impossible for a distributed system to simultaneously guarantee all three properties during a network partition?",
+      "options": [
+        "During a partition, nodes cannot communicate, so you must choose between serving potentially stale data (availability) or refusing requests until consistency is restored",
+        "Network partitions always cause data corruption, making consistency impossible to maintain",
+        "The theorem only applies to systems with more than 100 nodes, smaller systems can achieve all three",
+        "Availability and consistency are mutually exclusive by definition, regardless of partitions"
+      ],
+      "correct_index": 0,
+      "explanation": "During a network partition, nodes cannot communicate with each other. To maintain consistency, the system must refuse requests until all nodes can synchronize. To maintain availability, the system must serve requests even with potentially inconsistent data across partitions."
+    },
+    {
+      "question": "A banking system needs to ensure that account balances are always accurate and never show incorrect amounts to users. However, it can afford brief downtime during network issues. Which CAP properties should this system prioritize?",
+      "options": [
+        "Availability and Partition tolerance (AP)",
+        "Consistency and Availability (CA)",
+        "Consistency and Partition tolerance (CP)",
+        "All three properties equally"
+      ],
+      "correct_index": 2,
+      "explanation": "Banking systems prioritize data accuracy (consistency) above all else and must handle network partitions (partition tolerance). They can afford to be temporarily unavailable rather than show incorrect account balances, making CP the right choice."
+    },
+    {
+      "question": "Which scenario best illustrates an AP (Available and Partition-tolerant) system in action?",
+      "options": [
+        "A social media feed that shows posts even during network issues, but some users might temporarily see different content",
+        "A database that shuts down completely when any node fails to prevent data inconsistency",
+        "A system that only works when all nodes can communicate with each other",
+        "A single-server application that never experiences network partitions"
+      ],
+      "correct_index": 0,
+      "explanation": "An AP system remains available during network partitions but may temporarily show inconsistent data. A social media feed can tolerate showing slightly different content to users during network issues while remaining accessible."
+    },
+    {
+      "question": "Why might a distributed system architect choose eventual consistency over strong consistency?",
+      "options": [
+        "Eventual consistency is easier to implement and requires no coordination between nodes",
+        "To achieve higher availability and better performance by allowing temporary inconsistencies that resolve over time",
+        "Eventual consistency guarantees that data will never be lost, while strong consistency cannot make this guarantee",
+        "Strong consistency is deprecated and no longer supported by modern databases"
+      ],
+      "correct_index": 1,
+      "explanation": "Eventual consistency allows systems to remain highly available and responsive by not requiring immediate synchronization across all nodes. The system accepts temporary inconsistencies in exchange for better performance and availability."
+    },
+    {
+      "question": "In the context of CAP theorem, what happens when a distributed system experiences a network partition?",
+      "options": [
+        "The system automatically becomes strongly consistent across all nodes",
+        "All nodes immediately shut down to prevent data corruption",
+        "The system must choose between maintaining consistency (potentially becoming unavailable) or availability (potentially becoming inconsistent)",
+        "The partition heals itself automatically within milliseconds"
+      ],
+      "correct_index": 2,
+      "explanation": "When a network partition occurs, nodes cannot communicate. The system faces a fundamental choice: either stop serving requests to maintain consistency, or continue serving requests knowing that different partitions may have inconsistent data."
+    }
+  ],
+  "passing_score": 80
+}

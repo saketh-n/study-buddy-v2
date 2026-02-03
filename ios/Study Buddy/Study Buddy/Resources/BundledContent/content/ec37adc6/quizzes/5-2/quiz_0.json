@@ -1,0 +1,61 @@
+{
+  "topic_name": "Next-Generation Therapies",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes and obesity has reached a plateau in weight loss with semaglutide monotherapy. What is the primary rationale for considering a GIP/GLP-1 dual agonist like tirzepatide as the next therapeutic step?",
+      "options": [
+        "GIP receptor activation provides additional incretin effects and enhanced weight loss through complementary metabolic pathways",
+        "Dual agonists have fewer gastrointestinal side effects than GLP-1 monotherapy",
+        "GIP antagonism blocks glucose absorption in the intestine",
+        "Dual agonists can be administered less frequently than single hormone agonists"
+      ],
+      "correct_index": 0,
+      "explanation": "GIP and GLP-1 receptors work synergistically through complementary pathways. GIP enhances insulin secretion, improves beta-cell function, and provides additional effects on adipose tissue and energy expenditure, leading to greater weight loss than GLP-1 agonists alone."
+    },
+    {
+      "question": "When would oral semaglutide be the preferred choice over injectable GLP-1 receptor agonists for a patient with type 2 diabetes?",
+      "options": [
+        "When rapid onset of action is required for acute glycemic control",
+        "For patients with severe gastroparesis who cannot tolerate injectable forms",
+        "For needle-phobic patients who can adhere to strict dosing requirements and have mild to moderate disease",
+        "When cost-effectiveness is the primary concern"
+      ],
+      "correct_index": 2,
+      "explanation": "Oral semaglutide is ideal for needle-phobic patients, but requires strict adherence to fasting administration with specific timing and water requirements. It's suitable for patients with adequate disease control needs who can follow the complex dosing protocol."
+    },
+    {
+      "question": "What is the most significant challenge that novel delivery systems for GLP-1 receptor agonists aim to solve?",
+      "options": [
+        "Reducing the molecular weight of peptide hormones",
+        "Improving bioavailability and patient adherence while maintaining therapeutic efficacy",
+        "Eliminating the need for refrigerated storage",
+        "Converting injectable medications to topical applications"
+      ],
+      "correct_index": 1,
+      "explanation": "Novel delivery systems primarily address the inherent challenges of peptide drugs: poor oral bioavailability due to enzymatic degradation and first-pass metabolism, while improving patient convenience and adherence through alternative routes and extended dosing intervals."
+    },
+    {
+      "question": "A triple hormone agonist targeting GLP-1, GIP, and glucagon receptors is being developed. What would be the primary therapeutic advantage of adding glucagon receptor activation to the dual GIP/GLP-1 combination?",
+      "options": [
+        "Glucagon activation increases insulin sensitivity in muscle tissue",
+        "Glucagon receptor agonism enhances energy expenditure and lipolysis while potentially reducing hepatic steatosis",
+        "Glucagon prevents the gastroparesis associated with GLP-1 agonists",
+        "Glucagon activation allows for lower doses of GLP-1 to be used"
+      ],
+      "correct_index": 1,
+      "explanation": "Glucagon receptor activation increases energy expenditure, promotes lipolysis, and enhances hepatic fat oxidation. This complements the metabolic effects of GLP-1 and GIP, potentially providing superior weight loss and improvements in hepatic steatosis."
+    },
+    {
+      "question": "Why might a clinician choose to delay prescribing a dual hormone agonist and instead optimize current GLP-1 monotherapy in a patient with suboptimal glucose control?",
+      "options": [
+        "Dual agonists are contraindicated in patients with HbA1c above 8%",
+        "The patient may not have reached the maximum tolerated dose or therapeutic plateau with current therapy",
+        "Dual agonists require more frequent monitoring than single hormone agonists",
+        "Insurance coverage is never available for dual hormone agonists"
+      ],
+      "correct_index": 1,
+      "explanation": "Clinical best practice involves optimizing current therapy before advancing to more complex treatments. If a patient hasn't reached maximum tolerated dose or adequate duration of current GLP-1 therapy, optimization may achieve therapeutic goals without needing dual agonists."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "BGP maintains the complete AS path to prevent loops and enable policy-based routing decisions",
+      "correct_answer": "BGP maintains the complete AS path to prevent loops and enable policy-based routing decisions",
+      "analysis": "Great job!",
+      "explanation": "BGP is a path-vector protocol because it maintains the complete path of autonomous systems (AS_PATH) that a route has traversed. This allows for loop prevention and enables complex policy decisions based on which ASes are in the path, unlike simple distance-vector protocols that only consider hop count."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "To prevent route hijacking by accepting only legitimate prefixes from customers and peers",
+      "correct_answer": "To prevent route hijacking by accepting only legitimate prefixes from customers and peers",
+      "analysis": "Great job!",
+      "explanation": "Route filtering is primarily used as a security measure to prevent route hijacking attacks. ISPs implement prefix filters to ensure they only accept route announcements for IP prefixes that their customers or peers are authorized to advertise, preventing malicious actors from redirecting traffic."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Local preference allows administrators to implement business policies that override shortest-path routing",
+      "correct_answer": "Local preference allows administrators to implement business policies that override shortest-path routing",
+      "analysis": "Great job!",
+      "explanation": "BGP prioritizes local preference over AS path length because it allows network administrators to implement business and policy decisions that may override pure shortest-path routing. This enables ISPs to prefer certain transit providers, implement traffic engineering, or route traffic based on commercial agreements rather than just path length."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "BGP supports policy-based routing between different administrative domains with potentially conflicting interests",
+      "correct_answer": "BGP supports policy-based routing between different administrative domains with potentially conflicting interests",
+      "analysis": "Great job!",
+      "explanation": "BGP was designed to handle inter-domain routing between autonomous systems that may have different administrative policies, business relationships, and trust levels. IGPs like OSPF assume a single administrative domain with common goals, while BGP enables policy-based routing decisions between organizations that may have competing interests."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Unstable physical links or routing loops; implement route dampening",
+      "correct_answer": "Unstable physical links or routing loops; implement route dampening",
+      "analysis": "Great job!",
+      "explanation": "Route flapping typically occurs when routes are repeatedly withdrawn and re-announced due to unstable links or configuration issues. Route dampening is the appropriate BGP feature that suppresses unstable routes by penalizing frequently changing prefixes, preventing them from destabilizing the global routing table."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 100%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

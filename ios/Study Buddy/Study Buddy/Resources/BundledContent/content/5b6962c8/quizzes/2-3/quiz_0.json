@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Loss Prevention",
+  "questions": [
+    {
+      "question": "A company discovers that employees are accidentally sending confidential customer data to personal email accounts. Which DLP strategy would be most effective as a primary solution?",
+      "options": [
+        "Implementing endpoint encryption on all devices",
+        "Deploying network-based DLP with email content inspection",
+        "Training employees on data classification policies",
+        "Installing firewall rules to block external email domains"
+      ],
+      "correct_index": 1,
+      "explanation": "Network-based DLP with email content inspection can automatically detect and block sensitive data in real-time before it leaves the organization, directly addressing the transmission issue. While training is important, it doesn't provide technical controls for accidental breaches."
+    },
+    {
+      "question": "When would endpoint-based DLP be preferred over network-based DLP for protecting intellectual property?",
+      "options": [
+        "When most data breaches occur through email transmission",
+        "When employees frequently work remotely and access data offline",
+        "When the organization has a simple network topology",
+        "When regulatory compliance requires network traffic monitoring"
+      ],
+      "correct_index": 1,
+      "explanation": "Endpoint-based DLP is essential when employees work remotely or offline because it monitors and controls data directly on devices, regardless of network connectivity. Network-based DLP only works when data passes through monitored network points."
+    },
+    {
+      "question": "Which scenario represents the most significant limitation of traditional DLP technologies?",
+      "options": [
+        "An employee printing sensitive documents at home",
+        "Detecting credit card numbers in email attachments",
+        "A contractor accessing unauthorized database records",
+        "An employee uploading encrypted files containing trade secrets to cloud storage"
+      ],
+      "correct_index": 3,
+      "explanation": "Traditional DLP systems struggle with encrypted content because they cannot inspect the actual data within encrypted files. This creates a blind spot where sensitive information can be exfiltrated while appearing as innocuous encrypted data to DLP sensors."
+    },
+    {
+      "question": "A financial services company needs to prevent customer social security numbers from being stored on unauthorized cloud services. Which DLP deployment approach would provide the most comprehensive protection?",
+      "options": [
+        "Cloud-based DLP only, since the threat involves cloud services",
+        "Network-based DLP only, to monitor all outbound traffic",
+        "Endpoint-based DLP only, to control user actions directly",
+        "A hybrid approach combining network, endpoint, and cloud-based DLP"
+      ],
+      "correct_index": 3,
+      "explanation": "A hybrid approach is most effective because it covers all potential data paths: endpoint DLP prevents local storage violations, network DLP catches transmission attempts, and cloud-based DLP monitors sanctioned cloud applications. Single-point solutions leave coverage gaps."
+    },
+    {
+      "question": "Why would an organization implement data classification as a foundational step before deploying DLP technologies?",
+      "options": [
+        "Data classification automatically prevents data breaches without additional tools",
+        "DLP systems can only protect data that has been properly tagged and categorized",
+        "Classification reduces the need for employee training on security policies",
+        "It eliminates the need for encryption and access controls"
+      ],
+      "correct_index": 1,
+      "explanation": "DLP systems rely on data classification to identify what data needs protection and apply appropriate policies. Without proper classification and tagging, DLP tools cannot distinguish between sensitive and non-sensitive information, making protection policies ineffective."
+    }
+  ],
+  "passing_score": 80
+}

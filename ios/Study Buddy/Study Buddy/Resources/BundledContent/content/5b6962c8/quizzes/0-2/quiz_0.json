@@ -1,0 +1,61 @@
+{
+  "topic_name": "Risk Management Fundamentals",
+  "questions": [
+    {
+      "question": "A company discovers that their customer database could be accessed by unauthorized users, but exploitation would require significant technical expertise and multiple security failures. How should this vulnerability be classified in terms of risk assessment?",
+      "options": [
+        "High impact, low probability",
+        "High impact, high probability",
+        "Low impact, low probability",
+        "Low impact, high probability"
+      ],
+      "correct_index": 0,
+      "explanation": "The customer database breach would have high impact (sensitive data exposure), but the low probability comes from the requirement for significant technical expertise and multiple security failures to occur simultaneously."
+    },
+    {
+      "question": "A healthcare organization is deciding between two security solutions for protecting patient records. Solution A costs $50,000 and reduces risk by 80%, while Solution B costs $200,000 and reduces risk by 95%. What concept should primarily guide their decision?",
+      "options": [
+        "Risk appetite",
+        "Risk tolerance",
+        "Risk avoidance",
+        "Risk transfer"
+      ],
+      "correct_index": 1,
+      "explanation": "Risk tolerance determines the acceptable level of residual risk an organization can live with after implementing controls, which directly impacts the cost-benefit analysis of security investments."
+    },
+    {
+      "question": "An e-commerce company experiences frequent but minor DDoS attacks that slow their website for 10-15 minutes monthly, causing approximately $500 in lost sales each time. The company chooses to monitor these attacks but takes no preventive action. This represents which risk management strategy?",
+      "options": [
+        "Risk avoidance",
+        "Risk mitigation",
+        "Risk acceptance",
+        "Risk transfer"
+      ],
+      "correct_index": 2,
+      "explanation": "Risk acceptance involves acknowledging the risk exists but choosing not to take action because the cost of mitigation would exceed the potential impact, as the minor financial loss is deemed acceptable."
+    },
+    {
+      "question": "When conducting a risk assessment for a new cloud migration project, which factor would be MOST important for determining the priority of identified risks?",
+      "options": [
+        "The technical complexity of each risk",
+        "The number of stakeholders affected by each risk",
+        "The combination of likelihood and potential business impact",
+        "The cost required to completely eliminate each risk"
+      ],
+      "correct_index": 2,
+      "explanation": "Risk priority is determined by multiplying likelihood (probability) by impact, creating a risk score that helps organizations focus resources on the most significant threats to business objectives."
+    },
+    {
+      "question": "A financial institution wants to reduce the risk of data breaches but cannot afford to implement all recommended security controls immediately. Which approach would best demonstrate effective risk management?",
+      "options": [
+        "Implement the cheapest controls first to maximize coverage",
+        "Focus only on controls that eliminate risk completely",
+        "Prioritize controls that address the highest-scoring risks first",
+        "Wait until full budget is available to implement all controls simultaneously"
+      ],
+      "correct_index": 2,
+      "explanation": "Effective risk management involves prioritizing controls based on risk scores (likelihood \u00d7 impact), ensuring that limited resources are allocated to address the most critical vulnerabilities that could cause the greatest business harm."
+    }
+  ],
+  "passing_score": 80
+}

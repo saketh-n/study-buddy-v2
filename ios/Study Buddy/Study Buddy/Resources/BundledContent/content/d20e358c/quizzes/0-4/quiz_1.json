@@ -1,0 +1,61 @@
+{
+  "topic_name": "LIBVIRT Management",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of using libvirt for managing virtualization environments?",
+      "options": [
+        "It provides a unified API that abstracts different hypervisor implementations",
+        "It directly replaces the need for hypervisors like KVM or Xen",
+        "It only works with container technologies, not traditional VMs",
+        "It stores all VM data locally without network connectivity options"
+      ],
+      "correct_index": 0,
+      "explanation": "Libvirt's main strength is providing a consistent, unified API that can manage different hypervisors (KVM, Xen, VMware, etc.) through a common interface, abstracting the underlying implementation differences."
+    },
+    {
+      "question": "When would you choose libvirt over direct hypervisor management for a production environment?",
+      "options": [
+        "When you need maximum performance and minimal overhead",
+        "When you want vendor lock-in to a specific hypervisor technology",
+        "When you need to manage multiple hypervisor types or want standardized tooling across different virtualization platforms",
+        "When you only plan to run a single VM on a dedicated server"
+      ],
+      "correct_index": 2,
+      "explanation": "Libvirt is most valuable in heterogeneous environments or when you want consistent management interfaces, standardized tooling, and the flexibility to switch between different hypervisors without rewriting management scripts."
+    },
+    {
+      "question": "How does the libvirtd daemon contribute to VM lifecycle management?",
+      "options": [
+        "It replaces the hypervisor and directly executes VM instructions",
+        "It acts as a service that receives API calls and translates them into hypervisor-specific commands",
+        "It only handles VM creation but not ongoing management operations",
+        "It serves as a backup storage system for VM snapshots"
+      ],
+      "correct_index": 1,
+      "explanation": "The libvirtd daemon is the core service that receives requests through libvirt's API and CLI tools, then translates these into appropriate commands for the underlying hypervisor to perform VM lifecycle operations."
+    },
+    {
+      "question": "Which scenario best demonstrates libvirt's problem-solving capability in enterprise environments?",
+      "options": [
+        "Running a single development VM on a personal laptop",
+        "Managing a data center with mixed KVM and VMware hosts while maintaining consistent automation scripts",
+        "Creating containers instead of VMs for microservices deployment",
+        "Installing a hypervisor for the first time on bare metal"
+      ],
+      "correct_index": 1,
+      "explanation": "Libvirt excels in complex environments where you need to manage different hypervisor technologies through a unified interface, enabling consistent automation and management practices across heterogeneous infrastructure."
+    },
+    {
+      "question": "What is a key consideration when implementing libvirt API integration in custom management applications?",
+      "options": [
+        "The API only supports synchronous operations, so all VM operations must complete immediately",
+        "You must handle both the abstraction benefits and potential limitations of not having direct hypervisor-specific features",
+        "The API requires a different programming language for each supported hypervisor",
+        "Network connectivity is not supported through the libvirt API"
+      ],
+      "correct_index": 1,
+      "explanation": "While libvirt provides valuable abstraction, developers must understand that some hypervisor-specific features may not be exposed through the unified API, requiring careful evaluation of requirements versus the benefits of standardization."
+    }
+  ],
+  "passing_score": 80
+}

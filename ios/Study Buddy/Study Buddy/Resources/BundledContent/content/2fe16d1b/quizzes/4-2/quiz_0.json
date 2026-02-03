@@ -1,0 +1,61 @@
+{
+  "topic_name": "Deep Neural Networks",
+  "questions": [
+    {
+      "question": "When designing a deep neural network for image classification, why would you typically choose ReLU activation functions over sigmoid functions in hidden layers?",
+      "options": [
+        "ReLU provides smoother gradients throughout the entire input range",
+        "ReLU helps prevent vanishing gradient problems and is computationally efficient",
+        "ReLU always produces outputs between 0 and 1, making them easier to interpret",
+        "ReLU functions are differentiable everywhere, unlike sigmoid functions"
+      ],
+      "correct_index": 1,
+      "explanation": "ReLU helps mitigate vanishing gradients because its derivative is either 0 or 1 (not approaching 0 like sigmoid), and it's computationally efficient with simple thresholding. Sigmoid functions suffer from vanishing gradients in deep networks due to their saturating nature."
+    },
+    {
+      "question": "You're training a deep network and notice that training accuracy reaches 99% while validation accuracy plateaus at 75%. Which regularization technique would be most appropriate as a first step?",
+      "options": [
+        "Increase the learning rate to escape local minima",
+        "Add more layers to increase model capacity",
+        "Implement dropout layers to reduce overfitting",
+        "Remove batch normalization to allow more model flexibility"
+      ],
+      "correct_index": 2,
+      "explanation": "The large gap between training (99%) and validation (75%) accuracy indicates overfitting. Dropout randomly sets some neurons to zero during training, preventing the model from becoming too dependent on specific features and improving generalization."
+    },
+    {
+      "question": "In a deep neural network architecture, what is the primary purpose of having multiple hidden layers rather than a single wide layer with many neurons?",
+      "options": [
+        "Multiple layers always train faster than wide layers",
+        "Deep architectures can learn hierarchical representations and complex non-linear mappings more efficiently",
+        "Multiple layers use less memory than wide layers",
+        "Deep networks always achieve higher accuracy than wide networks"
+      ],
+      "correct_index": 1,
+      "explanation": "Deep architectures excel at learning hierarchical features (edges \u2192 shapes \u2192 objects) and can represent complex functions more efficiently than wide shallow networks. This hierarchical learning is particularly powerful for tasks like image recognition and natural language processing."
+    },
+    {
+      "question": "When would you choose to use batch normalization in your deep neural network?",
+      "options": [
+        "Only when using sigmoid activation functions",
+        "When you want to slow down training to prevent overfitting",
+        "When you need to stabilize training, reduce internal covariate shift, and potentially use higher learning rates",
+        "Only in the output layer to normalize final predictions"
+      ],
+      "correct_index": 2,
+      "explanation": "Batch normalization normalizes inputs to each layer, reducing internal covariate shift, stabilizing gradients, and often allowing higher learning rates and faster training. It's typically applied to hidden layers, not just with specific activation functions."
+    },
+    {
+      "question": "You're building a neural network for a dataset with 50,000 training samples and 100 features. Your initial model has 5 hidden layers with 1000 neurons each. The model shows poor performance on both training and validation sets. What architectural change should you consider first?",
+      "options": [
+        "Add more layers to increase model complexity",
+        "Reduce the number of neurons and/or layers to prevent underfitting due to optimization difficulties",
+        "Switch from ReLU to sigmoid activation functions",
+        "Increase regularization strength significantly"
+      ],
+      "correct_index": 1,
+      "explanation": "Poor performance on both training and validation suggests the model may be too complex to optimize effectively with the available data, or suffering from optimization issues. A simpler architecture often trains more reliably and can achieve better performance when data is limited relative to model size."
+    }
+  ],
+  "passing_score": 80
+}

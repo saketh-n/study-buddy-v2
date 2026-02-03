@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Send the packet directly to 192.168.1.50 using ARP to find its MAC address",
+      "correct_answer": "Send the packet directly to 192.168.1.50 using ARP to find its MAC address",
+      "analysis": "Great job!",
+      "explanation": "Since both addresses are in the same subnet (192.168.1.0/24), this is local communication. The host will send the packet directly to the destination using ARP to resolve the MAC address."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Layer 2 frames can only travel within the same broadcast domain",
+      "correct_answer": "Layer 2 frames can only travel within the same broadcast domain",
+      "analysis": "Great job!",
+      "explanation": "Ethernet frames operate at Layer 2 and can only be delivered within the same broadcast domain. Since remote hosts are in different networks, the packet must be sent to a router (default gateway) that can forward it across network boundaries."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "The subnet mask should be /24 instead of /16",
+      "correct_answer": "The subnet mask should be /24 instead of /16",
+      "analysis": "Great job!",
+      "explanation": "With a /16 mask, the host treats 10.0.2.100 as local (same network) and tries direct delivery. If they should be on separate networks, the mask should be /24, making this remote communication that requires routing through a gateway."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Host A correctly identifies remote traffic but there's an issue beyond the local gateway",
+      "correct_answer": "Host A correctly identifies remote traffic but there's an issue beyond the local gateway",
+      "analysis": "Great job!",
+      "explanation": "Since Host A can ping the gateway, it correctly identifies local vs remote traffic and properly forwards remote packets to the gateway. The issue lies in routing beyond the local network, not in the host's routing decisions."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Keep the current /24 subnets and ensure each has a different gateway",
+      "correct_answer": "Keep the current /24 subnets and ensure each has a different gateway",
+      "analysis": "Great job!",
+      "explanation": "Keeping separate /24 subnets ensures hosts treat inter-departmental communication as remote, forcing packets through their respective gateways where firewall rules can be applied. Option A would make all traffic local, bypassing the router entirely."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 100%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

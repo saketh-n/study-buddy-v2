@@ -1,0 +1,61 @@
+{
+  "topic_name": "Statistics and Probability",
+  "questions": [
+    {
+      "question": "A machine learning engineer notices that the daily number of user registrations follows a Poisson distribution with \u03bb = 50. What is the most appropriate interpretation of this parameter?",
+      "options": [
+        "The maximum number of registrations possible in a day",
+        "The average number of registrations expected per day",
+        "The minimum number of registrations guaranteed per day",
+        "The standard deviation of registrations per day"
+      ],
+      "correct_index": 1,
+      "explanation": "In a Poisson distribution, \u03bb (lambda) represents both the mean and variance of the distribution. It indicates the average rate of occurrence of the event (registrations) in the given time period (per day)."
+    },
+    {
+      "question": "You're analyzing customer purchase amounts and find they follow a right-skewed distribution. Which measure of central tendency would be most appropriate for reporting typical customer spending, and why?",
+      "options": [
+        "Mean, because it uses all data points",
+        "Median, because it's less affected by extreme values",
+        "Mode, because it represents the most common value",
+        "Any of them, since they're equivalent for all distributions"
+      ],
+      "correct_index": 1,
+      "explanation": "In right-skewed distributions, the mean is pulled toward the tail by extreme values, making it higher than the typical value. The median better represents the center of the distribution and typical customer behavior since it's resistant to outliers."
+    },
+    {
+      "question": "A data scientist wants to test whether a new recommendation algorithm improves user engagement. After running an A/B test, they get a p-value of 0.03 with \u03b1 = 0.05. What should they conclude?",
+      "options": [
+        "The new algorithm is definitely better than the old one",
+        "There's a 97% chance the new algorithm is better",
+        "There's sufficient evidence to reject the null hypothesis of no improvement",
+        "The result is due to random chance"
+      ],
+      "correct_index": 2,
+      "explanation": "A p-value of 0.03 < \u03b1 = 0.05 means we reject the null hypothesis (no difference). This provides evidence against the null hypothesis, but doesn't prove the alternative is true or give us the probability that it's better."
+    },
+    {
+      "question": "When would you choose a two-tailed test over a one-tailed test in hypothesis testing for an AI model evaluation?",
+      "options": [
+        "When you only care if the new model performs better",
+        "When you want to detect any significant difference, regardless of direction",
+        "When you have a small sample size",
+        "When the data is normally distributed"
+      ],
+      "correct_index": 1,
+      "explanation": "A two-tailed test is appropriate when you want to detect differences in either direction (better or worse performance). A one-tailed test is used when you specifically care about improvement in only one direction."
+    },
+    {
+      "question": "A machine learning model's prediction errors follow a normal distribution with mean 0 and standard deviation 2. Approximately what percentage of predictions will have an absolute error greater than 4?",
+      "options": [
+        "5%",
+        "2.5%",
+        "1%",
+        "0.3%"
+      ],
+      "correct_index": 0,
+      "explanation": "An absolute error > 4 means errors < -4 or > +4. This is beyond 2 standard deviations from the mean (\u00b14 when \u03c3=2). Using the empirical rule, ~95% of values fall within 2\u03c3, so ~5% fall outside this range."
+    }
+  ],
+  "passing_score": 80
+}

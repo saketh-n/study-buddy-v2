@@ -1,0 +1,61 @@
+{
+  "topic_name": "Email Protocols",
+  "questions": [
+    {
+      "question": "A company executive needs to access their email from their office computer, laptop, and smartphone throughout the day. Which protocol would be most appropriate for their email client configuration?",
+      "options": [
+        "SMTP only",
+        "POP3",
+        "IMAP",
+        "HTTP"
+      ],
+      "correct_index": 2,
+      "explanation": "IMAP is designed for multi-device access, keeping emails synchronized across all devices by storing them on the server. POP3 typically downloads emails to one device, making them unavailable on others."
+    },
+    {
+      "question": "When you compose and send an email from your email client, which protocol is primarily responsible for delivering that message to the recipient's mail server?",
+      "options": [
+        "IMAP",
+        "POP3",
+        "SMTP",
+        "DNS"
+      ],
+      "correct_index": 2,
+      "explanation": "SMTP (Simple Mail Transfer Protocol) is specifically designed for sending outgoing mail from your email client to mail servers and between mail servers for delivery."
+    },
+    {
+      "question": "A freelancer works primarily from one home office computer and wants to minimize server storage usage while ensuring fast email access. Which protocol configuration would best meet their needs?",
+      "options": [
+        "IMAP with server-side storage",
+        "SMTP with local caching",
+        "POP3 with local download and deletion",
+        "IMAP with automatic forwarding"
+      ],
+      "correct_index": 2,
+      "explanation": "POP3 with local download and deletion removes emails from the server after downloading, reducing server storage while providing fast local access. This works well for single-device users."
+    },
+    {
+      "question": "Why would IMAP be preferred over POP3 for a team of customer service representatives who share access to a common support email account?",
+      "options": [
+        "IMAP provides better security encryption",
+        "IMAP allows multiple users to see the same emails and their read/unread status",
+        "IMAP sends emails faster than POP3",
+        "IMAP requires less bandwidth than POP3"
+      ],
+      "correct_index": 1,
+      "explanation": "IMAP keeps emails on the server and synchronizes status information (read/unread, folders, etc.) across all clients, making it ideal for shared mailboxes where multiple users need to see the same information."
+    },
+    {
+      "question": "A user reports that they can receive emails on their phone but cannot send them when away from their office network. The most likely cause is a configuration issue with which protocol?",
+      "options": [
+        "IMAP receiving settings",
+        "POP3 authentication",
+        "SMTP server settings",
+        "DNS resolution"
+      ],
+      "correct_index": 2,
+      "explanation": "Since the user can receive but not send emails, the issue is with outgoing mail, which uses SMTP. Many networks block SMTP ports or require specific authentication settings for sending mail from external networks."
+    }
+  ],
+  "passing_score": 80
+}

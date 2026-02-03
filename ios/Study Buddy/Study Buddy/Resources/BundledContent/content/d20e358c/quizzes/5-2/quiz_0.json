@@ -1,0 +1,61 @@
+{
+  "topic_name": "Service Management",
+  "questions": [
+    {
+      "question": "Why are Services necessary in a container orchestration platform when pods already have IP addresses?",
+      "options": [
+        "Pod IP addresses are ephemeral and change when pods are recreated, while Services provide stable endpoints",
+        "Pod IP addresses are too complex for applications to remember",
+        "Services make pods run faster by caching network requests",
+        "Pod IP addresses can only be accessed from within the same node"
+      ],
+      "correct_index": 0,
+      "explanation": "Services solve the fundamental problem that pod IP addresses are temporary and change when pods are recreated, terminated, or scaled. Services provide a stable virtual IP and DNS name that persists regardless of underlying pod changes."
+    },
+    {
+      "question": "A microservice application has 3 replicas of a web server pod running. When a client makes requests to the Service, how does load balancing typically work?",
+      "options": [
+        "Requests always go to the pod with the lowest CPU usage",
+        "Requests are distributed using round-robin by default, but this can be configured",
+        "All requests from the same client IP always go to the same pod",
+        "The Service randomly picks a different pod for each packet in a TCP connection"
+      ],
+      "correct_index": 1,
+      "explanation": "Services typically use round-robin load balancing by default to distribute requests across healthy pods in the service's endpoint list. While session affinity can be configured, it's not the default behavior, and load balancing operates at the connection level, not per-packet."
+    },
+    {
+      "question": "What happens when you create a Service but no pods match its selector?",
+      "options": [
+        "The Service creation fails with an error",
+        "The Service is created successfully but has no endpoints, so requests will fail until matching pods exist",
+        "Kubernetes automatically creates placeholder pods to match the selector",
+        "The Service automatically selects any available pods in the namespace"
+      ],
+      "correct_index": 1,
+      "explanation": "Services and pods are loosely coupled. A Service can exist without matching pods - it will simply have an empty endpoint list. When pods matching the selector are created later, they will automatically be added to the Service's endpoints."
+    },
+    {
+      "question": "Your application needs to connect to a database that runs outside your Kubernetes cluster. Which Service type would be most appropriate?",
+      "options": [
+        "ClusterIP Service pointing to the external database IP",
+        "NodePort Service to expose the external database",
+        "ExternalName Service to create a DNS alias, or Service with manually defined Endpoints",
+        "LoadBalancer Service to distribute traffic to the external database"
+      ],
+      "correct_index": 2,
+      "explanation": "For external services, you can use an ExternalName Service to create a DNS CNAME alias, or create a Service with manually defined Endpoints pointing to the external IP. ClusterIP, NodePort, and LoadBalancer are designed for internal pod-based services."
+    },
+    {
+      "question": "When would you choose a Headless Service (ClusterIP: None) over a regular ClusterIP Service?",
+      "options": [
+        "When you want to expose the service externally to the internet",
+        "When you need direct pod-to-pod communication or custom load balancing logic",
+        "When you have only one pod and don't need load balancing",
+        "When you want to improve performance by eliminating network hops"
+      ],
+      "correct_index": 1,
+      "explanation": "Headless Services return individual pod IPs via DNS rather than a single virtual IP, allowing applications to implement custom load balancing, connect to specific pods, or enable direct pod-to-pod communication patterns like those needed by stateful applications or service discovery."
+    }
+  ],
+  "passing_score": 80
+}

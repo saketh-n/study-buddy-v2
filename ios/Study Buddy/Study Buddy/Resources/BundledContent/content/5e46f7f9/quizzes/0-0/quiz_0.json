@@ -1,0 +1,61 @@
+{
+  "topic_name": "OSI Model Layers",
+  "questions": [
+    {
+      "question": "A network administrator is troubleshooting connectivity issues and discovers that data packets are being correctly routed between networks but are arriving corrupted at their destination. At which OSI layer should they focus their investigation?",
+      "options": [
+        "Physical Layer",
+        "Data Link Layer",
+        "Network Layer",
+        "Transport Layer"
+      ],
+      "correct_index": 0,
+      "explanation": "Since packets are being routed correctly (Network Layer working) but arriving corrupted, the issue is likely at the Physical Layer where the actual transmission medium (cables, wireless signals, etc.) may be causing signal degradation or interference."
+    },
+    {
+      "question": "When designing a network protocol that needs to establish a secure, encrypted communication channel between two applications, which OSI layers would be primarily involved in this functionality?",
+      "options": [
+        "Physical and Data Link layers",
+        "Network and Transport layers",
+        "Session and Presentation layers",
+        "Transport and Application layers"
+      ],
+      "correct_index": 2,
+      "explanation": "The Session layer handles establishing, managing, and terminating communication sessions between applications, while the Presentation layer is responsible for encryption, decryption, and data formatting. Together they provide secure communication channels."
+    },
+    {
+      "question": "A company's email server can establish TCP connections with clients but the email messages appear as garbled text with strange characters. This problem most likely occurs at which OSI layer?",
+      "options": [
+        "Transport Layer - TCP connection issues",
+        "Session Layer - session management problems",
+        "Presentation Layer - data formatting/encoding issues",
+        "Application Layer - email protocol problems"
+      ],
+      "correct_index": 2,
+      "explanation": "Since TCP connections work properly, the Transport Layer is functioning. Garbled text with strange characters indicates a data formatting, encoding, or character set issue, which is handled by the Presentation Layer."
+    },
+    {
+      "question": "In a scenario where a router needs to forward packets between different network segments, which statement best explains why the router operates primarily at Layer 3 (Network Layer)?",
+      "options": [
+        "It needs to examine physical cable connections to determine the best path",
+        "It must make forwarding decisions based on logical network addresses like IP addresses",
+        "It requires access to application data to determine packet priority",
+        "It needs to manage individual frame transmission between directly connected devices"
+      ],
+      "correct_index": 1,
+      "explanation": "Routers operate at Layer 3 because they make forwarding decisions based on logical network addresses (like IP addresses) found in packet headers. They don't need to examine physical connections, application data, or manage frame transmission - those are functions of other layers."
+    },
+    {
+      "question": "A network engineer is implementing Quality of Service (QoS) to prioritize video conference traffic over file downloads. To achieve reliable, ordered delivery of video packets while managing network congestion, which OSI layer functionality is most critical for this implementation?",
+      "options": [
+        "Data Link Layer - managing frame transmission rates",
+        "Network Layer - implementing packet prioritization in routing",
+        "Transport Layer - providing reliable, connection-oriented communication",
+        "Application Layer - optimizing video codec settings"
+      ],
+      "correct_index": 2,
+      "explanation": "The Transport Layer (Layer 4) is critical for QoS implementation as it provides reliable, ordered delivery through protocols like TCP, manages flow control to prevent congestion, and can implement prioritization mechanisms. While other layers contribute, Transport Layer handles the core reliability and congestion management requirements."
+    }
+  ],
+  "passing_score": 80
+}

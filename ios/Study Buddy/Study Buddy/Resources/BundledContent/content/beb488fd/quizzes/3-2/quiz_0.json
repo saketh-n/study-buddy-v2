@@ -1,0 +1,61 @@
+{
+  "topic_name": "Apache Kafka",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of Apache Kafka's distributed design when handling high-throughput data streams?",
+      "options": [
+        "It enables horizontal scaling by distributing partitions across multiple brokers, allowing parallel processing",
+        "It automatically compresses all messages to reduce storage requirements",
+        "It eliminates the need for data replication by using a single master node",
+        "It converts all data to a standard format before processing"
+      ],
+      "correct_index": 0,
+      "explanation": "Kafka's distributed architecture allows topics to be partitioned across multiple brokers, enabling horizontal scaling and parallel processing of data streams, which is essential for handling high throughput."
+    },
+    {
+      "question": "In which scenario would Apache Kafka be the MOST appropriate choice over a traditional message queue like RabbitMQ?",
+      "options": [
+        "When you need guaranteed message delivery with complex routing rules",
+        "When you need to replay historical events and maintain a durable log of all data changes",
+        "When you have a small number of producers sending low-volume messages",
+        "When you need immediate acknowledgment of message processing"
+      ],
+      "correct_index": 1,
+      "explanation": "Kafka's append-only log structure makes it ideal for event sourcing and scenarios requiring message replay, as it maintains a durable, ordered log that can be consumed multiple times by different applications."
+    },
+    {
+      "question": "How does Kafka's consumer group mechanism solve the problem of scaling message consumption?",
+      "options": [
+        "It automatically creates multiple copies of each message for parallel processing",
+        "It allows multiple consumers to work together, with each partition assigned to only one consumer in the group",
+        "It compresses messages before sending them to consumers",
+        "It routes messages to consumers based on message content"
+      ],
+      "correct_index": 1,
+      "explanation": "Consumer groups enable horizontal scaling by distributing partition ownership among consumers in the group, ensuring each partition is consumed by only one consumer at a time while allowing parallel processing across partitions."
+    },
+    {
+      "question": "Why is the concept of 'offset' crucial for Kafka's fault tolerance and exactly-once processing guarantees?",
+      "options": [
+        "Offsets determine the priority of messages in the queue",
+        "Offsets enable consumers to track their position in the log and resume from the last processed message",
+        "Offsets automatically delete old messages to free up storage space",
+        "Offsets encrypt messages for secure transmission"
+      ],
+      "correct_index": 1,
+      "explanation": "Offsets are sequential identifiers that allow consumers to track their position in each partition, enabling them to resume processing from where they left off after failures and achieve exactly-once processing semantics."
+    },
+    {
+      "question": "When designing a real-time analytics pipeline, why would you choose Kafka over a traditional batch processing approach?",
+      "options": [
+        "Kafka provides better data compression than batch systems",
+        "Kafka enables continuous data processing with low latency, allowing real-time insights and immediate responses to events",
+        "Kafka automatically performs complex analytical computations",
+        "Kafka requires less storage space than batch processing systems"
+      ],
+      "correct_index": 1,
+      "explanation": "Kafka's streaming architecture enables continuous, low-latency data processing, making it ideal for real-time analytics where immediate insights and rapid response to events are critical business requirements."
+    }
+  ],
+  "passing_score": 80
+}

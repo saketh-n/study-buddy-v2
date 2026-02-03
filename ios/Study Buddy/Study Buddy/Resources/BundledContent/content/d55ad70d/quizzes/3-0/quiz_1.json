@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux directory structure, Mount filesystems.. local vs network-file vs network-block",
+  "questions": [
+    {
+      "question": "A system administrator needs to temporarily access files from a Windows file server for a data migration project. Which mount type would be most appropriate and why?",
+      "options": [
+        "Network-file mount because it provides direct file-level access over the network with minimal local storage requirements",
+        "Local mount because it provides the fastest access to the files",
+        "Network-block mount because it provides better security for accessing Windows systems",
+        "Local mount after copying all files because network access is unreliable"
+      ],
+      "correct_index": 0,
+      "explanation": "Network-file mounts (like CIFS/SMB) are designed for accessing file servers over the network, allowing direct file operations without needing to transfer entire datasets locally first."
+    },
+    {
+      "question": "You're configuring a database server that requires high-performance storage. The storage array is accessible via iSCSI. What mount strategy should you use?",
+      "options": [
+        "Mount the iSCSI target as a network-file system for better sharing capabilities",
+        "Mount the iSCSI target as a network-block device, then create a local filesystem on it",
+        "Use NFS to access the storage array for better performance",
+        "Create multiple local filesystems and use RAID for performance"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI provides block-level access over the network. The correct approach is to mount it as a block device, then format it with a local filesystem optimized for database workloads."
+    },
+    {
+      "question": "According to the Filesystem Hierarchy Standard, where should a web application's document root typically be located, and why is this location significant?",
+      "options": [
+        "/var/www because /var contains variable data and web content changes frequently",
+        "/usr/local/www because web applications are locally installed software",
+        "/opt/www because web servers are optional third-party packages",
+        "/home/www because web content belongs to the web server user"
+      ],
+      "correct_index": 0,
+      "explanation": "/var is designated for variable data files, including web content that changes during system operation. /var/www follows FHS guidelines for dynamic content."
+    },
+    {
+      "question": "A development team needs shared access to project files from multiple Linux workstations, with the ability to edit files simultaneously and maintain POSIX permissions. What filesystem approach would you recommend?",
+      "options": [
+        "Local filesystems with rsync synchronization for better performance",
+        "Network-block storage with each workstation mounting the same block device",
+        "Network-file system like NFS that preserves POSIX semantics",
+        "Cloud storage with local caching for reliability"
+      ],
+      "correct_index": 2,
+      "explanation": "NFS (Network File System) is designed for shared file access across multiple clients while maintaining POSIX permissions and file locking semantics needed for collaborative development."
+    },
+    {
+      "question": "You notice that /tmp is filling up quickly on a server. Understanding the Linux directory structure, what would be the most appropriate long-term solution?",
+      "options": [
+        "Move /tmp to a larger partition or mount it as a separate filesystem with appropriate size and cleanup policies",
+        "Create symbolic links from /tmp to /var/tmp to double the available space",
+        "Change application configurations to use /usr/tmp instead",
+        "Increase the size of the root filesystem since /tmp should always be on root"
+      ],
+      "correct_index": 0,
+      "explanation": "/tmp should be properly sized for temporary files and ideally mounted separately with policies like automatic cleanup. This prevents it from filling the root filesystem and provides better control over temporary storage."
+    }
+  ],
+  "passing_score": 80
+}

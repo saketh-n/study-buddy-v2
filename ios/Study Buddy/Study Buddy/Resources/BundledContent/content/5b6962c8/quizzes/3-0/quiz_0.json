@@ -1,0 +1,61 @@
+{
+  "topic_name": "Authentication Methods",
+  "questions": [
+    {
+      "question": "A company discovers that several employee passwords were compromised in a data breach, but no unauthorized access occurred to their systems. What security measure most likely prevented the attackers from gaining access?",
+      "options": [
+        "Complex password requirements",
+        "Multi-factor authentication (MFA)",
+        "Password expiration policies",
+        "Account lockout after failed attempts"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-factor authentication would prevent access even with compromised passwords, as attackers would still need the second authentication factor."
+    },
+    {
+      "question": "Why is biometric authentication generally considered more secure than traditional passwords for user verification?",
+      "options": [
+        "Biometric data can never be stolen or copied",
+        "Biometric traits are unique and difficult to replicate",
+        "Biometric systems are cheaper to implement",
+        "Biometric authentication is faster than typing passwords"
+      ],
+      "correct_index": 1,
+      "explanation": "Biometric traits are unique to individuals and much harder to replicate than passwords, though they can still be compromised and should be used as part of a multi-layered security approach."
+    },
+    {
+      "question": "An organization wants to implement MFA for remote workers accessing sensitive financial data. Which combination would provide the strongest security while remaining practical for daily use?",
+      "options": [
+        "Password + SMS text code",
+        "Password + authenticator app + biometric",
+        "Password + security question + email code",
+        "Biometric + hardware token"
+      ],
+      "correct_index": 1,
+      "explanation": "This three-factor approach combines something you know (password), something you have (authenticator app), and something you are (biometric), providing the strongest security across all authentication factors."
+    },
+    {
+      "question": "A user creates the password 'MyDog2023!' believing it's secure because it meets complexity requirements. What is the primary weakness of this approach to password security?",
+      "options": [
+        "The password is too short for modern standards",
+        "It contains predictable personal information and common patterns",
+        "The exclamation mark makes it vulnerable to dictionary attacks",
+        "It should include more special characters"
+      ],
+      "correct_index": 1,
+      "explanation": "Despite meeting complexity requirements, passwords based on personal information with predictable patterns (pet name + year + common symbol) are vulnerable to targeted attacks and social engineering."
+    },
+    {
+      "question": "When would an organization choose to implement risk-based authentication rather than requiring MFA for every login attempt?",
+      "options": [
+        "When biometric systems are too expensive to deploy",
+        "When users frequently forget their passwords",
+        "When balancing security needs with user experience and operational efficiency",
+        "When the organization has a small number of users"
+      ],
+      "correct_index": 2,
+      "explanation": "Risk-based authentication evaluates login context (location, device, behavior) to determine when additional authentication is needed, providing strong security while minimizing user friction for routine, low-risk access."
+    }
+  ],
+  "passing_score": 80
+}

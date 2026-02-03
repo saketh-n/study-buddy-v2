@@ -1,0 +1,61 @@
+{
+  "topic_name": "Catholic Church and Religious Life",
+  "questions": [
+    {
+      "question": "Why was the Catholic Church granted such extensive control over education and social services in New France, unlike in other European colonies?",
+      "options": [
+        "The French Crown wanted to create a unified Catholic society that would be more loyal and easier to govern",
+        "The Catholic Church had more money than the government to fund these services",
+        "Indigenous peoples specifically requested Catholic education over Protestant alternatives",
+        "The harsh Canadian climate made it impossible for secular institutions to operate effectively"
+      ],
+      "correct_index": 0,
+      "explanation": "The French Crown deliberately granted the Catholic Church extensive powers to create a homogeneous Catholic society that would strengthen colonial unity and loyalty to France, contrasting with more religiously diverse colonies."
+    },
+    {
+      "question": "When Jesuit missionaries encountered Indigenous spiritual practices that seemed similar to Christian concepts, what approach would best reflect their typical strategy?",
+      "options": [
+        "Completely forbid all Indigenous practices and demand immediate conversion",
+        "Incorporate Indigenous practices unchanged into Catholic rituals",
+        "Identify similarities to build bridges while gradually replacing Indigenous elements with Catholic ones",
+        "Ignore Indigenous practices entirely and focus only on French colonists"
+      ],
+      "correct_index": 2,
+      "explanation": "Jesuits often used a strategy of accommodation, finding common ground between Indigenous beliefs and Christianity to facilitate conversion, while ultimately seeking to replace Indigenous practices with Catholic ones."
+    },
+    {
+      "question": "What was the primary reason why religious orders like the Ursulines and Hospitallers established institutions specifically for women in New France?",
+      "options": [
+        "To provide French women with alternatives to marriage in a male-dominated colony",
+        "To train women as missionaries to work more effectively with Indigenous women and children",
+        "To fulfill the Catholic vision of a complete Christian society with proper social and spiritual care for all members",
+        "To compete with Protestant colonies that were attracting more female settlers"
+      ],
+      "correct_index": 2,
+      "explanation": "These institutions were established as part of the broader Catholic mission to create a complete Christian society in New France, providing education, healthcare, and spiritual guidance essential to this vision."
+    },
+    {
+      "question": "How did the Catholic Church's role in recordkeeping and administration demonstrate its integration into colonial governance?",
+      "options": [
+        "Church records were kept separate from government records to maintain religious independence",
+        "The Church only recorded births and deaths, leaving other administrative duties to secular officials",
+        "Parish priests served as civil administrators, recording vital statistics and land transactions that were essential for colonial governance",
+        "The Church challenged government authority by refusing to share administrative responsibilities"
+      ],
+      "correct_index": 2,
+      "explanation": "Parish priests functioned as both religious and civil administrators, maintaining vital records and handling administrative duties that made them integral to colonial governance rather than separate from it."
+    },
+    {
+      "question": "Why did some Indigenous communities initially accept Jesuit missions but later resist or abandon them?",
+      "options": [
+        "They realized the missionaries were primarily interested in acquiring land rather than spiritual matters",
+        "Initial curiosity about new spiritual ideas gave way to concerns about losing traditional practices and community autonomy",
+        "The Jesuits failed to learn Indigenous languages, making communication impossible",
+        "Indigenous peoples preferred Protestant missionaries who arrived later"
+      ],
+      "correct_index": 1,
+      "explanation": "Many Indigenous communities initially welcomed missionaries out of curiosity or diplomatic considerations, but later resisted when they realized that conversion often meant abandoning traditional practices and accepting French cultural dominance."
+    }
+  ],
+  "passing_score": 80
+}

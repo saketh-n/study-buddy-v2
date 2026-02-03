@@ -1,0 +1,61 @@
+{
+  "topic_name": "Type 2 Diabetes Treatment",
+  "questions": [
+    {
+      "question": "A 45-year-old patient with Type 2 diabetes has an HbA1c of 8.2% despite optimal metformin therapy and has a BMI of 32. They express concern about weight gain with additional medications. Which characteristic of GLP-1 receptor agonists makes them most appropriate for this patient?",
+      "options": [
+        "They provide glucose-dependent insulin secretion and promote weight loss",
+        "They have the lowest cost among all diabetes medications",
+        "They can be used as monotherapy without metformin",
+        "They provide the most rapid onset of glycemic control within 24 hours"
+      ],
+      "correct_index": 0,
+      "explanation": "GLP-1 receptor agonists are ideal for this patient because they provide effective glycemic control through glucose-dependent mechanisms while promoting weight loss, addressing both the elevated HbA1c and obesity concerns simultaneously."
+    },
+    {
+      "question": "According to current diabetes management algorithms, when should GLP-1 receptor agonists be considered as a second-line therapy?",
+      "options": [
+        "Only after insulin therapy has failed to achieve target HbA1c",
+        "When patients have contraindications to all other oral antidiabetic medications",
+        "When patients have established cardiovascular disease or need to avoid weight gain",
+        "As the first choice in all newly diagnosed Type 2 diabetes patients"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptor agonists are prioritized as second-line therapy when patients have established cardiovascular disease (due to proven cardiovascular benefits) or when avoiding weight gain is important, rather than being reserved only after other therapies fail."
+    },
+    {
+      "question": "Why do GLP-1 receptor agonists have a lower risk of hypoglycemia compared to sulfonylureas when used for glycemic control?",
+      "options": [
+        "They are administered less frequently than sulfonylureas",
+        "They stimulate insulin release only when glucose levels are elevated",
+        "They have a shorter half-life in the bloodstream",
+        "They primarily work by blocking glucose absorption in the intestines"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists have glucose-dependent action, meaning they stimulate insulin secretion and suppress glucagon only when blood glucose is elevated, which significantly reduces hypoglycemia risk compared to sulfonylureas that stimulate insulin regardless of glucose levels."
+    },
+    {
+      "question": "A patient with Type 2 diabetes and chronic kidney disease (eGFR 35 mL/min/1.73m\u00b2) needs intensification of diabetes therapy. What makes certain GLP-1 receptor agonists particularly suitable for this clinical scenario?",
+      "options": [
+        "They improve kidney function by increasing glomerular filtration rate",
+        "They are primarily metabolized by the liver, avoiding kidney-related dose adjustments",
+        "They provide renal protection and most don't require dose adjustment in moderate CKD",
+        "They can reverse existing diabetic nephropathy completely"
+      ],
+      "correct_index": 2,
+      "explanation": "Many GLP-1 receptor agonists don't require dose adjustment in moderate CKD and have demonstrated renal protective effects in clinical trials, making them valuable for patients with diabetic kidney disease, though they don't reverse existing damage."
+    },
+    {
+      "question": "When comparing the efficacy of GLP-1 receptor agonists to other diabetes medications, which statement best describes their role in achieving glycemic targets?",
+      "options": [
+        "They provide superior HbA1c reduction compared to all other diabetes medications",
+        "They offer moderate HbA1c reduction (1-1.5%) with additional cardiovascular and weight benefits",
+        "They are only effective when combined with insulin therapy",
+        "They should only be used when HbA1c is above 10% due to their potent glucose-lowering effects"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists typically reduce HbA1c by 1-1.5%, which is comparable to other second-line agents. Their value lies in combining this moderate glycemic efficacy with cardiovascular protection and weight loss benefits, making them valuable across a range of HbA1c levels."
+    }
+  ],
+  "passing_score": 80
+}

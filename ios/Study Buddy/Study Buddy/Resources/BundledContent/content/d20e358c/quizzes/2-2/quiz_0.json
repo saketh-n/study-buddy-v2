@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Architecture",
+  "questions": [
+    {
+      "question": "When a container is running and you kill the dockerd daemon process, what happens to the running containers and why?",
+      "options": [
+        "Containers continue running because containerd and runc operate independently of dockerd",
+        "All containers immediately stop because dockerd manages the container lifecycle",
+        "Containers pause until dockerd restarts because they lose their network connections",
+        "Only privileged containers continue running while unprivileged ones stop"
+      ],
+      "correct_index": 0,
+      "explanation": "Containers continue running because the Docker architecture is modular. containerd manages the container lifecycle independently of dockerd, and runc handles the actual container execution. This design ensures container resilience even if the Docker daemon fails."
+    },
+    {
+      "question": "A development team wants to implement a custom container runtime that uses a different isolation technology than the standard Linux namespaces. Which component would they most likely need to replace or modify?",
+      "options": [
+        "dockerd - to change the API interface",
+        "containerd - to modify image management",
+        "runc - to implement different isolation mechanisms",
+        "container-shim - to change process monitoring"
+      ],
+      "correct_index": 2,
+      "explanation": "runc is the low-level runtime responsible for creating and running containers according to the OCI specification. To implement different isolation technologies, they would need to replace or modify runc, as it handles the actual container creation, namespace setup, and resource constraints."
+    },
+    {
+      "question": "Why does Docker architecture include container-shim as a separate component rather than having containerd directly manage container processes?",
+      "options": [
+        "To reduce memory usage by distributing process management",
+        "To enable container processes to survive containerd restarts and provide proper process reaping",
+        "To improve security by adding an additional isolation layer",
+        "To allow multiple container runtimes to run simultaneously"
+      ],
+      "correct_index": 1,
+      "explanation": "container-shim acts as an intermediate parent process that survives containerd restarts, ensuring containers don't become orphaned. It also handles proper process reaping and maintains the container's stdio streams, providing stability and proper Unix process management."
+    },
+    {
+      "question": "A system administrator notices that container startup times are slower than expected. Understanding Docker's architecture, which component's performance would most directly impact the time between 'docker run' and the container process actually starting?",
+      "options": [
+        "dockerd API processing speed",
+        "containerd's image pulling and unpacking operations",
+        "container-shim initialization overhead",
+        "runc's namespace and cgroup setup time"
+      ],
+      "correct_index": 1,
+      "explanation": "While all components contribute to startup time, containerd's image management operations (pulling layers, unpacking, preparing the filesystem) typically represent the largest portion of container startup time, especially for new or large images. The actual runtime operations are usually much faster."
+    },
+    {
+      "question": "In a scenario where you need to debug why a container failed to start, which sequence correctly represents the flow of responsibility in Docker's architecture?",
+      "options": [
+        "dockerd receives request \u2192 runc creates container \u2192 containerd manages lifecycle \u2192 container-shim monitors",
+        "dockerd receives request \u2192 containerd prepares environment \u2192 container-shim spawns \u2192 runc executes container",
+        "dockerd receives request \u2192 container-shim initializes \u2192 containerd pulls image \u2192 runc starts process",
+        "dockerd receives request \u2192 containerd pulls image \u2192 runc creates container \u2192 container-shim becomes parent"
+      ],
+      "correct_index": 3,
+      "explanation": "The correct flow is: dockerd handles the API request and delegates to containerd, which manages image operations and preparation. containerd then uses runc to create and start the container according to OCI specs, and container-shim becomes the parent process to monitor the container lifecycle."
+    }
+  ],
+  "passing_score": 80
+}

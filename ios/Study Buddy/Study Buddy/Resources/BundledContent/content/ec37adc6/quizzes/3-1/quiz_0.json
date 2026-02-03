@@ -1,0 +1,61 @@
+{
+  "topic_name": "Weight Management Applications",
+  "questions": [
+    {
+      "question": "Which mechanism primarily explains why GLP-1 receptor agonists lead to weight loss in patients with obesity?",
+      "options": [
+        "Delayed gastric emptying and enhanced satiety signaling to the brain",
+        "Direct stimulation of brown adipose tissue thermogenesis",
+        "Inhibition of pancreatic lipase leading to fat malabsorption",
+        "Increased metabolic rate through thyroid hormone activation"
+      ],
+      "correct_index": 0,
+      "explanation": "GLP-1 receptor agonists work primarily by slowing gastric emptying and activating satiety centers in the hypothalamus, leading to reduced food intake and prolonged feelings of fullness."
+    },
+    {
+      "question": "A 45-year-old patient with a BMI of 32 kg/m\u00b2 and type 2 diabetes has plateaued in weight loss after 6 months on metformin and lifestyle modifications. When would adding a GLP-1 receptor agonist be most appropriate?",
+      "options": [
+        "Only after trying all other antidiabetic medications first",
+        "When the patient's HbA1c is above 10% and immediate insulin is needed",
+        "When additional weight loss and glycemic control are needed simultaneously",
+        "Only if the patient has failed bariatric surgery"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptor agonists are ideal when patients need both improved glycemic control and weight loss, making them particularly valuable for overweight diabetic patients who have plateaued with other interventions."
+    },
+    {
+      "question": "Why is gradual dose titration essential when initiating GLP-1 receptor agonists for weight management?",
+      "options": [
+        "To prevent dangerous hypoglycemia in non-diabetic patients",
+        "To minimize gastrointestinal side effects and improve treatment adherence",
+        "To allow time for pancreatic beta cell regeneration",
+        "To prevent rapid weight loss that could cause gallstones"
+      ],
+      "correct_index": 1,
+      "explanation": "Gradual dose titration helps minimize common GI side effects like nausea and vomiting, which are the primary reasons for treatment discontinuation and poor adherence."
+    },
+    {
+      "question": "How should lifestyle interventions be integrated with GLP-1 receptor agonist therapy for optimal weight management outcomes?",
+      "options": [
+        "Lifestyle changes should be discontinued once medication is started to avoid drug interactions",
+        "Dietary restrictions should be minimized since the medication controls appetite completely",
+        "Structured nutrition counseling and physical activity should continue as the medication enhances adherence to these behaviors",
+        "Exercise should be limited to prevent excessive weight loss from the combined effects"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptor agonists work synergistically with lifestyle interventions by making it easier for patients to adhere to dietary changes and maintain physical activity, amplifying the overall weight loss effect."
+    },
+    {
+      "question": "A patient asks why they regained some weight after achieving significant weight loss with a GLP-1 receptor agonist, despite maintaining the same dose. What is the most likely explanation?",
+      "options": [
+        "The body has developed complete resistance to the medication's effects",
+        "Natural metabolic adaptations and potential behavioral changes have occurred over time",
+        "The medication has damaged their metabolism permanently",
+        "This indicates the development of diabetes and insulin resistance"
+      ],
+      "correct_index": 1,
+      "explanation": "Weight regain can occur due to metabolic adaptations (reduced energy expenditure) and gradual changes in eating behaviors. This highlights the importance of ongoing lifestyle support and potential dose optimization or combination therapies."
+    }
+  ],
+  "passing_score": 80
+}

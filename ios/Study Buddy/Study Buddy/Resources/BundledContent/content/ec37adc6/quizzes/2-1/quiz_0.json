@@ -1,0 +1,61 @@
+{
+  "topic_name": "Classification of GLP-1 Agonists",
+  "questions": [
+    {
+      "question": "A diabetic patient frequently forgets to take medications and has erratic meal timing. Which characteristic of GLP-1 receptor agonists would be most advantageous for this patient's adherence and glycemic control?",
+      "options": [
+        "Short-acting formulation with rapid onset",
+        "Long-acting formulation with once-weekly dosing",
+        "DPP-4 inhibitor with meal-dependent action",
+        "Short-acting formulation with flexible timing"
+      ],
+      "correct_index": 1,
+      "explanation": "Long-acting GLP-1 agonists with once-weekly dosing would improve adherence in patients who forget medications, while still providing consistent glucose-dependent insulin secretion regardless of meal timing irregularities."
+    },
+    {
+      "question": "What is the fundamental mechanistic difference between incretin mimetics (GLP-1 agonists) and DPP-4 inhibitors in managing postprandial glucose?",
+      "options": [
+        "DPP-4 inhibitors directly stimulate insulin release while GLP-1 agonists inhibit glucagon",
+        "GLP-1 agonists provide supraphysiological incretin activity while DPP-4 inhibitors preserve endogenous incretin levels",
+        "DPP-4 inhibitors work only postprandially while GLP-1 agonists work continuously",
+        "GLP-1 agonists require endogenous incretin production while DPP-4 inhibitors are incretin-independent"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 agonists are synthetic analogs that provide pharmacological levels of incretin activity, while DPP-4 inhibitors work by preventing the breakdown of endogenous incretins, maintaining physiological levels."
+    },
+    {
+      "question": "A patient experiences significant postprandial glucose spikes despite good fasting glucose control. When comparing short-acting vs long-acting GLP-1 agonists, which factor best explains the potential advantage of short-acting agents for this specific problem?",
+      "options": [
+        "Short-acting agents have stronger insulin secretion effects",
+        "Short-acting agents can be timed with meals for targeted postprandial control",
+        "Short-acting agents have fewer gastrointestinal side effects",
+        "Short-acting agents provide better fasting glucose control"
+      ],
+      "correct_index": 1,
+      "explanation": "Short-acting GLP-1 agonists can be administered before meals to specifically target postprandial glucose excursions through meal-timed incretin effects, including delayed gastric emptying and glucose-dependent insulin release."
+    },
+    {
+      "question": "In terms of incretin hormone physiology, why might a DPP-4 inhibitor be less effective than a GLP-1 agonist in a patient with advanced type 2 diabetes?",
+      "options": [
+        "DPP-4 inhibitors lose effectiveness over time due to receptor downregulation",
+        "DPP-4 inhibitors require functional beta cells while GLP-1 agonists do not",
+        "Endogenous incretin production may be impaired, limiting DPP-4 inhibitor efficacy",
+        "DPP-4 inhibitors only work in the presence of adequate insulin sensitivity"
+      ],
+      "correct_index": 2,
+      "explanation": "In advanced diabetes, endogenous GLP-1 production from L-cells may be impaired. DPP-4 inhibitors can only preserve existing incretin levels, while GLP-1 agonists provide exogenous incretin activity independent of endogenous production."
+    },
+    {
+      "question": "When considering the glucose-dependent mechanism of action, which clinical scenario would theoretically favor incretin-based therapies (both GLP-1 agonists and DPP-4 inhibitors) over other antidiabetic medications?",
+      "options": [
+        "A patient with frequent severe hypoglycemic episodes on current therapy",
+        "A patient requiring rapid achievement of glycemic targets",
+        "A patient with type 1 diabetes and residual beta cell function",
+        "A patient with diabetic ketoacidosis"
+      ],
+      "correct_index": 0,
+      "explanation": "The glucose-dependent mechanism of incretin-based therapies means insulin secretion and glucagon suppression only occur when glucose levels are elevated, significantly reducing hypoglycemia risk compared to glucose-independent therapies like sulfonylureas or insulin."
+    }
+  ],
+  "passing_score": 80
+}

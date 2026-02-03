@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hadoop Ecosystem",
+  "questions": [
+    {
+      "question": "A company needs to process 100TB of log files to identify user behavior patterns. The analysis involves complex transformations and aggregations. Which combination of Hadoop components would be most appropriate for this scenario?",
+      "options": [
+        "HDFS for storage + traditional SQL database for processing",
+        "HDFS for storage + MapReduce for distributed processing",
+        "Single large server with high-end storage + in-memory processing",
+        "Cloud storage + single-threaded batch processing"
+      ],
+      "correct_index": 1,
+      "explanation": "HDFS provides scalable, fault-tolerant storage for large datasets, while MapReduce enables distributed parallel processing across the cluster, making it ideal for processing massive datasets like 100TB of logs."
+    },
+    {
+      "question": "Why does HDFS use large block sizes (typically 128MB or 256MB) compared to traditional file systems that use much smaller blocks (4KB-64KB)?",
+      "options": [
+        "To reduce the number of files that can be stored",
+        "To minimize metadata overhead and optimize for sequential reads of large files",
+        "To make data replication faster across the network",
+        "To ensure compatibility with MapReduce job sizes"
+      ],
+      "correct_index": 1,
+      "explanation": "Large block sizes reduce the metadata overhead on the NameNode and optimize performance for sequential reads of large files, which is the typical access pattern for big data analytics workloads."
+    },
+    {
+      "question": "In a MapReduce job processing sales data, the Mapper outputs key-value pairs where the key is the product category and the value is the sales amount. What is the primary purpose of the Shuffle and Sort phase that occurs between Map and Reduce?",
+      "options": [
+        "To randomly distribute data to prevent hotspots",
+        "To group all values with the same key together and deliver them to the appropriate Reducer",
+        "To sort the data alphabetically for easier human reading",
+        "To compress the data to reduce network transfer time"
+      ],
+      "correct_index": 1,
+      "explanation": "The Shuffle and Sort phase groups all values with the same key (product category) together and ensures they are sent to the same Reducer, enabling the Reducer to perform aggregations like calculating total sales per category."
+    },
+    {
+      "question": "A data engineering team notices that their HDFS cluster frequently experiences failures when the NameNode goes down, despite having data replication. What is the fundamental issue and the best solution?",
+      "options": [
+        "Insufficient data replication; increase replication factor to 5",
+        "NameNode is a single point of failure; implement NameNode High Availability (HA)",
+        "Network bandwidth is too low; upgrade network infrastructure",
+        "DataNodes are overloaded; add more DataNodes to the cluster"
+      ],
+      "correct_index": 1,
+      "explanation": "The NameNode stores metadata and is a single point of failure in basic HDFS setup. Even with data replication, if the NameNode fails, the cluster becomes inaccessible. NameNode HA with standby NameNodes solves this critical issue."
+    },
+    {
+      "question": "When would you choose to use a tool like Apache Spark instead of traditional MapReduce for data processing in a Hadoop ecosystem?",
+      "options": [
+        "When you need to store data in HDFS format",
+        "When you have iterative algorithms or need faster processing through in-memory computation",
+        "When you need better data replication and fault tolerance",
+        "When you want to reduce the number of servers in your cluster"
+      ],
+      "correct_index": 1,
+      "explanation": "Spark excels at iterative algorithms (like machine learning) and provides faster processing through in-memory computation, while MapReduce writes intermediate results to disk. Spark can still use HDFS for storage and provides fault tolerance through different mechanisms."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "CI/CD for Data Pipelines",
+  "questions": [
+    {
+      "question": "A data team is experiencing frequent production issues where pipeline changes that work in development break in production due to different data volumes and schemas. Which CI/CD practice would most effectively address this problem?",
+      "options": [
+        "Implementing automated unit tests for individual functions",
+        "Setting up staging environments that mirror production data characteristics",
+        "Using version control for all pipeline code",
+        "Automating deployment scripts"
+      ],
+      "correct_index": 1,
+      "explanation": "Staging environments that mirror production data characteristics help catch issues related to data volume, schema differences, and real-world data patterns that unit tests alone cannot detect."
+    },
+    {
+      "question": "When implementing CI/CD for a data pipeline that processes sensitive customer data, what is the primary reason for implementing data masking or synthetic data generation in the CI/CD process?",
+      "options": [
+        "To reduce storage costs in testing environments",
+        "To comply with data privacy regulations while enabling thorough testing",
+        "To improve pipeline performance during testing",
+        "To simplify test case creation"
+      ],
+      "correct_index": 1,
+      "explanation": "Data masking and synthetic data generation allow teams to test with realistic data patterns while protecting sensitive information and maintaining compliance with privacy regulations like GDPR."
+    },
+    {
+      "question": "A data pipeline processes files that arrive irregularly throughout the day. During CI/CD testing, which approach would best validate the pipeline's ability to handle real-world data arrival patterns?",
+      "options": [
+        "Run tests only with complete daily datasets",
+        "Test with synthetic data that simulates irregular arrival times and varying file sizes",
+        "Focus testing on the largest possible dataset",
+        "Test only during off-peak hours to avoid interference"
+      ],
+      "correct_index": 1,
+      "explanation": "Testing with synthetic data that simulates real-world patterns (irregular timing, varying sizes) helps validate that the pipeline handles edge cases and operational scenarios it will encounter in production."
+    },
+    {
+      "question": "In a data pipeline CI/CD setup, why is it important to include data quality validation tests in addition to traditional code testing?",
+      "options": [
+        "Data quality tests are easier to implement than unit tests",
+        "Data transformations can produce syntactically correct but semantically incorrect results",
+        "Data quality tests run faster than functional tests",
+        "Database connections are unreliable in testing environments"
+      ],
+      "correct_index": 1,
+      "explanation": "Data transformations can execute without errors but still produce incorrect business logic results, corrupted aggregations, or invalid data relationships that only data quality tests can detect."
+    },
+    {
+      "question": "A data engineering team wants to implement blue-green deployments for their ETL pipeline. What is the main challenge they need to address that is unique to data pipelines compared to stateless web applications?",
+      "options": [
+        "Data pipelines consume more computational resources",
+        "Managing data consistency and state during the transition between environments",
+        "Data pipelines take longer to start up",
+        "Version control is more complex for data pipeline code"
+      ],
+      "correct_index": 1,
+      "explanation": "Unlike stateless applications, data pipelines maintain state and data consistency. Blue-green deployments must carefully manage data synchronization, prevent duplicate processing, and ensure no data loss during environment switches."
+    }
+  ],
+  "passing_score": 80
+}

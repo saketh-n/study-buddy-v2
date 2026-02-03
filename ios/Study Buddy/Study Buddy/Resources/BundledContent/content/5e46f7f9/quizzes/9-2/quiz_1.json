@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Global Services",
+  "questions": [
+    {
+      "question": "Your web application serves users globally but experiences slow loading times for users in Asia while your origin servers are located in US-East. Which AWS service combination would BEST address this performance issue?",
+      "options": [
+        "Route 53 with latency-based routing only",
+        "CloudFront CDN with global edge locations",
+        "Multiple EC2 instances in different regions with Route 53 health checks",
+        "AWS Global Accelerator with Route 53 failover routing"
+      ],
+      "correct_index": 1,
+      "explanation": "CloudFront CDN is specifically designed to solve global content delivery performance issues by caching content at edge locations worldwide, reducing latency for users regardless of their geographic location relative to the origin server."
+    },
+    {
+      "question": "A company wants to ensure their website remains available even if their primary data center fails. They have backup infrastructure in a different region. Which Route 53 routing policy would be MOST appropriate for this disaster recovery scenario?",
+      "options": [
+        "Weighted routing with equal distribution",
+        "Latency-based routing to the closest region",
+        "Failover routing with health checks",
+        "Geolocation routing based on user location"
+      ],
+      "correct_index": 2,
+      "explanation": "Failover routing with health checks is designed specifically for disaster recovery scenarios. It automatically routes traffic to a secondary resource when the primary resource becomes unhealthy, ensuring business continuity."
+    },
+    {
+      "question": "Your company has a video streaming platform with users worldwide. The videos are stored in S3 and range from 100MB to 2GB in size. Why would CloudFront be particularly beneficial for this use case compared to serving directly from S3?",
+      "options": [
+        "CloudFront provides better security encryption than S3",
+        "CloudFront reduces bandwidth costs and improves global performance for large files",
+        "CloudFront automatically compresses videos to smaller sizes",
+        "CloudFront provides unlimited storage capacity unlike S3"
+      ],
+      "correct_index": 1,
+      "explanation": "CloudFront excels at delivering large files globally by caching them at edge locations, reducing bandwidth costs from the origin and dramatically improving download speeds for users worldwide, which is crucial for large video files."
+    },
+    {
+      "question": "A multinational company wants to serve different website content based on the user's country due to legal compliance requirements. Which AWS service combination would be MOST effective?",
+      "options": [
+        "CloudFront with signed URLs for access control",
+        "Route 53 with geolocation routing to different origins",
+        "CloudFront with Lambda@Edge for request processing",
+        "Route 53 with weighted routing across multiple regions"
+      ],
+      "correct_index": 1,
+      "explanation": "Route 53 geolocation routing allows directing users to different resources based on their geographic location, which is ideal for serving region-specific content for legal compliance. This routes users to completely different origins based on their country."
+    },
+    {
+      "question": "Your application experiences traffic spikes during business hours in different time zones (9 AM local time globally). The application can handle the load but needs to minimize response times during these peaks. Which approach would be MOST cost-effective while maintaining performance?",
+      "options": [
+        "Use Route 53 latency-based routing with servers in multiple regions",
+        "Implement CloudFront with dynamic content caching and Route 53 latency routing",
+        "Use Route 53 weighted routing to distribute load evenly",
+        "Deploy Auto Scaling groups in all regions with Route 53 health checks"
+      ],
+      "correct_index": 1,
+      "explanation": "Combining CloudFront's edge caching (including dynamic content caching) with Route 53 latency-based routing provides the best of both worlds: reduced response times through edge caching and intelligent routing to the lowest-latency origin when cache misses occur, making it cost-effective for global traffic patterns."
+    }
+  ],
+  "passing_score": 80
+}

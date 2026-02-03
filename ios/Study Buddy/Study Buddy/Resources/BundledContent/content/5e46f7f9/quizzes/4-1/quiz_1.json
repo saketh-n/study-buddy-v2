@@ -1,0 +1,61 @@
+{
+  "topic_name": "BGP Internet Routing",
+  "questions": [
+    {
+      "question": "Why is BGP classified as a path-vector protocol rather than a distance-vector protocol?",
+      "options": [
+        "BGP maintains the complete AS path to prevent loops and enable policy-based routing decisions",
+        "BGP only counts the number of hops to determine the best path",
+        "BGP uses link-state advertisements to build a topology database",
+        "BGP calculates shortest paths using bandwidth and delay metrics"
+      ],
+      "correct_index": 0,
+      "explanation": "BGP is a path-vector protocol because it maintains the complete path of autonomous systems (AS_PATH) that a route has traversed. This allows for loop prevention and enables complex policy decisions based on which ASes are in the path, unlike simple distance-vector protocols that only consider hop count."
+    },
+    {
+      "question": "When would an ISP choose to use BGP route filtering and what is the primary security benefit?",
+      "options": [
+        "To reduce routing table size by removing unused routes",
+        "To prevent route hijacking by accepting only legitimate prefixes from customers and peers",
+        "To improve convergence time by limiting the number of route updates",
+        "To load balance traffic across multiple links by filtering alternate paths"
+      ],
+      "correct_index": 1,
+      "explanation": "Route filtering is primarily used as a security measure to prevent route hijacking attacks. ISPs implement prefix filters to ensure they only accept route announcements for IP prefixes that their customers or peers are authorized to advertise, preventing malicious actors from redirecting traffic."
+    },
+    {
+      "question": "In BGP path selection, why does the protocol prioritize local preference over AS path length?",
+      "options": [
+        "Local preference is more accurate because it's calculated in real-time",
+        "AS path length is unreliable due to frequent topology changes",
+        "Local preference allows administrators to implement business policies that override shortest-path routing",
+        "Local preference provides better load balancing across multiple paths"
+      ],
+      "correct_index": 2,
+      "explanation": "BGP prioritizes local preference over AS path length because it allows network administrators to implement business and policy decisions that may override pure shortest-path routing. This enables ISPs to prefer certain transit providers, implement traffic engineering, or route traffic based on commercial agreements rather than just path length."
+    },
+    {
+      "question": "What fundamental problem does BGP solve that interior gateway protocols (IGPs) like OSPF cannot handle?",
+      "options": [
+        "BGP provides faster convergence times for large networks",
+        "BGP supports policy-based routing between different administrative domains with potentially conflicting interests",
+        "BGP offers better support for IPv6 addressing",
+        "BGP uses less bandwidth for routing updates"
+      ],
+      "correct_index": 1,
+      "explanation": "BGP was designed to handle inter-domain routing between autonomous systems that may have different administrative policies, business relationships, and trust levels. IGPs like OSPF assume a single administrative domain with common goals, while BGP enables policy-based routing decisions between organizations that may have competing interests."
+    },
+    {
+      "question": "A network administrator notices BGP routes flapping frequently. What is the most likely cause and appropriate solution?",
+      "options": [
+        "High CPU utilization; upgrade router hardware",
+        "Unstable physical links or routing loops; implement route dampening",
+        "Incorrect AS numbers configured; reconfigure BGP speakers",
+        "Too many BGP peers; reduce the number of connections"
+      ],
+      "correct_index": 1,
+      "explanation": "Route flapping typically occurs when routes are repeatedly withdrawn and re-announced due to unstable links or configuration issues. Route dampening is the appropriate BGP feature that suppresses unstable routes by penalizing frequently changing prefixes, preventing them from destabilizing the global routing table."
+    }
+  ],
+  "passing_score": 80
+}

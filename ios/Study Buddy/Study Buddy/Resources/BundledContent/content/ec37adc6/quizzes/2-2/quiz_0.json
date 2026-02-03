@@ -1,0 +1,61 @@
+{
+  "topic_name": "Pharmacokinetics and Pharmacodynamics of GLP-1 Receptor Agonists",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes is prescribed semaglutide and asks why they only need to inject it once weekly instead of daily like insulin. Which pharmacokinetic property primarily enables this dosing frequency?",
+      "options": [
+        "Rapid absorption from subcutaneous tissue",
+        "Extended half-life due to albumin binding and DPP-4 resistance",
+        "Delayed gastric emptying reducing drug clearance",
+        "High bioavailability requiring less frequent dosing"
+      ],
+      "correct_index": 1,
+      "explanation": "Semaglutide's extended half-life (~7 days) is primarily due to albumin binding and resistance to DPP-4 degradation, allowing once-weekly dosing. While delayed gastric emptying is a pharmacodynamic effect, it doesn't affect drug clearance or dosing frequency."
+    },
+    {
+      "question": "When comparing exenatide immediate-release to exenatide extended-release, why does the extended-release formulation demonstrate better glycemic control despite similar peak drug concentrations?",
+      "options": [
+        "Higher bioavailability in the extended-release form",
+        "Sustained drug levels maintain continuous GLP-1 receptor activation",
+        "Extended-release bypasses first-pass metabolism",
+        "Improved subcutaneous absorption with extended-release"
+      ],
+      "correct_index": 1,
+      "explanation": "The extended-release formulation provides sustained drug levels that maintain continuous GLP-1 receptor activation, leading to more consistent glucose-dependent insulin secretion and glucagon suppression throughout the day, resulting in better overall glycemic control."
+    },
+    {
+      "question": "A patient experiences significant nausea when starting liraglutide. From a pharmacodynamic perspective, why is dose escalation over several weeks the recommended approach rather than starting at the full therapeutic dose?",
+      "options": [
+        "To allow time for hepatic enzyme induction",
+        "To minimize insurance coverage issues",
+        "To allow GI tract adaptation to delayed gastric emptying effects",
+        "To achieve steady-state plasma concentrations gradually"
+      ],
+      "correct_index": 2,
+      "explanation": "Gradual dose escalation allows the GI tract to adapt to the delayed gastric emptying and other GI effects of GLP-1 receptor activation, reducing nausea and other GI adverse effects. This is a pharmacodynamic adaptation, not related to drug levels or metabolism."
+    },
+    {
+      "question": "Why do GLP-1 receptor agonists demonstrate glucose-dependent insulin secretion rather than causing hypoglycemia like sulfonylureas, even at high plasma concentrations?",
+      "options": [
+        "GLP-1 receptors are only active when glucose levels exceed 126 mg/dL",
+        "The drugs undergo rapid metabolism when glucose levels are normal",
+        "GLP-1 receptor signaling requires elevated glucose for insulin granule release",
+        "Drug absorption decreases when blood glucose is low"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptor agonists work through glucose-dependent mechanisms where the intracellular signaling cascade for insulin release requires elevated glucose concentrations. This intrinsic safety mechanism prevents hypoglycemia even at high drug concentrations."
+    },
+    {
+      "question": "A patient with severe renal impairment (eGFR <30 mL/min/1.73m\u00b2) needs a GLP-1 receptor agonist. Based on elimination pathways, which statement best explains the prescribing considerations?",
+      "options": [
+        "All GLP-1 agonists require dose reduction due to renal elimination",
+        "Most GLP-1 agonists are eliminated by proteolytic degradation, not renal excretion",
+        "Renal impairment increases DPP-4 activity, requiring higher doses",
+        "Subcutaneous absorption is impaired in renal disease"
+      ],
+      "correct_index": 1,
+      "explanation": "Most GLP-1 receptor agonists are eliminated primarily through proteolytic degradation by ubiquitous peptidases and DPP-4, not through renal excretion. Therefore, most don't require dose adjustment in renal impairment, making them suitable options for patients with kidney disease."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Load Balancing Services",
+  "questions": [
+    {
+      "question": "Your e-commerce application experiences sudden traffic spikes during flash sales, causing some users to receive timeout errors. The application runs on EC2 instances behind an Application Load Balancer (ALB). What is the PRIMARY benefit of implementing an ALB in this scenario?",
+      "options": [
+        "It automatically scales EC2 instances based on CPU utilization",
+        "It distributes incoming requests across multiple healthy instances to prevent overload",
+        "It caches frequently requested content to reduce server load",
+        "It compresses HTTP responses to improve network performance"
+      ],
+      "correct_index": 1,
+      "explanation": "The primary benefit of an ALB is distributing traffic across multiple healthy backend instances, preventing any single instance from being overwhelmed during traffic spikes. While ALBs have other features, load distribution is their core function for handling variable traffic loads."
+    },
+    {
+      "question": "A financial services company needs to load balance TCP traffic for their high-frequency trading application that requires ultra-low latency and can handle millions of requests per second. Which AWS load balancer would be MOST appropriate and why?",
+      "options": [
+        "Application Load Balancer because it supports advanced routing rules",
+        "Network Load Balancer because it operates at Layer 4 and provides the lowest latency",
+        "Gateway Load Balancer because it can inspect all network packets",
+        "Classic Load Balancer because it supports both Layer 4 and Layer 7"
+      ],
+      "correct_index": 1,
+      "explanation": "Network Load Balancer (NLB) operates at Layer 4 (transport layer) and is designed for ultra-high performance, low latency scenarios. It can handle millions of requests per second with minimal latency overhead, making it ideal for high-frequency trading applications that prioritize speed over advanced routing features."
+    },
+    {
+      "question": "Your organization wants to deploy third-party security appliances (firewalls and intrusion detection systems) that need to inspect ALL network traffic flowing to your application tier. These appliances are provided by different vendors and use the GENEVE protocol. Which load balancing solution should you implement?",
+      "options": [
+        "Application Load Balancer with AWS WAF integration",
+        "Network Load Balancer with security groups",
+        "Gateway Load Balancer with third-party security appliances as targets",
+        "Multiple Application Load Balancers in different availability zones"
+      ],
+      "correct_index": 2,
+      "explanation": "Gateway Load Balancer (GWLB) is specifically designed for deploying and managing third-party network appliances. It uses the GENEVE protocol to transparently route traffic through security appliances for inspection while maintaining the original source and destination information."
+    },
+    {
+      "question": "You have a web application that serves both mobile apps (via API calls) and web browsers (via HTML pages). The mobile API requires routing based on the API version in the URL path (/api/v1/ vs /api/v2/), while web traffic should be routed based on geographic location. What would be the BEST approach?",
+      "options": [
+        "Use a Network Load Balancer because it can handle both HTTP and HTTPS traffic efficiently",
+        "Use an Application Load Balancer because it can route based on path patterns and HTTP headers",
+        "Use two separate Classic Load Balancers, one for mobile and one for web traffic",
+        "Use a Gateway Load Balancer with custom routing rules"
+      ],
+      "correct_index": 1,
+      "explanation": "Application Load Balancer (ALB) operates at Layer 7 and supports advanced routing based on various HTTP/HTTPS parameters including path patterns, headers, query strings, and source IP. This makes it ideal for complex routing scenarios that require content-based routing decisions."
+    },
+    {
+      "question": "A startup is migrating their monolithic application to microservices and needs to route different parts of their website to different service clusters. For example, /checkout/* should go to payment services, /catalog/* to product services, and /user/* to authentication services. They also need SSL termination. Which load balancer feature is MOST critical for this architecture?",
+      "options": [
+        "Cross-zone load balancing for high availability",
+        "Path-based routing with SSL termination capabilities",
+        "Sticky sessions to maintain user state",
+        "Health checks to monitor service availability"
+      ],
+      "correct_index": 1,
+      "explanation": "Path-based routing is critical for microservices architectures where different URL paths need to be directed to different backend service clusters. Combined with SSL termination, this allows the load balancer to decrypt traffic, examine the path, and route appropriately while offloading SSL processing from backend services."
+    }
+  ],
+  "passing_score": 80
+}

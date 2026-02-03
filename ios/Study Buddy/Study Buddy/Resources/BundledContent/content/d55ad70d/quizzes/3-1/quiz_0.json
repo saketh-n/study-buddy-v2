@@ -1,0 +1,61 @@
+{
+  "topic_name": "Sample File IO and Seek",
+  "questions": [
+    {
+      "question": "When opening a file in 'append' mode ('a'), where is the file pointer initially positioned?",
+      "options": [
+        "At the beginning of the file",
+        "At the end of the file",
+        "At a random position",
+        "At the middle of the file"
+      ],
+      "correct_index": 1,
+      "explanation": "In append mode, the file pointer is automatically positioned at the end of the file so that new data written will be added after existing content, not overwriting it."
+    },
+    {
+      "question": "You need to read a large log file and extract only entries from the last 1000 bytes. What is the most efficient approach?",
+      "options": [
+        "Read the entire file into memory, then process the last 1000 bytes",
+        "Use seek() to position near the end, then read the last 1000 bytes",
+        "Read the file line by line and keep track of the last 1000 bytes",
+        "Open the file multiple times until you reach the end"
+      ],
+      "correct_index": 1,
+      "explanation": "Using seek() to jump directly to the desired position (end - 1000 bytes) is most efficient as it avoids reading unnecessary data, saving both time and memory."
+    },
+    {
+      "question": "What happens when you call seek(0, 2) on a file?",
+      "options": [
+        "Moves to the beginning of the file",
+        "Moves to position 2 from the start",
+        "Moves to the end of the file",
+        "Moves 2 bytes forward from current position"
+      ],
+      "correct_index": 2,
+      "explanation": "seek(0, 2) uses the third parameter (2) to indicate seeking from the end of the file (SEEK_END), and offset 0 means no offset from the end, positioning at the very end."
+    },
+    {
+      "question": "Why might seeking not work as expected when writing to a file opened in text mode on Windows?",
+      "options": [
+        "Text mode doesn't support seeking at all",
+        "Windows files are read-only by default",
+        "Line ending conversions (\\n to \\r\\n) can affect byte positions",
+        "Text mode files are automatically compressed"
+      ],
+      "correct_index": 2,
+      "explanation": "In text mode on Windows, the system automatically converts \\n to \\r\\n when writing and vice versa when reading, which changes the actual byte positions in the file compared to what the program expects."
+    },
+    {
+      "question": "You're implementing a simple database where records are fixed at 100 bytes each. How would you most efficiently read the 50th record?",
+      "options": [
+        "Read all records from the beginning until you reach the 50th",
+        "Use seek(50 * 100) then read 100 bytes",
+        "Use seek(49 * 100) then read 100 bytes",
+        "Open the file 50 times and read one record each time"
+      ],
+      "correct_index": 2,
+      "explanation": "Since records are 0-indexed, the 50th record starts at position 49 * 100. Using seek() to jump directly to this calculated position is much more efficient than reading through all previous records."
+    }
+  ],
+  "passing_score": 80
+}

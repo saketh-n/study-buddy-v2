@@ -1,0 +1,61 @@
+{
+  "topic_name": "Relevant Drugs for Hair Loss",
+  "questions": [
+    {
+      "question": "A 35-year-old male presents with progressive hair thinning at the crown and receding hairline. Which medication would be the FIRST-LINE oral treatment for his androgenetic alopecia?",
+      "options": [
+        "Minoxidil",
+        "Finasteride",
+        "Spironolactone",
+        "Dutasteride"
+      ],
+      "correct_index": 1,
+      "explanation": "Finasteride is the first-line oral treatment for male pattern baldness as it specifically blocks 5-alpha reductase type II, reducing DHT production which is the primary cause of androgenetic alopecia in men."
+    },
+    {
+      "question": "Why is topical minoxidil considered suitable for both men and women with androgenetic alopecia, while finasteride has gender-specific considerations?",
+      "options": [
+        "Minoxidil works faster than finasteride",
+        "Minoxidil has fewer side effects than finasteride",
+        "Minoxidil acts on hair follicles directly while finasteride affects hormone levels",
+        "Minoxidil is cheaper and more accessible"
+      ],
+      "correct_index": 2,
+      "explanation": "Minoxidil works by directly stimulating hair follicles and improving blood flow to the scalp, making it safe for both genders. Finasteride alters hormone levels and can cause birth defects, making it contraindicated in women of childbearing age."
+    },
+    {
+      "question": "A dermatologist prescribes dutasteride instead of finasteride for a patient with severe male pattern baldness. What is the primary pharmacological advantage of this choice?",
+      "options": [
+        "Dutasteride has fewer sexual side effects",
+        "Dutasteride blocks both type I and type II 5-alpha reductase enzymes",
+        "Dutasteride can be used topically unlike finasteride",
+        "Dutasteride works faster than finasteride"
+      ],
+      "correct_index": 1,
+      "explanation": "Dutasteride provides more comprehensive DHT suppression by blocking both type I and type II 5-alpha reductase enzymes, whereas finasteride only blocks type II. This can be more effective for severe cases."
+    },
+    {
+      "question": "When would spironolactone be considered as a treatment option for hair loss?",
+      "options": [
+        "For men with mild hair thinning who want to avoid sexual side effects",
+        "For women with androgenetic alopecia, especially those with signs of hyperandrogenism",
+        "As a first-line treatment for all types of alopecia",
+        "For patients who cannot afford other treatments"
+      ],
+      "correct_index": 1,
+      "explanation": "Spironolactone is an anti-androgen that blocks androgen receptors and is particularly useful for women with androgenetic alopecia, especially when accompanied by other signs of excess androgens like acne or hirsutism."
+    },
+    {
+      "question": "A patient asks why they need to use hair loss medication indefinitely rather than just for a few months. What is the most accurate explanation?",
+      "options": [
+        "The medications become more effective with longer use",
+        "Hair loss medications only slow progression but don't cure the underlying genetic predisposition",
+        "Stopping too early can cause permanent damage to hair follicles",
+        "The scalp develops tolerance and requires continuous exposure"
+      ],
+      "correct_index": 1,
+      "explanation": "Hair loss medications like finasteride and minoxidil treat the symptoms of androgenetic alopecia but don't cure the underlying genetic sensitivity to DHT. Discontinuing treatment allows the natural progression of hair loss to resume."
+    }
+  ],
+  "passing_score": 80
+}

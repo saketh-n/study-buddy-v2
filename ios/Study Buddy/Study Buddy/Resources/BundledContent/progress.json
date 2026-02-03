@@ -1,0 +1,150 @@
+{
+  "5e46f7f9": {
+    "curriculum_id": "5e46f7f9",
+    "topics": {
+      "0-0": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2026-01-07T08:57:33.003137"
+      },
+      "0-1": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T14:55:58.325383"
+      },
+      "0-2": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T15:14:00.160737"
+      },
+      "1-0": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T15:47:54.112048"
+      },
+      "1-1": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T15:55:36.134006"
+      },
+      "1-2": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T16:03:40.992442"
+      },
+      "2-0": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T16:50:54.655949"
+      },
+      "2-1": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T16:57:51.691473"
+      },
+      "2-2": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T17:08:12.907803"
+      },
+      "2-3": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T17:19:35.128207"
+      },
+      "3-0": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T17:25:59.816599"
+      },
+      "3-1": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T17:37:40.105230"
+      },
+      "3-2": {
+        "completed": true,
+        "quiz_score": 80,
+        "completed_at": "2025-12-08T17:40:02.333498"
+      },
+      "4-0": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T21:10:21.992357"
+      },
+      "4-1": {
+        "completed": true,
+        "quiz_score": 100,
+        "completed_at": "2025-12-08T21:46:46.684864"
+      }
+    },
+    "started_at": "2025-12-03T15:03:56.273596",
+    "last_activity": "2026-01-07T08:57:33.003137"
+  },
+  "d55ad70d": {
+    "curriculum_id": "d55ad70d",
+    "topics": {},
+    "started_at": "2025-12-03T17:39:50.232151",
+    "last_activity": "2025-12-03T17:39:50.232151"
+  },
+  "d20e358c": {
+    "curriculum_id": "d20e358c",
+    "topics": {},
+    "started_at": "2025-12-03T17:41:33.273686",
+    "last_activity": "2025-12-03T17:41:33.273686"
+  },
+  "2fe16d1b": {
+    "curriculum_id": "2fe16d1b",
+    "topics": {},
+    "started_at": "2026-01-13T15:32:32.099398",
+    "last_activity": "2026-01-13T15:32:32.099398"
+  },
+  "beb488fd": {
+    "curriculum_id": "beb488fd",
+    "topics": {},
+    "started_at": "2026-01-13T15:42:33.400583",
+    "last_activity": "2026-01-13T15:42:33.400583"
+  },
+  "5b6962c8": {
+    "curriculum_id": "5b6962c8",
+    "topics": {},
+    "started_at": "2026-01-13T15:58:37.824502",
+    "last_activity": "2026-01-13T15:58:37.824502"
+  },
+  "41c2e213": {
+    "curriculum_id": "41c2e213",
+    "topics": {},
+    "started_at": "2026-01-15T14:54:55.727756",
+    "last_activity": "2026-01-15T14:54:55.727756"
+  },
+  "ef92f4e1": {
+    "curriculum_id": "ef92f4e1",
+    "topics": {},
+    "started_at": "2026-01-15T16:35:50.329132",
+    "last_activity": "2026-01-15T16:35:50.329132"
+  },
+  "ec37adc6": {
+    "curriculum_id": "ec37adc6",
+    "topics": {},
+    "started_at": "2026-01-15T16:40:09.462231",
+    "last_activity": "2026-01-15T16:40:09.462231"
+  },
+  "a6592508": {
+    "curriculum_id": "a6592508",
+    "topics": {},
+    "started_at": "2026-01-15T20:44:03.539613",
+    "last_activity": "2026-01-15T20:44:03.539613"
+  },
+  "064c2aa6": {
+    "curriculum_id": "064c2aa6",
+    "topics": {},
+    "started_at": "2026-01-22T11:58:51.108889",
+    "last_activity": "2026-01-22T11:58:51.108889"
+  },
+  "nonexistent-id": {
+    "curriculum_id": "nonexistent-id",
+    "topics": {},
+    "started_at": "2026-01-23T12:00:32.156899",
+    "last_activity": "2026-01-23T12:00:32.156899"
+  }
+}

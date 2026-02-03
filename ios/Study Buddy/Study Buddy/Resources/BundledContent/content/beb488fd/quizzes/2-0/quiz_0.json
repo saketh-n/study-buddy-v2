@@ -1,0 +1,61 @@
+{
+  "topic_name": "ETL Fundamentals",
+  "questions": [
+    {
+      "question": "A data engineer needs to process customer data from multiple sources where some records have inconsistent date formats (MM/DD/YYYY vs DD/MM/YYYY) and missing phone numbers. Which ETL phase is primarily responsible for addressing these issues?",
+      "options": [
+        "Extract - because data quality issues should be identified at the source",
+        "Transform - because this involves standardizing and cleaning the data",
+        "Load - because validation happens when inserting into the target system",
+        "All phases equally - because data quality is a shared responsibility"
+      ],
+      "correct_index": 1,
+      "explanation": "The Transform phase is responsible for data cleaning, standardization, and handling missing values. While validation occurs in other phases, the actual correction and standardization of data formats happens during transformation."
+    },
+    {
+      "question": "When would you choose an ELT (Extract, Load, Transform) approach over traditional ETL?",
+      "options": [
+        "When working with small datasets that require complex transformations",
+        "When the target system has limited computational resources",
+        "When using cloud data warehouses with powerful processing capabilities and schema flexibility",
+        "When data quality issues are minimal and transformations are simple"
+      ],
+      "correct_index": 2,
+      "explanation": "ELT is preferred when the target system (like modern cloud data warehouses) has strong computational capabilities to handle transformations after loading, and when you want schema flexibility or need to preserve raw data."
+    },
+    {
+      "question": "A retail company's ETL pipeline processes daily sales data. During validation, you discover that 15% of records have negative quantities and some product IDs don't exist in the master catalog. What is the most appropriate data quality strategy?",
+      "options": [
+        "Reject the entire batch to maintain data integrity",
+        "Load all records and fix issues in the target system later",
+        "Quarantine invalid records, load valid ones, and create an exception report for investigation",
+        "Replace negative quantities with zero and create new product IDs for missing ones"
+      ],
+      "correct_index": 2,
+      "explanation": "Quarantining invalid records while processing valid ones maintains data flow continuity while ensuring data quality. Exception reporting enables investigation and correction of systematic issues without losing potentially valuable data."
+    },
+    {
+      "question": "In an ETL process handling customer data from web forms, you notice duplicate records with slight variations (e.g., 'John Smith' vs 'John  Smith' with extra spaces). What data validation technique would be most effective?",
+      "options": [
+        "Exact match comparison to identify true duplicates",
+        "Fuzzy matching combined with data standardization rules",
+        "Primary key constraints to prevent duplicate insertion",
+        "Schema validation to ensure consistent data types"
+      ],
+      "correct_index": 1,
+      "explanation": "Fuzzy matching algorithms can identify similar records despite minor variations, while standardization rules (like trimming spaces) help normalize data before comparison. Exact matching would miss these near-duplicates."
+    },
+    {
+      "question": "Your ETL pipeline extracts data from a source system that undergoes maintenance every Sunday, causing extraction failures. The business requires Monday morning reports. What design pattern best addresses this challenge?",
+      "options": [
+        "Increase extraction frequency to run every hour",
+        "Implement retry logic with exponential backoff",
+        "Add incremental loading to reduce processing time",
+        "Build data buffering with change data capture (CDC) and exception handling"
+      ],
+      "correct_index": 3,
+      "explanation": "CDC can capture changes when the system is available, buffering handles temporary unavailability, and exception handling manages predictable downtime. This ensures data availability despite scheduled maintenance windows."
+    }
+  ],
+  "passing_score": 80
+}

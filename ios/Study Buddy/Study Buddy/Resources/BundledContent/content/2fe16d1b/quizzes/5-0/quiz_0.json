@@ -1,0 +1,61 @@
+{
+  "topic_name": "Programming for ML",
+  "questions": [
+    {
+      "question": "You're working with a large dataset (10GB) containing mixed data types and need to perform complex statistical analysis. Which combination of tools would be most appropriate?",
+      "options": [
+        "Python lists and built-in statistics functions",
+        "Pandas DataFrame with NumPy operations",
+        "Pure NumPy arrays with custom functions",
+        "R data.frame with base R functions"
+      ],
+      "correct_index": 1,
+      "explanation": "Pandas DataFrames are specifically designed for mixed data types and large datasets, while NumPy provides efficient numerical operations. This combination offers the best performance and functionality for complex statistical analysis on heterogeneous data."
+    },
+    {
+      "question": "Why would you choose NumPy arrays over Python lists for numerical computations in machine learning?",
+      "options": [
+        "NumPy arrays can store different data types in the same array",
+        "NumPy arrays use vectorized operations and are stored contiguously in memory",
+        "NumPy arrays are easier to debug and have better error messages",
+        "NumPy arrays automatically handle missing values better than lists"
+      ],
+      "correct_index": 1,
+      "explanation": "NumPy arrays use vectorized operations implemented in C, making them much faster than Python lists. They store data contiguously in memory with homogeneous types, enabling efficient mathematical operations essential for ML computations."
+    },
+    {
+      "question": "When building your first machine learning model, you need to split data, scale features, and evaluate performance. Which approach demonstrates best practices?",
+      "options": [
+        "Write custom functions for splitting, scaling, and evaluation from scratch",
+        "Use Scikit-learn's train_test_split, StandardScaler, and built-in metrics",
+        "Use Pandas for splitting and NumPy for scaling and evaluation",
+        "Import TensorFlow for all preprocessing and evaluation tasks"
+      ],
+      "correct_index": 1,
+      "explanation": "Scikit-learn provides standardized, well-tested implementations of common ML workflows. Using train_test_split, StandardScaler, and built-in metrics ensures consistency, reduces errors, and follows ML best practices rather than reinventing the wheel."
+    },
+    {
+      "question": "You have a dataset with categorical variables, missing values, and need to apply multiple preprocessing steps before training. What's the most efficient approach using ML libraries?",
+      "options": [
+        "Handle each preprocessing step separately using different libraries",
+        "Use Scikit-learn Pipeline with preprocessing steps and estimator",
+        "Convert everything to NumPy arrays first, then preprocess manually",
+        "Use only Pandas for preprocessing, then convert to arrays for training"
+      ],
+      "correct_index": 1,
+      "explanation": "Scikit-learn Pipelines chain preprocessing steps with the estimator, ensuring consistent transformations between training and testing, preventing data leakage, and making the workflow reproducible and maintainable."
+    },
+    {
+      "question": "When would you choose R over Python for a machine learning project?",
+      "options": [
+        "When you need better performance for deep learning models",
+        "When working primarily with statistical analysis and domain experts who prefer R",
+        "When you need better integration with web applications",
+        "When working with image or text data processing"
+      ],
+      "correct_index": 1,
+      "explanation": "R excels in statistical analysis and is preferred in domains like biostatistics, econometrics, and academic research where statistical rigor is paramount and domain experts are more familiar with R's statistical packages and syntax."
+    }
+  ],
+  "passing_score": 80
+}

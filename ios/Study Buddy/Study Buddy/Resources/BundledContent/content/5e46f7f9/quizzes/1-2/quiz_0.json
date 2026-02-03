@@ -1,0 +1,61 @@
+{
+  "topic_name": "DNS Services and Resolution",
+  "questions": [
+    {
+      "question": "A company is migrating from IPv4 to IPv6 infrastructure. Their web server currently has an A record pointing to 192.168.1.100. What type of DNS record should they add to support IPv6 clients accessing the same web service?",
+      "options": [
+        "CNAME record pointing to the IPv6 address",
+        "AAAA record with the IPv6 address",
+        "PTR record for reverse DNS lookup",
+        "MX record with IPv6 priority"
+      ],
+      "correct_index": 1,
+      "explanation": "AAAA records are specifically designed to map domain names to IPv6 addresses, just as A records map to IPv4 addresses. CNAME records alias one domain to another, PTR records are for reverse lookups, and MX records are for mail servers."
+    },
+    {
+      "question": "Why would a network administrator choose to configure Cloudflare's 1.1.1.1 as their recursive DNS resolver instead of using their ISP's default DNS servers?",
+      "options": [
+        "To reduce network latency by using a geographically closer server",
+        "To improve privacy, performance, and bypass potential ISP DNS filtering",
+        "To automatically encrypt all network traffic between clients and servers",
+        "To enable direct peer-to-peer connections without going through the internet"
+      ],
+      "correct_index": 1,
+      "explanation": "Public DNS resolvers like Cloudflare's 1.1.1.1 often provide better privacy policies, faster response times, higher reliability, and can bypass ISP-imposed DNS filtering or redirects. They don't encrypt all traffic or enable P2P connections directly."
+    },
+    {
+      "question": "During a DNS resolution for www.example.com, a recursive resolver queries multiple authoritative servers. What is the primary purpose of this recursive process?",
+      "options": [
+        "To verify the identity of the client making the request",
+        "To distribute the query load across multiple DNS servers equally",
+        "To traverse the DNS hierarchy from root servers down to find the authoritative answer",
+        "To create backup copies of DNS records across different geographic locations"
+      ],
+      "correct_index": 2,
+      "explanation": "Recursive resolution follows the DNS hierarchy: the resolver queries root servers to find TLD servers, then TLD servers to find authoritative name servers, and finally the authoritative servers for the actual record. This hierarchical traversal is fundamental to how DNS works globally."
+    },
+    {
+      "question": "A web application is experiencing slow page loads. Network monitoring shows that DNS lookups are taking 2-3 seconds per request. Which factor is MOST likely causing this performance issue?",
+      "options": [
+        "The web server is overloaded with HTTP requests",
+        "DNS records have very short TTL values causing frequent re-queries",
+        "The application is using IPv6 instead of IPv4 addressing",
+        "SSL certificate validation is taking too long"
+      ],
+      "correct_index": 1,
+      "explanation": "Short TTL (Time To Live) values force DNS resolvers to frequently re-query authoritative servers instead of using cached results, significantly increasing DNS lookup times. This is a common cause of DNS-related performance issues."
+    },
+    {
+      "question": "When would it be most appropriate to use Google's 8.8.8.8 DNS resolver instead of a local caching DNS server within an enterprise network?",
+      "options": [
+        "When the enterprise needs to resolve internal private domain names",
+        "When the local DNS server is failing or unreachable as a backup option",
+        "When implementing DNS-based network access control policies",
+        "When requiring detailed DNS query logging for security compliance"
+      ],
+      "correct_index": 1,
+      "explanation": "Public DNS resolvers like 8.8.8.8 are best used as backup or fallback options when local DNS infrastructure fails. For internal domains, access control, and detailed logging, local DNS servers are more appropriate as they provide better control and can resolve internal resources."
+    }
+  ],
+  "passing_score": 80
+}

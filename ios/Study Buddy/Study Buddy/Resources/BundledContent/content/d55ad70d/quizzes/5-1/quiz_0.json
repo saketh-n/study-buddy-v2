@@ -1,0 +1,61 @@
+{
+  "topic_name": "Distributed File Systems: HDFS, GFS,.. store large quantities of data",
+  "questions": [
+    {
+      "question": "What is the primary architectural principle that enables distributed file systems like HDFS and GFS to achieve fault tolerance?",
+      "options": [
+        "Storing all data on high-end enterprise hardware",
+        "Replicating data blocks across multiple nodes in the cluster",
+        "Using RAID arrays on each storage node",
+        "Maintaining a single master node with complete backups"
+      ],
+      "correct_index": 1,
+      "explanation": "Distributed file systems achieve fault tolerance through data replication across multiple nodes. If one node fails, the data remains accessible from other replicas, typically maintaining 3 copies by default."
+    },
+    {
+      "question": "A company needs to store and process 100TB of log files that are written once and read multiple times for analytics. Which characteristic makes distributed file systems like HDFS most suitable for this scenario?",
+      "options": [
+        "High random write performance for real-time updates",
+        "Optimized for write-once, read-many access patterns with large files",
+        "Strong consistency guarantees for concurrent writes",
+        "Low latency access for small file operations"
+      ],
+      "correct_index": 1,
+      "explanation": "HDFS is specifically designed for write-once, read-many workloads with large files. It's optimized for sequential reads and batch processing rather than random access or frequent updates."
+    },
+    {
+      "question": "In HDFS architecture, why is the NameNode considered a potential single point of failure, and how do modern implementations address this concern?",
+      "options": [
+        "NameNode stores all the actual data; addressed by distributing data across DataNodes",
+        "NameNode manages metadata and namespace; addressed by implementing NameNode High Availability with standby nodes",
+        "NameNode handles all client requests; addressed by load balancing across multiple NameNodes",
+        "NameNode controls network routing; addressed by using redundant network switches"
+      ],
+      "correct_index": 1,
+      "explanation": "The NameNode stores filesystem metadata and namespace information. If it fails, the entire filesystem becomes inaccessible. Modern HDFS implementations use NameNode HA with active/standby configurations and shared storage."
+    },
+    {
+      "question": "When would a traditional centralized file system be more appropriate than a distributed file system like GFS or HDFS?",
+      "options": [
+        "When storing petabytes of data across multiple data centers",
+        "When processing large datasets with MapReduce jobs",
+        "When requiring low-latency access to small files with frequent random updates",
+        "When needing automatic data replication across geographic regions"
+      ],
+      "correct_index": 2,
+      "explanation": "Traditional centralized file systems excel at low-latency random access and frequent updates to small files. Distributed file systems have higher overhead and are optimized for large files and sequential access patterns."
+    },
+    {
+      "question": "A distributed file system shows that 64MB blocks are being used instead of the typical 4KB blocks found in local file systems. What is the primary reason for this design choice?",
+      "options": [
+        "Larger blocks provide better security through increased encryption overhead",
+        "Larger blocks reduce metadata overhead and network communication for big data workloads",
+        "Larger blocks improve random access performance for database operations",
+        "Larger blocks are required for cross-datacenter replication protocols"
+      ],
+      "correct_index": 1,
+      "explanation": "Large block sizes (64MB-128MB) reduce the amount of metadata the NameNode must track and minimize network overhead when transferring data. This is essential for big data workloads that process large files sequentially."
+    }
+  ],
+  "passing_score": 80
+}

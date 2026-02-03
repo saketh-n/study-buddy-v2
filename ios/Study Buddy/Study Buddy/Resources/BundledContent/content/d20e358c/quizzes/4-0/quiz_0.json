@@ -1,0 +1,61 @@
+{
+  "topic_name": "Kubernetes Foundation Concepts",
+  "questions": [
+    {
+      "question": "A microservices application experiences unpredictable traffic spikes throughout the day. Which Kubernetes feature would be most appropriate to automatically handle these variations without manual intervention?",
+      "options": [
+        "Horizontal Pod Autoscaler (HPA)",
+        "DaemonSet",
+        "StatefulSet",
+        "Job"
+      ],
+      "correct_index": 0,
+      "explanation": "HPA automatically scales the number of pod replicas based on CPU utilization or custom metrics, making it ideal for handling unpredictable traffic spikes without manual intervention."
+    },
+    {
+      "question": "Why would you choose Kubernetes orchestration over simply running containers directly on virtual machines for a distributed application?",
+      "options": [
+        "Kubernetes containers run faster than VM containers",
+        "Kubernetes provides automated deployment, scaling, and management of containerized applications",
+        "Kubernetes eliminates the need for load balancers",
+        "Kubernetes containers use less memory than VM containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Kubernetes orchestration provides automated deployment, scaling, health monitoring, and management capabilities that would otherwise require significant manual effort when running containers directly on VMs."
+    },
+    {
+      "question": "In a Kubernetes cluster, if a node fails and becomes unreachable, what happens to the pods running on that node?",
+      "options": [
+        "The pods continue running on the failed node until manually moved",
+        "Kubernetes immediately reschedules the pods on healthy nodes",
+        "The pods are permanently lost and must be manually recreated",
+        "Kubernetes waits for the node to recover before taking any action"
+      ],
+      "correct_index": 1,
+      "explanation": "Kubernetes provides resilience by automatically detecting node failures and rescheduling pods from failed nodes onto healthy nodes, ensuring application availability."
+    },
+    {
+      "question": "A development team needs to deploy a database that requires persistent storage and ordered deployment/scaling. Which Kubernetes workload type is most suitable?",
+      "options": [
+        "Deployment",
+        "DaemonSet",
+        "StatefulSet",
+        "ReplicaSet"
+      ],
+      "correct_index": 2,
+      "explanation": "StatefulSet is designed for stateful applications like databases that require persistent storage, stable network identities, and ordered deployment/scaling operations."
+    },
+    {
+      "question": "In a distributed system managed by Kubernetes, how does the control plane maintain the desired state of applications across multiple nodes?",
+      "options": [
+        "By manually configuring each node individually",
+        "By continuously monitoring actual state and reconciling it with the declared desired state",
+        "By restarting all nodes when changes are needed",
+        "By requiring manual approval for each state change"
+      ],
+      "correct_index": 1,
+      "explanation": "Kubernetes follows a declarative model where the control plane continuously monitors the actual state of resources and automatically reconciles any differences with the desired state specified in manifests."
+    }
+  ],
+  "passing_score": 80
+}

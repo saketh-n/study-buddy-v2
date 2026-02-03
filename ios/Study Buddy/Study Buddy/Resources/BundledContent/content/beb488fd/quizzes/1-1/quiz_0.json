@@ -1,0 +1,61 @@
+{
+  "topic_name": "NoSQL Databases",
+  "questions": [
+    {
+      "question": "A social media company needs to store user profiles with varying attributes (some users have location data, others have job titles, some have neither). The profiles need to be quickly retrievable by user ID and support complex nested data like arrays of interests. Which NoSQL database type is most appropriate?",
+      "options": [
+        "Key-value store",
+        "Document database",
+        "Column-family database",
+        "Graph database"
+      ],
+      "correct_index": 1,
+      "explanation": "Document databases like MongoDB are ideal for semi-structured data with varying schemas and complex nested structures. They provide fast retrieval by ID while supporting rich data types and flexible schemas."
+    },
+    {
+      "question": "Why would Redis be preferred over MongoDB for storing user session data in a high-traffic web application?",
+      "options": [
+        "Redis supports more complex queries",
+        "Redis provides better data consistency guarantees",
+        "Redis offers faster in-memory access and built-in expiration features",
+        "Redis has better support for nested document structures"
+      ],
+      "correct_index": 2,
+      "explanation": "Redis is an in-memory key-value store that provides extremely fast access times and built-in TTL (time-to-live) features perfect for session management. Session data is typically simple key-value pairs that don't require complex querying."
+    },
+    {
+      "question": "A telecommunications company needs to store billions of time-series records (timestamp, device_id, signal_strength) and primarily queries data by device_id and time ranges. Write operations heavily outweigh reads. Which database characteristic is most critical?",
+      "options": [
+        "ACID compliance for data consistency",
+        "Horizontal scaling and high write throughput",
+        "Complex join operations across tables",
+        "Strong schema enforcement"
+      ],
+      "correct_index": 1,
+      "explanation": "Column-family databases like Cassandra excel at handling massive write volumes and can scale horizontally. Time-series data with heavy writes fits perfectly with Cassandra's architecture designed for high write throughput."
+    },
+    {
+      "question": "An e-commerce platform wants to implement a recommendation engine that finds products purchased by friends of friends, or products frequently bought together. The queries involve traversing multiple relationship levels. Which approach is most efficient?",
+      "options": [
+        "Store relationships as foreign keys in a document database",
+        "Use a graph database with native traversal algorithms",
+        "Create junction tables in a column-family database",
+        "Store relationship data as JSON arrays in a key-value store"
+      ],
+      "correct_index": 1,
+      "explanation": "Graph databases are specifically designed for relationship traversal and can efficiently execute multi-hop queries. They use native graph algorithms that outperform other databases when dealing with connected data and relationship analysis."
+    },
+    {
+      "question": "A startup is choosing between MongoDB and Cassandra for their IoT sensor data platform. They expect rapid growth from thousands to millions of devices, with mostly write operations and occasional analytics queries. What is the key architectural difference that should influence their decision?",
+      "options": [
+        "MongoDB uses SQL while Cassandra uses NoSQL",
+        "MongoDB is master-slave while Cassandra is masterless",
+        "MongoDB is in-memory while Cassandra is disk-based",
+        "MongoDB supports transactions while Cassandra doesn't"
+      ],
+      "correct_index": 1,
+      "explanation": "Cassandra's masterless, peer-to-peer architecture provides better horizontal scalability and write performance for massive IoT workloads. MongoDB's master-slave architecture can become a bottleneck at extreme scale, making Cassandra better suited for this use case."
+    }
+  ],
+  "passing_score": 80
+}

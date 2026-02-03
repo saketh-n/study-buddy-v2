@@ -1,0 +1,61 @@
+{
+  "topic_name": "OpenStack",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of OpenStack's modular design with separate services like Nova, Neutron, and Cinder?",
+      "options": [
+        "It allows organizations to deploy only the services they need and scale components independently",
+        "It reduces the total cost of ownership by eliminating the need for third-party software",
+        "It automatically optimizes resource allocation across all cloud services",
+        "It provides built-in security encryption for all data transfers"
+      ],
+      "correct_index": 0,
+      "explanation": "OpenStack's modular architecture allows organizations to choose which services to deploy based on their specific needs and scale individual components independently, providing flexibility and avoiding vendor lock-in."
+    },
+    {
+      "question": "A company needs to migrate from proprietary cloud infrastructure to avoid vendor lock-in while maintaining full control over their cloud environment. Why would OpenStack be a suitable solution for this scenario?",
+      "options": [
+        "OpenStack automatically migrates data from any proprietary cloud platform",
+        "OpenStack is open source and provides APIs that prevent dependency on specific vendors",
+        "OpenStack offers the lowest operational costs compared to all other cloud solutions",
+        "OpenStack includes built-in compliance certifications for all industries"
+      ],
+      "correct_index": 1,
+      "explanation": "OpenStack's open-source nature and standardized APIs allow organizations to avoid vendor lock-in by providing full control over their cloud infrastructure without dependency on proprietary solutions."
+    },
+    {
+      "question": "Which OpenStack service relationship correctly describes how compute instances access persistent storage?",
+      "options": [
+        "Nova directly manages block storage devices without requiring additional services",
+        "Neutron provides both networking and storage capabilities for compute instances",
+        "Nova integrates with Cinder to attach persistent block storage volumes to instances",
+        "Swift automatically provides block storage for all Nova compute instances"
+      ],
+      "correct_index": 2,
+      "explanation": "Nova (compute service) integrates with Cinder (block storage service) to provide persistent storage volumes that can be attached to compute instances, while Swift provides object storage and Neutron handles networking."
+    },
+    {
+      "question": "An organization wants to implement a private cloud that can later integrate with public cloud services using the same APIs and management tools. What makes OpenStack particularly well-suited for this hybrid cloud strategy?",
+      "options": [
+        "OpenStack automatically replicates data across private and public clouds",
+        "OpenStack uses standardized APIs that are compatible with many public cloud providers",
+        "OpenStack provides free licensing for unlimited public cloud usage",
+        "OpenStack includes built-in VPN tunnels to all major public cloud providers"
+      ],
+      "correct_index": 1,
+      "explanation": "OpenStack's standardized APIs and open architecture make it easier to create hybrid cloud environments where the same tools and interfaces can be used across private and compatible public cloud services."
+    },
+    {
+      "question": "When evaluating OpenStack for a production environment, what is the most critical consideration regarding operational complexity?",
+      "options": [
+        "OpenStack requires specialized hardware that is expensive to procure",
+        "OpenStack demands significant expertise for deployment, maintenance, and troubleshooting",
+        "OpenStack can only run on Linux operating systems",
+        "OpenStack automatically scales without any administrative intervention"
+      ],
+      "correct_index": 1,
+      "explanation": "While OpenStack provides powerful cloud capabilities, it requires substantial technical expertise for proper deployment, ongoing maintenance, and troubleshooting due to its complexity and the coordination needed between multiple services."
+    }
+  ],
+  "passing_score": 80
+}

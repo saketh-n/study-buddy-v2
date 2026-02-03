@@ -1,0 +1,61 @@
+{
+  "topic_name": "Types of storage",
+  "questions": [
+    {
+      "question": "A video editing company needs storage that allows instant access to frequently used video clips while maintaining reasonable cost for large archives. Which storage hierarchy would be most appropriate?",
+      "options": [
+        "SSDs for all storage to maximize speed",
+        "A combination of SSDs for active projects and HDDs for archived footage",
+        "Cloud storage only for automatic backup",
+        "RAM-based storage for all video files"
+      ],
+      "correct_index": 1,
+      "explanation": "A hybrid approach using fast SSDs for active work and cost-effective HDDs for archives balances performance needs with budget constraints, which is typical in professional video editing workflows."
+    },
+    {
+      "question": "Why is volatile memory (RAM) not suitable as primary storage for user documents and applications?",
+      "options": [
+        "It is too expensive compared to other storage types",
+        "It loses all data when power is removed from the system",
+        "It has slower access times than hard drives",
+        "It cannot store more than a few megabytes of data"
+      ],
+      "correct_index": 1,
+      "explanation": "Volatile memory loses all stored data when power is disconnected, making it unsuitable for permanent storage of documents and programs that need to persist between computer sessions."
+    },
+    {
+      "question": "A database server experiences high user traffic with frequent random read/write operations. Which storage characteristic would have the greatest impact on performance?",
+      "options": [
+        "Total storage capacity",
+        "Sequential read speed",
+        "Random access time (latency)",
+        "Physical storage size"
+      ],
+      "correct_index": 2,
+      "explanation": "Database operations typically involve many random access patterns rather than sequential reads. Low random access time (latency) is crucial for quickly locating and retrieving scattered data records."
+    },
+    {
+      "question": "When would magnetic tape storage be preferred over solid-state drives despite being much slower?",
+      "options": [
+        "For operating system installation",
+        "For long-term archival of large datasets that are rarely accessed",
+        "For gaming applications requiring fast loading",
+        "For temporary file storage during active work"
+      ],
+      "correct_index": 1,
+      "explanation": "Magnetic tape excels in archival scenarios where massive amounts of data need long-term storage at very low cost, and the slow access time is acceptable because the data is rarely retrieved."
+    },
+    {
+      "question": "A mobile application developer is choosing storage for a smartphone app that needs to save user preferences and small amounts of data locally. What storage consideration is most critical for this use case?",
+      "options": [
+        "Maximum possible storage capacity",
+        "Power efficiency and durability with no moving parts",
+        "Lowest possible cost per gigabyte",
+        "Compatibility with magnetic storage standards"
+      ],
+      "correct_index": 1,
+      "explanation": "Mobile devices prioritize power efficiency and durability. Solid-state storage with no moving parts is ideal for mobile applications as it consumes less power, withstands physical movement, and provides adequate performance for small data storage needs."
+    }
+  ],
+  "passing_score": 80
+}

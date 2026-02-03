@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hair Structure and Anatomy",
+  "questions": [
+    {
+      "question": "A dermatologist examines a patient's hair sample under a microscope and notices the outer layer appears damaged and lifted. Which hair structure is most likely compromised, and what would be the primary consequence?",
+      "options": [
+        "The cuticle is damaged, leading to increased porosity and fragility",
+        "The cortex is damaged, causing complete loss of hair color",
+        "The medulla is damaged, resulting in immediate hair breakage",
+        "The hair follicle is damaged, preventing any new growth"
+      ],
+      "correct_index": 0,
+      "explanation": "The cuticle is the outermost protective layer of the hair shaft. When damaged and lifted, it increases hair porosity, making hair more fragile and prone to moisture loss and chemical damage."
+    },
+    {
+      "question": "During which phase of the hair growth cycle would a hair loss treatment targeting actively dividing cells be MOST effective?",
+      "options": [
+        "Telogen phase, because hair is ready to fall out",
+        "Anagen phase, because follicle cells are rapidly dividing",
+        "Catagen phase, because the follicle is transitioning",
+        "All phases equally, since hair growth is continuous"
+      ],
+      "correct_index": 1,
+      "explanation": "The anagen phase is the active growth phase where hair matrix cells in the follicle are rapidly dividing. Treatments targeting cell division would be most effective during this phase when cellular activity is highest."
+    },
+    {
+      "question": "A patient notices their hair feels thinner but the number of hairs hasn't decreased significantly. Based on hair anatomy, what is the most likely explanation?",
+      "options": [
+        "The hair follicles have become completely inactive",
+        "The cortex layer has thickened, making hair appear darker",
+        "The hair shaft diameter has decreased due to follicle miniaturization",
+        "The cuticle layer has multiplied, adding bulk to each strand"
+      ],
+      "correct_index": 2,
+      "explanation": "Follicle miniaturization causes the hair shaft diameter to decrease while hair count may initially remain similar. This creates the sensation of thinner hair before actual hair loss becomes apparent."
+    },
+    {
+      "question": "Why would understanding the depth of hair follicles in the scalp be crucial when designing a topical treatment for hair loss?",
+      "options": [
+        "Shallow follicles require stronger medications than deep follicles",
+        "The treatment must penetrate deep enough to reach the hair matrix in the follicle bulb",
+        "Deep follicles grow hair faster than shallow ones",
+        "Follicle depth determines hair color and texture only"
+      ],
+      "correct_index": 1,
+      "explanation": "Hair growth occurs at the hair matrix located in the follicle bulb, which sits deep in the dermis. Topical treatments must penetrate through multiple skin layers to reach this active growth region to be effective."
+    },
+    {
+      "question": "A trichologist observes that a patient's hair breaks easily near the scalp but the ends appear healthy. Which anatomical concept best explains this pattern?",
+      "options": [
+        "New hair growth has a weaker cuticle structure than older hair",
+        "The sebaceous glands are producing too much oil, weakening new growth",
+        "Recent damage to the hair follicle is producing structurally compromised hair shafts",
+        "The hair cortex becomes stronger as it ages and is exposed to environmental factors"
+      ],
+      "correct_index": 2,
+      "explanation": "When hair breaks near the scalp (newer growth) while older hair remains intact, it indicates the follicle has been compromised and is now producing structurally weaker hair shafts with defective protein structure in the cortex."
+    }
+  ],
+  "passing_score": 80
+}

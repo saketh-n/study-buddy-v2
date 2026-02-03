@@ -1,0 +1,61 @@
+{
+  "topic_name": "Types of Hair Loss",
+  "questions": [
+    {
+      "question": "A 28-year-old woman presents with sudden, complete hair loss in several coin-sized patches on her scalp. The affected areas show no signs of inflammation or scarring. What is the most likely underlying mechanism?",
+      "options": [
+        "Hormonal sensitivity causing follicle miniaturization",
+        "Autoimmune attack on hair follicles",
+        "Physical trauma causing permanent follicle damage",
+        "Nutritional deficiency leading to weakened hair shafts"
+      ],
+      "correct_index": 1,
+      "explanation": "The sudden onset, patchy distribution, and lack of scarring are characteristic of alopecia areata, which is caused by an autoimmune response where T-cells attack the hair follicles in the anagen (growth) phase."
+    },
+    {
+      "question": "Why would androgenetic alopecia typically present differently in men versus women, even when both have similar genetic predisposition?",
+      "options": [
+        "Men have higher baseline testosterone levels leading to more DHT conversion",
+        "Women's hair follicles are inherently more resistant to hormonal damage",
+        "The pattern is determined by X-linked genes that affect men and women differently",
+        "Men experience hair loss earlier due to lifestyle factors"
+      ],
+      "correct_index": 0,
+      "explanation": "Androgenetic alopecia is driven by dihydrotestosterone (DHT). Men typically have higher testosterone levels, leading to more DHT production and more pronounced follicle miniaturization, resulting in the classic male pattern baldness versus the diffuse thinning often seen in women."
+    },
+    {
+      "question": "A dermatologist needs to distinguish between androgenetic alopecia and telogen effluvium in a patient experiencing diffuse hair thinning. Which diagnostic approach would be most appropriate?",
+      "options": [
+        "Examine the pattern of loss and perform a hair pull test",
+        "Order hormone levels and check family history only",
+        "Perform a scalp biopsy immediately",
+        "Recommend starting minoxidil treatment as a diagnostic trial"
+      ],
+      "correct_index": 0,
+      "explanation": "Androgenetic alopecia typically shows a specific pattern (crown/temples in men, central part widening in women) with normal hair pull tests, while telogen effluvium shows diffuse loss with positive hair pull tests (>6 hairs easily removed). This combination helps differentiate the conditions."
+    },
+    {
+      "question": "In what clinical scenario would you expect to see scarring (cicatricial) alopecia rather than non-scarring types?",
+      "options": [
+        "A teenager with patchy hair loss following exam stress",
+        "An adult with gradual crown thinning over 10 years",
+        "A patient with hair loss in areas of previous severe scalp infection",
+        "Someone experiencing diffuse hair shedding after rapid weight loss"
+      ],
+      "correct_index": 2,
+      "explanation": "Scarring alopecia occurs when hair follicles are permanently destroyed and replaced by scar tissue, typically due to inflammation, infection, or trauma. The other scenarios describe non-scarring alopecia where follicles remain intact and hair can potentially regrow."
+    },
+    {
+      "question": "A patient asks why their alopecia areata patches sometimes regrow hair spontaneously while their parent's androgenetic alopecia continues to progress despite treatment. What explains this fundamental difference?",
+      "options": [
+        "Alopecia areata affects younger patients who have better regenerative capacity",
+        "The hair follicles remain intact in alopecia areata but become miniaturized in androgenetic alopecia",
+        "Androgenetic alopecia is genetic while alopecia areata is purely environmental",
+        "Treatment options are more effective for alopecia areata than androgenetic alopecia"
+      ],
+      "correct_index": 1,
+      "explanation": "In alopecia areata, hair follicles remain structurally intact but are temporarily shut down by immune attack, allowing for potential spontaneous recovery. In androgenetic alopecia, follicles progressively shrink (miniaturize) due to DHT sensitivity, making reversal much more difficult even with treatment."
+    }
+  ],
+  "passing_score": 80
+}

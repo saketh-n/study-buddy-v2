@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Warehousing",
+  "questions": [
+    {
+      "question": "A retail company wants to analyze sales performance across different time periods, product categories, and store locations. Which data warehouse design approach would be most appropriate for enabling fast, intuitive queries for business analysts?",
+      "options": [
+        "Normalized relational database with foreign key constraints",
+        "Star schema with a central fact table surrounded by dimension tables",
+        "Snowflake schema with fully normalized dimension hierarchies",
+        "Single denormalized table containing all data"
+      ],
+      "correct_index": 1,
+      "explanation": "Star schema is optimal for analytical queries as it provides fast performance through denormalized dimension tables while maintaining intuitive structure for business users. The central fact table contains metrics while dimension tables provide descriptive context."
+    },
+    {
+      "question": "When would you choose a snowflake schema over a star schema for dimensional modeling?",
+      "options": [
+        "When query performance is the highest priority",
+        "When storage space is limited and data redundancy must be minimized",
+        "When business users need the simplest possible data structure",
+        "When the data warehouse only contains a single fact table"
+      ],
+      "correct_index": 1,
+      "explanation": "Snowflake schema normalizes dimension tables into multiple related tables, reducing storage space and eliminating redundancy. However, this comes at the cost of query complexity and performance compared to star schema."
+    },
+    {
+      "question": "In dimensional modeling, what is the primary purpose of a fact table?",
+      "options": [
+        "To store descriptive attributes about business entities",
+        "To maintain referential integrity between different data sources",
+        "To store measurable, quantitative data about business processes",
+        "To provide a lookup mechanism for translating codes to descriptions"
+      ],
+      "correct_index": 2,
+      "explanation": "Fact tables store quantitative, measurable data (facts/metrics) such as sales amounts, quantities, or counts that can be aggregated and analyzed. They represent the core business events or transactions being measured."
+    },
+    {
+      "question": "A data engineer notices that dimension tables in their star schema are growing very large due to slowly changing dimension (SCD) requirements. The current design stores historical versions by creating new rows with effective date ranges. What is the main trade-off they are experiencing?",
+      "options": [
+        "Increased storage requirements versus simplified historical analysis",
+        "Faster query performance versus data consistency",
+        "Reduced data redundancy versus increased complexity",
+        "Better data quality versus slower ETL processes"
+      ],
+      "correct_index": 0,
+      "explanation": "SCD Type 2 (versioning with date ranges) preserves complete historical context but significantly increases storage requirements as new rows are created for each change. This enables accurate historical analysis but at the cost of larger dimension tables."
+    },
+    {
+      "question": "Why are surrogate keys typically preferred over natural keys in dimension tables within a data warehouse?",
+      "options": [
+        "Surrogate keys are always shorter and more efficient for joins",
+        "Surrogate keys eliminate the need for data validation during ETL",
+        "Surrogate keys provide stability when source system keys change and enable handling of slowly changing dimensions",
+        "Surrogate keys automatically ensure referential integrity across all tables"
+      ],
+      "correct_index": 2,
+      "explanation": "Surrogate keys are system-generated unique identifiers that remain stable even when natural business keys change in source systems. They also enable proper handling of slowly changing dimensions by allowing multiple versions of the same business entity to coexist with different surrogate keys."
+    }
+  ],
+  "passing_score": 80
+}

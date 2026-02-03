@@ -1,0 +1,61 @@
+{
+  "topic_name": "Deportation of the Acadians",
+  "questions": [
+    {
+      "question": "What was the primary strategic reason the British forcibly removed the Acadians from the Maritime provinces in 1755?",
+      "options": [
+        "To seize Acadian farmland for British settlers",
+        "To eliminate a potential French ally during the Seven Years' War",
+        "To force Acadians to convert from Catholicism to Protestantism",
+        "To reduce competition in the Maritime fishing industry"
+      ],
+      "correct_index": 1,
+      "explanation": "The British viewed the Acadians as a security threat during wartime, fearing they would support French military efforts despite their declared neutrality."
+    },
+    {
+      "question": "Why did the Acadians' refusal to take an unconditional oath of allegiance to the British Crown become a central issue leading to their deportation?",
+      "options": [
+        "It proved they were actively spying for France",
+        "It demonstrated religious disloyalty to Protestant Britain",
+        "It suggested they might support French forces in future conflicts",
+        "It violated the original terms of the Treaty of Utrecht"
+      ],
+      "correct_index": 2,
+      "explanation": "The British interpreted the Acadians' conditional loyalty (wanting to remain neutral) as a potential military threat, especially as tensions escalated toward the Seven Years' War."
+    },
+    {
+      "question": "Which long-term consequence of the Acadian deportation most significantly altered the cultural landscape of the Maritime provinces?",
+      "options": [
+        "The complete elimination of French language in the region",
+        "The replacement of Catholic churches with Protestant ones",
+        "The shift from Acadian agricultural communities to British settlements",
+        "The end of trade relationships with France"
+      ],
+      "correct_index": 2,
+      "explanation": "The deportation fundamentally changed the demographic and cultural character of the Maritimes by replacing established Acadian farming communities with British Protestant settlers."
+    },
+    {
+      "question": "A historian is analyzing why some Acadian communities survived the deportation while others were completely dispersed. Which factor would be most relevant to investigate?",
+      "options": [
+        "The religious practices of different Acadian settlements",
+        "The geographic accessibility of communities to British forces",
+        "The economic productivity of various Acadian farms",
+        "The linguistic differences between Acadian dialects"
+      ],
+      "correct_index": 1,
+      "explanation": "Communities in remote or difficult-to-reach areas were more likely to escape immediate deportation, while those near British administrative centers and transportation routes were more easily targeted."
+    },
+    {
+      "question": "How does the Acadian deportation help explain the development of distinct Francophone communities in Louisiana (Cajuns) and New Brunswick in the following centuries?",
+      "options": [
+        "Both regions offered similar climate and agricultural opportunities to pre-deportation Acadia",
+        "The British government specifically designated these areas as official Acadian relocation sites",
+        "Deportation scattered Acadians widely, leading to cultural adaptation and evolution in different environments",
+        "French colonial authorities coordinated the resettlement to preserve Acadian political unity"
+      ],
+      "correct_index": 2,
+      "explanation": "The forced dispersal led to Acadian communities adapting to vastly different environments and contexts, creating distinct cultural variations while maintaining core Acadian identity elements."
+    }
+  ],
+  "passing_score": 80
+}

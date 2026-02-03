@@ -1,0 +1,61 @@
+{
+  "topic_name": "Supply Chain Challenges",
+  "questions": [
+    {
+      "question": "A pharmaceutical company manufacturing GLP-1 receptor agonists is experiencing a 6-month delay in obtaining specialized glass vials required for drug stability. What is the most strategic immediate response to minimize patient impact?",
+      "options": [
+        "Switch to plastic vials to maintain production schedule",
+        "Negotiate with multiple alternative glass suppliers while implementing temporary rationing protocols",
+        "Increase production of other diabetes medications as substitutes",
+        "Reduce the concentration of active ingredient to use fewer vials"
+      ],
+      "correct_index": 1,
+      "explanation": "The most strategic response involves securing alternative suppliers while managing current supply through rationing. Switching to plastic could compromise drug stability, other diabetes medications aren't equivalent therapeutically, and reducing concentration would require new regulatory approval."
+    },
+    {
+      "question": "Why are GLP-1 receptor agonists particularly vulnerable to cold chain distribution failures compared to oral diabetes medications?",
+      "options": [
+        "They contain more expensive active ingredients that degrade rapidly",
+        "They are protein-based biologics requiring consistent refrigeration to maintain therapeutic efficacy",
+        "They have shorter patent protection periods requiring faster distribution",
+        "They are prescribed more frequently, creating higher volume pressures"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 agonists are protein-based biologics that denature and lose therapeutic effectiveness if exposed to temperature variations. This makes them uniquely vulnerable to cold chain failures, unlike oral medications that are typically stable at room temperature."
+    },
+    {
+      "question": "A hospital pharmacy manager notices increasing GLP-1 agonist shortages. When should they implement allocation protocols rather than first-come-first-served dispensing?",
+      "options": [
+        "Only when supply drops below 30% of normal inventory levels",
+        "When shortages are expected to last more than 72 hours and affect patient continuity of care",
+        "Immediately upon any supply disruption to ensure fairness",
+        "When insurance companies request utilization management"
+      ],
+      "correct_index": 1,
+      "explanation": "Allocation protocols should be implemented when shortages will meaningfully impact patient care continuity, typically beyond 72 hours. Waiting until 30% supply is too late, implementing immediately for minor disruptions is unnecessary, and insurance requests aren't the primary clinical driver."
+    },
+    {
+      "question": "Which manufacturing capacity challenge most significantly impacts GLP-1 agonist production scalability during high demand periods?",
+      "options": [
+        "Limited number of specialized bioreactors capable of producing complex peptides",
+        "Shortage of pharmaceutical packaging materials",
+        "Insufficient warehouse space for finished products",
+        "Limited availability of qualified manufacturing personnel"
+      ],
+      "correct_index": 0,
+      "explanation": "Specialized bioreactors for peptide synthesis represent the biggest bottleneck because they require significant capital investment, long lead times to install, and complex validation processes. Personnel, packaging, and warehouse space are more easily scalable constraints."
+    },
+    {
+      "question": "During a shortage of semaglutide, a clinical pharmacist must prioritize patients for available supply. Which scenario represents the most appropriate clinical decision-making approach?",
+      "options": [
+        "Prioritize patients based on insurance coverage levels to ensure payment",
+        "Allocate based on length of time patients have been on therapy",
+        "Prioritize based on clinical factors including diabetes control, cardiovascular risk, and availability of therapeutic alternatives",
+        "Distribute equally among all current patients by reducing everyone's dose"
+      ],
+      "correct_index": 2,
+      "explanation": "Clinical prioritization should be based on medical factors including disease severity, cardiovascular risk stratification, and whether patients have suitable therapeutic alternatives. Insurance status isn't clinically relevant, therapy duration alone doesn't indicate need, and dose reduction may compromise efficacy for all patients."
+    }
+  ],
+  "passing_score": 80
+}

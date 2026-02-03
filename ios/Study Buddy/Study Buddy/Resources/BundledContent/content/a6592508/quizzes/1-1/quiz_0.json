@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hair Loss",
+  "questions": [
+    {
+      "question": "A 25-year-old man notices his hairline receding in an M-shaped pattern, similar to his father and grandfather. Which biological mechanism best explains this pattern of hair loss?",
+      "options": [
+        "Autoimmune destruction of hair follicles",
+        "Sensitivity of hair follicles to dihydrotestosterone (DHT)",
+        "Nutritional deficiency affecting keratin production",
+        "Chronic inflammation from environmental toxins"
+      ],
+      "correct_index": 1,
+      "explanation": "Male pattern baldness (androgenetic alopecia) occurs when hair follicles are genetically sensitive to DHT, a hormone derived from testosterone. This sensitivity causes follicles to gradually shrink and produce thinner, shorter hairs until they stop producing hair entirely."
+    },
+    {
+      "question": "A woman experiencing diffuse hair thinning 3 months after major surgery would most likely benefit from which treatment approach?",
+      "options": [
+        "Immediate hair transplant surgery",
+        "Long-term finasteride therapy",
+        "Patient reassurance and monitoring",
+        "Topical corticosteroid application"
+      ],
+      "correct_index": 2,
+      "explanation": "This describes telogen effluvium, a temporary condition where physical or emotional stress pushes hair follicles into the resting phase prematurely. Hair typically regrows naturally within 6-12 months as the stress resolves, making watchful waiting the most appropriate initial approach."
+    },
+    {
+      "question": "Why would a dermatologist recommend starting minoxidil treatment early in androgenetic alopecia rather than waiting until significant hair loss occurs?",
+      "options": [
+        "Minoxidil works better on younger patients due to higher hormone levels",
+        "Early treatment prevents the genetic predisposition from activating",
+        "Minoxidil can maintain existing hair better than it can regrow lost hair",
+        "Hair follicles become immune to treatment after prolonged dormancy"
+      ],
+      "correct_index": 2,
+      "explanation": "Minoxidil is more effective at maintaining and strengthening existing hair follicles than regenerating completely dormant ones. Starting treatment early helps preserve the hair you have, while waiting until significant loss occurs makes treatment less effective."
+    },
+    {
+      "question": "A patient has circular patches of complete hair loss with normal-looking scalp underneath. Based on this presentation, what would be the most appropriate initial treatment consideration?",
+      "options": [
+        "DHT-blocking medications like finasteride",
+        "Anti-inflammatory treatments like corticosteroids",
+        "Surgical hair restoration procedures",
+        "Antifungal medications for scalp infection"
+      ],
+      "correct_index": 1,
+      "explanation": "This describes alopecia areata, an autoimmune condition where the immune system attacks hair follicles, creating distinct bald patches. Anti-inflammatory treatments like corticosteroids are first-line therapy to suppress the autoimmune response and allow hair regrowth."
+    },
+    {
+      "question": "Which factor would most likely accelerate the progression of androgenetic alopecia in someone who is genetically predisposed?",
+      "options": [
+        "Using harsh shampoos daily",
+        "Chronic psychological stress",
+        "Wearing tight hats frequently",
+        "Exposure to air pollution"
+      ],
+      "correct_index": 1,
+      "explanation": "Chronic stress can accelerate androgenetic alopecia by increasing cortisol levels, which can affect hormone balance and potentially increase DHT sensitivity. While other factors may cause temporary hair loss, chronic stress has the most significant impact on accelerating genetic hair loss patterns."
+    }
+  ],
+  "passing_score": 80
+}

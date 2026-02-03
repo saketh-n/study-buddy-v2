@@ -1,0 +1,61 @@
+{
+  "topic_name": "Popular Linux filesystem formats: Ext3 (extent based architecture), XFS (B+trees), ZFS* ;; Windows has NTFS/exFAT/FAT, Apple: APFS/AFS",
+  "questions": [
+    {
+      "question": "A data center administrator needs to set up a file server that will handle very large files (multiple GB each) and requires high-performance concurrent access. Which filesystem would be the most appropriate choice?",
+      "options": [
+        "Ext3 because its extent-based architecture handles large files efficiently",
+        "XFS because its B+ tree structure excels at managing large files and concurrent operations",
+        "FAT32 because it's compatible across all operating systems",
+        "exFAT because it was designed for external storage"
+      ],
+      "correct_index": 1,
+      "explanation": "XFS uses B+ tree indexing which provides excellent performance for large files and concurrent access patterns, making it ideal for high-performance server environments. Ext3's extent-based architecture helps but isn't as optimized for this specific use case as XFS."
+    },
+    {
+      "question": "Why would a system administrator choose ZFS over traditional filesystems like Ext3 or NTFS for a critical data storage system?",
+      "options": [
+        "ZFS is faster than all other filesystems for small file operations",
+        "ZFS combines filesystem and volume management with built-in data integrity features like checksumming",
+        "ZFS is the only filesystem that supports file permissions and encryption",
+        "ZFS uses less storage space due to superior compression algorithms"
+      ],
+      "correct_index": 1,
+      "explanation": "ZFS is unique in combining filesystem functionality with volume management and includes advanced features like end-to-end checksumming, snapshots, and self-healing capabilities, making it ideal for critical data where integrity is paramount."
+    },
+    {
+      "question": "A photographer needs to transfer large RAW image files (50-100MB each) between Windows, Mac, and Linux systems using external USB drives. Which filesystem would be the most practical choice?",
+      "options": [
+        "NTFS because it supports large files and is readable on all systems",
+        "exFAT because it supports large files and has native cross-platform compatibility",
+        "APFS because it's the most modern filesystem available",
+        "Ext3 because it handles large files efficiently with extent-based architecture"
+      ],
+      "correct_index": 1,
+      "explanation": "exFAT is specifically designed for external storage and removable media, supports large files (unlike FAT32), and has native read/write support across Windows, Mac, and Linux systems, making it ideal for cross-platform file sharing."
+    },
+    {
+      "question": "What is the primary architectural advantage of Ext3's extent-based system compared to traditional block-mapping approaches?",
+      "options": [
+        "It allows files to be compressed automatically to save space",
+        "It reduces fragmentation by allocating contiguous blocks for large files",
+        "It enables real-time file encryption and decryption",
+        "It provides automatic backup and versioning of files"
+      ],
+      "correct_index": 1,
+      "explanation": "Ext3's extent-based architecture maps contiguous ranges of blocks (extents) rather than individual blocks, which reduces metadata overhead and fragmentation, especially for larger files, leading to better performance and more efficient storage allocation."
+    },
+    {
+      "question": "When setting up a new Windows workstation for general office use with moderate file sizes and standard applications, which filesystem combination would be most appropriate for the system drive and external storage?",
+      "options": [
+        "APFS for system drive, exFAT for external storage",
+        "NTFS for system drive, FAT32 for external storage",
+        "NTFS for system drive, exFAT for external storage",
+        "XFS for system drive, NTFS for external storage"
+      ],
+      "correct_index": 2,
+      "explanation": "NTFS is the standard Windows system filesystem with full feature support including security, compression, and large files. exFAT is ideal for external storage as it supports large files and cross-platform compatibility, while FAT32 has a 4GB file size limit that's problematic for modern use."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Preprocessing",
+  "questions": [
+    {
+      "question": "You are working with a dataset containing customer ages ranging from 18 to 85, and annual incomes ranging from $20,000 to $500,000. Why would normalization be particularly important before applying a distance-based algorithm like k-means clustering?",
+      "options": [
+        "To reduce computational complexity and speed up the algorithm",
+        "To prevent the income feature from dominating the distance calculations due to its larger scale",
+        "To eliminate outliers in both age and income distributions",
+        "To convert categorical variables into numerical format"
+      ],
+      "correct_index": 1,
+      "explanation": "Income values are much larger in magnitude than age values, so without normalization, the distance calculations would be dominated by income differences, making age nearly irrelevant in the clustering process."
+    },
+    {
+      "question": "A dataset has 10,000 records with a 'phone_number' column that is 95% missing. The remaining 5% of phone numbers appear to be randomly distributed across different customer segments. What is the most appropriate approach?",
+      "options": [
+        "Use forward fill to propagate the available phone numbers",
+        "Drop all records that are missing phone numbers",
+        "Create a binary indicator feature for 'has_phone' and drop the original column",
+        "Impute missing values using the most frequent phone number"
+      ],
+      "correct_index": 2,
+      "explanation": "With 95% missing data that appears random, imputation would be unreliable. Creating a binary indicator preserves the information about whether a phone number was provided while avoiding the issues of high missingness."
+    },
+    {
+      "question": "When creating features from a datetime column for predicting retail sales, which feature engineering approach would likely be LEAST useful?",
+      "options": [
+        "Extracting day of week to capture weekly shopping patterns",
+        "Creating a binary feature for holiday vs non-holiday periods",
+        "Converting the datetime to a Unix timestamp (seconds since epoch)",
+        "Extracting month to capture seasonal trends"
+      ],
+      "correct_index": 2,
+      "explanation": "Unix timestamps create arbitrarily large numbers without meaningful relationships to sales patterns. Day of week, holidays, and months all capture interpretable cyclical patterns relevant to retail behavior."
+    },
+    {
+      "question": "You notice that 15% of entries in a 'customer_satisfaction_score' column (scale 1-10) are missing, and these missing values are primarily from customers who made complaints. What does this suggest about the missing data mechanism?",
+      "options": [
+        "Missing Completely At Random (MCAR) - safe to use simple imputation",
+        "Missing At Random (MAR) - can use advanced imputation methods",
+        "Missing Not At Random (MNAR) - the missingness is meaningful and should be explicitly modeled",
+        "Missing due to data collection errors - should remove these records"
+      ],
+      "correct_index": 2,
+      "explanation": "The missing satisfaction scores are systematically related to complaint behavior, suggesting customers who complained may have deliberately not provided scores. This makes the missingness informative and not random."
+    },
+    {
+      "question": "A feature called 'years_of_education' has values ranging from 0 to 25, but contains obvious errors like negative values and values over 30. After identifying these outliers, what is the most principled approach to handle them?",
+      "options": [
+        "Remove all records containing any outlier values",
+        "Replace outliers with the mean value of the feature",
+        "Cap all values above 20 at exactly 20, and set negative values to 0",
+        "Investigate the source of errors and develop domain-specific rules for correction or removal"
+      ],
+      "correct_index": 3,
+      "explanation": "Understanding why outliers occur is crucial for proper handling. Domain knowledge about education can help determine if values like 25 years might be valid (PhD + additional training) versus clearly erroneous negative values."
+    }
+  ],
+  "passing_score": 80
+}

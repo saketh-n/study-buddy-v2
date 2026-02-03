@@ -1,0 +1,61 @@
+{
+  "topic_name": "Types of Hair Loss",
+  "questions": [
+    {
+      "question": "A 35-year-old man notices his hairline gradually receding at the temples over the past 3 years, with no inflammation or scarring. His father experienced similar hair loss. What is the most likely underlying mechanism?",
+      "options": [
+        "Autoimmune attack on hair follicles",
+        "Sensitivity to dihydrotestosterone (DHT)",
+        "Fungal infection of the scalp",
+        "Nutritional deficiency causing follicle damage"
+      ],
+      "correct_index": 1,
+      "explanation": "This pattern describes androgenetic alopecia (male pattern baldness), which is caused by genetic sensitivity to DHT. The gradual onset, family history, and typical pattern (receding temples) are characteristic features."
+    },
+    {
+      "question": "A dermatologist examines a patient with multiple, perfectly round bald patches on their scalp with no scarring. The hair around the patches appears normal. Why would this pattern suggest alopecia areata rather than androgenetic alopecia?",
+      "options": [
+        "Alopecia areata only affects women while androgenetic alopecia affects men",
+        "The circular, patchy pattern indicates an autoimmune process rather than hormonal sensitivity",
+        "Alopecia areata always causes scarring while androgenetic alopecia does not",
+        "The patient must be too young to have androgenetic alopecia"
+      ],
+      "correct_index": 1,
+      "explanation": "Alopecia areata creates distinct circular patches due to autoimmune attack on specific follicles, while androgenetic alopecia follows predictable patterns (receding hairline, crown thinning) due to DHT sensitivity in genetically susceptible areas."
+    },
+    {
+      "question": "When would it be most appropriate to recommend immediate medical evaluation rather than over-the-counter treatments for hair loss?",
+      "options": [
+        "When a 25-year-old man has gradual temple recession over 2 years",
+        "When hair loss is accompanied by scalp inflammation, scarring, or sudden onset",
+        "When a 45-year-old woman notices overall hair thinning",
+        "When hair loss follows a predictable male or female pattern"
+      ],
+      "correct_index": 1,
+      "explanation": "Scarring, inflammation, or sudden onset may indicate scarring alopecia, infections, or systemic conditions requiring immediate treatment to prevent permanent damage. Gradual pattern hair loss can often be initially managed with OTC options."
+    },
+    {
+      "question": "A 28-year-old woman experiences diffuse hair thinning 4 months after giving birth. Understanding the hair growth cycle, what is the most likely explanation?",
+      "options": [
+        "Permanent hormonal damage to follicles requiring immediate treatment",
+        "Normal telogen effluvium due to hormonal changes shifting more follicles into the resting phase",
+        "Early onset androgenetic alopecia triggered by pregnancy",
+        "Alopecia areata caused by pregnancy stress"
+      ],
+      "correct_index": 1,
+      "explanation": "Post-partum hair loss is typically telogen effluvium, where hormonal changes cause more follicles to enter the telogen (resting) phase simultaneously. This is usually temporary and resolves as hormones normalize."
+    },
+    {
+      "question": "Why do treatments like minoxidil work better for androgenetic alopecia than for alopecia areata?",
+      "options": [
+        "Minoxidil only works on male hormones, not autoimmune conditions",
+        "Androgenetic alopecia involves follicle miniaturization that can be reversed, while alopecia areata requires immune suppression",
+        "Alopecia areata is always permanent while androgenetic alopecia is temporary",
+        "Minoxidil causes scarring which worsens alopecia areata"
+      ],
+      "correct_index": 1,
+      "explanation": "Minoxidil promotes blood flow and can help reverse follicle miniaturization in androgenetic alopecia. Alopecia areata is an autoimmune condition requiring different approaches like corticosteroids or immunotherapy to address the underlying immune attack."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Apache Spark",
+  "questions": [
+    {
+      "question": "What is the primary advantage of Apache Spark's in-memory computing approach compared to traditional MapReduce frameworks?",
+      "options": [
+        "It eliminates the need for data partitioning across nodes",
+        "It reduces intermediate data writes to disk, enabling faster iterative computations",
+        "It automatically handles all data serialization without developer input",
+        "It requires less RAM than disk-based processing systems"
+      ],
+      "correct_index": 1,
+      "explanation": "Spark's in-memory computing keeps intermediate results in RAM between operations, avoiding expensive disk I/O that MapReduce requires between each map and reduce phase. This is especially beneficial for iterative algorithms and interactive analytics."
+    },
+    {
+      "question": "When would Apache Spark NOT be the optimal choice for a data processing task?",
+      "options": [
+        "Processing terabytes of data with complex transformations",
+        "Running machine learning algorithms on large datasets",
+        "Performing simple ETL operations on small datasets that fit on a single machine",
+        "Real-time stream processing with sub-second latency requirements"
+      ],
+      "correct_index": 2,
+      "explanation": "Spark has overhead costs for cluster coordination and distributed computing. For small datasets that fit comfortably on a single machine, traditional tools or single-machine processing would be more efficient and cost-effective than setting up a Spark cluster."
+    },
+    {
+      "question": "What happens when a Spark RDD (Resilient Distributed Dataset) partition is lost due to node failure?",
+      "options": [
+        "The entire job fails and must be restarted from the beginning",
+        "Spark automatically recomputes only the lost partition using the lineage graph",
+        "The lost data is permanently unavailable until manual intervention",
+        "Spark switches to disk-based processing for the remainder of the job"
+      ],
+      "correct_index": 1,
+      "explanation": "RDDs maintain lineage information (the sequence of transformations that created them). When a partition is lost, Spark uses this lineage to recompute only the affected partition on another node, providing fault tolerance without restarting the entire job."
+    },
+    {
+      "question": "In what scenario would you choose Spark DataFrames over RDDs for your application?",
+      "options": [
+        "When you need the lowest possible latency for simple operations",
+        "When working with unstructured data that doesn't fit a schema",
+        "When you want to leverage Catalyst optimizer for query performance and need SQL-like operations",
+        "When you require fine-grained control over data partitioning strategies"
+      ],
+      "correct_index": 2,
+      "explanation": "DataFrames provide a higher-level API with schema information that enables Spark's Catalyst optimizer to perform query optimization, predicate pushdown, and other performance improvements. They're ideal for structured data and SQL-like operations, while RDDs offer more control but require manual optimization."
+    },
+    {
+      "question": "Why is lazy evaluation a crucial design principle in Apache Spark's architecture?",
+      "options": [
+        "It reduces memory usage by processing data only when absolutely necessary",
+        "It allows Spark to optimize the entire computation pipeline before execution and enables fault tolerance",
+        "It ensures that all operations are executed in parallel across the cluster",
+        "It prevents data corruption by validating all transformations before applying them"
+      ],
+      "correct_index": 1,
+      "explanation": "Lazy evaluation means transformations are not executed immediately but recorded in a DAG (Directed Acyclic Graph). This allows Spark to optimize the entire pipeline (like combining operations, eliminating redundant steps) and enables fault tolerance through lineage tracking before any actual computation begins."
+    }
+  ],
+  "passing_score": 80
+}

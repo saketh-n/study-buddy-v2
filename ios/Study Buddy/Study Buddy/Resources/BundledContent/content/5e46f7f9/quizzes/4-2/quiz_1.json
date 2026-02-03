@@ -1,0 +1,61 @@
+{
+  "topic_name": "MPLS Label Switching",
+  "questions": [
+    {
+      "question": "What is the primary advantage of MPLS label switching over traditional IP routing in ISP networks?",
+      "options": [
+        "It provides better security through label encryption",
+        "It eliminates the need for routing tables completely",
+        "It reduces processing overhead by avoiding IP address lookups at each hop",
+        "It automatically compresses packet data to reduce bandwidth usage"
+      ],
+      "correct_index": 2,
+      "explanation": "MPLS improves performance by using simple label lookups instead of complex IP address table lookups at each router, reducing CPU processing overhead and enabling faster packet forwarding."
+    },
+    {
+      "question": "In which scenario would an ISP most benefit from implementing MPLS instead of traditional IP routing?",
+      "options": [
+        "When connecting a small office with 10 users to the internet",
+        "When providing high-volume traffic engineering across a large backbone network",
+        "When setting up a simple point-to-point connection between two offices",
+        "When implementing basic firewall rules at network edges"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS provides the greatest benefit in large-scale networks where traffic engineering, QoS guarantees, and efficient routing across multiple paths are critical, such as ISP backbone networks handling high traffic volumes."
+    },
+    {
+      "question": "How does MPLS handle packets when they enter an MPLS-enabled network domain?",
+      "options": [
+        "The ingress router encrypts the IP header and forwards based on destination MAC address",
+        "The ingress router assigns a label based on the forwarding equivalence class and switches subsequent routers use only this label",
+        "The ingress router fragments the packet into smaller labeled segments for parallel processing",
+        "The ingress router converts IP addresses to MPLS addresses and updates routing tables"
+      ],
+      "correct_index": 1,
+      "explanation": "At the ingress point, MPLS routers classify packets into Forwarding Equivalence Classes (FECs) and assign labels. Internal routers then forward packets based solely on these labels rather than examining IP headers."
+    },
+    {
+      "question": "Why might MPLS be preferred over pure IP routing for implementing Quality of Service (QoS) in service provider networks?",
+      "options": [
+        "MPLS labels inherently provide bandwidth compression",
+        "MPLS enables predetermined paths with guaranteed service levels through label-switched paths",
+        "MPLS automatically prioritizes video traffic over data traffic",
+        "MPLS eliminates network congestion by creating multiple physical paths"
+      ],
+      "correct_index": 1,
+      "explanation": "MPLS allows creation of Label Switched Paths (LSPs) with predefined routes and service characteristics, enabling service providers to guarantee specific QoS levels and implement traffic engineering more effectively than with traditional IP routing."
+    },
+    {
+      "question": "What happens to MPLS labels as a packet traverses through an MPLS network?",
+      "options": [
+        "Labels remain unchanged until the packet exits the MPLS domain",
+        "Labels are incrementally updated with routing information at each hop",
+        "Labels are swapped at each router based on the Label Forwarding Information Base",
+        "Labels are duplicated to create backup routing paths"
+      ],
+      "correct_index": 2,
+      "explanation": "In MPLS networks, each router swaps the incoming label with an outgoing label based on its Label Forwarding Information Base (LFIB), creating a label-switched path where each hop knows exactly how to forward the packet without IP lookups."
+    }
+  ],
+  "passing_score": 80
+}

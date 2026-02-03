@@ -1,0 +1,61 @@
+{
+  "topic_name": "State Management with ETCD",
+  "questions": [
+    {
+      "question": "What is the primary architectural reason why Kubernetes uses ETCD for storing cluster state rather than a traditional relational database?",
+      "options": [
+        "ETCD provides distributed consensus and strong consistency guarantees essential for cluster coordination",
+        "ETCD is faster than SQL databases for all types of queries",
+        "ETCD requires less memory and storage space than relational databases",
+        "ETCD automatically handles data encryption without additional configuration"
+      ],
+      "correct_index": 0,
+      "explanation": "ETCD uses the Raft consensus algorithm to provide strong consistency and distributed consensus, which is crucial for maintaining reliable cluster state across multiple masters in a distributed system like Kubernetes."
+    },
+    {
+      "question": "During the controller manager's reconciliation loop, what happens when the desired state in ETCD differs from the current state observed in the cluster?",
+      "options": [
+        "The controller immediately overwrites the ETCD state with the current cluster state",
+        "The controller takes corrective actions to make the current state match the desired state",
+        "The controller waits for manual intervention to resolve the conflict",
+        "The controller creates a backup of both states and alerts the administrator"
+      ],
+      "correct_index": 1,
+      "explanation": "The reconciliation loop's core purpose is to continuously work toward making the actual cluster state match the desired state stored in ETCD by taking appropriate corrective actions like creating, updating, or deleting resources."
+    },
+    {
+      "question": "A development team notices that after updating a Deployment manifest, their pods are not being recreated with the new configuration. Which component is most likely experiencing issues?",
+      "options": [
+        "ETCD is corrupted and cannot store the new desired state",
+        "The API server is not accepting the configuration changes",
+        "The Deployment controller is failing to execute its reconciliation loop properly",
+        "The kubelet on worker nodes is not responding to commands"
+      ],
+      "correct_index": 2,
+      "explanation": "If the manifest was successfully updated (stored in ETCD) but pods aren't being recreated, the issue is likely with the Deployment controller's reconciliation process, which is responsible for detecting the difference between desired and actual state and taking action."
+    },
+    {
+      "question": "Why does ETCD store the 'desired state' rather than just the 'current state' of cluster resources?",
+      "options": [
+        "Desired state enables declarative management and self-healing capabilities through continuous reconciliation",
+        "Current state changes too frequently and would overwhelm ETCD's storage capacity",
+        "Desired state is smaller in size and requires less network bandwidth to replicate",
+        "ETCD cannot technically store real-time information about running containers"
+      ],
+      "correct_index": 0,
+      "explanation": "Storing desired state enables Kubernetes' declarative model where users specify what they want, and controllers continuously work to achieve and maintain that state, providing self-healing and automated management capabilities."
+    },
+    {
+      "question": "In a scenario where ETCD becomes temporarily unavailable, what would be the immediate impact on a running Kubernetes cluster?",
+      "options": [
+        "All running pods and services immediately stop functioning",
+        "New resource creation/updates are blocked, but existing workloads continue running",
+        "The cluster automatically switches to a backup state management system",
+        "Only the master nodes shut down while worker nodes continue operating independently"
+      ],
+      "correct_index": 1,
+      "explanation": "When ETCD is unavailable, the API server cannot read/write cluster state, preventing new operations, but existing pods and services continue running on worker nodes since they don't directly depend on ETCD for runtime operations."
+    }
+  ],
+  "passing_score": 80
+}

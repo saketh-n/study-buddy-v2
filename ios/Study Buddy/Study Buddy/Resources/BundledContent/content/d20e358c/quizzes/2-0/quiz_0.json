@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux Container Support",
+  "questions": [
+    {
+      "question": "A development team needs to ensure that containers running on the same host cannot see each other's processes. Which Linux feature would be most appropriate for this isolation requirement?",
+      "options": [
+        "cgroups with CPU limits",
+        "PID namespaces",
+        "overlay2 filesystem",
+        "chroot jail"
+      ],
+      "correct_index": 1,
+      "explanation": "PID namespaces provide process isolation by giving each container its own process ID space, preventing containers from seeing processes in other namespaces."
+    },
+    {
+      "question": "Why would you choose an overlay filesystem over simply copying files for each container instance?",
+      "options": [
+        "Overlay filesystems provide better security isolation",
+        "Overlay filesystems use less disk space by sharing common layers",
+        "Overlay filesystems are faster for CPU-intensive operations",
+        "Overlay filesystems automatically compress data"
+      ],
+      "correct_index": 1,
+      "explanation": "Overlay filesystems enable efficient storage by allowing multiple containers to share read-only base layers while maintaining separate writable layers for changes."
+    },
+    {
+      "question": "A containerized application is consuming all available CPU resources and affecting other containers on the same host. Which Linux feature should be configured to prevent this issue?",
+      "options": [
+        "Network namespaces",
+        "Mount namespaces",
+        "cgroups",
+        "User namespaces"
+      ],
+      "correct_index": 2,
+      "explanation": "cgroups (control groups) provide resource management and limits for CPU, memory, I/O, and other system resources to prevent containers from monopolizing host resources."
+    },
+    {
+      "question": "What is the primary limitation of using chroot alone for container isolation compared to modern container technologies?",
+      "options": [
+        "chroot cannot change the root directory",
+        "chroot only provides filesystem isolation, not process or resource isolation",
+        "chroot requires root privileges to execute",
+        "chroot is incompatible with overlay filesystems"
+      ],
+      "correct_index": 1,
+      "explanation": "chroot only changes the apparent root directory for a process but doesn't provide process isolation, resource limits, or network isolation that modern containers require."
+    },
+    {
+      "question": "When would you specifically need to configure user namespaces in a container environment?",
+      "options": [
+        "To limit network bandwidth usage",
+        "To run containers as non-root users while maintaining necessary privileges inside the container",
+        "To share files between multiple containers",
+        "To prevent containers from accessing the internet"
+      ],
+      "correct_index": 1,
+      "explanation": "User namespaces allow mapping of user and group IDs, enabling containers to run with root privileges inside the container while running as unprivileged users on the host system."
+    }
+  ],
+  "passing_score": 80
+}

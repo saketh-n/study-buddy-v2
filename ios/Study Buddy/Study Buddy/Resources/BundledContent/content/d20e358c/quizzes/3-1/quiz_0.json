@@ -1,0 +1,61 @@
+{
+  "topic_name": "Application Containerization",
+  "questions": [
+    {
+      "question": "Your Study Buddy application works perfectly on your development machine but fails when deployed to production. Which Docker concept would best solve this 'works on my machine' problem?",
+      "options": [
+        "Container orchestration with Kubernetes",
+        "Environment consistency through containerization",
+        "Horizontal scaling with load balancers",
+        "Database replication across multiple servers"
+      ],
+      "correct_index": 1,
+      "explanation": "Containerization packages the application with all its dependencies and runtime environment, ensuring consistent behavior across different machines and environments."
+    },
+    {
+      "question": "When creating a Dockerfile for your Study Buddy application, why should you use a multi-stage build instead of a single-stage build?",
+      "options": [
+        "To enable automatic horizontal scaling",
+        "To reduce final image size by excluding build dependencies",
+        "To allow the container to run on multiple operating systems",
+        "To enable real-time database synchronization"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-stage builds allow you to use build tools and dependencies in early stages while copying only the necessary runtime artifacts to the final stage, resulting in smaller, more secure production images."
+    },
+    {
+      "question": "Your Study Buddy app requires a database, a web server, and a cache service. What is the best practice for containerizing this architecture?",
+      "options": [
+        "Install all services in a single container for simplicity",
+        "Create separate containers for each service and use Docker Compose",
+        "Use virtual machines instead of containers for better isolation",
+        "Deploy only the web application in a container and keep other services on the host"
+      ],
+      "correct_index": 1,
+      "explanation": "Following the single responsibility principle, each service should run in its own container. Docker Compose allows you to define and manage multi-container applications with proper networking and dependencies."
+    },
+    {
+      "question": "You need to store user study progress data that must persist even when the Study Buddy container is restarted. Which Docker feature addresses this requirement?",
+      "options": [
+        "Environment variables for configuration",
+        "Multi-stage builds for optimization",
+        "Volumes for persistent data storage",
+        "Health checks for monitoring"
+      ],
+      "correct_index": 2,
+      "explanation": "Docker volumes provide persistent storage that exists independently of container lifecycles, ensuring data survives container restarts, updates, or recreation."
+    },
+    {
+      "question": "When would containerizing your Study Buddy application NOT be the best choice?",
+      "options": [
+        "When you need to deploy across multiple cloud providers",
+        "When you have a simple static website with no dependencies",
+        "When you need consistent development and production environments",
+        "When you want to implement microservices architecture"
+      ],
+      "correct_index": 1,
+      "explanation": "For simple static websites with no runtime dependencies, containerization adds unnecessary complexity and overhead. A simple web server or CDN would be more appropriate and efficient."
+    }
+  ],
+  "passing_score": 80
+}

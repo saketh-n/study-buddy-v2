@@ -1,0 +1,61 @@
+{
+  "topic_name": "Queen Anne's War and Treaty of Utrecht",
+  "questions": [
+    {
+      "question": "Why did Queen Anne's War (1702-1713) have such significant impact on French settlements in Acadia compared to other North American conflicts?",
+      "options": [
+        "It was the first war where European powers directly negotiated territorial exchanges in North America through a formal treaty",
+        "The French military was completely defeated and surrendered all North American territories",
+        "It involved only France and Britain, making territorial decisions simpler",
+        "The war lasted longer than any previous North American conflict"
+      ],
+      "correct_index": 0,
+      "explanation": "Queen Anne's War was significant because it ended with the Treaty of Utrecht (1713), which marked the first major formal European treaty that exchanged substantial North American territories, specifically transferring Acadia from France to Britain."
+    },
+    {
+      "question": "A historian analyzing the long-term consequences of the Treaty of Utrecht would most likely focus on which aspect of its impact on French Canada?",
+      "options": [
+        "The complete elimination of French influence in North America",
+        "The creation of a strategic British position that would later threaten New France from the southeast",
+        "The immediate mass migration of French settlers from Acadia to Louisiana",
+        "The establishment of permanent peace between France and Britain in North America"
+      ],
+      "correct_index": 1,
+      "explanation": "The Treaty of Utrecht's transfer of Acadia to Britain created a strategic British stronghold that would later prove crucial in threatening New France, particularly during the Seven Years' War, as Britain now controlled territory on France's southeastern flank."
+    },
+    {
+      "question": "When the Treaty of Utrecht transferred Acadia to Britain in 1713, what was the most immediate dilemma this created for the Acadian population?",
+      "options": [
+        "They were forced to immediately relocate to French territory",
+        "They had to choose between becoming British subjects or leaving their ancestral lands",
+        "They lost all rights to practice Catholicism under British rule",
+        "They were required to fight against France in future conflicts"
+      ],
+      "correct_index": 1,
+      "explanation": "The Treaty of Utrecht created an immediate identity and loyalty crisis for Acadians, who had to decide whether to take an oath of allegiance to the British Crown and remain on their lands, or relocate to remaining French territories, abandoning homes and farms they had built over generations."
+    },
+    {
+      "question": "Which factor best explains why France was willing to cede Acadia in the Treaty of Utrecht rather than other North American territories?",
+      "options": [
+        "Acadia had the smallest French population of all French colonies",
+        "France prioritized retaining access to the St. Lawrence River and the fur trade routes",
+        "Britain threatened to attack France directly if Acadia was not surrendered",
+        "Acadia was economically worthless compared to other French territories"
+      ],
+      "correct_index": 1,
+      "explanation": "France made a strategic calculation to retain New France (centered on Quebec) and access to the St. Lawrence River, which was crucial for the lucrative fur trade and communication with the interior, viewing this as more valuable than the more isolated Acadian settlements."
+    },
+    {
+      "question": "How did the outcome of Queen Anne's War demonstrate the changing relationship between European conflicts and North American colonial politics?",
+      "options": [
+        "North American colonies began making independent peace treaties with each other",
+        "European wars were now being fought primarily to gain North American territory",
+        "Colonial territorial disputes in North America were becoming integral to European diplomatic negotiations",
+        "North American colonists refused to participate in European conflicts"
+      ],
+      "correct_index": 2,
+      "explanation": "Queen Anne's War and the Treaty of Utrecht showed that North American colonial territories were no longer peripheral concerns but had become central bargaining chips in European diplomacy, with colonial acquisitions being major objectives in peace negotiations."
+    }
+  ],
+  "passing_score": 80
+}

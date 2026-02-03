@@ -1,0 +1,61 @@
+{
+  "topic_name": "DNS Services and Resolution",
+  "questions": [
+    {
+      "question": "A network administrator notices that IPv6 connections to their web server are failing, while IPv4 connections work fine. The server supports both protocols. What is the most likely DNS-related cause?",
+      "options": [
+        "The domain has no A record configured",
+        "The domain has no AAAA record configured",
+        "The recursive resolver only supports IPv4",
+        "The DNS cache has expired"
+      ],
+      "correct_index": 1,
+      "explanation": "AAAA records map domain names to IPv6 addresses. Without an AAAA record, clients cannot resolve the domain to an IPv6 address, causing IPv6 connections to fail while IPv4 (A record) connections continue working."
+    },
+    {
+      "question": "Why would an organization choose to use Cloudflare's 1.1.1.1 DNS resolver instead of their ISP's default DNS servers?",
+      "options": [
+        "It provides faster internet speeds by caching web pages",
+        "It offers better privacy, performance, and potentially bypasses ISP DNS filtering",
+        "It automatically blocks all malicious websites",
+        "It only works with Cloudflare-hosted websites"
+      ],
+      "correct_index": 1,
+      "explanation": "Public DNS resolvers like 1.1.1.1 often provide better privacy (less logging), improved performance (global infrastructure), and can bypass ISP-imposed DNS filtering or blocking, while still resolving all public domains."
+    },
+    {
+      "question": "During a DNS lookup for 'example.com', a client queries its configured recursive resolver. What happens if the resolver doesn't have the answer cached?",
+      "options": [
+        "The client directly contacts the authoritative nameserver for example.com",
+        "The resolver queries multiple authoritative servers starting from the root servers",
+        "The resolver returns an error immediately",
+        "The resolver forwards the query to Google's 8.8.8.8"
+      ],
+      "correct_index": 1,
+      "explanation": "Recursive resolvers perform the full DNS resolution process on behalf of clients. They start by querying root servers, then TLD servers (.com), and finally the authoritative nameserver for the specific domain, following the DNS hierarchy."
+    },
+    {
+      "question": "A company runs multiple services (web, email, FTP) on different servers but wants them all accessible under their main domain. Which DNS configuration approach best accomplishes this?",
+      "options": [
+        "Create multiple A records pointing to the same IP address",
+        "Use CNAME records to point all services to the main domain",
+        "Create separate subdomains with appropriate A/AAAA records for each service",
+        "Configure a single A record and use port forwarding"
+      ],
+      "correct_index": 2,
+      "explanation": "Using subdomains (www.example.com, mail.example.com, ftp.example.com) with separate A/AAAA records allows each service to run on different servers while maintaining clear service separation and easier management."
+    },
+    {
+      "question": "An application developer needs to implement DNS failover for a critical web service. The primary server is at 192.168.1.10 and the backup is at 192.168.1.20. What is the most effective DNS strategy?",
+      "options": [
+        "Create two A records with the same name pointing to both IP addresses",
+        "Use a CNAME record pointing to whichever server is currently active",
+        "Implement health checks with a DNS service that can automatically update records",
+        "Configure the recursive resolver to detect server failures"
+      ],
+      "correct_index": 2,
+      "explanation": "DNS-based failover requires active monitoring and automatic record updates. Modern DNS services offer health checks that automatically switch DNS records to backup servers when primary servers become unavailable, providing true failover capability."
+    }
+  ],
+  "passing_score": 80
+}

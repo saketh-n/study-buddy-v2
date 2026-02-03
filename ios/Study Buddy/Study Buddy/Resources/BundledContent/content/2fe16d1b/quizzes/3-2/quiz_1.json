@@ -1,0 +1,61 @@
+{
+  "topic_name": "Association Rules",
+  "questions": [
+    {
+      "question": "A supermarket wants to understand which products are frequently bought together to optimize store layout. Which scenario would be MOST appropriate for association rule mining?",
+      "options": [
+        "Analyzing transaction data to find products that appear together in shopping baskets",
+        "Predicting the exact sales revenue for next quarter based on historical data",
+        "Classifying customers into demographic groups based on their age and income",
+        "Forecasting when a specific customer will make their next purchase"
+      ],
+      "correct_index": 0,
+      "explanation": "Association rule mining is specifically designed to find relationships between items that frequently co-occur in transactions, making it perfect for market basket analysis to understand purchasing patterns."
+    },
+    {
+      "question": "In the association rule 'Bread \u2192 Butter' with support = 0.3, confidence = 0.8, and lift = 1.5, what does the lift value of 1.5 indicate?",
+      "options": [
+        "Butter appears in 1.5% of all transactions",
+        "People who buy bread are 1.5 times more likely to buy butter than random customers",
+        "The rule is incorrect because lift should be less than 1",
+        "Bread and butter appear together in exactly 1.5% of transactions"
+      ],
+      "correct_index": 1,
+      "explanation": "Lift measures how much more likely the consequent (butter) is to be purchased when the antecedent (bread) is present, compared to its baseline probability. A lift > 1 indicates positive correlation."
+    },
+    {
+      "question": "An analyst finds the rule 'Diapers \u2192 Beer' with high confidence but very low support. What should be their primary concern about using this rule for business decisions?",
+      "options": [
+        "The rule is statistically unreliable because it occurs in very few transactions",
+        "The confidence is calculated incorrectly since these items are unrelated",
+        "The rule indicates a negative correlation that should be ignored",
+        "High confidence always means the rule is actionable regardless of support"
+      ],
+      "correct_index": 0,
+      "explanation": "Low support means the rule applies to very few transactions, making it statistically unreliable for broad business decisions even if the confidence is high when it does occur."
+    },
+    {
+      "question": "A company discovers that customers who buy laptops also frequently buy laptop bags (confidence = 0.9). However, very few customers overall buy laptops (support = 0.02). Why might this rule still be valuable?",
+      "options": [
+        "Low support rules should always be discarded as they are meaningless",
+        "The rule could be useful for targeted recommendations to the specific segment buying laptops",
+        "High confidence automatically makes any rule profitable to implement",
+        "The support value must be incorrect because laptop buyers always need bags"
+      ],
+      "correct_index": 1,
+      "explanation": "Even with low support, a rule with high confidence can be valuable for targeted strategies affecting specific customer segments, such as recommending laptop bags to laptop purchasers."
+    },
+    {
+      "question": "When would you choose association rule mining over other machine learning techniques for analyzing customer behavior?",
+      "options": [
+        "When you need to predict specific numerical outcomes like sales amounts",
+        "When you want to classify customers into predefined categories",
+        "When you need to discover unknown relationships between products without predefined hypotheses",
+        "When you want to reduce the dimensionality of your customer dataset"
+      ],
+      "correct_index": 2,
+      "explanation": "Association rule mining excels at discovering unexpected patterns and relationships in data without requiring predefined hypotheses, making it ideal for exploratory analysis of item relationships."
+    }
+  ],
+  "passing_score": 80
+}

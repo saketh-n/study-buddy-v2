@@ -1,0 +1,61 @@
+{
+  "topic_name": "QEMU Emulation",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between QEMU's legacy emulation mode and KVM hardware-assisted mode?",
+      "options": [
+        "Legacy mode translates instructions in software while KVM uses CPU virtualization extensions",
+        "Legacy mode is faster but KVM provides better security isolation",
+        "Legacy mode only works on x86 while KVM works on all architectures",
+        "Legacy mode requires special hardware while KVM works on any system"
+      ],
+      "correct_index": 0,
+      "explanation": "QEMU legacy mode uses software-based binary translation to emulate CPU instructions, while KVM mode leverages hardware virtualization extensions (Intel VT-x/AMD-V) to run guest code directly on the CPU with minimal overhead."
+    },
+    {
+      "question": "When would you choose QEMU legacy emulation over KVM hardware-assisted mode?",
+      "options": [
+        "When you need maximum performance for production workloads",
+        "When running guests with the same architecture as the host",
+        "When emulating a different CPU architecture than the host system",
+        "When you need better memory management capabilities"
+      ],
+      "correct_index": 2,
+      "explanation": "QEMU legacy emulation is necessary when the guest architecture differs from the host (e.g., running ARM guests on x86 hosts), as KVM requires matching architectures to use hardware virtualization extensions effectively."
+    },
+    {
+      "question": "Why does KVM hardware-assisted mode typically provide better performance than QEMU legacy emulation?",
+      "options": [
+        "KVM uses more efficient memory allocation algorithms",
+        "KVM has better network and storage device emulation",
+        "KVM eliminates the overhead of instruction translation by running guest code natively",
+        "KVM provides hardware-accelerated graphics rendering"
+      ],
+      "correct_index": 2,
+      "explanation": "KVM allows guest instructions to execute directly on the CPU using hardware virtualization extensions, eliminating the performance overhead of software-based instruction translation that occurs in QEMU legacy mode."
+    },
+    {
+      "question": "A developer needs to test software on both ARM and x86 architectures using a single x86 development machine. Which approach should they use?",
+      "options": [
+        "Use KVM for both ARM and x86 guest systems for consistent performance",
+        "Use QEMU legacy emulation for ARM guests and KVM for x86 guests",
+        "Use only QEMU legacy emulation to maintain consistent testing environments",
+        "Use container technology instead since QEMU cannot handle multiple architectures"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM can only be used when guest and host architectures match (x86-on-x86), while QEMU legacy emulation is required for cross-architecture scenarios (ARM-on-x86). The optimal approach uses each mode where appropriate."
+    },
+    {
+      "question": "What is a key limitation when using QEMU's legacy emulation mode compared to KVM?",
+      "options": [
+        "Legacy mode cannot emulate modern operating systems",
+        "Legacy mode has significantly higher CPU overhead due to instruction translation",
+        "Legacy mode cannot provide network connectivity to guest systems",
+        "Legacy mode requires root privileges while KVM does not"
+      ],
+      "correct_index": 1,
+      "explanation": "QEMU legacy emulation requires software translation of every guest instruction, creating substantial CPU overhead compared to KVM's direct hardware execution. This makes legacy mode much slower but necessary for cross-architecture emulation."
+    }
+  ],
+  "passing_score": 80
+}

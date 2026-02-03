@@ -1,0 +1,61 @@
+{
+  "topic_name": "DHCP and Network Configuration",
+  "questions": [
+    {
+      "question": "A network administrator notices that devices are receiving IP addresses outside the intended range and some devices cannot connect to the internet. What is the most likely cause and solution?",
+      "options": [
+        "Multiple DHCP servers on the network; implement DHCP snooping or disable unauthorized servers",
+        "DNS server failure; restart the DNS service",
+        "Network switch malfunction; replace the core switch",
+        "Insufficient bandwidth; upgrade internet connection"
+      ],
+      "correct_index": 0,
+      "explanation": "Multiple DHCP servers can cause IP conflicts and assignment of incorrect network parameters. DHCP snooping helps prevent rogue DHCP servers from operating on the network."
+    },
+    {
+      "question": "In what scenario would configuring DHCP reservations be the most appropriate solution?",
+      "options": [
+        "When you want to reduce network traffic",
+        "When servers need consistent IP addresses but you want centralized IP management",
+        "When you need to increase DHCP lease time",
+        "When you want to prevent IP address conflicts"
+      ],
+      "correct_index": 1,
+      "explanation": "DHCP reservations ensure specific devices always receive the same IP address while maintaining the benefits of centralized DHCP management, ideal for servers that need consistent IPs."
+    },
+    {
+      "question": "A company's DHCP server assigns IP addresses with a 24-hour lease time, but mobile devices frequently disconnect and reconnect throughout the day. What problem might this create and how should it be addressed?",
+      "options": [
+        "No problem; 24 hours is optimal for all devices",
+        "IP address pool exhaustion; reduce lease time for mobile devices",
+        "Increased security risks; disable DHCP for mobile devices",
+        "DNS resolution failures; increase lease time to 72 hours"
+      ],
+      "correct_index": 1,
+      "explanation": "Mobile devices that frequently disconnect may not properly release their leases, leading to pool exhaustion. Shorter lease times for mobile devices ensure addresses are returned to the pool more quickly."
+    },
+    {
+      "question": "During the DHCP process, why is the DHCPREQUEST message broadcast rather than sent directly to the DHCP server?",
+      "options": [
+        "To reduce network latency",
+        "To inform all DHCP servers which offer was accepted and allow others to reclaim their offered addresses",
+        "To encrypt the communication for security",
+        "To ensure the message reaches the default gateway"
+      ],
+      "correct_index": 1,
+      "explanation": "Broadcasting the DHCPREQUEST allows all DHCP servers that made offers to know which offer was accepted, enabling them to return unused offered addresses to their available pools."
+    },
+    {
+      "question": "An organization wants to automatically assign different network configurations to laptops versus desktop computers. Which DHCP feature would best accomplish this requirement?",
+      "options": [
+        "DHCP relay agents",
+        "DHCP scopes with different subnets",
+        "DHCP vendor classes or user classes",
+        "DHCP failover configuration"
+      ],
+      "correct_index": 2,
+      "explanation": "DHCP vendor classes or user classes allow the server to identify different device types and assign appropriate configurations (like different DNS servers, gateways, or lease times) based on device characteristics."
+    }
+  ],
+  "passing_score": 80
+}

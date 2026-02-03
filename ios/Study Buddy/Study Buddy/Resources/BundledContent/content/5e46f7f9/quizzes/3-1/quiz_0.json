@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local vs Remote IP Communication",
+  "questions": [
+    {
+      "question": "A host with IP 192.168.1.100/24 needs to communicate with 192.168.1.200. What routing decision will the host make?",
+      "options": [
+        "Send the packet directly to 192.168.1.200 using ARP to find its MAC address",
+        "Send the packet to the default gateway since it's on a different network",
+        "Broadcast the packet to all hosts on the network",
+        "Drop the packet because the destination is unreachable"
+      ],
+      "correct_index": 0,
+      "explanation": "Since both IPs are in the same subnet (192.168.1.0/24), this is local communication. The host will use ARP to resolve the destination's MAC address and send the frame directly."
+    },
+    {
+      "question": "Why does a host send packets to its default gateway when communicating with remote networks?",
+      "options": [
+        "The default gateway has faster processing capabilities",
+        "The host lacks routing knowledge about networks beyond its local subnet",
+        "The default gateway provides security filtering for all traffic",
+        "Local network cards cannot transmit to remote IP addresses"
+      ],
+      "correct_index": 1,
+      "explanation": "Hosts typically have minimal routing tables and rely on the default gateway to route packets to networks they don't know how to reach directly. The gateway has more comprehensive routing knowledge."
+    },
+    {
+      "question": "A packet destined for 10.0.2.50 from host 192.168.1.10/24 reaches the default gateway at 192.168.1.1. What information changes as the packet is forwarded?",
+      "options": [
+        "Only the source IP address changes to the gateway's IP",
+        "Only the destination MAC address changes to the next hop",
+        "Both source and destination IP addresses are modified",
+        "The source and destination MAC addresses change, but IP addresses remain unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "During Layer 3 forwarding, routers change the Layer 2 addressing (MAC addresses) for each hop while preserving the original source and destination IP addresses throughout the journey."
+    },
+    {
+      "question": "When would a network administrator configure multiple network interfaces with different subnets on a single host?",
+      "options": [
+        "To increase bandwidth for a single network connection",
+        "To enable the host to communicate directly with multiple local networks without routing",
+        "To provide redundancy in case one network cable fails",
+        "To separate different types of network traffic by protocol"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-homing allows a host to have direct local access to multiple subnets simultaneously, eliminating the need for routing between those specific networks and improving performance."
+    },
+    {
+      "question": "A host receives an ICMP 'Destination Host Unreachable' message from its default gateway. What does this most likely indicate about the routing decision?",
+      "options": [
+        "The destination IP is on the local network but the host is offline",
+        "The gateway determined the destination network exists but the specific host cannot be reached",
+        "The packet was too large to be transmitted",
+        "The source host made an incorrect local vs remote routing decision"
+      ],
+      "correct_index": 1,
+      "explanation": "This ICMP message typically means the gateway successfully routed to the destination network, but the final hop to the specific host failed, indicating the routing decision was correct but the destination is unreachable."
+    }
+  ],
+  "passing_score": 80
+}

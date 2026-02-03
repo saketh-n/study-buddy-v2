@@ -1,0 +1,61 @@
+{
+  "topic_name": "Abstract view (registers -> tapes) state store",
+  "questions": [
+    {
+      "question": "In the storage hierarchy, what is the primary trade-off that drives the organization from registers to magnetic tape?",
+      "options": [
+        "Speed vs. capacity",
+        "Volatility vs. persistence",
+        "Cost vs. reliability",
+        "Sequential vs. random access"
+      ],
+      "correct_index": 0,
+      "explanation": "The storage hierarchy is fundamentally organized around the trade-off between access speed and storage capacity. Faster storage (registers, cache) has limited capacity, while slower storage (hard drives, tapes) can hold much more data."
+    },
+    {
+      "question": "A programmer needs to store 100TB of scientific data that will be accessed once per month for analysis. Based on the storage hierarchy principles, which storage medium would be most appropriate?",
+      "options": [
+        "Main memory (RAM)",
+        "Solid-state drives (SSD)",
+        "Hard disk drives (HDD)",
+        "Magnetic tape"
+      ],
+      "correct_index": 3,
+      "explanation": "Magnetic tape is ideal for large volumes of data with infrequent access patterns. The very large capacity and low cost per byte outweigh the slow access time for monthly usage patterns."
+    },
+    {
+      "question": "Why do CPU registers sit at the top of the storage hierarchy despite having the smallest capacity?",
+      "options": [
+        "They are the most expensive storage type",
+        "They provide the fastest access times for active computations",
+        "They are the only storage that survives power loss",
+        "They can store any type of data format"
+      ],
+      "correct_index": 1,
+      "explanation": "CPU registers provide the fastest access times (typically one clock cycle) and hold the data currently being processed by the CPU. Their position at the top reflects their critical role in immediate computation needs."
+    },
+    {
+      "question": "In a well-designed system following storage hierarchy principles, data should move between levels based on what primary criterion?",
+      "options": [
+        "Data type and format",
+        "Frequency of access and temporal locality",
+        "User permission levels",
+        "File creation date"
+      ],
+      "correct_index": 1,
+      "explanation": "The storage hierarchy operates on the principle that frequently accessed data should be kept in faster storage levels, while less frequently accessed data can be moved to slower, higher-capacity levels."
+    },
+    {
+      "question": "A database application shows poor performance with frequent disk access. According to storage hierarchy principles, what would be the most effective optimization strategy?",
+      "options": [
+        "Replace all storage with magnetic tape for consistency",
+        "Increase the amount of data cached in faster memory levels",
+        "Move all data to CPU registers",
+        "Store everything on optical discs"
+      ],
+      "correct_index": 1,
+      "explanation": "Following storage hierarchy principles, the solution is to cache frequently accessed data in faster storage levels (RAM, SSD cache) to reduce the need for slower disk access, thereby improving overall system performance."
+    }
+  ],
+  "passing_score": 80
+}

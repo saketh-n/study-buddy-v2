@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block based local (block size/inode blocks/metadata/ data blocks): Ext*/ZFS*, FAT/NTFS, AFS",
+  "questions": [
+    {
+      "question": "A system administrator needs to store many small files (average 2KB) on a filesystem. Which block size would be most efficient and why?",
+      "options": [
+        "64KB blocks to minimize metadata overhead",
+        "4KB blocks to reduce internal fragmentation",
+        "1KB blocks to maximize storage utilization",
+        "32KB blocks for better sequential read performance"
+      ],
+      "correct_index": 1,
+      "explanation": "4KB blocks minimize internal fragmentation for small files. With 2KB average file size, 64KB blocks would waste ~62KB per file, while 4KB blocks only waste ~2KB on average."
+    },
+    {
+      "question": "In ext4 filesystem, what is the primary advantage of using extents instead of the traditional indirect block pointers used in ext2/ext3?",
+      "options": [
+        "Extents eliminate the need for inode tables",
+        "Extents reduce fragmentation and improve performance for large files",
+        "Extents allow unlimited file name lengths",
+        "Extents provide automatic file compression"
+      ],
+      "correct_index": 1,
+      "explanation": "Extents store contiguous blocks as a single entry (start block + length), reducing fragmentation and eliminating the need for multiple indirect block lookups for large files, significantly improving performance."
+    },
+    {
+      "question": "When would ZFS's copy-on-write (COW) mechanism for data blocks be most beneficial compared to traditional in-place updates used by ext4?",
+      "options": [
+        "When storing small text files that change frequently",
+        "When creating frequent snapshots and requiring data integrity guarantees",
+        "When maximizing sequential write performance for large files",
+        "When minimizing storage space usage for static data"
+      ],
+      "correct_index": 1,
+      "explanation": "COW allows ZFS to create instant snapshots without copying data and ensures data integrity by never overwriting existing data. This is ideal for backup scenarios and environments requiring strong consistency guarantees."
+    },
+    {
+      "question": "Why does NTFS use a Master File Table (MFT) approach for metadata storage instead of a separate inode table like ext filesystems?",
+      "options": [
+        "MFT reduces the total number of disk seeks needed",
+        "MFT allows unlimited file sizes while inodes are limited",
+        "MFT treats metadata as files, enabling features like metadata journaling and fragmentation management",
+        "MFT eliminates the need for separate data blocks"
+      ],
+      "correct_index": 2,
+      "explanation": "NTFS treats everything as files, including metadata. This unified approach allows the same mechanisms used for regular files (journaling, defragmentation, encryption) to be applied to metadata, improving consistency and manageability."
+    },
+    {
+      "question": "A database application frequently performs random I/O operations on large files. Which filesystem characteristic would be most important for optimizing performance?",
+      "options": [
+        "Large block sizes (64KB+) to reduce metadata overhead",
+        "Small block sizes (4KB or less) with efficient metadata caching",
+        "Copy-on-write semantics to prevent data corruption",
+        "File allocation table optimization for sequential access"
+      ],
+      "correct_index": 1,
+      "explanation": "Random I/O benefits from small block sizes to avoid reading unnecessary data and efficient metadata caching to quickly locate blocks. Large blocks would cause significant overhead when only small portions are needed for random access patterns."
+    }
+  ],
+  "passing_score": 80
+}

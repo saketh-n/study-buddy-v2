@@ -1,0 +1,64 @@
+{
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": false,
+      "student_choice": "A bridge, because it stores and forwards all frames",
+      "correct_answer": "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+      "analysis": "The student likely confused the store-and-forward mechanism of bridges/switches with the concept of bandwidth sharing. They may have thought that the store-and-forward process inherently causes delays that would slow down all network traffic.",
+      "explanation": "A hub operates at the physical layer and creates a single collision domain where all connected devices share the total bandwidth. When one device transmits a large file, it consumes most of the available bandwidth, forcing other devices to wait. A bridge, while it does store and forward frames, creates separate collision domains and doesn't cause this type of bandwidth contention issue."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+      "correct_answer": "When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+      "analysis": "Good understanding shown of the practical application of bridges in modern networking scenarios.",
+      "explanation": "Excellent choice! You correctly identified that bridges are still useful in specific scenarios where a simple, cost-effective solution is needed to connect two network segments, particularly when advanced switching features aren't required."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Router - it will examine the destination IP address and determine the next hop",
+      "correct_answer": "Router - it will examine the destination IP address and determine the next hop",
+      "analysis": "Good understanding shown of Layer 3 routing functionality and the role of routers in inter-network communication.",
+      "explanation": "Perfect! You correctly identified that routers operate at Layer 3 and are responsible for path determination between different networks by examining IP addresses and making routing decisions."
+    },
+    {
+      "question_num": 4,
+      "is_correct": false,
+      "student_choice": "A switch routes unknown frames while a hub bridges them",
+      "correct_answer": "A switch floods unknown frames to all ports except the source, while a hub repeats all signals to all ports",
+      "analysis": "The student confused the OSI layer functions and used incorrect terminology. They likely mixed up routing (Layer 3) with switching (Layer 2) operations, and misunderstood that hubs don't perform bridging functions.",
+      "explanation": "Switches operate at Layer 2 and flood (not route) unknown unicast frames to all ports except the source port to learn MAC addresses. Hubs operate at Layer 1 and simply repeat electrical signals to all ports without any intelligence. Neither device 'routes' at Layer 2, and hubs don't perform bridging functions."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "A gateway, because it can translate between different protocol stacks",
+      "correct_answer": "A gateway, because it can translate between different protocol stacks",
+      "analysis": "Good understanding shown of gateway functionality and protocol translation capabilities.",
+      "explanation": "Excellent! You correctly identified that gateways are specifically designed to translate between different protocol stacks, making them the appropriate choice for connecting legacy IPX systems to modern TCP/IP networks."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Confusion between OSI layer functions - mixing Layer 2 switching with Layer 3 routing terminology",
+      "Misunderstanding of how bandwidth sharing works in collision domains vs. store-and-forward mechanisms",
+      "Incorrect attribution of bridging functions to hubs, which operate only at the physical layer"
+    ],
+    "focus_areas": [
+      "OSI model layer distinctions and device operations at each layer",
+      "Collision domains vs. broadcast domains and how different devices handle them",
+      "Terminology precision: flooding vs. routing vs. bridging vs. repeating",
+      "Hub vs. switch vs. bridge operational differences and bandwidth sharing concepts"
+    ],
+    "encouragement": "Great job scoring 60%! You showed excellent understanding of practical device selection (bridges and gateways) and routing concepts. Your answers demonstrate solid foundational knowledge of network hardware purposes.",
+    "recommendation": "Focus on reviewing the OSI model and how each network device operates at specific layers. Practice distinguishing between collision domains, broadcast domains, and the specific mechanisms each device uses to handle traffic. Pay special attention to the terminology differences between flooding, routing, bridging, and repeating."
+  },
+  "score": 60,
+  "correct_count": 3,
+  "total_questions": 5,
+  "passed": false,
+  "quiz_version": 0
+}

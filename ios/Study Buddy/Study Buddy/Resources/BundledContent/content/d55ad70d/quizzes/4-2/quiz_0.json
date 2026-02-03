@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block based local (block size/inode blocks/metadata/ data blocks): Ext*/ZFS*, FAT/NTFS, AFS",
+  "questions": [
+    {
+      "question": "A system administrator needs to store many small files (1-2KB each) efficiently. Which block size configuration would minimize storage waste?",
+      "options": [
+        "64KB blocks",
+        "4KB blocks",
+        "1MB blocks",
+        "Block size doesn't affect small file storage"
+      ],
+      "correct_index": 1,
+      "explanation": "Smaller block sizes reduce internal fragmentation when storing small files. With 4KB blocks, a 2KB file wastes only 2KB, while 64KB blocks would waste 62KB per small file."
+    },
+    {
+      "question": "Why do modern filesystems like ZFS and Ext4 separate metadata from data blocks, unlike simpler systems like FAT?",
+      "options": [
+        "To make the filesystem slower but more reliable",
+        "To enable better performance, reliability, and advanced features like journaling",
+        "To use more disk space for better organization",
+        "To make file deletion faster by keeping everything together"
+      ],
+      "correct_index": 1,
+      "explanation": "Separating metadata enables journaling for crash recovery, better caching strategies, and advanced features like snapshots. It allows the filesystem to optimize metadata and data access patterns independently."
+    },
+    {
+      "question": "In a filesystem using inodes (like Ext4), what happens when a file grows beyond what its direct block pointers can accommodate?",
+      "options": [
+        "The file is automatically compressed",
+        "The system uses indirect blocks to point to additional data blocks",
+        "The file is split into multiple smaller files",
+        "An error occurs and the file cannot grow"
+      ],
+      "correct_index": 1,
+      "explanation": "Inode-based filesystems use a hierarchical addressing scheme: direct pointers for small files, then single, double, and triple indirect blocks for larger files, allowing files to scale efficiently."
+    },
+    {
+      "question": "A database application frequently performs random I/O operations on large files. Which filesystem characteristic would be most important for optimal performance?",
+      "options": [
+        "Large block sizes to reduce metadata overhead",
+        "Small block sizes to minimize unnecessary data transfer",
+        "Variable block sizes that adapt to access patterns",
+        "Block size is irrelevant for database performance"
+      ],
+      "correct_index": 1,
+      "explanation": "For random I/O, smaller block sizes are better because they reduce the amount of unnecessary data read/written per operation, improving cache efficiency and reducing I/O overhead."
+    },
+    {
+      "question": "When would you choose NTFS over Ext4 for a new storage deployment, considering their block organization differences?",
+      "options": [
+        "When you need better performance on Linux systems",
+        "When you require Windows compatibility and advanced security features like EFS",
+        "When you want simpler metadata management",
+        "When you need better support for very large files"
+      ],
+      "correct_index": 1,
+      "explanation": "NTFS is optimal when Windows compatibility is required and when you need features like Encrypted File System (EFS), advanced ACLs, and NTFS-specific tools, despite Ext4 having advantages in Linux environments."
+    }
+  ],
+  "passing_score": 80
+}

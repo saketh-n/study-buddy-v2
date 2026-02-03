@@ -1,0 +1,61 @@
+{
+  "topic_name": "Common Ports and Protocols",
+  "questions": [
+    {
+      "question": "A network administrator is configuring a firewall for a web server that needs to accept both encrypted and unencrypted web traffic. Which ports must be opened to allow proper functionality?",
+      "options": [
+        "Ports 20 and 21",
+        "Ports 80 and 443",
+        "Ports 25 and 53",
+        "Ports 22 and 80"
+      ],
+      "correct_index": 1,
+      "explanation": "Port 80 is used for HTTP (unencrypted web traffic) and port 443 is used for HTTPS (encrypted web traffic). Both are necessary for a web server to handle all types of web requests."
+    },
+    {
+      "question": "When troubleshooting a file transfer issue, you discover that passive FTP connections are failing while active FTP connections work fine. What is the most likely cause?",
+      "options": [
+        "Port 21 is blocked by the firewall",
+        "Port 20 is blocked by the firewall",
+        "The firewall is not allowing random high-numbered ports",
+        "Port 22 is misconfigured"
+      ],
+      "correct_index": 2,
+      "explanation": "Passive FTP uses port 21 for control but requires random high-numbered ports for data transfer. Active FTP uses ports 20 and 21. If passive fails but active works, the firewall likely blocks the random high ports needed for passive mode."
+    },
+    {
+      "question": "A database application suddenly cannot connect to a remote MySQL server, but network connectivity to the server exists. Which diagnostic step would be most appropriate first?",
+      "options": [
+        "Check if port 1521 is accessible on the server",
+        "Check if port 3306 is accessible on the server",
+        "Verify DNS resolution is working on port 53",
+        "Test SSH connectivity on port 22"
+      ],
+      "correct_index": 1,
+      "explanation": "MySQL uses port 3306 by default. Since network connectivity exists but the database connection fails, checking if port 3306 is accessible would help determine if the MySQL service is running and reachable."
+    },
+    {
+      "question": "An organization wants to implement secure remote administration while blocking all other remote access methods. Which port configuration would best achieve this goal?",
+      "options": [
+        "Allow port 22, block ports 23 and 3389",
+        "Allow port 23, block ports 22 and 3389",
+        "Allow port 80, block ports 22 and 23",
+        "Allow port 443, block ports 80 and 22"
+      ],
+      "correct_index": 0,
+      "explanation": "SSH (port 22) provides encrypted remote administration. Blocking Telnet (port 23) and RDP (port 3389) prevents insecure remote access methods while allowing secure SSH connections."
+    },
+    {
+      "question": "A company's email server can receive emails but cannot send them to external domains. Internal email delivery works fine. What is the most likely port-related issue?",
+      "options": [
+        "Port 53 (DNS) is blocked outbound",
+        "Port 25 (SMTP) is blocked outbound",
+        "Port 443 (HTTPS) is blocked outbound",
+        "Port 3306 (MySQL) is blocked outbound"
+      ],
+      "correct_index": 1,
+      "explanation": "SMTP uses port 25 for sending emails between mail servers. If the server can receive emails but cannot send to external domains, the outbound SMTP port 25 is likely blocked, preventing the server from connecting to external mail servers."
+    }
+  ],
+  "passing_score": 80
+}

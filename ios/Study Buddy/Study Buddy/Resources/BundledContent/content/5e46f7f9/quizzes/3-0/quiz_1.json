@@ -1,0 +1,61 @@
+{
+  "topic_name": "NAT Technologies",
+  "questions": [
+    {
+      "question": "A company needs to allow multiple internal devices to share a single public IP address for internet access, while ensuring each device can maintain multiple simultaneous connections. Which NAT technology would be most appropriate?",
+      "options": [
+        "1:1 NAT",
+        "Source NAT (SNAT) with static port mapping",
+        "Port Address Translation (PAT)",
+        "Destination NAT (DNAT)"
+      ],
+      "correct_index": 2,
+      "explanation": "PAT (Port Address Translation) allows multiple internal devices to share a single public IP by using different port numbers to distinguish between connections, making it ideal for this scenario where multiple devices need simultaneous internet access."
+    },
+    {
+      "question": "An administrator configures a web server behind a firewall that needs to be accessible from the internet using a public IP address. The server has a private IP of 192.168.1.100 and should respond to requests sent to public IP 203.0.113.50 on port 80. What type of NAT is being implemented?",
+      "options": [
+        "Source NAT (SNAT) because traffic originates from inside",
+        "Port Address Translation (PAT) because port 80 is specified",
+        "Destination NAT (DNAT) because incoming traffic destination is being translated",
+        "1:1 NAT because there's a direct mapping between addresses"
+      ],
+      "correct_index": 2,
+      "explanation": "DNAT (Destination NAT) is used when translating the destination address of incoming packets, typically for publishing internal services to external users. The firewall translates the destination from the public IP to the private server IP."
+    },
+    {
+      "question": "Why would an organization choose 1:1 NAT over PAT when both provide address translation capabilities?",
+      "options": [
+        "1:1 NAT provides better security through port randomization",
+        "1:1 NAT allows multiple internal hosts to share one public IP",
+        "1:1 NAT preserves all ports and protocols, enabling full bidirectional communication",
+        "1:1 NAT requires less processing power than PAT"
+      ],
+      "correct_index": 2,
+      "explanation": "1:1 NAT creates a direct mapping between private and public IP addresses, preserving all port numbers and supporting any protocol. This is essential for servers or applications requiring specific ports or protocols that PAT might not handle well."
+    },
+    {
+      "question": "A network administrator notices that outbound connections from internal users are working fine, but an external partner cannot establish a direct connection to an internal file server. The current setup uses PAT for all internal hosts. What is the most likely cause and solution?",
+      "options": [
+        "PAT is blocking the file server protocol; switch to SNAT",
+        "No inbound translation rule exists; configure DNAT for the file server",
+        "The file server needs a static internal IP; PAT doesn't work with dynamic IPs",
+        "PAT port exhaustion; increase the public IP pool"
+      ],
+      "correct_index": 1,
+      "explanation": "PAT handles outbound connections by creating dynamic mappings, but inbound connections require explicit DNAT rules to translate the destination address from public IP to the internal server's private IP."
+    },
+    {
+      "question": "An organization has a DMZ with three servers that need internet access for updates, and the security policy requires that each server's outbound traffic appears to come from a different public IP address for audit trail purposes. Which NAT configuration best meets this requirement?",
+      "options": [
+        "Configure PAT with three different public IPs in a pool",
+        "Configure SNAT with static IP mapping for each server",
+        "Configure DNAT with port forwarding for each server",
+        "Configure 1:1 NAT for bidirectional access"
+      ],
+      "correct_index": 1,
+      "explanation": "SNAT with static IP mapping ensures each server's outbound traffic consistently uses a specific public IP address, providing the required audit trail capability while meeting the outbound internet access requirement."
+    }
+  ],
+  "passing_score": 80
+}

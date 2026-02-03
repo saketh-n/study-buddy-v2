@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layer 4 Load Balancing",
+  "questions": [
+    {
+      "question": "A company's web application experiences high CPU usage on their database servers during peak traffic hours. Which scenario would be the BEST use case for implementing Layer 4 load balancing?",
+      "options": [
+        "Distributing incoming TCP connections across multiple database replicas to reduce individual server load",
+        "Parsing HTTP headers to route users to servers based on their geographic location",
+        "Implementing SSL termination to reduce encryption overhead on backend servers",
+        "Caching frequently requested web pages to reduce database queries"
+      ],
+      "correct_index": 0,
+      "explanation": "Layer 4 load balancing operates at the transport layer and distributes traffic based on IP and port information, making it ideal for distributing TCP connections across multiple servers. The other options involve Layer 7 features (HTTP parsing), SSL termination, or caching mechanisms."
+    },
+    {
+      "question": "When configuring AWS Network Load Balancer (NLB) for a real-time gaming application, why would you choose NLB over Application Load Balancer (ALB)?",
+      "options": [
+        "NLB provides better support for HTTP/2 and WebSocket protocols",
+        "NLB offers lower latency and higher throughput for UDP/TCP traffic with static IP addresses",
+        "NLB automatically scales based on HTTP request patterns",
+        "NLB provides built-in WAF (Web Application Firewall) capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "NLB operates at Layer 4 and is optimized for high-performance, low-latency scenarios with static IP support. Gaming applications benefit from ultra-low latency and often use UDP protocols. ALB operates at Layer 7 and is better for HTTP-based applications but adds processing overhead."
+    },
+    {
+      "question": "In HAProxy configuration, what is the primary difference between 'balance roundrobin' and 'balance leastconn' algorithms in the context of Layer 4 load balancing?",
+      "options": [
+        "Roundrobin distributes based on server response times, while leastconn uses server CPU metrics",
+        "Roundrobin cycles through servers sequentially, while leastconn directs traffic to the server with fewest active connections",
+        "Roundrobin only works with HTTP traffic, while leastconn supports both HTTP and TCP",
+        "Roundrobin provides better security, while leastconn offers better performance"
+      ],
+      "correct_index": 1,
+      "explanation": "In Layer 4 load balancing, roundrobin simply cycles through available servers in order, while leastconn tracks active connections and sends new requests to the server handling the fewest connections. This helps distribute load more evenly when connection durations vary significantly."
+    },
+    {
+      "question": "A financial services company needs to load balance their TCP-based trading application across multiple servers. Session persistence is crucial as traders maintain long-lived connections. Which Layer 4 load balancing approach would be most appropriate?",
+      "options": [
+        "Use cookie-based session affinity to maintain user sessions",
+        "Implement source IP hash-based routing to ensure consistent server assignment",
+        "Configure content-based routing using application-specific headers",
+        "Enable automatic failover with health checks based on HTTP status codes"
+      ],
+      "correct_index": 1,
+      "explanation": "Layer 4 load balancing doesn't have access to HTTP cookies or headers, so source IP hashing is the appropriate method for session persistence at this layer. It ensures that connections from the same client IP consistently reach the same backend server, maintaining long-lived TCP connections."
+    },
+    {
+      "question": "Why might a system architect choose to implement Layer 4 load balancing instead of Layer 7 for a high-volume video streaming service?",
+      "options": [
+        "Layer 4 provides better content-aware routing for different video formats",
+        "Layer 4 offers superior SSL certificate management and termination",
+        "Layer 4 reduces processing overhead and latency by avoiding deep packet inspection",
+        "Layer 4 automatically compresses video streams to reduce bandwidth usage"
+      ],
+      "correct_index": 2,
+      "explanation": "Layer 4 load balancing operates on transport layer information (IP, port) without examining application data, resulting in lower latency and higher throughput. For high-volume streaming where raw performance matters more than intelligent routing, Layer 4's minimal processing overhead is advantageous compared to Layer 7's deep packet inspection."
+    }
+  ],
+  "passing_score": 80
+}

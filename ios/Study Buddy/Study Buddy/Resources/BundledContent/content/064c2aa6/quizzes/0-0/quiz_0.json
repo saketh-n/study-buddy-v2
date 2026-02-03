@@ -1,0 +1,61 @@
+{
+  "topic_name": "European Context and Motivations for Colonization",
+  "questions": [
+    {
+      "question": "Which combination of European circumstances in the 16th century most directly motivated French colonial expansion to North America?",
+      "options": [
+        "Religious wars at home and the need for new trade routes to Asia",
+        "Overpopulation and the desire to spread democratic ideals",
+        "Military defeats by England and the search for gold deposits",
+        "Industrial revolution demands and the need for raw cotton"
+      ],
+      "correct_index": 0,
+      "explanation": "The French Wars of Religion (1562-1598) created internal instability, while European powers sought alternative routes to Asian markets after Ottoman control of traditional routes, making colonial expansion attractive for both religious refuge and economic opportunities."
+    },
+    {
+      "question": "A French merchant in 1600 would most likely justify investment in Canadian colonization by emphasizing:",
+      "options": [
+        "The potential for large-scale agricultural plantations using enslaved labor",
+        "Access to fur trade networks and a route to Asian markets",
+        "The discovery of silver mines similar to those in Spanish America",
+        "Opportunities to establish manufacturing centers for European goods"
+      ],
+      "correct_index": 1,
+      "explanation": "The fur trade, particularly beaver pelts for European hat-making, was the primary economic driver of French colonization in Canada, along with the continued hope of finding a Northwest Passage to Asia."
+    },
+    {
+      "question": "The French approach to colonization differed from Spanish colonization primarily because France:",
+      "options": [
+        "Had a larger population to send as colonists",
+        "Focused more on trade relationships than territorial conquest",
+        "Possessed superior naval technology",
+        "Was primarily motivated by religious conversion"
+      ],
+      "correct_index": 1,
+      "explanation": "Unlike Spain's focus on territorial control and resource extraction, French colonization emphasized trading relationships, particularly in furs, which required cooperation with Indigenous peoples rather than conquest."
+    },
+    {
+      "question": "When Cardinal Richelieu established the Company of One Hundred Associates in 1627, this action primarily demonstrated:",
+      "options": [
+        "France's shift from private to state-controlled colonial development",
+        "The Catholic Church's dominance over French colonial policy",
+        "France's abandonment of mercantilist economic principles",
+        "A focus on competing with Dutch trading companies in Asia"
+      ],
+      "correct_index": 0,
+      "explanation": "Richelieu's creation of the Company of One Hundred Associates marked a transition from earlier private ventures to more centralized, state-sponsored colonization efforts, reflecting the growing importance of colonies to French national strategy."
+    },
+    {
+      "question": "Why would French colonial expansion in the early 17th century be considered a logical response to the economic theory of mercantilism?",
+      "options": [
+        "Colonies would provide markets for French manufactured goods and sources of raw materials",
+        "Colonies would reduce France's dependence on agricultural production",
+        "Colonies would eliminate the need for trade with other European powers",
+        "Colonies would allow France to adopt free trade policies"
+      ],
+      "correct_index": 0,
+      "explanation": "Mercantilism emphasized national wealth through favorable trade balances, making colonies valuable as sources of raw materials (like furs) and markets for finished goods, while keeping wealth within the French empire rather than flowing to competitors."
+    }
+  ],
+  "passing_score": 80
+}

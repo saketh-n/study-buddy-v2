@@ -1,0 +1,61 @@
+{
+  "topic_name": "Cloud Platforms Overview",
+  "questions": [
+    {
+      "question": "A startup needs to process large volumes of streaming IoT data with minimal infrastructure management overhead. Which combination of services across cloud platforms represents the most appropriate serverless approach?",
+      "options": [
+        "AWS EC2 + Apache Kafka",
+        "Azure Stream Analytics + Azure Functions",
+        "GCP Compute Engine + Apache Storm",
+        "AWS RDS + Lambda"
+      ],
+      "correct_index": 1,
+      "explanation": "Azure Stream Analytics + Azure Functions provides a fully managed, serverless streaming solution that requires minimal infrastructure management, making it ideal for startups with limited DevOps resources."
+    },
+    {
+      "question": "When would you choose Google BigQuery over Amazon Redshift for a data warehousing solution?",
+      "options": [
+        "When you need the lowest possible storage costs",
+        "When you have unpredictable, sporadic analytical workloads",
+        "When you need the fastest possible query performance",
+        "When you require on-premises deployment options"
+      ],
+      "correct_index": 1,
+      "explanation": "BigQuery's serverless, pay-per-query model makes it ideal for unpredictable workloads, while Redshift's cluster-based pricing is better for consistent, predictable usage patterns."
+    },
+    {
+      "question": "A company needs to migrate petabytes of historical data from on-premises to the cloud with minimal network bandwidth usage. What is the most cost-effective approach across major cloud platforms?",
+      "options": [
+        "Direct network transfer using dedicated connections",
+        "Physical data transfer services (AWS Snowball, Azure Data Box, GCP Transfer Appliance)",
+        "Compressed data streaming over public internet",
+        "Database replication tools"
+      ],
+      "correct_index": 1,
+      "explanation": "Physical data transfer services are specifically designed for petabyte-scale migrations where network transfer would be prohibitively expensive and time-consuming, typically when transferring more than 10TB of data."
+    },
+    {
+      "question": "Which architectural pattern best describes the key difference between AWS Glue and Azure Data Factory in terms of data processing capabilities?",
+      "options": [
+        "Glue focuses on ETL with built-in Apache Spark, while Data Factory emphasizes orchestration with multiple compute options",
+        "Data Factory is serverless while Glue requires cluster management",
+        "Glue only works with AWS services while Data Factory is multi-cloud",
+        "Data Factory includes machine learning while Glue does not"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Glue is primarily an ETL service with managed Spark clusters, while Azure Data Factory is more of an orchestration platform that can coordinate various compute services (including Databricks, HDInsight, etc.) for data processing."
+    },
+    {
+      "question": "A data engineering team needs to implement real-time fraud detection with sub-second latency requirements. Which combination of services would be most appropriate for this use case?",
+      "options": [
+        "Batch processing with daily model updates using cloud data warehouses",
+        "Stream processing with in-memory databases and pre-computed feature stores",
+        "Traditional ETL pipelines with scheduled model inference",
+        "Object storage with periodic data lake queries"
+      ],
+      "correct_index": 1,
+      "explanation": "Sub-second latency requires stream processing (like Kinesis, Event Hubs, or Pub/Sub) combined with in-memory databases (Redis, Memorystore) and pre-computed features to avoid real-time feature computation delays."
+    }
+  ],
+  "passing_score": 80
+}

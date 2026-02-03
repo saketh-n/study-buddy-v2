@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux directory structure, Mount filesystems.. local vs network-file vs network-block",
+  "questions": [
+    {
+      "question": "A system administrator needs to provide shared storage for multiple Linux servers that can be accessed simultaneously with file-level operations. The storage should appear as a native filesystem to applications. Which type of filesystem mount would be most appropriate?",
+      "options": [
+        "Local filesystem mount",
+        "Network file mount (NFS/CIFS)",
+        "Network block mount (iSCSI/FC)",
+        "RAM-based filesystem mount"
+      ],
+      "correct_index": 1,
+      "explanation": "Network file mounts like NFS or CIFS provide file-level access that can be shared among multiple clients simultaneously, appearing as native filesystems to applications. Network block storage would require clustering for concurrent access, and local filesystems cannot be shared."
+    },
+    {
+      "question": "Why would /tmp typically be mounted as a separate filesystem rather than being part of the root filesystem in production Linux systems?",
+      "options": [
+        "To improve security by preventing tmp files from accessing other directories",
+        "To prevent temporary files from filling up the root filesystem and causing system instability",
+        "To make temporary files accessible over the network",
+        "To ensure tmp files are stored on faster storage devices"
+      ],
+      "correct_index": 1,
+      "explanation": "Mounting /tmp separately prevents temporary files from consuming all available space on the root filesystem, which could cause critical system functions to fail. This is a common filesystem isolation strategy for stability."
+    },
+    {
+      "question": "A database administrator needs dedicated storage with maximum I/O performance and wants full control over the filesystem format and optimization. The storage will only be accessed by one server. Which approach would be most suitable?",
+      "options": [
+        "Mount a network file share (NFS) for easy backup",
+        "Use network block storage (iSCSI) and format with a local filesystem",
+        "Create a RAM disk for all database files",
+        "Use a distributed filesystem like GlusterFS"
+      ],
+      "correct_index": 1,
+      "explanation": "Network block storage provides raw block access with high performance while allowing the administrator to choose and optimize the local filesystem. This gives better performance than network file systems and more control than pre-formatted shared storage."
+    },
+    {
+      "question": "In the Linux directory hierarchy, what is the primary purpose of mounting user home directories under /home as a separate filesystem?",
+      "options": [
+        "To ensure user data is stored on network storage for remote access",
+        "To provide data isolation, easier backup management, and prevent users from filling system partitions",
+        "To improve file access speed by using specialized storage hardware",
+        "To comply with Linux security requirements that mandate separate user partitions"
+      ],
+      "correct_index": 1,
+      "explanation": "Separating /home provides data isolation (user files don't affect system stability if they fill up), enables easier backup strategies for user data, and prevents user data from consuming space needed by system processes."
+    },
+    {
+      "question": "When examining the output of 'df -T', you notice a filesystem type of 'nfs4' mounted at /shared/data. A user reports they cannot create files there, receiving a 'disk full' error, but the mounted filesystem shows 60% usage. What is the most likely cause?",
+      "options": [
+        "The local client has run out of disk space for NFS cache",
+        "The NFS server's filesystem is actually full despite what the client reports",
+        "Network block storage has reached its IOPS limit",
+        "The user has exceeded their quota on the NFS export"
+      ],
+      "correct_index": 3,
+      "explanation": "NFS filesystems can have user or group quotas that prevent file creation even when space appears available. The 'disk full' error is commonly returned when quotas are exceeded, and this is independent of the overall filesystem usage displayed by df."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "QEMU Emulation",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between QEMU's legacy emulation mode and KVM hardware-assisted mode?",
+      "options": [
+        "Legacy mode translates instructions in software while KVM executes guest code directly on hardware",
+        "Legacy mode only supports Linux guests while KVM supports all operating systems",
+        "Legacy mode provides better security isolation while KVM focuses on performance",
+        "Legacy mode requires special CPU features while KVM works on any processor"
+      ],
+      "correct_index": 0,
+      "explanation": "Legacy emulation translates guest instructions through software (TCG), making it slower but more compatible. KVM leverages hardware virtualization extensions to execute guest code directly on the CPU, providing near-native performance."
+    },
+    {
+      "question": "A developer needs to test software on an ARM processor but only has an x86 laptop available. Which QEMU mode should they use and why?",
+      "options": [
+        "KVM mode because it provides the best performance for cross-architecture testing",
+        "Legacy emulation mode because KVM cannot virtualize different CPU architectures",
+        "Either mode works equally well for cross-architecture scenarios",
+        "KVM mode with additional CPU feature flags to enable ARM emulation"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM requires the host and guest to use the same CPU architecture since it relies on hardware virtualization extensions. For cross-architecture emulation (x86 to ARM), legacy emulation mode with TCG is required to translate instructions between different architectures."
+    },
+    {
+      "question": "When would legacy QEMU emulation mode be preferred over KVM despite its performance disadvantage?",
+      "options": [
+        "When running production workloads that require maximum uptime",
+        "When precise instruction-level debugging or deterministic replay is needed",
+        "When the host system has limited RAM resources",
+        "When running multiple VMs simultaneously on the same host"
+      ],
+      "correct_index": 1,
+      "explanation": "Legacy emulation provides deterministic execution and precise control over instruction execution, making it valuable for debugging, reverse engineering, and situations requiring exact reproducibility. KVM's direct hardware execution makes such precise control difficult."
+    },
+    {
+      "question": "What happens if you try to start a QEMU virtual machine with KVM enabled on a system without hardware virtualization support?",
+      "options": [
+        "QEMU automatically falls back to legacy emulation mode",
+        "The VM starts but runs with significantly reduced performance",
+        "QEMU displays an error and refuses to start the VM",
+        "The VM starts normally but guest OS features will be limited"
+      ],
+      "correct_index": 2,
+      "explanation": "QEMU will fail to initialize KVM and display an error message when hardware virtualization extensions (Intel VT-x or AMD-V) are not available or enabled. It does not automatically fall back to legacy mode; the user must explicitly choose the emulation mode."
+    },
+    {
+      "question": "A system administrator notices that their QEMU VM performs well but cannot use certain debugging tools that require cycle-accurate timing. What explains this situation and how should they address it?",
+      "options": [
+        "The VM is using KVM mode; switch to legacy emulation for deterministic timing",
+        "The debugging tools are incompatible with virtualization; use physical hardware instead",
+        "The VM needs more allocated CPU cores to provide accurate timing information",
+        "KVM mode needs additional kernel modules loaded for debugging support"
+      ],
+      "correct_index": 0,
+      "explanation": "KVM's hardware-assisted execution makes timing non-deterministic due to host system interference and optimizations. Legacy emulation mode with TCG provides predictable, cycle-accurate execution needed for certain debugging and analysis tools."
+    }
+  ],
+  "passing_score": 80
+}

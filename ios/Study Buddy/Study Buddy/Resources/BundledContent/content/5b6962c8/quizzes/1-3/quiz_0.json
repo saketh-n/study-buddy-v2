@@ -1,0 +1,61 @@
+{
+  "topic_name": "VPNs and Secure Communications",
+  "questions": [
+    {
+      "question": "A company has employees working remotely who need to access internal file servers and databases. The primary security concern is preventing data interception during transmission. Which VPN configuration would best address this scenario?",
+      "options": [
+        "Site-to-site VPN with IPSec encryption",
+        "Remote access VPN with SSL/TLS encryption",
+        "Split tunneling VPN with basic authentication",
+        "Proxy server with HTTP encryption"
+      ],
+      "correct_index": 1,
+      "explanation": "Remote access VPN with SSL/TLS encryption is designed specifically for individual remote workers to securely connect to corporate networks, providing end-to-end encryption for data transmission."
+    },
+    {
+      "question": "Why would a VPN connection still be vulnerable to security threats even when using strong encryption protocols?",
+      "options": [
+        "Encryption protocols become weaker over public networks",
+        "VPNs only encrypt data at rest, not data in transit",
+        "Security depends on endpoint protection and user behavior, not just encryption",
+        "Strong encryption slows down the connection, creating security gaps"
+      ],
+      "correct_index": 2,
+      "explanation": "While VPNs encrypt data in transit, security vulnerabilities can still exist due to compromised endpoints, malware, poor user practices, or weak authentication methods. VPN encryption doesn't protect against all attack vectors."
+    },
+    {
+      "question": "An organization notices that their VPN users experience slower internet speeds for general browsing while connected. What VPN feature is most likely causing this, and when might it be necessary?",
+      "options": [
+        "Full tunneling, necessary when all traffic must be monitored for compliance",
+        "Protocol overhead, necessary for any encrypted communication",
+        "Bandwidth throttling, necessary to prevent network congestion",
+        "Geographic restrictions, necessary for international connections"
+      ],
+      "correct_index": 0,
+      "explanation": "Full tunneling routes all internet traffic through the corporate network, causing slower speeds for general browsing. It's necessary when organizations need to monitor, filter, or audit all user traffic for security or compliance purposes."
+    },
+    {
+      "question": "A financial institution needs to choose between IPSec and SSL/TLS protocols for their VPN implementation. What is the most significant factor that should influence their decision?",
+      "options": [
+        "IPSec provides stronger encryption algorithms than SSL/TLS",
+        "SSL/TLS is easier to deploy through firewalls and NAT devices",
+        "IPSec operates at a lower network layer, providing more comprehensive protection",
+        "SSL/TLS has better performance for large file transfers"
+      ],
+      "correct_index": 2,
+      "explanation": "IPSec operates at the network layer (Layer 3), providing protection for all traffic and applications, while SSL/TLS operates at the application layer. For a financial institution requiring comprehensive protection of all network communications, IPSec's lower-layer protection is typically more suitable."
+    },
+    {
+      "question": "A user reports that they can successfully connect to the company VPN but cannot access internal resources. However, their internet browsing works normally. What is the most likely cause and solution?",
+      "options": [
+        "VPN encryption is corrupting internal traffic; disable encryption for internal connections",
+        "Split tunneling is enabled; configure routing tables or disable split tunneling",
+        "The VPN server is overloaded; connect to a different server location",
+        "DNS resolution is failing; switch to a public DNS server"
+      ],
+      "correct_index": 1,
+      "explanation": "This scenario suggests split tunneling is routing internet traffic outside the VPN while internal traffic routing is misconfigured. The solution involves properly configuring routing tables to direct internal traffic through the VPN tunnel or disabling split tunneling entirely."
+    }
+  ],
+  "passing_score": 80
+}

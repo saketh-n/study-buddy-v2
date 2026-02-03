@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Installation and Setup",
+  "questions": [
+    {
+      "question": "When installing Docker on a Linux VM, what is the primary reason why running 'sudo apt-get install docker' might not give you the latest version of Docker?",
+      "options": [
+        "The package repositories are intentionally outdated for security reasons",
+        "Distribution package managers often contain older, stable versions while Docker releases updates more frequently",
+        "Docker must always be compiled from source on Linux systems",
+        "The 'docker' package installs a different application entirely"
+      ],
+      "correct_index": 3,
+      "explanation": "The 'docker' package in many Linux distributions actually installs a system tray application, not Docker Engine. The correct package is typically 'docker.io' or 'docker-ce', and distribution repositories often lag behind Docker's official releases."
+    },
+    {
+      "question": "A developer wants to run Docker containers on their Mac for local development but also needs to occasionally test Linux-specific container behavior. What should they understand about Docker's architecture on macOS?",
+      "options": [
+        "Docker runs natively on macOS kernel since containers share the host OS",
+        "Docker Desktop creates a Linux VM to run containers, so Linux-specific testing is accurate",
+        "Mac containers and Linux containers are completely incompatible",
+        "Docker on Mac can only run macOS-based containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Docker Desktop for Mac runs a lightweight Linux VM using HyperKit, which means containers actually run in a Linux environment. This makes it suitable for testing Linux-specific container behavior, unlike native macOS processes."
+    },
+    {
+      "question": "After installing Docker on a Linux system, a user can run 'sudo docker ps' successfully but 'docker ps' fails with a permission error. What is the most appropriate solution for a development environment?",
+      "options": [
+        "Always use sudo with Docker commands for better security",
+        "Add the user to the 'docker' group and restart the session",
+        "Change the ownership of /var/run/docker.sock to the current user",
+        "Install Docker in the user's home directory instead"
+      ],
+      "correct_index": 1,
+      "explanation": "Adding the user to the 'docker' group is the standard approach for allowing non-root access to Docker. This gives equivalent root access for Docker operations, so it should be used carefully, but it's appropriate for development environments."
+    },
+    {
+      "question": "A team is setting up Docker on multiple Linux VMs for a development environment. Which installation method would be most appropriate for ensuring consistency and ease of management?",
+      "options": [
+        "Download and run Docker's convenience script on each VM individually",
+        "Use the distribution's package manager for each VM's specific OS version",
+        "Add Docker's official repository and install docker-ce using the package manager",
+        "Compile Docker from source to ensure the latest features"
+      ],
+      "correct_index": 2,
+      "explanation": "Using Docker's official repository with docker-ce ensures you get consistent, up-to-date versions across different systems while still leveraging package management for updates and dependencies. This approach balances consistency with maintainability."
+    },
+    {
+      "question": "When would you choose Docker Desktop over Docker Engine for a development setup?",
+      "options": [
+        "When you need maximum performance for production workloads",
+        "When you're working on Windows/Mac and need an integrated development experience with GUI management",
+        "When you need to run containers on bare metal Linux servers",
+        "When you want to minimize resource usage and run only essential Docker components"
+      ],
+      "correct_index": 1,
+      "explanation": "Docker Desktop is designed for local development on Windows and Mac, providing an integrated experience with GUI tools, Kubernetes integration, and easy resource management. For production Linux servers or minimal setups, Docker Engine alone is more appropriate."
+    }
+  ],
+  "passing_score": 80
+}

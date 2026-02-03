@@ -1,0 +1,61 @@
+{
+  "topic_name": "Access Control Models",
+  "questions": [
+    {
+      "question": "A healthcare organization needs to ensure that doctors can only access patient records for patients under their direct care, nurses can access basic patient information but not financial records, and billing staff can only access payment information. Which access control model would be MOST appropriate for this scenario?",
+      "options": [
+        "Role-Based Access Control (RBAC)",
+        "Attribute-Based Access Control (ABAC)",
+        "Mandatory Access Control (MAC)",
+        "Discretionary Access Control (DAC)"
+      ],
+      "correct_index": 1,
+      "explanation": "ABAC is most appropriate because it can dynamically evaluate multiple attributes (user role, patient relationship, data type, department) to make fine-grained access decisions. While RBAC could handle basic role assignments, it cannot easily enforce the context-dependent rule that doctors can only access records of their own patients."
+    },
+    {
+      "question": "In a government classified information system, what is the PRIMARY reason why Mandatory Access Control (MAC) is preferred over other access control models?",
+      "options": [
+        "MAC is easier to implement and maintain than other models",
+        "MAC allows users to share classified information more efficiently",
+        "MAC enforces security policies centrally without allowing users to override access decisions",
+        "MAC provides better performance when handling large numbers of users"
+      ],
+      "correct_index": 2,
+      "explanation": "MAC's key advantage is that access decisions are made by the system based on security labels and policies, not by individual users. This prevents users from accidentally or intentionally compromising security by granting inappropriate access to classified information."
+    },
+    {
+      "question": "A company implements RBAC where employees are assigned roles like 'Manager', 'Developer', and 'Analyst'. After six months, they find that many users need permissions that don't fit neatly into their assigned roles. What is the most likely underlying problem?",
+      "options": [
+        "The RBAC system has a technical malfunction",
+        "Role explosion - too many specific roles were created initially",
+        "Role engineering was inadequate - roles don't reflect actual job functions",
+        "Users are requesting unnecessary permissions beyond their job requirements"
+      ],
+      "correct_index": 2,
+      "explanation": "Poor role engineering is the most common cause of RBAC implementation problems. When roles are designed without proper analysis of actual job functions and workflows, they often don't match real-world permission needs, leading to frequent exceptions and workarounds."
+    },
+    {
+      "question": "An e-commerce platform wants to implement access controls where customers can view products anytime, but purchasing is only allowed during business hours and only for customers with verified payment methods in specific geographic regions. Which statement about implementing this requirement is MOST accurate?",
+      "options": [
+        "RBAC alone can handle this by creating time-based customer roles",
+        "MAC is required because geographic restrictions involve mandatory security classifications",
+        "ABAC is most suitable because it can evaluate multiple dynamic attributes simultaneously",
+        "DAC is preferred since customers should control their own purchasing decisions"
+      ],
+      "correct_index": 2,
+      "explanation": "ABAC excels at this scenario because it can simultaneously evaluate multiple attributes: user attributes (verified payment), environmental attributes (time, geographic location), and resource attributes (product availability). RBAC cannot easily handle dynamic conditions like time and location."
+    },
+    {
+      "question": "In comparing access control models, when would you choose RBAC over ABAC despite ABAC's greater flexibility?",
+      "options": [
+        "When you need the highest possible level of security",
+        "When access patterns are stable and organizational roles are well-defined",
+        "When you have a small number of users and resources",
+        "When you need to make access decisions based on real-time data"
+      ],
+      "correct_index": 1,
+      "explanation": "RBAC is preferred when organizational structures are stable and access patterns align well with job roles. In such environments, RBAC is simpler to implement, maintain, and audit than ABAC, while still meeting security requirements. ABAC's complexity is only justified when you need its dynamic, context-aware capabilities."
+    }
+  ],
+  "passing_score": 80
+}

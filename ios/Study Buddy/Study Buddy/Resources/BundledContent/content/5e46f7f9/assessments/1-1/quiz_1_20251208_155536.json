@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": false,
+      "student_choice": "The subnet mask is incorrectly configured",
+      "correct_answer": "The DHCP server is unavailable or unreachable",
+      "analysis": "The correct answer was: The DHCP server is unavailable or unreachable",
+      "explanation": "When devices cannot reach a DHCP server, they fall back to APIPA (Automatic Private IP Addressing) and assign themselves addresses in the 169.254.x.x range. This indicates DHCP service failure or network connectivity issues to the DHCP server."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "For servers that need consistent IP addresses but centralized management",
+      "correct_answer": "For servers that need consistent IP addresses but centralized management",
+      "analysis": "Great job!",
+      "explanation": "DHCP reservations ensure specific devices always receive the same IP address based on their MAC address, combining the consistency needed for servers with the centralized management benefits of DHCP. This is ideal for servers, printers, and other infrastructure devices."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Laptops are more likely to leave the network, and shorter leases free up IP addresses faster",
+      "correct_answer": "Laptops are more likely to leave the network, and shorter leases free up IP addresses faster",
+      "analysis": "Great job!",
+      "explanation": "Shorter lease times for mobile devices like laptops help prevent IP address pool exhaustion by quickly reclaiming addresses when devices leave the network. This ensures efficient use of the available IP address space in dynamic environments."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "To inform the client that the requested IP address is invalid or unavailable",
+      "correct_answer": "To inform the client that the requested IP address is invalid or unavailable",
+      "analysis": "Great job!",
+      "explanation": "DHCPNAK is sent by the server to reject a client's request, typically when the client requests an IP address that is no longer valid for its network segment or is already assigned to another device. This forces the client to start the discovery process over."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "A DHCP relay agent or IP helper configured on each VLAN's router interface",
+      "correct_answer": "A DHCP relay agent or IP helper configured on each VLAN's router interface",
+      "analysis": "Great job!",
+      "explanation": "DHCP uses broadcast messages that don't cross VLAN boundaries by default. A DHCP relay agent (IP helper) on each VLAN's router interface forwards DHCP requests to the centralized server and returns responses to clients, enabling one server to serve multiple VLANs."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

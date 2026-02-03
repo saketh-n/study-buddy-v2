@@ -1,0 +1,61 @@
+{
+  "topic_name": "Virtual Machine Monitors (VMM)",
+  "questions": [
+    {
+      "question": "A company needs to run multiple operating systems on a single physical server for production workloads with maximum performance and security isolation. Which VMM architecture would be most appropriate and why?",
+      "options": [
+        "Type 2 hypervisor because it provides better hardware abstraction",
+        "Type 1 hypervisor because it runs directly on hardware with minimal overhead",
+        "Type 2 hypervisor because it's easier to manage through the host OS",
+        "Type 1 hypervisor because it requires less memory per virtual machine"
+      ],
+      "correct_index": 1,
+      "explanation": "Type 1 hypervisors (bare-metal) run directly on hardware without a host OS, providing better performance, security isolation, and lower overhead for production environments compared to Type 2 hypervisors that run on top of an existing OS."
+    },
+    {
+      "question": "What is the primary architectural difference between VMware ESXi and VMware Fusion that determines their use cases?",
+      "options": [
+        "ESXi supports more virtual machines than Fusion",
+        "ESXi is a Type 1 hypervisor while Fusion is a Type 2 hypervisor",
+        "ESXi only runs on Intel processors while Fusion supports AMD",
+        "ESXi provides better graphics acceleration than Fusion"
+      ],
+      "correct_index": 1,
+      "explanation": "The key difference is architectural: ESXi is a bare-metal Type 1 hypervisor that runs directly on server hardware, while Fusion is a hosted Type 2 hypervisor that runs on top of macOS, making them suitable for different environments (datacenter vs. desktop)."
+    },
+    {
+      "question": "A developer wants to test applications on different operating systems on their laptop while continuing to use their primary OS for daily work. Which scenario best describes the trade-offs they should consider?",
+      "options": [
+        "Use Type 1 hypervisor for better performance but lose access to host OS applications",
+        "Use Type 2 hypervisor for convenience but accept higher resource overhead and potential performance impact",
+        "Use Type 1 hypervisor for better security isolation of test environments",
+        "Use Type 2 hypervisor because it provides direct hardware access to VMs"
+      ],
+      "correct_index": 1,
+      "explanation": "For desktop development scenarios, Type 2 hypervisors offer the convenience of running VMs alongside the host OS but come with resource overhead since both the host OS and hypervisor compete for system resources, unlike Type 1 hypervisors that have direct hardware access."
+    },
+    {
+      "question": "In terms of the privilege ring model, how do Type 1 and Type 2 hypervisors differ in their execution context?",
+      "options": [
+        "Type 1 runs in Ring 0, Type 2 runs in Ring 1",
+        "Type 1 runs in Ring -1 or 0, Type 2 runs as an application in Ring 3",
+        "Both run in Ring 0 but Type 1 has hardware extensions",
+        "Type 1 runs in Ring 3, Type 2 runs in Ring 0"
+      ],
+      "correct_index": 1,
+      "explanation": "Type 1 hypervisors run at the highest privilege level (Ring -1 with hardware virtualization extensions or Ring 0), while Type 2 hypervisors run as applications in Ring 3 on top of a host OS, which limits their direct hardware control and affects performance."
+    },
+    {
+      "question": "When implementing server consolidation in a datacenter, why would an organization choose a bare-metal hypervisor architecture over alternatives?",
+      "options": [
+        "It eliminates the need for hardware virtualization extensions",
+        "It reduces the attack surface by removing the host OS layer and provides better resource utilization",
+        "It allows easier integration with existing desktop management tools",
+        "It provides automatic failover capabilities that hosted hypervisors cannot offer"
+      ],
+      "correct_index": 1,
+      "explanation": "Bare-metal (Type 1) hypervisors reduce the attack surface by eliminating the host OS layer, provide better resource utilization through direct hardware access, and offer improved security isolation - critical factors for datacenter consolidation where multiple workloads share physical hardware."
+    }
+  ],
+  "passing_score": 80
+}

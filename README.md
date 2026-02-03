@@ -171,6 +171,25 @@ uvicorn app.main:app --reload
 
 The API will be available at `http://localhost:8000`
 
+#### Running for iOS/LAN Access
+
+To access the backend from other devices on your network (e.g., iOS app testing):
+
+```bash
+# Run the server on all network interfaces
+ALLOWED_ORIGINS=* uvicorn app.main:app --reload --host 0.0.0.0
+```
+
+This binds the server to `0.0.0.0:8000`, allowing connections from:
+- Localhost (`http://localhost:8000`)
+- Your machine's LAN IP (e.g., `http://192.168.x.x:8000`)
+- iOS devices on the same network
+
+**Note:** `ALLOWED_ORIGINS=*` enables CORS for all origins. For production, specify exact origins:
+```bash
+ALLOWED_ORIGINS=http://localhost:5173,http://192.168.50.81:5173 uvicorn app.main:app --host 0.0.0.0
+```
+
 #### Frontend Setup
 
 ```bash

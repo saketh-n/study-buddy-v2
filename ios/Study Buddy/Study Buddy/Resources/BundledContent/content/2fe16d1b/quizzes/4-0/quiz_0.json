@@ -1,0 +1,61 @@
+{
+  "topic_name": "Perceptron and Multi-layer Perceptrons",
+  "questions": [
+    {
+      "question": "A single perceptron can successfully classify data points when the classes are:",
+      "options": [
+        "Linearly separable",
+        "Normally distributed",
+        "Clustered in groups",
+        "Non-linearly separable"
+      ],
+      "correct_index": 0,
+      "explanation": "A single perceptron creates a linear decision boundary and can only classify data that can be separated by a straight line (or hyperplane in higher dimensions). This is the fundamental limitation that led to the development of multi-layer perceptrons."
+    },
+    {
+      "question": "Why would you choose a multi-layer perceptron (MLP) over a single perceptron for a classification problem?",
+      "options": [
+        "MLPs always train faster than single perceptrons",
+        "MLPs can learn non-linear decision boundaries",
+        "MLPs require less training data",
+        "MLPs have fewer parameters to tune"
+      ],
+      "correct_index": 1,
+      "explanation": "The key advantage of MLPs is their ability to learn complex, non-linear decision boundaries through hidden layers and activation functions. This allows them to solve problems that single perceptrons cannot, such as XOR classification."
+    },
+    {
+      "question": "In a multi-layer perceptron, what is the primary role of the activation function in hidden layers?",
+      "options": [
+        "To normalize the input data",
+        "To introduce non-linearity into the network",
+        "To prevent overfitting",
+        "To speed up training convergence"
+      ],
+      "correct_index": 1,
+      "explanation": "Activation functions in hidden layers introduce non-linearity, allowing the network to learn complex patterns. Without non-linear activation functions, multiple layers would be equivalent to a single linear transformation, defeating the purpose of depth."
+    },
+    {
+      "question": "A data scientist is trying to classify emails as spam or not spam. The decision boundary appears to be a complex curve that separates the two classes. Which approach would be most appropriate?",
+      "options": [
+        "Single perceptron with linear activation",
+        "Single perceptron with sigmoid activation",
+        "Multi-layer perceptron with non-linear activation functions",
+        "Multiple single perceptrons trained separately"
+      ],
+      "correct_index": 2,
+      "explanation": "Since the decision boundary is complex and curved (non-linear), an MLP with non-linear activation functions is needed. A single perceptron, regardless of activation function, can only create linear decision boundaries."
+    },
+    {
+      "question": "What happens during the forward pass of a multi-layer perceptron?",
+      "options": [
+        "Weights are updated based on the error",
+        "Input data flows through layers to produce an output prediction",
+        "The learning rate is adjusted automatically",
+        "Training data is shuffled and batched"
+      ],
+      "correct_index": 1,
+      "explanation": "During the forward pass, input data flows through the network layers, with each layer applying weights, biases, and activation functions to transform the data, ultimately producing an output prediction. Weight updates occur during backpropagation, not the forward pass."
+    }
+  ],
+  "passing_score": 80
+}

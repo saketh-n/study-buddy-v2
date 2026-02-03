@@ -1,0 +1,61 @@
+{
+  "topic_name": "Model Deployment",
+  "questions": [
+    {
+      "question": "When would you choose batch inference over real-time inference for model deployment?",
+      "options": [
+        "When you need immediate responses for user interactions",
+        "When processing large volumes of data that don't require instant results",
+        "When the model is small and computationally lightweight",
+        "When you want to minimize infrastructure costs by avoiding any scheduling"
+      ],
+      "correct_index": 1,
+      "explanation": "Batch inference is ideal for processing large datasets where immediate results aren't critical, such as monthly reporting or overnight data processing. It's more efficient for bulk operations and can handle resource-intensive computations during off-peak hours."
+    },
+    {
+      "question": "A company's ML model performs well in testing but fails frequently in production with real user data. What is the most likely deployment-related issue?",
+      "options": [
+        "The model was overtrained on the test dataset",
+        "There's a mismatch between training data distribution and production data distribution",
+        "The production servers have insufficient memory",
+        "The model architecture is too complex for real-time inference"
+      ],
+      "correct_index": 1,
+      "explanation": "Data drift or distribution mismatch between training and production data is a common cause of model performance degradation in production. This highlights the importance of monitoring data quality and model performance post-deployment."
+    },
+    {
+      "question": "Why would you implement A/B testing during model deployment rather than simply replacing the old model entirely?",
+      "options": [
+        "A/B testing is always faster than full deployment",
+        "It reduces computational costs by running two models",
+        "It allows gradual rollout and performance comparison while minimizing risk",
+        "It's required by most cloud platforms for compliance"
+      ],
+      "correct_index": 2,
+      "explanation": "A/B testing enables risk mitigation by allowing you to compare the new model's performance against the existing one with real production data, while limiting exposure to potential issues. This gradual rollout approach helps identify problems before full deployment."
+    },
+    {
+      "question": "Which deployment strategy would be most appropriate for a fraud detection system that processes thousands of transactions per second?",
+      "options": [
+        "Batch processing with daily model updates",
+        "Edge deployment on individual user devices",
+        "Real-time API deployment with auto-scaling and low latency optimization",
+        "Scheduled processing every few hours"
+      ],
+      "correct_index": 2,
+      "explanation": "Fraud detection requires real-time processing to prevent fraudulent transactions immediately. A real-time API with auto-scaling handles high throughput while low latency optimization ensures quick decision-making for each transaction."
+    },
+    {
+      "question": "What is the primary advantage of containerizing ML models using Docker for deployment?",
+      "options": [
+        "Containers automatically improve model accuracy",
+        "Containers eliminate the need for model monitoring",
+        "Containers provide consistent environments across development, testing, and production",
+        "Containers reduce the computational requirements of the model"
+      ],
+      "correct_index": 2,
+      "explanation": "Containerization ensures environment consistency by packaging the model with its dependencies, eliminating 'it works on my machine' problems. This consistency across different deployment stages reduces deployment issues and makes the system more reliable and portable."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "HTTP and URI Schemes",
+  "questions": [
+    {
+      "question": "A web application needs to communicate with a backend API to retrieve user data. The development team is concerned about data security during transmission. Which URI scheme should they implement and why?",
+      "options": [
+        "HTTP because it's faster and has less overhead",
+        "HTTPS because it provides encryption and authentication",
+        "SMB because it's designed for secure file sharing",
+        "NFS because it offers better network performance"
+      ],
+      "correct_index": 1,
+      "explanation": "HTTPS should be used because it provides SSL/TLS encryption to protect sensitive user data during transmission between the client and server, ensuring confidentiality and integrity."
+    },
+    {
+      "question": "An organization wants to allow employees to access shared documents stored on a Windows file server from their workstations. Which URI scheme would be most appropriate for this scenario?",
+      "options": [
+        "HTTP because it's universally supported",
+        "HTTPS for secure document transfer",
+        "SMB because it's designed for Windows file sharing",
+        "NFS because it provides better file permissions"
+      ],
+      "correct_index": 2,
+      "explanation": "SMB (Server Message Block) is the most appropriate choice as it's specifically designed for file sharing in Windows environments and provides native integration with Windows file servers and workstations."
+    },
+    {
+      "question": "What is the primary conceptual difference between HTTP as a protocol and URI schemes in general?",
+      "options": [
+        "HTTP is faster while URI schemes are more secure",
+        "HTTP is only for web pages while URI schemes are for files",
+        "HTTP defines communication rules while URI schemes identify resource location methods",
+        "HTTP works over TCP while URI schemes work over UDP"
+      ],
+      "correct_index": 2,
+      "explanation": "HTTP is a communication protocol that defines how clients and servers exchange data, while URI schemes are identifiers that specify the method or protocol used to access a particular type of resource."
+    },
+    {
+      "question": "A Linux-based data center needs to implement a file sharing solution where multiple Unix/Linux servers can mount and access shared storage. Considering performance and compatibility, which approach should they choose?",
+      "options": [
+        "SMB because it's more modern than other protocols",
+        "HTTP with file upload/download APIs",
+        "NFS because it's optimized for Unix/Linux environments",
+        "HTTPS for security with file operations"
+      ],
+      "correct_index": 2,
+      "explanation": "NFS (Network File System) is the best choice as it's specifically designed for Unix/Linux environments, provides efficient file system mounting capabilities, and offers better performance for file operations between Unix/Linux systems."
+    },
+    {
+      "question": "When designing a REST API that will handle both public content and sensitive user operations, which combination of URI schemes and implementation approach demonstrates best security practices?",
+      "options": [
+        "Use HTTP for all endpoints to maintain consistency",
+        "Use HTTPS for all endpoints to ensure uniform security",
+        "Use HTTP for public content and HTTPS only for login pages",
+        "Use SMB for file operations and HTTP for data queries"
+      ],
+      "correct_index": 1,
+      "explanation": "Using HTTPS for all endpoints is the best practice because it ensures consistent security, prevents protocol downgrade attacks, protects all data in transit, and maintains user trust across the entire application."
+    }
+  ],
+  "passing_score": 80
+}

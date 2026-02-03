@@ -1,0 +1,61 @@
+{
+  "topic_name": "French-Canadian Society Under British Rule",
+  "questions": [
+    {
+      "question": "The Quebec Act of 1774 represented a significant shift in British colonial policy because it:",
+      "options": [
+        "Forced French Canadians to adopt English common law and Protestant religion",
+        "Recognized French civil law, Catholic religion, and seigneurial system to maintain stability",
+        "Granted complete independence to Quebec while maintaining trade relationships",
+        "Divided Quebec into separate English and French territories with equal representation"
+      ],
+      "correct_index": 1,
+      "explanation": "The Quebec Act was a pragmatic British response that preserved French-Canadian institutions to prevent rebellion and maintain loyalty, especially given the growing tensions with the American colonies."
+    },
+    {
+      "question": "When the Catholic Church strengthened its influence in French-Canadian society during the 19th century, this was primarily a response to:",
+      "options": [
+        "Direct orders from the Pope to resist Protestant British rule",
+        "The need to fill the leadership vacuum left by the departure of French colonial elites",
+        "British policies that actively promoted Catholic education and institutions",
+        "Economic opportunities created by British industrial development"
+      ],
+      "correct_index": 1,
+      "explanation": "After the Conquest, many French colonial administrators and elites returned to France, leaving the Catholic Church as the primary institution to preserve French-Canadian identity and provide social leadership."
+    },
+    {
+      "question": "A historian studying the survival of French civil law in Quebec under British rule would most likely conclude that this persistence demonstrates:",
+      "options": [
+        "The weakness of British administrative control in remote colonial territories",
+        "The successful integration of French Canadians into British parliamentary democracy",
+        "The strategic British decision to accommodate local institutions for political stability",
+        "The natural superiority of French legal principles over English common law"
+      ],
+      "correct_index": 2,
+      "explanation": "The preservation of French civil law was a calculated British policy designed to maintain French-Canadian loyalty and prevent potential alliance with rebellious American colonies, not a sign of administrative weakness."
+    },
+    {
+      "question": "The seigneurial system's continuation under British rule can best be understood as an example of:",
+      "options": [
+        "Cultural assimilation where French practices gradually adopted British characteristics",
+        "Cultural persistence where traditional institutions adapted to new political circumstances",
+        "Cultural revolution where old systems were completely replaced by new ones",
+        "Cultural isolation where French and British systems developed separately without interaction"
+      ],
+      "correct_index": 1,
+      "explanation": "The seigneurial system exemplifies cultural persistence - it maintained its essential French character while adapting to British legal and administrative frameworks, allowing French-Canadian society to preserve key institutions."
+    },
+    {
+      "question": "If you were analyzing why French language and culture remained strong in rural Quebec but faced more pressure in urban commercial centers during the British period, which factor would be most significant:",
+      "options": [
+        "Rural areas had better schools that taught French language and literature",
+        "Urban centers attracted British merchants and administrators who dominated economic life",
+        "The British government specifically targeted cities for cultural assimilation policies",
+        "Rural populations were more politically organized to resist British cultural influence"
+      ],
+      "correct_index": 1,
+      "explanation": "Urban areas became centers of British economic and administrative power, creating pressure for French Canadians to adopt English for commercial and professional advancement, while rural areas remained predominantly French-speaking and traditional."
+    }
+  ],
+  "passing_score": 80
+}

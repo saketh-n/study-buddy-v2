@@ -1,0 +1,61 @@
+{
+  "topic_name": "Filesystem mount and unmount;; Hard links vs symbolic link ; /Proc Filesystem, /NFS, /CIFS mount, Sparsebundle filesystem",
+  "questions": [
+    {
+      "question": "A system administrator wants to create a backup script that copies files while preserving their inode relationships for space efficiency. The script needs to work even if the original files are moved to different directories. Which approach should they use?",
+      "options": [
+        "Create hard links to the files",
+        "Create symbolic links to the files",
+        "Use the /proc filesystem to reference files",
+        "Mount the files using NFS"
+      ],
+      "correct_index": 0,
+      "explanation": "Hard links share the same inode as the original file, so they remain valid even if the original file is moved or renamed. They also save space since they point to the same data blocks. Symbolic links would break if files are moved, and the other options don't address the backup requirement."
+    },
+    {
+      "question": "When would unmounting a filesystem fail with a 'device busy' error, and what is the most appropriate troubleshooting approach?",
+      "options": [
+        "The filesystem has symbolic links pointing to it; use 'rm -rf' to remove them",
+        "Processes are actively using files in the filesystem; identify and stop them using 'lsof' or 'fuser'",
+        "The filesystem was mounted with hard links; wait for the kernel to release them automatically",
+        "The /proc filesystem is interfering; remount /proc first"
+      ],
+      "correct_index": 1,
+      "explanation": "A filesystem cannot be unmounted while processes have open file handles to files within it. Using 'lsof' (list open files) or 'fuser' helps identify which processes are keeping the filesystem busy so they can be properly terminated before unmounting."
+    },
+    {
+      "question": "A developer needs to monitor real-time CPU usage and process information programmatically. Which filesystem would be most appropriate for this task and why?",
+      "options": [
+        "/proc filesystem because it provides a virtual interface to kernel data structures",
+        "NFS mount because it allows remote access to system information",
+        "CIFS mount because it's optimized for real-time data access",
+        "Sparsebundle filesystem because it efficiently handles small data reads"
+      ],
+      "correct_index": 0,
+      "explanation": "The /proc filesystem is a virtual filesystem that provides real-time access to kernel data structures, including CPU usage, process information, and system statistics. It's specifically designed for this purpose and updates dynamically."
+    },
+    {
+      "question": "An organization needs to share files between Linux and Windows systems while maintaining proper file permissions and supporting large files. Network reliability is occasionally poor. Which mounting solution addresses these requirements best?",
+      "options": [
+        "NFS mount with hard links for redundancy",
+        "CIFS mount with symbolic links for cross-platform compatibility",
+        "CIFS mount because it's designed for Windows/Linux interoperability and handles network interruptions",
+        "Sparsebundle filesystem mounted via NFS for space efficiency"
+      ],
+      "correct_index": 2,
+      "explanation": "CIFS (Common Internet File System) is specifically designed for cross-platform file sharing between Windows and Linux systems. It handles network interruptions better than NFS and maintains proper file permissions across different operating systems."
+    },
+    {
+      "question": "A video editor is working with large media files and wants to optimize storage space while maintaining fast access. The files are mostly empty space with scattered data. What would be the most effective approach?",
+      "options": [
+        "Use hard links to share common portions between files",
+        "Use symbolic links to reference files stored on faster drives",
+        "Use a sparsebundle filesystem that allocates space only for actual data",
+        "Mount files via NFS to distribute storage load"
+      ],
+      "correct_index": 2,
+      "explanation": "Sparsebundle filesystems are designed for sparse files - files that appear large but contain mostly empty space. They only allocate actual storage for blocks that contain data, making them ideal for media files and virtual disk images that have large amounts of unallocated space."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Web Application Firewalls",
+  "questions": [
+    {
+      "question": "A web application is experiencing SQL injection attacks where attackers are bypassing input validation by using encoded characters in their payloads. Which WAF capability would be MOST effective in addressing this specific attack vector?",
+      "options": [
+        "Rate limiting based on IP address",
+        "URL decoding and normalization before rule evaluation",
+        "SSL/TLS certificate validation",
+        "Geographic blocking of suspicious countries"
+      ],
+      "correct_index": 1,
+      "explanation": "URL decoding and normalization ensures that encoded characters are properly decoded before applying security rules, preventing attackers from bypassing SQL injection filters through character encoding techniques."
+    },
+    {
+      "question": "Your company's REST API receives 1000 legitimate requests per minute but needs protection against automated attacks. When configuring AWS WAF for this API, what combination of rules would provide the BEST balance between security and availability?",
+      "options": [
+        "Only implement geographic blocking for high-risk countries",
+        "Combine rate limiting (2000 req/min) with SQL injection rules and known bad signature detection",
+        "Set aggressive rate limiting (100 req/min) with no other rules",
+        "Only use SQL injection protection without rate limiting"
+      ],
+      "correct_index": 1,
+      "explanation": "This approach provides comprehensive protection while accommodating legitimate traffic. The rate limit allows for traffic spikes, while SQL injection rules and signature detection catch common attacks without blocking legitimate users."
+    },
+    {
+      "question": "A security engineer is comparing ModSecurity and CloudFlare WAF for protecting a high-traffic e-commerce site. In what scenario would ModSecurity be the MORE appropriate choice?",
+      "options": [
+        "When you need the fastest deployment with minimal configuration",
+        "When you require custom rule development and granular control over traffic inspection",
+        "When you want to minimize server resource usage",
+        "When you need built-in CDN capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "ModSecurity is open-source and highly customizable, allowing for detailed custom rules and granular traffic inspection. CloudFlare excels in ease of deployment and CDN integration, but ModSecurity offers more control for specific security requirements."
+    },
+    {
+      "question": "An application uses both traditional web forms and a mobile API. During a security assessment, you discover that while SQL injection attempts against web forms are being blocked, similar attacks against API endpoints are succeeding. What is the MOST likely configuration issue?",
+      "options": [
+        "The WAF is not inspecting JSON request bodies from API calls",
+        "The database connection is not encrypted",
+        "The API endpoints are using different domain names",
+        "The mobile app is not validating SSL certificates"
+      ],
+      "correct_index": 0,
+      "explanation": "Many WAF misconfigurations occur when different content types aren't properly inspected. APIs often use JSON in request bodies, and if the WAF isn't configured to parse and inspect JSON payloads, SQL injection attacks can bypass protection."
+    },
+    {
+      "question": "Your organization wants to implement defense-in-depth for web application security. You already have input validation in your application code. WHY should you still implement a WAF as an additional layer?",
+      "options": [
+        "WAFs are more reliable than application-level validation",
+        "WAFs can block attacks before they consume application resources and provide protection against zero-day vulnerabilities in application logic",
+        "WAFs eliminate the need for secure coding practices",
+        "WAFs only work when application validation fails"
+      ],
+      "correct_index": 1,
+      "explanation": "WAFs provide an additional security layer that blocks attacks at the network edge, reducing load on application servers. They also offer protection against new attack vectors and vulnerabilities that might not be covered by existing application validation, supporting true defense-in-depth strategy."
+    }
+  ],
+  "passing_score": 80
+}

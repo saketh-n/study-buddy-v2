@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local vs Remote IP Communication",
+  "questions": [
+    {
+      "question": "A host with IP address 192.168.1.10/24 needs to communicate with 192.168.1.50. What routing decision will the host make?",
+      "options": [
+        "Send the packet directly to 192.168.1.50 using ARP to find its MAC address",
+        "Send the packet to the default gateway first",
+        "Broadcast the packet to all devices on the network",
+        "Use DNS to resolve the IP address before sending"
+      ],
+      "correct_index": 0,
+      "explanation": "Since both addresses are in the same subnet (192.168.1.0/24), this is local communication. The host will send the packet directly to the destination using ARP to resolve the MAC address."
+    },
+    {
+      "question": "When a packet is destined for a remote network, why does the source host send it to the default gateway instead of directly to the destination?",
+      "options": [
+        "The default gateway has better security protocols",
+        "Layer 2 frames can only travel within the same broadcast domain",
+        "The destination IP address needs to be translated first",
+        "Direct communication would be too slow"
+      ],
+      "correct_index": 1,
+      "explanation": "Ethernet frames operate at Layer 2 and can only be delivered within the same broadcast domain. Since remote hosts are in different networks, the packet must be sent to a router (default gateway) that can forward it across network boundaries."
+    },
+    {
+      "question": "A network administrator notices that a host at 10.0.1.5/16 is unable to reach 10.0.2.100. The host is treating this as local communication. What is most likely the problem?",
+      "options": [
+        "The destination host is powered off",
+        "ARP is not working properly on the network",
+        "The subnet mask should be /24 instead of /16",
+        "The default gateway is misconfigured"
+      ],
+      "correct_index": 2,
+      "explanation": "With a /16 mask, the host treats 10.0.2.100 as local (same network) and tries direct delivery. If they should be on separate networks, the mask should be /24, making this remote communication that requires routing through a gateway."
+    },
+    {
+      "question": "In a scenario where Host A (192.168.10.5/24) successfully pings its default gateway (192.168.10.1) but cannot reach an external website, what does this indicate about the routing decision process?",
+      "options": [
+        "Host A is making incorrect local vs remote routing decisions",
+        "Host A correctly identifies remote traffic but there's an issue beyond the local gateway",
+        "The subnet mask on Host A is configured incorrectly",
+        "Host A is not using ARP correctly for local communication"
+      ],
+      "correct_index": 1,
+      "explanation": "Since Host A can ping the gateway, it correctly identifies local vs remote traffic and properly forwards remote packets to the gateway. The issue lies in routing beyond the local network, not in the host's routing decisions."
+    },
+    {
+      "question": "A company wants to segment their network so that the Sales department (currently 192.168.1.0/24) cannot directly communicate with HR (currently 192.168.2.0/24) without going through a firewall. What configuration change would force all inter-departmental traffic to go through a router?",
+      "options": [
+        "Change both departments to use the same subnet with a /23 mask",
+        "Configure different default gateways for each department",
+        "Keep the current /24 subnets and ensure each has a different gateway",
+        "Change the IP addresses to use different Class A networks"
+      ],
+      "correct_index": 2,
+      "explanation": "Keeping separate /24 subnets ensures hosts treat inter-departmental communication as remote, forcing packets through their respective gateways where firewall rules can be applied. Option A would make all traffic local, bypassing the router entirely."
+    }
+  ],
+  "passing_score": 80
+}

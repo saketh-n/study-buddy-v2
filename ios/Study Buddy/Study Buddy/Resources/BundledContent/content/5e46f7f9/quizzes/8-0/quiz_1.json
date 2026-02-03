@@ -1,0 +1,61 @@
+{
+  "topic_name": "IPSec VPN",
+  "questions": [
+    {
+      "question": "A company needs to connect three branch offices to their main headquarters while ensuring all traffic is encrypted and authenticated. Each branch office has its own subnet (192.168.1.0/24, 192.168.2.0/24, 192.168.3.0/24) and needs to access resources on the headquarters network (10.0.0.0/16). What type of IPSec VPN configuration would be most appropriate?",
+      "options": [
+        "Network-to-network VPN using site-to-site tunnels between each branch and headquarters",
+        "Host-to-host VPN with individual connections from each computer to the headquarters",
+        "Host-to-network VPN with each branch office acting as a single host",
+        "A single network-to-network tunnel connecting all locations in a daisy-chain configuration"
+      ],
+      "correct_index": 0,
+      "explanation": "Network-to-network (site-to-site) VPN is ideal for connecting entire subnets between locations. This allows all devices in each branch office to access headquarters resources without individual VPN client configurations, and provides scalable network-level encryption."
+    },
+    {
+      "question": "When comparing WireGuard to traditional IPSec implementations, what is the primary advantage that makes WireGuard particularly suitable for mobile devices and frequently changing network connections?",
+      "options": [
+        "WireGuard uses stronger encryption algorithms that are specifically designed for mobile processors",
+        "WireGuard's stateless UDP-based design allows for seamless roaming between networks without re-establishing connections",
+        "WireGuard operates at Layer 2 instead of Layer 3, providing better performance on cellular networks",
+        "WireGuard doesn't require any form of authentication, making it faster to connect"
+      ],
+      "correct_index": 1,
+      "explanation": "WireGuard's UDP-based, stateless design allows devices to seamlessly switch between networks (WiFi to cellular, different WiFi networks) without needing to re-establish the VPN tunnel, making it ideal for mobile scenarios where network changes are frequent."
+    },
+    {
+      "question": "A remote employee needs to access a specific database server (10.0.0.50) on the corporate network from their home computer. The employee doesn't need access to other network resources and security policy requires minimal network exposure. Which IPSec VPN approach would best meet these requirements?",
+      "options": [
+        "Network-to-network VPN connecting the employee's home network to the corporate network",
+        "Host-to-network VPN giving the employee's computer access to the entire corporate network",
+        "Host-to-host VPN creating a direct encrypted tunnel between the employee's computer and the database server",
+        "A proxy server connection without VPN encryption to minimize complexity"
+      ],
+      "correct_index": 2,
+      "explanation": "Host-to-host VPN creates a direct, encrypted tunnel between two specific endpoints, providing the most restrictive access that meets the requirement (access to one server only) while maintaining strong security through encryption."
+    },
+    {
+      "question": "An organization is experiencing frequent IPSec VPN disconnections for remote workers who travel frequently. Network analysis shows that NAT traversal is working correctly, but connections drop when users switch between different types of networks. Why would migrating to a WireGuard-based solution likely resolve this issue?",
+      "options": [
+        "WireGuard uses TCP instead of UDP, providing more reliable connection tracking through firewalls",
+        "WireGuard automatically adjusts encryption strength based on network quality",
+        "WireGuard's cryptokey routing and UDP-based protocol handle endpoint changes gracefully without requiring tunnel re-establishment",
+        "WireGuard operates at the application layer, making it immune to network infrastructure changes"
+      ],
+      "correct_index": 2,
+      "explanation": "WireGuard's cryptokey routing allows it to automatically handle changes in client IP addresses and network paths without dropping the logical VPN connection, while traditional IPSec often requires tunnel re-establishment when network endpoints change."
+    },
+    {
+      "question": "A security architect is designing VPN access for a hybrid cloud environment where on-premises servers need to communicate with cloud instances, and remote employees need access to both environments. The solution must minimize administrative overhead while maintaining security. What combination of IPSec VPN types would be most effective?",
+      "options": [
+        "Host-to-host VPNs for all connections to provide maximum security granularity",
+        "A single network-to-network VPN connecting on-premises to cloud, with host-to-network VPNs for remote employees to access the on-premises network",
+        "Host-to-network VPNs for all connections to ensure consistent access patterns",
+        "Network-to-network VPN for cloud connectivity and separate network-to-network VPNs for each remote employee's home network"
+      ],
+      "correct_index": 1,
+      "explanation": "This hybrid approach uses network-to-network VPN for the stable, high-bandwidth connection between data centers (on-premises and cloud), while host-to-network VPNs provide flexible access for mobile remote employees without requiring complex home network configurations."
+    }
+  ],
+  "passing_score": 80
+}

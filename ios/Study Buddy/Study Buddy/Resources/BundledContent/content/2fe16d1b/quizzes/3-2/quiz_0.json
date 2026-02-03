@@ -1,0 +1,61 @@
+{
+  "topic_name": "Association Rules",
+  "questions": [
+    {
+      "question": "In association rule mining, why is confidence alone insufficient for determining strong relationships between items?",
+      "options": [
+        "Confidence doesn't account for how frequently the antecedent appears, which can lead to misleading rules",
+        "Confidence values are always less than support values, making them unreliable",
+        "Confidence only measures negative correlations between items",
+        "Confidence requires too much computational power to calculate accurately"
+      ],
+      "correct_index": 0,
+      "explanation": "Confidence alone can be misleading because it doesn't consider the base frequency of the antecedent. An item that appears very frequently might have high confidence with many other items just by chance, which is why lift is often used to normalize for this effect."
+    },
+    {
+      "question": "A grocery store wants to identify which products customers frequently buy together to optimize store layout. Which scenario would be LEAST appropriate for association rule mining?",
+      "options": [
+        "Analyzing purchase patterns during different seasons to adjust inventory",
+        "Predicting the exact quantity of milk a customer will buy based on their age and income",
+        "Finding complementary products to place near each other on shelves",
+        "Identifying products for cross-selling recommendations at checkout"
+      ],
+      "correct_index": 1,
+      "explanation": "Predicting exact quantities based on demographic data is a regression problem, not association rule mining. Association rules find relationships between categorical items in transactions, not continuous predictions based on customer attributes."
+    },
+    {
+      "question": "Given the rule 'If customers buy bread and butter, then they buy jam' with support=0.15, confidence=0.75, and lift=2.5, what can you conclude?",
+      "options": [
+        "The rule is weak because support is low, indicating few customers buy all three items",
+        "The rule shows a strong positive association because lift > 1 and confidence is high",
+        "The rule is invalid because confidence should equal lift in strong associations",
+        "The rule indicates customers never buy jam without buying bread and butter"
+      ],
+      "correct_index": 1,
+      "explanation": "Lift > 1 indicates positive association (2.5 times more likely than random), and confidence of 0.75 means 75% of bread+butter buyers also buy jam. While support is moderate, the high lift and confidence indicate a meaningful relationship."
+    },
+    {
+      "question": "When applying the Apriori algorithm, why does it use the 'downward closure property' to prune itemsets?",
+      "options": [
+        "To ensure that infrequent itemsets are promoted to the next iteration",
+        "Because if an itemset is infrequent, all its supersets must also be infrequent",
+        "To guarantee that all possible itemset combinations are evaluated",
+        "Because frequent itemsets always contain infrequent subsets"
+      ],
+      "correct_index": 1,
+      "explanation": "The downward closure property states that if an itemset is infrequent (below minimum support), all its supersets must also be infrequent. This allows Apriori to prune large portions of the search space efficiently by not generating candidate itemsets that contain infrequent subsets."
+    },
+    {
+      "question": "An e-commerce company discovers the rule 'customers who buy smartphones \u2192 buy phone cases' with very high confidence but very low lift (close to 1.0). What should they conclude about their business strategy?",
+      "options": [
+        "This is an excellent cross-selling opportunity because of the high confidence",
+        "The association is likely due to random chance and not a meaningful relationship",
+        "Phone cases are being purchased at the expected rate regardless of smartphone purchases",
+        "They should immediately bundle smartphones with phone cases for all customers"
+      ],
+      "correct_index": 2,
+      "explanation": "Low lift (close to 1.0) indicates that phone cases are purchased at roughly the same rate whether customers buy smartphones or not. High confidence with low lift suggests that phone cases are generally popular items, making the association less meaningful for targeted marketing."
+    }
+  ],
+  "passing_score": 80
+}

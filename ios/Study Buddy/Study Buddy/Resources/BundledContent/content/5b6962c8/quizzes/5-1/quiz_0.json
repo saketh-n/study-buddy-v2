@@ -1,0 +1,61 @@
+{
+  "topic_name": "Digital Forensics",
+  "questions": [
+    {
+      "question": "What is the primary reason why digital forensics investigators must create a bit-by-bit copy of storage devices before beginning analysis?",
+      "options": [
+        "To reduce the file size for easier storage",
+        "To preserve the original evidence and maintain chain of custody",
+        "To convert the data into a readable format",
+        "To remove any malware that might interfere with analysis"
+      ],
+      "correct_index": 1,
+      "explanation": "Creating bit-by-bit copies preserves the original evidence in its exact state and ensures the integrity of the evidence for legal proceedings, maintaining the chain of custody required in court."
+    },
+    {
+      "question": "A company discovers that an employee may have been stealing confidential data. When should digital forensics procedures be initiated?",
+      "options": [
+        "After interviewing the suspect to get their confession",
+        "Immediately, before any systems are altered or evidence is lost",
+        "Only after law enforcement arrives at the scene",
+        "After backing up the current system to prevent data loss"
+      ],
+      "correct_index": 1,
+      "explanation": "Digital evidence is highly volatile and can be easily altered or destroyed. Forensics procedures must begin immediately to preserve evidence integrity, even before other investigative steps."
+    },
+    {
+      "question": "Why might a digital forensics investigator choose to analyze volatile memory (RAM) before examining hard drive contents during an incident response?",
+      "options": [
+        "RAM analysis is always faster than hard drive analysis",
+        "RAM contains data that may be lost when the system is powered down",
+        "RAM evidence is more reliable in court than hard drive evidence",
+        "RAM contains older historical data that hard drives don't preserve"
+      ],
+      "correct_index": 1,
+      "explanation": "Volatile memory contains temporary data like running processes, network connections, and decryption keys that exist only while the system is powered on and will be lost when the system shuts down."
+    },
+    {
+      "question": "An investigator finds deleted files in the unallocated space of a hard drive. What does this discovery primarily demonstrate about digital evidence?",
+      "options": [
+        "The user intentionally tried to hide evidence of wrongdoing",
+        "File deletion often doesn't immediately overwrite the actual data",
+        "The hard drive has been damaged and needs replacement",
+        "Someone has tampered with the evidence after the incident"
+      ],
+      "correct_index": 1,
+      "explanation": "When files are 'deleted,' the operating system typically only marks the space as available for reuse but doesn't immediately overwrite the data, making recovery possible until that space is needed for new data."
+    },
+    {
+      "question": "A digital forensics report for legal proceedings must include hash values of evidence files. What is the primary purpose of these cryptographic hashes?",
+      "options": [
+        "To compress the evidence files for easier transmission",
+        "To encrypt sensitive information within the evidence",
+        "To verify that the evidence hasn't been altered since collection",
+        "To identify the specific type of device the evidence came from"
+      ],
+      "correct_index": 2,
+      "explanation": "Hash values create a unique digital fingerprint of files. If the evidence is altered in any way, even by a single bit, the hash value will change, providing proof of evidence integrity for court proceedings."
+    }
+  ],
+  "passing_score": 80
+}

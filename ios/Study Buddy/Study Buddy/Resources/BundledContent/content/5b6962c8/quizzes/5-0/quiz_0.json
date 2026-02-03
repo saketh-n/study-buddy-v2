@@ -1,0 +1,61 @@
+{
+  "topic_name": "Incident Response Planning",
+  "questions": [
+    {
+      "question": "During which phase of incident response should an organization focus on analyzing logs, collecting digital evidence, and determining the scope of a security breach?",
+      "options": [
+        "Preparation",
+        "Detection and Analysis",
+        "Containment, Eradication, and Recovery",
+        "Post-Incident Activity"
+      ],
+      "correct_index": 1,
+      "explanation": "Detection and Analysis is the phase where teams investigate the incident, analyze evidence, and determine the full scope and impact of the security breach before moving to containment."
+    },
+    {
+      "question": "A company discovers that an employee's laptop was infected with ransomware, but the infection hasn't spread to other systems yet. What should be the immediate priority in the incident response process?",
+      "options": [
+        "Document lessons learned for future prevention",
+        "Perform forensic analysis to understand the attack vector",
+        "Isolate the infected laptop to prevent lateral movement",
+        "Notify law enforcement and regulatory bodies"
+      ],
+      "correct_index": 2,
+      "explanation": "Immediate containment is critical to prevent the ransomware from spreading to other systems. While forensic analysis and notifications are important, they should occur after the threat is contained."
+    },
+    {
+      "question": "Why is it essential to establish clear escalation procedures and communication protocols during the preparation phase of incident response planning?",
+      "options": [
+        "To ensure compliance with regulatory reporting requirements",
+        "To minimize confusion and delays when making critical decisions under pressure",
+        "To document evidence for potential legal proceedings",
+        "To maintain business operations during an incident"
+      ],
+      "correct_index": 1,
+      "explanation": "Clear escalation procedures and communication protocols prevent confusion during high-stress incidents, ensuring quick decision-making and coordinated response when time is critical."
+    },
+    {
+      "question": "An organization's incident response team has successfully contained and eradicated a data breach. Before returning to normal operations, what critical step must be completed to ensure the incident won't immediately reoccur?",
+      "options": [
+        "Update all employee security awareness training materials",
+        "Conduct penetration testing on the entire network infrastructure",
+        "Verify that all vulnerabilities exploited in the incident have been patched",
+        "Replace all potentially compromised user credentials"
+      ],
+      "correct_index": 2,
+      "explanation": "Before restoring systems and returning to normal operations, the organization must ensure that the vulnerabilities that allowed the initial breach have been properly addressed and patched."
+    },
+    {
+      "question": "During post-incident analysis, a security team discovers that the incident could have been detected 3 days earlier if certain log monitoring rules had been in place. This finding should primarily influence which aspect of the incident response program?",
+      "options": [
+        "Containment procedures for similar future incidents",
+        "Employee training on social engineering awareness",
+        "Detection capabilities and monitoring strategies",
+        "Legal notification requirements and timelines"
+      ],
+      "correct_index": 2,
+      "explanation": "This finding indicates a gap in detection capabilities. The lessons learned should be used to improve monitoring strategies and detection rules to identify similar incidents more quickly in the future."
+    }
+  ],
+  "passing_score": 80
+}

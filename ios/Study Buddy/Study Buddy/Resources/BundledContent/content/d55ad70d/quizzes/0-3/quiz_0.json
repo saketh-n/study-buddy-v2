@@ -1,0 +1,61 @@
+{
+  "topic_name": "Storage scale using networking",
+  "questions": [
+    {
+      "question": "A company needs to store 100TB of video files that will be accessed by web applications worldwide. Multiple users need to read the same files simultaneously, but writes are infrequent. Which networked storage approach would be most appropriate?",
+      "options": [
+        "File storage with NFS protocol",
+        "SAN with Fibre Channel",
+        "Object storage with HTTP REST API",
+        "Local storage with network backup"
+      ],
+      "correct_index": 2,
+      "explanation": "Object storage is ideal for large-scale, globally distributed read-heavy workloads with infrequent writes. It provides native HTTP access, built-in replication, and scales horizontally across multiple nodes and locations."
+    },
+    {
+      "question": "Why does SAN (Storage Area Network) typically provide better performance than NAS (Network Attached Storage) for database applications?",
+      "options": [
+        "SAN uses faster Ethernet connections",
+        "SAN presents storage as block devices, reducing protocol overhead",
+        "SAN automatically compresses data during transmission",
+        "SAN uses object-based storage which is inherently faster"
+      ],
+      "correct_index": 1,
+      "explanation": "SAN presents storage as raw block devices to servers, eliminating file system protocol overhead that NAS requires. This direct block access reduces latency and increases throughput, making it ideal for performance-critical database workloads."
+    },
+    {
+      "question": "An organization wants to scale their file storage from 10TB to 500TB while maintaining POSIX compliance and supporting both Linux and Windows clients. What is the primary challenge they will face?",
+      "options": [
+        "Object storage cannot provide POSIX compliance",
+        "Single file server bottlenecks will limit concurrent access",
+        "SAN protocols don't support mixed operating systems",
+        "Network bandwidth becomes the only limiting factor"
+      ],
+      "correct_index": 1,
+      "explanation": "Traditional NAS solutions using single file servers create bottlenecks as they scale. All client requests must go through the file server, limiting concurrent access. Solutions include clustered NAS or distributed file systems to overcome this limitation."
+    },
+    {
+      "question": "A distributed object storage system claims to scale to exabytes. What networking characteristic enables this massive scalability compared to traditional file or block storage?",
+      "options": [
+        "Object storage uses faster network protocols",
+        "Each storage node can serve clients directly without centralized metadata",
+        "Object storage compresses all data before network transmission",
+        "Object storage only uses high-speed InfiniBand networks"
+      ],
+      "correct_index": 1,
+      "explanation": "Object storage systems can scale massively because they distribute both data and metadata across nodes. Clients can access any node directly, and the system uses consistent hashing or similar techniques to locate objects without centralized bottlenecks."
+    },
+    {
+      "question": "A company needs to provide shared storage for 1000 virtual machines across multiple physical hosts. The VMs require boot volumes and shared application data. Which combination of networked storage technologies would be most appropriate?",
+      "options": [
+        "Object storage for both boot volumes and shared data",
+        "SAN for boot volumes and NAS for shared application data",
+        "NAS for boot volumes and SAN for shared application data",
+        "Local storage only with network replication"
+      ],
+      "correct_index": 1,
+      "explanation": "SAN provides the high-performance block storage needed for VM boot volumes and OS operations, while NAS provides the file-level sharing capabilities needed for application data that multiple VMs must access simultaneously."
+    }
+  ],
+  "passing_score": 80
+}

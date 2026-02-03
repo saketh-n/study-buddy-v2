@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linear Algebra",
+  "questions": [
+    {
+      "question": "In machine learning, why is the dot product between two vectors particularly important for measuring similarity?",
+      "options": [
+        "It always produces a value between 0 and 1",
+        "It measures the magnitude of both vectors combined",
+        "It captures both the magnitude and directional alignment of the vectors",
+        "It eliminates the need to normalize the vectors"
+      ],
+      "correct_index": 2,
+      "explanation": "The dot product captures both magnitude and directional alignment. When vectors point in similar directions, the dot product is large and positive; when perpendicular, it's zero; when opposite, it's negative. This makes it ideal for similarity measures in ML."
+    },
+    {
+      "question": "When performing matrix multiplication A \u00d7 B in the context of neural networks, what does each element of the resulting matrix represent?",
+      "options": [
+        "The element-wise product of corresponding entries",
+        "The weighted sum of inputs using connection weights",
+        "The average of all possible input combinations",
+        "The maximum activation possible for each neuron"
+      ],
+      "correct_index": 1,
+      "explanation": "Each element in the resulting matrix represents a weighted sum where inputs (from matrix A) are multiplied by their corresponding weights (from matrix B) and summed. This is the fundamental operation in neural network forward propagation."
+    },
+    {
+      "question": "In Principal Component Analysis (PCA), eigenvalues of the covariance matrix tell us:",
+      "options": [
+        "The number of features in the original dataset",
+        "The amount of variance explained by each principal component",
+        "The correlation between different features",
+        "The optimal number of clusters in the data"
+      ],
+      "correct_index": 1,
+      "explanation": "Eigenvalues represent the amount of variance captured along each principal component direction. Larger eigenvalues indicate directions of greater variance in the data, which is why we typically keep components with the largest eigenvalues."
+    },
+    {
+      "question": "Why might you use matrix transpose in the backpropagation algorithm for training neural networks?",
+      "options": [
+        "To reduce computational complexity",
+        "To ensure gradients flow backward through the network architecture",
+        "To normalize the weight updates",
+        "To prevent overfitting during training"
+      ],
+      "correct_index": 1,
+      "explanation": "Matrix transpose is essential in backpropagation to ensure gradients can flow backward through the network. The transpose operation aligns the dimensions correctly so that gradients can be properly computed and propagated from output layers back to input layers."
+    },
+    {
+      "question": "A dataset has been transformed into a matrix where each row represents a data point and each column represents a feature. If you want to compute the covariance between all pairs of features, which matrix operation would you perform?",
+      "options": [
+        "X^T \u00d7 X, where X is the data matrix",
+        "X \u00d7 X^T, where X is the data matrix",
+        "(X - \u03bc)^T \u00d7 (X - \u03bc), where \u03bc is the mean",
+        "X^T \u00d7 X^T, where X is the data matrix"
+      ],
+      "correct_index": 2,
+      "explanation": "To compute covariance between features, you need (X - \u03bc)^T \u00d7 (X - \u03bc) where X is mean-centered. This gives a feature\u00d7feature covariance matrix. The transpose ensures you're computing relationships between features (columns) rather than between data points (rows)."
+    }
+  ],
+  "passing_score": 80
+}

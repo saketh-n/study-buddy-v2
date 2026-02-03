@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linear Regression",
+  "questions": [
+    {
+      "question": "Which scenario is MOST appropriate for using linear regression?",
+      "options": [
+        "Classifying emails as spam or not spam",
+        "Predicting house prices based on square footage and location",
+        "Clustering customers into different segments",
+        "Recognizing handwritten digits"
+      ],
+      "correct_index": 1,
+      "explanation": "Linear regression is designed for predicting continuous numerical values (like house prices) based on input features. The other options involve classification or unsupervised learning tasks."
+    },
+    {
+      "question": "What does the slope coefficient in a linear regression model represent?",
+      "options": [
+        "The predicted value when all features equal zero",
+        "The change in the target variable for a one-unit increase in that feature",
+        "The correlation between all features",
+        "The total error in the model"
+      ],
+      "correct_index": 1,
+      "explanation": "The slope coefficient indicates how much the dependent variable (target) changes when the independent variable (feature) increases by one unit, holding other variables constant."
+    },
+    {
+      "question": "Why might linear regression perform poorly on a dataset where the relationship between features and target follows a curved pattern?",
+      "options": [
+        "Linear regression can only handle categorical data",
+        "Linear regression assumes a straight-line relationship between variables",
+        "Linear regression requires too much computational power",
+        "Linear regression cannot handle multiple features"
+      ],
+      "correct_index": 1,
+      "explanation": "Linear regression assumes a linear relationship between features and the target variable. When the true relationship is curved or non-linear, a straight line cannot capture the pattern effectively, leading to poor predictions."
+    },
+    {
+      "question": "A linear regression model predicts student test scores based on hours studied. The model equation is: Score = 60 + 5 \u00d7 Hours. What does this tell you?",
+      "options": [
+        "Students who don't study at all are predicted to score 5 points",
+        "Each additional hour of study is associated with a 5-point increase in score",
+        "The maximum possible score is 65 points",
+        "Students must study at least 60 hours to pass"
+      ],
+      "correct_index": 1,
+      "explanation": "The coefficient 5 means that for each additional hour studied, the predicted test score increases by 5 points. The intercept (60) represents the predicted score when hours studied equals zero."
+    },
+    {
+      "question": "When evaluating a linear regression model, you notice that predictions are consistently too high for low actual values and too low for high actual values. What does this suggest?",
+      "options": [
+        "The model has perfect accuracy",
+        "The model likely has a non-linear relationship that linear regression cannot capture",
+        "The model needs more training data",
+        "The features are highly correlated with each other"
+      ],
+      "correct_index": 1,
+      "explanation": "This pattern suggests the true relationship is curved rather than linear. A straight line tends to underestimate at the extremes when the actual relationship curves upward, indicating that a non-linear model might be more appropriate."
+    }
+  ],
+  "passing_score": 80
+}

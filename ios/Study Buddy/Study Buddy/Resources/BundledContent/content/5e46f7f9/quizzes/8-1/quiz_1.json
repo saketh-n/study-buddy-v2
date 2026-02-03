@@ -1,0 +1,61 @@
+{
+  "topic_name": "SSL VPNs",
+  "questions": [
+    {
+      "question": "What is the primary advantage of SSL VPNs over traditional IPsec VPNs when providing remote access to corporate networks?",
+      "options": [
+        "SSL VPNs operate at Layer 2 while IPsec operates at Layer 3",
+        "SSL VPNs can traverse NAT and firewall devices more easily since they use standard HTTPS ports",
+        "SSL VPNs provide stronger encryption algorithms than IPsec",
+        "SSL VPNs have lower latency due to reduced protocol overhead"
+      ],
+      "correct_index": 1,
+      "explanation": "SSL VPNs use TLS over standard HTTPS (port 443), making them easier to deploy through firewalls and NAT devices without requiring special configuration, unlike IPsec which often requires specific ports and protocols to be opened."
+    },
+    {
+      "question": "A company needs to provide secure remote access to both technical users who need full network access and business users who only need web-based applications. Which SSL VPN implementation strategy would be most appropriate?",
+      "options": [
+        "Use only browser-based SSL VPN for all users to simplify management",
+        "Deploy client-based VPN (like AnyConnect) for technical users and browser-based access for business users",
+        "Use daemon-based implementation for all users regardless of their needs",
+        "Implement only TUN interfaces to provide Layer 3 connectivity for everyone"
+      ],
+      "correct_index": 1,
+      "explanation": "A hybrid approach best serves different user needs: technical users requiring full network access benefit from client-based solutions with TUN/TAP interfaces, while business users accessing web applications can use simpler browser-based SSL VPN without additional software installation."
+    },
+    {
+      "question": "When configuring an SSL VPN with TUN/TAP interfaces, what is the key difference between TUN and TAP interfaces in terms of network layer operation?",
+      "options": [
+        "TUN operates at Layer 2 and handles Ethernet frames, while TAP operates at Layer 3 and handles IP packets",
+        "TUN operates at Layer 3 and handles IP packets, while TAP operates at Layer 2 and handles Ethernet frames",
+        "TUN provides encryption while TAP does not",
+        "TUN is used for browser-based VPNs while TAP is used for client-based VPNs"
+      ],
+      "correct_index": 1,
+      "explanation": "TUN interfaces operate at Layer 3 (Network layer) and handle IP packets, making them suitable for routing scenarios. TAP interfaces operate at Layer 2 (Data Link layer) and handle Ethernet frames, allowing for bridging scenarios and support for non-IP protocols."
+    },
+    {
+      "question": "Why would a network administrator choose a daemon-based SSL VPN implementation over a browser-based solution for certain users?",
+      "options": [
+        "Daemon-based solutions provide better web application compatibility",
+        "Daemon-based solutions can provide persistent connectivity and access to network resources beyond HTTP/HTTPS",
+        "Daemon-based solutions require less server-side processing power",
+        "Daemon-based solutions work better with older web browsers"
+      ],
+      "correct_index": 1,
+      "explanation": "Daemon-based SSL VPN implementations run as background services and can create persistent tunnel connections with TUN/TAP interfaces, enabling access to any network protocol and maintaining connectivity even when browsers are closed, unlike browser-based solutions that are limited to web traffic during active sessions."
+    },
+    {
+      "question": "In an SSL VPN deployment, when would you encounter performance issues related to the TLS handshake process, and what is the primary cause?",
+      "options": [
+        "When users connect through slow internet connections because TLS requires high bandwidth",
+        "When many users connect simultaneously because each connection requires CPU-intensive cryptographic operations for session establishment",
+        "When using TAP interfaces because they add additional protocol overhead",
+        "When implementing browser-based access because web browsers have limited TLS capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "TLS handshakes involve CPU-intensive cryptographic operations including certificate verification, key exchange, and cipher negotiation. When many users connect simultaneously, this can create a processing bottleneck on the SSL VPN gateway, requiring adequate server resources and potentially SSL acceleration hardware."
+    }
+  ],
+  "passing_score": 80
+}

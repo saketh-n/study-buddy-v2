@@ -1,0 +1,61 @@
+{
+  "topic_name": "Colonial Government and Administration",
+  "questions": [
+    {
+      "question": "Why did France transition from company-controlled administration to royal government in New France in 1663?",
+      "options": [
+        "The fur trade became too profitable for private companies to manage",
+        "The company system failed to provide adequate defense and population growth",
+        "The Catholic Church demanded direct royal control over religious matters",
+        "British competition forced France to centralize military command"
+      ],
+      "correct_index": 1,
+      "explanation": "The company system under the Company of One Hundred Associates failed to adequately defend the colony and attract sufficient settlers, prompting Louis XIV to establish direct royal control to better manage colonial development and security."
+    },
+    {
+      "question": "In what situation would the intendant of New France most likely override a decision made by the governor?",
+      "options": [
+        "During military campaigns against Indigenous peoples",
+        "When negotiating treaties with other European powers",
+        "In matters of taxation and economic regulation",
+        "While appointing military officers for frontier posts"
+      ],
+      "correct_index": 2,
+      "explanation": "The intendant held primary authority over civil administration, justice, and finances, including taxation and economic policy, while the governor focused on military and diplomatic affairs."
+    },
+    {
+      "question": "Which aspect of the seigneurial system best demonstrates how French colonial administration adapted European feudalism to North American conditions?",
+      "options": [
+        "Seigneurs were required to maintain private armies for defense",
+        "Habitants could freely sell their land without seigneurial consent",
+        "Seigneurs were obligated to establish mills and roads for community use",
+        "The Catholic Church was excluded from holding seigneurial grants"
+      ],
+      "correct_index": 2,
+      "explanation": "Unlike European feudalism, the seigneurial system in New France emphasized development obligations, requiring seigneurs to provide essential infrastructure like mills and roads to encourage settlement and economic development."
+    },
+    {
+      "question": "How did the Sovereign Council's composition reflect the balance of power in New France's government?",
+      "options": [
+        "It was dominated by elected representatives from each seigneury",
+        "It included the governor, intendant, and bishop as key members",
+        "It consisted entirely of appointed nobles from France",
+        "It gave equal representation to French colonists and Indigenous leaders"
+      ],
+      "correct_index": 1,
+      "explanation": "The Sovereign Council balanced the three main sources of authority in New France: military (governor), civil administration (intendant), and religious (bishop), reflecting the integrated approach to colonial governance."
+    },
+    {
+      "question": "When would colonial administrators in New France be most likely to bypass normal bureaucratic channels and make decisions independently from France?",
+      "options": [
+        "During the annual fur trade negotiations with Indigenous peoples",
+        "When responding to immediate military threats or emergencies",
+        "While collecting taxes from habitants and seigneurs",
+        "In routine matters of land grants and seigneurial assignments"
+      ],
+      "correct_index": 1,
+      "explanation": "The vast distance and slow communication with France meant that colonial administrators, particularly the governor, needed authority to make rapid decisions during military crises or emergencies without waiting for instructions from the mother country."
+    }
+  ],
+  "passing_score": 80
+}

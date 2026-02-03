@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Because Ethernet frames require physical MAC addresses for Layer 2 delivery within the local network",
+      "correct_answer": "Because Ethernet frames require physical MAC addresses for Layer 2 delivery within the local network",
+      "analysis": "Great job!",
+      "explanation": "ARP is necessary because Ethernet operates at Layer 2 and requires MAC addresses to deliver frames within the local network segment. Even though devices have IP addresses, the actual frame delivery mechanism needs the physical hardware address."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "The host broadcasts an ARP request asking 'Who has 192.168.1.100?' to all devices on the local network",
+      "correct_answer": "The host broadcasts an ARP request asking 'Who has 192.168.1.100?' to all devices on the local network",
+      "analysis": "Great job!",
+      "explanation": "When a host needs a MAC address that's not in its ARP table, it broadcasts an ARP request to all devices on the local network segment asking which device owns the target IP address."
+    },
+    {
+      "question_num": 3,
+      "is_correct": false,
+      "student_choice": "Sending data to a host on a different subnet through a router",
+      "correct_answer": "Accessing a local network printer",
+      "analysis": "The correct answer was: Accessing a local network printer",
+      "explanation": "ARP is not used when sending data to a host on a different subnet. In this case, the host uses ARP to find the MAC address of its default gateway/router, not the destination host, since the router will handle the inter-network delivery."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "ARP cache poisoning, because ARP responses are not authenticated and hosts trust any ARP reply",
+      "correct_answer": "ARP cache poisoning, because ARP responses are not authenticated and hosts trust any ARP reply",
+      "analysis": "Great job!",
+      "explanation": "ARP cache poisoning is possible because the ARP protocol was designed without authentication mechanisms. Hosts will accept and cache ARP responses even if they didn't request them, allowing malicious actors to send false MAC-to-IP mappings."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "An ARP spoofing attack where an attacker is sending frequent gratuitous ARP responses",
+      "correct_answer": "An ARP spoofing attack where an attacker is sending frequent gratuitous ARP responses",
+      "analysis": "Great job!",
+      "explanation": "Frequent ARP table updates typically indicate an ARP spoofing attack where an attacker sends gratuitous (unsolicited) ARP responses to update victim machines' ARP caches with false information, often to redirect traffic through the attacker's system."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

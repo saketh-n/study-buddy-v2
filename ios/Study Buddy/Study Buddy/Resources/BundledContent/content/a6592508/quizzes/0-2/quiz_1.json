@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hair Growth Cycle",
+  "questions": [
+    {
+      "question": "A patient notices increased hair shedding 3 months after a major surgery. Understanding the hair growth cycle, what is the most likely explanation for this timing?",
+      "options": [
+        "The anagen phase was immediately disrupted during surgery",
+        "Hair follicles entered telogen phase during stress and are now shedding",
+        "The catagen phase was extended due to surgical trauma",
+        "New hair growth in anagen phase is pushing out old hair"
+      ],
+      "correct_index": 1,
+      "explanation": "Telogen effluvium occurs when stress pushes follicles into the telogen (resting) phase. Since telogen lasts about 3 months before shedding, the timing matches the surgical stress period."
+    },
+    {
+      "question": "Why would a hair transplant surgeon need to consider the anagen phase duration when planning treatment for pattern baldness?",
+      "options": [
+        "Anagen phase determines how quickly transplanted hair will grow",
+        "Shorter anagen phases in balding areas mean transplanted hair won't grow as long",
+        "Anagen phase timing affects when to schedule follow-up procedures",
+        "The anagen phase controls blood supply to transplanted follicles"
+      ],
+      "correct_index": 1,
+      "explanation": "In androgenetic alopecia, DHT shortens the anagen phase, resulting in shorter, finer hair. Transplanted hair from areas with normal anagen duration will grow longer and thicker than the surrounding miniaturized hair."
+    },
+    {
+      "question": "A dermatologist examines a patient's scalp and finds that 85% of hairs are in anagen phase. What conclusion can be drawn?",
+      "options": [
+        "This indicates abnormal hair growth requiring treatment",
+        "This suggests the patient has androgenetic alopecia",
+        "This is within normal range for a healthy scalp",
+        "This means the patient recently experienced significant hair loss"
+      ],
+      "correct_index": 2,
+      "explanation": "Normally, about 85-90% of scalp hairs are in the anagen (growth) phase at any given time, with the remainder in catagen or telogen phases. This distribution indicates healthy hair cycling."
+    },
+    {
+      "question": "During which phase would hair be most vulnerable to damage from chemotherapy, and why?",
+      "options": [
+        "Telogen, because hair is preparing to shed",
+        "Catagen, because follicles are transitioning",
+        "Anagen, because cells are rapidly dividing",
+        "All phases equally, because chemotherapy affects all hair"
+      ],
+      "correct_index": 2,
+      "explanation": "Chemotherapy targets rapidly dividing cells. During anagen phase, matrix cells in the hair bulb are actively dividing to produce the hair shaft, making them most susceptible to chemotherapy-induced damage."
+    },
+    {
+      "question": "If a new treatment claims to extend the anagen phase of hair growth, what would be the expected clinical benefit for patients with androgenetic alopecia?",
+      "options": [
+        "Faster hair growth rate",
+        "Increased number of new hair follicles",
+        "Longer, thicker individual hairs",
+        "Reduced hair shedding immediately"
+      ],
+      "correct_index": 2,
+      "explanation": "Androgenetic alopecia involves progressive shortening of anagen phase due to DHT sensitivity. Extending anagen phase would allow hair to grow for longer periods, resulting in longer length and increased diameter before entering catagen/telogen."
+    }
+  ],
+  "passing_score": 80
+}

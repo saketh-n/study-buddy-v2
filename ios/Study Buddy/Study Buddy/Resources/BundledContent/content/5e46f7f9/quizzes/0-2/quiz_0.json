@@ -1,0 +1,61 @@
+{
+  "topic_name": "IP Addressing and Subnetting",
+  "questions": [
+    {
+      "question": "A company has been assigned the network 172.20.0.0/16 and needs to create 30 separate subnets for different departments while maximizing the number of hosts per subnet. What subnet mask should they use?",
+      "options": [
+        "/21 (255.255.248.0)",
+        "/22 (255.255.252.0)",
+        "/20 (255.255.240.0)",
+        "/19 (255.255.224.0)"
+      ],
+      "correct_index": 0,
+      "explanation": "Using /21 provides 32 subnets (2^5 = 32) which meets the requirement of 30 subnets, while leaving 11 host bits for 2046 hosts per subnet. /22 would only give 16 subnets, while /20 and /19 provide fewer hosts per subnet unnecessarily."
+    },
+    {
+      "question": "Why would a network administrator choose to use the 10.0.0.0/8 private address range instead of 192.168.0.0/16 for a large enterprise network?",
+      "options": [
+        "10.x addresses have better routing performance",
+        "10.x addresses provide more available IP addresses for hosts",
+        "10.x addresses are more secure than 192.168.x addresses",
+        "10.x addresses work better with IPv6 dual-stack configurations"
+      ],
+      "correct_index": 1,
+      "explanation": "The 10.0.0.0/8 range provides approximately 16.7 million addresses (24 host bits), while 192.168.0.0/16 only provides about 65,000 addresses (16 host bits). For large enterprises with many devices, the 10.x range offers much more addressing space."
+    },
+    {
+      "question": "An organization receives the IPv6 prefix 2001:db8:abcd::/48 from their ISP. They need to create 256 subnets for their campus network. What would be the appropriate subnet prefix length?",
+      "options": [
+        "/56",
+        "/64",
+        "/52",
+        "/60"
+      ],
+      "correct_index": 0,
+      "explanation": "Starting with /48, they need 8 more bits to create 256 subnets (2^8 = 256). Adding 8 bits to the /48 gives /56. This leaves 8 bits for subnetting and maintains the standard /64 for host addressing when further subdivided."
+    },
+    {
+      "question": "A network technician discovers that devices on subnet 192.168.1.0/24 cannot communicate with devices on 192.168.2.0/24, even though both subnets are connected to the same switch. What is the most likely cause of this connectivity issue?",
+      "options": [
+        "The switch ports are configured for different VLANs",
+        "The subnets are using different subnet masks",
+        "A router is needed because the devices are on different networks",
+        "The 192.168.x addresses are conflicting with public internet addresses"
+      ],
+      "correct_index": 2,
+      "explanation": "Devices on different IP networks (192.168.1.0/24 vs 192.168.2.0/24) cannot communicate directly even if physically connected to the same switch. Layer 3 routing is required to forward packets between different IP networks."
+    },
+    {
+      "question": "When designing a network that needs to support both IPv4 and IPv6, why might an administrator avoid using the 192.168.0.0/24 subnet specifically?",
+      "options": [
+        "It conflicts with common home router default configurations",
+        "It cannot be properly mapped to IPv6 address space",
+        "It has insufficient addresses for dual-stack requirements",
+        "It is not a valid private IP range for enterprise use"
+      ],
+      "correct_index": 0,
+      "explanation": "Many consumer routers use 192.168.0.0/24 or 192.168.1.0/24 by default. Using these ranges in enterprise networks can create conflicts when employees connect VPN clients from home networks using the same addressing scheme, causing routing issues."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Specialized Controllers",
+  "questions": [
+    {
+      "question": "Your organization needs to deploy a log collection agent on every node in a Kubernetes cluster, including nodes that may be added in the future. Which controller would be most appropriate and why?",
+      "options": [
+        "Deployment, because it can scale horizontally across nodes",
+        "DaemonSet, because it ensures exactly one pod per node automatically",
+        "StatefulSet, because logs need persistent storage",
+        "ReplicaSet, because it maintains the desired number of replicas"
+      ],
+      "correct_index": 1,
+      "explanation": "DaemonSet is designed specifically for node-level services like log collection, monitoring agents, or network plugins. It automatically ensures one pod runs on each node, including newly added nodes, without manual scaling."
+    },
+    {
+      "question": "A distributed database requires that each instance has a unique, persistent identity and starts in a specific order. The first instance must be fully ready before the second starts. Which controller addresses these requirements?",
+      "options": [
+        "Deployment with persistent volumes",
+        "DaemonSet with ordered startup",
+        "StatefulSet with sequential deployment",
+        "ReplicaSet with volume claims"
+      ],
+      "correct_index": 2,
+      "explanation": "StatefulSet provides stable network identities, persistent storage, and ordered deployment/scaling. It ensures pods are created sequentially and each has a unique, stable hostname and storage, which is essential for stateful applications like databases."
+    },
+    {
+      "question": "What is the key difference in pod naming between StatefulSet and Deployment controllers?",
+      "options": [
+        "StatefulSet uses random suffixes while Deployment uses sequential numbers",
+        "StatefulSet uses predictable ordinal names while Deployment uses random hash suffixes",
+        "StatefulSet includes the node name while Deployment uses pod names only",
+        "StatefulSet uses DNS names while Deployment uses IP addresses"
+      ],
+      "correct_index": 1,
+      "explanation": "StatefulSet pods have predictable names with ordinal indexes (e.g., web-0, web-1, web-2), providing stable network identities. Deployment pods have random hash suffixes, making them interchangeable and suitable for stateless applications."
+    },
+    {
+      "question": "When would you choose DaemonSet over StatefulSet for a monitoring solution?",
+      "options": [
+        "When you need exactly one monitoring pod per node regardless of cluster size",
+        "When monitoring data needs to be stored persistently across restarts",
+        "When monitoring pods need to communicate with each other in sequence",
+        "When you need a specific number of monitoring instances independent of node count"
+      ],
+      "correct_index": 0,
+      "explanation": "DaemonSet is ideal when you need node-level monitoring with one pod per node. StatefulSet would be chosen if you needed a specific number of monitoring instances with persistent storage and stable identities, independent of the number of nodes."
+    },
+    {
+      "question": "A company is deploying a distributed cache system where each cache instance needs persistent storage and must be able to rejoin the cluster with the same identity after a restart. However, they don't require strict startup ordering. Which approach would be most appropriate?",
+      "options": [
+        "Use DaemonSet since persistent identity isn't critical for caching",
+        "Use Deployment with persistent volumes for better performance",
+        "Use StatefulSet even without strict ordering, for stable identities and persistent storage",
+        "Use multiple single-pod Deployments for better control"
+      ],
+      "correct_index": 2,
+      "explanation": "StatefulSet is still the best choice because it provides stable network identities and persistent storage that the cache system requires to rejoin the cluster properly. The ordered deployment feature can be disabled if not needed, but the stable identities and persistent storage remain valuable."
+    }
+  ],
+  "passing_score": 80
+}

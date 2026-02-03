@@ -1,0 +1,61 @@
+{
+  "topic_name": "Network Hardware Components",
+  "questions": [
+    {
+      "question": "A network administrator notices that when one computer sends a large file, all other computers on the network experience significant slowdown. Which network device is most likely causing this bottleneck, and why?",
+      "options": [
+        "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+        "A switch, because it floods all frames to every port",
+        "A router, because it processes every packet at Layer 3",
+        "A bridge, because it stores and forwards all frames"
+      ],
+      "correct_index": 0,
+      "explanation": "A hub operates at the physical layer and creates one large collision domain where all connected devices share the total bandwidth. When one device transmits heavily, it monopolizes the shared medium, causing slowdowns for all other devices."
+    },
+    {
+      "question": "In what scenario would you choose to use a bridge instead of a switch in a modern network design?",
+      "options": [
+        "When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+        "When you need high-speed switching between multiple VLANs",
+        "When you need to route packets between different IP subnets",
+        "When you need to eliminate all collision domains"
+      ],
+      "correct_index": 0,
+      "explanation": "Bridges are primarily used to connect two network segments and are typically simpler and less expensive than switches. While switches have largely replaced bridges, bridges might still be used in simple scenarios where only two segments need connection."
+    },
+    {
+      "question": "A company has computers with IP addresses 192.168.1.50 trying to reach a web server at 203.45.67.10. Which device's primary function is to determine the path for this communication?",
+      "options": [
+        "Hub - it will broadcast the request to all connected devices",
+        "Switch - it will learn MAC addresses and forward frames accordingly",
+        "Router - it will examine the destination IP address and determine the next hop",
+        "Gateway - it will translate between different protocols"
+      ],
+      "correct_index": 2,
+      "explanation": "A router operates at Layer 3 (Network layer) and uses IP addresses to determine the best path for packets between different networks. Since these IP addresses are on different networks, a router is needed to route the packets."
+    },
+    {
+      "question": "How does a switch handle unknown unicast frames differently from a hub?",
+      "options": [
+        "A switch drops unknown frames while a hub forwards them",
+        "A switch floods unknown frames to all ports except the source, while a hub repeats all signals to all ports",
+        "A switch broadcasts unknown frames while a hub unicasts them",
+        "A switch routes unknown frames while a hub bridges them"
+      ],
+      "correct_index": 1,
+      "explanation": "When a switch receives a frame for an unknown MAC address (not in its MAC address table), it floods the frame to all ports except the source port. A hub simply repeats all electrical signals to all ports regardless of the destination."
+    },
+    {
+      "question": "A network engineer needs to connect a legacy system using IPX protocol to a modern TCP/IP network. Which device would be most appropriate and why?",
+      "options": [
+        "A router, because it can route between different IP subnets",
+        "A switch, because it can handle multiple protocols at the data link layer",
+        "A gateway, because it can translate between different protocol stacks",
+        "A bridge, because it can connect different network segments"
+      ],
+      "correct_index": 2,
+      "explanation": "A gateway operates at multiple layers and can translate between different protocol stacks, such as converting IPX protocol communications to TCP/IP. This protocol translation capability is what distinguishes gateways from other network devices."
+    }
+  ],
+  "passing_score": 80
+}

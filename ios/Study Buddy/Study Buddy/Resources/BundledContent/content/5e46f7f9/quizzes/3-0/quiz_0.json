@@ -1,0 +1,61 @@
+{
+  "topic_name": "NAT Technologies",
+  "questions": [
+    {
+      "question": "A company needs to allow external users to access their internal web server (192.168.1.100) through their public IP address (203.45.67.89). Which NAT technology should they implement?",
+      "options": [
+        "Source NAT (SNAT)",
+        "Destination NAT (DNAT)",
+        "Port Address Translation (PAT)",
+        "1:1 NAT"
+      ],
+      "correct_index": 1,
+      "explanation": "DNAT is used when external traffic needs to reach internal servers. It translates the destination IP address from the public IP to the private IP, allowing inbound connections to reach the internal web server."
+    },
+    {
+      "question": "What is the primary reason PAT (Port Address Translation) can support thousands of internal devices using a single public IP address?",
+      "options": [
+        "It assigns each device a unique private IP address",
+        "It uses port numbers to distinguish between different internal connections",
+        "It rotates the public IP address among devices",
+        "It compresses the data packets to save address space"
+      ],
+      "correct_index": 1,
+      "explanation": "PAT maps multiple private IP addresses to a single public IP by using different port numbers for each connection. This allows the NAT device to track which internal device each returning packet belongs to based on the port number."
+    },
+    {
+      "question": "A small office with 50 employees needs internet access, but their ISP only provides one public IP address. The employees need to browse websites, send emails, and access cloud services. Which NAT solution would be most appropriate?",
+      "options": [
+        "1:1 NAT for each employee",
+        "DNAT with port forwarding",
+        "PAT (NAT Overload)",
+        "SNAT with static mapping"
+      ],
+      "correct_index": 2,
+      "explanation": "PAT (also called NAT Overload) is ideal for this scenario because it allows many internal devices to share a single public IP address for outbound connections. It's cost-effective and perfectly suited for typical office internet usage."
+    },
+    {
+      "question": "In which scenario would 1:1 NAT be preferred over PAT?",
+      "options": [
+        "When you want to conserve public IP addresses",
+        "When hosting multiple public servers that need full bidirectional access",
+        "When internal users only need web browsing access",
+        "When you want to hide the number of internal devices"
+      ],
+      "correct_index": 1,
+      "explanation": "1:1 NAT provides a dedicated public IP address for each internal device, making it ideal for servers that need to accept inbound connections on multiple ports or protocols. PAT would be limiting in this case as it typically requires specific port forwarding rules."
+    },
+    {
+      "question": "A network administrator notices that outbound connections from internal users are working fine, but they cannot set up an FTP server that external users can access. The current setup uses PAT. What is the most likely issue and solution?",
+      "options": [
+        "PAT is blocking FTP traffic; switch to SNAT",
+        "No inbound rules configured; need DNAT or port forwarding rules",
+        "FTP requires 1:1 NAT; PAT cannot handle FTP",
+        "The public IP is incorrect; need multiple public IPs"
+      ],
+      "correct_index": 1,
+      "explanation": "PAT handles outbound connections automatically but requires explicit DNAT rules or port forwarding to allow inbound connections to reach internal servers. Without these rules, external users cannot initiate connections to the internal FTP server."
+    }
+  ],
+  "passing_score": 80
+}

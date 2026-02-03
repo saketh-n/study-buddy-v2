@@ -1,0 +1,61 @@
+{
+  "topic_name": "Programming Fundamentals",
+  "questions": [
+    {
+      "question": "You need to store user session data that requires frequent insertions and deletions at both ends of the collection. Which data structure would be most appropriate?",
+      "options": [
+        "Array/List",
+        "Deque (Double-ended queue)",
+        "Hash Table",
+        "Binary Search Tree"
+      ],
+      "correct_index": 1,
+      "explanation": "A deque allows O(1) insertions and deletions at both ends, making it ideal for scenarios where you need to add/remove elements from the front and back efficiently, such as managing session data with FIFO/LIFO access patterns."
+    },
+    {
+      "question": "Why would you choose a hash table over a sorted array when you need to frequently check if specific user IDs exist in a dataset of 1 million records?",
+      "options": [
+        "Hash tables use less memory than arrays",
+        "Hash tables provide O(1) average lookup time vs O(log n) for binary search",
+        "Hash tables maintain sorted order automatically",
+        "Hash tables prevent duplicate entries"
+      ],
+      "correct_index": 1,
+      "explanation": "Hash tables provide O(1) average case lookup time, while binary search on a sorted array takes O(log n). For frequent existence checks on large datasets, this performance difference is significant."
+    },
+    {
+      "question": "In a data pipeline processing system, you need to implement a function that recursively processes nested JSON objects of unknown depth. What is the main risk you should address in your implementation?",
+      "options": [
+        "Memory leaks from unclosed file handles",
+        "Stack overflow from deep recursion",
+        "Race conditions in concurrent access",
+        "Integer overflow in large numbers"
+      ],
+      "correct_index": 1,
+      "explanation": "Recursive functions can cause stack overflow if the recursion depth exceeds the stack limit. With unknown depth JSON, you should implement depth limiting, iterative alternatives, or tail recursion optimization."
+    },
+    {
+      "question": "You're implementing a caching system where you need to evict the least recently used items when memory is full. Which combination of data structures would provide the most efficient solution?",
+      "options": [
+        "Array + Linear search",
+        "Hash table + Doubly linked list",
+        "Binary heap + Hash table",
+        "Queue + Hash table"
+      ],
+      "correct_index": 1,
+      "explanation": "An LRU cache requires O(1) access, insertion, and deletion. A hash table provides O(1) key lookup, while a doubly linked list allows O(1) insertion/deletion when you have a reference to the node."
+    },
+    {
+      "question": "When processing a large dataset, you notice that a sorting algorithm performs well on nearly-sorted data but poorly on reverse-sorted data. Which algorithm are you most likely using, and why might this behavior occur?",
+      "options": [
+        "Merge sort - it has inconsistent pivot selection",
+        "Quick sort - poor pivot selection leads to unbalanced partitions",
+        "Heap sort - it doesn't handle pre-sorted data efficiently",
+        "Bubble sort - it only works on small datasets"
+      ],
+      "correct_index": 1,
+      "explanation": "Quick sort's performance depends heavily on pivot selection. With reverse-sorted data and poor pivot choice (like always picking the first element), you get O(n\u00b2) worst-case performance due to highly unbalanced partitions."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Market Access and Pricing",
+  "questions": [
+    {
+      "question": "A patient with Type 2 diabetes has been prescribed semaglutide (Ozempic) but their insurance requires prior authorization. What is the PRIMARY reason insurers implement prior authorization for GLP-1 receptor agonists?",
+      "options": [
+        "To ensure the medication is clinically appropriate and cost-effective before approving coverage",
+        "To delay treatment and reduce the number of prescriptions filled",
+        "To force patients to try generic alternatives first",
+        "To collect additional data for pharmaceutical companies"
+      ],
+      "correct_index": 0,
+      "explanation": "Prior authorization is primarily a utilization management tool to ensure appropriate clinical use and cost-effectiveness, often requiring documentation of diabetes inadequately controlled on standard therapies or presence of cardiovascular risk factors."
+    },
+    {
+      "question": "When evaluating the cost-effectiveness of GLP-1 receptor agonists compared to insulin therapy, which factor would be MOST important for a health system formulary committee to consider?",
+      "options": [
+        "The wholesale acquisition cost per unit",
+        "The total cost of care including reduced hospitalizations and complications",
+        "The patient's ability to self-administer injections",
+        "The frequency of dosing administration"
+      ],
+      "correct_index": 1,
+      "explanation": "Cost-effectiveness analysis must consider total cost of care, including prevention of costly complications like cardiovascular events, hospitalizations, and long-term diabetes complications, not just drug acquisition costs."
+    },
+    {
+      "question": "A pharmaceutical company's patient assistance program for GLP-1 agonists typically has income eligibility requirements. Why do these programs often exclude patients with government insurance (Medicare/Medicaid)?",
+      "options": [
+        "Government insurance patients don't need financial assistance",
+        "Federal anti-kickback laws prohibit manufacturers from providing benefits to government insurance beneficiaries",
+        "These patients have better coverage through their government plans",
+        "The paperwork is too complex for government insurance"
+      ],
+      "correct_index": 1,
+      "explanation": "Federal anti-kickback statutes generally prohibit pharmaceutical manufacturers from providing free or discounted drugs directly to Medicare and Medicaid beneficiaries, as this could be seen as an inducement to use their products."
+    },
+    {
+      "question": "An employer-sponsored health plan is considering adding GLP-1 receptor agonists to their formulary with a high patient copay. What strategy would BEST balance access with cost management?",
+      "options": [
+        "Place all GLP-1s in the highest tier with maximum copays",
+        "Implement value-based insurance design with lower copays for patients meeting specific clinical criteria",
+        "Exclude GLP-1s entirely from coverage",
+        "Require patients to fail on insulin therapy first"
+      ],
+      "correct_index": 1,
+      "explanation": "Value-based insurance design aligns patient cost-sharing with clinical value, providing lower copays for high-value medications when used in appropriate patient populations, improving both access and outcomes while managing costs."
+    },
+    {
+      "question": "A health system pharmacist notices that GLP-1 receptor agonist utilization has decreased despite clinical guidelines supporting their use. What market access barrier is MOST likely contributing to this trend?",
+      "options": [
+        "Physicians are unaware of the clinical benefits",
+        "High patient out-of-pocket costs are creating affordability barriers",
+        "The medications are not effective",
+        "Patients prefer oral medications over injections"
+      ],
+      "correct_index": 1,
+      "explanation": "High patient cost-sharing is a major barrier to GLP-1 utilization, with studies showing that even modest increases in copays can significantly reduce medication adherence and initiation, despite clinical appropriateness."
+    }
+  ],
+  "passing_score": 80
+}

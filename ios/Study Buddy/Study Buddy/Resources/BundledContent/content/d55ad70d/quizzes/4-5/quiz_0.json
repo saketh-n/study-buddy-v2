@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layered filesystem",
+  "questions": [
+    {
+      "question": "What is the primary purpose of filesystem abstraction layers in operating systems?",
+      "options": [
+        "To increase storage capacity by compressing data",
+        "To provide a uniform interface for different storage devices and filesystem types",
+        "To encrypt all data stored on the filesystem",
+        "To automatically backup files to remote servers"
+      ],
+      "correct_index": 1,
+      "explanation": "Filesystem abstraction layers create a uniform interface that allows applications to interact with different types of storage devices and filesystems through standardized system calls, hiding the complexity of underlying storage mechanisms."
+    },
+    {
+      "question": "In a virtual filesystem (VFS) architecture, when would you most likely implement a new filesystem driver at the VFS layer?",
+      "options": [
+        "When you need to improve disk read speeds for existing filesystems",
+        "When you want to support a new storage device that uses a completely different data organization format",
+        "When you need to add user permissions to files",
+        "When you want to increase the maximum file size limit"
+      ],
+      "correct_index": 1,
+      "explanation": "A new filesystem driver at the VFS layer is needed when supporting storage devices or formats that organize data differently than existing filesystems, requiring new methods for file operations while maintaining the standard VFS interface."
+    },
+    {
+      "question": "Which scenario best demonstrates the benefit of layered filesystem architecture?",
+      "options": [
+        "A database application that needs to store large binary files",
+        "An application that needs to read files from both a local ext4 partition and a remote NFS share using identical system calls",
+        "A program that compresses files to save disk space",
+        "A backup utility that copies files between directories"
+      ],
+      "correct_index": 1,
+      "explanation": "The layered architecture allows applications to use the same system calls (open, read, write) regardless of whether files are stored locally on ext4 or remotely via NFS, demonstrating the abstraction benefit."
+    },
+    {
+      "question": "Why might a system administrator choose to implement an overlay filesystem in a containerized environment?",
+      "options": [
+        "To permanently modify the base container image for all future containers",
+        "To allow multiple containers to share a read-only base image while maintaining separate writable layers for each container",
+        "To increase the storage capacity of each individual container",
+        "To automatically synchronize files between containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Overlay filesystems enable efficient container deployment by allowing multiple containers to share a common read-only base layer while each container maintains its own writable layer for changes, reducing storage usage and deployment time."
+    },
+    {
+      "question": "What is the most likely consequence if the VFS layer in an operating system fails to properly abstract filesystem differences?",
+      "options": [
+        "All files will be automatically compressed",
+        "Applications will need filesystem-specific code to handle different storage types",
+        "The system will run out of memory",
+        "File permissions will be ignored"
+      ],
+      "correct_index": 1,
+      "explanation": "Without proper VFS abstraction, applications would need to implement different code paths for each filesystem type (ext4, NTFS, NFS, etc.), significantly increasing complexity and reducing portability."
+    }
+  ],
+  "passing_score": 80
+}

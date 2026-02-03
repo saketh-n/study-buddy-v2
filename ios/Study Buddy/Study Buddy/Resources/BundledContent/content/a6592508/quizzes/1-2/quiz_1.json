@@ -1,0 +1,61 @@
+{
+  "topic_name": "Mechanisms of Action",
+  "questions": [
+    {
+      "question": "What is the primary molecular mechanism by which DHT (dihydrotestosterone) causes hair follicle miniaturization in androgenetic alopecia?",
+      "options": [
+        "DHT binds to androgen receptors in dermal papilla cells, triggering gene expression changes that shorten the anagen phase",
+        "DHT directly destroys hair follicle stem cells through oxidative damage",
+        "DHT blocks blood vessels supplying nutrients to hair follicles",
+        "DHT increases sebum production which clogs follicles and prevents hair growth"
+      ],
+      "correct_index": 0,
+      "explanation": "DHT binds to androgen receptors in susceptible hair follicles, particularly in dermal papilla cells, leading to altered gene expression that progressively shortens the anagen (growth) phase and causes follicle miniaturization over successive hair cycles."
+    },
+    {
+      "question": "A 25-year-old woman experiences sudden, patchy hair loss after a stressful life event. Hair pull tests show dystrophic hairs that break easily. Which cellular mechanism is most likely responsible?",
+      "options": [
+        "Premature entry into catagen phase due to stress hormones like cortisol disrupting normal hair cycle regulation",
+        "Autoimmune attack on hair follicle melanocytes causing pigment loss and weakening",
+        "Increased DHT sensitivity causing rapid follicle miniaturization",
+        "Nutritional deficiency leading to keratin synthesis disruption"
+      ],
+      "correct_index": 0,
+      "explanation": "Telogen effluvium, triggered by stress, involves premature transition from anagen to catagen/telogen phases due to stress hormones disrupting normal hair cycle signals, resulting in synchronized shedding 2-4 months later."
+    },
+    {
+      "question": "Why would a 5-alpha reductase inhibitor be more effective for treating vertex baldness compared to frontal hairline recession in androgenetic alopecia?",
+      "options": [
+        "The frontal hairline has higher concentrations of type 1 5-alpha reductase, which is less affected by inhibitors",
+        "Vertex follicles have more androgen receptors and respond better to DHT reduction",
+        "Blood flow to the vertex is better, allowing more drug delivery",
+        "Frontal follicles are more sensitive to genetic factors that cannot be modified pharmacologically"
+      ],
+      "correct_index": 1,
+      "explanation": "The vertex (crown) region typically has higher androgen receptor density and greater sensitivity to DHT compared to frontal areas, making DHT reduction through 5-alpha reductase inhibition more clinically effective in this region."
+    },
+    {
+      "question": "In alopecia areata, T-lymphocytes attack hair follicles in the anagen phase. Why don't eyebrow and eyelash hairs, which also go through anagen, typically fall out in mild cases?",
+      "options": [
+        "Eyebrow and eyelash follicles express different immune privilege markers and have shorter anagen phases",
+        "These areas have better blood supply that delivers more immune-suppressing factors",
+        "Eyebrow and eyelash hairs contain different keratin types that are not recognized by T-cells",
+        "The autoimmune response only targets follicles with high melanin content"
+      ],
+      "correct_index": 0,
+      "explanation": "Different hair follicle regions have varying degrees of immune privilege and express different molecular markers. Eyebrow/eyelash follicles often maintain better immune privilege and have distinct anagen characteristics compared to scalp follicles."
+    },
+    {
+      "question": "A patient asks why minoxidil works for hair regrowth when it was originally developed as a blood pressure medication. What is the most accurate explanation of minoxidil's mechanism in hair follicles?",
+      "options": [
+        "Minoxidil opens potassium channels in follicle cells, leading to increased growth factor production and prolonged anagen phase",
+        "Minoxidil improves scalp blood flow, delivering more nutrients and oxygen to hair follicles",
+        "Minoxidil blocks DHT receptors, preventing androgenetic miniaturization",
+        "Minoxidil stimulates new blood vessel formation around follicles through direct vasodilation"
+      ],
+      "correct_index": 0,
+      "explanation": "Minoxidil acts as a potassium channel opener in hair follicle cells, which triggers cellular signaling cascades that increase growth factor production (like VEGF) and extend the anagen phase, rather than working primarily through vascular effects."
+    }
+  ],
+  "passing_score": 80
+}

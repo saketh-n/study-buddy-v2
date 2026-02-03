@@ -1,0 +1,61 @@
+{
+  "topic_name": "CAPSTONE: AWS S3 design (IAM/Tenancy, URI design, Action Verbs, Interface API model, backend design, name space, operations, integration). .. USE OF STORAGE AND NETWORKING CONCEPTS",
+  "questions": [
+    {
+      "question": "When designing the IAM policy structure for a multi-tenant S3-like storage system, what is the PRIMARY reason for implementing resource-based policies in addition to identity-based policies?",
+      "options": [
+        "To enable cross-account access and allow bucket owners to grant permissions to users from different AWS accounts or external systems",
+        "To reduce the computational overhead of permission checking by caching policies at the resource level",
+        "To ensure that all API calls are logged with the correct user identity for compliance purposes",
+        "To prevent users from accidentally deleting their own buckets by requiring explicit resource-level authorization"
+      ],
+      "correct_index": 0,
+      "explanation": "Resource-based policies are essential for cross-account access scenarios where bucket owners need to grant permissions to principals outside their own account, which identity-based policies alone cannot achieve effectively."
+    },
+    {
+      "question": "In designing the URI structure for an S3-like system, why would you choose a virtual-hosted-style URL (bucket.service.com/object) over a path-style URL (service.com/bucket/object) as the primary addressing scheme?",
+      "options": [
+        "Virtual-hosted style provides better load balancing because each bucket gets its own subdomain",
+        "Path-style URLs cannot handle object names that contain special characters or Unicode",
+        "Virtual-hosted style enables SSL certificate validation per bucket and better CDN integration",
+        "Path-style URLs require more complex parsing logic and are slower to process"
+      ],
+      "correct_index": 2,
+      "explanation": "Virtual-hosted-style URLs enable proper SSL certificate validation (avoiding certificate mismatch issues) and integrate better with CDNs that can cache content more effectively with distinct hostnames per bucket."
+    },
+    {
+      "question": "When implementing the backend storage architecture for an S3-like system, what is the MOST important factor in deciding between storing object metadata in the same location as object data versus in a separate metadata service?",
+      "options": [
+        "The size of individual objects, with larger objects requiring separate metadata storage",
+        "The frequency of metadata operations relative to data operations and the need for atomic consistency",
+        "The geographic distribution of users, requiring metadata to be closer to compute resources",
+        "The encryption requirements, as encrypted objects cannot have embedded metadata"
+      ],
+      "correct_index": 1,
+      "explanation": "Separating metadata allows for optimized access patterns - metadata operations (listing, searching, permissions checking) can be served quickly without accessing large data objects, and ensures atomic consistency for metadata updates."
+    },
+    {
+      "question": "In designing the REST API for an S3-like storage system, why would you implement conditional operations (If-Match, If-None-Match headers) rather than relying solely on optimistic locking?",
+      "options": [
+        "Conditional operations provide better performance by reducing the number of round trips required for updates",
+        "They prevent the lost update problem in concurrent scenarios and enable efficient caching with ETags",
+        "Optimistic locking requires additional database tables that increase storage overhead",
+        "Conditional operations are required by the HTTP specification for all PUT and DELETE methods"
+      ],
+      "correct_index": 1,
+      "explanation": "Conditional operations using ETags prevent lost updates when multiple clients modify the same object concurrently and enable efficient HTTP caching by allowing clients to validate cached content without downloading it again."
+    },
+    {
+      "question": "When integrating an S3-like storage system with existing enterprise systems, what is the PRIMARY architectural consideration for implementing eventual consistency versus strong consistency?",
+      "options": [
+        "Strong consistency is always preferred as it eliminates the possibility of reading stale data",
+        "The trade-off between system availability during network partitions and the application's tolerance for temporary inconsistency",
+        "Eventual consistency requires more complex client-side retry logic and error handling",
+        "Strong consistency provides better performance for read-heavy workloads with multiple replicas"
+      ],
+      "correct_index": 1,
+      "explanation": "The choice between consistency models primarily depends on the CAP theorem trade-offs - strong consistency may reduce availability during network issues, while eventual consistency maintains availability but requires applications that can handle temporary stale reads."
+    }
+  ],
+  "passing_score": 80
+}

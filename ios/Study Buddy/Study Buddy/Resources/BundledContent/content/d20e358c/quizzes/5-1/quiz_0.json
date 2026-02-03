@@ -1,0 +1,61 @@
+{
+  "topic_name": "Specialized Controllers",
+  "questions": [
+    {
+      "question": "Your team needs to deploy a logging agent that must run on every node in the cluster to collect system logs. Which controller is most appropriate and why?",
+      "options": [
+        "Deployment because it ensures high availability across nodes",
+        "DaemonSet because it guarantees exactly one pod per node",
+        "StatefulSet because logs need persistent storage",
+        "ReplicaSet because it maintains the desired number of replicas"
+      ],
+      "correct_index": 1,
+      "explanation": "DaemonSet is designed specifically for node-level services that need to run exactly once on every node in the cluster, making it perfect for logging agents, monitoring tools, and system-level services."
+    },
+    {
+      "question": "A database cluster requires ordered deployment where each instance must start only after the previous one is ready, and each needs a unique persistent volume. What makes StatefulSet the right choice?",
+      "options": [
+        "It provides automatic load balancing between database instances",
+        "It ensures pods are created randomly to avoid resource conflicts",
+        "It guarantees ordered deployment and provides stable, unique network identities",
+        "It automatically scales based on database query load"
+      ],
+      "correct_index": 2,
+      "explanation": "StatefulSet provides ordered deployment (pods start sequentially), stable network identities (predictable hostnames), and ordered persistent storage allocation, which are crucial for stateful applications like databases."
+    },
+    {
+      "question": "When scaling down a StatefulSet from 5 replicas to 3, which pods will be terminated and in what order?",
+      "options": [
+        "Random pods will be terminated simultaneously",
+        "The oldest pods (0, 1) will be terminated first",
+        "The newest pods (4, 3) will be terminated in reverse order",
+        "All pods restart with new identities"
+      ],
+      "correct_index": 2,
+      "explanation": "StatefulSet always terminates pods in reverse ordinal order during scale-down operations. So when scaling from 5 to 3, pod-4 terminates first, then pod-3, maintaining the ordered nature of the remaining pods."
+    },
+    {
+      "question": "A company wants to deploy a network security scanner on their Kubernetes cluster. The scanner must inspect traffic on each node and requires root-level access to network interfaces. Why would DaemonSet be problematic without additional configuration?",
+      "options": [
+        "DaemonSet pods cannot access persistent storage",
+        "DaemonSet doesn't guarantee pod placement on every node",
+        "DaemonSet pods run with restricted privileges by default",
+        "DaemonSet cannot handle network-related workloads"
+      ],
+      "correct_index": 2,
+      "explanation": "While DaemonSet ensures the scanner runs on every node, pods run with restricted privileges by default. For root-level access to network interfaces, you'd need to configure appropriate SecurityContext, privileged mode, or specific capabilities."
+    },
+    {
+      "question": "Your application consists of a web frontend (stateless) and a Redis cluster (stateful with master-slave replication). How should you deploy these components?",
+      "options": [
+        "Use StatefulSet for both to ensure data consistency",
+        "Use DaemonSet for Redis to run on every node, Deployment for frontend",
+        "Use Deployment for frontend (stateless scaling), StatefulSet for Redis (ordered startup)",
+        "Use ReplicaSet for both since they need multiple instances"
+      ],
+      "correct_index": 2,
+      "explanation": "The stateless frontend should use Deployment for flexible scaling and rolling updates. Redis cluster needs StatefulSet because master-slave replication requires ordered startup, stable network identities, and persistent storage for each instance."
+    }
+  ],
+  "passing_score": 80
+}

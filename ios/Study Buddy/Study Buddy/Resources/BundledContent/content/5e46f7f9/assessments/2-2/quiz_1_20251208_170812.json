@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "The user is using POP3 instead of IMAP",
+      "correct_answer": "The user is using POP3 instead of IMAP",
+      "analysis": "Great job!",
+      "explanation": "POP3 downloads emails to a single device and doesn't synchronize folders across multiple devices. IMAP keeps emails on the server and synchronizes all folders, including Sent items, across all devices."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "IMAP enables seamless email access across multiple devices",
+      "correct_answer": "IMAP enables seamless email access across multiple devices",
+      "analysis": "Great job!",
+      "explanation": "IMAP stores emails on the server and synchronizes them across all devices, making it ideal for users who access email from multiple locations. POP3 downloads emails to one device, making multi-device access problematic."
+    },
+    {
+      "question_num": 3,
+      "is_correct": false,
+      "student_choice": "IMAP authenticates \u2192 SMTP sends \u2192 POP3 delivers",
+      "correct_answer": "SMTP sends to recipient's server \u2192 recipient uses POP3 or IMAP to retrieve",
+      "analysis": "The correct answer was: SMTP sends to recipient's server \u2192 recipient uses POP3 or IMAP to retrieve",
+      "explanation": "SMTP handles outgoing mail transmission between servers. Once delivered to the recipient's mail server, the recipient uses either POP3 or IMAP to retrieve and read the message. IMAP and POP3 are retrieval protocols, not sending protocols."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "IMAP with selective synchronization",
+      "correct_answer": "IMAP with selective synchronization",
+      "analysis": "Great job!",
+      "explanation": "IMAP with selective synchronization allows access from multiple devices while conserving local storage by keeping emails on the server. Users can choose which folders to sync locally, perfect for mobile devices with limited storage."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "The IMAP/POP3 services are down while SMTP is functioning",
+      "correct_answer": "The IMAP/POP3 services are down while SMTP is functioning",
+      "analysis": "Great job!",
+      "explanation": "SMTP handles outgoing mail (sending), while IMAP/POP3 handle incoming mail retrieval. If SMTP is working but users can't receive emails, the issue is likely with the retrieval protocols (IMAP/POP3 services) being down or misconfigured."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

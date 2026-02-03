@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local Filesystem layout : Boot block, Root block (meta data and inodes), data blocks,,.. Driver program translates stuff;",
+  "questions": [
+    {
+      "question": "Why is the boot block typically placed at the beginning of the storage device rather than at the end or middle?",
+      "options": [
+        "Because it contains the largest amount of data and needs the most space",
+        "Because the BIOS/UEFI firmware knows to look for bootable code at fixed, predictable locations",
+        "Because it needs to be close to the root directory for faster access",
+        "Because it contains the filesystem metadata that must be read first"
+      ],
+      "correct_index": 1,
+      "explanation": "The boot block is placed at predictable locations (like sector 0) because the BIOS/UEFI firmware is programmed to look for bootable code at these standard locations during the boot process."
+    },
+    {
+      "question": "A system administrator notices that a filesystem is running out of space even though many files have been deleted. What is the most likely cause related to filesystem layout?",
+      "options": [
+        "The boot block has become corrupted",
+        "The data blocks are fragmented across the disk",
+        "The inodes are still allocated even though files are deleted, but the space hasn't been reclaimed",
+        "The root block metadata is taking up too much space"
+      ],
+      "correct_index": 2,
+      "explanation": "When files are deleted, their data blocks should be freed, but if the deletion process is incomplete or if there are still references to the files, the inodes may remain allocated, preventing space reclamation."
+    },
+    {
+      "question": "In what scenario would a filesystem driver need to translate between logical and physical block addresses?",
+      "options": [
+        "Only when the filesystem becomes corrupted",
+        "When applications request file operations and the driver must locate the actual storage locations",
+        "Only during the initial formatting of the storage device",
+        "When the boot block needs to be updated"
+      ],
+      "correct_index": 1,
+      "explanation": "The filesystem driver constantly translates between the logical file system view (files, directories) and physical storage locations (specific disk blocks) whenever applications perform file operations."
+    },
+    {
+      "question": "Why do modern filesystems separate metadata (inodes) from actual file data in different regions of the storage device?",
+      "options": [
+        "To make the filesystem more secure against unauthorized access",
+        "To enable faster metadata operations and reduce fragmentation of critical filesystem structures",
+        "To ensure the boot block can access file data directly",
+        "To make file compression more efficient"
+      ],
+      "correct_index": 1,
+      "explanation": "Separating metadata from data allows the filesystem to optimize metadata access patterns, reduce fragmentation of critical structures, and improve performance for operations that only need metadata."
+    },
+    {
+      "question": "When a filesystem driver reports 'block corruption' in the root block area, which operations would be most immediately affected?",
+      "options": [
+        "Only the ability to boot the operating system",
+        "Reading and writing large files",
+        "Directory traversal and file lookup operations",
+        "Only newly created files"
+      ],
+      "correct_index": 2,
+      "explanation": "The root block contains critical metadata including the root directory inode and filesystem parameters. Corruption here would immediately affect the ability to navigate directories and locate files."
+    }
+  ],
+  "passing_score": 80
+}

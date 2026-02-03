@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layered filesystem",
+  "questions": [
+    {
+      "question": "What is the primary purpose of filesystem abstraction layers in modern operating systems?",
+      "options": [
+        "To increase storage capacity by compressing files",
+        "To provide a uniform interface for different filesystem types while hiding implementation details",
+        "To encrypt all file operations for security",
+        "To automatically backup files to multiple locations"
+      ],
+      "correct_index": 1,
+      "explanation": "Filesystem abstraction layers create a consistent interface that allows applications to work with different filesystem types (ext4, NTFS, FAT32, etc.) without knowing the underlying implementation details."
+    },
+    {
+      "question": "When would you most likely implement a virtual filesystem (VFS) layer in a system design?",
+      "options": [
+        "When you need to optimize disk read speeds",
+        "When you want to support multiple filesystem formats and provide a unified API",
+        "When you need to reduce memory usage",
+        "When you want to implement file compression"
+      ],
+      "correct_index": 1,
+      "explanation": "VFS is implemented when you need to support multiple filesystem types while providing applications with a single, consistent interface for file operations, regardless of the underlying filesystem format."
+    },
+    {
+      "question": "In a layered filesystem architecture, what happens when an application calls a standard file operation like 'open()'?",
+      "options": [
+        "The call goes directly to the hardware driver",
+        "The call is processed by the VFS layer, which then delegates to the appropriate filesystem-specific implementation",
+        "The call is immediately cached in memory",
+        "The call triggers a backup operation"
+      ],
+      "correct_index": 1,
+      "explanation": "The VFS layer acts as an intermediary, receiving the generic 'open()' call and translating it to the specific implementation required by the underlying filesystem (ext4, NTFS, etc.)."
+    },
+    {
+      "question": "Why might a system administrator choose to use filesystem layering with union mounts or overlay filesystems?",
+      "options": [
+        "To permanently merge multiple disks into one larger disk",
+        "To create a read-only base layer with a writable overlay, useful for containers or system rollback capabilities",
+        "To automatically encrypt sensitive files",
+        "To improve network file transfer speeds"
+      ],
+      "correct_index": 1,
+      "explanation": "Union mounts and overlay filesystems allow combining multiple filesystem layers, typically with a read-only base and writable overlay, enabling use cases like container filesystems and system snapshots."
+    },
+    {
+      "question": "What is a key advantage of implementing filesystem operations through multiple abstraction layers rather than having applications interact directly with storage hardware?",
+      "options": [
+        "Direct hardware access is always faster than layered access",
+        "Layered systems automatically provide better security than direct access",
+        "Applications remain portable and don't need modification when underlying storage technology changes",
+        "Layered systems use less memory than direct hardware access"
+      ],
+      "correct_index": 2,
+      "explanation": "Abstraction layers provide portability - applications can run on different storage systems and filesystem types without modification, as they interact with a consistent interface rather than hardware-specific implementations."
+    }
+  ],
+  "passing_score": 80
+}

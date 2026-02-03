@@ -1,0 +1,61 @@
+{
+  "topic_name": "Penetration Testing",
+  "questions": [
+    {
+      "question": "What is the primary distinguishing factor between penetration testing and vulnerability scanning?",
+      "options": [
+        "Penetration testing requires written authorization while vulnerability scanning does not",
+        "Penetration testing actively exploits vulnerabilities while vulnerability scanning only identifies them",
+        "Penetration testing is performed internally while vulnerability scanning is done by external parties",
+        "Penetration testing focuses on network security while vulnerability scanning covers applications"
+      ],
+      "correct_index": 1,
+      "explanation": "The key difference is that penetration testing goes beyond identification to actually exploit vulnerabilities and demonstrate real-world attack scenarios, while vulnerability scanning primarily identifies and reports potential security weaknesses."
+    },
+    {
+      "question": "A financial services company wants to test their customer-facing web application before a major product launch. They are concerned about potential business disruption but need thorough security validation. Which penetration testing approach would be most appropriate?",
+      "options": [
+        "Black box testing during peak business hours to simulate real attacks",
+        "White box testing in a production mirror environment",
+        "Gray box testing directly on the live production system",
+        "Red team exercise targeting all company infrastructure"
+      ],
+      "correct_index": 1,
+      "explanation": "White box testing in a production mirror environment provides thorough security validation with full system knowledge while avoiding business disruption. This approach allows comprehensive testing without risking the live customer-facing application."
+    },
+    {
+      "question": "During the reconnaissance phase of a penetration test, why might an ethical hacker choose passive information gathering over active scanning initially?",
+      "options": [
+        "Passive methods are more accurate than active scanning techniques",
+        "Passive gathering avoids detection by security monitoring systems",
+        "Active scanning requires more expensive tools and software",
+        "Passive methods can only be performed by certified penetration testers"
+      ],
+      "correct_index": 1,
+      "explanation": "Passive information gathering techniques like OSINT research don't directly interact with target systems, making them undetectable by security monitoring. This allows penetration testers to gather valuable intelligence without alerting defenders early in the engagement."
+    },
+    {
+      "question": "A penetration tester successfully gains initial access to a corporate network but finds that lateral movement attempts are being blocked. What does this scenario most likely indicate about the organization's security posture?",
+      "options": [
+        "The organization has poor perimeter security but effective internal segmentation",
+        "The penetration test should be terminated as it has achieved its objectives",
+        "The organization's security controls are completely ineffective",
+        "The initial access was likely a false positive result"
+      ],
+      "correct_index": 0,
+      "explanation": "This scenario demonstrates that while the perimeter defenses had weaknesses (allowing initial access), the organization has implemented effective internal network segmentation and controls that prevent lateral movement - a defense-in-depth strategy."
+    },
+    {
+      "question": "When should an organization choose a red team exercise over a traditional penetration test?",
+      "options": [
+        "When they want to test specific applications or systems in detail",
+        "When they need to meet basic compliance requirements quickly",
+        "When they want to evaluate their detection and response capabilities holistically",
+        "When they have a limited security budget and timeline"
+      ],
+      "correct_index": 2,
+      "explanation": "Red team exercises are multi-faceted engagements that test not just technical vulnerabilities but also the organization's ability to detect, respond to, and recover from sophisticated attacks. They evaluate the entire security program including people, processes, and technology working together."
+    }
+  ],
+  "passing_score": 80
+}

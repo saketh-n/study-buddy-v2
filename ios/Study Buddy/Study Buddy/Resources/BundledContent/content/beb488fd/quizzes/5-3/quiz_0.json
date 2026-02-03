@@ -1,0 +1,61 @@
+{
+  "topic_name": "Machine Learning Pipeline Integration",
+  "questions": [
+    {
+      "question": "What is the primary reason for implementing feature stores in ML pipeline integration?",
+      "options": [
+        "To reduce model training time by caching preprocessed features",
+        "To ensure consistency between training and serving feature computation while enabling feature reuse across teams",
+        "To automatically select the best features for each model",
+        "To store raw data in a more efficient format"
+      ],
+      "correct_index": 1,
+      "explanation": "Feature stores primarily solve the training-serving skew problem by ensuring identical feature computation logic across environments, while also enabling feature sharing and reuse across different ML projects and teams."
+    },
+    {
+      "question": "When would you choose batch prediction over real-time inference in an ML pipeline?",
+      "options": [
+        "When predictions need to be made within 100ms of a user request",
+        "When you need to process large volumes of data periodically and latency requirements are flexible",
+        "When the model requires frequent retraining with new data",
+        "When the input data schema changes frequently"
+      ],
+      "correct_index": 1,
+      "explanation": "Batch prediction is optimal for scenarios with large data volumes, relaxed latency requirements, and periodic processing needs, as it's more cost-effective and can handle higher throughput than real-time systems."
+    },
+    {
+      "question": "In a CI/CD pipeline for ML models, what is the main purpose of implementing model validation gates before deployment?",
+      "options": [
+        "To automatically retrain the model with the latest data",
+        "To compress the model for faster inference",
+        "To verify model performance meets quality thresholds and detect potential issues before production deployment",
+        "To convert the model to different formats for various deployment targets"
+      ],
+      "correct_index": 2,
+      "explanation": "Model validation gates ensure that only models meeting predefined performance, bias, and quality criteria are deployed to production, preventing degraded or problematic models from affecting users."
+    },
+    {
+      "question": "Why is data versioning crucial in ML pipeline integration?",
+      "options": [
+        "It reduces storage costs by compressing historical data",
+        "It enables reproducibility of model training and debugging of performance issues by tracking data lineage",
+        "It automatically cleans and preprocesses incoming data",
+        "It speeds up data loading during model training"
+      ],
+      "correct_index": 1,
+      "explanation": "Data versioning enables reproducible experiments, allows rollback to previous data states when issues arise, and provides essential lineage tracking for debugging model performance degradation."
+    },
+    {
+      "question": "What is the most significant challenge when integrating streaming data into ML pipelines compared to batch processing?",
+      "options": [
+        "Streaming data always requires more storage space",
+        "Managing out-of-order data arrival, handling late data, and maintaining stateful operations across time windows",
+        "Streaming systems cannot handle complex data transformations",
+        "Real-time models are always less accurate than batch-trained models"
+      ],
+      "correct_index": 1,
+      "explanation": "Streaming ML pipelines must handle the complexity of temporal data including late arrivals, out-of-order events, and maintaining state across sliding time windows, which don't exist in batch processing scenarios."
+    }
+  ],
+  "passing_score": 80
+}

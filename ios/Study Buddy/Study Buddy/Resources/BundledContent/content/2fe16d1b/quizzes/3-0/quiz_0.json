@@ -1,0 +1,61 @@
+{
+  "topic_name": "Clustering",
+  "questions": [
+    {
+      "question": "You have a dataset of customer purchase behaviors and want to identify distinct customer segments, but you don't know how many segments exist beforehand. Which clustering approach would be most appropriate?",
+      "options": [
+        "K-means clustering",
+        "Hierarchical clustering",
+        "DBSCAN",
+        "All methods are equally suitable"
+      ],
+      "correct_index": 1,
+      "explanation": "Hierarchical clustering is most appropriate when you don't know the number of clusters beforehand, as it creates a dendrogram that shows clustering at all levels, allowing you to choose the optimal number of clusters by examining the tree structure."
+    },
+    {
+      "question": "Why might K-means clustering perform poorly on a dataset containing clusters of varying densities and irregular shapes?",
+      "options": [
+        "K-means requires labeled training data",
+        "K-means assumes spherical clusters and uses distance-based centroids",
+        "K-means cannot handle numerical data",
+        "K-means is only suitable for small datasets"
+      ],
+      "correct_index": 1,
+      "explanation": "K-means assumes clusters are spherical and uses Euclidean distance to assign points to the nearest centroid. This makes it struggle with irregular shapes, varying densities, and non-spherical cluster boundaries."
+    },
+    {
+      "question": "In DBSCAN clustering, what happens to data points that don't belong to any dense region?",
+      "options": [
+        "They are assigned to the nearest cluster centroid",
+        "They are marked as noise or outliers",
+        "They form their own single-point clusters",
+        "The algorithm fails to converge"
+      ],
+      "correct_index": 1,
+      "explanation": "DBSCAN identifies points that don't have enough neighbors within the specified radius as noise or outliers, which is one of its key advantages for handling datasets with irregular cluster shapes and noise."
+    },
+    {
+      "question": "You're analyzing gene expression data where you suspect there are nested subgroups within larger groups (e.g., cancer subtypes within cancer types). Which clustering method would best reveal this hierarchical structure?",
+      "options": [
+        "K-means with different k values",
+        "DBSCAN with varying epsilon values",
+        "Agglomerative hierarchical clustering",
+        "Density-based clustering only"
+      ],
+      "correct_index": 2,
+      "explanation": "Agglomerative hierarchical clustering builds a tree structure that naturally reveals nested relationships and subgroups within larger groups, making it ideal for discovering hierarchical patterns in data like biological classifications."
+    },
+    {
+      "question": "What is the main computational advantage of K-means clustering compared to hierarchical clustering for large datasets?",
+      "options": [
+        "K-means always finds the global optimum",
+        "K-means has linear time complexity O(n) while hierarchical is O(n\u00b3)",
+        "K-means can handle any cluster shape while hierarchical cannot",
+        "K-means automatically determines the optimal number of clusters"
+      ],
+      "correct_index": 1,
+      "explanation": "K-means has O(nkt) complexity (where n=points, k=clusters, t=iterations) which is typically much faster than hierarchical clustering's O(n\u00b3) complexity, making K-means more scalable for large datasets."
+    }
+  ],
+  "passing_score": 80
+}

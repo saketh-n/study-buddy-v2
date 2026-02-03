@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local disks and physical file storage (sectors/disk block)",
+  "questions": [
+    {
+      "question": "Why do operating systems typically use disk blocks (clusters) that are larger than the physical sector size on hard drives?",
+      "options": [
+        "To reduce the overhead of managing individual sectors and improve I/O efficiency",
+        "To make files harder to fragment across the disk surface",
+        "To ensure compatibility with older file systems that require larger allocation units",
+        "To prevent data corruption when multiple processes access the same file"
+      ],
+      "correct_index": 0,
+      "explanation": "Operating systems use larger disk blocks to reduce metadata overhead and improve I/O efficiency. Managing thousands of individual 512-byte sectors would create excessive overhead, so grouping them into larger blocks (typically 4KB-64KB) reduces the number of allocation units to track and allows for more efficient read/write operations."
+    },
+    {
+      "question": "A database application needs to store records that are exactly 3KB in size. The disk has 512-byte sectors and the file system uses 4KB blocks. What is the storage efficiency for each record?",
+      "options": [
+        "75% - each record wastes 1KB per 4KB block",
+        "100% - records fit perfectly within the block structure",
+        "87.5% - records span across sectors efficiently",
+        "50% - each record uses half of the available block space"
+      ],
+      "correct_index": 0,
+      "explanation": "Each 3KB record must be allocated a full 4KB block since file systems cannot allocate partial blocks. This results in 1KB of wasted space per record, giving a storage efficiency of 3KB/4KB = 75%. The remaining 25% represents internal fragmentation."
+    },
+    {
+      "question": "When would sequential access patterns provide the most performance benefit on a traditional hard disk drive?",
+      "options": [
+        "When reading large multimedia files stored in contiguous blocks",
+        "When accessing a database index with random key lookups",
+        "When opening many small configuration files scattered across the disk",
+        "When performing frequent updates to a log file with random insertion points"
+      ],
+      "correct_index": 0,
+      "explanation": "Sequential access is most beneficial for large contiguous files because it minimizes seek time and rotational latency. The disk head can read consecutive sectors without repositioning, and rotational delays are eliminated. Random access patterns require frequent seeking, which significantly impacts performance on mechanical drives."
+    },
+    {
+      "question": "A hard drive has the following specifications: 7200 RPM, average seek time of 8ms, and rotational latency of 4.17ms. What is the primary bottleneck when accessing randomly distributed small files?",
+      "options": [
+        "The combination of seek time and rotational latency creating mechanical delays",
+        "The data transfer rate being too slow for modern applications",
+        "The sector size being incompatible with small file storage",
+        "The cache size being insufficient to buffer multiple file operations"
+      ],
+      "correct_index": 0,
+      "explanation": "For random access to small files, the mechanical delays (seek time + rotational latency) dominate performance. With 8ms seek + 4.17ms average rotational delay, each random access takes roughly 12ms before data transfer even begins. This mechanical overhead far exceeds the actual data transfer time for small files."
+    },
+    {
+      "question": "Why might a system administrator choose a smaller block size when formatting a file system that will primarily store many small files?",
+      "options": [
+        "To reduce internal fragmentation and improve storage efficiency",
+        "To increase the data transfer rate for sequential operations",
+        "To improve the random access performance of the disk drive",
+        "To ensure better compatibility with network file sharing protocols"
+      ],
+      "correct_index": 0,
+      "explanation": "Smaller block sizes reduce internal fragmentation when storing many small files. If most files are smaller than the block size, using large blocks wastes significant space. For example, storing 1KB files in 64KB blocks wastes 98% of allocated space, while 4KB blocks would waste only 75%."
+    }
+  ],
+  "passing_score": 80
+}

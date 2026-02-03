@@ -1,0 +1,61 @@
+{
+  "topic_name": "Security and Compliance",
+  "questions": [
+    {
+      "question": "A data engineering team needs to store customer payment information in their data lake. Which encryption approach provides the strongest security posture?",
+      "options": [
+        "Encryption in transit only",
+        "Encryption at rest only",
+        "Encryption in transit and at rest with separate key management",
+        "Database-level password protection"
+      ],
+      "correct_index": 2,
+      "explanation": "Encryption both in transit and at rest with proper key management provides comprehensive protection. Data is vulnerable during transmission and when stored, so both need protection. Separate key management ensures keys aren't stored with the encrypted data."
+    },
+    {
+      "question": "Under GDPR, a European customer requests deletion of their personal data from your analytics pipeline. The data has been aggregated into summary tables and used to train ML models. What is the minimum compliant response?",
+      "options": [
+        "Delete only the raw personal data, keep aggregated data",
+        "Delete raw data and retrain models, but keep existing aggregated tables",
+        "Delete raw data, drop affected aggregated records, and retrain models without the customer's data",
+        "Inform the customer that aggregated data cannot be deleted"
+      ],
+      "correct_index": 2,
+      "explanation": "GDPR's 'right to be forgotten' requires removing personal data from all processing activities. This includes reprocessing aggregated data and retraining models to ensure the individual's data doesn't influence any outputs or decisions."
+    },
+    {
+      "question": "Your data pipeline processes financial transactions and must comply with PCI DSS. When should you implement tokenization versus format-preserving encryption?",
+      "options": [
+        "Tokenization when you need to search encrypted data, FPE for data archival",
+        "FPE when downstream systems expect specific data formats, tokenization when formats can change",
+        "Always use tokenization as it's more secure than FPE",
+        "FPE for real-time processing, tokenization for batch processing"
+      ],
+      "correct_index": 1,
+      "explanation": "Format-preserving encryption maintains the original data structure, making it ideal when downstream systems expect specific formats (like 16-digit card numbers). Tokenization replaces data with random tokens, requiring a token vault for reversal, and is suitable when format flexibility exists."
+    },
+    {
+      "question": "You're implementing role-based access control (RBAC) for a data warehouse containing HR, financial, and customer data. A business analyst needs to create reports combining customer demographics with revenue data, but shouldn't access employee salaries. What's the most appropriate access control strategy?",
+      "options": [
+        "Grant full read access to customer and financial tables",
+        "Create a view that joins customer and revenue data, grant access to the view only",
+        "Grant table-level access to customer data and column-level access to financial data",
+        "Create separate schemas and grant schema-level permissions"
+      ],
+      "correct_index": 2,
+      "explanation": "Column-level access control allows granular permissions, letting the analyst access revenue columns from financial tables while restricting sensitive salary information. This follows the principle of least privilege while enabling necessary business functions."
+    },
+    {
+      "question": "Your organization processes health data under HIPAA and must implement audit logging. Which events are most critical to log for compliance and security monitoring?",
+      "options": [
+        "Only failed login attempts and data exports",
+        "All data access, modifications, and user authentication events",
+        "System performance metrics and error logs",
+        "Only administrative actions and schema changes"
+      ],
+      "correct_index": 1,
+      "explanation": "HIPAA requires comprehensive audit trails including all access to protected health information (PHI), modifications, and authentication events. This enables detection of unauthorized access, supports breach investigations, and demonstrates compliance with the minimum necessary standard."
+    }
+  ],
+  "passing_score": 80
+}

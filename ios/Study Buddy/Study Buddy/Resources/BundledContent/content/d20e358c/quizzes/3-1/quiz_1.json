@@ -1,0 +1,61 @@
+{
+  "topic_name": "Application Containerization",
+  "questions": [
+    {
+      "question": "Your Study Buddy application works perfectly on your development machine but fails when deployed to production due to different Node.js versions. What is the primary benefit of containerization that would solve this problem?",
+      "options": [
+        "Containers automatically update all dependencies to the latest versions",
+        "Containers package the application with its exact runtime environment, ensuring consistency across deployments",
+        "Containers provide better security by encrypting all application code",
+        "Containers increase application performance by optimizing memory usage"
+      ],
+      "correct_index": 1,
+      "explanation": "Containerization solves the 'it works on my machine' problem by packaging the application with its exact dependencies and runtime environment, ensuring consistent behavior across different deployment environments."
+    },
+    {
+      "question": "When creating a Dockerfile for your Study Buddy application, you notice the image size is 2GB. Which approach would most effectively reduce the image size while maintaining functionality?",
+      "options": [
+        "Use a minimal base image like Alpine Linux and implement multi-stage builds",
+        "Compress all application files using ZIP before copying them to the container",
+        "Remove all comments from the source code to reduce file sizes",
+        "Install all possible dependencies to avoid runtime errors"
+      ],
+      "correct_index": 0,
+      "explanation": "Using minimal base images like Alpine Linux and multi-stage builds significantly reduces image size by including only necessary components and removing build-time dependencies from the final image."
+    },
+    {
+      "question": "Your Study Buddy application needs to persist user data even when containers are restarted or recreated. Which Docker concept should you implement?",
+      "options": [
+        "Increase container memory allocation to prevent data loss",
+        "Use Docker volumes to store data outside the container filesystem",
+        "Create larger containers with more storage space",
+        "Backup data to the host machine manually before each restart"
+      ],
+      "correct_index": 1,
+      "explanation": "Docker volumes provide persistent storage that exists independently of container lifecycle, allowing data to survive container restarts, updates, and recreations."
+    },
+    {
+      "question": "You want to run multiple instances of your Study Buddy application to handle increased traffic. What is the most appropriate Docker approach for this scenario?",
+      "options": [
+        "Create one large container with multiple application processes running inside",
+        "Use Docker Compose or orchestration tools to manage multiple container instances",
+        "Modify the Dockerfile to automatically create copies of the application",
+        "Install a load balancer inside the existing container"
+      ],
+      "correct_index": 1,
+      "explanation": "Container orchestration tools like Docker Compose or Kubernetes are designed to manage multiple container instances, providing proper scaling, load distribution, and service management."
+    },
+    {
+      "question": "Your Study Buddy application connects to a database and external APIs. Following containerization best practices, how should you handle configuration like database URLs and API keys?",
+      "options": [
+        "Hard-code all configuration values directly in the Dockerfile for security",
+        "Store sensitive configuration in environment variables and use secrets management for production",
+        "Include all configuration files in the container image for convenience",
+        "Create separate Docker images for each environment with embedded configurations"
+      ],
+      "correct_index": 1,
+      "explanation": "Best practices dictate using environment variables for configuration and proper secrets management for sensitive data, making containers portable across environments while maintaining security."
+    }
+  ],
+  "passing_score": 80
+}

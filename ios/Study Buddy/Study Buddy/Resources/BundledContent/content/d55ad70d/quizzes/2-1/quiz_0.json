@@ -1,0 +1,61 @@
+{
+  "topic_name": "File Storage: Remote and shared, .. NFS/CIFS-SMB",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using network file systems like NFS or CIFS-SMB over local file storage in a multi-user environment?",
+      "options": [
+        "Faster file access speeds",
+        "Centralized file management and shared access",
+        "Better data compression",
+        "Lower hardware costs"
+      ],
+      "correct_index": 1,
+      "explanation": "Network file systems enable multiple users to access the same files from different machines while maintaining centralized storage and management, which is their primary benefit over local storage."
+    },
+    {
+      "question": "A company needs to share files between Linux servers and Windows workstations. Which combination would provide the best cross-platform compatibility?",
+      "options": [
+        "NFS only",
+        "CIFS-SMB only",
+        "Both NFS and CIFS-SMB protocols",
+        "Local file replication"
+      ],
+      "correct_index": 2,
+      "explanation": "Using both protocols allows Linux systems to communicate via NFS (their native protocol) while Windows systems can use CIFS-SMB (their native protocol), providing optimal compatibility for mixed environments."
+    },
+    {
+      "question": "Why might an administrator choose NFS over CIFS-SMB for a Linux-only server environment?",
+      "options": [
+        "NFS provides better security encryption",
+        "NFS has lower network overhead and better performance on Unix-like systems",
+        "NFS supports larger file sizes",
+        "NFS works better over the internet"
+      ],
+      "correct_index": 1,
+      "explanation": "NFS is designed for Unix-like systems and typically has lower protocol overhead, making it more efficient for Linux-only environments compared to CIFS-SMB which was designed primarily for Windows systems."
+    },
+    {
+      "question": "In a network file system setup, what happens when the file server becomes unavailable while a client is accessing files?",
+      "options": [
+        "Files are automatically cached locally and remain accessible",
+        "Client applications may hang or receive I/O errors until the server returns",
+        "Files are immediately transferred to the client's local storage",
+        "The client automatically switches to a backup server"
+      ],
+      "correct_index": 1,
+      "explanation": "Network file systems create a dependency on the server. When the server becomes unavailable, clients typically experience hangs or I/O errors since the files exist remotely, not locally."
+    },
+    {
+      "question": "Which scenario would be LEAST suitable for implementing a network file system solution?",
+      "options": [
+        "A design team sharing large CAD files across multiple workstations",
+        "A database server requiring high-speed access to transaction logs",
+        "An office sharing documents and spreadsheets among employees",
+        "A development team collaborating on source code files"
+      ],
+      "correct_index": 1,
+      "explanation": "Database servers require extremely low latency and high reliability for transaction logs. Network file systems introduce latency and potential points of failure that could severely impact database performance and reliability."
+    }
+  ],
+  "passing_score": 80
+}

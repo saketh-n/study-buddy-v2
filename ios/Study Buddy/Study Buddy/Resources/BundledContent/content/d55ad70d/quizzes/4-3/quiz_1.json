@@ -1,0 +1,61 @@
+{
+  "topic_name": "Remote: iSCSI/SAN, or NFS, or S3",
+  "questions": [
+    {
+      "question": "A database administrator needs to provide high-performance, low-latency storage for a critical database server that requires direct block-level access. Which remote storage solution would be most appropriate?",
+      "options": [
+        "NFS (Network File System)",
+        "iSCSI/SAN",
+        "Amazon S3",
+        "FTP file sharing"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI/SAN provides block-level storage access with low latency, making it ideal for databases that need direct disk access and high performance. NFS operates at the file level, S3 is object storage with higher latency, and FTP is not suitable for live database operations."
+    },
+    {
+      "question": "What is the primary difference between how iSCSI and NFS handle storage access at the operating system level?",
+      "options": [
+        "iSCSI requires special network cards while NFS uses standard Ethernet",
+        "iSCSI presents storage as block devices while NFS presents it as mounted filesystems",
+        "iSCSI only works with Windows while NFS only works with Linux",
+        "iSCSI is encrypted by default while NFS is always unencrypted"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI presents remote storage as raw block devices that can be formatted with any filesystem, while NFS presents already-formatted remote filesystems that can be mounted. This fundamental difference affects how applications and the OS interact with the storage."
+    },
+    {
+      "question": "A web application needs to store millions of user-uploaded images and videos that are accessed infrequently but must be highly durable and available globally. Which storage approach would be most cost-effective?",
+      "options": [
+        "Local SAN with iSCSI for fastest access",
+        "NFS shares on high-performance servers",
+        "Object storage like Amazon S3",
+        "Direct-attached storage with RAID"
+      ],
+      "correct_index": 2,
+      "explanation": "Object storage like S3 is designed for massive scale, infrequent access patterns, and global availability. It offers built-in durability, geographic distribution, and cost-effective storage tiers for archival data, making it ideal for user-generated content."
+    },
+    {
+      "question": "When implementing an NFS solution, what potential issue should administrators be most concerned about regarding filesystem driver behavior?",
+      "options": [
+        "NFS cannot handle files larger than 4GB",
+        "Network interruptions can cause filesystem inconsistencies and hung processes",
+        "NFS requires reformatting all existing data",
+        "NFS only supports read-only access"
+      ],
+      "correct_index": 1,
+      "explanation": "NFS filesystem drivers can experience issues when network connectivity is lost, potentially causing processes to hang or filesystem corruption if not properly configured with appropriate timeout and retry settings. This is a key operational consideration for NFS deployments."
+    },
+    {
+      "question": "A company wants to migrate their existing file server to provide the same user experience while moving storage to a remote location. They need users to access files through standard file paths (like /shared/documents). Which solution preserves this requirement?",
+      "options": [
+        "Replace with S3 and modify all applications to use REST APIs",
+        "Implement iSCSI and recreate all file shares",
+        "Deploy NFS to maintain filesystem-based access",
+        "Use direct database storage for all files"
+      ],
+      "correct_index": 2,
+      "explanation": "NFS allows mounting remote filesystems as local paths, preserving the existing user experience with standard file system access patterns. S3 would require application changes, iSCSI provides block storage requiring additional filesystem layers, and database storage would require significant application modifications."
+    }
+  ],
+  "passing_score": 80
+}

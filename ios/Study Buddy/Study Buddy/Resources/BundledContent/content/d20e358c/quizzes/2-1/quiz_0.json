@@ -1,0 +1,61 @@
+{
+  "topic_name": "LXC Containers",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between LXC containers and traditional virtual machines in terms of resource isolation?",
+      "options": [
+        "LXC containers share the host kernel while VMs run complete separate operating systems",
+        "LXC containers use hardware virtualization while VMs use software emulation",
+        "LXC containers require a hypervisor while VMs run directly on hardware",
+        "LXC containers can only run Linux applications while VMs support any OS"
+      ],
+      "correct_index": 0,
+      "explanation": "LXC containers provide OS-level virtualization by sharing the host kernel and using kernel features like namespaces and cgroups for isolation, unlike VMs which run complete separate operating systems with their own kernels."
+    },
+    {
+      "question": "A development team needs to deploy 50 identical web application instances on a single server with limited RAM. Why would LXC containers be more suitable than virtual machines for this scenario?",
+      "options": [
+        "LXC provides better security isolation between instances",
+        "LXC containers have lower memory overhead since they share the host kernel",
+        "LXC containers can run different operating systems simultaneously",
+        "LXC provides hardware-level isolation which is more efficient"
+      ],
+      "correct_index": 1,
+      "explanation": "LXC containers share the host kernel, eliminating the need for separate OS instances, resulting in significantly lower memory overhead compared to VMs which each require their own complete operating system."
+    },
+    {
+      "question": "Which Linux kernel features does LXC primarily rely on to provide container isolation and resource management?",
+      "options": [
+        "KVM and QEMU for hardware virtualization",
+        "Namespaces and cgroups for process isolation and resource control",
+        "SELinux and AppArmor for mandatory access control",
+        "iptables and netfilter for network isolation"
+      ],
+      "correct_index": 1,
+      "explanation": "LXC uses namespaces to isolate processes, networks, filesystems, and other resources, while cgroups control and limit resource usage like CPU, memory, and I/O for containers."
+    },
+    {
+      "question": "When would you choose LXC containers over Docker containers for a containerization project?",
+      "options": [
+        "When you need to run single-process, stateless microservices",
+        "When you need full system containers that can run multiple services like traditional VMs",
+        "When you need better integration with container orchestration platforms",
+        "When you need to package applications with all their dependencies"
+      ],
+      "correct_index": 1,
+      "explanation": "LXC is designed for system containers that can run multiple processes and services, similar to traditional VMs but with container efficiency, while Docker is optimized for application containers running single processes."
+    },
+    {
+      "question": "What is a key limitation of LXC containers compared to virtual machines when considering operating system compatibility?",
+      "options": [
+        "LXC containers cannot run GUI applications",
+        "LXC containers can only run applications compiled for the same architecture as the host",
+        "LXC containers can only run Linux distributions and cannot run Windows or other non-Linux operating systems",
+        "LXC containers cannot access hardware devices directly"
+      ],
+      "correct_index": 2,
+      "explanation": "Since LXC containers share the host Linux kernel, they can only run Linux-based operating systems and applications, unlike VMs which can run any operating system with its own kernel on top of a hypervisor."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Next-Generation Therapies",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes and obesity has plateaued on semaglutide 2.4mg with 8% weight loss but needs additional metabolic improvement. What is the primary advantage of switching to tirzepatide over increasing current therapy?",
+      "options": [
+        "Tirzepatide has a longer half-life allowing weekly dosing",
+        "The dual GLP-1/GIP agonism provides enhanced insulin sensitivity and weight loss",
+        "Tirzepatide can be administered orally unlike semaglutide",
+        "Tirzepatide has fewer gastrointestinal side effects"
+      ],
+      "correct_index": 1,
+      "explanation": "Tirzepatide's dual GLP-1/GIP receptor agonism provides synergistic effects on glucose control and weight loss through enhanced insulin sensitivity, beta-cell function, and appetite suppression beyond what GLP-1 alone can achieve."
+    },
+    {
+      "question": "When would oral semaglutide be preferred over subcutaneous formulations for a newly diagnosed type 2 diabetes patient?",
+      "options": [
+        "When rapid onset of action is needed for severe hyperglycemia",
+        "For patients with needle phobia who can adhere to strict dosing requirements",
+        "When combination with insulin therapy is planned",
+        "For patients requiring maximum efficacy and weight loss"
+      ],
+      "correct_index": 1,
+      "explanation": "Oral semaglutide is ideal for patients with injection aversion, but requires strict fasting administration and has lower bioavailability. It's not suitable for rapid glycemic control or maximum efficacy needs."
+    },
+    {
+      "question": "A triple hormone agonist (GLP-1/GIP/glucagon) is being developed. What is the primary therapeutic rationale for adding glucagon receptor activation to dual GLP-1/GIP therapy?",
+      "options": [
+        "Glucagon activation reduces hypoglycemia risk by stimulating glucose production",
+        "Glucagon enhances insulin secretion synergistically with GLP-1 and GIP",
+        "Glucagon increases energy expenditure and hepatic fat oxidation",
+        "Glucagon improves gastric emptying to reduce GI side effects"
+      ],
+      "correct_index": 2,
+      "explanation": "Glucagon receptor activation increases energy expenditure, promotes lipolysis, and enhances hepatic fat oxidation, potentially providing additional weight loss and metabolic benefits beyond glucose control."
+    },
+    {
+      "question": "Why does oral semaglutide require co-administration with SNAC (sodium N-(8-[2-hydroxybenzoyl] amino) caprylate) and strict fasting conditions?",
+      "options": [
+        "SNAC prevents degradation by DPP-4 enzymes in the intestine",
+        "SNAC enhances local absorption by increasing intestinal pH and tight junction permeability",
+        "SNAC provides sustained release to match subcutaneous pharmacokinetics",
+        "SNAC reduces gastrointestinal side effects through buffering action"
+      ],
+      "correct_index": 1,
+      "explanation": "SNAC is an absorption enhancer that raises local gastric pH and transiently increases epithelial permeability, facilitating absorption of the large semaglutide molecule. Fasting conditions prevent food interference with this process."
+    },
+    {
+      "question": "A patient experiences excellent glycemic control on dulaglutide but requests switching to an oral GLP-1 RA due to injection site reactions. What is the most important counseling point about this transition?",
+      "options": [
+        "Oral formulations have superior cardiovascular outcomes compared to injectable forms",
+        "The oral medication can be taken with breakfast for better tolerance",
+        "There will likely be some reduction in glycemic efficacy requiring monitoring",
+        "Oral GLP-1 RAs have faster onset requiring immediate dose adjustments"
+      ],
+      "correct_index": 2,
+      "explanation": "Oral semaglutide has lower bioavailability (~1%) compared to subcutaneous GLP-1 RAs, often resulting in reduced glycemic efficacy. Patients should be counseled about potential efficacy differences and need for monitoring."
+    }
+  ],
+  "passing_score": 80
+}

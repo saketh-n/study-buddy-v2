@@ -1,0 +1,61 @@
+{
+  "topic_name": "Stream Processing",
+  "questions": [
+    {
+      "question": "Which scenario would be MOST appropriate for implementing a stream processing solution over traditional batch processing?",
+      "options": [
+        "Processing daily sales reports that need to be generated every morning",
+        "Detecting fraudulent credit card transactions within milliseconds of occurrence",
+        "Running monthly analytics on customer demographics for marketing campaigns",
+        "Backing up database records to a data warehouse once per week"
+      ],
+      "correct_index": 1,
+      "explanation": "Stream processing excels at real-time scenarios where immediate response is critical. Fraud detection requires instant analysis to prevent unauthorized transactions, while the other options involve periodic processing that batch systems handle efficiently."
+    },
+    {
+      "question": "In Apache Kafka's architecture, what is the primary purpose of partitioning topics?",
+      "options": [
+        "To encrypt data for security purposes",
+        "To enable parallel processing and horizontal scalability",
+        "To compress messages to save storage space",
+        "To automatically backup data to multiple data centers"
+      ],
+      "correct_index": 1,
+      "explanation": "Partitioning allows Kafka to distribute messages across multiple brokers and enables consumers to process data in parallel, which is essential for achieving high throughput and scalability in distributed systems."
+    },
+    {
+      "question": "A data engineer notices that their Apache Storm topology is experiencing high latency during peak traffic. Which approach would BEST address this issue?",
+      "options": [
+        "Increase the number of worker processes and redistribute bolts across more executors",
+        "Reduce the frequency of data ingestion to lighten the processing load",
+        "Switch all processing to synchronous operations to ensure data consistency",
+        "Implement a single-threaded processing model to avoid race conditions"
+      ],
+      "correct_index": 0,
+      "explanation": "Adding more worker processes and redistributing bolts increases parallelism, allowing Storm to handle higher throughput. The other options would actually decrease performance or contradict stream processing principles."
+    },
+    {
+      "question": "When designing a stream processing pipeline for financial data, why would you implement exactly-once semantic guarantees rather than at-least-once delivery?",
+      "options": [
+        "Exactly-once processing is always faster than at-least-once delivery",
+        "Financial calculations must be precise, and duplicate processing could lead to incorrect account balances",
+        "Exactly-once semantics require less memory and computational resources",
+        "At-least-once delivery cannot handle high-volume transaction streams"
+      ],
+      "correct_index": 1,
+      "explanation": "In financial systems, duplicate processing of transactions could result in incorrect account balances or double-charging customers. Exactly-once semantics prevent these critical errors, though they typically require more overhead than at-least-once delivery."
+    },
+    {
+      "question": "A stream processing application needs to join real-time click events with user profile data that updates infrequently. What is the most efficient approach?",
+      "options": [
+        "Store user profiles in the same Kafka topic as click events to enable stream-stream joins",
+        "Use a stream-table join where user profiles are maintained in a local state store",
+        "Buffer all click events for 24 hours and then perform batch joins with user data",
+        "Query the user database synchronously for each incoming click event"
+      ],
+      "correct_index": 1,
+      "explanation": "Stream-table joins are optimal when one dataset (clicks) is high-velocity and the other (user profiles) is relatively static. Local state stores provide fast lookups without external database calls, maintaining low latency while ensuring data freshness."
+    }
+  ],
+  "passing_score": 80
+}

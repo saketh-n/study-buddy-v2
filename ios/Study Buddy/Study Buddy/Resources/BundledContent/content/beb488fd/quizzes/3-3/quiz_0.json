@@ -1,0 +1,61 @@
+{
+  "topic_name": "Container Technologies",
+  "questions": [
+    {
+      "question": "A data engineering team is experiencing issues where their ETL pipeline works on the development server but fails on production due to different Python library versions. Which containerization benefit would most directly address this problem?",
+      "options": [
+        "Horizontal scaling capabilities",
+        "Environment consistency and isolation",
+        "Reduced memory consumption",
+        "Faster code execution"
+      ],
+      "correct_index": 1,
+      "explanation": "Environment consistency and isolation is the key benefit that solves the 'works on my machine' problem by packaging the application with its dependencies and runtime environment."
+    },
+    {
+      "question": "Your organization runs multiple data processing applications that have varying resource demands throughout the day. Some applications need heavy CPU during morning batch jobs, while others require more memory for real-time processing in the evening. What is the primary advantage of using Kubernetes over running containers directly with Docker?",
+      "options": [
+        "Kubernetes containers are more secure than Docker containers",
+        "Kubernetes automatically optimizes code performance",
+        "Kubernetes provides orchestration, scaling, and resource management across multiple containers",
+        "Kubernetes eliminates the need for container images"
+      ],
+      "correct_index": 2,
+      "explanation": "Kubernetes excels at orchestrating multiple containers, automatically scaling them based on demand, and managing resources across a cluster, which is ideal for varying workload requirements."
+    },
+    {
+      "question": "When containerizing a data pipeline that processes sensitive customer data, which Docker feature should be prioritized to minimize security risks?",
+      "options": [
+        "Using the latest base image with all available packages",
+        "Running containers with root privileges for maximum flexibility",
+        "Using multi-stage builds and minimal base images with only necessary dependencies",
+        "Storing database credentials directly in the Dockerfile"
+      ],
+      "correct_index": 2,
+      "explanation": "Multi-stage builds and minimal base images reduce the attack surface by including only necessary components, following the principle of least privilege for security."
+    },
+    {
+      "question": "A real-time data streaming application experiences unpredictable traffic spikes. During peak hours, processing delays cause data backlog. Which Kubernetes feature would be most effective for automatically handling these traffic variations?",
+      "options": [
+        "ConfigMaps for configuration management",
+        "Persistent Volumes for data storage",
+        "Horizontal Pod Autoscaler (HPA) for automatic scaling",
+        "Ingress controllers for load balancing"
+      ],
+      "correct_index": 2,
+      "explanation": "Horizontal Pod Autoscaler automatically increases or decreases the number of pod replicas based on metrics like CPU usage or custom metrics, directly addressing variable traffic demands."
+    },
+    {
+      "question": "Your team is deciding between containerizing their Apache Spark data processing jobs versus running them directly on virtual machines. In which scenario would containerization provide the LEAST benefit?",
+      "options": [
+        "When jobs need to run across multiple cloud providers with different environments",
+        "When the application requires a single, long-running job that uses all available cluster resources continuously",
+        "When jobs have different dependency requirements that conflict with each other",
+        "When rapid deployment and rollback capabilities are needed for frequent updates"
+      ],
+      "correct_index": 1,
+      "explanation": "For single, long-running jobs that use all cluster resources, containerization overhead may not be justified since you're not benefiting from isolation, scaling, or resource sharing that containers provide."
+    }
+  ],
+  "passing_score": 80
+}

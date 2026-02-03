@@ -1,0 +1,61 @@
+{
+  "topic_name": "Logistic Regression",
+  "questions": [
+    {
+      "question": "Why is the sigmoid function crucial in logistic regression rather than using linear regression directly for classification problems?",
+      "options": [
+        "The sigmoid function is computationally faster than linear functions",
+        "The sigmoid function maps any real number to a probability between 0 and 1, making it suitable for classification",
+        "The sigmoid function always produces integer outputs needed for classification",
+        "The sigmoid function eliminates the need for training data"
+      ],
+      "correct_index": 1,
+      "explanation": "The sigmoid function transforms linear outputs into probabilities (0-1 range), which is essential for classification. Linear regression can output any real number, making it inappropriate for probability estimation."
+    },
+    {
+      "question": "A data scientist is deciding between linear regression and logistic regression for predicting whether customers will purchase a product (yes/no). Which reasoning best supports choosing logistic regression?",
+      "options": [
+        "Linear regression cannot handle categorical input features",
+        "The output needs to be interpretable as probabilities, and linear regression could predict impossible values like -0.3 or 1.7",
+        "Logistic regression always has higher accuracy than linear regression",
+        "Linear regression requires more computational resources"
+      ],
+      "correct_index": 1,
+      "explanation": "For binary classification, we need outputs between 0 and 1 that can be interpreted as probabilities. Linear regression can produce values outside this range, making logistic regression the appropriate choice."
+    },
+    {
+      "question": "In multiclass logistic regression, what happens when extending from binary classification?",
+      "options": [
+        "Multiple sigmoid functions are used simultaneously, one for each class",
+        "A single sigmoid function is modified to output multiple values",
+        "The problem is converted into multiple binary classification problems (one-vs-rest)",
+        "The sigmoid function is replaced with a linear function"
+      ],
+      "correct_index": 2,
+      "explanation": "Multiclass logistic regression typically uses the one-vs-rest approach, creating multiple binary classifiers. Alternatively, softmax function can be used, but the one-vs-rest strategy with multiple binary problems is the most common extension."
+    },
+    {
+      "question": "When examining a logistic regression model's decision boundary, what does it represent geometrically?",
+      "options": [
+        "The curve where the sigmoid function equals 0.5, separating the two classes",
+        "The maximum point of the sigmoid function",
+        "The area under the sigmoid curve",
+        "The slope of the sigmoid function at its steepest point"
+      ],
+      "correct_index": 0,
+      "explanation": "The decision boundary occurs where the sigmoid function outputs 0.5, representing equal probability for both classes. This creates a linear boundary in the feature space that separates the predicted classes."
+    },
+    {
+      "question": "A logistic regression model predicts a probability of 0.23 for a positive class. If the classification threshold is 0.5, what can you conclude about this prediction and potential threshold adjustment?",
+      "options": [
+        "The instance is classified as positive, and lowering the threshold would make the model more conservative",
+        "The instance is classified as negative, and lowering the threshold would make the model more sensitive to positive cases",
+        "The instance is classified as negative, and the threshold should never be changed from 0.5",
+        "The prediction is invalid because it's below 0.5"
+      ],
+      "correct_index": 1,
+      "explanation": "With probability 0.23 < 0.5, the instance is classified as negative. Lowering the threshold (e.g., to 0.2) would classify more instances as positive, increasing sensitivity but potentially decreasing precision."
+    }
+  ],
+  "passing_score": 80
+}

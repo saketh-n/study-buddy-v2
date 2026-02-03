@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Ports 80 and 443",
+      "correct_answer": "Ports 80 and 443",
+      "analysis": "Great job!",
+      "explanation": "Port 80 is used for HTTP (unencrypted web traffic) and port 443 is used for HTTPS (encrypted web traffic). Both are necessary for a web server to handle all types of web requests."
+    },
+    {
+      "question_num": 2,
+      "is_correct": false,
+      "student_choice": "Port 21 is blocked by the firewall",
+      "correct_answer": "The firewall is not allowing random high-numbered ports",
+      "analysis": "The correct answer was: The firewall is not allowing random high-numbered ports",
+      "explanation": "Passive FTP uses port 21 for control but requires random high-numbered ports for data transfer. Active FTP uses ports 20 and 21. If passive fails but active works, the firewall likely blocks the random high ports needed for passive mode."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Check if port 3306 is accessible on the server",
+      "correct_answer": "Check if port 3306 is accessible on the server",
+      "analysis": "Great job!",
+      "explanation": "MySQL uses port 3306 by default. Since network connectivity exists but the database connection fails, checking if port 3306 is accessible would help determine if the MySQL service is running and reachable."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Allow port 22, block ports 23 and 3389",
+      "correct_answer": "Allow port 22, block ports 23 and 3389",
+      "analysis": "Great job!",
+      "explanation": "SSH (port 22) provides encrypted remote administration. Blocking Telnet (port 23) and RDP (port 3389) prevents insecure remote access methods while allowing secure SSH connections."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Port 25 (SMTP) is blocked outbound",
+      "correct_answer": "Port 25 (SMTP) is blocked outbound",
+      "analysis": "Great job!",
+      "explanation": "SMTP uses port 25 for sending emails between mail servers. If the server can receive emails but cannot send to external domains, the outbound SMTP port 25 is likely blocked, preventing the server from connecting to external mail servers."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

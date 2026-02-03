@@ -1,0 +1,61 @@
+{
+  "topic_name": "Kubernetes Architecture",
+  "questions": [
+    {
+      "question": "Your development team reports that pods are being created but not scheduled to any nodes, and they remain in 'Pending' state indefinitely. Which Kubernetes master component is most likely experiencing issues?",
+      "options": [
+        "API Server",
+        "Scheduler",
+        "Controller Manager",
+        "ETCD"
+      ],
+      "correct_index": 1,
+      "explanation": "The Scheduler is responsible for assigning pods to nodes based on resource requirements and constraints. When pods remain in 'Pending' state, it typically indicates the scheduler cannot find suitable nodes or is not functioning properly."
+    },
+    {
+      "question": "A company needs to ensure that their Kubernetes cluster can survive the failure of any single master node while maintaining data consistency. What is the minimum recommended setup for ETCD in this scenario?",
+      "options": [
+        "Single ETCD instance with regular backups",
+        "Two ETCD instances in active-passive mode",
+        "Three ETCD instances in a cluster",
+        "ETCD with database replication to external storage"
+      ],
+      "correct_index": 2,
+      "explanation": "ETCD requires an odd number of instances (minimum 3) to maintain quorum and handle node failures. With 3 instances, the cluster can tolerate 1 failure and still maintain consensus for read/write operations."
+    },
+    {
+      "question": "You notice that network traffic between pods on the same node is not being load-balanced correctly to services, but inter-node traffic works fine. Which component should you investigate first?",
+      "options": [
+        "Container runtime",
+        "Kubelet",
+        "Kube-proxy",
+        "API Server"
+      ],
+      "correct_index": 2,
+      "explanation": "Kube-proxy is responsible for implementing service networking and load balancing on each node. If service traffic isn't being properly distributed on a specific node, the kube-proxy on that node is likely misconfigured or failing."
+    },
+    {
+      "question": "An application requires real-time monitoring of pod lifecycle events to trigger automated responses. Which Kubernetes component provides the most efficient way to watch for these changes?",
+      "options": [
+        "Polling the kubelet on each node",
+        "Watching events through the API Server",
+        "Monitoring controller manager logs",
+        "Querying ETCD directly"
+      ],
+      "correct_index": 1,
+      "explanation": "The API Server provides a watch mechanism that allows clients to receive real-time notifications of resource changes without constant polling. This is the standard and most efficient way to monitor Kubernetes object lifecycle events."
+    },
+    {
+      "question": "Your team wants to replace Docker with containerd as the container runtime. Which component will need to be reconfigured to communicate with the new runtime?",
+      "options": [
+        "API Server",
+        "Controller Manager",
+        "Kube-proxy",
+        "Kubelet"
+      ],
+      "correct_index": 3,
+      "explanation": "The kubelet is the component that directly interfaces with the container runtime to manage pod lifecycles, pull images, and start/stop containers. When changing container runtimes, the kubelet configuration must be updated to use the new runtime's interface."
+    }
+  ],
+  "passing_score": 80
+}

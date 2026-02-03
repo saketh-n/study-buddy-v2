@@ -1,0 +1,61 @@
+{
+  "topic_name": "HTTP and URI Schemes",
+  "questions": [
+    {
+      "question": "A web application needs to communicate with a backend API to retrieve user data. The data contains sensitive authentication tokens. Which protocol choice and reasoning is most appropriate?",
+      "options": [
+        "HTTP because it's faster and the tokens can be encrypted separately",
+        "HTTPS because it provides end-to-end encryption for all transmitted data",
+        "SMB because it's designed for secure file sharing",
+        "NFS because it offers better performance for data retrieval"
+      ],
+      "correct_index": 1,
+      "explanation": "HTTPS should be used when transmitting sensitive data like authentication tokens because it provides SSL/TLS encryption for all data in transit, protecting against eavesdropping and man-in-the-middle attacks."
+    },
+    {
+      "question": "An organization wants to allow employees to access shared project files from their workstations across the network. They need a solution that integrates well with Windows Active Directory and provides file-level security. Which URI scheme would be most appropriate?",
+      "options": [
+        "smb://server/share because SMB integrates natively with Windows environments and supports fine-grained permissions",
+        "nfs://server/export because NFS is faster than SMB",
+        "https://server/files because web-based access is more secure",
+        "http://server/files because it's simpler to implement"
+      ],
+      "correct_index": 0,
+      "explanation": "SMB (Server Message Block) is the most appropriate choice for Windows environments as it integrates seamlessly with Active Directory, supports Windows file permissions, and is designed specifically for network file sharing in Windows networks."
+    },
+    {
+      "question": "When examining the URI 'https://api.example.com:8443/v2/users?role=admin#section1', what can you determine about the intended communication?",
+      "options": [
+        "It's accessing a file named 'users' on a web server using standard HTTPS port",
+        "It's making an encrypted API call to a specific version endpoint with query parameters and a fragment identifier",
+        "It's connecting to a database server on port 8443 to retrieve admin users",
+        "It's establishing an SMB connection to access user files"
+      ],
+      "correct_index": 1,
+      "explanation": "The HTTPS scheme indicates encrypted web communication, '/v2/users' suggests a versioned API endpoint, '?role=admin' is a query parameter, and '#section1' is a fragment identifier, all typical of RESTful API calls."
+    },
+    {
+      "question": "A company is experiencing performance issues when employees access large CAD files stored on a Linux server from their Unix workstations. The current solution uses HTTP file downloads. What would be the most effective alternative and why?",
+      "options": [
+        "Switch to HTTPS for better security and performance",
+        "Implement NFS because it's optimized for Unix/Linux file sharing and supports efficient partial file access",
+        "Use SMB because it's faster than HTTP",
+        "Continue with HTTP but implement file compression"
+      ],
+      "correct_index": 1,
+      "explanation": "NFS (Network File System) is designed for efficient file sharing in Unix/Linux environments, supports features like file locking and partial file access, which is crucial for large CAD files that may need to be accessed in portions rather than downloaded entirely."
+    },
+    {
+      "question": "A mobile application developer needs to implement a feature where the app periodically checks for updates from a server. The checks happen frequently and contain non-sensitive status information. Which protocol consideration is most important?",
+      "options": [
+        "Always use HTTPS regardless of data sensitivity to maintain consistent security practices",
+        "Use HTTP for these checks since the data isn't sensitive and it reduces computational overhead",
+        "Use SMB for better caching capabilities",
+        "Use NFS because it's more efficient for frequent small requests"
+      ],
+      "correct_index": 0,
+      "explanation": "Modern best practice dictates using HTTPS for all web communications, even for non-sensitive data, to prevent protocol downgrade attacks, ensure data integrity, and maintain consistent security posture. The computational overhead is minimal on modern systems."
+    }
+  ],
+  "passing_score": 80
+}

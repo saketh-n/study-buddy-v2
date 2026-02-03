@@ -1,0 +1,61 @@
+{
+  "topic_name": "Deployment Controllers",
+  "questions": [
+    {
+      "question": "A development team needs to deploy a new version of their web application with zero downtime. They want to gradually replace old instances with new ones and be able to rollback quickly if issues occur. Which deployment strategy should they use?",
+      "options": [
+        "Use a ReplicaSet directly to replace all pods at once",
+        "Use a Deployment with rolling update strategy",
+        "Use a DaemonSet to ensure one pod per node",
+        "Manually delete old pods and create new ones"
+      ],
+      "correct_index": 1,
+      "explanation": "A Deployment with rolling update strategy gradually replaces old pods with new ones, ensuring zero downtime and providing easy rollback capabilities. ReplicaSets alone don't handle updates gracefully, and manual approaches lack automation and safety features."
+    },
+    {
+      "question": "What is the primary relationship between Deployments and ReplicaSets in Kubernetes?",
+      "options": [
+        "Deployments are a legacy version of ReplicaSets",
+        "ReplicaSets manage Deployments and handle their lifecycle",
+        "Deployments create and manage ReplicaSets to handle pod replicas",
+        "They are completely independent controllers with no relationship"
+      ],
+      "correct_index": 2,
+      "explanation": "Deployments create and manage ReplicaSets behind the scenes. When you create a Deployment, it automatically creates a ReplicaSet to manage the actual pod replicas, and during updates, it creates new ReplicaSets while scaling down old ones."
+    },
+    {
+      "question": "Your application suddenly experiences a traffic spike and you need to scale from 3 to 10 replicas immediately. However, your nodes have limited resources. What would be the most likely outcome when you update the Deployment replica count?",
+      "options": [
+        "All 10 replicas will start immediately regardless of resources",
+        "Kubernetes will automatically add more nodes to accommodate all replicas",
+        "Some pods may remain in Pending state due to insufficient node resources",
+        "The Deployment will reject the scaling request"
+      ],
+      "correct_index": 2,
+      "explanation": "When scaling up, if there aren't enough resources on existing nodes, some pods will remain in Pending state until resources become available. Kubernetes doesn't automatically add nodes (unless using cluster autoscaling), and Deployments don't reject scaling requests based on resource availability."
+    },
+    {
+      "question": "During a rolling update, you notice that both old and new versions of your application are running simultaneously and serving traffic. Why does this happen, and when might this be problematic?",
+      "options": [
+        "This is a bug - only one version should run at a time",
+        "This is normal behavior that ensures zero downtime but may cause issues with database schema changes",
+        "This only happens when the update fails",
+        "This indicates insufficient cluster resources"
+      ],
+      "correct_index": 1,
+      "explanation": "Rolling updates intentionally run old and new versions simultaneously to ensure zero downtime. However, this can be problematic when updates involve incompatible changes like database schema modifications, where both versions can't coexist safely."
+    },
+    {
+      "question": "A ReplicaSet is configured to maintain 5 replicas, but you observe that only 3 pods are running and 2 are in Pending state. The ReplicaSet is not creating additional pods to compensate. What is the most likely explanation?",
+      "options": [
+        "The ReplicaSet controller has stopped working",
+        "The ReplicaSet considers Pending pods as part of its desired count",
+        "There's a bug in the pod template specification",
+        "The cluster is in maintenance mode"
+      ],
+      "correct_index": 1,
+      "explanation": "ReplicaSets count pods in all states (including Pending) toward their desired replica count. If pods are Pending due to resource constraints or scheduling issues, the ReplicaSet won't create additional pods because it has already created the desired number."
+    }
+  ],
+  "passing_score": 80
+}

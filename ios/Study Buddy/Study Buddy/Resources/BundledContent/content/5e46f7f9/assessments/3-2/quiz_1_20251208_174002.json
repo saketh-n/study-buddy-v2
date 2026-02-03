@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Routers automatically forward packets to the topologically closest server advertising the same IP",
+      "correct_answer": "Routers automatically forward packets to the topologically closest server advertising the same IP",
+      "analysis": "Great job!",
+      "explanation": "Anycast works because routers use their routing tables to forward packets to the nearest (in terms of network hops/cost) server that advertises the same anycast IP address, without needing application-layer knowledge."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "It routes users to geographically closer edge servers, reducing round-trip time",
+      "correct_answer": "It routes users to geographically closer edge servers, reducing round-trip time",
+      "analysis": "Great job!",
+      "explanation": "Anycast's primary benefit for CDNs is reducing latency by ensuring users connect to the nearest edge server, minimizing the physical distance data must travel and reducing round-trip time."
+    },
+    {
+      "question_num": 3,
+      "is_correct": false,
+      "student_choice": "The load balancer redirects connections to backup servers",
+      "correct_answer": "Connections are broken and must be re-established by clients",
+      "analysis": "The correct answer was: Connections are broken and must be re-established by clients",
+      "explanation": "TCP connections to a failed anycast server will break because TCP is stateful and connection state cannot be transferred to another server. Clients must establish new connections, which will be routed to the next nearest available server."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Anycast enables automatic routing to available servers without client-side configuration changes",
+      "correct_answer": "Anycast enables automatic routing to available servers without client-side configuration changes",
+      "analysis": "Great job!",
+      "explanation": "Anycast allows DNS infrastructure to be distributed globally with automatic failover and optimal routing without requiring clients to know about or configure multiple server addresses - the routing happens transparently at the network layer."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Users are being routed to different servers that don't share session state",
+      "correct_answer": "Users are being routed to different servers that don't share session state",
+      "analysis": "Great job!",
+      "explanation": "The most likely issue is that routing changes or network path variations cause users to reach different anycast servers that don't share session data, breaking stateful applications that expect session persistence."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Next-Generation Firewalls",
+  "questions": [
+    {
+      "question": "A company's traditional firewall allows HTTP traffic on port 80, but employees are using web-based applications like Slack and Zoom for business. The IT team wants to block social media apps while allowing business applications. What is the primary advantage of implementing an NGFW in this scenario?",
+      "options": [
+        "NGFWs can block all HTTP traffic more effectively than traditional firewalls",
+        "NGFWs can identify and control specific applications regardless of the port they use",
+        "NGFWs encrypt all application traffic to prevent data leakage",
+        "NGFWs automatically update application signatures without administrator intervention"
+      ],
+      "correct_index": 1,
+      "explanation": "NGFWs use application recognition and deep packet inspection to identify specific applications based on their behavior and signatures, not just ports and protocols. This allows granular control over applications using the same port."
+    },
+    {
+      "question": "During a security incident investigation, an NGFW with IPS capabilities detected and blocked suspicious traffic that appeared to be a legitimate HTTPS connection on port 443. What feature most likely enabled this detection?",
+      "options": [
+        "Port-based filtering rules blocking all HTTPS traffic",
+        "Deep packet inspection analyzing the payload content for malicious patterns",
+        "MAC address filtering preventing unknown devices from connecting",
+        "Bandwidth throttling detecting unusually high data transfer rates"
+      ],
+      "correct_index": 1,
+      "explanation": "Deep packet inspection allows NGFWs to examine the actual content of packets beyond just headers, enabling detection of malicious payloads even in encrypted or seemingly legitimate traffic."
+    },
+    {
+      "question": "An organization wants to implement QoS policies that prioritize Zoom video calls over file sharing applications during business hours. Which NGFW capability is most essential for this requirement?",
+      "options": [
+        "Intrusion Prevention System (IPS) to detect malicious traffic",
+        "Application recognition to identify and classify different applications",
+        "Deep packet inspection to analyze packet headers only",
+        "Network address translation (NAT) to manage IP addressing"
+      ],
+      "correct_index": 1,
+      "explanation": "Application recognition allows the NGFW to identify specific applications like Zoom and file sharing services, which is necessary to apply different QoS policies to different application types."
+    },
+    {
+      "question": "A network administrator notices that users are accessing a file sharing application that uses random ports and encrypted traffic to evade traditional firewalls. Why would an NGFW be more effective than a traditional firewall in this situation?",
+      "options": [
+        "NGFWs can decrypt all encrypted traffic automatically",
+        "NGFWs use behavioral analysis and application signatures rather than relying solely on port numbers",
+        "NGFWs block all traffic using random ports by default",
+        "NGFWs have faster processing speeds for encrypted traffic"
+      ],
+      "correct_index": 1,
+      "explanation": "NGFWs use sophisticated techniques like behavioral analysis, protocol detection, and application signatures to identify applications even when they use port hopping or encryption to evade traditional port-based filtering."
+    },
+    {
+      "question": "When would it be most appropriate to configure an NGFW to operate in IPS mode rather than traditional firewall mode for a specific network segment?",
+      "options": [
+        "When the segment contains only trusted internal users who don't require monitoring",
+        "When the segment handles sensitive data and requires real-time threat detection and prevention",
+        "When the segment has low bandwidth requirements and minimal traffic",
+        "When the segment only needs basic port and protocol filtering"
+      ],
+      "correct_index": 1,
+      "explanation": "IPS mode provides real-time threat detection and prevention capabilities, making it ideal for protecting sensitive data environments where active monitoring and immediate response to threats is critical."
+    }
+  ],
+  "passing_score": 80
+}

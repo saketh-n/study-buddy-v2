@@ -1,0 +1,61 @@
+{
+  "topic_name": "Popular Linux filesystem formats: Ext3 (extent based architecture), XFS (B+trees), ZFS* ;; Windows has NTFS/exFAT/FAT, Apple: APFS/AFS",
+  "questions": [
+    {
+      "question": "A system administrator needs to format a USB drive that will be used to transfer large video files between Windows, macOS, and Linux systems. Which filesystem would be the BEST choice for maximum compatibility?",
+      "options": [
+        "NTFS",
+        "exFAT",
+        "Ext4",
+        "APFS"
+      ],
+      "correct_index": 1,
+      "explanation": "exFAT is designed for removable media and provides cross-platform compatibility between Windows, macOS, and Linux, while supporting large files. NTFS has limited write support on macOS, while Ext4 and APFS have poor Windows compatibility."
+    },
+    {
+      "question": "What is the primary advantage of XFS's B+tree architecture over traditional block-based allocation methods?",
+      "options": [
+        "Better data compression",
+        "Faster file searches and directory operations",
+        "Built-in RAID functionality",
+        "Automatic file encryption"
+      ],
+      "correct_index": 1,
+      "explanation": "B+tree architecture in XFS provides efficient indexing for file metadata, enabling faster file searches and directory operations, especially with large numbers of files. This is particularly beneficial for databases and high-performance computing environments."
+    },
+    {
+      "question": "A video production company needs a filesystem for their new Linux-based editing workstations that will handle many large video files simultaneously. Which feature makes XFS particularly suitable for this scenario?",
+      "options": [
+        "Built-in compression reduces storage requirements",
+        "Extent-based allocation minimizes fragmentation of large files",
+        "Automatic backup functionality",
+        "Better security permissions"
+      ],
+      "correct_index": 1,
+      "explanation": "XFS uses extent-based allocation which groups contiguous blocks together, reducing fragmentation when working with large files like videos. This results in better performance for sequential read/write operations common in video editing."
+    },
+    {
+      "question": "Why might a data center choose ZFS over other filesystems for their storage servers, despite higher memory requirements?",
+      "options": [
+        "ZFS provides faster boot times",
+        "ZFS offers built-in data integrity checking and self-healing capabilities",
+        "ZFS uses less disk space than other filesystems",
+        "ZFS is the only filesystem that supports multiple operating systems"
+      ],
+      "correct_index": 1,
+      "explanation": "ZFS includes advanced features like checksumming, snapshots, and self-healing through redundancy, making it ideal for critical data storage where data integrity is paramount. These features help prevent and recover from data corruption automatically."
+    },
+    {
+      "question": "A developer needs to create a disk image that will be mounted on both legacy Windows XP systems and modern Windows 10 machines. Which filesystem choice would ensure the broadest compatibility?",
+      "options": [
+        "NTFS",
+        "exFAT",
+        "FAT32",
+        "Ext3"
+      ],
+      "correct_index": 2,
+      "explanation": "FAT32 provides the broadest compatibility across Windows versions, from very old systems to modern ones. While it has limitations (4GB max file size), it ensures the disk image will work on legacy Windows XP and newer systems. NTFS might not be fully supported on very old systems, and exFAT requires newer OS versions."
+    }
+  ],
+  "passing_score": 80
+}

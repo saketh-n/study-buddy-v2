@@ -1,0 +1,61 @@
+{
+  "topic_name": "OpenStack",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of OpenStack's modular design compared to proprietary cloud platforms?",
+      "options": [
+        "It automatically scales resources without configuration",
+        "It allows organizations to deploy only needed services and customize components",
+        "It provides better security through closed-source components",
+        "It requires less hardware resources to operate"
+      ],
+      "correct_index": 1,
+      "explanation": "OpenStack's modular architecture allows organizations to deploy only the services they need (like Nova for compute, Swift for storage) and replace or customize components, providing flexibility that proprietary platforms typically don't offer."
+    },
+    {
+      "question": "A company wants to avoid vendor lock-in while building a private cloud that can later integrate with public cloud services. Why would OpenStack be a better choice than a single vendor's cloud solution?",
+      "options": [
+        "OpenStack automatically migrates workloads between clouds",
+        "OpenStack uses open APIs and standards that promote interoperability",
+        "OpenStack is always free to implement and maintain",
+        "OpenStack provides better performance than proprietary solutions"
+      ],
+      "correct_index": 1,
+      "explanation": "OpenStack uses open APIs and industry standards, making it easier to integrate with other systems and avoid vendor lock-in. This interoperability allows for hybrid cloud strategies and prevents dependence on a single vendor's proprietary technologies."
+    },
+    {
+      "question": "In OpenStack's architecture, what role does the Nova service play in relation to containerization technologies like Docker?",
+      "options": [
+        "Nova replaces the need for container orchestration platforms",
+        "Nova can provision VMs that host container runtime environments",
+        "Nova directly manages container lifecycles like Kubernetes",
+        "Nova converts containers into virtual machines automatically"
+      ],
+      "correct_index": 1,
+      "explanation": "Nova is OpenStack's compute service that provisions and manages virtual machines. These VMs can then host container runtime environments like Docker, with orchestration platforms like Kubernetes running on top of the Nova-managed infrastructure."
+    },
+    {
+      "question": "An organization needs to implement software-defined networking (SDN) capabilities in their OpenStack deployment. Which scenario best demonstrates when they would need to customize or extend the default Neutron networking service?",
+      "options": [
+        "When they need basic DHCP and DNS services for instances",
+        "When they need to integrate with existing enterprise network infrastructure and custom security policies",
+        "When they want to create simple virtual networks between instances",
+        "When they need standard firewall rules for instance security groups"
+      ],
+      "correct_index": 1,
+      "explanation": "While Neutron provides basic networking capabilities, organizations often need to customize it when integrating with existing enterprise infrastructure, implementing custom security policies, or supporting specific network topologies that go beyond standard virtual networking."
+    },
+    {
+      "question": "A development team is deciding between using OpenStack's Swift object storage versus traditional block storage (Cinder) for their application. What scenario would make Swift the more appropriate choice?",
+      "options": [
+        "Storing database files that require low-latency random access",
+        "Storing application logs and backup files that need to scale horizontally",
+        "Providing storage that can be mounted directly to virtual machine instances",
+        "Storing temporary files that need to be frequently modified"
+      ],
+      "correct_index": 1,
+      "explanation": "Swift is designed for object storage that scales horizontally and is ideal for storing large amounts of unstructured data like logs, backups, and media files. Block storage (Cinder) is better for structured data requiring direct mounting and low-latency access."
+    }
+  ],
+  "passing_score": 80
+}

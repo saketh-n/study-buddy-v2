@@ -1,0 +1,61 @@
+{
+  "topic_name": "Object based (S3, Openstack swift, IBM, Pure Storage, Netapp,\u2026)",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between object storage and traditional file systems in terms of data organization?",
+      "options": [
+        "Object storage uses a flat namespace with unique identifiers rather than hierarchical directories",
+        "Object storage is faster because it uses solid-state drives exclusively",
+        "Object storage can only store files smaller than 1GB",
+        "Object storage requires special operating systems to function"
+      ],
+      "correct_index": 0,
+      "explanation": "Object storage uses a flat namespace where each object is identified by a unique key/identifier and accessed via REST APIs, unlike traditional file systems that organize data in hierarchical directory structures."
+    },
+    {
+      "question": "A company needs to store millions of user-generated images for a web application that experiences unpredictable traffic spikes. Which storage characteristic makes object storage the best choice for this scenario?",
+      "options": [
+        "Object storage provides the fastest random access to individual files",
+        "Object storage offers automatic compression for all image formats",
+        "Object storage provides virtually unlimited scalability and HTTP-based access",
+        "Object storage automatically converts images to optimal formats"
+      ],
+      "correct_index": 2,
+      "explanation": "Object storage excels in web applications due to its virtually unlimited horizontal scalability and native HTTP/REST API access, making it ideal for handling unpredictable loads and serving content directly to web applications."
+    },
+    {
+      "question": "Why would an organization choose Amazon S3's different storage classes (Standard, Infrequent Access, Glacier) rather than using a single storage tier?",
+      "options": [
+        "Different storage classes use different file formats for compatibility",
+        "Different storage classes provide varying levels of security encryption",
+        "Different storage classes optimize cost based on access patterns and retrieval requirements",
+        "Different storage classes are required for different geographic regions"
+      ],
+      "correct_index": 2,
+      "explanation": "S3 storage classes are designed to optimize costs by matching storage pricing and retrieval characteristics to how frequently and quickly data needs to be accessed, from frequently accessed (Standard) to archival storage (Glacier)."
+    },
+    {
+      "question": "A development team is designing a backup solution for their database. They need to ensure data durability and want to avoid vendor lock-in. How should they approach object storage selection?",
+      "options": [
+        "Choose the fastest object storage solution regardless of API compatibility",
+        "Select a solution that supports S3-compatible APIs for portability between providers",
+        "Use only open-source object storage solutions to avoid licensing costs",
+        "Implement their own proprietary object storage protocol for maximum control"
+      ],
+      "correct_index": 1,
+      "explanation": "S3-compatible APIs have become the de facto standard for object storage, allowing applications to work with multiple providers (AWS S3, OpenStack Swift, MinIO, etc.) with minimal code changes, thus avoiding vendor lock-in."
+    },
+    {
+      "question": "When would traditional NAS (Network Attached Storage) be more appropriate than object storage for an organization's needs?",
+      "options": [
+        "When the organization needs to store petabytes of unstructured data",
+        "When applications require POSIX file system operations and low-latency random access",
+        "When the data needs to be accessible via web browsers",
+        "When the organization wants to minimize storage infrastructure costs"
+      ],
+      "correct_index": 1,
+      "explanation": "Traditional NAS is better suited for applications that require POSIX file system operations (like file locking, append operations) and low-latency random access patterns, while object storage is optimized for web-scale applications with REST API access patterns."
+    }
+  ],
+  "passing_score": 80
+}

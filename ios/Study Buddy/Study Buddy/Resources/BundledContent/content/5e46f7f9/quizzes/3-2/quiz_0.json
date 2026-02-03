@@ -1,0 +1,61 @@
+{
+  "topic_name": "Anycast and Global Distribution",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between anycast and unicast addressing?",
+      "options": [
+        "Anycast uses multiple IP addresses for the same service, unicast uses one",
+        "Anycast uses one IP address shared by multiple servers, unicast maps one IP to one server",
+        "Anycast only works with IPv6, unicast works with both IPv4 and IPv6",
+        "Anycast requires special client software, unicast works with standard applications"
+      ],
+      "correct_index": 1,
+      "explanation": "Anycast allows multiple servers to share the same IP address, with routing protocols directing traffic to the nearest server, while unicast maintains a one-to-one mapping between IP address and server."
+    },
+    {
+      "question": "A company wants to reduce latency for their global web application. Which scenario would benefit MOST from implementing anycast?",
+      "options": [
+        "A social media platform with users primarily concentrated in one city",
+        "A streaming service with global users accessing large video files",
+        "An internal corporate application used only by employees in headquarters",
+        "A local restaurant's website for online ordering"
+      ],
+      "correct_index": 1,
+      "explanation": "A streaming service with global users would benefit most because anycast routes users to the geographically closest server, reducing latency for large file transfers and improving user experience worldwide."
+    },
+    {
+      "question": "How does BGP (Border Gateway Protocol) routing enable anycast functionality?",
+      "options": [
+        "BGP creates multiple unique IP addresses for each anycast server",
+        "BGP automatically load balances traffic equally across all anycast servers",
+        "BGP advertises the same IP prefix from multiple locations, allowing routing to the closest server",
+        "BGP encrypts traffic between client and the nearest anycast server"
+      ],
+      "correct_index": 2,
+      "explanation": "BGP enables anycast by allowing multiple servers in different locations to advertise the same IP prefix, causing routers to direct traffic to the topologically closest server based on routing metrics."
+    },
+    {
+      "question": "What happens when an anycast server fails or goes offline?",
+      "options": [
+        "All clients lose connectivity until the server is restored",
+        "Traffic automatically redirects to the next closest anycast server without client intervention",
+        "Clients must manually switch to a backup IP address",
+        "The shared IP address becomes unavailable globally"
+      ],
+      "correct_index": 1,
+      "explanation": "When an anycast server fails, it stops advertising the route, causing BGP to automatically redirect traffic to the next closest available server sharing the same IP address, providing built-in failover."
+    },
+    {
+      "question": "Why is anycast particularly well-suited for DNS root servers and CDN edge servers?",
+      "options": [
+        "These services require the highest possible security and anycast provides encryption",
+        "These services need global availability with low latency, and anycast provides geographic distribution with automatic routing",
+        "These services handle sensitive data that must be replicated across multiple locations",
+        "These services require the most bandwidth and anycast increases total capacity"
+      ],
+      "correct_index": 1,
+      "explanation": "DNS and CDN services benefit from anycast because they need to serve users globally with minimal latency. Anycast's automatic routing to the nearest server reduces response times and provides natural load distribution and redundancy."
+    }
+  ],
+  "passing_score": 80
+}

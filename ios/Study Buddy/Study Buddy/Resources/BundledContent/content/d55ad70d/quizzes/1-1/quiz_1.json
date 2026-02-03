@@ -1,0 +1,61 @@
+{
+  "topic_name": "HA n Perf improvements using RAID (RAID 0,1, 10,..)",
+  "questions": [
+    {
+      "question": "A video editing company needs to store large 4K video files and requires both high read/write performance and protection against single drive failures. Which RAID configuration would best meet their requirements?",
+      "options": [
+        "RAID 0 - provides maximum performance for large files",
+        "RAID 1 - ensures complete data protection",
+        "RAID 10 - combines striping performance with mirroring redundancy",
+        "RAID 5 - offers good balance of performance and storage efficiency"
+      ],
+      "correct_index": 2,
+      "explanation": "RAID 10 combines the performance benefits of RAID 0 (striping) with the fault tolerance of RAID 1 (mirroring), making it ideal for applications requiring both high performance and reliability, though at higher cost due to 50% storage overhead."
+    },
+    {
+      "question": "Why does RAID 0 provide improved read performance compared to a single drive, but offers no fault tolerance?",
+      "options": [
+        "Data is duplicated across drives, allowing parallel reads but creating single points of failure",
+        "Data is striped across drives enabling parallel access, but any drive failure loses all data",
+        "Parity information speeds up reads but cannot recover from drive failures",
+        "Drive caching is enhanced but backup drives are not included"
+      ],
+      "correct_index": 1,
+      "explanation": "RAID 0 stripes data across multiple drives, allowing simultaneous read/write operations that increase throughput. However, since data is distributed without redundancy, the failure of any single drive makes the entire array inaccessible."
+    },
+    {
+      "question": "A database server experiences frequent read operations but relatively few writes. The administrator wants to maximize read performance while maintaining data protection. What is the key advantage of RAID 1 in this scenario?",
+      "options": [
+        "Write operations are faster because data only needs to be written once",
+        "Read operations can be distributed across both drives in the mirror",
+        "Parity calculations improve read speed for database queries",
+        "Data striping allows parallel access to database records"
+      ],
+      "correct_index": 1,
+      "explanation": "RAID 1 can improve read performance by allowing read requests to be served from either drive in the mirror pair. The controller can distribute reads across both drives or read from the drive with the shortest seek time, while maintaining full redundancy."
+    },
+    {
+      "question": "An organization is comparing RAID 5 and RAID 10 for their file server. Both configurations use 4 drives total. What is the fundamental trade-off between these two approaches?",
+      "options": [
+        "RAID 5 provides better write performance but less storage capacity than RAID 10",
+        "RAID 5 offers more usable storage space but slower write performance and longer rebuild times than RAID 10",
+        "RAID 10 has better fault tolerance but requires more complex parity calculations than RAID 5",
+        "RAID 10 provides more storage efficiency but RAID 5 offers better read performance"
+      ],
+      "correct_index": 1,
+      "explanation": "RAID 5 with 4 drives provides 75% storage efficiency (3 drives worth of space) but suffers from slow writes due to parity calculations and vulnerable rebuild periods. RAID 10 offers only 50% efficiency but provides faster writes and better fault tolerance with quicker rebuilds."
+    },
+    {
+      "question": "A company's RAID 5 array with 5 drives has one drive failure. During the rebuild process using a hot spare, what is the primary risk that makes RAID 6 a better choice for mission-critical applications?",
+      "options": [
+        "The rebuild process will corrupt the parity information on remaining drives",
+        "If another drive fails during rebuild, all data will be lost since RAID 5 can only tolerate one failure",
+        "The hot spare drive will not have the same performance characteristics as the original drives",
+        "Parity recalculation during rebuild will permanently slow down the array performance"
+      ],
+      "correct_index": 1,
+      "explanation": "RAID 5 can only tolerate a single drive failure. During the rebuild process, the array is vulnerable because if any other drive fails before rebuild completion, all data is lost. RAID 6 addresses this with dual parity, allowing survival of two simultaneous drive failures."
+    }
+  ],
+  "passing_score": 80
+}

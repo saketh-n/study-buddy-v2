@@ -1,0 +1,61 @@
+{
+  "topic_name": "Cold Chain Requirements",
+  "questions": [
+    {
+      "question": "A pharmacy receives a shipment of GLP-1 receptor agonist pens that were exposed to 45\u00b0F (7\u00b0C) for 30 minutes during transport. What is the most appropriate action?",
+      "options": [
+        "Immediately discard all medication as it's been compromised",
+        "Store normally and dispense as usual since the exposure was brief",
+        "Contact the manufacturer for guidance and quarantine the shipment",
+        "Test one pen to see if it still works before dispensing others"
+      ],
+      "correct_index": 2,
+      "explanation": "Even brief temperature excursions outside the required 36-46\u00b0F range require manufacturer consultation to determine product viability, as protein stability can be affected by temperature variations."
+    },
+    {
+      "question": "Why are GLP-1 receptor agonists more sensitive to temperature variations compared to traditional small-molecule diabetes medications?",
+      "options": [
+        "They contain more active ingredient per dose",
+        "They are protein-based biologics that can denature when heated",
+        "They are formulated in liquid rather than solid form",
+        "They have a shorter shelf life than other medications"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 agonists are protein-based biologics that can lose their three-dimensional structure and therapeutic activity when exposed to temperature extremes, unlike small-molecule drugs that are more chemically stable."
+    },
+    {
+      "question": "A patient is traveling internationally for 3 weeks and needs to bring their GLP-1 medication. Which scenario represents the most critical cold chain consideration?",
+      "options": [
+        "Ensuring they have enough medication for the entire trip",
+        "Keeping medication in carry-on luggage to avoid cargo hold freezing",
+        "Obtaining a prescription in the destination country",
+        "Using insulated packaging for the return flight"
+      ],
+      "correct_index": 1,
+      "explanation": "Cargo holds can reach freezing temperatures that would permanently damage GLP-1 medications. Carry-on luggage maintains cabin temperature, preserving medication integrity throughout travel."
+    },
+    {
+      "question": "During a power outage lasting 6 hours, a clinic's refrigerator temperature rises to 55\u00b0F (13\u00b0C). The GLP-1 medications inside are worth $15,000. What principle should guide the decision-making process?",
+      "options": [
+        "Financial cost should determine whether to keep or discard the medications",
+        "Patient safety requires assuming the medications are compromised regardless of cost",
+        "The medications can be used if patients are informed of the temperature exposure",
+        "A 6-hour exposure is acceptable as long as temperatures didn't exceed 60\u00b0F"
+      ],
+      "correct_index": 1,
+      "explanation": "Patient safety must always take precedence over financial considerations. Temperature-compromised biologics may have reduced efficacy or altered properties, potentially leading to treatment failure or adverse effects."
+    },
+    {
+      "question": "When implementing a cold chain monitoring system for GLP-1 medications, which approach would be most effective for preventing therapeutic failures?",
+      "options": [
+        "Installing backup generators for all refrigeration units",
+        "Using continuous digital temperature monitoring with real-time alerts",
+        "Training staff to check temperatures every 4 hours manually",
+        "Maintaining detailed logs of all medication lot numbers and expiration dates"
+      ],
+      "correct_index": 1,
+      "explanation": "Continuous digital monitoring with real-time alerts enables immediate response to temperature excursions, minimizing exposure time and potential medication compromise, which is critical for maintaining therapeutic efficacy."
+    }
+  ],
+  "passing_score": 80
+}

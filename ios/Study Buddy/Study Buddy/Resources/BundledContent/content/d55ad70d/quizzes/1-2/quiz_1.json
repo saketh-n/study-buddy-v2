@@ -1,0 +1,61 @@
+{
+  "topic_name": "Valley big storage companies: NetApp, Pure, Brocade switches,..; Disks: Western Digital, Hitachi, San Disk,..",
+  "questions": [
+    {
+      "question": "A company needs to implement a storage solution that can handle unpredictable workloads with consistent performance and minimal management overhead. Which type of storage vendor would be most appropriate for this scenario?",
+      "options": [
+        "Traditional hard disk manufacturers like Western Digital or Hitachi",
+        "All-flash array vendors like Pure Storage",
+        "Network switch manufacturers like Brocade",
+        "Any storage vendor since they all provide similar performance"
+      ],
+      "correct_index": 1,
+      "explanation": "All-flash array vendors like Pure Storage specialize in providing consistent, low-latency performance that can handle unpredictable workloads better than traditional spinning disks, and often include intelligent management features to reduce administrative overhead."
+    },
+    {
+      "question": "Why would an enterprise choose NetApp over purchasing raw storage drives directly from manufacturers like Western Digital or SanDisk?",
+      "options": [
+        "NetApp drives are always faster than manufacturer drives",
+        "NetApp provides integrated storage systems with management software, data services, and support",
+        "NetApp storage is always less expensive per terabyte",
+        "NetApp only works with proprietary drives that perform better"
+      ],
+      "correct_index": 1,
+      "explanation": "NetApp provides complete storage systems that include not just the hardware but also sophisticated management software, data protection services, snapshots, replication, and enterprise support - value that raw drive manufacturers don't offer."
+    },
+    {
+      "question": "In a storage area network (SAN) implementation, what role would Brocade typically play compared to companies like NetApp or Pure Storage?",
+      "options": [
+        "Brocade provides the actual storage arrays while NetApp provides networking",
+        "Brocade provides the networking infrastructure while NetApp/Pure provide storage arrays",
+        "Brocade and NetApp are direct competitors offering identical products",
+        "Brocade only provides software while others provide hardware"
+      ],
+      "correct_index": 1,
+      "explanation": "Brocade specializes in networking infrastructure (switches, fabric) that connects storage arrays to servers in a SAN, while NetApp and Pure Storage provide the actual storage arrays that hold the data."
+    },
+    {
+      "question": "A startup with limited IT staff needs reliable storage but wants to avoid vendor lock-in. Which approach would best balance these concerns?",
+      "options": [
+        "Choose only Pure Storage for simplicity",
+        "Build custom storage using individual drives from Western Digital",
+        "Select NetApp with open protocols and standard interfaces",
+        "Use only Brocade networking with any storage"
+      ],
+      "correct_index": 2,
+      "explanation": "NetApp supports industry-standard protocols (NFS, CIFS, iSCSI, FC) and interfaces, providing enterprise reliability while avoiding proprietary lock-in, unlike pure-play vendors that might use more proprietary approaches."
+    },
+    {
+      "question": "When would it make sense to purchase drives directly from manufacturers like SanDisk or Hitachi rather than going through system vendors like NetApp or Pure Storage?",
+      "options": [
+        "When building custom storage solutions or replacing drives in existing systems",
+        "When you need the highest performance possible",
+        "When you want the best warranty and support",
+        "When implementing enterprise data protection features"
+      ],
+      "correct_index": 0,
+      "explanation": "Direct drive purchases make sense for custom builds, research projects, drive replacements, or when you have the expertise to build your own storage systems, but you lose the integrated management, support, and data services that system vendors provide."
+    }
+  ],
+  "passing_score": 80
+}

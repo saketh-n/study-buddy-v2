@@ -1,0 +1,61 @@
+{
+  "topic_name": "The Fur Trade and Economic Foundations",
+  "questions": [
+    {
+      "question": "Why did the fur trade lead to a fundamentally different pattern of French settlement in Canada compared to English agricultural colonies?",
+      "options": [
+        "The fur trade required large concentrated populations to process pelts efficiently",
+        "The fur trade was most profitable when conducted over vast territories with minimal European population density",
+        "French colonists were primarily interested in converting Indigenous peoples rather than economic gain",
+        "The harsh Canadian climate made agriculture impossible, forcing reliance on fur trading"
+      ],
+      "correct_index": 1,
+      "explanation": "The fur trade was most effective when conducted over large territories with minimal European settlement, as heavy colonization would disrupt animal habitats and Indigenous trading networks. This led to scattered trading posts rather than dense agricultural settlements."
+    },
+    {
+      "question": "A French colonial administrator in 1680 notices that Indigenous communities near heavily settled areas are becoming less cooperative in fur trading. What economic principle of the fur trade system would best explain this situation?",
+      "options": [
+        "Indigenous peoples preferred trading with English colonists who offered better prices",
+        "The fur trade system depended on maintaining Indigenous autonomy and traditional hunting grounds",
+        "French settlers were not offering enough European goods in exchange for furs",
+        "Indigenous peoples had depleted all the beaver in their traditional territories"
+      ],
+      "correct_index": 1,
+      "explanation": "The fur trade system required Indigenous peoples to maintain their traditional ways of life and territorial control. Heavy European settlement disrupted this balance by encroaching on hunting grounds and undermining Indigenous autonomy, making cooperation less beneficial for Indigenous communities."
+    },
+    {
+      "question": "How did the economic structure of the fur trade influence French colonial policy toward Indigenous peoples compared to other European colonial approaches?",
+      "options": [
+        "It led to policies of complete assimilation to create a unified workforce",
+        "It encouraged policies that maintained Indigenous political independence while fostering economic interdependence",
+        "It resulted in policies of territorial segregation to prevent economic competition",
+        "It promoted policies focused on converting Indigenous peoples to French agricultural practices"
+      ],
+      "correct_index": 1,
+      "explanation": "Because the fur trade depended on Indigenous knowledge, skills, and territorial access, French colonial policy generally aimed to maintain Indigenous political autonomy while creating strong economic partnerships, unlike colonies focused on land acquisition or plantation agriculture."
+    },
+    {
+      "question": "When would a coureur de bois (independent fur trader) be most likely to challenge the official French colonial trading system?",
+      "options": [
+        "When Indigenous peoples refused to trade with any Europeans",
+        "When official trading companies created monopolies that limited individual profit opportunities",
+        "When the Catholic Church banned all contact with Indigenous peoples",
+        "When English colonies offered military support for independent traders"
+      ],
+      "correct_index": 1,
+      "explanation": "Coureurs de bois emerged primarily in response to restrictive colonial policies that granted exclusive trading rights to specific companies, limiting opportunities for independent traders to profit from the lucrative fur trade."
+    },
+    {
+      "question": "What does the geographic distribution of early French settlements (concentrated along waterways like the St. Lawrence River and Great Lakes) reveal about the relationship between the fur trade and colonial development?",
+      "options": [
+        "French colonists avoided inland areas due to conflicts with Indigenous peoples",
+        "Waterways provided the only reliable transportation networks for moving furs to European markets",
+        "The French government required all settlements to be located near water for defensive purposes",
+        "Agricultural development was only possible in areas with direct access to major rivers"
+      ],
+      "correct_index": 1,
+      "explanation": "French settlements followed waterways because these provided essential transportation routes for the fur trade. Rivers and lakes allowed efficient movement of furs from interior trading posts to ships bound for European markets, making water access crucial for economic viability."
+    }
+  ],
+  "passing_score": 80
+}

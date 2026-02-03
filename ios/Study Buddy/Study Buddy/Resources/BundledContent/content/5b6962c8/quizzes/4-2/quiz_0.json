@@ -1,0 +1,61 @@
+{
+  "topic_name": "Vulnerability Assessment",
+  "questions": [
+    {
+      "question": "What is the primary purpose of conducting a vulnerability assessment in an organization's cybersecurity program?",
+      "options": [
+        "To identify and prioritize security weaknesses before attackers can exploit them",
+        "To demonstrate compliance with industry regulations",
+        "To test the organization's incident response capabilities",
+        "To monitor real-time network traffic for malicious activity"
+      ],
+      "correct_index": 0,
+      "explanation": "While compliance and other activities are important, the primary purpose of vulnerability assessment is proactive identification and prioritization of security weaknesses to prevent exploitation by threat actors."
+    },
+    {
+      "question": "A company discovers a critical vulnerability in their web application during a scheduled assessment. However, patching would require taking the system offline for 6 hours during peak business operations. What should be the immediate next step?",
+      "options": [
+        "Immediately patch the vulnerability regardless of business impact",
+        "Ignore the vulnerability since it was found internally",
+        "Implement temporary compensating controls while planning the patch deployment",
+        "Wait until the next maintenance window in 3 months to address it"
+      ],
+      "correct_index": 2,
+      "explanation": "Critical vulnerabilities require immediate attention, but business continuity must be considered. Compensating controls provide temporary protection while proper patching is planned and scheduled."
+    },
+    {
+      "question": "Which scenario would most likely require a different vulnerability assessment approach compared to a standard network infrastructure assessment?",
+      "options": [
+        "Assessing a cloud-based environment with auto-scaling capabilities",
+        "Evaluating a network with multiple VLANs",
+        "Testing systems with different operating systems",
+        "Scanning during off-peak hours versus peak hours"
+      ],
+      "correct_index": 0,
+      "explanation": "Cloud environments with auto-scaling present unique challenges as infrastructure changes dynamically, requiring specialized assessment techniques and tools compared to static traditional networks."
+    },
+    {
+      "question": "An organization's vulnerability assessment reveals that 40% of identified vulnerabilities are classified as 'Low' severity. How should the security team prioritize addressing these findings?",
+      "options": [
+        "Address them immediately after critical and high severity issues",
+        "Ignore them completely as they pose minimal risk",
+        "Focus only on those in internet-facing systems and deprioritize internal ones",
+        "Consider them alongside business context, asset criticality, and available resources"
+      ],
+      "correct_index": 3,
+      "explanation": "Even low-severity vulnerabilities should be evaluated in context. Asset criticality, potential attack chains, and resource availability should inform prioritization rather than severity scores alone."
+    },
+    {
+      "question": "Why would an organization choose to perform authenticated vulnerability scans instead of unauthenticated scans?",
+      "options": [
+        "Authenticated scans are faster and require less network bandwidth",
+        "Authenticated scans can identify vulnerabilities that are only visible from an insider's perspective",
+        "Authenticated scans are less likely to disrupt system operations",
+        "Authenticated scans provide better compliance reporting metrics"
+      ],
+      "correct_index": 1,
+      "explanation": "Authenticated scans provide deeper visibility into systems by accessing them with valid credentials, revealing vulnerabilities in configurations, installed software, and missing patches that external scans cannot detect."
+    }
+  ],
+  "passing_score": 80
+}

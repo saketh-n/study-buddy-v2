@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Runtime Flow",
+  "questions": [
+    {
+      "question": "What is the primary problem that tini solves in Docker containers?",
+      "options": [
+        "Zombie process reaping when the main process doesn't handle child process cleanup",
+        "Network connectivity issues between containers",
+        "Memory leaks in long-running applications",
+        "File system permission errors in multi-user containers"
+      ],
+      "correct_index": 0,
+      "explanation": "Tini acts as PID 1 in containers to properly reap zombie processes when the main application doesn't handle SIGCHLD signals, preventing zombie process accumulation that can exhaust system resources."
+    },
+    {
+      "question": "In which scenario would you most likely need to use tini as an init process in your Docker container?",
+      "options": [
+        "Running a single-threaded Python web application that never spawns child processes",
+        "Running a shell script that spawns multiple background processes and doesn't wait for them",
+        "Running a statically compiled Go binary with no external dependencies",
+        "Running a container that only serves static files with nginx"
+      ],
+      "correct_index": 1,
+      "explanation": "Shell scripts that spawn background processes often don't properly handle child process cleanup. When running as PID 1, they may not reap zombie processes, making tini essential for proper process management."
+    },
+    {
+      "question": "How does Docker's process execution flow change when using 'docker run --init'?",
+      "options": [
+        "Docker bypasses the container's CMD and runs the init process directly",
+        "Docker runs tini as PID 1, which then executes the specified command as a child process",
+        "Docker creates a separate init container that manages the main application container",
+        "Docker enables kernel-level process management features in the container namespace"
+      ],
+      "correct_index": 1,
+      "explanation": "The --init flag instructs Docker to run tini as PID 1 inside the container, which then spawns and manages the actual application command as its child process, handling proper signal forwarding and zombie reaping."
+    },
+    {
+      "question": "Why might a containerized application experience different signal handling behavior compared to running on a regular Linux system?",
+      "options": [
+        "Containers always run with restricted signal permissions",
+        "Process PID 1 in containers has special signal handling semantics that may not forward signals properly",
+        "Docker daemon intercepts all signals before they reach the container",
+        "Container filesystems don't support signal delivery mechanisms"
+      ],
+      "correct_index": 1,
+      "explanation": "PID 1 has special signal handling behavior in Linux - it ignores signals unless it explicitly handles them. Applications not designed to run as PID 1 may not handle signals like SIGTERM properly, which tini addresses by acting as a proper init process."
+    },
+    {
+      "question": "What happens in a Docker container when zombie processes accumulate due to improper process management?",
+      "options": [
+        "The container automatically restarts to clean up the processes",
+        "Docker daemon kills the container after detecting too many zombies",
+        "The system may eventually run out of process table entries, preventing new process creation",
+        "Zombie processes are automatically cleaned up by the Docker runtime every 5 minutes"
+      ],
+      "correct_index": 2,
+      "explanation": "Zombie processes consume entries in the process table. If they accumulate without being reaped, the system can exhaust available PIDs, preventing new processes from being created, which can affect the entire system's stability."
+    }
+  ],
+  "passing_score": 80
+}

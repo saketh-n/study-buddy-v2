@@ -1,0 +1,61 @@
+{
+  "topic_name": "Storage media",
+  "questions": [
+    {
+      "question": "A video production company needs to store raw 4K footage that will be frequently accessed and edited over the next month, then archived for potential future use. Which storage strategy would be most cost-effective?",
+      "options": [
+        "Store everything on high-capacity SSDs permanently",
+        "Use SSDs for active editing, then migrate to HDDs for archival",
+        "Use optical media for both active work and archival",
+        "Store everything on HDDs from the beginning"
+      ],
+      "correct_index": 1,
+      "explanation": "SSDs provide the fast access speeds needed for 4K video editing, but HDDs offer much lower cost per GB for long-term archival storage where access speed is less critical."
+    },
+    {
+      "question": "Why do SSDs typically have better performance than HDDs in laptop computers, especially when multitasking?",
+      "options": [
+        "SSDs have larger storage capacities than HDDs",
+        "SSDs have no moving parts, eliminating seek time and mechanical delays",
+        "SSDs use less electrical power than HDDs",
+        "SSDs have better error correction algorithms"
+      ],
+      "correct_index": 1,
+      "explanation": "SSDs use flash memory with no moving parts, allowing instant access to any location. HDDs must physically move read/write heads, creating delays especially when accessing multiple files simultaneously."
+    },
+    {
+      "question": "A photographer wants to distribute a portfolio of high-resolution images to potential clients. The storage medium should be inexpensive, widely compatible, and tamper-evident. Which option best meets these requirements?",
+      "options": [
+        "USB flash drives",
+        "Blu-ray discs",
+        "External HDDs",
+        "SD cards"
+      ],
+      "correct_index": 1,
+      "explanation": "Optical media like Blu-ray discs are read-only when burned, making them tamper-evident. They're inexpensive to produce in quantity and have universal compatibility with most computers."
+    },
+    {
+      "question": "What is the primary reason why magnetic storage devices can lose data when exposed to strong magnetic fields, while SSDs are unaffected?",
+      "options": [
+        "Magnetic devices use older, less reliable technology",
+        "Magnetic devices store data as magnetized particles that can be reoriented",
+        "SSDs have built-in magnetic shielding",
+        "Magnetic devices have weaker error correction systems"
+      ],
+      "correct_index": 1,
+      "explanation": "Magnetic storage encodes data by magnetizing tiny areas of the storage medium. External magnetic fields can alter these magnetic orientations, corrupting data. SSDs store data as electrical charges in flash memory cells, unaffected by magnetism."
+    },
+    {
+      "question": "A research facility needs to store critical experimental data for 50+ years while maintaining data integrity. Environmental conditions may vary, and the storage medium should not require power. Which technology would be most appropriate?",
+      "options": [
+        "Enterprise-grade SSDs in climate-controlled storage",
+        "High-quality optical discs with proper handling",
+        "RAID array of magnetic hard drives",
+        "Cloud storage with multiple redundant copies"
+      ],
+      "correct_index": 1,
+      "explanation": "High-quality optical discs (like archival-grade Blu-ray) can last decades without power, are resistant to environmental changes, and won't degrade from magnetic fields. SSDs can lose data without power over long periods, and HDDs have mechanical components that degrade."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Services (S3, EBS, EFS, Glacier, AWS Storage Gateway)..",
+  "questions": [
+    {
+      "question": "A startup is building a web application that needs to store user-uploaded photos that will be accessed frequently for the first 30 days, then rarely accessed afterward, but must remain available for compliance purposes for 7 years. Which combination of AWS storage services would be most cost-effective?",
+      "options": [
+        "EBS volumes with manual archiving to EFS",
+        "S3 Standard with lifecycle policies transitioning to S3 Glacier Flexible Retrieval",
+        "EFS with automated backups to S3 Standard",
+        "S3 Intelligent-Tiering for all storage needs"
+      ],
+      "correct_index": 1,
+      "explanation": "S3 Standard provides high availability for frequently accessed data, while lifecycle policies can automatically transition older objects to S3 Glacier Flexible Retrieval for long-term, infrequent access at much lower costs. This addresses both the access pattern and compliance requirements efficiently."
+    },
+    {
+      "question": "A company runs a high-performance computing (HPC) cluster on EC2 instances that requires shared file storage with consistent performance and POSIX compliance. Multiple instances need concurrent read/write access to the same datasets. Which storage solution best meets these requirements?",
+      "options": [
+        "Amazon S3 with S3FS mounting",
+        "Amazon EBS Multi-Attach volumes",
+        "Amazon EFS with Provisioned Throughput mode",
+        "AWS Storage Gateway File Gateway"
+      ],
+      "correct_index": 2,
+      "explanation": "Amazon EFS provides POSIX-compliant shared file storage that can be concurrently accessed by multiple EC2 instances. Provisioned Throughput mode ensures consistent performance for HPC workloads, while EBS Multi-Attach has limitations and S3 lacks POSIX compliance."
+    },
+    {
+      "question": "An enterprise wants to gradually migrate their on-premises file shares to AWS while maintaining local access for frequently used files and seamlessly extending storage to the cloud. Which AWS service architecture would best accomplish this hybrid approach?",
+      "options": [
+        "AWS DataSync with S3 Standard storage class",
+        "AWS Storage Gateway File Gateway with S3 backend",
+        "AWS Direct Connect with EFS mount targets",
+        "AWS Backup with cross-region replication to S3"
+      ],
+      "correct_index": 1,
+      "explanation": "AWS Storage Gateway File Gateway provides a hybrid solution that presents cloud storage as local file shares (NFS/SMB), caches frequently accessed data locally, and stores data in S3. This enables seamless cloud extension while maintaining local access patterns."
+    },
+    {
+      "question": "A financial services company needs to store transaction logs that must be retrievable within 12 hours for regulatory audits, but the data is rarely accessed after the initial compliance period. The company wants to minimize storage costs while meeting retrieval requirements. Which S3 storage class is most appropriate?",
+      "options": [
+        "S3 Standard-Infrequent Access (S3 Standard-IA)",
+        "S3 Glacier Instant Retrieval",
+        "S3 Glacier Flexible Retrieval",
+        "S3 Glacier Deep Archive"
+      ],
+      "correct_index": 2,
+      "explanation": "S3 Glacier Flexible Retrieval offers the right balance for this use case, providing retrieval times from minutes to 12 hours at a lower cost than Glacier Instant Retrieval. The 12-hour requirement rules out Deep Archive (12-48 hours), and the infrequent access pattern makes Glacier more cost-effective than Standard-IA."
+    },
+    {
+      "question": "A database administrator is designing storage for a production MySQL database on EC2 that requires consistent IOPS performance and the ability to take point-in-time snapshots. The database experiences variable workloads and needs to scale storage capacity without downtime. Which EBS volume type and configuration strategy would be most suitable?",
+      "options": [
+        "General Purpose SSD (gp3) with automatic scaling enabled",
+        "Provisioned IOPS SSD (io2) with Elastic Volumes feature",
+        "Throughput Optimized HDD (st1) with RAID configuration",
+        "Cold HDD (sc1) with frequent snapshot scheduling"
+      ],
+      "correct_index": 1,
+      "explanation": "Provisioned IOPS SSD (io2) provides consistent, high IOPS performance required for production databases. The Elastic Volumes feature allows modification of volume size, volume type, and IOPS performance without downtime, meeting the scaling requirements. HDD options are unsuitable for database workloads requiring consistent IOPS."
+    }
+  ],
+  "passing_score": 80
+}

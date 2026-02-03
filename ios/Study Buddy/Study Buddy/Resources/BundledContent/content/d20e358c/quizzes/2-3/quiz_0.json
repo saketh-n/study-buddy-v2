@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Runtime Flow",
+  "questions": [
+    {
+      "question": "Why is an init process like tini particularly important in Docker containers when running applications that spawn child processes?",
+      "options": [
+        "To improve container startup performance",
+        "To handle zombie process cleanup and signal forwarding",
+        "To provide better logging capabilities",
+        "To enable container networking features"
+      ],
+      "correct_index": 1,
+      "explanation": "Tini serves as PID 1 in containers to properly reap zombie processes and forward signals to child processes, preventing resource leaks and ensuring clean shutdowns."
+    },
+    {
+      "question": "What happens when a Docker container runs without an init process and the main application crashes, leaving orphaned child processes?",
+      "options": [
+        "Child processes automatically terminate",
+        "Docker daemon kills all processes immediately",
+        "Child processes become zombies and consume system resources",
+        "The container automatically restarts"
+      ],
+      "correct_index": 2,
+      "explanation": "Without a proper init process, orphaned child processes become zombies that cannot be reaped, leading to resource consumption and potential system issues."
+    },
+    {
+      "question": "In which scenario would you MOST likely need tini or a similar init process in your Docker container?",
+      "options": [
+        "Running a simple single-threaded web server",
+        "Running a Node.js application that spawns worker processes",
+        "Serving static files with nginx",
+        "Running a basic database query script"
+      ],
+      "correct_index": 1,
+      "explanation": "Applications that spawn child processes (like Node.js with workers) need proper process management to handle zombie cleanup and signal propagation."
+    },
+    {
+      "question": "How does Docker's --init flag affect the container runtime flow?",
+      "options": [
+        "It enables faster container startup times",
+        "It automatically injects tini as PID 1 before running your application",
+        "It provides additional security isolation",
+        "It enables container health checks"
+      ],
+      "correct_index": 1,
+      "explanation": "The --init flag instructs Docker to use tini as the init process (PID 1), which then spawns and manages your application as a child process."
+    },
+    {
+      "question": "When a SIGTERM signal is sent to a Docker container using tini, what is the correct sequence of events?",
+      "options": [
+        "Tini immediately kills all processes in the container",
+        "Tini forwards SIGTERM to the main application, waits for graceful shutdown, then handles cleanup",
+        "Docker daemon bypasses tini and signals the application directly",
+        "The container stops without any signal processing"
+      ],
+      "correct_index": 1,
+      "explanation": "Tini receives the SIGTERM, forwards it to the main application for graceful shutdown, waits for the process to exit, and handles any remaining cleanup including zombie reaping."
+    }
+  ],
+  "passing_score": 80
+}

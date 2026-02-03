@@ -1,0 +1,61 @@
+{
+  "topic_name": "Filesystem mount and unmount;; Hard links vs symbolic link ; /Proc Filesystem, /NFS, /CIFS mount, Sparsebundle filesystem",
+  "questions": [
+    {
+      "question": "A system administrator needs to create a backup script that will continue to work even if a file is moved to a different directory on the same filesystem. Which linking approach should they use and why?",
+      "options": [
+        "Hard links, because they reference the inode directly and remain valid regardless of the file's path",
+        "Symbolic links, because they are more flexible and can span across filesystems",
+        "Hard links, because they take up less disk space than symbolic links",
+        "Symbolic links, because they automatically update when the target file is moved"
+      ],
+      "correct_index": 0,
+      "explanation": "Hard links point directly to the inode, so they remain valid even if the original filename/path changes. Symbolic links would break if the target file is moved since they reference the path, not the inode."
+    },
+    {
+      "question": "When would mounting a filesystem with the 'noexec' option be most appropriate from a security perspective?",
+      "options": [
+        "When mounting a read-only filesystem to prevent any modifications",
+        "When mounting a temporary filesystem like /tmp to prevent execution of potentially malicious uploaded files",
+        "When mounting network filesystems to improve performance",
+        "When mounting the root filesystem to prevent system corruption"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'noexec' option prevents execution of binaries from that mount point. This is particularly useful for directories like /tmp where users might upload or create files, preventing execution of potentially malicious code while still allowing file storage."
+    },
+    {
+      "question": "A developer is troubleshooting a process and needs to examine its current working directory, open file descriptors, and environment variables. Which filesystem would provide this information most effectively?",
+      "options": [
+        "The /sys filesystem, as it contains all system information",
+        "The /proc filesystem, specifically under /proc/[PID]/ directories",
+        "The /dev filesystem, where device information is stored",
+        "The mounted NFS filesystem where process data is cached"
+      ],
+      "correct_index": 1,
+      "explanation": "The /proc filesystem provides a virtual interface to kernel data structures, including detailed process information under /proc/[PID]/ such as cwd (current working directory), fd/ (file descriptors), and environ (environment variables)."
+    },
+    {
+      "question": "An organization needs to share files between Linux and Windows systems while maintaining proper file permissions and supporting large files over 4GB. Which mounting solution would be most appropriate?",
+      "options": [
+        "CIFS mount with SMB3 protocol, as it supports large files and cross-platform permissions",
+        "NFS mount, as it's specifically designed for Windows-Linux interoperability",
+        "Local hard links, as they work across different operating systems",
+        "Sparsebundle filesystem, as it's optimized for mixed-platform environments"
+      ],
+      "correct_index": 0,
+      "explanation": "CIFS (Common Internet File System) with SMB3 protocol is designed for Windows-Linux file sharing, supports files larger than 4GB, and can handle cross-platform permissions. NFS is primarily Unix/Linux-oriented, and sparsebundle is mainly a macOS technology."
+    },
+    {
+      "question": "A Time Machine backup on macOS appears to be using less disk space than the actual data being backed up. What filesystem characteristic explains this behavior?",
+      "options": [
+        "Hard links are being used to avoid duplicating unchanged files between backups",
+        "The backup is compressed using built-in filesystem compression",
+        "Sparsebundle filesystem allocates disk space only as needed, not reserving the full backup size upfront",
+        "Symbolic links are pointing to original files instead of copying them"
+      ],
+      "correct_index": 2,
+      "explanation": "Sparsebundle filesystems (used by Time Machine) are sparse disk images that only allocate actual disk space as data is written, rather than reserving the entire declared size immediately. This allows efficient storage utilization for backups."
+    }
+  ],
+  "passing_score": 80
+}

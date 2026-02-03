@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Core Networking",
+  "questions": [
+    {
+      "question": "Your company needs to host a web application with a database backend. The web servers must be accessible from the internet, but the database servers should only be accessible from within your AWS infrastructure. What is the most appropriate subnet configuration?",
+      "options": [
+        "Place both web servers and database servers in public subnets with security groups controlling access",
+        "Place web servers in public subnets and database servers in private subnets",
+        "Place both web servers and database servers in private subnets and use a load balancer",
+        "Create a single subnet and use NACLs to control traffic flow"
+      ],
+      "correct_index": 1,
+      "explanation": "Public subnets have routes to an Internet Gateway, making resources directly accessible from the internet. Private subnets don't have direct internet access, providing isolation for sensitive resources like databases while still allowing communication within the VPC."
+    },
+    {
+      "question": "A startup is designing their first AWS infrastructure and wants to understand when they would need a Transit Gateway instead of just using VPC peering. Which scenario best justifies using Transit Gateway?",
+      "options": [
+        "Connecting exactly two VPCs that need to communicate with each other",
+        "Connecting multiple VPCs where each VPC needs to communicate with every other VPC",
+        "Connecting a VPC to the internet for public access",
+        "Connecting EC2 instances within the same VPC across different availability zones"
+      ],
+      "correct_index": 1,
+      "explanation": "Transit Gateway provides a hub-and-spoke model that simplifies network topology when you have multiple VPCs that need full mesh connectivity. VPC peering becomes complex and hard to manage when you need many-to-many connections, as it requires individual peering relationships between each pair of VPCs."
+    },
+    {
+      "question": "An application running in a private subnet needs to download software updates from the internet, but the subnet should not allow inbound internet traffic. What AWS service combination would enable this requirement?",
+      "options": [
+        "Internet Gateway only",
+        "NAT Gateway in a public subnet with appropriate route table entries",
+        "VPC Endpoint only",
+        "Direct Connect Gateway"
+      ],
+      "correct_index": 1,
+      "explanation": "A NAT Gateway placed in a public subnet allows resources in private subnets to initiate outbound internet connections while preventing inbound internet traffic from reaching them directly. The private subnet's route table must point internet-bound traffic to the NAT Gateway."
+    },
+    {
+      "question": "Your organization has multiple AWS accounts and wants to centrally manage connectivity between VPCs across these accounts, as well as on-premises networks. The solution should minimize operational overhead and provide centralized routing control. Which approach best meets these requirements?",
+      "options": [
+        "Create VPC peering connections between all VPCs across accounts",
+        "Use a Transit Gateway with cross-account resource sharing",
+        "Set up individual VPN connections from each VPC to on-premises",
+        "Create Internet Gateways in each VPC and route through the internet"
+      ],
+      "correct_index": 1,
+      "explanation": "Transit Gateway supports cross-account sharing through AWS Resource Access Manager (RAM), allowing centralized network management. This provides a single point of control for routing policies and reduces the complexity of managing multiple point-to-point connections across accounts."
+    },
+    {
+      "question": "A company wants to ensure that traffic between their application tier and database tier never leaves the AWS network, even when accessing AWS services like S3. They also want to minimize data transfer costs. What combination of AWS networking features should they implement?",
+      "options": [
+        "Use only public subnets with security groups to control access",
+        "Implement VPC Endpoints for AWS services and keep application components in private subnets",
+        "Use NAT Gateways for all AWS service communication",
+        "Route all traffic through an Internet Gateway with encryption"
+      ],
+      "correct_index": 1,
+      "explanation": "VPC Endpoints allow private connectivity to AWS services without traffic leaving the AWS network, eliminating NAT Gateway costs and internet routing. Combined with private subnets, this ensures internal traffic stays within the AWS backbone and reduces data transfer costs."
+    }
+  ],
+  "passing_score": 80
+}

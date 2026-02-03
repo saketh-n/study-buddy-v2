@@ -1,0 +1,61 @@
+{
+  "topic_name": "Security and Compliance",
+  "questions": [
+    {
+      "question": "A data engineering team needs to store customer payment information in a data warehouse for analytics. Which encryption approach provides the best balance of security and analytical utility?",
+      "options": [
+        "Encrypt the entire database at rest using full-disk encryption",
+        "Use field-level encryption for sensitive fields like credit card numbers while leaving other fields unencrypted",
+        "Hash all payment data using MD5 for fast query performance",
+        "Store payment data in plain text but encrypt the network connections"
+      ],
+      "correct_index": 1,
+      "explanation": "Field-level encryption allows sensitive data to be protected while maintaining the ability to perform analytics on non-sensitive fields. Full-disk encryption doesn't protect against application-level access, MD5 is cryptographically weak and irreversible, and storing sensitive data in plain text violates security best practices."
+    },
+    {
+      "question": "Under GDPR, a European customer requests deletion of their personal data from your analytics platform. However, this data is also used for fraud detection models that protect other customers. What is the most compliant approach?",
+      "options": [
+        "Deny the deletion request because fraud prevention is a legitimate business interest",
+        "Delete the data immediately from all systems including fraud detection models",
+        "Anonymize the data by removing direct identifiers while keeping behavioral patterns for fraud detection",
+        "Retain the data but mark it as 'do not process' in your systems"
+      ],
+      "correct_index": 2,
+      "explanation": "GDPR allows for anonymization as a way to comply with deletion requests while maintaining legitimate business interests. Properly anonymized data is no longer considered personal data under GDPR. Simply denying requests or marking data as 'do not process' doesn't fulfill the right to erasure."
+    },
+    {
+      "question": "When implementing role-based access control (RBAC) for a data lake containing both public datasets and sensitive customer data, which principle should guide the permission structure?",
+      "options": [
+        "Grant broad access initially and remove permissions when security incidents occur",
+        "Use attribute-based access control instead since RBAC is insufficient for data lakes",
+        "Implement least privilege with data classification tags to automatically enforce access policies",
+        "Create separate physical data lakes for different sensitivity levels"
+      ],
+      "correct_index": 2,
+      "explanation": "Least privilege combined with data classification provides scalable, automated security. Physical separation is costly and inflexible, broad initial access violates security principles, and while ABAC can be useful, the question specifically asks about implementing RBAC effectively."
+    },
+    {
+      "question": "A data pipeline processes health records from multiple countries. The pipeline fails compliance audits because data from different jurisdictions is being mixed. What architectural pattern would best address this while maintaining processing efficiency?",
+      "options": [
+        "Implement separate pipelines for each country with identical processing logic",
+        "Use data residency controls with jurisdiction-aware partitioning and processing",
+        "Encrypt all data with country-specific keys but process it together",
+        "Apply the strictest regulations from any country to all data"
+      ],
+      "correct_index": 1,
+      "explanation": "Data residency controls with jurisdiction-aware partitioning allow compliance with local regulations while maintaining efficiency through shared infrastructure. Separate pipelines create maintenance overhead, encryption alone doesn't solve jurisdictional issues, and applying the strictest rules everywhere may be unnecessarily restrictive and costly."
+    },
+    {
+      "question": "Your organization needs to demonstrate data lineage for compliance auditing. A data scientist claims that since machine learning models only use aggregated data, individual record lineage isn't necessary. Why is this reasoning flawed?",
+      "options": [
+        "Aggregated data still derives from individual records, and bias or errors in source data can affect model outcomes",
+        "Machine learning models always require individual record tracking regardless of aggregation",
+        "Compliance regulations specifically prohibit using aggregated data for ML models",
+        "Data lineage is only required for data at rest, not data in motion through ML pipelines"
+      ],
+      "correct_index": 0,
+      "explanation": "Even aggregated data inherits the compliance and quality characteristics of its source records. Understanding lineage helps identify bias, errors, and compliance issues that can affect model validity and regulatory requirements. The other options contain incorrect absolute statements about ML requirements and compliance rules."
+    }
+  ],
+  "passing_score": 80
+}

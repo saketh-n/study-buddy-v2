@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux KVM",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of KVM compared to traditional hypervisors like VMware ESX?",
+      "options": [
+        "KVM runs as a kernel module, leveraging existing Linux kernel features",
+        "KVM provides better graphics acceleration for virtual machines",
+        "KVM uses less memory per virtual machine",
+        "KVM supports more guest operating systems"
+      ],
+      "correct_index": 0,
+      "explanation": "KVM's key advantage is that it integrates directly into the Linux kernel as a module, allowing it to leverage existing kernel features like memory management, scheduling, and hardware abstraction rather than reimplementing them."
+    },
+    {
+      "question": "In a production environment where you need to run 50+ virtual machines with different operating systems, when would KVM be the most appropriate choice?",
+      "options": [
+        "When all VMs need GPU passthrough for machine learning workloads",
+        "When you need a cost-effective solution with strong performance on Linux host systems",
+        "When you require the simplest possible management interface",
+        "When you need to frequently migrate VMs between different hypervisor platforms"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM excels in large-scale deployments due to its open-source nature (no licensing costs), excellent performance through hardware-assisted virtualization, and mature ecosystem, making it ideal for cost-effective enterprise virtualization on Linux hosts."
+    },
+    {
+      "question": "What role does QEMU play in the KVM virtualization stack?",
+      "options": [
+        "QEMU replaces the Linux kernel's memory management for VMs",
+        "QEMU provides device emulation and userspace management while KVM handles CPU virtualization",
+        "QEMU is only needed for Windows guest operating systems",
+        "QEMU manages the hypervisor's network security policies"
+      ],
+      "correct_index": 1,
+      "explanation": "QEMU handles device emulation (network cards, storage, etc.) and provides the userspace tools for VM management, while KVM focuses specifically on CPU and memory virtualization through kernel-level acceleration."
+    },
+    {
+      "question": "Why does KVM require CPU hardware virtualization extensions (Intel VT-x or AMD-V) to function properly?",
+      "options": [
+        "To enable faster network performance in virtual machines",
+        "To allow guest operating systems to execute privileged instructions safely without full emulation",
+        "To support more than 4GB of RAM in virtual machines",
+        "To enable live migration between different physical hosts"
+      ],
+      "correct_index": 1,
+      "explanation": "Hardware virtualization extensions allow guest OS privileged instructions to be trapped and handled efficiently by the hypervisor without requiring slow software emulation, which is essential for KVM's performance and security model."
+    },
+    {
+      "question": "A developer wants to test their application across multiple Linux distributions simultaneously on their laptop. How should they configure KVM for optimal development workflow?",
+      "options": [
+        "Use nested virtualization to run KVM inside Docker containers",
+        "Configure thin provisioning for VM storage and use VM templates for quick deployment",
+        "Enable SR-IOV for better network performance between VMs",
+        "Use GPU passthrough for each virtual machine"
+      ],
+      "correct_index": 1,
+      "explanation": "For development workflows, thin provisioning saves disk space by only allocating storage as needed, while VM templates allow rapid deployment of new test environments with different distributions, making testing efficient and resource-friendly."
+    }
+  ],
+  "passing_score": 80
+}

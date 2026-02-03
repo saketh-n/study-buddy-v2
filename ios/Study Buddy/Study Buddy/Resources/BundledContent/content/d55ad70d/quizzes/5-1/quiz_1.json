@@ -1,0 +1,61 @@
+{
+  "topic_name": "Distributed File Systems: HDFS, GFS,.. store large quantities of data",
+  "questions": [
+    {
+      "question": "What is the primary architectural principle that allows distributed file systems like HDFS and GFS to handle hardware failures gracefully?",
+      "options": [
+        "Using only enterprise-grade hardware to prevent failures",
+        "Storing multiple replicas of data blocks across different nodes",
+        "Implementing RAID arrays on each storage node",
+        "Creating frequent full system backups"
+      ],
+      "correct_index": 1,
+      "explanation": "Distributed file systems achieve fault tolerance through data replication - storing multiple copies of each data block across different nodes, so if one node fails, the data remains accessible from other replicas."
+    },
+    {
+      "question": "A company needs to store and process 500TB of log data that grows by 50GB daily. They need to run analytics queries but don't require immediate consistency for all operations. Which scenario best justifies choosing HDFS over a traditional centralized file system?",
+      "options": [
+        "The data needs to be encrypted at rest",
+        "The company wants to minimize storage costs by using a single high-capacity server",
+        "The data volume exceeds single-machine capacity and needs to scale across commodity hardware",
+        "The company requires ACID transactions for all file operations"
+      ],
+      "correct_index": 2,
+      "explanation": "HDFS is designed for scenarios where data volume exceeds what a single machine can handle, allowing horizontal scaling across commodity hardware while providing fault tolerance - ideal for big data scenarios like large log analytics."
+    },
+    {
+      "question": "In HDFS architecture, why are DataNodes and NameNodes separated into different roles rather than having each node perform both functions?",
+      "options": [
+        "To reduce network bandwidth usage between nodes",
+        "To allow independent scaling of metadata management and data storage capacity",
+        "To ensure all nodes have identical hardware specifications",
+        "To prevent data corruption during concurrent writes"
+      ],
+      "correct_index": 1,
+      "explanation": "The separation allows independent scaling - you can add more DataNodes for storage capacity without affecting metadata performance, and optimize NameNode hardware for metadata operations while using commodity hardware for DataNodes."
+    },
+    {
+      "question": "When would you choose a traditional database over a distributed file system like GFS for storing large amounts of data?",
+      "options": [
+        "When you need to store petabytes of unstructured data",
+        "When you need strong consistency, complex queries, and ACID transactions on structured data",
+        "When you want to minimize hardware costs by using commodity servers",
+        "When you need to handle frequent node failures automatically"
+      ],
+      "correct_index": 1,
+      "explanation": "Traditional databases are better suited when you need ACID properties, complex relational queries, and strong consistency guarantees on structured data, whereas distributed file systems excel at storing large volumes of unstructured data with eventual consistency."
+    },
+    {
+      "question": "A distributed file system shows that 3% of its storage nodes fail each month, but the system continues operating normally. What design principle enables this resilience, and what is the key trade-off?",
+      "options": [
+        "Hot standby servers; trade-off is doubled hardware costs",
+        "Data replication across nodes; trade-off is increased storage overhead and network traffic",
+        "Automatic node restart mechanisms; trade-off is temporary service interruptions",
+        "Load balancing; trade-off is reduced individual node performance"
+      ],
+      "correct_index": 1,
+      "explanation": "Data replication enables resilience by storing multiple copies of data across different nodes, but this requires additional storage space (typically 3x for triple replication) and network bandwidth for maintaining replicas."
+    }
+  ],
+  "passing_score": 80
+}

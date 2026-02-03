@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux KVM",
+  "questions": [
+    {
+      "question": "What is the primary role of the KVM module in the Linux virtualization stack?",
+      "options": [
+        "It provides device emulation for virtual machines",
+        "It transforms the Linux kernel into a Type-1 hypervisor",
+        "It manages virtual machine disk storage",
+        "It handles network virtualization for containers"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM (Kernel-based Virtual Machine) is a kernel module that transforms the Linux kernel into a Type-1 hypervisor by providing virtualization infrastructure and direct access to hardware virtualization extensions."
+    },
+    {
+      "question": "Why would you choose KVM over container technologies like Docker for running legacy Windows applications on a Linux server?",
+      "options": [
+        "KVM provides better network performance than containers",
+        "KVM uses less memory overhead compared to containers",
+        "KVM provides full OS isolation allowing different operating systems to run",
+        "KVM offers better horizontal scaling capabilities"
+      ],
+      "correct_index": 2,
+      "explanation": "KVM provides full virtualization with complete OS isolation, allowing you to run different operating systems (like Windows) on a Linux host, while containers share the host OS kernel and cannot run different operating systems."
+    },
+    {
+      "question": "In a KVM implementation, what is the relationship between KVM and QEMU?",
+      "options": [
+        "QEMU replaces KVM for better performance",
+        "KVM handles device emulation while QEMU provides hardware acceleration",
+        "QEMU provides device emulation while KVM provides hardware acceleration",
+        "They are competing technologies that cannot be used together"
+      ],
+      "correct_index": 2,
+      "explanation": "QEMU provides device emulation (virtual hardware like network cards, storage, etc.) while KVM provides hardware acceleration through CPU virtualization extensions, working together to create a complete virtualization solution."
+    },
+    {
+      "question": "When would KVM be preferred over VMware vSphere in an enterprise environment?",
+      "options": [
+        "When you need the most advanced management features available",
+        "When you want to avoid vendor lock-in and reduce licensing costs",
+        "When you require the highest level of technical support",
+        "When you need to run the maximum number of concurrent VMs"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM is open-source and avoids vendor lock-in while reducing licensing costs compared to proprietary solutions like VMware vSphere, making it attractive for organizations seeking cost-effective virtualization without licensing fees."
+    },
+    {
+      "question": "A system administrator notices that KVM virtual machines are running slower than expected. What hardware feature should they verify is enabled and supported?",
+      "options": [
+        "Intel Turbo Boost or AMD Turbo Core",
+        "Hardware virtualization extensions (Intel VT-x or AMD-V)",
+        "Intel Hyperthreading or AMD SMT",
+        "ECC memory support"
+      ],
+      "correct_index": 1,
+      "explanation": "KVM requires hardware virtualization extensions (Intel VT-x or AMD-V) to function efficiently. Without these extensions, VMs would run in software emulation mode, resulting in significantly degraded performance."
+    }
+  ],
+  "passing_score": 80
+}

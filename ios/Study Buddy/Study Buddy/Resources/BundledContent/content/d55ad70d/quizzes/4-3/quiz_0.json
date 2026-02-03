@@ -1,0 +1,61 @@
+{
+  "topic_name": "Remote: iSCSI/SAN, or NFS, or S3",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between how iSCSI and NFS handle data access from a client's perspective?",
+      "options": [
+        "iSCSI presents block-level storage while NFS provides file-level access",
+        "iSCSI is faster than NFS in all scenarios",
+        "iSCSI uses TCP while NFS uses UDP exclusively",
+        "iSCSI requires special hardware while NFS works with standard network cards"
+      ],
+      "correct_index": 0,
+      "explanation": "iSCSI operates at the block level, presenting raw storage blocks that need a local filesystem, while NFS operates at the file level, providing direct file access through network file sharing protocols."
+    },
+    {
+      "question": "A company needs to provide shared storage for multiple virtual machines that require consistent performance and the ability to run different operating systems with various filesystems. Which solution would be most appropriate?",
+      "options": [
+        "NFS because it provides better file sharing capabilities",
+        "S3 because it offers unlimited scalability",
+        "iSCSI because it provides block-level access allowing each VM to use its preferred filesystem",
+        "Local storage because it's always faster than network storage"
+      ],
+      "correct_index": 2,
+      "explanation": "iSCSI is ideal for this scenario because it provides block-level access, allowing each VM to format and manage the storage with its own filesystem while maintaining good performance for database and application workloads."
+    },
+    {
+      "question": "When would S3-compatible object storage be the most appropriate choice over iSCSI or NFS?",
+      "options": [
+        "When you need the fastest possible database performance",
+        "When storing large amounts of unstructured data like backups, logs, or media files",
+        "When multiple users need to simultaneously edit the same documents",
+        "When you need to mount storage as a local drive"
+      ],
+      "correct_index": 1,
+      "explanation": "S3 object storage excels at storing large amounts of unstructured data with high durability and scalability, making it ideal for backups, archives, logs, and media files that don't require frequent random access."
+    },
+    {
+      "question": "What happens at the filesystem driver level when a Linux system mounts an NFS share compared to connecting to an iSCSI target?",
+      "options": [
+        "Both use the same filesystem driver since they're both network storage",
+        "NFS uses a network filesystem driver that handles remote file operations, while iSCSI uses standard local filesystem drivers on the presented block device",
+        "iSCSI requires a special network filesystem driver while NFS uses standard local drivers",
+        "NFS drivers handle block-level operations while iSCSI drivers handle file-level operations"
+      ],
+      "correct_index": 1,
+      "explanation": "NFS requires a network filesystem driver that translates local file operations into network requests, while iSCSI presents block devices that can be used with standard local filesystem drivers like ext4 or XFS."
+    },
+    {
+      "question": "A development team needs storage that can be easily accessed via REST APIs for automated backup scripts, provides versioning capabilities, and doesn't require mounting or special filesystem drivers. Which solution best fits these requirements?",
+      "options": [
+        "iSCSI because it provides block-level access for maximum flexibility",
+        "NFS because it offers the best network file sharing performance",
+        "S3 object storage because it provides REST API access and built-in versioning without requiring filesystem mounting",
+        "A combination of all three for redundancy"
+      ],
+      "correct_index": 2,
+      "explanation": "S3 object storage is specifically designed for REST API access, includes built-in versioning features, and doesn't require mounting or special drivers, making it perfect for automated scripts and cloud-native applications."
+    }
+  ],
+  "passing_score": 80
+}

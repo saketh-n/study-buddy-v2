@@ -1,0 +1,61 @@
+{
+  "topic_name": "Pods and Workload Units",
+  "questions": [
+    {
+      "question": "Why is a pod, rather than an individual container, considered the atomic unit of deployment in Kubernetes?",
+      "options": [
+        "Pods ensure containers can share networking and storage while being scheduled together",
+        "Pods provide better security isolation between different applications",
+        "Pods allow containers to run on different nodes for better resource distribution",
+        "Pods enable containers to have separate IP addresses for network isolation"
+      ],
+      "correct_index": 0,
+      "explanation": "Pods are the atomic unit because they guarantee that tightly coupled containers share the same network namespace (IP address) and can share volumes, while being scheduled as a single unit on the same node."
+    },
+    {
+      "question": "In a multi-container pod scenario, you have a web server container and a log collector sidecar. What networking characteristic allows the log collector to access the web server's logs?",
+      "options": [
+        "Each container gets its own unique IP address within the pod",
+        "Containers communicate through inter-pod networking protocols",
+        "All containers in the pod share the same network namespace and can use localhost",
+        "The log collector must use the web server's container name as hostname"
+      ],
+      "correct_index": 2,
+      "explanation": "All containers in a pod share the same network namespace, meaning they share the same IP address and can communicate with each other using localhost, making sidecar patterns like log collection straightforward."
+    },
+    {
+      "question": "When would you choose to deploy multiple containers in a single pod versus deploying them as separate pods?",
+      "options": [
+        "When you want to scale the containers independently based on different resource needs",
+        "When the containers are tightly coupled and must be co-located for shared resources",
+        "When you need to distribute the containers across different availability zones",
+        "When the containers belong to different microservices in your application"
+      ],
+      "correct_index": 1,
+      "explanation": "Multiple containers should be in the same pod only when they are tightly coupled and need to share resources like storage volumes or network interfaces. Independent scaling and loose coupling favor separate pods."
+    },
+    {
+      "question": "A pod is scheduled to a node but one of its containers fails to start due to an image pull error. What happens to the other containers in the same pod?",
+      "options": [
+        "Other containers continue running normally as they are independent",
+        "All containers are terminated and the pod enters a Failed state",
+        "The pod enters a Pending state and no containers start until the issue is resolved",
+        "Kubernetes automatically removes the failed container and runs the pod with remaining containers"
+      ],
+      "correct_index": 2,
+      "explanation": "In a pod, all containers must be able to start for the pod to run. If any container fails to start (like image pull errors), the entire pod remains in Pending state until all containers can be successfully created."
+    },
+    {
+      "question": "Your application consists of a main API service and a Redis cache. The API service occasionally needs to restart due to memory leaks, but Redis maintains important cached data. How should you design this deployment?",
+      "options": [
+        "Deploy both in the same pod so Redis can directly access API memory",
+        "Deploy them as separate pods so Redis can maintain state when API restarts",
+        "Deploy both in the same pod with Redis as an init container",
+        "Deploy them in the same pod but use different restart policies"
+      ],
+      "correct_index": 1,
+      "explanation": "Since the API and Redis have different lifecycle requirements (API restarts frequently, Redis needs persistent state), they should be separate pods. This allows independent scaling and prevents Redis data loss when the API container restarts."
+    }
+  ],
+  "passing_score": 80
+}

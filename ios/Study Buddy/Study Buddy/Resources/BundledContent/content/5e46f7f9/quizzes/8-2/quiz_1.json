@@ -1,0 +1,61 @@
+{
+  "topic_name": "Zero Trust Network Access",
+  "questions": [
+    {
+      "question": "What is the fundamental principle that distinguishes ZTNA from traditional network security models?",
+      "options": [
+        "Network perimeter-based security with firewall protection",
+        "Trust verification required for every access request regardless of location",
+        "Password-based authentication with network segmentation",
+        "VPN tunneling with encrypted connections"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA operates on the principle of 'never trust, always verify' - requiring verification for every access request regardless of whether it comes from inside or outside the network perimeter."
+    },
+    {
+      "question": "A company has remote employees accessing sensitive applications through a traditional VPN that grants broad network access. Why would ZTNA be a better solution in this scenario?",
+      "options": [
+        "ZTNA provides faster connection speeds than VPN",
+        "ZTNA grants granular access to specific applications based on user identity and context",
+        "ZTNA eliminates the need for user authentication",
+        "ZTNA automatically blocks all external threats"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA provides application-specific access based on user identity, device posture, and contextual factors, reducing the attack surface compared to VPN's broad network access."
+    },
+    {
+      "question": "In a ZTNA implementation, what happens when a user's device compliance status changes during an active session?",
+      "options": [
+        "The session continues unchanged until manual logout",
+        "Access is immediately revoked or restricted based on the new compliance status",
+        "The system sends a warning but maintains full access",
+        "Only new connection attempts are affected"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA continuously monitors and evaluates access decisions in real-time, dynamically adjusting or revoking access when security posture changes during active sessions."
+    },
+    {
+      "question": "Which scenario best demonstrates the application-centric approach of ZTNA compared to traditional network security?",
+      "options": [
+        "Blocking all traffic from specific IP ranges",
+        "Allowing HR employees to access only the HRIS application from managed devices during business hours",
+        "Creating VLANs for different departments",
+        "Implementing network-wide encryption"
+      ],
+      "correct_index": 1,
+      "explanation": "This scenario shows ZTNA's fine-grained, policy-based access control that considers user role, specific application, device trust, and contextual factors like time and location."
+    },
+    {
+      "question": "When would an organization choose ZTNA over simply upgrading their existing VPN infrastructure?",
+      "options": [
+        "When they need to reduce bandwidth costs",
+        "When they require micro-segmentation and least-privilege access to cloud and on-premises applications",
+        "When they want to eliminate all user authentication requirements",
+        "When they need to support only on-premises applications"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA is chosen when organizations need granular, application-level access control and micro-segmentation that traditional VPNs cannot provide, especially in hybrid cloud environments."
+    }
+  ],
+  "passing_score": 80
+}

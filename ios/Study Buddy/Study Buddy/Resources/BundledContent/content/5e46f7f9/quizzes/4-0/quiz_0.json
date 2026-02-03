@@ -1,0 +1,61 @@
+{
+  "topic_name": "OSPF Interior Routing",
+  "questions": [
+    {
+      "question": "Why would a network administrator choose OSPF over RIP for routing within a large enterprise network?",
+      "options": [
+        "OSPF has simpler configuration requirements",
+        "OSPF uses hop count as its metric which is more accurate",
+        "OSPF converges faster and supports larger networks without routing loops",
+        "OSPF automatically balances traffic across all available paths"
+      ],
+      "correct_index": 2,
+      "explanation": "OSPF uses link-state routing with Dijkstra's algorithm, enabling faster convergence and loop-free routing in large networks, unlike RIP's distance-vector approach which has convergence issues and hop count limitations."
+    },
+    {
+      "question": "In an OSPF network, what is the primary purpose of dividing the autonomous system into areas?",
+      "options": [
+        "To enable different routing protocols in each area",
+        "To reduce routing table size and limit LSA flooding scope",
+        "To automatically load balance traffic between areas",
+        "To prevent any communication between different network segments"
+      ],
+      "correct_index": 1,
+      "explanation": "OSPF areas create hierarchical routing that reduces routing table sizes and limits Link State Advertisement (LSA) flooding to specific areas, improving scalability and reducing processing overhead."
+    },
+    {
+      "question": "A network has multiple equal-cost paths between two destinations. How does OSPF handle this scenario by default?",
+      "options": [
+        "Uses only the first path discovered",
+        "Alternates between paths for each packet",
+        "Performs load balancing across all equal-cost paths",
+        "Randomly selects one path and uses it exclusively"
+      ],
+      "correct_index": 2,
+      "explanation": "OSPF supports Equal Cost Multi-Path (ECMP) routing by default, automatically distributing traffic across all paths with the same lowest cost to improve bandwidth utilization and provide redundancy."
+    },
+    {
+      "question": "When would an OSPF Designated Router (DR) election occur on a network segment?",
+      "options": [
+        "Only when manually configured by an administrator",
+        "On point-to-point links to reduce overhead",
+        "On multi-access networks like Ethernet to minimize LSA exchanges",
+        "When connecting different OSPF areas together"
+      ],
+      "correct_index": 2,
+      "explanation": "DR election happens on multi-access networks (like Ethernet) to reduce the number of adjacencies and LSA exchanges. On a network with n routers, DR/BDR reduces adjacencies from n(n-1)/2 to 2(n-1)."
+    },
+    {
+      "question": "A company's OSPF network is experiencing slow convergence after link failures. What is the most likely cause and solution?",
+      "options": [
+        "Too many areas configured; consolidate into a single area",
+        "Insufficient bandwidth; upgrade all links to higher capacity",
+        "Large single area with many routers; implement proper area hierarchy",
+        "Incorrect router IDs; manually assign sequential numbers"
+      ],
+      "correct_index": 2,
+      "explanation": "A large flat OSPF area causes slow convergence because every router must recalculate the entire topology. Implementing hierarchical areas (connecting via Area 0) localizes topology changes and speeds convergence."
+    }
+  ],
+  "passing_score": 80
+}

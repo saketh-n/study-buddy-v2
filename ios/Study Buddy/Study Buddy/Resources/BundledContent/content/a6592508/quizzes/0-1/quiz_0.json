@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hair Follicle Biology",
+  "questions": [
+    {
+      "question": "A patient notices their hair shedding increases during periods of high stress. Which phase of the hair growth cycle is most likely being affected, and why?",
+      "options": [
+        "Anagen phase - stress hormones directly stop cell division in the hair matrix",
+        "Catagen phase - stress causes premature transition to the regression phase",
+        "Telogen phase - stress pushes more follicles into the resting phase earlier than normal",
+        "Exogen phase - stress increases the rate at which telogen hairs are shed"
+      ],
+      "correct_index": 2,
+      "explanation": "Stress typically causes telogen effluvium, where psychological or physical stress pushes hair follicles prematurely from anagen (growth) into telogen (resting) phase. This results in increased hair shedding 2-3 months later when these telogen hairs naturally fall out."
+    },
+    {
+      "question": "During the anagen phase, which cellular process in the hair follicle determines the hair shaft's diameter and strength?",
+      "options": [
+        "Mitotic activity rate in the dermal papilla cells",
+        "Keratinocyte proliferation and differentiation in the hair matrix",
+        "Melanocyte migration from the bulge region",
+        "Sebaceous gland activity and lipid production"
+      ],
+      "correct_index": 1,
+      "explanation": "The hair matrix contains rapidly dividing keratinocytes that differentiate into the different layers of the hair shaft. The rate of proliferation and the degree of keratinization in these cells directly determine hair thickness, strength, and growth rate."
+    },
+    {
+      "question": "Why do hair follicles in androgenetic alopecia progressively produce thinner and shorter hairs before eventually stopping hair production entirely?",
+      "options": [
+        "DHT causes immediate death of dermal papilla cells, reducing follicle size",
+        "DHT shortens anagen phase and shrinks the dermal papilla, reducing the follicle's capacity",
+        "DHT blocks blood supply to the follicle, starving the hair matrix cells",
+        "DHT causes excessive sebum production that clogs the follicle opening"
+      ],
+      "correct_index": 1,
+      "explanation": "DHT (dihydrotestosterone) progressively shortens the anagen phase and causes miniaturization of the dermal papilla. Since the dermal papilla size determines hair shaft thickness and the shortened anagen reduces growth time, each hair cycle produces progressively thinner, shorter hairs until the follicle becomes too small to produce visible hair."
+    },
+    {
+      "question": "A researcher wants to study hair follicle stem cells for regenerative therapy. Where should they focus their investigation and why is this location critical?",
+      "options": [
+        "Hair matrix - these cells have the highest proliferation rate",
+        "Dermal papilla - these cells control the hair cycle timing",
+        "Bulge region - these multipotent cells can regenerate the entire follicle",
+        "Sebaceous gland - these cells are easily accessible and numerous"
+      ],
+      "correct_index": 2,
+      "explanation": "The bulge region contains hair follicle stem cells that are relatively quiescent but multipotent. These cells can differentiate into all the cell types needed to regenerate a complete hair follicle, making them the primary target for hair regeneration research."
+    },
+    {
+      "question": "When evaluating a new hair loss treatment, which phase of the hair cycle would be the most logical target for extending the duration of active hair growth?",
+      "options": [
+        "Extend telogen phase to allow follicles more rest time",
+        "Accelerate catagen phase to quickly cycle to new growth",
+        "Prolong anagen phase to maximize growth duration per cycle",
+        "Eliminate exogen phase to prevent hair shedding"
+      ],
+      "correct_index": 2,
+      "explanation": "Prolonging the anagen (growth) phase would allow each hair to grow for a longer period, resulting in longer, thicker hair and reduced overall hair loss. This is actually how some treatments like minoxidil work - by extending the anagen phase duration."
+    }
+  ],
+  "passing_score": 80
+}

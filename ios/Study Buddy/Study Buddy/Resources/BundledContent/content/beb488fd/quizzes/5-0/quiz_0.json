@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Quality and Governance",
+  "questions": [
+    {
+      "question": "A data engineer notices that customer age values in their warehouse include negative numbers and values over 150. Which data validation approach would be most appropriate to implement at the pipeline ingestion layer?",
+      "options": [
+        "Schema validation only",
+        "Range checks with business rules",
+        "Duplicate detection algorithms",
+        "Data lineage tracking"
+      ],
+      "correct_index": 1,
+      "explanation": "Range checks with business rules are specifically designed to catch values outside expected boundaries (like negative ages or unrealistic high values), making them ideal for this data quality issue."
+    },
+    {
+      "question": "When would implementing comprehensive data lineage tracking be MOST critical for an organization?",
+      "options": [
+        "When database performance is slow",
+        "When compliance regulations require impact analysis of data changes",
+        "When storage costs are increasing",
+        "When new developers join the team"
+      ],
+      "correct_index": 1,
+      "explanation": "Data lineage is essential for compliance scenarios because it enables impact analysis, showing how changes to source data affect downstream reports and decisions, which is often required by regulations."
+    },
+    {
+      "question": "A company wants to establish a data governance framework. What should be the PRIMARY focus when defining data ownership roles?",
+      "options": [
+        "Assigning technical database administrators to all datasets",
+        "Creating accountability for data quality and business context",
+        "Ensuring all data is centralized in one department",
+        "Minimizing the number of people with data access"
+      ],
+      "correct_index": 1,
+      "explanation": "Data ownership in governance frameworks focuses on establishing clear accountability for both data quality and business context, ensuring someone is responsible for maintaining standards and understanding business meaning."
+    },
+    {
+      "question": "You're designing a data validation pipeline that processes millions of records daily. Some validation rules are computationally expensive. What strategy would best balance data quality with performance?",
+      "options": [
+        "Run all validations on every record regardless of cost",
+        "Implement tiered validation with sampling for expensive checks",
+        "Skip validation entirely for performance",
+        "Only validate data when errors are reported"
+      ],
+      "correct_index": 1,
+      "explanation": "Tiered validation with sampling allows you to run basic checks on all data while using statistical sampling for expensive validations, maintaining quality assurance while managing computational costs."
+    },
+    {
+      "question": "A data lineage system shows that a critical business report depends on data from 15 different source systems. What does this complexity primarily indicate about data governance needs?",
+      "options": [
+        "The report should be simplified to use fewer sources",
+        "Strong change management and impact assessment processes are essential",
+        "The lineage tracking system is providing too much detail",
+        "Data should be consolidated into a single source system"
+      ],
+      "correct_index": 1,
+      "explanation": "Complex data lineage indicates high interdependency, making robust change management and impact assessment crucial to prevent downstream failures when any of the 15 source systems change."
+    }
+  ],
+  "passing_score": 80
+}

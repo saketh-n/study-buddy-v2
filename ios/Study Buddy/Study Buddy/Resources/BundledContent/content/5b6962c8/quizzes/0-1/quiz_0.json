@@ -1,0 +1,61 @@
+{
+  "topic_name": "CIA Triad (Confidentiality, Integrity, Availability)",
+  "questions": [
+    {
+      "question": "A hospital's patient database system crashes during peak hours, preventing doctors from accessing critical patient records. Which component of the CIA Triad is primarily compromised?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability",
+        "Authentication"
+      ],
+      "correct_index": 2,
+      "explanation": "Availability is compromised when authorized users cannot access information systems when needed. The system crash prevents legitimate access to patient records during critical times."
+    },
+    {
+      "question": "An e-commerce company discovers that a hacker has modified product prices in their database without authorization, changing $100 items to $1. This scenario primarily represents a violation of which CIA principle?",
+      "options": [
+        "Confidentiality - because pricing data was accessed",
+        "Integrity - because data was altered without authorization",
+        "Availability - because the system was compromised",
+        "All three principles equally"
+      ],
+      "correct_index": 1,
+      "explanation": "Integrity ensures data accuracy and prevents unauthorized modification. When product prices are altered without authorization, the trustworthiness and accuracy of the data is compromised."
+    },
+    {
+      "question": "When implementing a new secure messaging system for a law firm, which combination of security measures would BEST address all three CIA Triad components?",
+      "options": [
+        "Strong passwords and user training only",
+        "Encryption, digital signatures, and redundant servers",
+        "Antivirus software and firewalls only",
+        "Data backups and access logs only"
+      ],
+      "correct_index": 1,
+      "explanation": "Encryption protects confidentiality, digital signatures ensure integrity by verifying data hasn't been tampered with, and redundant servers maintain availability if primary systems fail."
+    },
+    {
+      "question": "A company implements a policy requiring employees to sign confidentiality agreements and uses role-based access controls. However, they don't verify data checksums or maintain system backups. Which CIA component is most likely to fail first during a security incident?",
+      "options": [
+        "Confidentiality, due to weak access controls",
+        "Integrity, due to lack of data verification",
+        "Availability, due to no backup systems",
+        "Both Integrity and Availability are equally at risk"
+      ],
+      "correct_index": 3,
+      "explanation": "While confidentiality is addressed through agreements and access controls, both integrity (no data verification) and availability (no backups) are inadequately protected, making both equally vulnerable."
+    },
+    {
+      "question": "In which scenario would prioritizing Availability over the other CIA components be most justified?",
+      "options": [
+        "A social media platform storing personal user data",
+        "A military database containing classified information",
+        "An emergency 911 dispatch system",
+        "A bank's customer account database"
+      ],
+      "correct_index": 2,
+      "explanation": "Emergency services prioritize availability because system downtime during emergencies can result in loss of life. While confidentiality and integrity remain important, immediate access to emergency services is the critical priority."
+    }
+  ],
+  "passing_score": 80
+}

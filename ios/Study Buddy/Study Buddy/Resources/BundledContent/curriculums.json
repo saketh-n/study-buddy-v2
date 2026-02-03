@@ -1,0 +1,2104 @@
+[
+  {
+    "id": "064c2aa6",
+    "created_at": "2026-01-22T11:58:51.072926",
+    "curriculum": {
+      "subject": "History of French Settlement in Canada",
+      "description": "A comprehensive study of French colonization, settlement patterns, cultural development, and eventual transition of French territories in Canada from the early 1600s through British conquest and beyond.",
+      "clusters": [
+        {
+          "name": "Pre-Colonial Context and Early Exploration",
+          "description": "The background conditions and initial French exploration that led to permanent settlement attempts in Canada.",
+          "order": 1,
+          "topics": [
+            {
+              "name": "European Context and Motivations for Colonization",
+              "description": "The political, economic, and religious factors driving French overseas expansion in the 16th-17th centuries.",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Early French Explorers and Voyages",
+              "description": "Jacques Cartier, Samuel de Champlain, and other early explorers who mapped and claimed French territories in North America.",
+              "order": 2,
+              "prerequisites": [
+                "European Context and Motivations for Colonization"
+              ]
+            },
+            {
+              "name": "Indigenous Peoples Before European Contact",
+              "description": "The diverse Native American societies, cultures, and territories that existed in Canada before French colonization.",
+              "order": 3,
+              "prerequisites": []
+            }
+          ]
+        },
+        {
+          "name": "Establishment of New France",
+          "description": "The founding and early development of French colonial settlements and administrative structures in Canada.",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Founding of Quebec and Early Settlements",
+              "description": "The establishment of Quebec City (1608) and other early French settlements along the St. Lawrence River.",
+              "order": 1,
+              "prerequisites": [
+                "Early French Explorers and Voyages"
+              ]
+            },
+            {
+              "name": "Colonial Government and Administration",
+              "description": "The development of French colonial administrative systems, royal government, and governance structures in New France.",
+              "order": 2,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            },
+            {
+              "name": "The Fur Trade and Economic Foundations",
+              "description": "The central role of fur trading in French colonial economy and its impact on settlement patterns and Indigenous relations.",
+              "order": 3,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements",
+                "Indigenous Peoples Before European Contact"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Colonial Society and Culture",
+          "description": "The development of distinctive French-Canadian society, culture, and institutions in New France.",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Seigneurial System and Land Distribution",
+              "description": "The feudal-style land tenure system used to organize rural settlement and society in New France.",
+              "order": 1,
+              "prerequisites": [
+                "Colonial Government and Administration"
+              ]
+            },
+            {
+              "name": "French Immigration and Population Growth",
+              "description": "Patterns of French immigration to Canada, including the filles du roi and demographic development of the colony.",
+              "order": 2,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            },
+            {
+              "name": "Catholic Church and Religious Life",
+              "description": "The central role of Catholicism in French colonial society, missions to Indigenous peoples, and religious institutions.",
+              "order": 3,
+              "prerequisites": [
+                "French Immigration and Population Growth"
+              ]
+            },
+            {
+              "name": "French-Indigenous Relations and Intermarriage",
+              "description": "The complex relationships between French colonists and Indigenous peoples, including alliances, conflicts, and cultural mixing.",
+              "order": 4,
+              "prerequisites": [
+                "The Fur Trade and Economic Foundations",
+                "Indigenous Peoples Before European Contact"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Expansion and Territorial Development",
+          "description": "The geographic spread of French influence and settlement across North America beyond the St. Lawrence Valley.",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Exploration of the Great Lakes and Interior",
+              "description": "French exploration and establishment of trading posts throughout the Great Lakes region and interior waterways.",
+              "order": 1,
+              "prerequisites": [
+                "The Fur Trade and Economic Foundations",
+                "French-Indigenous Relations and Intermarriage"
+              ]
+            },
+            {
+              "name": "Louisiana Territory and Mississippi Valley",
+              "description": "French exploration and settlement of the Mississippi River system and establishment of Louisiana colony.",
+              "order": 2,
+              "prerequisites": [
+                "Exploration of the Great Lakes and Interior"
+              ]
+            },
+            {
+              "name": "Acadia and Maritime Settlements",
+              "description": "The development of French settlements in Nova Scotia, New Brunswick, and surrounding maritime regions.",
+              "order": 3,
+              "prerequisites": [
+                "Founding of Quebec and Early Settlements"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Imperial Conflicts and Competition",
+          "description": "The military and political struggles between French and British colonial powers that shaped the fate of New France.",
+          "order": 5,
+          "topics": [
+            {
+              "name": "King William's War and Early Anglo-French Conflicts",
+              "description": "The first major conflicts between French and British colonial forces in North America (1689-1697).",
+              "order": 1,
+              "prerequisites": [
+                "Colonial Government and Administration",
+                "Acadia and Maritime Settlements"
+              ]
+            },
+            {
+              "name": "Queen Anne's War and Treaty of Utrecht",
+              "description": "The War of Spanish Succession in North America and the 1713 treaty that transferred Acadia to Britain.",
+              "order": 2,
+              "prerequisites": [
+                "King William's War and Early Anglo-French Conflicts"
+              ]
+            },
+            {
+              "name": "King George's War and Fortress Louisbourg",
+              "description": "The strategic importance of Louisbourg and conflicts over control of maritime approaches to New France.",
+              "order": 3,
+              "prerequisites": [
+                "Queen Anne's War and Treaty of Utrecht"
+              ]
+            },
+            {
+              "name": "Seven Years' War and the Plains of Abraham",
+              "description": "The decisive conflict that ended French rule in Canada, including key battles and military campaigns.",
+              "order": 4,
+              "prerequisites": [
+                "King George's War and Fortress Louisbourg"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "End of French Rule and Legacy",
+          "description": "The transition from French to British rule and the lasting impact of French colonization on Canadian development.",
+          "order": 6,
+          "topics": [
+            {
+              "name": "British Conquest and Treaty of Paris",
+              "description": "The formal transfer of New France to British control in 1763 and its immediate consequences.",
+              "order": 1,
+              "prerequisites": [
+                "Seven Years' War and the Plains of Abraham"
+              ]
+            },
+            {
+              "name": "Deportation of the Acadians",
+              "description": "The forced removal of French Acadians from Maritime provinces and its long-term consequences.",
+              "order": 2,
+              "prerequisites": [
+                "Queen Anne's War and Treaty of Utrecht",
+                "British Conquest and Treaty of Paris"
+              ]
+            },
+            {
+              "name": "French-Canadian Society Under British Rule",
+              "description": "How French-Canadian culture, language, and institutions adapted and persisted under British administration.",
+              "order": 3,
+              "prerequisites": [
+                "British Conquest and Treaty of Paris"
+              ]
+            },
+            {
+              "name": "Legacy of French Settlement in Modern Canada",
+              "description": "The lasting impact of French colonization on Canadian geography, culture, language, and identity.",
+              "order": 4,
+              "prerequisites": [
+                "French-Canadian Society Under British Rule",
+                "Deportation of the Acadians"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "a6592508",
+    "created_at": "2026-01-15T20:44:03.507195",
+    "curriculum": {
+      "subject": "Understanding Hair Loss: Biology, Mechanisms, and Treatments",
+      "description": "A comprehensive curriculum covering the biological foundations of hair growth, causes of hair loss, and available treatment options for non-medical professionals",
+      "clusters": [
+        {
+          "name": "Fundamentals of Hair Biology",
+          "description": "Basic understanding of hair structure, growth cycles, and follicle function",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Hair Structure and Anatomy",
+              "description": "Understanding the physical structure of hair strands and scalp anatomy",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Hair Follicle Biology",
+              "description": "How hair follicles work, their lifecycle, and cellular processes involved in hair growth",
+              "order": 2,
+              "prerequisites": [
+                "Hair Structure and Anatomy"
+              ]
+            },
+            {
+              "name": "Hair Growth Cycle",
+              "description": "The phases of hair growth (anagen, catagen, telogen) and what controls these cycles",
+              "order": 3,
+              "prerequisites": [
+                "Hair Follicle Biology"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Understanding Hair Loss",
+          "description": "Types, causes, and biological mechanisms behind different forms of hair loss",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Types of Hair Loss",
+              "description": "Different patterns and classifications of hair loss (androgenetic alopecia, alopecia areata, etc.)",
+              "order": 1,
+              "prerequisites": [
+                "Hair Growth Cycle"
+              ]
+            },
+            {
+              "name": "Hair Loss",
+              "description": "Common causes and risk factors for hair loss including genetics, hormones, and environmental factors",
+              "order": 2,
+              "prerequisites": [
+                "Types of Hair Loss"
+              ]
+            },
+            {
+              "name": "Mechanisms of Action",
+              "description": "How hair loss occurs at the cellular and molecular level, including hormone interactions and genetic factors",
+              "order": 3,
+              "prerequisites": [
+                "Hair Loss",
+                "Hair Follicle Biology"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hair Loss Treatments and Interventions",
+          "description": "Available treatments, how they work, and their effectiveness",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Treatment Categories",
+              "description": "Overview of different approaches to treating hair loss (topical, oral, surgical, lifestyle)",
+              "order": 1,
+              "prerequisites": [
+                "Mechanisms of Action"
+              ]
+            },
+            {
+              "name": "Relevant Drugs for Hair Loss",
+              "description": "Specific medications used to treat hair loss, their names, and general categories",
+              "order": 2,
+              "prerequisites": [
+                "Treatment Categories"
+              ]
+            },
+            {
+              "name": "Drug Mechanisms and Effectiveness",
+              "description": "How hair loss medications work biologically and their success rates and limitations",
+              "order": 3,
+              "prerequisites": [
+                "Relevant Drugs for Hair Loss",
+                "Mechanisms of Action"
+              ]
+            },
+            {
+              "name": "Treatment Selection and Expectations",
+              "description": "How to choose appropriate treatments and set realistic expectations for results",
+              "order": 4,
+              "prerequisites": [
+                "Drug Mechanisms and Effectiveness"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ec37adc6",
+    "created_at": "2026-01-15T16:40:09.425806",
+    "curriculum": {
+      "subject": "GLP-1 Receptor Agonists: Comprehensive Understanding",
+      "description": "A complete curriculum covering GLP-1 receptor agonists from basic physiology to clinical applications, including supply chain and regulatory considerations",
+      "clusters": [
+        {
+          "name": "Foundational Physiology and Biochemistry",
+          "description": "Basic biological principles underlying hormone function and glucose metabolism",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Basic Endocrinology Principles",
+              "description": "Fundamental concepts of hormone signaling, receptors, and feedback loops",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Glucose Homeostasis",
+              "description": "Normal glucose regulation, insulin function, and metabolic pathways",
+              "order": 2,
+              "prerequisites": [
+                "Basic Endocrinology Principles"
+              ]
+            },
+            {
+              "name": "Incretin Hormone System",
+              "description": "Natural incretin hormones (GLP-1, GIP) and their physiological roles",
+              "order": 3,
+              "prerequisites": [
+                "Glucose Homeostasis"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GLP-1 Biology and Mechanism",
+          "description": "Detailed understanding of GLP-1 structure, function, and cellular mechanisms",
+          "order": 2,
+          "topics": [
+            {
+              "name": "GLP-1 Structure and Secretion",
+              "description": "GLP-1 peptide structure, L-cell secretion, and natural degradation by DPP-4",
+              "order": 1,
+              "prerequisites": [
+                "Incretin Hormone System"
+              ]
+            },
+            {
+              "name": "GLP-1 Receptor Signaling",
+              "description": "G-protein coupled receptor mechanisms, cAMP pathways, and downstream effects",
+              "order": 2,
+              "prerequisites": [
+                "GLP-1 Structure and Secretion",
+                "Basic Endocrinology Principles"
+              ]
+            },
+            {
+              "name": "Tissue Distribution and Effects",
+              "description": "GLP-1 receptor locations and organ-specific effects (pancreas, brain, GI tract, cardiovascular)",
+              "order": 3,
+              "prerequisites": [
+                "GLP-1 Receptor Signaling"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GLP-1 Receptor Agonist Pharmacology",
+          "description": "Drug development, classification, and pharmacokinetic properties of GLP-1 medications",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Drug Development and Design",
+              "description": "How GLP-1 agonists were developed to resist DPP-4 degradation and extend half-life",
+              "order": 1,
+              "prerequisites": [
+                "GLP-1 Structure and Secretion"
+              ]
+            },
+            {
+              "name": "Classification of GLP-1 Agonists",
+              "description": "Short-acting vs long-acting agents, incretin mimetics vs DPP-4 inhibitors",
+              "order": 2,
+              "prerequisites": [
+                "Drug Development and Design"
+              ]
+            },
+            {
+              "name": "Pharmacokinetics and Pharmacodynamics",
+              "description": "Absorption, distribution, metabolism, excretion, and dose-response relationships",
+              "order": 3,
+              "prerequisites": [
+                "Classification of GLP-1 Agonists"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Clinical Applications and Therapeutics",
+          "description": "Medical uses, efficacy, safety, and patient management with GLP-1 agonists",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Type 2 Diabetes Treatment",
+              "description": "Primary indication, glycemic control efficacy, and place in diabetes management algorithms",
+              "order": 1,
+              "prerequisites": [
+                "Pharmacokinetics and Pharmacodynamics",
+                "Tissue Distribution and Effects"
+              ]
+            },
+            {
+              "name": "Weight Management Applications",
+              "description": "Mechanisms of weight loss, obesity treatment protocols, and lifestyle integration",
+              "order": 2,
+              "prerequisites": [
+                "Type 2 Diabetes Treatment"
+              ]
+            },
+            {
+              "name": "Cardiovascular Benefits",
+              "description": "Cardioprotective effects, clinical trial evidence, and risk reduction mechanisms",
+              "order": 3,
+              "prerequisites": [
+                "Type 2 Diabetes Treatment"
+              ]
+            },
+            {
+              "name": "Side Effects and Contraindications",
+              "description": "Common adverse events, serious risks, patient selection criteria, and monitoring",
+              "order": 4,
+              "prerequisites": [
+                "Type 2 Diabetes Treatment",
+                "Weight Management Applications"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Manufacturing and Supply Chain",
+          "description": "Production processes, quality control, and distribution of GLP-1 medications",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Pharmaceutical Manufacturing",
+              "description": "Recombinant protein production, purification, formulation, and quality control standards",
+              "order": 1,
+              "prerequisites": [
+                "Classification of GLP-1 Agonists"
+              ]
+            },
+            {
+              "name": "Cold Chain Requirements",
+              "description": "Temperature-sensitive storage, transportation, and handling requirements for biologics",
+              "order": 2,
+              "prerequisites": [
+                "Pharmaceutical Manufacturing"
+              ]
+            },
+            {
+              "name": "Supply Chain Challenges",
+              "description": "Manufacturing capacity, raw material sourcing, distribution bottlenecks, and shortage management",
+              "order": 3,
+              "prerequisites": [
+                "Cold Chain Requirements"
+              ]
+            },
+            {
+              "name": "Market Access and Pricing",
+              "description": "Healthcare economics, insurance coverage, patient access programs, and cost considerations",
+              "order": 4,
+              "prerequisites": [
+                "Supply Chain Challenges"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Regulatory and Future Perspectives",
+          "description": "Regulatory landscape, emerging research, and future developments in GLP-1 therapeutics",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Regulatory Approval Process",
+              "description": "FDA/EMA approval pathways, clinical trial requirements, and post-market surveillance",
+              "order": 1,
+              "prerequisites": [
+                "Side Effects and Contraindications"
+              ]
+            },
+            {
+              "name": "Emerging Applications",
+              "description": "Research into neurological conditions, addiction, and other potential therapeutic uses",
+              "order": 2,
+              "prerequisites": [
+                "Cardiovascular Benefits",
+                "Regulatory Approval Process"
+              ]
+            },
+            {
+              "name": "Next-Generation Therapies",
+              "description": "Dual and triple hormone agonists, oral formulations, and novel delivery systems",
+              "order": 3,
+              "prerequisites": [
+                "Emerging Applications"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "5b6962c8",
+    "created_at": "2026-01-13T15:58:37.797956",
+    "curriculum": {
+      "subject": "Cybersecurity",
+      "description": "A comprehensive curriculum covering the fundamentals of protecting digital systems, networks, and data from cyber threats through technical controls, risk management, and security best practices",
+      "clusters": [
+        {
+          "name": "Cybersecurity Foundations",
+          "description": "Core concepts, terminology, and fundamental principles that underpin all cybersecurity practices",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Introduction to Cybersecurity",
+              "description": "Overview of cybersecurity field, key concepts, and the importance of information security",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "CIA Triad (Confidentiality, Integrity, Availability)",
+              "description": "The three pillars of information security that guide all security decisions and implementations",
+              "order": 2,
+              "prerequisites": [
+                "Introduction to Cybersecurity"
+              ]
+            },
+            {
+              "name": "Risk Management Fundamentals",
+              "description": "Understanding risk assessment, risk tolerance, and basic risk mitigation strategies",
+              "order": 3,
+              "prerequisites": [
+                "CIA Triad (Confidentiality, Integrity, Availability)"
+              ]
+            },
+            {
+              "name": "Security Policies and Governance",
+              "description": "Framework for organizational security policies, compliance, and governance structures",
+              "order": 4,
+              "prerequisites": [
+                "Risk Management Fundamentals"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Network Security",
+          "description": "Protecting network infrastructure, monitoring network traffic, and implementing network-based security controls",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Network Security Fundamentals",
+              "description": "Basic networking concepts relevant to security, including protocols, ports, and network architecture",
+              "order": 1,
+              "prerequisites": [
+                "CIA Triad (Confidentiality, Integrity, Availability)"
+              ]
+            },
+            {
+              "name": "Firewalls and Network Access Control",
+              "description": "Implementing and configuring firewalls, access control lists, and network segmentation",
+              "order": 2,
+              "prerequisites": [
+                "Network Security Fundamentals"
+              ]
+            },
+            {
+              "name": "Intrusion Detection and Prevention Systems",
+              "description": "Monitoring network traffic for malicious activity and automated threat response",
+              "order": 3,
+              "prerequisites": [
+                "Firewalls and Network Access Control"
+              ]
+            },
+            {
+              "name": "VPNs and Secure Communications",
+              "description": "Virtual private networks, encryption protocols, and secure communication channels",
+              "order": 4,
+              "prerequisites": [
+                "Network Security Fundamentals"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cryptography and Data Protection",
+          "description": "Mathematical foundations and practical applications of encryption, hashing, and data security techniques",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Cryptography Basics",
+              "description": "Fundamental concepts of encryption, symmetric vs asymmetric cryptography, and cryptographic algorithms",
+              "order": 1,
+              "prerequisites": [
+                "CIA Triad (Confidentiality, Integrity, Availability)"
+              ]
+            },
+            {
+              "name": "Hashing and Digital Signatures",
+              "description": "Hash functions, message authentication codes, and digital signature schemes for data integrity",
+              "order": 2,
+              "prerequisites": [
+                "Cryptography Basics"
+              ]
+            },
+            {
+              "name": "Public Key Infrastructure (PKI)",
+              "description": "Certificate authorities, digital certificates, and public key management systems",
+              "order": 3,
+              "prerequisites": [
+                "Hashing and Digital Signatures"
+              ]
+            },
+            {
+              "name": "Data Loss Prevention",
+              "description": "Strategies and technologies to prevent unauthorized data access, transmission, and storage",
+              "order": 4,
+              "prerequisites": [
+                "Cryptography Basics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Identity and Access Management",
+          "description": "Managing user identities, authentication methods, and authorization controls to ensure appropriate access to resources",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Authentication Methods",
+              "description": "Password security, multi-factor authentication, and biometric authentication systems",
+              "order": 1,
+              "prerequisites": [
+                "CIA Triad (Confidentiality, Integrity, Availability)"
+              ]
+            },
+            {
+              "name": "Access Control Models",
+              "description": "Role-based, attribute-based, and mandatory access control systems and their implementation",
+              "order": 2,
+              "prerequisites": [
+                "Authentication Methods"
+              ]
+            },
+            {
+              "name": "Identity Federation and Single Sign-On",
+              "description": "Centralized identity management, SAML, OAuth, and enterprise identity solutions",
+              "order": 3,
+              "prerequisites": [
+                "Access Control Models"
+              ]
+            },
+            {
+              "name": "Privileged Access Management",
+              "description": "Managing and monitoring administrative and privileged user accounts and access",
+              "order": 4,
+              "prerequisites": [
+                "Access Control Models"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Threat Intelligence and Analysis",
+          "description": "Understanding cyber threats, attack vectors, and methods for analyzing and responding to security incidents",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Threat Landscape and Attack Vectors",
+              "description": "Common cyber threats, attack methodologies, and threat actor motivations and capabilities",
+              "order": 1,
+              "prerequisites": [
+                "Introduction to Cybersecurity"
+              ]
+            },
+            {
+              "name": "Malware Analysis",
+              "description": "Identifying, analyzing, and mitigating various types of malicious software and their behaviors",
+              "order": 2,
+              "prerequisites": [
+                "Threat Landscape and Attack Vectors"
+              ]
+            },
+            {
+              "name": "Vulnerability Assessment",
+              "description": "Systematic identification and evaluation of security weaknesses in systems and applications",
+              "order": 3,
+              "prerequisites": [
+                "Risk Management Fundamentals"
+              ]
+            },
+            {
+              "name": "Penetration Testing",
+              "description": "Ethical hacking methodologies to test and validate security controls and defenses",
+              "order": 4,
+              "prerequisites": [
+                "Vulnerability Assessment",
+                "Network Security Fundamentals"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Incident Response and Forensics",
+          "description": "Responding to security incidents, conducting digital investigations, and maintaining business continuity",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Incident Response Planning",
+              "description": "Developing and implementing structured approaches to security incident handling and response",
+              "order": 1,
+              "prerequisites": [
+                "Risk Management Fundamentals",
+                "Threat Landscape and Attack Vectors"
+              ]
+            },
+            {
+              "name": "Digital Forensics",
+              "description": "Collecting, preserving, and analyzing digital evidence for incident investigation and legal proceedings",
+              "order": 2,
+              "prerequisites": [
+                "Incident Response Planning"
+              ]
+            },
+            {
+              "name": "Business Continuity and Disaster Recovery",
+              "description": "Planning and implementing strategies to maintain operations during and after security incidents",
+              "order": 3,
+              "prerequisites": [
+                "Incident Response Planning"
+              ]
+            },
+            {
+              "name": "Security Monitoring and SIEM",
+              "description": "Security information and event management systems for continuous monitoring and threat detection",
+              "order": 4,
+              "prerequisites": [
+                "Intrusion Detection and Prevention Systems",
+                "Incident Response Planning"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "beb488fd",
+    "created_at": "2026-01-13T15:42:33.377462",
+    "curriculum": {
+      "subject": "Data Engineering",
+      "description": "A comprehensive curriculum covering the design, construction, and maintenance of data systems and infrastructure for collecting, storing, processing, and analyzing large volumes of data.",
+      "clusters": [
+        {
+          "name": "Foundations and Programming",
+          "description": "Core programming skills and fundamental concepts essential for data engineering",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Programming Fundamentals",
+              "description": "Basic programming concepts, data structures, and algorithms",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Python for Data Engineering",
+              "description": "Python programming with focus on data manipulation, file handling, and libraries relevant to data engineering",
+              "order": 2,
+              "prerequisites": [
+                "Programming Fundamentals"
+              ]
+            },
+            {
+              "name": "SQL and Database Fundamentals",
+              "description": "Structured Query Language basics, relational database concepts, and database design principles",
+              "order": 3,
+              "prerequisites": [
+                "Programming Fundamentals"
+              ]
+            },
+            {
+              "name": "Linux and Command Line",
+              "description": "Linux operating system basics, shell scripting, and command-line tools for data processing",
+              "order": 4,
+              "prerequisites": [
+                "Programming Fundamentals"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data Storage and Databases",
+          "description": "Various database technologies and storage solutions for different data engineering needs",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Relational Databases",
+              "description": "Advanced SQL, database optimization, indexing, and working with PostgreSQL, MySQL",
+              "order": 1,
+              "prerequisites": [
+                "SQL and Database Fundamentals"
+              ]
+            },
+            {
+              "name": "NoSQL Databases",
+              "description": "Document, key-value, column-family, and graph databases including MongoDB, Cassandra, Redis",
+              "order": 2,
+              "prerequisites": [
+                "SQL and Database Fundamentals"
+              ]
+            },
+            {
+              "name": "Data Warehousing",
+              "description": "Data warehouse design, dimensional modeling, star and snowflake schemas",
+              "order": 3,
+              "prerequisites": [
+                "Relational Databases"
+              ]
+            },
+            {
+              "name": "Cloud Storage Solutions",
+              "description": "Object storage, data lakes, and cloud-native storage services (S3, Azure Blob, GCS)",
+              "order": 4,
+              "prerequisites": [
+                "Data Warehousing"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data Processing and ETL",
+          "description": "Techniques and tools for extracting, transforming, and loading data",
+          "order": 3,
+          "topics": [
+            {
+              "name": "ETL Fundamentals",
+              "description": "Extract, Transform, Load processes, data cleaning, and validation techniques",
+              "order": 1,
+              "prerequisites": [
+                "Python for Data Engineering",
+                "SQL and Database Fundamentals"
+              ]
+            },
+            {
+              "name": "Batch Processing",
+              "description": "Processing large volumes of data in batches using tools like Apache Spark",
+              "order": 2,
+              "prerequisites": [
+                "ETL Fundamentals"
+              ]
+            },
+            {
+              "name": "Stream Processing",
+              "description": "Real-time data processing using Apache Kafka, Apache Storm, or similar technologies",
+              "order": 3,
+              "prerequisites": [
+                "Batch Processing"
+              ]
+            },
+            {
+              "name": "Data Pipeline Design",
+              "description": "Designing robust, scalable, and maintainable data pipelines",
+              "order": 4,
+              "prerequisites": [
+                "Batch Processing",
+                "Stream Processing"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Big Data Technologies",
+          "description": "Tools and frameworks for handling large-scale data processing",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Hadoop Ecosystem",
+              "description": "Hadoop Distributed File System (HDFS), MapReduce, and related tools",
+              "order": 1,
+              "prerequisites": [
+                "Linux and Command Line",
+                "Data Pipeline Design"
+              ]
+            },
+            {
+              "name": "Apache Spark",
+              "description": "Distributed computing framework for large-scale data processing and analytics",
+              "order": 2,
+              "prerequisites": [
+                "Hadoop Ecosystem"
+              ]
+            },
+            {
+              "name": "Apache Kafka",
+              "description": "Distributed streaming platform for building real-time data pipelines",
+              "order": 3,
+              "prerequisites": [
+                "Stream Processing"
+              ]
+            },
+            {
+              "name": "Container Technologies",
+              "description": "Docker, Kubernetes for containerizing and orchestrating data applications",
+              "order": 4,
+              "prerequisites": [
+                "Apache Spark",
+                "Apache Kafka"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cloud Platforms and DevOps",
+          "description": "Cloud-based data engineering solutions and operational practices",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Cloud Platforms Overview",
+              "description": "Introduction to AWS, Azure, and GCP data services and architectures",
+              "order": 1,
+              "prerequisites": [
+                "Cloud Storage Solutions",
+                "Container Technologies"
+              ]
+            },
+            {
+              "name": "Infrastructure as Code",
+              "description": "Terraform, CloudFormation for managing data infrastructure",
+              "order": 2,
+              "prerequisites": [
+                "Cloud Platforms Overview"
+              ]
+            },
+            {
+              "name": "CI/CD for Data Pipelines",
+              "description": "Continuous integration and deployment practices for data engineering projects",
+              "order": 3,
+              "prerequisites": [
+                "Infrastructure as Code"
+              ]
+            },
+            {
+              "name": "Monitoring and Logging",
+              "description": "Observability tools and practices for data systems and pipelines",
+              "order": 4,
+              "prerequisites": [
+                "CI/CD for Data Pipelines"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Advanced Topics and Specializations",
+          "description": "Specialized areas and advanced concepts in data engineering",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Data Quality and Governance",
+              "description": "Data validation, lineage tracking, and governance frameworks",
+              "order": 1,
+              "prerequisites": [
+                "Data Pipeline Design",
+                "Monitoring and Logging"
+              ]
+            },
+            {
+              "name": "Security and Compliance",
+              "description": "Data encryption, access control, GDPR, and other compliance requirements",
+              "order": 2,
+              "prerequisites": [
+                "Data Quality and Governance"
+              ]
+            },
+            {
+              "name": "Performance Optimization",
+              "description": "Query optimization, system tuning, and scalability best practices",
+              "order": 3,
+              "prerequisites": [
+                "Apache Spark",
+                "Monitoring and Logging"
+              ]
+            },
+            {
+              "name": "Machine Learning Pipeline Integration",
+              "description": "Building data pipelines that support ML workflows and model deployment",
+              "order": 4,
+              "prerequisites": [
+                "Performance Optimization",
+                "Data Quality and Governance"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "2fe16d1b",
+    "created_at": "2026-01-13T15:32:32.067619",
+    "curriculum": {
+      "subject": "AI/ML Fundamentals",
+      "description": "A comprehensive introduction to artificial intelligence and machine learning concepts, covering foundational mathematics, core algorithms, and practical implementation skills",
+      "clusters": [
+        {
+          "name": "Mathematical Foundations",
+          "description": "Essential mathematical concepts required for understanding AI and ML algorithms",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Linear Algebra",
+              "description": "Vectors, matrices, eigenvalues, and matrix operations fundamental to ML algorithms",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Statistics and Probability",
+              "description": "Probability distributions, statistical inference, and hypothesis testing",
+              "order": 2,
+              "prerequisites": []
+            },
+            {
+              "name": "Calculus",
+              "description": "Derivatives, gradients, and optimization techniques used in learning algorithms",
+              "order": 3,
+              "prerequisites": [
+                "Linear Algebra"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Core AI/ML Concepts",
+          "description": "Fundamental concepts and terminology in artificial intelligence and machine learning",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Introduction to AI and ML",
+              "description": "Overview of artificial intelligence, machine learning types, and problem categories",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Data Preprocessing",
+              "description": "Data cleaning, feature engineering, normalization, and handling missing values",
+              "order": 2,
+              "prerequisites": [
+                "Introduction to AI and ML",
+                "Statistics and Probability"
+              ]
+            },
+            {
+              "name": "Model Evaluation and Validation",
+              "description": "Cross-validation, performance metrics, overfitting, underfitting, and bias-variance tradeoff",
+              "order": 3,
+              "prerequisites": [
+                "Introduction to AI and ML",
+                "Statistics and Probability"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Supervised Learning",
+          "description": "Algorithms that learn from labeled training data to make predictions",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Linear Regression",
+              "description": "Predicting continuous values using linear relationships between features",
+              "order": 1,
+              "prerequisites": [
+                "Linear Algebra",
+                "Statistics and Probability",
+                "Data Preprocessing"
+              ]
+            },
+            {
+              "name": "Logistic Regression",
+              "description": "Binary and multiclass classification using logistic functions",
+              "order": 2,
+              "prerequisites": [
+                "Linear Regression",
+                "Calculus"
+              ]
+            },
+            {
+              "name": "Decision Trees",
+              "description": "Tree-based models for classification and regression problems",
+              "order": 3,
+              "prerequisites": [
+                "Model Evaluation and Validation"
+              ]
+            },
+            {
+              "name": "Ensemble Methods",
+              "description": "Random forests, boosting, and bagging techniques for improved performance",
+              "order": 4,
+              "prerequisites": [
+                "Decision Trees"
+              ]
+            },
+            {
+              "name": "Support Vector Machines",
+              "description": "Classification and regression using optimal separating hyperplanes",
+              "order": 5,
+              "prerequisites": [
+                "Linear Algebra",
+                "Logistic Regression"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unsupervised Learning",
+          "description": "Algorithms that discover patterns in data without labeled examples",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Clustering",
+              "description": "K-means, hierarchical clustering, and density-based clustering methods",
+              "order": 1,
+              "prerequisites": [
+                "Linear Algebra",
+                "Statistics and Probability"
+              ]
+            },
+            {
+              "name": "Dimensionality Reduction",
+              "description": "PCA, t-SNE, and other techniques for reducing feature space",
+              "order": 2,
+              "prerequisites": [
+                "Linear Algebra",
+                "Clustering"
+              ]
+            },
+            {
+              "name": "Association Rules",
+              "description": "Market basket analysis and finding relationships between variables",
+              "order": 3,
+              "prerequisites": [
+                "Statistics and Probability"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Neural Networks and Deep Learning",
+          "description": "Introduction to artificial neural networks and deep learning architectures",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Perceptron and Multi-layer Perceptrons",
+              "description": "Basic neural network building blocks and feedforward networks",
+              "order": 1,
+              "prerequisites": [
+                "Linear Algebra",
+                "Calculus",
+                "Logistic Regression"
+              ]
+            },
+            {
+              "name": "Backpropagation",
+              "description": "Algorithm for training neural networks through gradient descent",
+              "order": 2,
+              "prerequisites": [
+                "Perceptron and Multi-layer Perceptrons",
+                "Calculus"
+              ]
+            },
+            {
+              "name": "Deep Neural Networks",
+              "description": "Architecture design, activation functions, and regularization techniques",
+              "order": 3,
+              "prerequisites": [
+                "Backpropagation"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Practical Implementation",
+          "description": "Tools, frameworks, and best practices for implementing ML solutions",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Programming for ML",
+              "description": "Python, R, and essential libraries like NumPy, Pandas, and Scikit-learn",
+              "order": 1,
+              "prerequisites": [
+                "Data Preprocessing"
+              ]
+            },
+            {
+              "name": "ML Frameworks",
+              "description": "Introduction to TensorFlow, PyTorch, and other machine learning frameworks",
+              "order": 2,
+              "prerequisites": [
+                "Programming for ML",
+                "Deep Neural Networks"
+              ]
+            },
+            {
+              "name": "Model Deployment",
+              "description": "Strategies for deploying ML models in production environments",
+              "order": 3,
+              "prerequisites": [
+                "Programming for ML",
+                "Model Evaluation and Validation"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "d20e358c",
+    "created_at": "2025-12-03T17:41:33.265292",
+    "curriculum": {
+      "subject": "Container and Virtualization Technologies",
+      "description": "A comprehensive curriculum covering virtualization technologies from traditional VMs to modern containerization and orchestration with Kubernetes",
+      "clusters": [
+        {
+          "name": "Virtualization Fundamentals",
+          "description": "Core concepts of virtualization including hypervisors, virtual machines, and hardware acceleration",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Virtual Machine Monitors (VMM)",
+              "description": "Understanding Type 1 and Type 2 hypervisors, including ESXi, VMware Fusion, and their architectures",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Accelerated Virtualization",
+              "description": "Hardware-assisted virtualization with VT-x, page table assistance, memory acceleration, and virtual devices/SR-IOV",
+              "order": 2,
+              "prerequisites": [
+                "Virtual Machine Monitors (VMM)"
+              ]
+            },
+            {
+              "name": "QEMU Emulation",
+              "description": "Understanding QEMU's dual operation modes: legacy emulation and KVM hardware-assisted mode",
+              "order": 3,
+              "prerequisites": [
+                "Virtual Machine Monitors (VMM)"
+              ]
+            },
+            {
+              "name": "Linux KVM",
+              "description": "Linux Kernel-based Virtual Machine implementation with KVM module and QEMU integration",
+              "order": 4,
+              "prerequisites": [
+                "QEMU Emulation"
+              ]
+            },
+            {
+              "name": "LIBVIRT Management",
+              "description": "Unified VM management platform with API/CLI interfaces and libvirtd daemon for VM lifecycle management",
+              "order": 5,
+              "prerequisites": [
+                "Linux KVM"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cloud Infrastructure Platforms",
+          "description": "Enterprise and cloud-scale virtualization management platforms",
+          "order": 2,
+          "topics": [
+            {
+              "name": "VMware Cloud Management",
+              "description": "Enterprise VMware solutions for cloud infrastructure management",
+              "order": 1,
+              "prerequisites": [
+                "Virtual Machine Monitors (VMM)"
+              ]
+            },
+            {
+              "name": "OpenStack",
+              "description": "Open source cloud computing platform for managing compute, storage, and networking resources",
+              "order": 2,
+              "prerequisites": [
+                "LIBVIRT Management"
+              ]
+            },
+            {
+              "name": "Amazon EC2",
+              "description": "Amazon Elastic Compute Cloud service for scalable virtual server instances",
+              "order": 3,
+              "prerequisites": [
+                "Virtual Machine Monitors (VMM)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Container Fundamentals",
+          "description": "Linux containerization technologies and their underlying kernel features",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Linux Container Support",
+              "description": "Core Linux features enabling containers: namespaces, overlay filesystems, cgroups, and chroot",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "LXC Containers",
+              "description": "Linux Containers providing OS-level virtualization using kernel containment features",
+              "order": 2,
+              "prerequisites": [
+                "Linux Container Support"
+              ]
+            },
+            {
+              "name": "Docker Architecture",
+              "description": "Docker ecosystem including dockerd, containerd, container-shim, and RunC components",
+              "order": 3,
+              "prerequisites": [
+                "Linux Container Support"
+              ]
+            },
+            {
+              "name": "Docker Runtime Flow",
+              "description": "Docker execution flow with init process management using tini for proper process reaping",
+              "order": 4,
+              "prerequisites": [
+                "Docker Architecture"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Container Implementation",
+          "description": "Hands-on container deployment and application packaging",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Docker Installation and Setup",
+              "description": "Installing Docker on Linux VM and Mac environments",
+              "order": 1,
+              "prerequisites": [
+                "Docker Architecture"
+              ]
+            },
+            {
+              "name": "Application Containerization",
+              "description": "Creating Docker packages for applications like Study Buddy - mini capstone project",
+              "order": 2,
+              "prerequisites": [
+                "Docker Installation and Setup",
+                "Docker Runtime Flow"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kubernetes Foundations",
+          "description": "Container orchestration fundamentals and Kubernetes architecture",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Kubernetes Foundation Concepts",
+              "description": "Core K8s concepts including orchestration, auto-scaling, resilience, and distributed system management",
+              "order": 1,
+              "prerequisites": [
+                "Docker Architecture"
+              ]
+            },
+            {
+              "name": "Kubernetes Architecture",
+              "description": "Master components (API server, scheduler, controller manager, ETCD) and node components (kubelet, kube-proxy, container runtime)",
+              "order": 2,
+              "prerequisites": [
+                "Kubernetes Foundation Concepts"
+              ]
+            },
+            {
+              "name": "Pods and Workload Units",
+              "description": "Understanding pods as the basic unit of K8s scheduling with IP assignment and multi-container support",
+              "order": 3,
+              "prerequisites": [
+                "Kubernetes Architecture"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kubernetes Controllers and Management",
+          "description": "Advanced Kubernetes workload management and state control mechanisms",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Deployment Controllers",
+              "description": "DeploymentSet and ReplicaSet controllers for maintaining desired replica counts and rolling updates",
+              "order": 1,
+              "prerequisites": [
+                "Pods and Workload Units"
+              ]
+            },
+            {
+              "name": "Specialized Controllers",
+              "description": "DaemonSet for node-level services and StatefulSet for stateful applications with persistence and ordering",
+              "order": 2,
+              "prerequisites": [
+                "Deployment Controllers"
+              ]
+            },
+            {
+              "name": "Service Management",
+              "description": "Service controllers providing virtual endpoints and load balancing for pod groups",
+              "order": 3,
+              "prerequisites": [
+                "Deployment Controllers"
+              ]
+            },
+            {
+              "name": "State Management with ETCD",
+              "description": "Understanding ETCD's role in storing desired state and controller manager's state reconciliation loop",
+              "order": 4,
+              "prerequisites": [
+                "Specialized Controllers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kubernetes Networking and Storage",
+          "description": "Advanced Kubernetes infrastructure for networking and persistent storage",
+          "order": 7,
+          "topics": [
+            {
+              "name": "Container Network Interface (CNI)",
+              "description": "CNI plugins like Calico and Flannel for pod networking, IP assignment, and cluster communication",
+              "order": 1,
+              "prerequisites": [
+                "Service Management"
+              ]
+            },
+            {
+              "name": "Persistent Storage",
+              "description": "Kubernetes storage abstraction with persistent volumes backed by NFS, CEPH, EBS and other storage plugins",
+              "order": 2,
+              "prerequisites": [
+                "Specialized Controllers"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "d55ad70d",
+    "created_at": "2025-12-03T17:39:50.211375",
+    "curriculum": {
+      "subject": "Computer Storage Systems",
+      "description": "A comprehensive study of computer storage systems from basic concepts to advanced distributed storage, covering physical storage, filesystems, storage architectures, and cloud storage services.",
+      "clusters": [
+        {
+          "name": "Storage Fundamentals",
+          "description": "Core concepts of storage including storage abstractions, media types, and basic storage architectures",
+          "order": 1,
+          "topics": [
+            {
+              "name": "Types of storage",
+              "description": "Overview of different storage categories and their use cases",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Abstract view (registers -> tapes) state store",
+              "description": "Conceptual hierarchy of storage from fastest to slowest access",
+              "order": 2,
+              "prerequisites": [
+                "Types of storage"
+              ]
+            },
+            {
+              "name": "Storage media",
+              "description": "Physical storage technologies including magnetic, solid-state, and optical media",
+              "order": 3,
+              "prerequisites": [
+                "Abstract view (registers -> tapes) state store"
+              ]
+            },
+            {
+              "name": "Storage scale using networking",
+              "description": "How networking enables storage scaling across File, SAN, and Object storage",
+              "order": 4,
+              "prerequisites": [
+                "Storage media"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Physical Storage and Hardware",
+          "description": "Low-level storage hardware concepts including disk organization and performance optimization",
+          "order": 2,
+          "topics": [
+            {
+              "name": "Local disks and physical file storage (sectors/disk block)",
+              "description": "Understanding disk geometry, sectors, and block-level organization",
+              "order": 1,
+              "prerequisites": [
+                "Storage media"
+              ]
+            },
+            {
+              "name": "HA n Perf improvements using RAID (RAID 0,1, 10,..)",
+              "description": "Redundant Array of Independent Disks for performance and reliability",
+              "order": 2,
+              "prerequisites": [
+                "Local disks and physical file storage (sectors/disk block)"
+              ]
+            },
+            {
+              "name": "Valley big storage companies: NetApp, Pure, Brocade switches,..; Disks: Western Digital, Hitachi, San Disk,..",
+              "description": "Overview of major storage hardware vendors and their technologies",
+              "order": 3,
+              "prerequisites": [
+                "HA n Perf improvements using RAID (RAID 0,1, 10,..)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Storage Architectures",
+          "description": "Different storage access patterns and architectures including block, file, and object storage",
+          "order": 3,
+          "topics": [
+            {
+              "name": "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!",
+              "description": "Block-level storage access for both local and network-attached storage",
+              "order": 1,
+              "prerequisites": [
+                "Storage scale using networking"
+              ]
+            },
+            {
+              "name": "File Storage: Remote and shared, .. NFS/CIFS-SMB",
+              "description": "Network file systems for shared access to files across networks",
+              "order": 2,
+              "prerequisites": [
+                "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!"
+              ]
+            },
+            {
+              "name": "Object based (S3, Openstack swift, IBM, Pure Storage, Netapp,\u2026)",
+              "description": "Object storage systems for scalable, web-accessible data storage",
+              "order": 3,
+              "prerequisites": [
+                "File Storage: Remote and shared, .. NFS/CIFS-SMB"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux Filesystem Concepts",
+          "description": "Understanding how Linux organizes and manages files and directories",
+          "order": 4,
+          "topics": [
+            {
+              "name": "Linux directory structure, Mount filesystems.. local vs network-file vs network-block",
+              "description": "Linux directory hierarchy and different filesystem mount types",
+              "order": 1,
+              "prerequisites": [
+                "File Storage: Remote and shared, .. NFS/CIFS-SMB"
+              ]
+            },
+            {
+              "name": "Sample File IO and Seek",
+              "description": "Basic file input/output operations and seeking within files",
+              "order": 2,
+              "prerequisites": [
+                "Linux directory structure, Mount filesystems.. local vs network-file vs network-block"
+              ]
+            },
+            {
+              "name": "Directory: list of filenames and inodes. And iNode doesn't contain filename but everything else in its metadata!",
+              "description": "How directories map filenames to inodes and inode structure",
+              "order": 3,
+              "prerequisites": [
+                "Sample File IO and Seek"
+              ]
+            },
+            {
+              "name": "iNode : direct data block address, single indirect, .. triple indirect, \u2014> determines max file size",
+              "description": "Inode structure and how it determines file size limitations",
+              "order": 4,
+              "prerequisites": [
+                "Directory: list of filenames and inodes. And iNode doesn't contain filename but everything else in its metadata!"
+              ]
+            },
+            {
+              "name": "Filesystem mount and unmount;; Hard links vs symbolic link ; /Proc Filesystem, /NFS, /CIFS mount, Sparsebundle filesystem",
+              "description": "Filesystem mounting operations and different types of links and special filesystems",
+              "order": 5,
+              "prerequisites": [
+                "iNode : direct data block address, single indirect, .. triple indirect, \u2014> determines max file size"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Filesystem Implementation",
+          "description": "How filesystems are implemented at the driver and layout level",
+          "order": 5,
+          "topics": [
+            {
+              "name": "Filesystem driver",
+              "description": "Software layer that translates filesystem operations to storage operations",
+              "order": 1,
+              "prerequisites": [
+                "Filesystem mount and unmount;; Hard links vs symbolic link ; /Proc Filesystem, /NFS, /CIFS mount, Sparsebundle filesystem"
+              ]
+            },
+            {
+              "name": "Local Filesystem layout : Boot block, Root block (meta data and inodes), data blocks,,.. Driver program translates stuff;",
+              "description": "Physical layout of filesystem structures on storage media",
+              "order": 2,
+              "prerequisites": [
+                "Filesystem driver"
+              ]
+            },
+            {
+              "name": "Block based local (block size/inode blocks/metadata/ data blocks): Ext*/ZFS*, FAT/NTFS, AFS",
+              "description": "Different local filesystem formats and their block organization",
+              "order": 3,
+              "prerequisites": [
+                "Local Filesystem layout : Boot block, Root block (meta data and inodes), data blocks,,.. Driver program translates stuff;"
+              ]
+            },
+            {
+              "name": "Remote: iSCSI/SAN, or NFS, or S3",
+              "description": "Filesystem drivers for remote storage access methods",
+              "order": 4,
+              "prerequisites": [
+                "Block based local (block size/inode blocks/metadata/ data blocks): Ext*/ZFS*, FAT/NTFS, AFS"
+              ]
+            },
+            {
+              "name": "Popular Linux filesystem formats: Ext3 (extent based architecture), XFS (B+trees), ZFS* ;; Windows has NTFS/exFAT/FAT, Apple: APFS/AFS",
+              "description": "Comparison of major filesystem formats across different operating systems",
+              "order": 5,
+              "prerequisites": [
+                "Remote: iSCSI/SAN, or NFS, or S3"
+              ]
+            },
+            {
+              "name": "Layered filesystem",
+              "description": "Understanding filesystem abstraction layers and virtual filesystems",
+              "order": 6,
+              "prerequisites": [
+                "Popular Linux filesystem formats: Ext3 (extent based architecture), XFS (B+trees), ZFS* ;; Windows has NTFS/exFAT/FAT, Apple: APFS/AFS"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Distributed Storage Systems",
+          "description": "Large-scale distributed storage systems and their design principles",
+          "order": 6,
+          "topics": [
+            {
+              "name": "CAP theorem !!",
+              "description": "Consistency, Availability, and Partition tolerance trade-offs in distributed systems",
+              "order": 1,
+              "prerequisites": [
+                "Layered filesystem"
+              ]
+            },
+            {
+              "name": "Distributed File Systems: HDFS, GFS,.. store large quantities of data",
+              "description": "Distributed filesystems designed for big data and fault tolerance",
+              "order": 2,
+              "prerequisites": [
+                "CAP theorem !!"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cloud Storage Services",
+          "description": "Modern cloud storage offerings and their architectures",
+          "order": 7,
+          "topics": [
+            {
+              "name": "AWS Services (S3, EBS, EFS, Glacier, AWS Storage Gateway)..",
+              "description": "Amazon Web Services storage portfolio and use cases",
+              "order": 1,
+              "prerequisites": [
+                "Object based (S3, Openstack swift, IBM, Pure Storage, Netapp,\u2026)",
+                "Distributed File Systems: HDFS, GFS,.. store large quantities of data"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Capstone Project",
+          "description": "Comprehensive storage system design project integrating all learned concepts",
+          "order": 8,
+          "topics": [
+            {
+              "name": "CAPSTONE: AWS S3 design (IAM/Tenancy, URI design, Action Verbs, Interface API model, backend design, name space, operations, integration). .. USE OF STORAGE AND NETWORKING CONCEPTS",
+              "description": "Design and implement a complete object storage system similar to AWS S3, incorporating storage and networking concepts",
+              "order": 1,
+              "prerequisites": [
+                "AWS Services (S3, EBS, EFS, Glacier, AWS Storage Gateway)..",
+                "CAP theorem !!",
+                "Object based (S3, Openstack swift, IBM, Pure Storage, Netapp,\u2026)"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "5e46f7f9",
+    "created_at": "2025-12-03T14:43:31.189127",
+    "curriculum": {
+      "subject": "Networking Fundamentals and Advanced Technologies",
+      "description": "A comprehensive curriculum covering networking concepts from basic hardware components and protocols to advanced cloud networking, security, and modern architectural patterns",
+      "clusters": [
+        {
+          "name": "Networking Fundamentals and OSI Model",
+          "description": "Core networking concepts, OSI layers, and foundational protocols",
+          "order": 1,
+          "topics": [
+            {
+              "name": "OSI Model Layers",
+              "description": "Understanding the 7-layer networking model: Physical, Data Link (MAC), Network (IP), Transport, Session, Presentation, and Application layers",
+              "order": 1,
+              "prerequisites": []
+            },
+            {
+              "name": "Network Hardware Components",
+              "description": "Hub, Bridge, Switch, Router, and Gateway functions and differences - understanding packet flow and collision domains",
+              "order": 2,
+              "prerequisites": [
+                "OSI Model Layers"
+              ]
+            },
+            {
+              "name": "IP Addressing and Subnetting",
+              "description": "IPv4 and IPv6 addressing, non-routable private IP ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), and subnetting concepts",
+              "order": 3,
+              "prerequisites": [
+                "OSI Model Layers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Core Network Protocols",
+          "description": "Essential protocols for network communication and address resolution",
+          "order": 2,
+          "topics": [
+            {
+              "name": "ARP and Address Resolution",
+              "description": "Address Resolution Protocol for mapping IP addresses to MAC addresses",
+              "order": 1,
+              "prerequisites": [
+                "IP Addressing and Subnetting",
+                "Network Hardware Components"
+              ]
+            },
+            {
+              "name": "DHCP and Network Configuration",
+              "description": "Dynamic Host Configuration Protocol for automatic IP address assignment and network configuration",
+              "order": 2,
+              "prerequisites": [
+                "IP Addressing and Subnetting"
+              ]
+            },
+            {
+              "name": "DNS Services and Resolution",
+              "description": "Domain Name System with A/AAAA records, recursive resolvers (Cloudflare 1.1.1.1, Google 8.8.8.8), and name-to-IP/service mapping",
+              "order": 3,
+              "prerequisites": [
+                "IP Addressing and Subnetting"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Transport Protocols and Application Services",
+          "description": "Transport layer protocols and common application layer services",
+          "order": 3,
+          "topics": [
+            {
+              "name": "TCP and Transport Layer",
+              "description": "Transmission Control Protocol for reliable data transmission and connection management",
+              "order": 1,
+              "prerequisites": [
+                "OSI Model Layers"
+              ]
+            },
+            {
+              "name": "Common Ports and Protocols",
+              "description": "Standard port assignments: FTP (20/21), SSH (22), HTTP (80), HTTPS (443), DNS (53), SMTP (25), and database ports (MySQL 3306, Oracle 1521, MSSQL 1433)",
+              "order": 2,
+              "prerequisites": [
+                "TCP and Transport Layer"
+              ]
+            },
+            {
+              "name": "Email Protocols",
+              "description": "SMTP for outgoing mail, POP3 for single-device access, and IMAP for multi-device mail access",
+              "order": 3,
+              "prerequisites": [
+                "Common Ports and Protocols"
+              ]
+            },
+            {
+              "name": "HTTP and URI Schemes",
+              "description": "HTTP protocol and various URI schemes including SMB, NFS, HTTP, HTTPS for application communication",
+              "order": 4,
+              "prerequisites": [
+                "Common Ports and Protocols"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Network Address Translation and Communication",
+          "description": "NAT technologies and communication patterns between local and remote networks",
+          "order": 4,
+          "topics": [
+            {
+              "name": "NAT Technologies",
+              "description": "Source NAT (SNAT), Destination NAT (DNAT), Port Address Translation (PAT), and 1:1 NAT for IP address translation",
+              "order": 1,
+              "prerequisites": [
+                "IP Addressing and Subnetting",
+                "Network Hardware Components"
+              ]
+            },
+            {
+              "name": "Local vs Remote IP Communication",
+              "description": "Understanding packet flow between local and remote machines, including routing decisions",
+              "order": 2,
+              "prerequisites": [
+                "NAT Technologies",
+                "ARP and Address Resolution"
+              ]
+            },
+            {
+              "name": "Anycast and Global Distribution",
+              "description": "One IP shared by servers globally with routing to closest server, used in CDNs and DNS load balancing",
+              "order": 3,
+              "prerequisites": [
+                "Local vs Remote IP Communication"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Routing Protocols and ISP Technologies",
+          "description": "Advanced routing protocols used by ISPs and large enterprises",
+          "order": 5,
+          "topics": [
+            {
+              "name": "OSPF Interior Routing",
+              "description": "Open Shortest Path First protocol for intranet routing within ISP/Autonomous Systems",
+              "order": 1,
+              "prerequisites": [
+                "Local vs Remote IP Communication"
+              ]
+            },
+            {
+              "name": "BGP Internet Routing",
+              "description": "Border Gateway Protocol for internet routing between autonomous systems and ISPs",
+              "order": 2,
+              "prerequisites": [
+                "OSPF Interior Routing"
+              ]
+            },
+            {
+              "name": "MPLS Label Switching",
+              "description": "Multi-Protocol Label Switching for faster packet routing within ISP networks using labels instead of IP lookups",
+              "order": 3,
+              "prerequisites": [
+                "BGP Internet Routing"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Network Security Technologies",
+          "description": "Firewall technologies, intrusion prevention, and web application protection",
+          "order": 6,
+          "topics": [
+            {
+              "name": "Basic Firewalls",
+              "description": "Stateless firewalls at L3/L4: Linux iptables and Cisco ACLs for packet filtering",
+              "order": 1,
+              "prerequisites": [
+                "OSI Model Layers",
+                "Common Ports and Protocols"
+              ]
+            },
+            {
+              "name": "Stateful Firewalls",
+              "description": "L4 stateful firewalls: Linux Conntrack, pfSense, and ASA for connection tracking",
+              "order": 2,
+              "prerequisites": [
+                "Basic Firewalls"
+              ]
+            },
+            {
+              "name": "Next-Generation Firewalls",
+              "description": "L7/Application-aware firewalls with deep packet inspection, application recognition (Zoom, Slack), and IPS/IDS capabilities",
+              "order": 3,
+              "prerequisites": [
+                "Stateful Firewalls"
+              ]
+            },
+            {
+              "name": "Web Application Firewalls",
+              "description": "WAF for SQL injection protection, API security using AWS WAF, ModSecurity, and CloudFlare",
+              "order": 4,
+              "prerequisites": [
+                "Next-Generation Firewalls",
+                "HTTP and URI Schemes"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Load Balancing Technologies",
+          "description": "Layer 4 and Layer 7 load balancing solutions for traffic distribution",
+          "order": 7,
+          "topics": [
+            {
+              "name": "Layer 4 Load Balancing",
+              "description": "Transport layer load balancing with AWS NLB and HAProxy for basic traffic distribution",
+              "order": 1,
+              "prerequisites": [
+                "TCP and Transport Layer"
+              ]
+            },
+            {
+              "name": "Layer 7 Application Load Balancing",
+              "description": "Application-aware load balancing with URL path, header, and cookie-based routing, SSL termination, and API gateway features using AWS ALB and Nginx",
+              "order": 2,
+              "prerequisites": [
+                "Layer 4 Load Balancing",
+                "HTTP and URI Schemes"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Network Troubleshooting and Diagnostics",
+          "description": "Essential network diagnostic tools and commands",
+          "order": 8,
+          "topics": [
+            {
+              "name": "Network Diagnostic Commands",
+              "description": "Essential networking commands: ARP, IP/ifconfig, ping, tracert, route, nslookup/dig, and netstat for network troubleshooting",
+              "order": 1,
+              "prerequisites": [
+                "ARP and Address Resolution",
+                "DNS Services and Resolution",
+                "Local vs Remote IP Communication"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "VPN and Secure Remote Access",
+          "description": "Virtual Private Networks and secure remote access technologies",
+          "order": 9,
+          "topics": [
+            {
+              "name": "IPSec VPN",
+              "description": "Layer 3 VPN with IPSec for host-to-host, host-to-network, and network-to-network connections, including WireGuard UDP-based implementation",
+              "order": 1,
+              "prerequisites": [
+                "OSI Model Layers",
+                "Basic Firewalls"
+              ]
+            },
+            {
+              "name": "SSL VPNs",
+              "description": "TLS-based Layer 4 VPNs with browser, client (AnyConnect), and daemon-based implementations using TUN/TAP interfaces",
+              "order": 2,
+              "prerequisites": [
+                "IPSec VPN",
+                "HTTP and URI Schemes"
+              ]
+            },
+            {
+              "name": "Zero Trust Network Access",
+              "description": "ZTNA for fine-grained, user/application/policy-based access control, moving beyond traditional VPN broad network access",
+              "order": 3,
+              "prerequisites": [
+                "SSL VPNs",
+                "Next-Generation Firewalls"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AWS Cloud Networking",
+          "description": "Amazon Web Services networking services and cloud-native networking patterns",
+          "order": 10,
+          "topics": [
+            {
+              "name": "AWS Core Networking",
+              "description": "VPC, Internet/Transit Gateways, private and public subnets, and basic AWS networking concepts",
+              "order": 1,
+              "prerequisites": [
+                "IP Addressing and Subnetting",
+                "NAT Technologies"
+              ]
+            },
+            {
+              "name": "AWS Load Balancing Services",
+              "description": "Elastic Load Balancer (ELB), Network Load Balancer (NLB), and Gateway Load Balancer (GWLB) services",
+              "order": 2,
+              "prerequisites": [
+                "AWS Core Networking",
+                "Layer 4 Load Balancing",
+                "Layer 7 Application Load Balancing"
+              ]
+            },
+            {
+              "name": "AWS Global Services",
+              "description": "CloudFront CDN and Route53 DNS services for global content distribution and DNS management",
+              "order": 3,
+              "prerequisites": [
+                "AWS Load Balancing Services",
+                "DNS Services and Resolution"
+              ]
+            },
+            {
+              "name": "AWS Service Mesh",
+              "description": "AWS Lattice and App Mesh with Envoy proxy sidecars for service-to-service communication, traffic routing, retries, and circuit breakers",
+              "order": 4,
+              "prerequisites": [
+                "AWS Global Services",
+                "Layer 7 Application Load Balancing"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

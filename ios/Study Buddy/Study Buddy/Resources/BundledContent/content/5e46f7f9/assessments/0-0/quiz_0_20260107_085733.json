@@ -1,0 +1,62 @@
+{
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": false,
+      "student_choice": "Transport Layer",
+      "correct_answer": "Physical Layer",
+      "analysis": "The student likely focused on the fact that data corruption can be handled by Transport Layer protocols like TCP, which provide error detection and retransmission. This is a common misconception where students think about which layer can fix the problem rather than where the problem originates.",
+      "explanation": "When packets are being correctly routed (Network Layer working) but arriving corrupted, this indicates a Physical Layer issue. Data corruption during transmission typically occurs due to physical medium problems like faulty cables, electromagnetic interference, or hardware issues. While the Transport Layer can detect and recover from such corruption, the root cause lies in the Physical Layer where the actual bit transmission is occurring."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Session and Presentation layers",
+      "correct_answer": "Session and Presentation layers",
+      "analysis": "Excellent understanding shown - the student correctly identified that establishing secure communication channels involves Session Layer (managing the connection/session) and Presentation Layer (handling encryption/decryption).",
+      "explanation": "Perfect answer. The Session Layer manages the establishment, maintenance, and termination of communication sessions between applications, while the Presentation Layer handles encryption, compression, and data format translation."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Presentation Layer - data formatting/encoding issues",
+      "correct_answer": "Presentation Layer - data formatting/encoding issues",
+      "analysis": "Strong analytical skills demonstrated - the student correctly reasoned that since TCP connections work fine, the issue must be with data representation, not connectivity.",
+      "explanation": "Correct identification. Since TCP connections are established successfully (Transport Layer working), but messages appear garbled, this indicates a Presentation Layer problem with character encoding, data format translation, or compression/decompression issues."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "correct_answer": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "analysis": "Solid understanding of router functionality and Layer 3 operations - correctly identified that routers work with logical addresses rather than physical addresses.",
+      "explanation": "Excellent answer. Routers operate at Layer 3 because they make forwarding decisions based on logical network addresses (IP addresses) in packet headers, allowing them to route traffic between different network segments regardless of the underlying physical network technologies."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Transport Layer - providing reliable, connection-oriented communication",
+      "correct_answer": "Transport Layer - providing reliable, connection-oriented communication",
+      "analysis": "Good understanding of QoS implementation and Transport Layer responsibilities for ensuring reliable delivery of prioritized traffic.",
+      "explanation": "Correct choice. For video conferencing QoS, the Transport Layer is critical as it provides reliable, ordered delivery of packets and can implement flow control mechanisms to manage congestion while ensuring video packets arrive in sequence for proper playback."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Confusing problem location with problem resolution - thinking about which layer can fix an issue rather than where it originates",
+      "May have difficulty distinguishing between symptoms at higher layers versus root causes at lower layers"
+    ],
+    "focus_areas": [
+      "Physical Layer troubleshooting - understanding how physical medium issues manifest as data corruption",
+      "Layer interaction and problem isolation - learning to trace issues from symptoms back to root causes",
+      "Bottom-up vs top-down troubleshooting methodologies in the OSI model"
+    ],
+    "encouragement": "Great job achieving 80%! You demonstrate strong analytical skills and solid understanding of the upper layers of the OSI model. Your reasoning for the correct answers shows you grasp the practical applications of networking concepts well.",
+    "recommendation": "Focus on studying Physical Layer components and how physical medium problems manifest at higher layers. Practice troubleshooting scenarios that require identifying the root cause layer versus symptom layers. Review case studies of network problems that start at lower layers but show symptoms at higher layers."
+  },
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 0
+}

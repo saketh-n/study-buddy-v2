@@ -1,0 +1,61 @@
+{
+  "topic_name": "Cryptography Basics",
+  "questions": [
+    {
+      "question": "A company needs to encrypt data that will be stored on their servers for 10+ years. The encryption method must be fast for large files and use minimal computational resources. Which approach should they choose?",
+      "options": [
+        "Asymmetric encryption with RSA-4096",
+        "Symmetric encryption with AES-256",
+        "Hash function with SHA-256",
+        "Digital signatures with ECDSA"
+      ],
+      "correct_index": 1,
+      "explanation": "Symmetric encryption (AES-256) is the best choice for encrypting large amounts of data for long-term storage because it's fast, efficient, and provides strong security. Asymmetric encryption is too slow for large files, while hashing and digital signatures serve different purposes."
+    },
+    {
+      "question": "Why would an online banking system use BOTH symmetric and asymmetric cryptography in the same transaction session?",
+      "options": [
+        "To provide redundancy in case one method fails",
+        "To comply with government regulations requiring both methods",
+        "To use asymmetric encryption for key exchange and symmetric encryption for data transfer",
+        "To confuse potential attackers by using multiple encryption layers"
+      ],
+      "correct_index": 2,
+      "explanation": "Modern systems use hybrid cryptography: asymmetric encryption securely exchanges symmetric keys (solving the key distribution problem), then symmetric encryption handles the actual data transfer (providing speed and efficiency). This combines the strengths of both methods."
+    },
+    {
+      "question": "A developer encrypts a message with AES using the same key and initialization vector (IV) multiple times. What security vulnerability does this create?",
+      "options": [
+        "The key will eventually expire and become invalid",
+        "Identical plaintexts will produce identical ciphertexts, revealing patterns",
+        "The encryption will become progressively weaker with each use",
+        "The algorithm will automatically switch to a less secure mode"
+      ],
+      "correct_index": 1,
+      "explanation": "Reusing the same key and IV in symmetric encryption creates patterns where identical plaintext blocks produce identical ciphertext blocks. This allows attackers to identify repeated data and potentially break the encryption through pattern analysis."
+    },
+    {
+      "question": "A social media platform wants users to verify that posts from celebrity accounts are authentic and haven't been tampered with. Which cryptographic concept best addresses this need?",
+      "options": [
+        "Symmetric encryption to hide the post content",
+        "Asymmetric encryption to secure the transmission",
+        "Digital signatures to ensure authenticity and integrity",
+        "Hash functions to compress the post data"
+      ],
+      "correct_index": 2,
+      "explanation": "Digital signatures provide both authentication (proving who created the content) and integrity (ensuring the content hasn't been modified). The celebrity signs posts with their private key, and users verify authenticity using the celebrity's public key."
+    },
+    {
+      "question": "An organization discovers that their cryptographic keys may have been compromised. In terms of cryptographic security principles, what is the most critical immediate action?",
+      "options": [
+        "Switch to a stronger encryption algorithm immediately",
+        "Increase the key length for all future communications",
+        "Revoke the compromised keys and generate new ones",
+        "Add additional layers of encryption using different algorithms"
+      ],
+      "correct_index": 2,
+      "explanation": "Key revocation and replacement is the most critical immediate action. Even the strongest algorithm becomes useless if the keys are compromised. New keys must be generated and distributed securely, and the old keys must be revoked to prevent their malicious use."
+    }
+  ],
+  "passing_score": 80
+}

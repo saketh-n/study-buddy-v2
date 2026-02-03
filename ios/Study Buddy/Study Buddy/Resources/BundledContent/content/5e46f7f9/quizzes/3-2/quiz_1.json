@@ -1,0 +1,61 @@
+{
+  "topic_name": "Anycast and Global Distribution",
+  "questions": [
+    {
+      "question": "What is the fundamental routing principle that makes anycast work for global server distribution?",
+      "options": [
+        "Routers automatically forward packets to the topologically closest server advertising the same IP",
+        "DNS servers maintain a real-time database of server locations and redirect clients",
+        "Load balancers at each location distribute traffic among local servers",
+        "BGP creates dedicated tunnels between client and server locations"
+      ],
+      "correct_index": 0,
+      "explanation": "Anycast works because routers use their routing tables to forward packets to the nearest (in terms of network hops/cost) server that advertises the same anycast IP address, without needing application-layer knowledge."
+    },
+    {
+      "question": "A global streaming service wants to reduce video startup latency for users worldwide. Why would anycast be particularly effective for their content delivery infrastructure?",
+      "options": [
+        "It provides automatic failover when servers crash",
+        "It distributes the computational load evenly across all servers",
+        "It routes users to geographically closer edge servers, reducing round-trip time",
+        "It compresses video data more efficiently during transmission"
+      ],
+      "correct_index": 2,
+      "explanation": "Anycast's primary benefit for CDNs is reducing latency by ensuring users connect to the nearest edge server, minimizing the physical distance data must travel and reducing round-trip time."
+    },
+    {
+      "question": "What happens to active TCP connections when an anycast server becomes unavailable?",
+      "options": [
+        "Connections automatically migrate to the next closest server",
+        "Connections continue normally using cached routing information",
+        "Connections are broken and must be re-established by clients",
+        "The load balancer redirects connections to backup servers"
+      ],
+      "correct_index": 2,
+      "explanation": "TCP connections to a failed anycast server will break because TCP is stateful and connection state cannot be transferred to another server. Clients must establish new connections, which will be routed to the next nearest available server."
+    },
+    {
+      "question": "Why is anycast commonly used for DNS root servers rather than traditional unicast with geographic load balancing?",
+      "options": [
+        "DNS queries require encryption that only anycast can provide",
+        "Anycast provides better query caching across multiple locations",
+        "Anycast enables automatic routing to available servers without client-side configuration changes",
+        "DNS protocols are incompatible with standard unicast routing"
+      ],
+      "correct_index": 2,
+      "explanation": "Anycast allows DNS infrastructure to be distributed globally with automatic failover and optimal routing without requiring clients to know about or configure multiple server addresses - the routing happens transparently at the network layer."
+    },
+    {
+      "question": "An e-commerce company is experiencing inconsistent user sessions where users get logged out randomly. They recently implemented anycast for their web servers. What is the most likely cause of this issue?",
+      "options": [
+        "Anycast is causing packet loss due to multiple routing paths",
+        "Users are being routed to different servers that don't share session state",
+        "The anycast IP address is conflicting with internal network addresses",
+        "BGP convergence delays are corrupting user authentication tokens"
+      ],
+      "correct_index": 1,
+      "explanation": "The most likely issue is that routing changes or network path variations cause users to reach different anycast servers that don't share session data, breaking stateful applications that expect session persistence."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Types of storage",
+  "questions": [
+    {
+      "question": "A software developer needs to store frequently accessed application data that must persist even when the computer is turned off, but also needs reasonably fast access times. Which storage solution would be most appropriate?",
+      "options": [
+        "RAM (Random Access Memory)",
+        "SSD (Solid State Drive)",
+        "CPU Cache",
+        "Optical disc"
+      ],
+      "correct_index": 1,
+      "explanation": "SSDs provide persistent storage (data survives power loss) with fast access times, making them ideal for frequently accessed application data. RAM is faster but volatile, CPU cache is too small and volatile, and optical discs are too slow for frequent access."
+    },
+    {
+      "question": "Why would a data center choose magnetic tape storage for their long-term backup strategy despite it having much slower access times than other storage options?",
+      "options": [
+        "It has the fastest random access capabilities",
+        "It offers the best cost per GB for large-scale archival storage",
+        "It provides the highest data transfer speeds",
+        "It has the most reliable power consumption"
+      ],
+      "correct_index": 1,
+      "explanation": "Magnetic tape offers excellent cost-effectiveness for storing large amounts of data that don't need frequent access, making it ideal for long-term backups and archival purposes despite slower access times."
+    },
+    {
+      "question": "A video editing workstation experiences slow performance when working with large 4K video files. The system has adequate RAM and a powerful CPU. What storage upgrade would most likely resolve the bottleneck?",
+      "options": [
+        "Adding more optical disc drives",
+        "Replacing HDD with NVMe SSD",
+        "Installing additional RAM slots",
+        "Upgrading to magnetic tape storage"
+      ],
+      "correct_index": 1,
+      "explanation": "Large video files require high-speed storage for smooth editing. NVMe SSDs provide much faster read/write speeds compared to traditional HDDs, eliminating storage bottlenecks when working with large media files."
+    },
+    {
+      "question": "Which statement best explains the relationship between storage hierarchy levels in a computer system?",
+      "options": [
+        "Higher levels are slower but have larger capacity and lower cost per bit",
+        "Higher levels are faster, larger, and more expensive in every aspect",
+        "All levels operate at the same speed but differ only in capacity",
+        "Lower levels are always non-volatile while higher levels are volatile"
+      ],
+      "correct_index": 0,
+      "explanation": "The storage hierarchy follows a trade-off pattern where higher levels (like CPU cache) are very fast but small and expensive, while lower levels (like HDDs) are slower but offer much larger capacity at lower cost per bit."
+    },
+    {
+      "question": "A company needs to distribute software to customers who may not have reliable internet access. They want a storage medium that is portable, relatively inexpensive to produce in bulk, and can be read by most computers. What would be the best choice?",
+      "options": [
+        "External SSDs",
+        "USB flash drives",
+        "DVDs/Blu-ray discs",
+        "Portable hard drives"
+      ],
+      "correct_index": 2,
+      "explanation": "Optical discs like DVDs or Blu-ray discs are very cost-effective for mass production, widely compatible with most computers, portable, and don't require internet access. While other options might be faster, they are significantly more expensive for bulk distribution."
+    }
+  ],
+  "passing_score": 80
+}

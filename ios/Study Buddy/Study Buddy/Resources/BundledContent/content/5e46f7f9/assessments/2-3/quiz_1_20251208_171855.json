@@ -1,0 +1,60 @@
+{
+  "score": 60,
+  "correct_count": 3,
+  "total_questions": 5,
+  "passed": false,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "HTTPS because it provides end-to-end encryption for all transmitted data",
+      "correct_answer": "HTTPS because it provides end-to-end encryption for all transmitted data",
+      "analysis": "Great job!",
+      "explanation": "HTTPS should be used when transmitting sensitive data like authentication tokens because it provides SSL/TLS encryption for all data in transit, protecting against eavesdropping and man-in-the-middle attacks."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "smb://server/share because SMB integrates natively with Windows environments and supports fine-grained permissions",
+      "correct_answer": "smb://server/share because SMB integrates natively with Windows environments and supports fine-grained permissions",
+      "analysis": "Great job!",
+      "explanation": "SMB (Server Message Block) is the most appropriate choice for Windows environments as it integrates seamlessly with Active Directory, supports Windows file permissions, and is designed specifically for network file sharing in Windows networks."
+    },
+    {
+      "question_num": 3,
+      "is_correct": false,
+      "student_choice": "It's connecting to a database server on port 8443 to retrieve admin users",
+      "correct_answer": "It's making an encrypted API call to a specific version endpoint with query parameters and a fragment identifier",
+      "analysis": "The correct answer was: It's making an encrypted API call to a specific version endpoint with query parameters and a fragment identifier",
+      "explanation": "The HTTPS scheme indicates encrypted web communication, '/v2/users' suggests a versioned API endpoint, '?role=admin' is a query parameter, and '#section1' is a fragment identifier, all typical of RESTful API calls."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Implement NFS because it's optimized for Unix/Linux file sharing and supports efficient partial file access",
+      "correct_answer": "Implement NFS because it's optimized for Unix/Linux file sharing and supports efficient partial file access",
+      "analysis": "Great job!",
+      "explanation": "NFS (Network File System) is designed for efficient file sharing in Unix/Linux environments, supports features like file locking and partial file access, which is crucial for large CAD files that may need to be accessed in portions rather than downloaded entirely."
+    },
+    {
+      "question_num": 5,
+      "is_correct": false,
+      "student_choice": "Use HTTP for these checks since the data isn't sensitive and it reduces computational overhead",
+      "correct_answer": "Always use HTTPS regardless of data sensitivity to maintain consistent security practices",
+      "analysis": "The correct answer was: Always use HTTPS regardless of data sensitivity to maintain consistent security practices",
+      "explanation": "Modern best practice dictates using HTTPS for all web communications, even for non-sensitive data, to prevent protocol downgrade attacks, ensure data integrity, and maintain consistent security posture. The computational overhead is minimal on modern systems."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Review the questions you missed above"
+    ],
+    "focus_areas": [
+      "Check the explanations for each incorrect answer"
+    ],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. You scored 60%. Review the explanations below and try again!",
+    "recommendation": "Review the lesson and try a new quiz when ready."
+  }
+}

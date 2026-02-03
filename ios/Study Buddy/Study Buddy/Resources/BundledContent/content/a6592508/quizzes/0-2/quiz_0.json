@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hair Growth Cycle",
+  "questions": [
+    {
+      "question": "A patient notices significant hair shedding 3 months after a severe illness. Understanding the hair growth cycle, which phase was most likely affected during the illness, and why is the hair loss occurring now?",
+      "options": [
+        "Anagen phase was shortened, causing immediate hair loss that is just now being noticed",
+        "Catagen phase was extended, causing a delay in hair follicle regression",
+        "Many follicles prematurely entered telogen phase during illness, and are now shedding before starting new anagen cycles",
+        "The illness directly damaged hair shafts in the anagen phase, causing breakage"
+      ],
+      "correct_index": 2,
+      "explanation": "Severe stress or illness often causes follicles to prematurely enter telogen (resting) phase. Since telogen lasts 2-3 months before shedding occurs, the hair loss becomes noticeable months after the triggering event. This is called telogen effluvium."
+    },
+    {
+      "question": "Why would a hair loss treatment be more effective when applied during the anagen phase rather than the telogen phase?",
+      "options": [
+        "Anagen follicles are metabolically inactive and absorb treatments better",
+        "Blood flow to follicles is reduced during anagen, concentrating the treatment",
+        "Anagen follicles are actively growing and metabolically active, making them more responsive to growth-promoting treatments",
+        "The hair shaft acts as a conduit for treatment delivery only during anagen"
+      ],
+      "correct_index": 2,
+      "explanation": "During anagen, follicles are metabolically active with high cell division rates, active protein synthesis, and increased blood supply. This makes them more responsive to treatments that promote growth or prevent follicle miniaturization."
+    },
+    {
+      "question": "In androgenetic alopecia (male pattern baldness), affected follicles progressively produce shorter, finer hairs. Which aspect of the hair growth cycle is primarily being altered?",
+      "options": [
+        "Catagen phase is eliminated entirely",
+        "Telogen phase becomes permanently extended",
+        "Anagen phase duration progressively shortens while telogen remains constant",
+        "All three phases occur simultaneously in the same follicle"
+      ],
+      "correct_index": 2,
+      "explanation": "In androgenetic alopecia, DHT sensitivity causes progressive shortening of the anagen (growth) phase. This results in shorter, finer hairs with each cycle, eventually leading to follicle miniaturization and apparent baldness."
+    },
+    {
+      "question": "A dermatologist explains that approximately 10-15% of scalp hairs are normally in telogen phase at any given time. What would be the most likely consequence if this percentage suddenly increased to 30%?",
+      "options": [
+        "Hair would grow twice as fast due to increased follicle activity",
+        "No visible change would occur since telogen hairs don't fall out",
+        "Noticeable hair thinning would occur as fewer follicles are actively producing hair",
+        "Hair color would change due to altered melanocyte activity"
+      ],
+      "correct_index": 2,
+      "explanation": "If 30% of follicles are in telogen (resting) instead of the normal 10-15%, this means fewer follicles are in anagen (actively growing hair). This results in reduced hair density and noticeable thinning, as seen in conditions like telogen effluvium."
+    },
+    {
+      "question": "Chemotherapy often causes rapid hair loss within 2-3 weeks of treatment. Based on the normal hair growth cycle timeline, why does this occur much faster than typical pattern hair loss?",
+      "options": [
+        "Chemotherapy specifically targets telogen follicles, which shed immediately",
+        "Chemotherapy disrupts the catagen phase, causing instant hair release",
+        "Chemotherapy damages rapidly dividing cells in anagen follicles, causing the hair shaft to weaken and break near the scalp",
+        "Chemotherapy accelerates the normal hair cycle, completing all phases within weeks"
+      ],
+      "correct_index": 2,
+      "explanation": "Chemotherapy targets rapidly dividing cells, which includes the matrix cells in anagen follicles. This damages the hair shaft structure, causing it to become brittle and break off near the scalp within 2-3 weeks, much faster than normal cycle-related shedding."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Web Application Firewalls",
+  "questions": [
+    {
+      "question": "A web application is experiencing repeated SQL injection attempts where attackers are using UNION-based attacks to extract database information. Which WAF protection mechanism would be MOST effective in preventing these attacks?",
+      "options": [
+        "Rate limiting based on IP address",
+        "Signature-based detection with SQL syntax pattern matching",
+        "SSL/TLS certificate validation",
+        "Load balancing across multiple servers"
+      ],
+      "correct_index": 1,
+      "explanation": "Signature-based detection with SQL syntax pattern matching is most effective against SQL injection attacks as it can identify and block malicious SQL patterns like UNION statements, while rate limiting only controls request frequency and the other options don't address the SQL injection vulnerability directly."
+    },
+    {
+      "question": "When implementing API security using AWS WAF, why would you choose to deploy it with CloudFront rather than directly with an Application Load Balancer?",
+      "options": [
+        "CloudFront provides better database encryption",
+        "CloudFront enables global edge protection and reduces latency for geographically distributed users",
+        "CloudFront automatically patches application vulnerabilities",
+        "CloudFront provides stronger authentication mechanisms"
+      ],
+      "correct_index": 1,
+      "explanation": "Deploying AWS WAF with CloudFront provides global edge protection by filtering malicious traffic at edge locations worldwide before it reaches your infrastructure, reducing both latency for legitimate users and load on your origin servers."
+    },
+    {
+      "question": "A company's ModSecurity implementation is blocking legitimate API requests that contain JSON payloads with user-generated content. What is the BEST approach to resolve this while maintaining security?",
+      "options": [
+        "Disable ModSecurity entirely for the API endpoints",
+        "Create custom rule exceptions for specific request patterns while maintaining core SQL injection protections",
+        "Switch to a different WAF solution immediately",
+        "Increase the server processing power to handle more requests"
+      ],
+      "correct_index": 1,
+      "explanation": "Creating custom rule exceptions allows you to fine-tune ModSecurity to allow legitimate traffic patterns while maintaining protection against actual threats. This approach preserves security while reducing false positives, unlike disabling protection entirely."
+    },
+    {
+      "question": "In a scenario where you need to protect a REST API that serves both mobile apps and web browsers, which combination of CloudFlare features would provide the most comprehensive security coverage?",
+      "options": [
+        "Only Bot Management to block automated attacks",
+        "Only DDoS Protection to handle traffic spikes",
+        "WAF Rules + Bot Management + Rate Limiting + DDoS Protection",
+        "Only SSL/TLS encryption for data in transit"
+      ],
+      "correct_index": 2,
+      "explanation": "A comprehensive API security strategy requires multiple layers: WAF rules protect against application-layer attacks like SQL injection, Bot Management handles automated threats, Rate Limiting prevents abuse, and DDoS Protection handles volumetric attacks. Each addresses different threat vectors."
+    },
+    {
+      "question": "Your application uses parameterized queries and input sanitization. Why would you still need a WAF for SQL injection protection rather than relying solely on these secure coding practices?",
+      "options": [
+        "WAFs are faster than parameterized queries",
+        "WAFs provide defense-in-depth against bypass techniques, third-party vulnerabilities, and configuration errors",
+        "Parameterized queries don't work with modern databases",
+        "WAFs are required by law in all industries"
+      ],
+      "correct_index": 1,
+      "explanation": "While parameterized queries are excellent primary defenses, WAFs provide defense-in-depth by protecting against novel attack vectors, vulnerabilities in third-party components, human configuration errors, and attack techniques that might bypass application-level protections."
+    }
+  ],
+  "passing_score": 80
+}

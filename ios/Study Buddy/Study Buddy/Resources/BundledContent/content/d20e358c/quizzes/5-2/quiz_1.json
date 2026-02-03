@@ -1,0 +1,61 @@
+{
+  "topic_name": "Service Management",
+  "questions": [
+    {
+      "question": "What is the primary purpose of a service controller in container orchestration?",
+      "options": [
+        "To provide a stable virtual endpoint that abstracts the dynamic nature of pods",
+        "To monitor the health status of individual containers within pods",
+        "To automatically scale the number of pod replicas based on resource usage",
+        "To manage persistent storage volumes for stateful applications"
+      ],
+      "correct_index": 0,
+      "explanation": "Service controllers create stable virtual endpoints (IP addresses and DNS names) that remain constant even as pods are created, destroyed, or moved. This abstraction layer is essential because pods are ephemeral and their IP addresses change frequently."
+    },
+    {
+      "question": "A web application has 3 pod replicas running behind a service. When a user makes multiple requests, they sometimes get different response times and behaviors. What is the most likely explanation?",
+      "options": [
+        "The service is malfunctioning and needs to be restarted",
+        "The service is load balancing requests across different pod instances",
+        "The pods are running out of memory and becoming unresponsive",
+        "The service endpoint is caching responses inconsistently"
+      ],
+      "correct_index": 1,
+      "explanation": "Services distribute incoming requests across all healthy pods in the target group. Different pods may have varying response times due to different resource states, processing loads, or slight configuration differences, which is normal behavior for load balancing."
+    },
+    {
+      "question": "When would you choose a headless service over a regular service with load balancing?",
+      "options": [
+        "When you need better performance and lower latency",
+        "When you need direct pod-to-pod communication or client-side load balancing",
+        "When you have only one pod and don't need load balancing",
+        "When you want to reduce the number of network hops"
+      ],
+      "correct_index": 1,
+      "explanation": "Headless services (ClusterIP: None) don't provide load balancing but instead return all pod IPs directly via DNS. This is useful for stateful applications, databases, or when applications need to implement their own service discovery and load balancing logic."
+    },
+    {
+      "question": "Your application pods are frequently restarting due to updates, but external clients should never experience connection failures. Which service feature addresses this requirement?",
+      "options": [
+        "Service mesh integration for advanced routing",
+        "Readiness probes to ensure only healthy pods receive traffic",
+        "NodePort configuration for external access",
+        "Session affinity to maintain client connections"
+      ],
+      "correct_index": 1,
+      "explanation": "Readiness probes allow the service to automatically remove unhealthy or not-ready pods from the load balancer pool. During rolling updates, new pods won't receive traffic until they pass readiness checks, ensuring zero-downtime deployments."
+    },
+    {
+      "question": "A microservice needs to communicate with a database that has a primary-secondary setup where writes must go to the primary and reads can go to either. How should services be configured?",
+      "options": [
+        "Use a single service with session affinity to ensure consistent connections",
+        "Create separate services for primary and secondary with appropriate selectors",
+        "Use a headless service and let the application choose the correct endpoint",
+        "Configure the service with custom load balancing algorithms"
+      ],
+      "correct_index": 1,
+      "explanation": "Different services with distinct selectors (e.g., role=primary, role=secondary) allow applications to explicitly choose the appropriate database instance for reads vs. writes. This provides the necessary control for database-specific routing requirements."
+    }
+  ],
+  "passing_score": 80
+}

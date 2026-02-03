@@ -1,0 +1,61 @@
+{
+  "topic_name": "Firewalls and Network Access Control",
+  "questions": [
+    {
+      "question": "A company discovers that malware on an employee's workstation is attempting to communicate with external command and control servers. Which firewall configuration would be MOST effective at preventing this type of threat?",
+      "options": [
+        "Implementing only inbound rules to block external attacks",
+        "Configuring both inbound and outbound rules with default-deny policies",
+        "Using a stateless firewall with basic port filtering",
+        "Enabling logging without implementing traffic restrictions"
+      ],
+      "correct_index": 1,
+      "explanation": "Outbound filtering with default-deny policies prevents compromised internal systems from communicating with external malicious servers. Inbound-only filtering wouldn't stop internal malware from 'calling home' to attackers."
+    },
+    {
+      "question": "When implementing network segmentation for a healthcare organization, what is the PRIMARY reason to isolate medical devices on a separate network segment?",
+      "options": [
+        "Medical devices require higher bandwidth than other systems",
+        "Healthcare regulations mandate complete isolation from all other networks",
+        "Many medical devices have weak security controls and cannot be easily updated",
+        "Medical devices need direct internet access for remote monitoring"
+      ],
+      "correct_index": 2,
+      "explanation": "Medical devices often run legacy operating systems, have default credentials, and cannot be patched regularly due to regulatory compliance requirements. Segmentation limits the blast radius if these vulnerable devices are compromised."
+    },
+    {
+      "question": "An organization wants to allow employees to access the company file server from the guest wireless network, but prevent guests from accessing internal resources. Which approach would BEST accomplish this?",
+      "options": [
+        "Place both networks in the same VLAN with identical firewall rules",
+        "Use ACLs to permit specific traffic from guest network to file server while denying all other internal access",
+        "Disable the firewall between networks to allow seamless access",
+        "Block all traffic between the networks without exceptions"
+      ],
+      "correct_index": 1,
+      "explanation": "Access Control Lists (ACLs) can create granular rules allowing specific traffic flows while maintaining security. This enables controlled access to necessary resources while preventing broader network access."
+    },
+    {
+      "question": "A stateful firewall is examining a TCP connection where it sees an ACK packet but has no record of the initial SYN packet. How should it handle this packet?",
+      "options": [
+        "Allow the packet since ACK packets are generally safe",
+        "Drop the packet because it doesn't match any existing connection state",
+        "Forward the packet to the intrusion detection system for analysis",
+        "Create a new connection entry and allow future packets"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateful firewalls maintain connection state tables. An ACK without a prior SYN indicates either a missed initial packet or a potential attack. The firewall should drop it since it doesn't correspond to any legitimate established connection."
+    },
+    {
+      "question": "Your organization needs to implement defense-in-depth. You have perimeter firewalls in place. What would be the MOST logical next step for network access control?",
+      "options": [
+        "Deploy additional perimeter firewalls for redundancy",
+        "Implement host-based firewalls on critical servers and workstations",
+        "Remove internal network segmentation since perimeter is protected",
+        "Focus only on application-layer security"
+      ],
+      "correct_index": 1,
+      "explanation": "Defense-in-depth requires multiple security layers. Host-based firewalls provide protection even if attackers breach the perimeter, protecting against lateral movement and insider threats that perimeter firewalls cannot address."
+    }
+  ],
+  "passing_score": 80
+}

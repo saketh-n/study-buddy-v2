@@ -1,0 +1,61 @@
+{
+  "topic_name": "Seigneurial System and Land Distribution",
+  "questions": [
+    {
+      "question": "What was the primary purpose of implementing the seigneurial system in New France rather than allowing free land ownership?",
+      "options": [
+        "To generate maximum tax revenue for the French crown",
+        "To create a controlled settlement pattern that ensured defense and social order",
+        "To prevent conflicts between French settlers and Indigenous peoples",
+        "To maximize agricultural production through large-scale farming"
+      ],
+      "correct_index": 1,
+      "explanation": "The seigneurial system was designed to create organized, defensible settlements with clear social hierarchies and mutual obligations, ensuring colonists would settle in concentrated areas rather than dispersing randomly across the territory."
+    },
+    {
+      "question": "A habitant in New France wanted to establish a mill on his land to serve the local community. Under the seigneurial system, what would most likely happen?",
+      "options": [
+        "The habitant could build the mill freely as it was on his property",
+        "The seigneur would prohibit the mill to protect his monopoly on milling",
+        "The habitant would need to pay the seigneur a portion of the mill's profits",
+        "The colonial government would take over the mill for public use"
+      ],
+      "correct_index": 1,
+      "explanation": "Seigneurs typically held monopolies on mills, ovens, and other essential services within their seigneury. This was a key source of their income and power, so they would prevent habitants from competing with these monopolies."
+    },
+    {
+      "question": "Why were seigneurial lots typically arranged as long, narrow strips extending back from rivers rather than as square plots?",
+      "options": [
+        "This pattern made it easier to defend against attacks from Indigenous groups",
+        "It ensured each habitant had access to river transportation while maximizing the number of riverfront properties",
+        "The French government required this pattern to make tax collection more efficient",
+        "It prevented soil depletion by allowing for better crop rotation practices"
+      ],
+      "correct_index": 1,
+      "explanation": "The long lot system gave each habitant crucial access to the river for transportation, water, and fertile alluvial soil, while allowing more families to benefit from riverfront access than square lots would permit."
+    },
+    {
+      "question": "When would the seigneurial system have been most vulnerable to collapse or major reform in New France?",
+      "options": [
+        "During periods of increased fur trade profits when habitants could become wealthy",
+        "When land became scarce and the system could no longer accommodate population growth",
+        "During military conflicts when seigneurs were away fighting",
+        "When the Catholic Church gained more influence over colonial affairs"
+      ],
+      "correct_index": 1,
+      "explanation": "The system depended on available land for expansion. When good agricultural land became scarce and the system couldn't provide opportunities for new settlers or growing families, pressure for reform would mount as the system's core promise of land access failed."
+    },
+    {
+      "question": "How did the obligations within the seigneurial system differ from typical European feudalism of the same period?",
+      "options": [
+        "New France seigneurs had more military power over their habitants than European lords",
+        "Habitants in New France had greater personal freedom and mobility than European peasants",
+        "The French crown had less control over seigneurs than European monarchs had over their nobles",
+        "Religious obligations were more strictly enforced in New France than in Europe"
+      ],
+      "correct_index": 1,
+      "explanation": "Unlike European serfs, habitants were not bound to the land and could leave if they fulfilled their obligations. The system was also less rigid, with more social mobility and fewer restrictions on personal freedom, adapted to colonial conditions and labor shortages."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Directory: list of filenames and inodes. And iNode doesn't contain filename but everything else in its metadata!",
+  "questions": [
+    {
+      "question": "Why are filenames stored in directory entries rather than in the inode itself?",
+      "options": [
+        "To save space since inodes have a fixed size limit",
+        "To allow multiple filenames (hard links) to point to the same inode",
+        "To make file searching faster by keeping names separate",
+        "To prevent filename corruption when file content changes"
+      ],
+      "correct_index": 1,
+      "explanation": "Storing filenames in directory entries rather than inodes allows multiple directory entries to reference the same inode, enabling hard links where one file can have multiple names."
+    },
+    {
+      "question": "When a file is moved from one directory to another on the same filesystem, what actually happens at the inode level?",
+      "options": [
+        "The inode is copied to a new location and the old one is deleted",
+        "Only the directory entries change; the inode remains unchanged",
+        "The inode's metadata is updated with the new directory path",
+        "A new inode is created and linked to the existing data blocks"
+      ],
+      "correct_index": 1,
+      "explanation": "Moving a file within the same filesystem only changes directory entries. The inode itself remains unchanged because it doesn't store filename or path information."
+    },
+    {
+      "question": "A directory contains 1000 files. When you run 'ls -l' to see detailed file information, what is the most likely performance bottleneck?",
+      "options": [
+        "Reading the directory entries to get filenames",
+        "Reading each inode to get file metadata like size and permissions",
+        "Sorting the filenames alphabetically",
+        "Checking file permissions for each entry"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'ls -l' command must read each file's inode to display metadata like size, permissions, and timestamps. With 1000 files, this requires 1000 separate inode reads, which is the main performance bottleneck."
+    },
+    {
+      "question": "What information would you find in an inode but NOT in a directory entry?",
+      "options": [
+        "File size and creation timestamp",
+        "Filename and file extension",
+        "Parent directory reference",
+        "Symbolic link target path"
+      ],
+      "correct_index": 0,
+      "explanation": "Inodes contain file metadata like size, timestamps, permissions, and data block pointers. Directory entries only contain the filename and inode number mapping."
+    },
+    {
+      "question": "A system administrator needs to find all files larger than 100MB. Why would scanning inodes directly be more efficient than using directory listings?",
+      "options": [
+        "Inodes are stored sequentially while directories are scattered across the disk",
+        "Directory entries don't contain file size information, requiring additional inode lookups",
+        "Inodes contain compressed file information that's faster to read",
+        "Directory scanning requires checking filename patterns which is slower"
+      ],
+      "correct_index": 1,
+      "explanation": "Directory entries only contain filenames and inode numbers, not file sizes. To check file sizes, the system must read each inode anyway, so scanning inodes directly eliminates the intermediate directory lookup step."
+    }
+  ],
+  "passing_score": 80
+}

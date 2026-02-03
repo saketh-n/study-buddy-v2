@@ -1,0 +1,61 @@
+{
+  "topic_name": "Side Effects and Contraindications",
+  "questions": [
+    {
+      "question": "A 55-year-old patient with T2DM and a history of gastroparesis reports severe nausea and vomiting after starting semaglutide. What is the most likely underlying mechanism explaining this patient's heightened response?",
+      "options": [
+        "GLP-1 receptor agonists directly irritate gastric mucosa",
+        "Pre-existing delayed gastric emptying is further slowed by GLP-1's gastroprotective effects",
+        "The patient has developed acute pancreatitis",
+        "GLP-1 receptor agonists increase gastric acid production"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists slow gastric emptying as part of their mechanism of action. Patients with pre-existing gastroparesis already have delayed gastric emptying, making them particularly susceptible to severe GI side effects when this delay is further prolonged."
+    },
+    {
+      "question": "When would you consider discontinuing a GLP-1 receptor agonist in a patient experiencing abdominal pain?",
+      "options": [
+        "Any mild abdominal discomfort warrants immediate discontinuation",
+        "Only if the patient develops diabetic ketoacidosis",
+        "If severe, persistent abdominal pain occurs with nausea/vomiting, especially radiating to the back",
+        "If the pain occurs only after eating large meals"
+      ],
+      "correct_index": 2,
+      "explanation": "Severe, persistent abdominal pain with nausea/vomiting, particularly if radiating to the back, may indicate pancreatitis - a serious but rare adverse event requiring immediate discontinuation and evaluation."
+    },
+    {
+      "question": "A patient with a strong family history of medullary thyroid carcinoma (MTC) asks about starting a GLP-1 receptor agonist for weight loss. What is your primary concern and recommendation?",
+      "options": [
+        "GLP-1 agonists are less effective in patients with genetic predisposition to MTC",
+        "These medications are contraindicated due to increased C-cell tumor risk observed in animal studies",
+        "The patient should start with the lowest possible dose and monitor closely",
+        "Family history of MTC has no bearing on GLP-1 agonist use"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists are contraindicated in patients with personal or family history of MTC or Multiple Endocrine Neoplasia syndrome type 2 (MEN 2) due to C-cell tumor development in animal studies, though human relevance remains unclear."
+    },
+    {
+      "question": "You're monitoring a patient on liraglutide who reports intermittent episodes of weakness, sweating, and confusion occurring 2-3 hours after meals. The patient is also taking glimepiride. What is the most appropriate immediate action?",
+      "options": [
+        "Increase the liraglutide dose to improve glucose control",
+        "Discontinue liraglutide immediately due to hypoglycemia risk",
+        "Reduce or discontinue the sulfonylurea while continuing liraglutide",
+        "Add a long-acting insulin to stabilize glucose levels"
+      ],
+      "correct_index": 2,
+      "explanation": "The symptoms suggest hypoglycemia, which is uncommon with GLP-1 agonists alone but increases when combined with sulfonylureas. The glucose-dependent mechanism of GLP-1 agonists means adjusting the sulfonylurea is typically the appropriate intervention."
+    },
+    {
+      "question": "A patient starting on a GLP-1 receptor agonist has well-controlled hypertension on an ACE inhibitor and reports a history of 'stomach problems' but provides vague details. Which assessment approach best guides safe prescribing?",
+      "options": [
+        "Start the GLP-1 agonist at full dose since GI issues are usually mild",
+        "Obtain detailed GI history focusing on gastroparesis, IBD, and previous GI surgeries",
+        "Prescribe an anti-emetic prophylactically with the GLP-1 agonist",
+        "Switch the ACE inhibitor to avoid drug interactions"
+      ],
+      "correct_index": 1,
+      "explanation": "Proper patient selection requires detailed assessment of GI conditions that could be exacerbated by GLP-1 agonists' effect on gastric emptying. Conditions like gastroparesis, severe IBD, or certain GI surgeries may be relative contraindications."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Deployment Controllers",
+  "questions": [
+    {
+      "question": "What is the primary relationship between a Deployment and ReplicaSet in Kubernetes?",
+      "options": [
+        "A Deployment creates and manages ReplicaSets to handle rolling updates and rollbacks",
+        "A ReplicaSet creates and manages Deployments to ensure high availability",
+        "Deployments and ReplicaSets are independent controllers that work in parallel",
+        "A Deployment is just an alias for a ReplicaSet with additional metadata"
+      ],
+      "correct_index": 0,
+      "explanation": "A Deployment is a higher-level controller that creates and manages ReplicaSets. During rolling updates, it creates new ReplicaSets and gradually scales them up while scaling down old ones, enabling zero-downtime deployments and easy rollbacks."
+    },
+    {
+      "question": "Your application needs to be updated from version 1.0 to 2.0 with zero downtime, and you want the ability to quickly rollback if issues arise. Which approach should you choose?",
+      "options": [
+        "Use a ReplicaSet and manually delete old pods while creating new ones",
+        "Use a Deployment with rolling update strategy",
+        "Use multiple ReplicaSets and manually manage the transition",
+        "Use a single pod and restart it with the new version"
+      ],
+      "correct_index": 1,
+      "explanation": "A Deployment with rolling update strategy automatically manages the gradual replacement of old pods with new ones, ensuring zero downtime. It also maintains revision history, making rollbacks simple with a single command."
+    },
+    {
+      "question": "During a rolling update, you observe that a Deployment has created a new ReplicaSet but both old and new ReplicaSets are running simultaneously. What is most likely happening?",
+      "options": [
+        "The Deployment controller has malfunctioned and needs to be restarted",
+        "This is normal behavior - the Deployment gradually scales up new pods while scaling down old ones",
+        "The new ReplicaSet failed to start, so the old one continues running as backup",
+        "Kubernetes is waiting for manual approval to complete the update"
+      ],
+      "correct_index": 1,
+      "explanation": "During a rolling update, it's normal to see both ReplicaSets running temporarily. The Deployment controller gradually increases replicas in the new ReplicaSet while decreasing them in the old one, based on maxSurge and maxUnavailable parameters."
+    },
+    {
+      "question": "When would you choose to use a ReplicaSet directly instead of a Deployment?",
+      "options": [
+        "When you need rolling updates for your application",
+        "When you want automatic rollback capabilities",
+        "When you need a simple, static set of identical pods without update management",
+        "When you need to manage multiple versions of an application simultaneously"
+      ],
+      "correct_index": 2,
+      "explanation": "ReplicaSets are best used directly only when you need a simple, static set of pods without update management features. For most production scenarios, Deployments are preferred because they provide rolling updates, rollbacks, and better change management."
+    },
+    {
+      "question": "A Deployment is configured with 'replicas: 5' but you notice that sometimes there are 6 or 7 pods running. What is the most likely explanation?",
+      "options": [
+        "The ReplicaSet controller is malfunctioning and creating extra pods",
+        "Rolling update parameters allow temporary surge above desired count during updates",
+        "Kubernetes automatically scales based on CPU usage regardless of replica settings",
+        "Multiple ReplicaSets are competing and each trying to maintain 5 replicas"
+      ],
+      "correct_index": 1,
+      "explanation": "During rolling updates, the maxSurge parameter allows the Deployment to temporarily create additional pods above the desired replica count. This ensures availability during the transition from old to new versions."
+    }
+  ],
+  "passing_score": 80
+}

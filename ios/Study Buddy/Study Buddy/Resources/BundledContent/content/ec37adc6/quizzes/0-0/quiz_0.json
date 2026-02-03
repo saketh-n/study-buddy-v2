@@ -1,0 +1,61 @@
+{
+  "topic_name": "Basic Endocrinology Principles",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes receives a GLP-1 receptor agonist. The medication works by mimicking incretin hormones. What is the primary mechanism by which this hormone signaling pathway helps regulate blood glucose?",
+      "options": [
+        "It directly blocks glucose absorption in the intestine",
+        "It stimulates glucose-dependent insulin release and inhibits glucagon secretion",
+        "It increases glucose uptake by muscle cells independent of insulin",
+        "It converts excess glucose directly into stored fat"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists work through the incretin system by enhancing glucose-dependent insulin secretion from pancreatic beta cells and suppressing inappropriate glucagon release from alpha cells, providing dual glucose regulation."
+    },
+    {
+      "question": "Why would GLP-1 receptor agonists be preferred over insulin therapy in certain patients with type 2 diabetes from an endocrine feedback perspective?",
+      "options": [
+        "GLP-1 agonists provide stronger glucose control than insulin",
+        "GLP-1 agonists work only when glucose levels are elevated, reducing hypoglycemia risk",
+        "GLP-1 agonists permanently cure insulin resistance",
+        "GLP-1 agonists work faster than insulin injections"
+      ],
+      "correct_index": 1,
+      "explanation": "The glucose-dependent mechanism of GLP-1 receptor agonists means they enhance insulin secretion and suppress glucagon only when glucose levels are elevated, maintaining physiologic feedback control and reducing hypoglycemia risk compared to insulin."
+    },
+    {
+      "question": "A patient asks why their GLP-1 receptor agonist causes weight loss while their previous sulfonylurea medication caused weight gain. Which endocrine principle best explains this difference?",
+      "options": [
+        "GLP-1 agonists block all carbohydrate absorption",
+        "GLP-1 agonists activate receptors that slow gastric emptying and promote satiety",
+        "GLP-1 agonists directly burn stored fat tissue",
+        "GLP-1 agonists eliminate the need for dietary glucose"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptors are found in the brain (hypothalamus) and GI tract. Activation slows gastric emptying and enhances satiety signals, leading to reduced food intake, unlike sulfonylureas which stimulate insulin release regardless of glucose levels, promoting weight gain."
+    },
+    {
+      "question": "When considering the half-life and dosing frequency of different GLP-1 receptor agonists, which pharmacokinetic principle is most important for patient adherence and therapeutic effectiveness?",
+      "options": [
+        "Shorter half-life medications are always more effective",
+        "Longer half-life allows for less frequent dosing while maintaining steady receptor activation",
+        "Half-life doesn't matter as long as the dose is high enough",
+        "Immediate-release formulations provide better glucose control"
+      ],
+      "correct_index": 1,
+      "explanation": "Longer half-life GLP-1 agonists (like weekly formulations) maintain consistent receptor occupancy and activation, improving adherence while providing sustained therapeutic effects compared to shorter-acting daily medications."
+    },
+    {
+      "question": "A clinician wants to understand why GLP-1 receptor agonists may cause initial GI side effects that often diminish over time. Which receptor physiology concept explains this pattern?",
+      "options": [
+        "The receptors become permanently damaged after initial exposure",
+        "Receptor desensitization occurs, reducing both therapeutic and side effects equally",
+        "Compensatory receptor upregulation occurs in GI tissues specifically",
+        "Receptor adaptation and tolerance develop while maintaining therapeutic pathways"
+      ],
+      "correct_index": 3,
+      "explanation": "GI side effects often diminish due to receptor adaptation and physiologic tolerance in GI tissues, while therapeutic effects on glucose regulation are maintained through continued activation of pancreatic and CNS GLP-1 receptors."
+    }
+  ],
+  "passing_score": 80
+}

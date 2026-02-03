@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Services (S3, EBS, EFS, Glacier, AWS Storage Gateway)..",
+  "questions": [
+    {
+      "question": "A web application needs to store user-uploaded images that will be accessed frequently for the first month, then rarely accessed but must remain available. Which AWS storage strategy would be most cost-effective?",
+      "options": [
+        "Store all images in S3 Standard permanently",
+        "Store images in EBS volumes with snapshots",
+        "Use S3 with lifecycle policies to transition to S3 Glacier after 30 days",
+        "Use EFS for shared access across multiple instances"
+      ],
+      "correct_index": 2,
+      "explanation": "S3 with lifecycle policies allows automatic transition from frequently accessed storage (S3 Standard) to long-term archival storage (Glacier) based on age, optimizing costs while maintaining availability."
+    },
+    {
+      "question": "A financial services company needs to run a database that requires consistent, high-performance storage with low latency. The database runs on a single EC2 instance. Which storage service is most appropriate?",
+      "options": [
+        "Amazon S3 for its durability",
+        "Amazon EFS for shared access",
+        "Amazon EBS with Provisioned IOPS",
+        "Amazon Glacier for cost savings"
+      ],
+      "correct_index": 2,
+      "explanation": "EBS with Provisioned IOPS provides high-performance, low-latency block storage that can be attached to a single EC2 instance, making it ideal for database workloads requiring consistent performance."
+    },
+    {
+      "question": "Your company has an on-premises file server that needs to gradually migrate to the cloud while maintaining local access to frequently used files. Which service would best facilitate this hybrid approach?",
+      "options": [
+        "Replace the file server entirely with S3",
+        "Use EFS mounted directly to on-premises servers",
+        "Implement AWS Storage Gateway in File Gateway mode",
+        "Set up EBS volumes accessible from on-premises"
+      ],
+      "correct_index": 2,
+      "explanation": "AWS Storage Gateway in File Gateway mode creates a hybrid solution that presents cloud storage as a local file share, caching frequently accessed data locally while storing everything in S3."
+    },
+    {
+      "question": "A machine learning team needs shared storage that multiple EC2 instances across different Availability Zones can access simultaneously for training data. What's the best solution?",
+      "options": [
+        "EBS Multi-Attach volumes",
+        "S3 buckets with direct access",
+        "Amazon EFS with multiple mount targets",
+        "Multiple EBS volumes with data replication"
+      ],
+      "correct_index": 2,
+      "explanation": "Amazon EFS provides fully managed NFS that can be mounted simultaneously by multiple EC2 instances across different AZs, making it ideal for shared access to training data."
+    },
+    {
+      "question": "A media company needs to archive 10 years of video content that may need to be retrieved once or twice per year for legal compliance. Retrieval time of several hours is acceptable. Which storage option provides the best value?",
+      "options": [
+        "S3 Standard for immediate access",
+        "S3 Glacier Instant Retrieval for quick access",
+        "S3 Glacier Flexible Retrieval for balanced cost and access",
+        "S3 Glacier Deep Archive for maximum cost savings"
+      ],
+      "correct_index": 3,
+      "explanation": "S3 Glacier Deep Archive offers the lowest cost for long-term archival with very infrequent access. The 12-hour retrieval time is acceptable for the use case, making it the most cost-effective option."
+    }
+  ],
+  "passing_score": 80
+}

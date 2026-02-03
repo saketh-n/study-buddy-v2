@@ -1,0 +1,61 @@
+{
+  "topic_name": "TCP and Transport Layer",
+  "questions": [
+    {
+      "question": "Why does TCP use a three-way handshake to establish connections rather than simply starting data transmission immediately?",
+      "options": [
+        "To encrypt the data before transmission",
+        "To synchronize sequence numbers and ensure both endpoints are ready for reliable communication",
+        "To determine the fastest route through the network",
+        "To allocate bandwidth for the connection"
+      ],
+      "correct_index": 1,
+      "explanation": "The three-way handshake synchronizes sequence numbers between client and server, confirms both are ready to communicate, and establishes the initial parameters needed for reliable data transmission with proper ordering and acknowledgment."
+    },
+    {
+      "question": "A web application experiences intermittent data corruption during file uploads over a wireless network with occasional packet loss. Which TCP feature is most directly responsible for detecting and correcting this issue?",
+      "options": [
+        "Flow control using sliding window",
+        "Congestion control algorithms",
+        "Checksums and automatic retransmission of corrupted segments",
+        "Connection multiplexing using port numbers"
+      ],
+      "correct_index": 2,
+      "explanation": "TCP uses checksums to detect corrupted data and automatically retransmits segments that fail checksum validation or are not acknowledged, ensuring data integrity even over unreliable networks."
+    },
+    {
+      "question": "When would UDP be a better choice than TCP for an application, despite TCP's reliability features?",
+      "options": [
+        "When transferring large files that cannot afford any data loss",
+        "When implementing real-time voice communication where occasional packet loss is acceptable but delay is critical",
+        "When connecting to a database that requires transaction integrity",
+        "When downloading software updates that must be error-free"
+      ],
+      "correct_index": 1,
+      "explanation": "Real-time applications like voice communication prioritize low latency over perfect reliability. TCP's retransmission and ordering mechanisms introduce delays that can degrade real-time performance, while occasional lost packets in voice data are often imperceptible."
+    },
+    {
+      "question": "How does TCP's sliding window mechanism solve the problem of inefficient data transmission over high-latency networks?",
+      "options": [
+        "By compressing data before transmission to reduce bandwidth usage",
+        "By allowing multiple segments to be sent before waiting for acknowledgments, improving throughput",
+        "By automatically switching to faster network routes when available",
+        "By reducing the size of each segment to minimize transmission time"
+      ],
+      "correct_index": 1,
+      "explanation": "The sliding window allows TCP to send multiple segments without waiting for individual acknowledgments, keeping the network pipeline full and maximizing throughput, especially important on high-latency links where stop-and-wait would be very inefficient."
+    },
+    {
+      "question": "A network administrator notices that TCP connections are frequently timing out during peak usage hours when the network becomes congested. Which TCP mechanism is primarily responsible for adapting to this situation?",
+      "options": [
+        "Error detection and correction using checksums",
+        "Congestion control algorithms that reduce transmission rate when packet loss is detected",
+        "Port number assignment for connection multiplexing",
+        "Sequence numbering for proper data ordering"
+      ],
+      "correct_index": 1,
+      "explanation": "TCP's congestion control algorithms (like slow start, congestion avoidance, and fast recovery) detect network congestion through packet loss and timeouts, then adaptively reduce the transmission rate to prevent network collapse and ensure fair resource sharing."
+    }
+  ],
+  "passing_score": 80
+}

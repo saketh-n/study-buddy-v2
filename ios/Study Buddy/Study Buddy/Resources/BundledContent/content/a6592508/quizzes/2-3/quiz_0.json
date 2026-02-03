@@ -1,0 +1,61 @@
+{
+  "topic_name": "Treatment Selection and Expectations",
+  "questions": [
+    {
+      "question": "A 28-year-old man shows early signs of male pattern baldness with mild temple recession. What would be the MOST appropriate first-line treatment approach and why?",
+      "options": [
+        "Finasteride, because it addresses the hormonal cause and is most effective in early stages",
+        "Hair transplant, because it provides immediate and permanent results",
+        "Topical minoxidil only, because oral medications have too many side effects",
+        "Wait and monitor, because hair loss might stop naturally at this age"
+      ],
+      "correct_index": 0,
+      "explanation": "Finasteride is the most appropriate first-line treatment for early male pattern baldness because it blocks DHT production (addressing the root cause) and is most effective when hair follicles are still active. Hair transplant is premature for early-stage loss, minoxidil alone doesn't address the hormonal cause, and untreated androgenetic alopecia typically progresses."
+    },
+    {
+      "question": "When counseling a patient about realistic expectations for hair loss treatments, which statement is MOST accurate regarding treatment timelines?",
+      "options": [
+        "Most patients see significant improvement within 4-6 weeks of starting treatment",
+        "Initial hair shedding in the first 2-3 months indicates treatment failure",
+        "Visible improvement typically takes 6-12 months, with stabilization being the first goal",
+        "If no improvement is seen after 3 months, the treatment should be discontinued"
+      ],
+      "correct_index": 2,
+      "explanation": "Hair growth cycles are slow, requiring 6-12 months to see visible improvements. The primary goal is often stabilization (stopping further loss) rather than regrowth. Initial shedding can be normal as weak hairs are replaced by stronger ones, and 3 months is insufficient time to evaluate most hair loss treatments."
+    },
+    {
+      "question": "A 45-year-old woman experiences diffuse hair thinning after a stressful life event 4 months ago. Her blood work shows low iron and vitamin D. What treatment approach demonstrates the BEST understanding of treatment selection principles?",
+      "options": [
+        "Immediately start minoxidil since hair loss treatments work better when started early",
+        "Address nutritional deficiencies first, then evaluate if additional treatments are needed",
+        "Recommend hair transplantation since female pattern hair loss responds poorly to medications",
+        "Prescribe finasteride since it works for both men and women with androgenetic alopecia"
+      ],
+      "correct_index": 1,
+      "explanation": "This presentation suggests telogen effluvium (stress-induced) combined with nutritional deficiencies. Addressing underlying causes (nutritional deficiencies) should be the first step, as correcting these may resolve the hair loss. Finasteride has limited efficacy and safety concerns in women, and jumping to transplantation ignores treatable underlying causes."
+    },
+    {
+      "question": "Which factor is MOST important when determining whether a patient is a good candidate for combining multiple hair loss treatments?",
+      "options": [
+        "The patient's age, with combination therapy reserved for patients over 40",
+        "The severity of hair loss, with combinations only used for advanced cases",
+        "The patient's response to monotherapy and tolerance of side effects",
+        "The patient's budget, since combination therapy is always more expensive"
+      ],
+      "correct_index": 2,
+      "explanation": "Treatment decisions should be based on individual response and tolerability rather than age alone or severity alone. Some patients may benefit from combination therapy early on, while others may not tolerate or respond to multiple treatments. The key is assessing how well the patient responds to and tolerates initial treatment before adding additional therapies."
+    },
+    {
+      "question": "A patient asks why their dermatologist recommends continuing treatment even though their hair loss has stabilized without significant regrowth. What is the BEST explanation for this recommendation?",
+      "options": [
+        "The doctor wants to maximize profit by keeping patients on long-term medications",
+        "Stabilization indicates partial treatment failure, so continuation might eventually produce regrowth",
+        "Hair loss treatments generally require ongoing use to maintain benefits, and stabilization is a successful outcome",
+        "The patient needs to continue until they achieve complete regrowth of all lost hair"
+      ],
+      "correct_index": 2,
+      "explanation": "Most hair loss treatments require ongoing use to maintain their benefits - stopping treatment typically leads to resumption of hair loss. Stabilization (halting progression) is actually a successful treatment outcome, as androgenetic alopecia is progressive. Complete regrowth is unrealistic for most patients, and expecting it sets inappropriate expectations."
+    }
+  ],
+  "passing_score": 80
+}

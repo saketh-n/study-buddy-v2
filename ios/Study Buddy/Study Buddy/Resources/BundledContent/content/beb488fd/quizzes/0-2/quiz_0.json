@@ -1,0 +1,61 @@
+{
+  "topic_name": "SQL and Database Fundamentals",
+  "questions": [
+    {
+      "question": "A data engineer is designing a customer order system where each customer can place multiple orders, and each order can contain multiple products. What type of relationship exists between Orders and Products, and how should it be implemented?",
+      "options": [
+        "Many-to-many relationship implemented with a junction table containing order_id and product_id",
+        "One-to-many relationship with product_id as foreign key in the Orders table",
+        "One-to-one relationship with order_id as foreign key in the Products table",
+        "Many-to-one relationship with order_id stored as an array in the Products table"
+      ],
+      "correct_index": 0,
+      "explanation": "Orders and Products have a many-to-many relationship since one order can contain multiple products and one product can appear in multiple orders. This requires a junction table (often called OrderItems) to properly normalize the relationship and avoid data redundancy."
+    },
+    {
+      "question": "You need to retrieve all customers who have placed orders in the last 30 days, along with their total order count. Which SQL approach would be most efficient and why?",
+      "options": [
+        "Use EXISTS clause to check for recent orders, then a separate query to count orders",
+        "Use INNER JOIN between customers and orders with date filter and GROUP BY with COUNT",
+        "Use a subquery in SELECT clause to count orders for each customer, then filter by date",
+        "Use UNION to combine customer data with order counts from separate queries"
+      ],
+      "correct_index": 1,
+      "explanation": "An INNER JOIN with GROUP BY and COUNT is most efficient because it filters customers to only those with recent orders (via the JOIN condition), calculates the count in a single pass, and leverages database optimization for grouped aggregations."
+    },
+    {
+      "question": "When would you choose to denormalize a database design, and what is the primary trade-off involved?",
+      "options": [
+        "When storage space is limited; trade-off is increased query complexity",
+        "When read performance is critical; trade-off is potential data redundancy and update anomalies",
+        "When data integrity is the top priority; trade-off is slower insert operations",
+        "When the database is small; trade-off is reduced backup efficiency"
+      ],
+      "correct_index": 1,
+      "explanation": "Denormalization is used to improve read performance by reducing JOINs, but it introduces data redundancy and potential update anomalies since the same data may be stored in multiple places and could become inconsistent if not properly maintained."
+    },
+    {
+      "question": "A table has columns: user_id, product_id, rating, review_date. To ensure each user can only review a product once, which constraint should be applied?",
+      "options": [
+        "UNIQUE constraint on user_id column only",
+        "PRIMARY KEY constraint on product_id column",
+        "COMPOSITE UNIQUE constraint on (user_id, product_id)",
+        "FOREIGN KEY constraint between user_id and product_id"
+      ],
+      "correct_index": 2,
+      "explanation": "A composite UNIQUE constraint on (user_id, product_id) ensures that the combination of these two values is unique, preventing a user from reviewing the same product multiple times while still allowing multiple reviews per user for different products."
+    },
+    {
+      "question": "You're analyzing sales data and need to rank products by revenue within each category. The business wants to see tied products with the same rank and continue numbering after ties. Which window function approach is correct?",
+      "options": [
+        "ROW_NUMBER() OVER (PARTITION BY category ORDER BY revenue DESC)",
+        "RANK() OVER (PARTITION BY category ORDER BY revenue DESC)",
+        "DENSE_RANK() OVER (PARTITION BY category ORDER BY revenue DESC)",
+        "NTILE(10) OVER (PARTITION BY category ORDER BY revenue DESC)"
+      ],
+      "correct_index": 1,
+      "explanation": "RANK() assigns the same rank to tied values and skips subsequent ranks (e.g., 1, 2, 2, 4), which matches the requirement to continue numbering after ties. DENSE_RANK() doesn't skip ranks, ROW_NUMBER() doesn't handle ties, and NTILE() divides into buckets rather than ranking."
+    }
+  ],
+  "passing_score": 80
+}

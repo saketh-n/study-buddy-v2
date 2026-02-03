@@ -1,0 +1,61 @@
+{
+  "topic_name": "Directory: list of filenames and inodes. And iNode doesn't contain filename but everything else in its metadata!",
+  "questions": [
+    {
+      "question": "Why are filenames stored in directories rather than within the inode structure itself?",
+      "options": [
+        "To allow multiple filenames (hard links) to reference the same inode",
+        "To save memory space since filenames are usually very short",
+        "To make file access faster by keeping inodes smaller",
+        "To prevent unauthorized users from seeing filenames"
+      ],
+      "correct_index": 0,
+      "explanation": "Storing filenames in directories rather than inodes allows multiple directory entries to point to the same inode, enabling hard links where one file can have multiple names."
+    },
+    {
+      "question": "When a file system needs to locate a file given its full path '/home/user/document.txt', what is the correct sequence of operations?",
+      "options": [
+        "Search all inodes for the filename, then read the inode metadata",
+        "Parse the path and traverse directories, looking up each component to find the corresponding inode",
+        "Use the filename hash to directly calculate the inode number",
+        "Search the master file table for the complete path string"
+      ],
+      "correct_index": 1,
+      "explanation": "The file system must parse the path components and traverse each directory level, using the directory's filename-to-inode mapping to eventually locate the target file's inode."
+    },
+    {
+      "question": "What metadata would you expect to find in an inode but NOT in a directory entry?",
+      "options": [
+        "The filename and file extension",
+        "File permissions, timestamps, and block pointers",
+        "The parent directory reference",
+        "The alphabetical sort order for the directory listing"
+      ],
+      "correct_index": 1,
+      "explanation": "Inodes contain all file metadata except the filename - including permissions, timestamps, size, and pointers to data blocks. Directory entries only contain the filename-to-inode mapping."
+    },
+    {
+      "question": "In what scenario would understanding the directory-inode relationship be most critical for a system administrator?",
+      "options": [
+        "When optimizing file compression ratios",
+        "When recovering a corrupted file system where directory structures are damaged",
+        "When setting up network file sharing permissions",
+        "When choosing between different file formats for storage"
+      ],
+      "correct_index": 1,
+      "explanation": "During file system recovery, understanding that directories map filenames to inodes is crucial because you might need to rebuild directory structures even when the actual file data (in inodes) is intact."
+    },
+    {
+      "question": "If you delete a directory entry but the inode reference count is still greater than zero, what does this indicate about the file system state?",
+      "options": [
+        "The file system is corrupted and needs immediate repair",
+        "The file still has other hard links pointing to the same inode",
+        "The file is currently open by a running process",
+        "The directory cache hasn't been updated yet"
+      ],
+      "correct_index": 1,
+      "explanation": "When an inode's reference count remains above zero after deleting a directory entry, it means other directory entries (hard links) still point to that same inode, so the file data is preserved."
+    }
+  ],
+  "passing_score": 80
+}

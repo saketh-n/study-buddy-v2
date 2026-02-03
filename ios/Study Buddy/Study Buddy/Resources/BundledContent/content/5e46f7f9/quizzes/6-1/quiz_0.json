@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layer 7 Application Load Balancing",
+  "questions": [
+    {
+      "question": "A company has a microservices architecture where different services handle user authentication, product catalog, and payment processing. They want to route incoming requests to the appropriate service based on the URL path. Which load balancing approach would be most suitable?",
+      "options": [
+        "Layer 4 (Transport) load balancing with round-robin distribution",
+        "Layer 7 (Application) load balancing with path-based routing rules",
+        "Layer 3 (Network) load balancing with IP hash distribution",
+        "DNS-based load balancing with geographic routing"
+      ],
+      "correct_index": 1,
+      "explanation": "Layer 7 load balancing can inspect HTTP content including URL paths, allowing intelligent routing to different backend services based on the request path (e.g., /auth, /catalog, /payment). Layer 4 and Layer 3 load balancers cannot see application-layer content."
+    },
+    {
+      "question": "An e-commerce platform wants to ensure that users maintain their shopping cart state throughout their session. The application uses session cookies, and the load balancer needs to direct users to the same backend server. What feature should be implemented?",
+      "options": [
+        "SSL termination to decrypt and inspect cookies",
+        "Cookie-based session affinity (sticky sessions)",
+        "Header-based routing to distribute load",
+        "Path-based routing to maintain connections"
+      ],
+      "correct_index": 1,
+      "explanation": "Cookie-based session affinity ensures that requests from the same user (identified by session cookies) are consistently routed to the same backend server, preserving session state and shopping cart data."
+    },
+    {
+      "question": "A development team needs to implement SSL termination at the load balancer level. What is the PRIMARY advantage of this approach compared to end-to-end SSL encryption?",
+      "options": [
+        "Eliminates the need for SSL certificates on backend servers",
+        "Reduces computational overhead on backend servers and enables content inspection",
+        "Provides better security by encrypting data multiple times",
+        "Automatically distributes SSL certificates to all backend servers"
+      ],
+      "correct_index": 1,
+      "explanation": "SSL termination at the load balancer reduces CPU overhead on backend servers (no SSL processing needed) and allows the load balancer to inspect HTTP content for intelligent routing decisions, while still providing encryption between clients and the load balancer."
+    },
+    {
+      "question": "A company is designing an API gateway using AWS Application Load Balancer (ALB). They need to route mobile app requests differently than web browser requests. Which routing method would be most appropriate?",
+      "options": [
+        "Path-based routing using different URL endpoints",
+        "Host-based routing using different domain names",
+        "Header-based routing examining User-Agent or custom headers",
+        "Cookie-based routing using device-specific cookies"
+      ],
+      "correct_index": 2,
+      "explanation": "Header-based routing allows the ALB to examine HTTP headers like User-Agent (which differs between mobile apps and browsers) or custom headers to route requests to different backend services optimized for each client type."
+    },
+    {
+      "question": "An organization wants to gradually migrate users from their legacy application to a new version. They plan to route 80% of traffic to the old version and 20% to the new version based on user types. Using Nginx as a Layer 7 load balancer, what combination of features would best accomplish this?",
+      "options": [
+        "Use upstream server weights with round-robin algorithm",
+        "Implement cookie-based routing with weighted distribution and conditional logic",
+        "Configure path-based routing with different URL schemes for each version",
+        "Set up host-based routing with separate domains for each version"
+      ],
+      "correct_index": 1,
+      "explanation": "Cookie-based routing with weighted distribution allows Nginx to examine user cookies (which can identify user types) and route them accordingly, while weighted distribution ensures the 80/20 traffic split for controlled migration."
+    }
+  ],
+  "passing_score": 80
+}

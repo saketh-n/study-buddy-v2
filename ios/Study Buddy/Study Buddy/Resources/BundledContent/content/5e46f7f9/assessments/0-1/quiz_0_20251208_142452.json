@@ -1,0 +1,63 @@
+{
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+      "correct_answer": "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+      "analysis": "Excellent understanding of collision domains and how hubs operate at the physical layer",
+      "explanation": "You correctly identified that hubs create a single collision domain where all connected devices share the total bandwidth. When one device transmits a large file, it monopolizes the shared medium, causing all other devices to wait and experience slowdown. This is a fundamental difference between hubs (shared bandwidth) and switches (dedicated bandwidth per port)."
+    },
+    {
+      "question_num": 2,
+      "is_correct": false,
+      "student_choice": "When you need to route packets between different IP subnets",
+      "correct_answer": "When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+      "analysis": "You confused the functions of Layer 2 (bridges) and Layer 3 (routers) devices. This suggests mixing up OSI layer functionalities",
+      "explanation": "Bridges operate at Layer 2 (Data Link) and work with MAC addresses and frames, not IP addresses and packets. Routing between IP subnets is a Layer 3 function performed by routers. Bridges are used today primarily for simple, cost-effective connections between two network segments when you don't need the advanced features of a switch."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Router - it will examine the destination IP address and determine the next hop",
+      "correct_answer": "Router - it will examine the destination IP address and determine the next hop",
+      "analysis": "Strong understanding of router functionality and IP address analysis for path determination",
+      "explanation": "You correctly identified that routers operate at Layer 3 and make forwarding decisions based on IP addresses. Since the communication is between different networks (192.168.1.x to 203.45.67.x), a router is essential to determine the path and forward packets to the appropriate next hop toward the destination."
+    },
+    {
+      "question_num": 4,
+      "is_correct": false,
+      "student_choice": "A switch drops unknown frames while a hub forwards them",
+      "correct_answer": "A switch floods unknown frames to all ports except the source, while a hub repeats all signals to all ports",
+      "analysis": "You misunderstood how switches handle unknown unicast traffic. This indicates a gap in understanding switch learning behavior",
+      "explanation": "Switches don't drop unknown frames - they flood them to all ports except the source port to ensure delivery while learning MAC addresses. This is different from hubs, which simply repeat all electrical signals to every port regardless of the frame type. The key difference is that switches make intelligent decisions and maintain MAC address tables, while hubs are purely physical layer repeaters."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "A gateway, because it can translate between different protocol stacks",
+      "correct_answer": "A gateway, because it can translate between different protocol stacks",
+      "analysis": "Excellent understanding of gateway functionality and protocol translation requirements",
+      "explanation": "You correctly identified that gateways can translate between completely different protocol stacks. IPX and TCP/IP are different network layer protocols with different addressing schemes and packet formats, requiring protocol translation that only a gateway can provide. Routers, switches, and bridges work within the same protocol family and cannot perform this type of protocol conversion."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Confusion between Layer 2 (bridge) and Layer 3 (router) device functions",
+      "Misunderstanding of switch flooding behavior for unknown unicast frames"
+    ],
+    "focus_areas": [
+      "OSI Layer functions and which devices operate at each layer",
+      "Switch MAC address learning and flooding mechanisms",
+      "Differences between bridges, switches, routers, and gateways",
+      "How each device type handles unknown or broadcast traffic"
+    ],
+    "encouragement": "You scored 60% and showed strong understanding of collision domains, routing functions, and protocol translation! Your grasp of fundamental networking concepts is solid.",
+    "recommendation": "Focus on studying the OSI model layers and practice identifying which layer each network device operates at. Create a comparison chart of how hubs, bridges, switches, and routers handle different types of traffic. Practice scenarios involving unknown unicast frames and MAC address learning."
+  },
+  "score": 60,
+  "correct_count": 3,
+  "total_questions": 5,
+  "passed": false,
+  "quiz_version": 0
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Legacy of French Settlement in Modern Canada",
+  "questions": [
+    {
+      "question": "Which geographic feature most directly explains why French cultural influence remains strongest in Quebec and eastern Ontario compared to western Canada?",
+      "options": [
+        "The Rocky Mountains created a natural barrier",
+        "Early French settlements followed the St. Lawrence River system",
+        "The Hudson Bay Company controlled western territories",
+        "French settlers preferred colder climates"
+      ],
+      "correct_index": 1,
+      "explanation": "French colonization followed the St. Lawrence River and Great Lakes waterways, establishing the core settlements that became Quebec and parts of Ontario, which explains the geographic concentration of French influence today."
+    },
+    {
+      "question": "A Canadian city planning committee is designing bilingual signage policies. Which principle from French colonial legacy would be most relevant to their decision-making process?",
+      "options": [
+        "Economic efficiency should determine language use",
+        "Official bilingualism reflects Canada's founding colonial heritage",
+        "French should only be used in majority francophone areas",
+        "Indigenous languages take precedence over colonial languages"
+      ],
+      "correct_index": 1,
+      "explanation": "Canada's official bilingualism policy is rooted in recognizing both French and English as founding colonial languages, making this the most relevant historical principle for policy decisions."
+    },
+    {
+      "question": "Why does Quebec's civil law system (based on French tradition) coexist with common law (based on English tradition) in the rest of Canada?",
+      "options": [
+        "The British wanted to maintain French legal traditions to prevent rebellion",
+        "French civil law was superior for property disputes",
+        "Each province was allowed to choose its preferred legal system",
+        "The Quebec Act of 1774 preserved existing French legal traditions"
+      ],
+      "correct_index": 3,
+      "explanation": "The Quebec Act of 1774 specifically preserved French civil law in Quebec while British common law was established elsewhere, creating the dual legal system that persists today."
+    },
+    {
+      "question": "How does the seigneurial system's legacy continue to influence modern Quebec's landscape and property patterns?",
+      "options": [
+        "It created the characteristic long, narrow farm lots perpendicular to rivers",
+        "It established the grid system used in urban planning",
+        "It concentrated all land ownership in major cities",
+        "It prevented any private land ownership"
+      ],
+      "correct_index": 0,
+      "explanation": "The seigneurial system created distinctive long-lot farms running perpendicular to waterways, a pattern still visible in Quebec's rural landscape and property boundaries today."
+    },
+    {
+      "question": "A historian argues that French settlement patterns explain why certain Canadian cities became major cultural centers. Which evidence would best support this argument?",
+      "options": [
+        "Cities founded by the British have larger populations today",
+        "Former fur trading posts became important transportation hubs",
+        "Cities with French colonial origins maintain distinct cultural institutions and festivals",
+        "All major Canadian cities were originally French settlements"
+      ],
+      "correct_index": 2,
+      "explanation": "The persistence of distinct cultural institutions, festivals, and traditions in cities with French colonial origins demonstrates the lasting impact of early settlement patterns on modern cultural development."
+    }
+  ],
+  "passing_score": 80
+}

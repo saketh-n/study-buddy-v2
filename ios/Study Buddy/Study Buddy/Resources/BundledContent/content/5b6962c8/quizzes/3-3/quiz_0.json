@@ -1,0 +1,61 @@
+{
+  "topic_name": "Privileged Access Management",
+  "questions": [
+    {
+      "question": "Which scenario BEST illustrates the principle of least privilege in a PAM implementation?",
+      "options": [
+        "A database administrator has permanent access to all database servers across the organization",
+        "A network engineer receives temporary elevated access only to specific routers during scheduled maintenance windows",
+        "All IT staff share a common administrative account with full system privileges",
+        "Senior employees are granted broader access rights based on their years of service"
+      ],
+      "correct_index": 1,
+      "explanation": "The principle of least privilege requires granting minimum necessary access for the shortest time needed. Temporary, specific access for defined tasks exemplifies this principle, while permanent broad access violates it."
+    },
+    {
+      "question": "Why is session recording particularly important for privileged accounts compared to standard user accounts?",
+      "options": [
+        "Privileged users need training documentation for complex tasks",
+        "Privileged accounts have access to sensitive systems where actions can cause significant damage",
+        "Recording helps privileged users remember their previous configurations",
+        "Standard users don't perform activities worth monitoring"
+      ],
+      "correct_index": 1,
+      "explanation": "Session recording for privileged accounts is critical because these accounts can access sensitive data and critical systems where unauthorized or malicious actions could cause severe damage, data breaches, or system outages."
+    },
+    {
+      "question": "A company discovers that a former employee's privileged account was used to access sensitive files three months after termination. This incident MOST likely indicates a failure in which PAM component?",
+      "options": [
+        "Password complexity requirements",
+        "Multi-factor authentication implementation",
+        "Account lifecycle management",
+        "Session timeout configurations"
+      ],
+      "correct_index": 2,
+      "explanation": "Account lifecycle management includes proper deprovisioning procedures when employees leave. The ability to access accounts months after termination indicates failed account deactivation/deletion processes, not authentication weaknesses."
+    },
+    {
+      "question": "When implementing just-in-time (JIT) access for privileged accounts, what is the PRIMARY security benefit over traditional always-on privileged access?",
+      "options": [
+        "It eliminates the need for password policies",
+        "It reduces the attack window by limiting when elevated privileges are available",
+        "It prevents all insider threats from occurring",
+        "It makes privileged accounts invisible to attackers"
+      ],
+      "correct_index": 1,
+      "explanation": "JIT access minimizes the time window when elevated privileges are active, reducing exposure time for potential attacks. Attackers have fewer opportunities to exploit privileged accounts since they're only elevated when needed."
+    },
+    {
+      "question": "An organization wants to implement PAM for their cloud infrastructure team. Which approach would BEST balance security and operational efficiency?",
+      "options": [
+        "Require manual approval from three executives for any cloud access request",
+        "Implement automated privilege elevation for pre-approved tasks with session monitoring",
+        "Grant permanent administrative access to senior cloud architects only",
+        "Use shared service accounts with complex passwords for all cloud operations"
+      ],
+      "correct_index": 1,
+      "explanation": "Automated elevation for pre-approved tasks maintains security through controlled access while enabling operational efficiency. Manual multi-executive approval creates bottlenecks, permanent access violates least privilege, and shared accounts prevent accountability."
+    }
+  ],
+  "passing_score": 80
+}

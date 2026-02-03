@@ -1,0 +1,61 @@
+{
+  "topic_name": "Object based (S3, Openstack swift, IBM, Pure Storage, Netapp,\u2026)",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between object storage and traditional file storage systems?",
+      "options": [
+        "Object storage uses a flat namespace with unique identifiers, while file storage uses hierarchical directory structures",
+        "Object storage can only store small files, while file storage handles large files better",
+        "Object storage requires special hardware, while file storage works on standard servers",
+        "Object storage is faster for random access, while file storage is optimized for sequential access"
+      ],
+      "correct_index": 0,
+      "explanation": "Object storage uses a flat namespace where each object is accessed via a unique identifier (like a URL), eliminating the hierarchical folder structure of traditional file systems. This enables massive scalability and web-accessible storage."
+    },
+    {
+      "question": "A company needs to store millions of user-generated photos and videos for a social media platform with global users. Which storage approach would be most appropriate and why?",
+      "options": [
+        "Traditional NAS because it provides better file organization",
+        "Object storage because it offers web-scale accessibility, metadata management, and geographic distribution",
+        "Block storage because it provides the fastest access times",
+        "Local server storage because it's the most cost-effective solution"
+      ],
+      "correct_index": 1,
+      "explanation": "Object storage is ideal for this scenario because it's designed for web-scale applications, can handle massive amounts of unstructured data, supports rich metadata, and can be distributed globally with built-in redundancy and web accessibility."
+    },
+    {
+      "question": "In Amazon S3, what is the primary purpose of organizing objects into buckets?",
+      "options": [
+        "To improve data access speed by grouping similar files",
+        "To provide namespace boundaries, apply security policies, and manage billing",
+        "To compress data automatically when stored together",
+        "To create hierarchical folder structures like traditional file systems"
+      ],
+      "correct_index": 1,
+      "explanation": "Buckets in S3 serve as top-level containers that provide namespace isolation, enable granular security and access control policies, facilitate billing organization, and allow region-specific storage configurations."
+    },
+    {
+      "question": "What is a key advantage of object storage's metadata capabilities compared to traditional file systems?",
+      "options": [
+        "Metadata reduces storage costs by compressing file information",
+        "Metadata can be extensively customized and used for advanced search, classification, and automated lifecycle management",
+        "Metadata makes files load faster by providing cached information",
+        "Metadata automatically backs up files to multiple locations"
+      ],
+      "correct_index": 1,
+      "explanation": "Object storage allows rich, customizable metadata to be associated with each object, enabling sophisticated search capabilities, automated content classification, lifecycle policies, and business logic that goes far beyond basic file attributes."
+    },
+    {
+      "question": "When would object storage NOT be the best choice for an application?",
+      "options": [
+        "When storing backup archives that are accessed infrequently",
+        "When building a web application that serves static content globally",
+        "When running a database that requires frequent random read/write operations with low latency",
+        "When storing large media files for a content distribution network"
+      ],
+      "correct_index": 2,
+      "explanation": "Object storage is optimized for throughput rather than low-latency random access. Database applications requiring frequent, small, random read/write operations with minimal latency are better served by block storage or specialized database storage systems."
+    }
+  ],
+  "passing_score": 80
+}

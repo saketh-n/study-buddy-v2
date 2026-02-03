@@ -1,0 +1,61 @@
+{
+  "topic_name": "State Management with ETCD",
+  "questions": [
+    {
+      "question": "What is the primary reason ETCD is used as the backing store for Kubernetes cluster state rather than a traditional relational database?",
+      "options": [
+        "ETCD provides stronger ACID guarantees than SQL databases",
+        "ETCD's key-value structure and watch API enable efficient state change notifications",
+        "ETCD has better performance for complex JOIN operations",
+        "ETCD automatically handles data encryption without additional configuration"
+      ],
+      "correct_index": 1,
+      "explanation": "ETCD's key-value structure and watch API allow controllers to efficiently monitor for changes in desired state, enabling real-time reconciliation loops that are essential for Kubernetes' declarative model."
+    },
+    {
+      "question": "A developer notices that after updating a Deployment spec, the pods are not being recreated as expected. The controller manager logs show it's unable to read the latest state. What is the most likely cause?",
+      "options": [
+        "The deployment controller is not watching the correct API version",
+        "ETCD is in a split-brain scenario and cannot establish quorum",
+        "The kubelet on worker nodes has lost connection to the API server",
+        "The container runtime is rejecting the new pod specifications"
+      ],
+      "correct_index": 1,
+      "explanation": "Without ETCD quorum, the API server cannot read the latest desired state, preventing controllers from performing reconciliation. The other issues would manifest differently in the reconciliation loop."
+    },
+    {
+      "question": "In the controller reconciliation loop, when would a controller write back to ETCD after reading the desired and current state?",
+      "options": [
+        "Only when the desired state differs from current state",
+        "Every time the reconciliation loop runs to update timestamps",
+        "When updating the resource's status field to reflect current reality",
+        "Only when receiving watch events from ETCD"
+      ],
+      "correct_index": 2,
+      "explanation": "Controllers typically write to ETCD when updating status fields to reflect the current state of resources, regardless of whether desired state has changed. This provides observability into the actual system state."
+    },
+    {
+      "question": "Why is it problematic for application workloads to directly read from or write to ETCD in a Kubernetes cluster?",
+      "options": [
+        "ETCD cannot handle concurrent connections from multiple clients",
+        "Direct access bypasses admission controllers and RBAC validation",
+        "ETCD uses a proprietary protocol incompatible with standard applications",
+        "Applications would consume too much memory caching ETCD data"
+      ],
+      "correct_index": 1,
+      "explanation": "The Kubernetes API server provides crucial security layers including authentication, authorization (RBAC), and admission control. Direct ETCD access bypasses these protections and violates the cluster's security model."
+    },
+    {
+      "question": "A cluster administrator wants to backup the cluster state for disaster recovery. What aspect of ETCD's design makes this backup strategy effective?",
+      "options": [
+        "ETCD stores only metadata while persistent volumes contain the actual application data",
+        "ETCD maintains all desired state configuration, enabling complete cluster recreation",
+        "ETCD automatically replicates backups to external storage systems",
+        "ETCD compresses historical state changes to minimize backup size"
+      ],
+      "correct_index": 1,
+      "explanation": "Since ETCD contains all the desired state declarations (deployments, services, configs, etc.), restoring from an ETCD backup allows controllers to recreate the entire cluster configuration and reconcile back to the desired state."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Filesystem driver",
+  "questions": [
+    {
+      "question": "What is the primary role of a filesystem driver in a computer storage system?",
+      "options": [
+        "To manage physical disk hardware directly",
+        "To translate high-level file operations into low-level storage commands",
+        "To provide backup and recovery services for files",
+        "To compress and encrypt files automatically"
+      ],
+      "correct_index": 1,
+      "explanation": "A filesystem driver acts as a translation layer between user/application file operations (like open, read, write) and the actual storage device commands needed to perform these operations on the physical storage medium."
+    },
+    {
+      "question": "Why would an operating system need different filesystem drivers for different storage devices?",
+      "options": [
+        "Because each storage device uses different file formats",
+        "Because different devices have varying security requirements",
+        "Because storage devices have different physical interfaces and command protocols",
+        "Because different devices require different backup strategies"
+      ],
+      "correct_index": 2,
+      "explanation": "Different storage devices (SSDs, HDDs, network storage) communicate using different protocols and interfaces. Filesystem drivers abstract these differences, allowing the same high-level file operations to work across various storage technologies."
+    },
+    {
+      "question": "When a user application requests to read a file, what sequence of actions does the filesystem driver coordinate?",
+      "options": [
+        "Directly accesses the file data from memory cache",
+        "Translates the filename to storage addresses, issues read commands, and returns data to the application",
+        "Compresses the file data before sending it to the application",
+        "Creates a backup copy of the file before allowing access"
+      ],
+      "correct_index": 1,
+      "explanation": "The filesystem driver must locate where the file data is stored on the physical device, translate the logical file operations into appropriate storage commands, coordinate the data retrieval, and return the results to the requesting application."
+    },
+    {
+      "question": "In what scenario would you most likely need to install or update a filesystem driver?",
+      "options": [
+        "When installing a new text editing application",
+        "When connecting a storage device that uses a filesystem format not currently supported by the OS",
+        "When upgrading the computer's RAM",
+        "When changing the desktop wallpaper"
+      ],
+      "correct_index": 1,
+      "explanation": "Filesystem drivers are needed when the operating system encounters a storage device or partition formatted with a filesystem it doesn't natively support (like adding Linux ext4 support to Windows, or accessing proprietary storage formats)."
+    },
+    {
+      "question": "How does a filesystem driver handle the abstraction between logical file operations and physical storage?",
+      "options": [
+        "It stores all files in a single continuous block on the storage device",
+        "It maps logical file structures to physical storage locations and manages metadata about file organization",
+        "It converts all files to the same format regardless of their original type",
+        "It creates duplicate copies of every file for redundancy"
+      ],
+      "correct_index": 1,
+      "explanation": "The filesystem driver maintains complex mapping between the logical view of files and directories that users see and the actual physical blocks where data is stored, including managing metadata like file allocation tables, inodes, and directory structures."
+    }
+  ],
+  "passing_score": 80
+}

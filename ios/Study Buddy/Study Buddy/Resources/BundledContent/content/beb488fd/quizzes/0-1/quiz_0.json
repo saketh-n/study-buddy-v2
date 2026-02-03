@@ -1,0 +1,61 @@
+{
+  "topic_name": "Python for Data Engineering",
+  "questions": [
+    {
+      "question": "When processing a 50GB CSV file that doesn't fit in memory, which approach would be most appropriate for calculating running totals by group?",
+      "options": [
+        "Load entire file with pandas.read_csv() and use groupby().cumsum()",
+        "Use pandas.read_csv() with chunksize parameter and process incrementally",
+        "Convert to JSON format first, then process with standard Python file operations",
+        "Use pandas.read_csv() with nrows parameter to load only first 1000 rows"
+      ],
+      "correct_index": 1,
+      "explanation": "Using chunksize allows processing large files in manageable chunks without loading everything into memory, making it ideal for memory-constrained operations on large datasets."
+    },
+    {
+      "question": "You need to merge data from multiple APIs with different response formats (JSON, XML, CSV) and load it into a data warehouse. Which combination of Python libraries would be most effective?",
+      "options": [
+        "requests + json + pandas + sqlalchemy",
+        "urllib + csv + numpy + sqlite3",
+        "requests + beautifulsoup + json + mysql-connector",
+        "http.client + xml.etree + pandas + psycopg2"
+      ],
+      "correct_index": 0,
+      "explanation": "This combination provides comprehensive tools: requests for API calls, json for JSON parsing (pandas handles CSV), pandas for data manipulation and XML parsing, and sqlalchemy for database connectivity across multiple database types."
+    },
+    {
+      "question": "When would you choose to use a generator function instead of returning a list when reading and transforming data files?",
+      "options": [
+        "When you need to access elements by index multiple times",
+        "When working with small datasets that fit easily in memory",
+        "When processing large datasets where memory efficiency is crucial",
+        "When you need to sort the entire dataset before processing"
+      ],
+      "correct_index": 2,
+      "explanation": "Generators provide lazy evaluation and memory efficiency by yielding one item at a time, making them ideal for large datasets where loading everything into memory would be problematic."
+    },
+    {
+      "question": "You're building a data pipeline that processes files with inconsistent schemas. Some CSV files have missing columns or different column orders. What's the best strategy to handle this robustly?",
+      "options": [
+        "Use pandas.read_csv() with error_bad_lines=False to skip problematic rows",
+        "Pre-process files with Python's csv.DictReader and standardize columns before pandas processing",
+        "Use pandas.read_csv() with header=None and assign column names manually",
+        "Convert all files to JSON format first, then process with uniform structure"
+      ],
+      "correct_index": 1,
+      "explanation": "csv.DictReader handles varying column orders gracefully and allows you to detect and standardize missing columns before pandas processing, providing robust schema handling for inconsistent data sources."
+    },
+    {
+      "question": "In a data engineering context, why would you use context managers (with statements) when working with database connections and file operations?",
+      "options": [
+        "To improve query performance and reduce execution time",
+        "To automatically handle resource cleanup and prevent memory leaks",
+        "To enable parallel processing of multiple database connections",
+        "To convert data types automatically during read operations"
+      ],
+      "correct_index": 1,
+      "explanation": "Context managers ensure proper resource cleanup by automatically closing files and database connections even if errors occur, preventing resource leaks and connection pool exhaustion in data pipelines."
+    }
+  ],
+  "passing_score": 80
+}

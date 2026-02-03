@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local disks and physical file storage (sectors/disk block)",
+  "questions": [
+    {
+      "question": "Why are disk sectors typically organized in fixed sizes (like 512 bytes or 4KB) rather than variable sizes that match file content exactly?",
+      "options": [
+        "To make disk manufacturing cheaper",
+        "To simplify addressing and reduce metadata overhead",
+        "To ensure all files are the same size",
+        "To prevent disk fragmentation completely"
+      ],
+      "correct_index": 1,
+      "explanation": "Fixed sector sizes simplify the addressing scheme and reduce metadata overhead. The disk controller can calculate addresses mathematically rather than maintaining complex tables for variable-sized sectors."
+    },
+    {
+      "question": "A database application needs to store records that are 2KB each. Given that the disk uses 4KB sectors, what is the most significant performance consideration?",
+      "options": [
+        "Each record will require exactly 2 disk reads",
+        "Two records can be stored per sector, maximizing space efficiency",
+        "Records will cause internal fragmentation within sectors",
+        "The database will run out of storage space quickly"
+      ],
+      "correct_index": 1,
+      "explanation": "Since each sector is 4KB and records are 2KB, two records fit perfectly in each sector, maximizing space efficiency and minimizing I/O operations when accessing multiple records."
+    },
+    {
+      "question": "When a file system reports a file as 100 bytes but it occupies 4KB of disk space, this demonstrates which fundamental concept of disk storage?",
+      "options": [
+        "Disk compression is automatically applied",
+        "The minimum allocation unit is one block/sector",
+        "The file is corrupted and needs repair",
+        "The operating system has a bug in size calculation"
+      ],
+      "correct_index": 1,
+      "explanation": "This demonstrates that storage is allocated in minimum units (blocks/sectors). Even though the file content is only 100 bytes, it must occupy at least one complete 4KB block, resulting in internal fragmentation."
+    },
+    {
+      "question": "A system administrator notices that sequential file access is much faster than random access on traditional hard drives. This performance difference is primarily due to which aspect of disk geometry?",
+      "options": [
+        "Sequential files are automatically compressed",
+        "The read/write head doesn't need to move between adjacent sectors",
+        "Sequential files are stored in faster memory",
+        "The operating system caches sequential files better"
+      ],
+      "correct_index": 1,
+      "explanation": "In traditional hard drives, sequential access is faster because the read/write head doesn't need to physically move (seek) to different tracks. Adjacent sectors can be read as the disk rotates, eliminating seek time."
+    },
+    {
+      "question": "A video editing application needs to minimize storage latency for large files. Understanding disk block organization, which strategy would be most effective?",
+      "options": [
+        "Store files across multiple small partitions",
+        "Use the smallest possible block size to reduce waste",
+        "Ensure files are stored in contiguous blocks when possible",
+        "Compress all video files to reduce their size"
+      ],
+      "correct_index": 2,
+      "explanation": "Storing files in contiguous blocks minimizes seek time because the read/write head can access sequential data without moving to different areas of the disk, significantly reducing latency for large file operations."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Accelerated Virtualization",
+  "questions": [
+    {
+      "question": "What is the primary problem that Intel VT-x hardware-assisted virtualization solves compared to software-only virtualization approaches?",
+      "options": [
+        "Eliminates the need for binary translation and trap-and-emulate overhead by providing native support for guest OS privileged instructions",
+        "Increases the number of virtual machines that can run simultaneously on a single host",
+        "Provides better network I/O performance through dedicated hardware queues",
+        "Reduces memory consumption by sharing identical pages across multiple VMs"
+      ],
+      "correct_index": 0,
+      "explanation": "VT-x eliminates the performance overhead of binary translation and complex trap-and-emulate mechanisms by allowing guest OS privileged instructions to execute directly on the CPU with hardware-level isolation."
+    },
+    {
+      "question": "In which scenario would SR-IOV (Single Root I/O Virtualization) provide the most significant performance benefit?",
+      "options": [
+        "Running CPU-intensive scientific simulations across multiple VMs",
+        "Hosting high-throughput network applications requiring low-latency I/O with minimal hypervisor intervention",
+        "Managing VMs with varying memory requirements that need dynamic allocation",
+        "Consolidating legacy applications that use outdated network protocols"
+      ],
+      "correct_index": 1,
+      "explanation": "SR-IOV allows VMs to directly access physical hardware resources (like network cards) bypassing the hypervisor, which dramatically reduces I/O latency and increases throughput for network-intensive applications."
+    },
+    {
+      "question": "How does Extended Page Table (EPT) or Nested Page Table (NPT) technology improve virtualization performance?",
+      "options": [
+        "It compresses memory pages to fit more VMs in available RAM",
+        "It eliminates the two-level address translation overhead by providing hardware-assisted guest physical to host physical memory mapping",
+        "It automatically migrates VMs to hosts with more available memory",
+        "It encrypts memory pages to improve security between VMs"
+      ],
+      "correct_index": 1,
+      "explanation": "EPT/NPT provides hardware-level support for translating guest physical addresses to host physical addresses, eliminating the performance penalty of software-based shadow page tables that require hypervisor intervention."
+    },
+    {
+      "question": "Why might an organization choose to implement paravirtualized drivers instead of relying solely on hardware acceleration features like VT-x?",
+      "options": [
+        "Paravirtualized drivers are more secure than hardware-accelerated solutions",
+        "Hardware acceleration only works with specific guest operating systems",
+        "Even with VT-x, I/O operations can still benefit from paravirtualized drivers that bypass emulated hardware for better performance",
+        "Paravirtualized drivers use less CPU resources than hardware acceleration"
+      ],
+      "correct_index": 2,
+      "explanation": "While VT-x accelerates CPU virtualization, I/O operations may still go through emulated devices. Paravirtualized drivers allow guest VMs to communicate directly with the hypervisor for I/O, avoiding the overhead of hardware emulation."
+    },
+    {
+      "question": "When designing a virtualized infrastructure for a data center running mixed workloads, which combination of acceleration technologies would best address both compute-intensive and I/O-intensive applications?",
+      "options": [
+        "VT-x only, as it provides comprehensive acceleration for all virtualization aspects",
+        "SR-IOV only, since I/O is typically the main bottleneck in data center workloads",
+        "VT-x for CPU virtualization, EPT/NPT for memory management, and SR-IOV for high-performance I/O workloads",
+        "Paravirtualized drivers only, as they provide the most flexibility across different workload types"
+      ],
+      "correct_index": 2,
+      "explanation": "A comprehensive acceleration strategy uses VT-x for CPU efficiency, EPT/NPT for memory translation performance, and SR-IOV for applications requiring high I/O performance, addressing all major virtualization overhead sources."
+    }
+  ],
+  "passing_score": 80
+}

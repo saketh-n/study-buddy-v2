@@ -1,0 +1,61 @@
+{
+  "topic_name": "British Conquest and Treaty of Paris",
+  "questions": [
+    {
+      "question": "What was the primary reason the British were able to successfully conquer New France by 1760?",
+      "options": [
+        "The French colonists voluntarily surrendered to avoid bloodshed",
+        "Britain's naval superiority cut off French reinforcements and supplies from Europe",
+        "The Catholic Church in New France supported British Protestant rule",
+        "Native American allies completely abandoned France for Britain"
+      ],
+      "correct_index": 1,
+      "explanation": "Britain's control of the seas prevented France from sending adequate military support and supplies to defend New France, making the colony vulnerable to British conquest."
+    },
+    {
+      "question": "The Treaty of Paris in 1763 had different impacts on various groups in former New France. Which group initially benefited most from the territorial transfer?",
+      "options": [
+        "French Catholic clergy who gained religious freedom",
+        "British merchants who gained access to the fur trade",
+        "French-speaking habitants who kept their land rights",
+        "Indigenous peoples who maintained their territorial sovereignty"
+      ],
+      "correct_index": 1,
+      "explanation": "British merchants gained immediate access to the lucrative fur trade networks that had been controlled by the French, while other groups faced uncertainty or restrictions under the new regime."
+    },
+    {
+      "question": "Why did Britain decide to retain Canada rather than return it to France in exchange for other territories during the 1763 peace negotiations?",
+      "options": [
+        "Canada had larger populations than other French colonies",
+        "The fur trade was more profitable than sugar plantations",
+        "Canada provided strategic control over North American waterways and prevented future French threats",
+        "British settlers were already established throughout the St. Lawrence Valley"
+      ],
+      "correct_index": 2,
+      "explanation": "Britain valued Canada primarily for strategic reasons - controlling the St. Lawrence River system and eliminating the French threat to British colonies, rather than for immediate economic returns."
+    },
+    {
+      "question": "A British colonial administrator in 1764 must decide how to govern the former French territories. Based on the immediate post-conquest situation, what would be the most pressing challenge to address first?",
+      "options": [
+        "Establishing Protestant churches throughout the territory",
+        "Creating a system to govern a predominantly French Catholic population with British Protestant laws",
+        "Removing all French-speaking residents from positions of local authority",
+        "Immediately implementing English as the only legal language for all proceedings"
+      ],
+      "correct_index": 1,
+      "explanation": "The most immediate challenge was governing approximately 70,000 French Catholics using British Protestant legal and political systems, requiring practical compromises to maintain stability."
+    },
+    {
+      "question": "The Royal Proclamation of 1763 established new policies for former New France, but why did British authorities find it difficult to implement these policies as originally intended?",
+      "options": [
+        "French military forces continued to resist British rule from fortified positions",
+        "The policies ignored the reality of governing a large, established French Catholic population with different legal traditions",
+        "American colonists immediately invaded the territory to claim it for themselves",
+        "The Catholic Church organized widespread rebellions against Protestant rule"
+      ],
+      "correct_index": 1,
+      "explanation": "The Proclamation's attempt to impose British Protestant laws and institutions proved impractical when governing 70,000 French Catholics with established customs, leading to the need for the Quebec Act of 1774."
+    }
+  ],
+  "passing_score": 80
+}

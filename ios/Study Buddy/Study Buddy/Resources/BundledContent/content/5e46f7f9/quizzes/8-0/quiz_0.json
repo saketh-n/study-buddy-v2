@@ -1,0 +1,61 @@
+{
+  "topic_name": "IPSec VPN",
+  "questions": [
+    {
+      "question": "A company needs to securely connect multiple branch offices to their headquarters while ensuring data integrity and authentication. Which IPSec mode would be most appropriate for this network-to-network scenario?",
+      "options": [
+        "Transport mode with ESP",
+        "Tunnel mode with ESP",
+        "Transport mode with AH only",
+        "SSL/TLS instead of IPSec"
+      ],
+      "correct_index": 1,
+      "explanation": "Tunnel mode with ESP is ideal for network-to-network connections as it encapsulates the entire original IP packet, providing both confidentiality and authentication while allowing routing between different network segments through VPN gateways."
+    },
+    {
+      "question": "Why would an organization choose WireGuard over traditional IPSec implementations for their VPN infrastructure?",
+      "options": [
+        "WireGuard operates at Layer 2 while IPSec operates at Layer 3",
+        "WireGuard uses TCP for guaranteed delivery while IPSec uses unreliable UDP",
+        "WireGuard offers simpler configuration and better performance with modern cryptography",
+        "WireGuard provides stronger encryption by using proprietary algorithms"
+      ],
+      "correct_index": 2,
+      "explanation": "WireGuard is designed with simplicity and performance in mind, using modern cryptographic primitives by default and offering significantly simpler configuration compared to traditional IPSec, while still operating as a Layer 3 VPN solution."
+    },
+    {
+      "question": "In an IPSec VPN implementation, what is the primary purpose of the Internet Key Exchange (IKE) protocol during the connection establishment phase?",
+      "options": [
+        "To encrypt all data packets transmitted through the VPN tunnel",
+        "To authenticate users and establish Security Associations (SAs) with shared keys",
+        "To compress data before transmission to improve bandwidth efficiency",
+        "To route packets between the VPN endpoints"
+      ],
+      "correct_index": 1,
+      "explanation": "IKE is responsible for authenticating VPN peers and negotiating Security Associations (SAs), including the establishment of shared encryption keys and security parameters, before any data transmission occurs through the IPSec tunnel."
+    },
+    {
+      "question": "A remote employee needs to access internal company resources from their laptop while traveling. The IT department wants to ensure that all traffic from the laptop appears to originate from the corporate network. Which VPN configuration best addresses this requirement?",
+      "options": [
+        "Host-to-host VPN with split tunneling enabled",
+        "Host-to-network VPN with full tunneling",
+        "Network-to-network site-to-site VPN",
+        "Transport mode IPSec with policy-based routing"
+      ],
+      "correct_index": 1,
+      "explanation": "Host-to-network VPN with full tunneling ensures all traffic from the remote laptop is routed through the corporate network, making it appear as if the traffic originates from within the company's network infrastructure."
+    },
+    {
+      "question": "When comparing IPSec's ESP (Encapsulating Security Payload) and AH (Authentication Header) protocols, in which scenario would using AH alone be most appropriate?",
+      "options": [
+        "When maximum security with both confidentiality and integrity is required",
+        "When network policies prohibit encryption but data integrity verification is needed",
+        "When connecting networks with overlapping IP address ranges",
+        "When high-speed data transfer is more important than any security measures"
+      ],
+      "correct_index": 1,
+      "explanation": "AH provides authentication and integrity verification without encryption, making it suitable for environments where regulatory or policy constraints prohibit data encryption but data integrity and source authentication are still required."
+    }
+  ],
+  "passing_score": 80
+}

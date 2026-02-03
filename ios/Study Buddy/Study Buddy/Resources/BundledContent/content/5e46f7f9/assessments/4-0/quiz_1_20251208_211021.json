@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "OSPF converges faster and supports hierarchical network design through areas",
+      "correct_answer": "OSPF converges faster and supports hierarchical network design through areas",
+      "analysis": "Great job!",
+      "explanation": "OSPF converges faster than RIP due to its link-state algorithm and supports hierarchical design through areas, which improves scalability and reduces routing overhead in large networks."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "To serve as the central transit area that connects all other areas",
+      "correct_answer": "To serve as the central transit area that connects all other areas",
+      "analysis": "Great job!",
+      "explanation": "Area 0 serves as the backbone area that all other areas must connect to, either directly or through virtual links, ensuring proper inter-area routing and maintaining the hierarchical OSPF design."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "When it has been configured with the highest router priority, or highest router ID if priorities are equal",
+      "correct_answer": "When it has been configured with the highest router priority, or highest router ID if priorities are equal",
+      "analysis": "Great job!",
+      "explanation": "The DR is elected based on the highest router priority (configurable value), and if priorities are tied, then the highest router ID is used as the tiebreaker."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "OSPF maintains full topology awareness through link-state advertisements, enabling faster recalculation of paths",
+      "correct_answer": "OSPF maintains full topology awareness through link-state advertisements, enabling faster recalculation of paths",
+      "analysis": "Great job!",
+      "explanation": "OSPF's link-state algorithm maintains complete network topology information, allowing routers to immediately recalculate shortest paths when topology changes occur, resulting in faster convergence than distance-vector protocols."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Discard the LSA as it contains outdated information",
+      "correct_answer": "Discard the LSA as it contains outdated information",
+      "analysis": "Great job!",
+      "explanation": "OSPF sequence numbers increase with each new LSA version. A lower sequence number indicates older, outdated information that should be discarded to maintain database consistency."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 100%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

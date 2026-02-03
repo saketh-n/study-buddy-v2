@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!",
+  "questions": [
+    {
+      "question": "What is the primary characteristic that distinguishes block storage from file storage?",
+      "options": [
+        "Block storage provides direct access to raw storage blocks without a file system layer",
+        "Block storage is always faster than file storage",
+        "Block storage can only be used locally on a single server",
+        "Block storage automatically handles file permissions and metadata"
+      ],
+      "correct_index": 0,
+      "explanation": "Block storage provides raw, unformatted storage blocks that can be accessed directly by the operating system, unlike file storage which presents data through a file system interface with directories and files."
+    },
+    {
+      "question": "A company needs to provide shared storage for a database cluster where multiple servers require simultaneous access to the same storage volumes with high performance and low latency. Which solution would be most appropriate?",
+      "options": [
+        "Local SSD drives on each server with data replication",
+        "A Storage Area Network (SAN) with Fibre Channel connectivity",
+        "Network Attached Storage (NAS) with file sharing protocols",
+        "Cloud-based object storage with REST API access"
+      ],
+      "correct_index": 1,
+      "explanation": "A SAN with Fibre Channel provides the high-performance, low-latency block storage access needed for database clusters, allowing multiple servers to access shared storage volumes simultaneously through dedicated storage networks."
+    },
+    {
+      "question": "Which scenario would make iSCSI a more suitable choice than local disk storage?",
+      "options": [
+        "When you need the absolute fastest possible storage performance",
+        "When you want to reduce network bandwidth usage",
+        "When you need to share storage between multiple servers or enable storage management centralization",
+        "When you have unlimited local storage capacity available"
+      ],
+      "correct_index": 2,
+      "explanation": "iSCSI enables storage sharing across networks and centralized storage management, making it ideal when multiple servers need access to the same storage or when you want to consolidate storage administration, despite some performance trade-offs compared to local storage."
+    },
+    {
+      "question": "What is the main advantage of block storage's random access capability in database applications?",
+      "options": [
+        "It allows the database to read and write any part of the storage without accessing data sequentially",
+        "It automatically backs up data in random locations for security",
+        "It randomly distributes data across multiple disks for load balancing",
+        "It provides random encryption keys for each data block"
+      ],
+      "correct_index": 0,
+      "explanation": "Random access allows databases to quickly jump to any location on storage to read or write specific records without having to read through all preceding data sequentially, which is crucial for efficient database operations like index lookups and updates."
+    },
+    {
+      "question": "A startup is choosing between local NVMe SSDs and an iSCSI SAN for their application servers. What factor should most influence their decision?",
+      "options": [
+        "iSCSI is always more cost-effective than local storage",
+        "Local NVMe will provide better performance, but iSCSI offers better scalability and shared storage capabilities",
+        "iSCSI provides better data security than local storage",
+        "Local storage can only be used for temporary data"
+      ],
+      "correct_index": 1,
+      "explanation": "Local NVMe SSDs typically offer superior performance due to direct connection and no network overhead, but iSCSI SANs provide advantages in scalability, storage sharing between servers, centralized management, and easier capacity expansion as the business grows."
+    }
+  ],
+  "passing_score": 80
+}

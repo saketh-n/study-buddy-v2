@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux Container Support",
+  "questions": [
+    {
+      "question": "A development team needs to run multiple applications on the same Linux host, each requiring different versions of the same system library. Which Linux container feature would be MOST essential to solve this dependency conflict?",
+      "options": [
+        "cgroups to limit memory usage",
+        "mount namespaces to provide isolated filesystems",
+        "chroot to change the root directory",
+        "overlay filesystems for efficient storage"
+      ],
+      "correct_index": 1,
+      "explanation": "Mount namespaces provide isolated filesystem views, allowing each container to have its own version of system libraries without conflicts. While chroot changes root directory, namespaces provide true isolation."
+    },
+    {
+      "question": "Why would an administrator choose overlay filesystems over simply copying complete filesystem trees for each container?",
+      "options": [
+        "Overlay filesystems provide better security isolation",
+        "Overlay filesystems allow shared read-only base layers with writable top layers, saving disk space",
+        "Overlay filesystems enable better network isolation between containers",
+        "Overlay filesystems provide superior CPU performance monitoring"
+      ],
+      "correct_index": 1,
+      "explanation": "Overlay filesystems use a layered approach where multiple containers can share the same read-only base image layers, with only changes stored in writable layers, significantly reducing storage requirements."
+    },
+    {
+      "question": "A containerized web application is consuming excessive CPU resources and affecting other containers on the same host. Which Linux feature should be configured to prevent this resource monopolization?",
+      "options": [
+        "PID namespaces to isolate process trees",
+        "Network namespaces to limit bandwidth",
+        "cgroups to enforce CPU usage limits",
+        "User namespaces to restrict privileges"
+      ],
+      "correct_index": 2,
+      "explanation": "cgroups (control groups) are specifically designed to limit and monitor resource usage including CPU, memory, and I/O, making them the correct choice for preventing resource monopolization."
+    },
+    {
+      "question": "When would using chroot alone be insufficient for container isolation, requiring additional namespace support?",
+      "options": [
+        "When containers need to share the same filesystem",
+        "When containers need to see each other's processes and share the same network interfaces",
+        "When containers need root privileges",
+        "When containers need to access hardware devices"
+      ],
+      "correct_index": 1,
+      "explanation": "chroot only isolates the filesystem view but containers would still share process trees, network interfaces, and other system resources. Namespaces provide isolation for processes (PID), network, users, and other system resources."
+    },
+    {
+      "question": "A security-conscious organization wants to run containers where processes inside appear to run as root but actually map to unprivileged users on the host system. Which combination of Linux features would best accomplish this?",
+      "options": [
+        "cgroups and mount namespaces",
+        "User namespaces and UID/GID mapping",
+        "chroot and overlay filesystems",
+        "PID namespaces and network namespaces"
+      ],
+      "correct_index": 1,
+      "explanation": "User namespaces allow UID/GID mapping where a process can appear as root (UID 0) inside the container while actually running as an unprivileged user on the host system, providing enhanced security isolation."
+    }
+  ],
+  "passing_score": 80
+}

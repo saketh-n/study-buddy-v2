@@ -1,0 +1,60 @@
+{
+  "score": 60,
+  "correct_count": 3,
+  "total_questions": 5,
+  "passed": false,
+  "quiz_version": 0,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+      "correct_answer": "A hub, because it creates a single collision domain where all devices compete for bandwidth",
+      "analysis": "Great job!",
+      "explanation": "A hub operates at the physical layer and creates one large collision domain where all connected devices share the total bandwidth. When one device transmits heavily, it monopolizes the shared medium, causing slowdowns for all other devices."
+    },
+    {
+      "question_num": 2,
+      "is_correct": false,
+      "student_choice": "When you need to route packets between different IP subnets",
+      "correct_answer": "When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+      "analysis": "The correct answer was: When you need to connect two different network segments and have budget constraints for a simple, low-port-count solution",
+      "explanation": "Bridges are primarily used to connect two network segments and are typically simpler and less expensive than switches. While switches have largely replaced bridges, bridges might still be used in simple scenarios where only two segments need connection."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Router - it will examine the destination IP address and determine the next hop",
+      "correct_answer": "Router - it will examine the destination IP address and determine the next hop",
+      "analysis": "Great job!",
+      "explanation": "A router operates at Layer 3 (Network layer) and uses IP addresses to determine the best path for packets between different networks. Since these IP addresses are on different networks, a router is needed to route the packets."
+    },
+    {
+      "question_num": 4,
+      "is_correct": false,
+      "student_choice": "A switch drops unknown frames while a hub forwards them",
+      "correct_answer": "A switch floods unknown frames to all ports except the source, while a hub repeats all signals to all ports",
+      "analysis": "The correct answer was: A switch floods unknown frames to all ports except the source, while a hub repeats all signals to all ports",
+      "explanation": "When a switch receives a frame for an unknown MAC address (not in its MAC address table), it floods the frame to all ports except the source port. A hub simply repeats all electrical signals to all ports regardless of the destination."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "A gateway, because it can translate between different protocol stacks",
+      "correct_answer": "A gateway, because it can translate between different protocol stacks",
+      "analysis": "Great job!",
+      "explanation": "A gateway operates at multiple layers and can translate between different protocol stacks, such as converting IPX protocol communications to TCP/IP. This protocol translation capability is what distinguishes gateways from other network devices."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Review the questions you missed above"
+    ],
+    "focus_areas": [
+      "Check the explanations for each incorrect answer"
+    ],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. You scored 60%. Review the explanations below and try again!",
+    "recommendation": "Review the lesson and try a new quiz when ready."
+  }
+}

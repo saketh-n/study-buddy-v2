@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "The domain has no AAAA record configured",
+      "correct_answer": "The domain has no AAAA record configured",
+      "analysis": "Great job!",
+      "explanation": "AAAA records map domain names to IPv6 addresses. Without an AAAA record, clients cannot resolve the domain to an IPv6 address, causing IPv6 connections to fail while IPv4 (A record) connections continue working."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "It offers better privacy, performance, and potentially bypasses ISP DNS filtering",
+      "correct_answer": "It offers better privacy, performance, and potentially bypasses ISP DNS filtering",
+      "analysis": "Great job!",
+      "explanation": "Public DNS resolvers like 1.1.1.1 often provide better privacy (less logging), improved performance (global infrastructure), and can bypass ISP-imposed DNS filtering or blocking, while still resolving all public domains."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "The resolver queries multiple authoritative servers starting from the root servers",
+      "correct_answer": "The resolver queries multiple authoritative servers starting from the root servers",
+      "analysis": "Great job!",
+      "explanation": "Recursive resolvers perform the full DNS resolution process on behalf of clients. They start by querying root servers, then TLD servers (.com), and finally the authoritative nameserver for the specific domain, following the DNS hierarchy."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Create separate subdomains with appropriate A/AAAA records for each service",
+      "correct_answer": "Create separate subdomains with appropriate A/AAAA records for each service",
+      "analysis": "Great job!",
+      "explanation": "Using subdomains (www.example.com, mail.example.com, ftp.example.com) with separate A/AAAA records allows each service to run on different servers while maintaining clear service separation and easier management."
+    },
+    {
+      "question_num": 5,
+      "is_correct": false,
+      "student_choice": "Use a CNAME record pointing to whichever server is currently active",
+      "correct_answer": "Implement health checks with a DNS service that can automatically update records",
+      "analysis": "The correct answer was: Implement health checks with a DNS service that can automatically update records",
+      "explanation": "DNS-based failover requires active monitoring and automatic record updates. Modern DNS services offer health checks that automatically switch DNS records to backup servers when primary servers become unavailable, providing true failover capability."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Virtual Machine Monitors (VMM)",
+  "questions": [
+    {
+      "question": "What is the primary architectural difference between Type 1 and Type 2 hypervisors?",
+      "options": [
+        "Type 1 runs directly on hardware while Type 2 runs on top of a host operating system",
+        "Type 1 supports more virtual machines than Type 2",
+        "Type 1 uses hardware virtualization while Type 2 uses software emulation",
+        "Type 1 is open source while Type 2 is proprietary"
+      ],
+      "correct_index": 0,
+      "explanation": "Type 1 hypervisors (bare-metal) install directly on physical hardware without a host OS, while Type 2 hypervisors run as applications on top of an existing operating system."
+    },
+    {
+      "question": "A company needs to deploy a virtualization solution for their data center that maximizes performance and minimizes overhead. Which approach should they choose and why?",
+      "options": [
+        "Type 2 hypervisor because it provides better hardware compatibility",
+        "Type 1 hypervisor because it eliminates the host OS layer, reducing overhead and improving performance",
+        "Type 2 hypervisor because it's easier to manage and update",
+        "Type 1 hypervisor because it supports more guest operating systems"
+      ],
+      "correct_index": 1,
+      "explanation": "Type 1 hypervisors like ESXi provide better performance for data center environments because they run directly on hardware without the overhead of a host operating system layer."
+    },
+    {
+      "question": "A developer wants to test applications on multiple operating systems on their laptop without rebooting. Which virtualization solution would be most appropriate?",
+      "options": [
+        "VMware ESXi because it provides enterprise-grade features",
+        "Type 1 hypervisor because it offers better isolation",
+        "VMware Fusion or similar Type 2 hypervisor because it allows running VMs alongside the host OS",
+        "Container technology because it's more lightweight"
+      ],
+      "correct_index": 2,
+      "explanation": "Type 2 hypervisors like VMware Fusion are ideal for desktop use cases where users need to run multiple operating systems simultaneously while maintaining access to their primary host OS."
+    },
+    {
+      "question": "In VMware ESXi architecture, what role does the VMkernel play?",
+      "options": [
+        "It provides the guest operating system with direct hardware access",
+        "It serves as the hypervisor's microkernel that manages hardware resources and VM scheduling",
+        "It handles only network communication between virtual machines",
+        "It acts as a backup system in case the primary hypervisor fails"
+      ],
+      "correct_index": 1,
+      "explanation": "The VMkernel is ESXi's microkernel that directly manages hardware resources, handles VM scheduling, memory management, and provides core hypervisor functionality."
+    },
+    {
+      "question": "Why might an organization choose to use nested virtualization (running a hypervisor inside a VM) despite the performance overhead?",
+      "options": [
+        "To improve overall system performance",
+        "To reduce licensing costs",
+        "For testing hypervisor configurations and training purposes without dedicated hardware",
+        "To increase the number of supported guest operating systems"
+      ],
+      "correct_index": 2,
+      "explanation": "Nested virtualization is primarily used for lab environments, testing hypervisor configurations, training scenarios, and development work where the flexibility outweighs the performance penalty."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Batch Processing",
+  "questions": [
+    {
+      "question": "Which scenario would be MOST appropriate for batch processing rather than stream processing?",
+      "options": [
+        "Real-time fraud detection for credit card transactions",
+        "Monthly payroll calculations for 50,000 employees",
+        "Live chat message delivery",
+        "Stock price updates for trading platforms"
+      ],
+      "correct_index": 1,
+      "explanation": "Monthly payroll calculations are perfect for batch processing because they happen on a scheduled basis, involve large datasets, don't require immediate results, and can tolerate latency. The other options require real-time or near real-time processing."
+    },
+    {
+      "question": "In Apache Spark, what is the primary advantage of lazy evaluation in batch processing workflows?",
+      "options": [
+        "It reduces memory usage by immediately executing each transformation",
+        "It allows Spark to optimize the entire computation graph before execution",
+        "It prevents data from being cached in memory",
+        "It ensures transformations are executed in the order they were written"
+      ],
+      "correct_index": 1,
+      "explanation": "Lazy evaluation allows Spark to build a computation graph (DAG) of all transformations before executing them, enabling optimizations like predicate pushdown, column pruning, and operation fusion that can significantly improve performance."
+    },
+    {
+      "question": "A data engineer needs to process 10TB of log files daily. The processing takes 2 hours and the results are used for next-day business reports. Why would batch processing be preferred over micro-batch processing for this use case?",
+      "options": [
+        "Batch processing provides faster individual record processing",
+        "The use case doesn't require low latency, and batch processing offers better resource utilization for large datasets",
+        "Batch processing automatically handles data quality issues",
+        "Micro-batch processing cannot handle files larger than 1TB"
+      ],
+      "correct_index": 1,
+      "explanation": "Since the results are used for next-day reports, there's no need for low latency. Batch processing can optimize resource usage across the entire 10TB dataset, use techniques like columnar storage efficiently, and provide better cost-effectiveness for this volume."
+    },
+    {
+      "question": "When designing a batch processing job in Spark that joins two large datasets (100GB each), which approach would likely provide the best performance?",
+      "options": [
+        "Use broadcast join for both datasets",
+        "Ensure both datasets are partitioned on the join key using the same partitioner",
+        "Load all data into memory before starting the join",
+        "Process the join on a single executor to avoid network overhead"
+      ],
+      "correct_index": 1,
+      "explanation": "When both datasets are large, partitioning them on the join key with the same partitioner ensures that matching records are co-located on the same nodes, minimizing data shuffling during the join operation and improving performance."
+    },
+    {
+      "question": "A batch processing pipeline fails halfway through processing due to a node failure. What capability of modern batch processing frameworks like Spark helps recover from this situation without reprocessing all data from the beginning?",
+      "options": [
+        "Automatic data replication across all nodes",
+        "Lineage tracking and RDD/DataFrame reconstruction",
+        "Real-time backup to external storage",
+        "Converting the job to stream processing mode"
+      ],
+      "correct_index": 1,
+      "explanation": "Spark maintains lineage information (DAG) that tracks how each RDD/DataFrame was created. When a partition is lost due to node failure, Spark can reconstruct only the lost partitions by replaying the transformations from the source data, rather than reprocessing the entire dataset."
+    }
+  ],
+  "passing_score": 80
+}

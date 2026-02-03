@@ -1,0 +1,61 @@
+{
+  "topic_name": "Performance Optimization",
+  "questions": [
+    {
+      "question": "When analyzing a slow-performing query that joins multiple large tables, what is the MOST effective first step to identify the root cause?",
+      "options": [
+        "Add more indexes to all columns in the WHERE clause",
+        "Examine the query execution plan to identify bottlenecks",
+        "Increase the database server's memory allocation",
+        "Rewrite the query using subqueries instead of joins"
+      ],
+      "correct_index": 1,
+      "explanation": "Examining the execution plan reveals how the database engine processes the query, showing table scan costs, join methods, and index usage, which helps identify specific bottlenecks before making optimization changes."
+    },
+    {
+      "question": "A data pipeline processes 10TB of data daily but struggles during peak hours. The bottleneck analysis shows CPU usage at 30% and memory at 95%. What optimization strategy should be prioritized?",
+      "options": [
+        "Horizontal scaling by adding more processing nodes",
+        "Vertical scaling by increasing CPU cores",
+        "Memory optimization through data partitioning and caching strategies",
+        "Network bandwidth optimization"
+      ],
+      "correct_index": 2,
+      "explanation": "With low CPU usage but maxed memory, the system is memory-bound. Optimizing memory usage through partitioning, efficient caching, and reducing memory footprint will have the greatest impact before adding hardware resources."
+    },
+    {
+      "question": "Why might adding an index on a frequently queried column actually decrease overall system performance in a high-write environment?",
+      "options": [
+        "Indexes consume too much disk space",
+        "Index maintenance overhead during INSERT/UPDATE operations outweighs query performance gains",
+        "Indexes cause query results to be returned in the wrong order",
+        "The database optimizer ignores indexes in high-write scenarios"
+      ],
+      "correct_index": 1,
+      "explanation": "In write-heavy workloads, each INSERT, UPDATE, or DELETE requires updating all relevant indexes, creating significant overhead that can outweigh the read performance benefits, especially if writes are more frequent than reads."
+    },
+    {
+      "question": "When designing a scalable data architecture for unpredictable workloads, which approach BEST balances performance and cost efficiency?",
+      "options": [
+        "Pre-provision maximum expected capacity to ensure consistent performance",
+        "Implement auto-scaling with performance monitoring and gradual scaling policies",
+        "Use only vertical scaling to maintain data locality",
+        "Design for average load and accept performance degradation during peaks"
+      ],
+      "correct_index": 1,
+      "explanation": "Auto-scaling with monitoring allows the system to dynamically adjust resources based on actual demand, providing good performance during peaks while avoiding over-provisioning costs during normal periods."
+    },
+    {
+      "question": "A distributed data processing job shows declining performance as data volume increases, despite linear scaling of compute resources. What is the MOST likely underlying issue?",
+      "options": [
+        "Insufficient network bandwidth between nodes",
+        "Data skew causing uneven workload distribution across partitions",
+        "Inadequate error handling mechanisms",
+        "Suboptimal data serialization formats"
+      ],
+      "correct_index": 1,
+      "explanation": "Data skew causes some partitions to be much larger than others, creating hotspots where a few nodes handle disproportionate work while others remain underutilized, preventing effective parallel processing despite having adequate total resources."
+    }
+  ],
+  "passing_score": 80
+}

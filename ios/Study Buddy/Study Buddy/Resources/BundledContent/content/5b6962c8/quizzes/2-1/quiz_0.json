@@ -1,0 +1,61 @@
+{
+  "topic_name": "Hashing and Digital Signatures",
+  "questions": [
+    {
+      "question": "A software company wants to ensure that users can verify downloaded files haven't been corrupted during transmission. Which approach would be most appropriate and why?",
+      "options": [
+        "Use symmetric encryption to protect the entire file",
+        "Publish hash values of files on their website alongside download links",
+        "Use digital signatures since they provide stronger encryption",
+        "Store files in a password-protected archive"
+      ],
+      "correct_index": 1,
+      "explanation": "Publishing hash values allows users to verify file integrity by computing the hash of their downloaded file and comparing it to the published value. This detects any corruption or modification during transmission without requiring encryption of the entire file."
+    },
+    {
+      "question": "Why would a Message Authentication Code (MAC) be preferred over a simple hash function when sending a message between two parties who share a secret key?",
+      "options": [
+        "MACs are faster to compute than hash functions",
+        "MACs provide confidentiality while hash functions do not",
+        "MACs prevent an attacker from modifying the message and updating the hash",
+        "MACs can detect more types of errors than hash functions"
+      ],
+      "correct_index": 2,
+      "explanation": "MACs use a secret key, so an attacker cannot compute a valid MAC for a modified message without knowing the key. With a simple hash, an attacker could modify both the message and compute a new hash value."
+    },
+    {
+      "question": "A company needs to implement a system where customers can verify that official announcements actually came from the company and haven't been altered. What is the most suitable cryptographic approach?",
+      "options": [
+        "Hash the announcements and publish the hash values",
+        "Use digital signatures with the company's private key",
+        "Encrypt announcements with a shared password",
+        "Use MAC codes with a company-wide secret key"
+      ],
+      "correct_index": 1,
+      "explanation": "Digital signatures provide both authentication (proves the message came from the company) and non-repudiation (company cannot deny sending it). Customers can verify using the company's public key without needing to share secrets."
+    },
+    {
+      "question": "Which statement best explains why hash functions used in cryptographic applications must be collision-resistant?",
+      "options": [
+        "To ensure the hash output is always the same length regardless of input size",
+        "To prevent attackers from finding two different inputs that produce the same hash output",
+        "To make sure the hash function runs quickly on modern processors",
+        "To guarantee that the original message can be recovered from the hash"
+      ],
+      "correct_index": 1,
+      "explanation": "Collision resistance prevents attackers from creating a malicious document that has the same hash as a legitimate one. If an attacker could easily find collisions, they could substitute malicious content while maintaining the same hash value."
+    },
+    {
+      "question": "An online banking system needs to ensure that transaction records cannot be repudiated (denied) by either party and can be verified by a third-party auditor. Which combination of techniques is most appropriate?",
+      "options": [
+        "Symmetric encryption with hash functions",
+        "Digital signatures with hash functions",
+        "MAC codes with symmetric encryption",
+        "Hash functions with password protection"
+      ],
+      "correct_index": 1,
+      "explanation": "Digital signatures provide non-repudiation because they can only be created with the signer's private key, and hash functions ensure integrity. A third-party auditor can verify signatures using public keys without needing access to secret keys."
+    }
+  ],
+  "passing_score": 80
+}

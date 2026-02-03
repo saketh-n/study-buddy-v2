@@ -1,0 +1,61 @@
+{
+  "topic_name": "Kubernetes Architecture",
+  "questions": [
+    {
+      "question": "A development team notices that their pods are being scheduled on nodes that don't have sufficient resources, causing frequent crashes. Which master component is most likely not functioning properly?",
+      "options": [
+        "ETCD",
+        "Scheduler",
+        "Controller Manager",
+        "API Server"
+      ],
+      "correct_index": 1,
+      "explanation": "The Scheduler is responsible for placing pods on appropriate nodes based on resource requirements and constraints. If pods are being placed on unsuitable nodes, the scheduler component is likely malfunctioning."
+    },
+    {
+      "question": "During a cluster upgrade, you need to ensure that all configuration data and cluster state survive the process. Which component stores this critical information and must be properly backed up?",
+      "options": [
+        "API Server",
+        "Controller Manager",
+        "ETCD",
+        "Kubelet"
+      ],
+      "correct_index": 2,
+      "explanation": "ETCD is the distributed key-value store that holds all cluster data, including configuration, secrets, and state information. It's the only stateful component in the control plane and requires proper backup procedures."
+    },
+    {
+      "question": "Your application pods can communicate with each other within the same node but cannot reach pods on other nodes. Network policies are not configured. Which node component is most likely causing this issue?",
+      "options": [
+        "Container runtime",
+        "Kubelet",
+        "Kube-proxy",
+        "ETCD"
+      ],
+      "correct_index": 2,
+      "explanation": "Kube-proxy manages network rules and handles service discovery and load balancing. It's responsible for enabling pod-to-pod communication across nodes by maintaining network rules and routing traffic properly."
+    },
+    {
+      "question": "A node becomes unresponsive and the Controller Manager needs to reschedule the pods to healthy nodes. What is the primary reason the Controller Manager can make this decision?",
+      "options": [
+        "It directly monitors node hardware status",
+        "It receives heartbeat signals from kubelet on each node",
+        "It polls the container runtime for pod status",
+        "It checks network connectivity to each pod"
+      ],
+      "correct_index": 1,
+      "explanation": "The Controller Manager monitors node health through kubelet heartbeats sent to the API server. When kubelet stops sending heartbeats, the Controller Manager detects the node as unhealthy and triggers pod rescheduling."
+    },
+    {
+      "question": "Your organization wants to standardize on a specific container runtime across all Kubernetes clusters while maintaining the ability to switch runtimes in the future without major architectural changes. Which architectural design principle enables this flexibility?",
+      "options": [
+        "The API Server abstracts all container operations",
+        "Kubelet directly manages all container runtimes",
+        "Kubernetes uses the Container Runtime Interface (CRI) specification",
+        "ETCD stores container runtime configurations"
+      ],
+      "correct_index": 2,
+      "explanation": "The Container Runtime Interface (CRI) provides a standardized API between kubelet and container runtimes. This abstraction allows different runtimes (Docker, containerd, CRI-O) to be used interchangeably without changing the core Kubernetes architecture."
+    }
+  ],
+  "passing_score": 80
+}

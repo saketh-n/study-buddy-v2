@@ -1,0 +1,61 @@
+{
+  "topic_name": "Storage scale using networking",
+  "questions": [
+    {
+      "question": "A company needs to store massive amounts of unstructured data (images, videos, documents) from multiple global locations while ensuring high availability and automatic scaling. Which storage approach would be most appropriate and why?",
+      "options": [
+        "SAN storage because it provides block-level access for better performance",
+        "Object storage because it scales horizontally across networks and handles unstructured data efficiently",
+        "NAS storage because it provides file-level access that applications can easily use",
+        "Local storage with replication because it eliminates network latency"
+      ],
+      "correct_index": 1,
+      "explanation": "Object storage is designed for massive scale across networks, can handle unstructured data efficiently, and provides built-in redundancy and geographic distribution capabilities ideal for global deployment."
+    },
+    {
+      "question": "When implementing a Storage Area Network (SAN) to scale storage for database servers, what is the primary advantage of using a dedicated storage network compared to sharing the existing data network?",
+      "options": [
+        "Lower cost since existing network infrastructure can be reused",
+        "Elimination of storage bottlenecks that could impact both storage and general network traffic",
+        "Simpler management because all traffic flows through one network",
+        "Better security since databases don't need network access"
+      ],
+      "correct_index": 1,
+      "explanation": "A dedicated storage network prevents storage I/O traffic from competing with regular network traffic, ensuring consistent performance for both storage operations and general network communications."
+    },
+    {
+      "question": "A development team needs shared storage where multiple servers can simultaneously access and modify the same files for a collaborative project. Network latency is acceptable, but file locking and permissions are critical. Which solution best addresses these requirements?",
+      "options": [
+        "Object storage with REST APIs for file access",
+        "Network Attached Storage (NAS) with file-level sharing protocols",
+        "Storage Area Network (SAN) with raw block access",
+        "Direct Attached Storage (DAS) with network file copying"
+      ],
+      "correct_index": 1,
+      "explanation": "NAS provides file-level sharing protocols (like NFS or SMB) that include built-in file locking, permissions, and concurrent access management needed for collaborative file access across the network."
+    },
+    {
+      "question": "An e-commerce platform experiences unpredictable traffic spikes and needs storage that can automatically scale capacity and performance without manual intervention. The storage must integrate with their cloud-native applications. What characteristic is most important for their storage networking solution?",
+      "options": [
+        "Low-latency dedicated fiber connections to minimize access delays",
+        "Elastic scalability with API-driven management for automated provisioning",
+        "High-speed block-level access for maximum throughput",
+        "Geographic replication for disaster recovery"
+      ],
+      "correct_index": 1,
+      "explanation": "Elastic scalability with API-driven management allows the storage system to automatically adjust capacity and performance based on demand, which is essential for handling unpredictable traffic spikes in cloud-native environments."
+    },
+    {
+      "question": "A company is designing a hybrid storage architecture where some data needs high-performance access for databases (SAN), some needs shared file access for applications (NAS), and some needs massive scalability for backups and archives (Object). What is the key networking consideration for this architecture?",
+      "options": [
+        "All storage types should use the same network to simplify management",
+        "Each storage type should have isolated networks to prevent any cross-contamination",
+        "Network design should accommodate different protocols and performance requirements for each storage type",
+        "Only the SAN should have dedicated networking while others share the general network"
+      ],
+      "correct_index": 2,
+      "explanation": "Different storage types have different networking requirements (Fibre Channel/iSCSI for SAN, Ethernet for NAS, HTTP/S for Object), and the network must be designed to handle these different protocols and their respective performance characteristics effectively."
+    }
+  ],
+  "passing_score": 80
+}

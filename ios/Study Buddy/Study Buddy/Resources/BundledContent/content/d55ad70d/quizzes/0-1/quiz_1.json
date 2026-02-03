@@ -1,0 +1,61 @@
+{
+  "topic_name": "Abstract view (registers -> tapes) state store",
+  "questions": [
+    {
+      "question": "In the storage hierarchy from registers to tapes, what is the primary trade-off that governs the design of each level?",
+      "options": [
+        "Speed vs. capacity",
+        "Volatility vs. durability",
+        "Cost vs. reliability",
+        "Power consumption vs. heat generation"
+      ],
+      "correct_index": 0,
+      "explanation": "The fundamental trade-off in storage hierarchy is speed vs. capacity - faster storage (like registers) has very limited capacity, while slower storage (like tapes) can hold much more data."
+    },
+    {
+      "question": "A database application needs to frequently access a small working set of records while maintaining a large archive of historical data. Based on storage hierarchy principles, what would be the most appropriate strategy?",
+      "options": [
+        "Store everything in main memory for consistent performance",
+        "Keep working set in cache/memory and archive on slower storage",
+        "Use only solid-state drives to balance speed and capacity",
+        "Distribute all data equally across all storage levels"
+      ],
+      "correct_index": 1,
+      "explanation": "This follows the principle of locality - frequently accessed data should be kept in faster storage levels, while less frequently accessed data can reside in slower, higher-capacity storage."
+    },
+    {
+      "question": "Why do CPU registers sit at the top of the storage hierarchy rather than having all storage at that speed level?",
+      "options": [
+        "Registers are unreliable and lose data easily",
+        "The physical constraints and cost make it impractical to have large amounts of register-speed storage",
+        "Registers can only store integers, not other data types",
+        "Operating systems cannot manage large numbers of registers"
+      ],
+      "correct_index": 1,
+      "explanation": "Register-speed storage requires expensive, power-hungry circuits located very close to the CPU. Physical and economic constraints limit how much storage can operate at this speed."
+    },
+    {
+      "question": "In a virtual memory system, what storage hierarchy principle is being applied when pages are moved between RAM and disk?",
+      "options": [
+        "Static partitioning based on file type",
+        "Temporal locality - recently accessed pages stay in faster storage",
+        "Random distribution to balance load",
+        "Alphabetical ordering of data"
+      ],
+      "correct_index": 1,
+      "explanation": "Virtual memory systems use temporal locality principles, keeping recently accessed pages in RAM (faster storage) and moving less recently used pages to disk (slower storage)."
+    },
+    {
+      "question": "A system architect is designing storage for a real-time video processing application that must guarantee response times. Which characteristic of the storage hierarchy is most critical to consider?",
+      "options": [
+        "The total capacity of the slowest storage level",
+        "The access time predictability at each level",
+        "The power consumption of storage devices",
+        "The alphabetical organization of stored data"
+      ],
+      "correct_index": 1,
+      "explanation": "For real-time applications, predictable access times are crucial. The architect must understand not just average speeds but worst-case access times at each storage level to guarantee response times."
+    }
+  ],
+  "passing_score": 80
+}

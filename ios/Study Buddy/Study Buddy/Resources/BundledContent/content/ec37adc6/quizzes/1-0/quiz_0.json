@@ -1,0 +1,61 @@
+{
+  "topic_name": "GLP-1 Structure and Secretion",
+  "questions": [
+    {
+      "question": "A 55-year-old patient with type 2 diabetes shows poor postprandial glucose control despite adequate fasting glucose levels. Laboratory tests reveal normal GLP-1 secretion from L-cells but elevated DPP-4 activity. What is the most likely explanation for this patient's glucose pattern?",
+      "options": [
+        "L-cells are secreting inactive GLP-1 precursors",
+        "Rapid degradation of active GLP-1 is reducing its postprandial effects",
+        "GLP-1 receptors are becoming desensitized to endogenous ligand",
+        "L-cell secretion is delayed rather than absent"
+      ],
+      "correct_index": 1,
+      "explanation": "Elevated DPP-4 activity would rapidly cleave active GLP-1(7-36) to inactive GLP-1(9-36), reducing the hormone's ability to regulate postprandial glucose despite normal secretion from L-cells."
+    },
+    {
+      "question": "Which structural feature of native GLP-1 makes it particularly susceptible to rapid inactivation, and why is this clinically significant?",
+      "options": [
+        "The C-terminal amide group makes it unstable in plasma",
+        "The N-terminal alanine-valine sequence is a preferred DPP-4 cleavage site",
+        "The alpha-helical structure is easily denatured by body temperature",
+        "The lack of disulfide bonds makes it prone to proteolysis"
+      ],
+      "correct_index": 1,
+      "explanation": "DPP-4 specifically cleaves peptides with alanine or proline in the second position from the N-terminus. GLP-1's Ala-Val N-terminal sequence makes it an ideal substrate, resulting in a short 2-minute half-life."
+    },
+    {
+      "question": "During the design of a new GLP-1 receptor agonist, researchers want to extend the drug's half-life while maintaining receptor binding. Based on the natural structure-function relationship of GLP-1, which modification strategy would be most effective?",
+      "options": [
+        "Replacing the entire N-terminal region with a different peptide sequence",
+        "Modifying positions 2-3 to prevent DPP-4 cleavage while preserving the C-terminal receptor binding domain",
+        "Adding multiple copies of the active sequence to increase potency",
+        "Converting the peptide to a D-amino acid configuration"
+      ],
+      "correct_index": 1,
+      "explanation": "The C-terminal region (especially amino acids 7-36) is crucial for receptor binding and activity. Modifying only the DPP-4 cleavage site (positions 2-3) would prevent degradation while maintaining therapeutic effect."
+    },
+    {
+      "question": "A researcher observes that GLP-1 secretion from intestinal L-cells increases significantly 15 minutes after a patient consumes a mixed meal, but plasma GLP-1 levels remain relatively low. What physiological mechanism best explains this apparent contradiction?",
+      "options": [
+        "L-cells are secreting predominantly inactive GLP-1 metabolites",
+        "Rapid hepatic clearance is removing GLP-1 before it reaches systemic circulation",
+        "DPP-4 enzymes are immediately cleaving secreted GLP-1 in the intestinal capillaries",
+        "GLP-1 is being sequestered by binding proteins in the portal circulation"
+      ],
+      "correct_index": 2,
+      "explanation": "DPP-4 is present on endothelial cells and in plasma throughout the body, including intestinal capillaries. This allows for immediate cleavage of newly secreted GLP-1, explaining why secretion can be high while plasma levels of active hormone remain low."
+    },
+    {
+      "question": "In the context of incretin physiology, why is the location of L-cells primarily in the distal small intestine and colon strategically important for glucose homeostasis?",
+      "options": [
+        "These locations have the highest concentration of DPP-4 enzymes for rapid GLP-1 activation",
+        "Nutrient sensing at these sites indicates substantial food intake requiring significant insulin response",
+        "The distal location allows for sensing unabsorbed nutrients that might indicate malabsorption",
+        "L-cells in these locations are less sensitive to neural inhibition during stress"
+      ],
+      "correct_index": 1,
+      "explanation": "L-cells in the distal intestine respond to nutrients that have traveled through most of the digestive tract, indicating substantial food intake. This positioning allows GLP-1 secretion to correlate with the magnitude of nutrient absorption requiring proportional insulin response."
+    }
+  ],
+  "passing_score": 80
+}

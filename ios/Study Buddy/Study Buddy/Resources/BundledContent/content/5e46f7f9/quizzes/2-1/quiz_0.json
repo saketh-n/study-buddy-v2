@@ -1,0 +1,61 @@
+{
+  "topic_name": "Common Ports and Protocols",
+  "questions": [
+    {
+      "question": "A network administrator notices that users cannot access a company website securely, but can access it using regular HTTP. The server is configured correctly for encrypted connections. What is the most likely cause of this issue?",
+      "options": [
+        "Port 443 is blocked by the firewall",
+        "Port 80 is misconfigured",
+        "DNS resolution is failing on port 53",
+        "The SSH service on port 22 is down"
+      ],
+      "correct_index": 0,
+      "explanation": "HTTPS uses port 443 for secure encrypted connections. If users can access HTTP (port 80) but not HTTPS, the firewall is likely blocking port 443, preventing secure connections."
+    },
+    {
+      "question": "A database administrator needs to configure firewall rules for a new MySQL database server that will be accessed by application servers on a different network segment. Which port should be opened to allow this database communication?",
+      "options": [
+        "Port 1433 for SQL Server compatibility",
+        "Port 3306 for MySQL connections",
+        "Port 1521 for Oracle protocol support",
+        "Port 25 for database email notifications"
+      ],
+      "correct_index": 1,
+      "explanation": "MySQL uses port 3306 as its default port for database connections. Port 1433 is for Microsoft SQL Server, port 1521 is for Oracle, and port 25 is for SMTP email."
+    },
+    {
+      "question": "During an FTP file transfer session, why might a network administrator need to configure firewall rules for both ports 20 and 21?",
+      "options": [
+        "Port 20 is for commands and port 21 is for data transfer",
+        "Port 21 is for commands and port 20 is for data transfer",
+        "Both ports serve as backup connections for redundancy",
+        "Port 20 handles uploads and port 21 handles downloads"
+      ],
+      "correct_index": 1,
+      "explanation": "In FTP, port 21 is used for command/control connections (login, commands), while port 20 is used for actual data transfer in active mode. Both may be needed depending on the FTP mode configuration."
+    },
+    {
+      "question": "A system administrator wants to replace Telnet access with a more secure alternative for remote server management. Which port should be opened on the firewall to support this secure replacement?",
+      "options": [
+        "Port 80 for web-based management",
+        "Port 443 for encrypted web access",
+        "Port 22 for SSH connections",
+        "Port 25 for secure email notifications"
+      ],
+      "correct_index": 2,
+      "explanation": "SSH (Secure Shell) on port 22 is the secure replacement for Telnet. It provides encrypted remote access and management capabilities, unlike Telnet which transmits data in plain text."
+    },
+    {
+      "question": "An email server administrator is troubleshooting why outgoing emails are failing to send. The email server can receive emails but cannot send them to other mail servers. Which service and port combination should be investigated first?",
+      "options": [
+        "HTTP service on port 80",
+        "SMTP service on port 25",
+        "DNS service on port 53",
+        "HTTPS service on port 443"
+      ],
+      "correct_index": 1,
+      "explanation": "SMTP (Simple Mail Transfer Protocol) on port 25 is responsible for sending emails between mail servers. If outgoing emails are failing while incoming works, the SMTP service or port 25 connectivity is likely the issue."
+    }
+  ],
+  "passing_score": 80
+}

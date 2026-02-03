@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Sequence numbers and reordering",
+      "correct_answer": "Sequence numbers and reordering",
+      "analysis": "Great job!",
+      "explanation": "TCP uses sequence numbers to track the order of data segments and can reorder packets that arrive out of sequence before delivering them to the application layer."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "TCP's retransmission delays would cause buffering issues",
+      "correct_answer": "TCP's retransmission delays would cause buffering issues",
+      "analysis": "Great job!",
+      "explanation": "For real-time applications like video streaming, the delay caused by TCP's retransmission of lost packets would create noticeable buffering and disruption, making UDP's faster, connectionless approach more suitable despite potential data loss."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Receiver buffer full; sender should stop transmitting and probe periodically",
+      "correct_answer": "Receiver buffer full; sender should stop transmitting and probe periodically",
+      "analysis": "Great job!",
+      "explanation": "A zero window size indicates the receiver's buffer is full. The sender must stop transmitting data and periodically send window probe segments to check when buffer space becomes available again."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "Increase the TCP timeout values",
+      "correct_answer": "Increase the TCP timeout values",
+      "analysis": "Great job!",
+      "explanation": "In high-latency networks like satellite connections, the default TCP timeout values may be too short for the round-trip time. Increasing timeout values allows sufficient time for handshake completion without premature connection abandonment."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Acknowledgments, retransmission, and sequence numbering working together",
+      "correct_answer": "Acknowledgments, retransmission, and sequence numbering working together",
+      "analysis": "Great job!",
+      "explanation": "TCP's reliability comes from the integrated system of acknowledgments confirming receipt, automatic retransmission of lost data, and sequence numbering ensuring proper ordering. This combination provides guaranteed delivery with less overhead than implementing equivalent reliability mechanisms at the application layer."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 100%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

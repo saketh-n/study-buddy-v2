@@ -1,0 +1,61 @@
+{
+  "topic_name": "Introduction to Cybersecurity",
+  "questions": [
+    {
+      "question": "What is the primary purpose of the CIA triad in cybersecurity?",
+      "options": [
+        "To provide a framework for classifying types of cyberattacks",
+        "To establish fundamental principles for protecting information assets",
+        "To define roles and responsibilities in security teams",
+        "To create a checklist for incident response procedures"
+      ],
+      "correct_index": 1,
+      "explanation": "The CIA triad (Confidentiality, Integrity, Availability) serves as the foundational framework for understanding and implementing information security principles, not just for attack classification or procedural guidance."
+    },
+    {
+      "question": "A company discovers that an employee has been accessing customer data they don't need for their job role. Which security principle has been violated?",
+      "options": [
+        "Defense in depth",
+        "Least privilege",
+        "Security through obscurity",
+        "Risk assessment"
+      ],
+      "correct_index": 1,
+      "explanation": "The principle of least privilege states that users should only have access to the minimum resources necessary to perform their job functions. Accessing unnecessary customer data violates this principle."
+    },
+    {
+      "question": "Why is cybersecurity considered a business enabler rather than just a cost center?",
+      "options": [
+        "It eliminates all business risks completely",
+        "It allows organizations to pursue digital opportunities while managing risks",
+        "It guarantees 100% protection against all threats",
+        "It reduces the need for other business investments"
+      ],
+      "correct_index": 1,
+      "explanation": "Cybersecurity enables businesses to safely adopt new technologies and digital strategies by providing risk management frameworks, rather than eliminating all risks or guaranteeing complete protection."
+    },
+    {
+      "question": "When would a multi-layered security approach be most critical to implement?",
+      "options": [
+        "Only when handling financial data",
+        "When protecting against sophisticated, persistent threats",
+        "Only in large enterprise environments",
+        "When compliance regulations require it"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-layered security (defense in depth) is most critical against sophisticated threats that may bypass single security controls. While important in various contexts, it's essential when facing advanced persistent threats regardless of organization size or data type."
+    },
+    {
+      "question": "What makes social engineering attacks particularly challenging from a cybersecurity perspective?",
+      "options": [
+        "They require the most advanced technical skills to execute",
+        "They exploit human psychology rather than technical vulnerabilities",
+        "They can only be prevented through expensive security tools",
+        "They always involve malware installation"
+      ],
+      "correct_index": 1,
+      "explanation": "Social engineering attacks are challenging because they target human behavior and psychology, which cannot be patched like software vulnerabilities. They often require minimal technical skills but exploit human trust and decision-making."
+    }
+  ],
+  "passing_score": 80
+}

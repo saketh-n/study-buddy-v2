@@ -1,0 +1,59 @@
+{
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Physical Layer",
+      "correct_answer": "Physical Layer",
+      "analysis": "Excellent diagnostic thinking - correctly identified that data corruption during transmission while routing works properly indicates physical transmission issues",
+      "explanation": "The Physical Layer (Layer 1) is responsible for the actual transmission of raw bits over physical media. When packets are routed correctly but arrive corrupted, this indicates problems with the physical transmission medium such as cable issues, electromagnetic interference, or faulty network hardware components."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Session and Presentation layers",
+      "correct_answer": "Session and Presentation layers",
+      "analysis": "Strong understanding of layer responsibilities - correctly identified that secure communication channels require both session establishment and encryption/security formatting",
+      "explanation": "The Session Layer manages communication sessions and connection establishment, while the Presentation Layer handles encryption, decryption, and data formatting. Together, these layers work to establish and maintain secure, encrypted communication channels between applications."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Presentation Layer - data formatting/encoding issues",
+      "correct_answer": "Presentation Layer - data formatting/encoding issues",
+      "analysis": "Perfect layer isolation skills - recognized that successful TCP connections with garbled text indicates data formatting problems rather than connectivity issues",
+      "explanation": "The Presentation Layer handles data formatting, character encoding, compression, and encryption. When TCP connections work but text appears garbled, it indicates problems with character encoding, compression algorithms, or data formatting rather than network connectivity issues."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "correct_answer": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "analysis": "Excellent understanding of router functionality and Network Layer operations - correctly identified the core responsibility of Layer 3 routing",
+      "explanation": "Routers operate at Layer 3 because they make forwarding decisions based on logical network addresses (IP addresses) rather than physical addresses. This allows them to route packets across different network segments and make intelligent path decisions based on network topology and routing protocols."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Transport Layer - providing reliable, connection-oriented communication",
+      "correct_answer": "Transport Layer - providing reliable, connection-oriented communication",
+      "analysis": "Strong grasp of QoS implementation and Transport Layer services - correctly identified that reliable delivery and congestion management occur at Layer 4",
+      "explanation": "The Transport Layer provides reliable, ordered delivery of data and manages flow control and congestion control. For QoS implementations prioritizing video traffic, the Transport Layer's connection-oriented services (like TCP) ensure reliable delivery while managing network congestion through windowing and acknowledgment mechanisms."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [
+      "Continue practicing complex troubleshooting scenarios to maintain diagnostic skills",
+      "Explore real-world implementations of OSI layer interactions",
+      "Study advanced topics like cross-layer optimization and protocol stack interactions"
+    ],
+    "encouragement": "Outstanding performance! You demonstrated exceptional understanding of the OSI model layers and their practical applications. Your ability to correctly diagnose layer-specific issues and understand the responsibilities of each layer shows mastery-level comprehension of networking fundamentals.",
+    "recommendation": "With your solid foundation, you're ready to advance to more complex networking topics such as advanced routing protocols, network security implementation, or software-defined networking concepts. Consider pursuing hands-on labs or certification materials to apply this theoretical knowledge in practical scenarios."
+  },
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 0
+}

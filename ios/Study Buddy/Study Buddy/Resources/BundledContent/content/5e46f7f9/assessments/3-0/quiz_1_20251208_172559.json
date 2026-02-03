@@ -1,0 +1,56 @@
+{
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Port Address Translation (PAT)",
+      "correct_answer": "Port Address Translation (PAT)",
+      "analysis": "Great job!",
+      "explanation": "PAT (Port Address Translation) allows multiple internal devices to share a single public IP by using different port numbers to distinguish between connections, making it ideal for this scenario where multiple devices need simultaneous internet access."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Destination NAT (DNAT) because incoming traffic destination is being translated",
+      "correct_answer": "Destination NAT (DNAT) because incoming traffic destination is being translated",
+      "analysis": "Great job!",
+      "explanation": "DNAT (Destination NAT) is used when translating the destination address of incoming packets, typically for publishing internal services to external users. The firewall translates the destination from the public IP to the private server IP."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "1:1 NAT preserves all ports and protocols, enabling full bidirectional communication",
+      "correct_answer": "1:1 NAT preserves all ports and protocols, enabling full bidirectional communication",
+      "analysis": "Great job!",
+      "explanation": "1:1 NAT creates a direct mapping between private and public IP addresses, preserving all port numbers and supporting any protocol. This is essential for servers or applications requiring specific ports or protocols that PAT might not handle well."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "No inbound translation rule exists; configure DNAT for the file server",
+      "correct_answer": "No inbound translation rule exists; configure DNAT for the file server",
+      "analysis": "Great job!",
+      "explanation": "PAT handles outbound connections by creating dynamic mappings, but inbound connections require explicit DNAT rules to translate the destination address from public IP to the internal server's private IP."
+    },
+    {
+      "question_num": 5,
+      "is_correct": false,
+      "student_choice": "Configure 1:1 NAT for bidirectional access",
+      "correct_answer": "Configure SNAT with static IP mapping for each server",
+      "analysis": "The correct answer was: Configure SNAT with static IP mapping for each server",
+      "explanation": "SNAT with static IP mapping ensures each server's outbound traffic consistently uses a specific public IP address, providing the required audit trail capability while meeting the outbound internet access requirement."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. Congratulations on passing with 80%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

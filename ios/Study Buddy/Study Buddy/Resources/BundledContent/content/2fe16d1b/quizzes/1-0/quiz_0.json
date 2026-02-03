@@ -1,0 +1,61 @@
+{
+  "topic_name": "Introduction to AI and ML",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between artificial intelligence and machine learning?",
+      "options": [
+        "AI is a subset of ML that focuses on neural networks",
+        "ML is a subset of AI that learns patterns from data without explicit programming",
+        "AI and ML are identical terms used interchangeably",
+        "ML requires more computational power than AI"
+      ],
+      "correct_index": 1,
+      "explanation": "Machine Learning is a subset of Artificial Intelligence. AI is the broader concept of machines performing tasks that typically require human intelligence, while ML specifically refers to systems that can learn and improve from data without being explicitly programmed for every scenario."
+    },
+    {
+      "question": "A company wants to predict customer purchase amounts based on their browsing history and past transactions. Which type of machine learning problem is this?",
+      "options": [
+        "Unsupervised learning - clustering",
+        "Supervised learning - classification",
+        "Supervised learning - regression",
+        "Reinforcement learning"
+      ],
+      "correct_index": 2,
+      "explanation": "This is a supervised regression problem because we have labeled data (past transactions with known purchase amounts) and we want to predict a continuous numerical value (purchase amount) rather than discrete categories."
+    },
+    {
+      "question": "When would unsupervised learning be the most appropriate choice?",
+      "options": [
+        "When you need to predict stock prices using historical data",
+        "When you want to classify emails as spam or not spam",
+        "When you want to discover hidden customer segments in your database without knowing what segments exist",
+        "When you need to train a game-playing AI through trial and error"
+      ],
+      "correct_index": 2,
+      "explanation": "Unsupervised learning is ideal when you want to discover hidden patterns or structures in data without having predefined labels or targets. Customer segmentation without prior knowledge of segments is a classic unsupervised learning application, typically solved using clustering algorithms."
+    },
+    {
+      "question": "A recommendation system suggests products by analyzing what similar users have purchased. If the system improves its recommendations based on whether users click on suggested items, what learning approach is being used?",
+      "options": [
+        "Pure supervised learning",
+        "Pure unsupervised learning",
+        "Pure reinforcement learning",
+        "A combination of unsupervised learning (finding similar users) and reinforcement learning (improving from feedback)"
+      ],
+      "correct_index": 3,
+      "explanation": "This system combines unsupervised learning (finding similar users through clustering or collaborative filtering) with reinforcement learning principles (improving recommendations based on user feedback/clicks). The system learns from the environment (user interactions) to optimize its recommendation policy."
+    },
+    {
+      "question": "Why might a traditional rule-based programming approach be insufficient for image recognition tasks?",
+      "options": [
+        "Rule-based systems are too slow for image processing",
+        "It's impossible to manually define rules for all possible variations in lighting, angles, objects, and contexts in images",
+        "Rule-based systems require too much memory",
+        "Images contain too many pixels to process"
+      ],
+      "correct_index": 1,
+      "explanation": "The complexity and variability of real-world images make it practically impossible to write explicit rules that can handle all possible scenarios (different lighting conditions, viewing angles, object variations, backgrounds, etc.). Machine learning approaches can automatically learn these complex patterns from data, which is why they're preferred for image recognition tasks."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "BGP Internet Routing",
+  "questions": [
+    {
+      "question": "Why is BGP considered a 'path vector' routing protocol rather than a distance vector protocol?",
+      "options": [
+        "BGP only counts hop counts to determine the best path",
+        "BGP maintains the complete AS path to prevent routing loops and enable policy decisions",
+        "BGP uses link-state advertisements like OSPF",
+        "BGP automatically selects the fastest path based on bandwidth"
+      ],
+      "correct_index": 1,
+      "explanation": "BGP is a path vector protocol because it maintains the complete autonomous system (AS) path in its routing updates. This allows it to prevent routing loops by rejecting routes that contain its own AS number, and enables sophisticated policy-based routing decisions based on the specific AS path."
+    },
+    {
+      "question": "A company with AS 65001 wants to implement load balancing across two ISPs while ensuring that inbound traffic from AS 65002 always uses ISP-A. Which BGP attribute should they primarily manipulate?",
+      "options": [
+        "LOCAL_PREF on outbound advertisements",
+        "MED on outbound advertisements",
+        "AS_PATH prepending on advertisements to ISP-B",
+        "ORIGIN code modification"
+      ],
+      "correct_index": 2,
+      "explanation": "AS_PATH prepending makes the route through ISP-B appear longer to AS 65002, making the path through ISP-A more attractive. LOCAL_PREF only affects outbound traffic decisions within the AS, while MED is a suggestion that receiving ASes may ignore."
+    },
+    {
+      "question": "In what scenario would an organization most likely need to implement BGP instead of using static default routes?",
+      "options": [
+        "They have a single internet connection and want redundancy",
+        "They are multihomed to multiple ISPs and need intelligent path selection",
+        "They want to reduce their routing table size",
+        "They need faster convergence than OSPF provides"
+      ],
+      "correct_index": 1,
+      "explanation": "BGP is essential when multihomed to multiple ISPs because it enables intelligent path selection, load balancing, and policy-based routing decisions. Static routes cannot provide the dynamic path selection and redundancy needed in multihomed environments."
+    },
+    {
+      "question": "Why does BGP use TCP as its transport protocol instead of UDP like many other routing protocols?",
+      "options": [
+        "TCP provides faster packet transmission for large routing tables",
+        "BGP requires reliable delivery and error correction for routing table synchronization",
+        "UDP cannot handle the encryption required for BGP security",
+        "TCP allows for better multicast distribution of routing updates"
+      ],
+      "correct_index": 1,
+      "explanation": "BGP uses TCP because it needs reliable, ordered delivery of routing information between peers. BGP sessions can transfer large routing tables and must maintain synchronization, which requires the reliability and error correction that TCP provides."
+    },
+    {
+      "question": "An ISP notices that their BGP router is rejecting route advertisements from a peer. What is the most likely cause if the routes contain the ISP's own AS number?",
+      "options": [
+        "The peer is advertising invalid network addresses",
+        "BGP's loop prevention mechanism is working correctly",
+        "There is a configuration error in the BGP communities",
+        "The NEXT_HOP attribute is unreachable"
+      ],
+      "correct_index": 1,
+      "explanation": "BGP automatically rejects routes that contain its own AS number in the AS_PATH to prevent routing loops. This is a fundamental loop prevention mechanism - if a route advertisement contains your own AS number, accepting it would create a potential loop."
+    }
+  ],
+  "passing_score": 80
+}

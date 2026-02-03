@@ -1,0 +1,61 @@
+{
+  "topic_name": "Support Vector Machines",
+  "questions": [
+    {
+      "question": "What is the primary objective of Support Vector Machines when finding the optimal separating hyperplane?",
+      "options": [
+        "Minimize the total number of misclassified training examples",
+        "Maximize the margin between the closest points of different classes",
+        "Minimize the computational complexity of the classification",
+        "Maximize the number of support vectors used in the decision boundary"
+      ],
+      "correct_index": 1,
+      "explanation": "SVM aims to maximize the margin (distance) between the hyperplane and the closest data points from each class. This creates the most robust decision boundary that generalizes well to new data."
+    },
+    {
+      "question": "In which scenario would you most likely choose SVM over other classification algorithms?",
+      "options": [
+        "When you have a very large dataset with millions of samples",
+        "When you need high interpretability and want to understand feature importance",
+        "When you have a moderate-sized dataset with complex, non-linear decision boundaries",
+        "When you need very fast prediction times in production"
+      ],
+      "correct_index": 2,
+      "explanation": "SVM excels with moderate-sized datasets and complex decision boundaries, especially when using kernels. It struggles with very large datasets due to computational complexity, offers limited interpretability, and can be slower for predictions compared to simpler models."
+    },
+    {
+      "question": "What role do support vectors play in the SVM model?",
+      "options": [
+        "They are outliers that need to be removed before training",
+        "They are the data points that lie exactly on the decision boundary",
+        "They are the data points closest to the hyperplane that define the margin",
+        "They are randomly selected points used to speed up training"
+      ],
+      "correct_index": 2,
+      "explanation": "Support vectors are the training data points that lie closest to the decision hyperplane and define the margin. These are the critical points that determine the position and orientation of the hyperplane."
+    },
+    {
+      "question": "How does the kernel trick enable SVM to handle non-linearly separable data?",
+      "options": [
+        "It removes non-linear data points from the training set",
+        "It transforms the data into a higher-dimensional space where it becomes linearly separable",
+        "It creates multiple linear hyperplanes to approximate non-linear boundaries",
+        "It applies non-linear activation functions to the output"
+      ],
+      "correct_index": 1,
+      "explanation": "The kernel trick implicitly maps the input data into a higher-dimensional feature space where the data becomes linearly separable, allowing SVM to find a linear hyperplane in this space that corresponds to a non-linear boundary in the original space."
+    },
+    {
+      "question": "What happens when you increase the regularization parameter C in SVM?",
+      "options": [
+        "The model becomes more tolerant of misclassifications and creates a wider margin",
+        "The model tries harder to classify all training points correctly, potentially reducing the margin",
+        "The number of support vectors always increases",
+        "The model automatically selects a different kernel function"
+      ],
+      "correct_index": 1,
+      "explanation": "Increasing C makes the SVM less tolerant of misclassifications, causing it to try harder to correctly classify all training points. This often results in a smaller margin and potential overfitting, while decreasing C allows more misclassifications but creates a wider, more generalizable margin."
+    }
+  ],
+  "passing_score": 80
+}

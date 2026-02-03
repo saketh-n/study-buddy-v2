@@ -1,0 +1,61 @@
+{
+  "topic_name": "GLP-1 Receptor Signaling",
+  "questions": [
+    {
+      "question": "When GLP-1 binds to its receptor on pancreatic beta cells, which sequence of events correctly describes the initial signaling cascade?",
+      "options": [
+        "GLP-1R activation \u2192 Gs protein coupling \u2192 adenylyl cyclase activation \u2192 cAMP increase",
+        "GLP-1R activation \u2192 Gq protein coupling \u2192 phospholipase C activation \u2192 IP3/DAG increase",
+        "GLP-1R activation \u2192 Gi protein coupling \u2192 adenylyl cyclase inhibition \u2192 cAMP decrease",
+        "GLP-1R activation \u2192 direct ion channel opening \u2192 calcium influx \u2192 insulin release"
+      ],
+      "correct_index": 0,
+      "explanation": "GLP-1 receptors are GPCRs that couple to Gs proteins, which activate adenylyl cyclase, leading to increased cAMP levels. This is the primary pathway for GLP-1 signaling in beta cells."
+    },
+    {
+      "question": "A researcher observes that GLP-1 receptor agonist treatment increases insulin secretion only in the presence of elevated glucose levels. This glucose-dependent effect is primarily explained by:",
+      "options": [
+        "GLP-1 receptors are only expressed when glucose levels are high",
+        "High glucose enhances cAMP-dependent protein kinase A activity and provides ATP for insulin vesicle exocytosis",
+        "Glucose directly binds to GLP-1 receptors to increase their affinity for agonists",
+        "GLP-1 agonists cannot cross cell membranes without glucose transporters"
+      ],
+      "correct_index": 1,
+      "explanation": "The glucose-dependent insulinotropic effect occurs because high glucose provides ATP for exocytosis and enhances PKA-mediated phosphorylation events. GLP-1 signaling amplifies glucose-stimulated insulin secretion rather than initiating it independently."
+    },
+    {
+      "question": "In a patient with type 2 diabetes, why would understanding cAMP degradation by phosphodiesterases be clinically relevant when prescribing GLP-1 receptor agonists?",
+      "options": [
+        "PDE inhibitors would antagonize GLP-1 agonist effects by blocking receptor binding",
+        "PDE activity determines how long the beneficial cAMP-mediated effects of GLP-1 agonists persist",
+        "PDEs convert GLP-1 agonists into inactive metabolites",
+        "PDE inhibition is required for GLP-1 receptors to couple with Gs proteins"
+      ],
+      "correct_index": 1,
+      "explanation": "Phosphodiesterases degrade cAMP, terminating the signaling cascade initiated by GLP-1 receptor activation. Understanding PDE activity helps predict duration of therapeutic effects and potential drug interactions with PDE inhibitors."
+    },
+    {
+      "question": "Which downstream effect of GLP-1 receptor-mediated cAMP elevation would be most directly responsible for the weight loss observed in patients treated with GLP-1 agonists?",
+      "options": [
+        "PKA-mediated phosphorylation of insulin secretory vesicles in pancreatic beta cells",
+        "cAMP response element-binding protein (CREB) activation in hypothalamic satiety centers",
+        "Direct activation of hormone-sensitive lipase in adipose tissue",
+        "Enhanced glucose uptake in skeletal muscle through GLUT4 translocation"
+      ],
+      "correct_index": 1,
+      "explanation": "Weight loss from GLP-1 agonists primarily results from central nervous system effects on satiety and food intake, mediated by CREB activation in hypothalamic neurons, rather than direct peripheral metabolic effects."
+    },
+    {
+      "question": "A pharmaceutical company is developing a new GLP-1 receptor agonist and wants to minimize hypoglycemia risk. Based on the receptor signaling mechanism, which approach would be most scientifically sound?",
+      "options": [
+        "Design an agonist that bypasses cAMP and directly activates protein kinase A",
+        "Create a partial agonist that maintains glucose-dependent signaling while reducing maximum receptor activation",
+        "Develop an agonist that only works when blood glucose exceeds 200 mg/dL",
+        "Engineer an agonist that simultaneously blocks glucagon receptors"
+      ],
+      "correct_index": 1,
+      "explanation": "A partial agonist would preserve the natural glucose-dependent mechanism of GLP-1 signaling (which inherently reduces hypoglycemia risk) while potentially reducing excessive activation that might override glucose-dependent safety mechanisms."
+    }
+  ],
+  "passing_score": 80
+}

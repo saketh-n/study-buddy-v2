@@ -1,0 +1,61 @@
+{
+  "topic_name": "ARP and Address Resolution",
+  "questions": [
+    {
+      "question": "Why is ARP necessary in Ethernet networks when devices already have IP addresses?",
+      "options": [
+        "Because IP addresses change frequently and need constant verification",
+        "Because Ethernet frames require destination MAC addresses, but applications work with IP addresses",
+        "Because routers cannot process IP addresses directly",
+        "Because MAC addresses are more secure than IP addresses"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP is needed because the data link layer (Ethernet) requires MAC addresses to deliver frames locally, while the network layer uses IP addresses. ARP bridges this gap by resolving IP addresses to MAC addresses."
+    },
+    {
+      "question": "A host needs to send data to 192.168.1.100 but doesn't have the MAC address in its ARP cache. What happens next?",
+      "options": [
+        "The host drops the packet and reports an error",
+        "The host sends an ARP request broadcast asking 'Who has 192.168.1.100?'",
+        "The host sends the packet using a default MAC address",
+        "The host contacts the DHCP server to resolve the address"
+      ],
+      "correct_index": 1,
+      "explanation": "When a host needs to communicate with an IP address but lacks the corresponding MAC address, it broadcasts an ARP request to all devices on the local network asking which device owns that IP address."
+    },
+    {
+      "question": "In which scenario would ARP poisoning be most likely to succeed?",
+      "options": [
+        "On a network using static ARP entries exclusively",
+        "On a switched network where ARP entries are frequently updated",
+        "On a network with proper ARP inspection enabled",
+        "On a network using only IPv6 addresses"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP poisoning works best when ARP entries are dynamically updated, allowing an attacker to send malicious ARP responses that overwrite legitimate entries in victims' ARP caches."
+    },
+    {
+      "question": "When a router receives a packet destined for a host on a different subnet, why might the router still need to use ARP?",
+      "options": [
+        "To find the MAC address of the original sender",
+        "To find the MAC address of the destination host on the remote subnet",
+        "To find the MAC address of the next-hop router or the final destination if directly connected",
+        "ARP is not needed when routing between subnets"
+      ],
+      "correct_index": 2,
+      "explanation": "Routers use ARP to find the MAC address of the next-hop device in the routing path, or the final destination if it's on a directly connected subnet. Each hop requires proper Layer 2 addressing."
+    },
+    {
+      "question": "What is the primary reason that ARP tables have timeout values instead of storing entries permanently?",
+      "options": [
+        "To prevent the ARP table from consuming too much memory",
+        "To ensure MAC addresses stay synchronized when network devices are replaced or moved",
+        "To reduce network broadcast traffic",
+        "To comply with networking security standards"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP entries expire to handle dynamic network changes, such as when devices are replaced, network cards are changed, or hosts move to different network segments, ensuring the mapping remains accurate."
+    }
+  ],
+  "passing_score": 80
+}

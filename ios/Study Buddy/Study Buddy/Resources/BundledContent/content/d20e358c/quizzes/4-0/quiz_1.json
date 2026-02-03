@@ -1,0 +1,61 @@
+{
+  "topic_name": "Kubernetes Foundation Concepts",
+  "questions": [
+    {
+      "question": "Your application experiences unpredictable traffic spikes that can increase load by 300% within minutes. Which Kubernetes feature would be most appropriate to automatically handle this scenario?",
+      "options": [
+        "Horizontal Pod Autoscaler (HPA) with CPU and memory metrics",
+        "Manual scaling of replica sets during business hours",
+        "Vertical Pod Autoscaler (VPA) to increase container resources",
+        "DaemonSet to ensure pods run on every node"
+      ],
+      "correct_index": 0,
+      "explanation": "HPA automatically scales the number of pod replicas based on observed metrics like CPU utilization, which is ideal for handling sudden traffic spikes by creating more instances of the application."
+    },
+    {
+      "question": "A development team wants to ensure their microservice can survive node failures and always maintain at least 2 running instances. Which Kubernetes approach best addresses both requirements?",
+      "options": [
+        "Deploy pods directly with anti-affinity rules",
+        "Use a Deployment with replica count of 3 and pod anti-affinity rules",
+        "Use a StatefulSet with persistent volumes",
+        "Create multiple single-pod Deployments across different namespaces"
+      ],
+      "correct_index": 1,
+      "explanation": "A Deployment with 3 replicas and anti-affinity rules ensures high availability through the Deployment's self-healing capabilities while anti-affinity spreads pods across nodes to survive node failures."
+    },
+    {
+      "question": "Why would you choose Kubernetes orchestration over simply running containers with Docker Compose for a production e-commerce application?",
+      "options": [
+        "Docker Compose cannot run multiple containers simultaneously",
+        "Kubernetes provides automatic scaling, service discovery, and self-healing across multiple machines",
+        "Kubernetes containers start faster than Docker Compose containers",
+        "Docker Compose requires manual configuration of each container's IP address"
+      ],
+      "correct_index": 1,
+      "explanation": "Kubernetes excels in production environments by providing enterprise features like automatic scaling, built-in service discovery, self-healing capabilities, and multi-node orchestration that Docker Compose lacks."
+    },
+    {
+      "question": "Your application's database pod keeps crashing due to memory issues, and you notice the cluster has available memory on other nodes. What is the most likely cause and solution?",
+      "options": [
+        "Pod resource limits are too restrictive; increase memory limits and requests",
+        "The node selector is misconfigured; update node labels",
+        "Service mesh is causing memory leaks; restart the proxy containers",
+        "Persistent volume is full; add more storage capacity"
+      ],
+      "correct_index": 0,
+      "explanation": "When a pod crashes due to memory issues despite cluster availability, it's typically due to resource limits being too low. Kubernetes enforces these limits strictly, so increasing memory limits and requests would resolve the issue."
+    },
+    {
+      "question": "In a distributed system with 5 microservices, how does Kubernetes service discovery solve the problem of services finding and communicating with each other?",
+      "options": [
+        "Each pod gets a static IP address that never changes during restarts",
+        "Services provide stable DNS names and load balancing to dynamic pod endpoints",
+        "Kubernetes automatically configures firewall rules between all pods",
+        "All pods share the same network interface and can communicate directly"
+      ],
+      "correct_index": 1,
+      "explanation": "Kubernetes Services provide stable DNS names and virtual IP addresses that route traffic to healthy pod endpoints, solving the challenge of dynamic pod IP addresses in distributed systems."
+    }
+  ],
+  "passing_score": 80
+}

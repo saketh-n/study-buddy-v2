@@ -1,0 +1,61 @@
+{
+  "topic_name": "Basic Firewalls",
+  "questions": [
+    {
+      "question": "What is the fundamental limitation of stateless firewalls when filtering TCP traffic?",
+      "options": [
+        "They cannot inspect packet headers",
+        "They cannot track connection state or remember previous packets",
+        "They only work at Layer 2",
+        "They cannot filter based on port numbers"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateless firewalls examine each packet independently without maintaining connection state information, making it difficult to properly handle TCP sessions which require tracking connection establishment and teardown."
+    },
+    {
+      "question": "A network administrator needs to allow outbound web traffic (HTTP/HTTPS) from internal users while blocking inbound connections to the same ports. Why would a stateless firewall struggle with this requirement?",
+      "options": [
+        "HTTP and HTTPS use dynamic port numbers",
+        "Stateless firewalls cannot differentiate between inbound and outbound traffic",
+        "Without connection tracking, distinguishing between legitimate response packets and new inbound connections is difficult",
+        "Stateless firewalls only work with UDP traffic"
+      ],
+      "correct_index": 2,
+      "explanation": "Since stateless firewalls don't track connection state, they cannot determine if an inbound packet on port 80/443 is a legitimate response to an outbound request or an unwanted new connection attempt."
+    },
+    {
+      "question": "In Linux iptables, what happens when a packet matches multiple rules in the same chain?",
+      "options": [
+        "All matching rules are applied simultaneously",
+        "The first matching rule determines the action and processing stops",
+        "The last matching rule takes precedence",
+        "An error is generated and the packet is dropped"
+      ],
+      "correct_index": 1,
+      "explanation": "Iptables processes rules sequentially from top to bottom, and when a packet matches a rule, the specified action (ACCEPT, DROP, etc.) is taken and rule processing stops for that packet."
+    },
+    {
+      "question": "When would you choose to implement a Cisco ACL using 'established' keyword in a stateless filtering scenario?",
+      "options": [
+        "To allow all TCP traffic regardless of connection state",
+        "To permit TCP packets that are part of an existing connection (ACK bit set)",
+        "To block all incoming TCP connection attempts",
+        "To enable stateful packet inspection"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'established' keyword in Cisco ACLs allows TCP packets with the ACK bit set, which typically indicates they are part of an existing connection rather than new connection attempts, providing a basic form of pseudo-stateful filtering."
+    },
+    {
+      "question": "A company's email server needs to receive SMTP traffic from external sources while preventing other inbound connections. How should the firewall rules be ordered for optimal security?",
+      "options": [
+        "Most specific rules first, then general deny-all rule",
+        "General allow-all rule first, then specific deny rules",
+        "Deny-all rule first, then specific allow rules",
+        "Random order since all rules are processed"
+      ],
+      "correct_index": 0,
+      "explanation": "Firewall rules should be ordered from most specific to least specific, with a default deny-all rule at the end. This allows the specific SMTP allow rule to be processed first, while the final deny-all rule blocks everything else that wasn't explicitly permitted."
+    }
+  ],
+  "passing_score": 80
+}

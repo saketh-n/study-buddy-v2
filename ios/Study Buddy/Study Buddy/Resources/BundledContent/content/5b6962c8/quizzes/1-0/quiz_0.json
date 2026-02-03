@@ -1,0 +1,61 @@
+{
+  "topic_name": "Network Security Fundamentals",
+  "questions": [
+    {
+      "question": "A security analyst notices unusual traffic on port 443 that appears to be unencrypted data. What is the most likely explanation for this security concern?",
+      "options": [
+        "The traffic is normal HTTP web browsing",
+        "An attacker is using port 443 to disguise malicious unencrypted traffic",
+        "The firewall is blocking HTTPS connections",
+        "Port 443 is reserved for FTP transfers"
+      ],
+      "correct_index": 1,
+      "explanation": "Port 443 is reserved for HTTPS (encrypted web traffic). Unencrypted data on this port suggests an attacker is using the port to bypass security controls that typically allow port 443 traffic, assuming it's legitimate HTTPS."
+    },
+    {
+      "question": "When implementing network segmentation for a company's database servers, which approach would provide the strongest security posture?",
+      "options": [
+        "Place database servers on the same network as web servers for faster communication",
+        "Create a separate VLAN for database servers with strict access controls between network segments",
+        "Put all servers in the DMZ for easier management",
+        "Use the same subnet but different IP ranges for organization"
+      ],
+      "correct_index": 1,
+      "explanation": "Network segmentation using VLANs with strict access controls creates isolated network boundaries, limiting attack surface and containing potential breaches. This follows the principle of least privilege and defense in depth."
+    },
+    {
+      "question": "A company wants to allow remote employees to access internal resources securely. Why would a VPN be preferred over simply opening firewall ports for specific applications?",
+      "options": [
+        "VPNs are faster than direct connections",
+        "VPNs provide encryption and authentication for all traffic in a secure tunnel",
+        "Firewalls cannot handle multiple port configurations",
+        "VPNs are less expensive than firewall rules"
+      ],
+      "correct_index": 1,
+      "explanation": "VPNs create encrypted tunnels that protect all communication between remote users and internal networks, while also providing strong authentication. Opening firewall ports exposes services directly to the internet without encryption or proper access control."
+    },
+    {
+      "question": "During a security assessment, you discover that a network is using both TCP and UDP protocols for different services. In what scenario would UDP be the appropriate choice despite its lack of built-in reliability features?",
+      "options": [
+        "For banking transactions requiring guaranteed delivery",
+        "For real-time video streaming where speed is more important than perfect delivery",
+        "For file transfers that must arrive completely intact",
+        "For email communication requiring acknowledgment"
+      ],
+      "correct_index": 1,
+      "explanation": "UDP is connectionless and faster than TCP because it doesn't include error checking and retransmission. For real-time applications like video streaming, occasional packet loss is acceptable, but delays from TCP's reliability mechanisms would degrade performance."
+    },
+    {
+      "question": "An organization implements a three-tier network architecture with web servers, application servers, and database servers. From a security perspective, what is the primary benefit of this design?",
+      "options": [
+        "It improves network speed by distributing traffic evenly",
+        "It reduces hardware costs by consolidating server functions",
+        "It creates multiple security boundaries and limits lateral movement during an attack",
+        "It simplifies network management by grouping similar services"
+      ],
+      "correct_index": 2,
+      "explanation": "Three-tier architecture creates security zones with controlled communication paths between layers. If one tier is compromised, attackers face additional security controls when trying to move laterally to other tiers, implementing defense in depth principles."
+    }
+  ],
+  "passing_score": 80
+}

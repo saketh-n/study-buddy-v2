@@ -1,0 +1,61 @@
+{
+  "topic_name": "Ensemble Methods",
+  "questions": [
+    {
+      "question": "What is the primary reason why ensemble methods like random forests typically outperform individual decision trees?",
+      "options": [
+        "They always use more training data than single trees",
+        "They reduce overfitting by averaging predictions from multiple diverse models",
+        "They automatically select the best features without human intervention",
+        "They train faster because the workload is distributed across multiple trees"
+      ],
+      "correct_index": 1,
+      "explanation": "Ensemble methods work by combining predictions from multiple diverse models, which reduces variance and overfitting. The diversity comes from training models on different subsets of data or features, and averaging their predictions leads to better generalization."
+    },
+    {
+      "question": "In which scenario would boosting methods like AdaBoost be most advantageous compared to bagging methods?",
+      "options": [
+        "When you have a very large dataset and want to reduce training time",
+        "When your base models are already very strong and have low bias",
+        "When you have high bias (underfitting) and want to sequentially improve weak learners",
+        "When you want to train models in parallel to speed up computation"
+      ],
+      "correct_index": 2,
+      "explanation": "Boosting excels when you have weak learners with high bias. It sequentially trains models where each new model focuses on correcting the errors of previous models, effectively reducing bias. Bagging is better for high variance problems."
+    },
+    {
+      "question": "How does the bootstrap sampling in bagging help improve model performance?",
+      "options": [
+        "It increases the total amount of training data available to each model",
+        "It ensures each model sees exactly the same training examples",
+        "It creates diverse training sets that reduce correlation between individual models",
+        "It automatically removes outliers and noisy data points"
+      ],
+      "correct_index": 2,
+      "explanation": "Bootstrap sampling creates different training sets for each model by sampling with replacement. This introduces diversity between models, reducing their correlation and leading to lower variance when predictions are averaged together."
+    },
+    {
+      "question": "A data scientist notices their random forest model is still overfitting despite using ensemble methods. What would be the most effective approach to address this?",
+      "options": [
+        "Increase the number of trees in the forest",
+        "Reduce the number of features considered at each split (lower mtry parameter)",
+        "Use bootstrap sampling with replacement more aggressively",
+        "Switch from bagging to boosting methods"
+      ],
+      "correct_index": 1,
+      "explanation": "Reducing the number of features considered at each split (mtry parameter) increases randomness and diversity among trees, which helps reduce overfitting. Simply adding more trees won't solve overfitting, and boosting might actually make overfitting worse."
+    },
+    {
+      "question": "Why might you choose bagging over boosting when working with a noisy dataset containing many outliers?",
+      "options": [
+        "Bagging trains faster on noisy data",
+        "Bagging automatically removes outliers during preprocessing",
+        "Bagging is less sensitive to outliers because it doesn't sequentially focus on misclassified examples",
+        "Bagging uses more sophisticated algorithms that handle noise better"
+      ],
+      "correct_index": 2,
+      "explanation": "Boosting sequentially focuses on previously misclassified examples, which means it can get distracted by outliers and noise. Bagging trains models independently and averages results, making it more robust to outliers since no single noisy example dominates the learning process."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Stateful Firewalls",
+  "questions": [
+    {
+      "question": "What is the primary advantage of stateful firewalls over stateless firewalls when handling TCP connections?",
+      "options": [
+        "They can inspect packet payloads for malicious content",
+        "They maintain connection state tables to track legitimate return traffic",
+        "They provide faster packet processing by caching routing decisions",
+        "They encrypt all traffic passing through the firewall"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateful firewalls track connection states in memory tables, allowing them to automatically permit return traffic for established connections without requiring explicit rules for every possible return path."
+    },
+    {
+      "question": "In Linux iptables with conntrack, when would you use the connection state 'RELATED' in a firewall rule?",
+      "options": [
+        "To allow packets from previously established TCP connections",
+        "To permit new connection attempts from trusted sources",
+        "To allow traffic associated with existing connections like FTP data channels",
+        "To block packets that don't match any existing connection"
+      ],
+      "correct_index": 2,
+      "explanation": "The RELATED state identifies packets that are associated with existing connections but are not part of the original flow, such as FTP data connections spawned from control connections or ICMP error messages."
+    },
+    {
+      "question": "Your company runs web servers behind a pfSense firewall. Users report that while they can access websites, file downloads frequently fail. What stateful firewall configuration issue is most likely causing this problem?",
+      "options": [
+        "Connection timeout values are set too low for large file transfers",
+        "The firewall is blocking all HTTP traffic on port 80",
+        "NAT rules are configured incorrectly for the web servers",
+        "The firewall lacks rules allowing initial web connections"
+      ],
+      "correct_index": 0,
+      "explanation": "Large file downloads require extended connection times. If stateful timeout values are too aggressive, the firewall may prematurely remove connection entries, causing established downloads to be blocked when subsequent packets arrive."
+    },
+    {
+      "question": "In Cisco ASA, what happens when the connection table becomes full and new connections are attempted?",
+      "options": [
+        "The oldest connections are automatically terminated to make room",
+        "All new connection attempts are dropped until existing connections close",
+        "The firewall enters failsafe mode and allows all traffic",
+        "Connection limits are automatically increased by 25%"
+      ],
+      "correct_index": 1,
+      "explanation": "When the ASA connection table reaches capacity, new connection attempts are dropped to protect system resources. Existing connections continue to function normally, but no new sessions can be established until table space becomes available."
+    },
+    {
+      "question": "A network administrator needs to troubleshoot connection tracking issues on a Linux firewall. Which approach would provide the most useful information about current connection states?",
+      "options": [
+        "Examining /var/log/messages for firewall alerts",
+        "Using 'cat /proc/net/nf_conntrack' to view active connection entries",
+        "Running 'netstat -an' to see all open sockets",
+        "Checking 'iptables -L' to review current rule sets"
+      ],
+      "correct_index": 1,
+      "explanation": "The /proc/net/nf_conntrack file provides real-time visibility into the kernel's connection tracking table, showing connection states, timeouts, packet/byte counters, and other stateful information that directly relates to firewall decision-making."
+    }
+  ],
+  "passing_score": 80
+}

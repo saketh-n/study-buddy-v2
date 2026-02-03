@@ -20,13 +20,24 @@ from . import content_cache
 # Load environment variables
 load_dotenv()
 
-DEFAULT_PORT = "5173"
-port = os.getenv("FRONTEND_PORT", DEFAULT_PORT).strip()
+# CORS Configuration
+# Default origins for frontend development
+DEFAULT_FRONTEND_PORT = "5173"
+frontend_port = os.getenv("FRONTEND_PORT", DEFAULT_FRONTEND_PORT).strip()
 
-FRONTEND_ORIGINS = [
-    f"http://localhost:{port}",
-    f"http://127.0.0.1:{port}",
-]
+# Allow custom origins via environment variable (comma-separated)
+# Example: ALLOWED_ORIGINS=http://localhost:5173,http://192.168.50.81:5173,*
+custom_origins = os.getenv("ALLOWED_ORIGINS", "").strip()
+
+if custom_origins:
+    # Use custom origins if provided
+    ALLOWED_ORIGINS = [o.strip() for o in custom_origins.split(",") if o.strip()]
+else:
+    # Default to localhost origins for development
+    ALLOWED_ORIGINS = [
+        f"http://localhost:{frontend_port}",
+        f"http://127.0.0.1:{frontend_port}",
+    ]
 
 # Configure logging
 logging.basicConfig(
@@ -46,9 +57,10 @@ app = FastAPI(
 )
 
 # Configure CORS
+# Supports LAN access for iOS testing and cloud deployment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o.strip() for o in FRONTEND_ORIGINS],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

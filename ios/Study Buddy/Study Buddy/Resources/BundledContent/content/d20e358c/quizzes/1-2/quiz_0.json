@@ -1,0 +1,61 @@
+{
+  "topic_name": "Amazon EC2",
+  "questions": [
+    {
+      "question": "What is the primary advantage of Amazon EC2's elasticity feature for a web application experiencing unpredictable traffic patterns?",
+      "options": [
+        "It automatically backs up your data to prevent loss",
+        "It allows you to scale compute resources up or down based on demand without manual intervention",
+        "It provides built-in load balancing across multiple regions",
+        "It encrypts all data transmission between servers"
+      ],
+      "correct_index": 1,
+      "explanation": "EC2's elasticity allows automatic scaling of compute resources based on demand, which is crucial for handling unpredictable traffic without over-provisioning or under-provisioning resources."
+    },
+    {
+      "question": "A startup needs to run a development environment that will be used inconsistently throughout the month. Which EC2 pricing model would be most cost-effective?",
+      "options": [
+        "Reserved Instances with 3-year commitment",
+        "On-Demand Instances",
+        "Spot Instances",
+        "Dedicated Hosts"
+      ],
+      "correct_index": 2,
+      "explanation": "Spot Instances offer significant cost savings (up to 90%) for workloads that can tolerate interruption, making them ideal for development environments with flexible usage patterns."
+    },
+    {
+      "question": "Why would you choose EC2 over a traditional containerization solution like Docker running on your own servers for a mission-critical application?",
+      "options": [
+        "EC2 instances are always faster than containers",
+        "EC2 provides managed infrastructure, high availability, and eliminates server maintenance overhead",
+        "EC2 instances use less memory than containers",
+        "EC2 automatically converts applications to microservices"
+      ],
+      "correct_index": 1,
+      "explanation": "EC2 provides managed infrastructure with built-in high availability, automatic hardware replacement, and eliminates the need to manage physical servers, which is crucial for mission-critical applications."
+    },
+    {
+      "question": "When designing a multi-tier web application on EC2, what is the most important factor to consider regarding instance placement for optimal performance and reliability?",
+      "options": [
+        "All instances should be placed in the same Availability Zone for lowest latency",
+        "Instances should be distributed across multiple Availability Zones for fault tolerance",
+        "All instances should use the same instance type for consistency",
+        "Instances should be placed in different regions for better performance"
+      ],
+      "correct_index": 1,
+      "explanation": "Distributing instances across multiple Availability Zones provides fault tolerance and high availability, as each AZ is a separate failure domain with independent power and networking."
+    },
+    {
+      "question": "A company needs to run batch processing jobs that can take 6-12 hours to complete and can be interrupted and restarted. The jobs run once per week. What EC2 strategy would minimize costs while meeting requirements?",
+      "options": [
+        "Use Reserved Instances with partial upfront payment",
+        "Use On-Demand Instances during off-peak hours",
+        "Use Spot Instances with checkpointing to handle interruptions",
+        "Use Dedicated Instances for consistent performance"
+      ],
+      "correct_index": 2,
+      "explanation": "Spot Instances with checkpointing is ideal for fault-tolerant, time-flexible batch jobs, providing up to 90% cost savings. The ability to restart makes interruptions manageable."
+    }
+  ],
+  "passing_score": 80
+}

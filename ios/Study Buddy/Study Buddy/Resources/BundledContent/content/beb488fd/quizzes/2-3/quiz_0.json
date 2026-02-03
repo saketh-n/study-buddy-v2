@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Pipeline Design",
+  "questions": [
+    {
+      "question": "Which architectural principle is most important when designing a data pipeline that needs to handle unpredictable spikes in data volume?",
+      "options": [
+        "Implementing strict schema validation at ingestion",
+        "Building horizontal scalability into each pipeline component",
+        "Using synchronous processing for all data transformations",
+        "Storing all intermediate results in a single centralized database"
+      ],
+      "correct_index": 1,
+      "explanation": "Horizontal scalability allows pipeline components to scale out by adding more instances when data volume increases, making it the most effective approach for handling unpredictable spikes. This ensures the pipeline can dynamically adjust to varying workloads."
+    },
+    {
+      "question": "When should you implement a lambda architecture pattern in your data pipeline design?",
+      "options": [
+        "When you only need batch processing capabilities",
+        "When you need both real-time processing and historical batch analysis with fault tolerance",
+        "When your data sources are all structured and homogeneous",
+        "When you want to minimize infrastructure complexity and costs"
+      ],
+      "correct_index": 1,
+      "explanation": "Lambda architecture is specifically designed to handle both real-time (speed layer) and batch (batch layer) processing while providing fault tolerance. It's ideal when you need low-latency results alongside comprehensive historical analysis, though it does add architectural complexity."
+    },
+    {
+      "question": "What is the primary benefit of implementing idempotent operations in data pipeline transformations?",
+      "options": [
+        "They improve data processing speed by caching results",
+        "They ensure pipeline runs produce the same output when executed multiple times with the same input",
+        "They automatically handle schema evolution in source data",
+        "They reduce memory consumption during data processing"
+      ],
+      "correct_index": 1,
+      "explanation": "Idempotent operations guarantee that reprocessing the same data produces identical results, which is crucial for pipeline reliability. This allows safe retries after failures and makes the pipeline more robust and predictable in production environments."
+    },
+    {
+      "question": "In a data pipeline serving both analytical workloads and operational dashboards, which design pattern would best address the different latency requirements?",
+      "options": [
+        "Process all data through a single real-time stream to minimize complexity",
+        "Use separate pipelines: streaming for dashboards and batch for analytics",
+        "Store everything in a data lake and query directly for both use cases",
+        "Implement a single batch pipeline running every few minutes"
+      ],
+      "correct_index": 1,
+      "explanation": "Different workloads have different latency and accuracy requirements. Operational dashboards need fresh data quickly (streaming), while analytical workloads can tolerate higher latency for complete, accurate datasets (batch). Separate pipelines optimize for each use case's specific needs."
+    },
+    {
+      "question": "Which monitoring strategy is most effective for detecting data quality issues early in a production pipeline?",
+      "options": [
+        "Monitoring only system metrics like CPU and memory usage",
+        "Implementing data validation checks with automated alerts at each pipeline stage",
+        "Manually reviewing sample data outputs once per week",
+        "Relying on end-users to report data anomalies"
+      ],
+      "correct_index": 1,
+      "explanation": "Proactive data validation checks at each stage catch quality issues early, preventing bad data from propagating downstream. Automated alerts enable rapid response, while system metrics alone don't reveal data quality problems, and manual reviews or user reports detect issues too late."
+    }
+  ],
+  "passing_score": 80
+}

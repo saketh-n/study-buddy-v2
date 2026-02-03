@@ -1,0 +1,61 @@
+{
+  "topic_name": "Linux and Command Line",
+  "questions": [
+    {
+      "question": "You need to process a 10GB CSV file to extract specific columns without loading it entirely into memory. Which Linux command-line approach would be most efficient?",
+      "options": [
+        "Open the file in a text editor and manually copy columns",
+        "Use 'cut' command with appropriate field delimiters",
+        "Load the entire file into Python pandas first",
+        "Use 'grep' to search for column headers"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'cut' command is designed for extracting specific columns from structured text files and processes data line by line, making it memory-efficient for large files. It doesn't load the entire file into memory like pandas would."
+    },
+    {
+      "question": "When writing a shell script for data pipeline automation, why would you use the 'set -e' option at the beginning?",
+      "options": [
+        "To enable debugging output for troubleshooting",
+        "To make the script exit immediately if any command fails",
+        "To set environment variables for the script",
+        "To enable extended regular expression support"
+      ],
+      "correct_index": 1,
+      "explanation": "'set -e' makes the shell exit immediately when any command returns a non-zero exit status, preventing data pipelines from continuing with corrupted or incomplete data when upstream processes fail."
+    },
+    {
+      "question": "You're monitoring a live log file that's continuously growing. Which command combination allows you to see new entries in real-time while also searching for specific patterns?",
+      "options": [
+        "head -f logfile.txt | grep pattern",
+        "tail -f logfile.txt | grep pattern",
+        "cat logfile.txt | grep pattern",
+        "less logfile.txt | grep pattern"
+      ],
+      "correct_index": 1,
+      "explanation": "'tail -f' follows the file as it grows, showing new lines in real-time, and piping to grep filters for specific patterns. 'head -f' doesn't exist, 'cat' shows the whole file once, and 'less' is interactive but doesn't follow growth."
+    },
+    {
+      "question": "In a data processing workflow, you need to count unique values in the third column of a tab-separated file. Which command pipeline accomplishes this most effectively?",
+      "options": [
+        "cut -f3 file.tsv | sort | uniq | wc -l",
+        "awk '{print $3}' file.tsv | sort | uniq -c",
+        "grep -o '\\t[^\\t]*\\t' file.tsv | wc -l",
+        "sed 's/\\t/,/g' file.tsv | cut -d',' -f3 | sort"
+      ],
+      "correct_index": 0,
+      "explanation": "This pipeline extracts the third field with 'cut -f3', sorts the values, removes duplicates with 'uniq', and counts lines with 'wc -l' to get the count of unique values. Option B shows counts per value but doesn't give total unique count."
+    },
+    {
+      "question": "When should you prefer using 'awk' over simpler commands like 'cut' or 'grep' in data processing tasks?",
+      "options": [
+        "When you need to extract a single column from structured data",
+        "When you need to search for simple text patterns",
+        "When you need conditional logic, calculations, or complex field manipulations",
+        "When you want to sort data alphabetically"
+      ],
+      "correct_index": 2,
+      "explanation": "awk is a programming language that excels at pattern scanning and data extraction with conditional logic, mathematical operations, and complex field processing. Simple column extraction or pattern matching are better handled by cut and grep respectively."
+    }
+  ],
+  "passing_score": 80
+}

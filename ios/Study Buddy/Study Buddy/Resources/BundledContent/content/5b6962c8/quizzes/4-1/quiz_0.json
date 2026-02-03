@@ -1,0 +1,61 @@
+{
+  "topic_name": "Malware Analysis",
+  "questions": [
+    {
+      "question": "A security analyst discovers a suspicious executable that appears to encrypt files and demands payment. Which analysis approach should be prioritized first to understand its behavior without risking the production environment?",
+      "options": [
+        "Dynamic analysis in a production sandbox",
+        "Static analysis of the binary code",
+        "Reverse engineering the encryption algorithm",
+        "Network traffic analysis on the infected machine"
+      ],
+      "correct_index": 1,
+      "explanation": "Static analysis should be performed first as it examines the malware without executing it, providing initial insights into capabilities and indicators while maintaining safety. Dynamic analysis comes later in a controlled environment."
+    },
+    {
+      "question": "During malware analysis, you observe a sample that modifies system registry entries, creates scheduled tasks, and establishes network connections only after a 72-hour delay. What is the primary purpose of this delay mechanism?",
+      "options": [
+        "To allow the malware to update itself from command and control servers",
+        "To evade detection by automated analysis systems that have time constraints",
+        "To wait for the user to enter sensitive information like passwords",
+        "To synchronize attacks across multiple infected systems"
+      ],
+      "correct_index": 1,
+      "explanation": "The delay is an evasion technique designed to outlast automated analysis environments, which typically run samples for limited time periods. This allows the malware to appear benign during initial analysis."
+    },
+    {
+      "question": "You're analyzing a piece of malware that appears to have different behaviors when run on different systems. On some machines it acts as ransomware, on others as a keylogger, and on some it remains dormant. What technique is this malware most likely employing?",
+      "options": [
+        "Polymorphic code generation",
+        "Environment-based conditional execution",
+        "Code obfuscation",
+        "Multi-stage payload delivery"
+      ],
+      "correct_index": 1,
+      "explanation": "The malware is likely using environment-based conditional execution, checking system characteristics (OS version, installed software, network configuration, etc.) to determine which payload to deploy or whether to remain dormant."
+    },
+    {
+      "question": "When would you choose to perform dynamic analysis in an isolated network environment rather than a completely air-gapped system?",
+      "options": [
+        "When the malware requires internet connectivity to reveal its full functionality",
+        "When static analysis has failed to identify any malicious indicators",
+        "When you need to prevent the malware from communicating with its creators",
+        "When the malware sample is too large for offline analysis"
+      ],
+      "correct_index": 0,
+      "explanation": "An isolated network environment allows malware to attempt network communications (revealing C&C servers, download behaviors, etc.) while preventing actual external communication. This is crucial for malware that only activates upon successful network connectivity."
+    },
+    {
+      "question": "You've identified indicators of compromise (IoCs) from a malware sample including file hashes, IP addresses, and domain names. Three months later, none of these IoCs are detecting new infections of what appears to be the same malware family. What does this scenario best illustrate about malware analysis?",
+      "options": [
+        "The original analysis was performed incorrectly",
+        "The malware has been completely eradicated from the threat landscape",
+        "Behavioral indicators are often more persistent than technical artifacts",
+        "Static analysis is more reliable than dynamic analysis for long-term detection"
+      ],
+      "correct_index": 2,
+      "explanation": "This illustrates why behavioral indicators (tactics, techniques, procedures) are more valuable for long-term detection than technical artifacts like hashes and network indicators, which malware authors can easily change while maintaining core behaviors."
+    }
+  ],
+  "passing_score": 80
+}

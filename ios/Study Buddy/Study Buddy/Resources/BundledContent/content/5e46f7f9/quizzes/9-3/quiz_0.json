@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Service Mesh",
+  "questions": [
+    {
+      "question": "What is the primary architectural purpose of using Envoy proxy sidecars in AWS App Mesh?",
+      "options": [
+        "To intercept and manage all network communication between services without modifying application code",
+        "To replace load balancers and eliminate the need for AWS Application Load Balancer",
+        "To provide direct database connections and cache frequently accessed data",
+        "To serve as a backup service instance in case the primary application fails"
+      ],
+      "correct_index": 0,
+      "explanation": "Envoy sidecars act as intermediary proxies that handle service-to-service communication, providing features like traffic routing, observability, and security without requiring changes to the application code itself."
+    },
+    {
+      "question": "When would you choose AWS VPC Lattice over AWS App Mesh for a microservices architecture?",
+      "options": [
+        "When you need fine-grained traffic policies and advanced observability with custom metrics",
+        "When you want to connect services across multiple VPCs and accounts with simplified networking",
+        "When you require complex retry logic and sophisticated circuit breaker patterns",
+        "When you need to implement mutual TLS authentication between all service endpoints"
+      ],
+      "correct_index": 1,
+      "explanation": "AWS VPC Lattice is designed for multi-VPC and cross-account service connectivity with simplified networking, while App Mesh focuses more on advanced traffic management and observability within a more tightly coupled environment."
+    },
+    {
+      "question": "How does a circuit breaker pattern in service mesh help prevent cascade failures?",
+      "options": [
+        "By automatically scaling up healthy service instances when failures are detected",
+        "By redirecting all traffic to a backup data center when errors occur",
+        "By temporarily blocking requests to a failing service and allowing it time to recover",
+        "By implementing authentication checks to prevent malicious requests"
+      ],
+      "correct_index": 2,
+      "explanation": "Circuit breakers monitor service health and temporarily stop sending requests to failing services, preventing the failure from cascading to other services and giving the failing service time to recover."
+    },
+    {
+      "question": "In AWS App Mesh, what happens when you configure weighted routing to gradually shift traffic from version A to version B of a service?",
+      "options": [
+        "The mesh automatically monitors performance metrics and adjusts weights based on error rates",
+        "Envoy proxies distribute requests according to the specified percentages while maintaining session affinity",
+        "The old version instances are gradually terminated as traffic decreases to them",
+        "Users are permanently assigned to either version A or B based on their geographic location"
+      ],
+      "correct_index": 1,
+      "explanation": "Weighted routing in App Mesh allows Envoy proxies to distribute traffic based on configured percentages, enabling gradual rollouts and canary deployments while maintaining control over traffic distribution."
+    },
+    {
+      "question": "Why would implementing exponential backoff in retry policies within a service mesh be more effective than simple retry attempts?",
+      "options": [
+        "It ensures that retries happen faster, reducing overall response time for users",
+        "It prevents overwhelming a recovering service by increasing delays between successive retry attempts",
+        "It guarantees that all retry attempts will eventually succeed within a fixed time window",
+        "It automatically routes retries to different service instances in round-robin fashion"
+      ],
+      "correct_index": 1,
+      "explanation": "Exponential backoff increases the delay between retry attempts, which helps prevent a recovering service from being immediately overwhelmed again by retry traffic, giving it breathing room to stabilize."
+    }
+  ],
+  "passing_score": 80
+}

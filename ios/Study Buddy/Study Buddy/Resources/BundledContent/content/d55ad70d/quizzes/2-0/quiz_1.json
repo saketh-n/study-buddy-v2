@@ -1,0 +1,61 @@
+{
+  "topic_name": "Block storage: Local disk, iSCSI, SAN (random access, block based).. local or remote disk!!",
+  "questions": [
+    {
+      "question": "What is the fundamental characteristic that distinguishes block storage from file storage?",
+      "options": [
+        "Block storage can only be accessed locally",
+        "Block storage presents data as raw blocks that the operating system formats with a filesystem",
+        "Block storage is always faster than file storage",
+        "Block storage can only store structured data"
+      ],
+      "correct_index": 1,
+      "explanation": "Block storage presents raw, unformatted blocks of data that the operating system then formats with a filesystem. This is different from file storage which presents a pre-formatted filesystem interface."
+    },
+    {
+      "question": "A database administrator needs to provision storage for a high-performance database that requires low latency random access patterns. The storage must appear as a local drive to the database server but needs to be shared across multiple servers for failover purposes. Which solution would be most appropriate?",
+      "options": [
+        "Network File System (NFS)",
+        "Storage Area Network (SAN) with Fibre Channel",
+        "Object storage like Amazon S3",
+        "Direct-attached SATA drives"
+      ],
+      "correct_index": 1,
+      "explanation": "A SAN with Fibre Channel provides block-level access with low latency, appears as local storage to the OS, and can be shared across multiple servers for clustering and failover scenarios."
+    },
+    {
+      "question": "When comparing local disk storage to iSCSI for a virtual machine environment, what is the primary trade-off an administrator must consider?",
+      "options": [
+        "Local disk is always more secure than iSCSI",
+        "iSCSI provides better performance but requires more complex configuration",
+        "Local disk offers better performance but iSCSI enables features like live migration and centralized management",
+        "iSCSI can only be used with Linux virtual machines"
+      ],
+      "correct_index": 2,
+      "explanation": "Local disk typically offers better performance due to no network overhead, but iSCSI enables advanced virtualization features like live VM migration and centralized storage management, despite some performance trade-offs."
+    },
+    {
+      "question": "Why might an organization choose iSCSI over Fibre Channel SAN for their block storage implementation?",
+      "options": [
+        "iSCSI provides better performance than Fibre Channel",
+        "iSCSI can leverage existing Ethernet infrastructure and is more cost-effective",
+        "iSCSI supports larger storage volumes than Fibre Channel",
+        "iSCSI provides better data encryption capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "iSCSI runs over standard Ethernet networks, allowing organizations to leverage existing network infrastructure and expertise, making it more cost-effective than Fibre Channel which requires specialized hardware and skills."
+    },
+    {
+      "question": "In a block storage system, an application writes data to what appears to be block 1000 on a logical volume, but the storage system actually writes it to block 5000 on the physical disk. This scenario best demonstrates which concept?",
+      "options": [
+        "File system fragmentation",
+        "Storage virtualization and logical block addressing",
+        "Data compression",
+        "RAID parity calculation"
+      ],
+      "correct_index": 1,
+      "explanation": "This demonstrates storage virtualization where logical block addresses (LBA) presented to the application are mapped to different physical block addresses on the storage device, providing flexibility in storage management."
+    }
+  ],
+  "passing_score": 80
+}

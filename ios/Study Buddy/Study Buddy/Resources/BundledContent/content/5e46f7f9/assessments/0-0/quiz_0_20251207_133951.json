@@ -1,0 +1,56 @@
+{
+  "score": 100,
+  "correct_count": 5,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 0,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "Physical Layer",
+      "correct_answer": "Physical Layer",
+      "analysis": "Great job!",
+      "explanation": "Since packets are being routed correctly (Network Layer working) but arriving corrupted, the issue is likely at the Physical Layer where the actual transmission medium (cables, wireless signals, etc.) may be causing signal degradation or interference."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Session and Presentation layers",
+      "correct_answer": "Session and Presentation layers",
+      "analysis": "Great job!",
+      "explanation": "The Session layer handles establishing, managing, and terminating communication sessions between applications, while the Presentation layer is responsible for encryption, decryption, and data formatting. Together they provide secure communication channels."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Presentation Layer - data formatting/encoding issues",
+      "correct_answer": "Presentation Layer - data formatting/encoding issues",
+      "analysis": "Great job!",
+      "explanation": "Since TCP connections work properly, the Transport Layer is functioning. Garbled text with strange characters indicates a data formatting, encoding, or character set issue, which is handled by the Presentation Layer."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "correct_answer": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "analysis": "Great job!",
+      "explanation": "Routers operate at Layer 3 because they make forwarding decisions based on logical network addresses (like IP addresses) found in packet headers. They don't need to examine physical connections, application data, or manage frame transmission - those are functions of other layers."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Transport Layer - providing reliable, connection-oriented communication",
+      "correct_answer": "Transport Layer - providing reliable, connection-oriented communication",
+      "analysis": "Great job!",
+      "explanation": "The Transport Layer (Layer 4) is critical for QoS implementation as it provides reliable, ordered delivery through protocols like TCP, manages flow control to prevent congestion, and can implement prioritization mechanisms. While other layers contribute, Transport Layer handles the core reliability and congestion management requirements."
+    }
+  ],
+  "summary": {
+    "misconceptions": [],
+    "focus_areas": [],
+    "encouragement": "\u26a0\ufe0f AI feedback unavailable (API credits exhausted). But don't worry - your score has been calculated and saved! Congratulations on passing with 100%! \ud83c\udf89",
+    "recommendation": "Continue to the next topic!"
+  }
+}

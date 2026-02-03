@@ -1,0 +1,61 @@
+{
+  "topic_name": "LXC Containers",
+  "questions": [
+    {
+      "question": "What is the fundamental difference between LXC containers and traditional virtual machines in terms of resource utilization?",
+      "options": [
+        "LXC containers share the host kernel while VMs require separate guest operating systems",
+        "LXC containers use more memory than VMs because they need additional isolation layers",
+        "LXC containers require hypervisor software while VMs run directly on hardware",
+        "LXC containers can only run on dedicated container hardware while VMs work on any system"
+      ],
+      "correct_index": 0,
+      "explanation": "LXC containers provide OS-level virtualization by sharing the host kernel, making them more lightweight than VMs which require complete guest operating systems and hypervisors."
+    },
+    {
+      "question": "A development team needs to deploy multiple isolated instances of a web application on a single Linux server with minimal overhead. When would LXC containers be the most appropriate choice?",
+      "options": [
+        "When the applications need different operating systems like Windows and Linux",
+        "When maximum security isolation is required between untrusted applications",
+        "When running multiple instances of the same application stack with shared kernel compatibility",
+        "When applications require direct access to specialized hardware drivers"
+      ],
+      "correct_index": 2,
+      "explanation": "LXC containers are ideal for running multiple instances of applications that can share the same kernel, providing lightweight isolation with minimal overhead compared to full virtualization."
+    },
+    {
+      "question": "Which Linux kernel feature is primarily responsible for process isolation in LXC containers?",
+      "options": [
+        "Control Groups (cgroups) for resource limiting",
+        "Namespaces for process and resource isolation",
+        "SELinux for mandatory access control",
+        "iptables for network traffic filtering"
+      ],
+      "correct_index": 1,
+      "explanation": "Namespaces are the primary kernel feature that provides process isolation in LXC containers, creating separate views of system resources like process IDs, network, and filesystems."
+    },
+    {
+      "question": "Why might an administrator choose LXC over Docker for containerization in an enterprise environment?",
+      "options": [
+        "LXC provides better application portability across different platforms",
+        "LXC offers more granular control over system-level configurations and behaves more like traditional VMs",
+        "LXC has superior orchestration capabilities for microservices architectures",
+        "LXC containers start faster and use less memory than Docker containers"
+      ],
+      "correct_index": 1,
+      "explanation": "LXC provides more traditional VM-like behavior with full system containers and granular control over system configurations, making it suitable for environments that need system-level containerization rather than application-focused containers."
+    },
+    {
+      "question": "What is a key limitation when running applications in LXC containers compared to bare metal deployment?",
+      "options": [
+        "Applications run significantly slower due to containerization overhead",
+        "All applications must be rewritten to work with container APIs",
+        "Applications are limited to the host's kernel version and cannot use different kernel modules",
+        "Container applications cannot access network resources or external databases"
+      ],
+      "correct_index": 2,
+      "explanation": "Since LXC containers share the host kernel, applications are constrained by the host's kernel version and available kernel modules, unlike VMs which can run different operating systems with their own kernels."
+    }
+  ],
+  "passing_score": 80
+}

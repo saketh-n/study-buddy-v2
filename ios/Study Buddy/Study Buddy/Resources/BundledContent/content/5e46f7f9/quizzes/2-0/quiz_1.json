@@ -1,0 +1,61 @@
+{
+  "topic_name": "TCP and Transport Layer",
+  "questions": [
+    {
+      "question": "A web application is experiencing issues where some data packets arrive out of order, causing display problems. Which TCP mechanism is primarily responsible for ensuring data is processed in the correct sequence?",
+      "options": [
+        "Flow control using window size",
+        "Sequence numbers and reordering",
+        "Checksum verification",
+        "Acknowledgment timeouts"
+      ],
+      "correct_index": 1,
+      "explanation": "TCP uses sequence numbers to track the order of data segments and can reorder packets that arrive out of sequence before delivering them to the application layer."
+    },
+    {
+      "question": "Why would a video streaming application choose UDP over TCP for real-time data transmission, despite TCP's reliability features?",
+      "options": [
+        "UDP provides better error correction",
+        "TCP's retransmission delays would cause buffering issues",
+        "UDP has built-in congestion control",
+        "TCP cannot handle multimedia data"
+      ],
+      "correct_index": 1,
+      "explanation": "For real-time applications like video streaming, the delay caused by TCP's retransmission of lost packets would create noticeable buffering and disruption, making UDP's faster, connectionless approach more suitable despite potential data loss."
+    },
+    {
+      "question": "During a TCP connection, the receiver's advertised window size drops to zero. What is the most likely cause and appropriate sender behavior?",
+      "options": [
+        "Network congestion; sender should increase transmission rate",
+        "Receiver buffer full; sender should stop transmitting and probe periodically",
+        "Lost acknowledgments; sender should retransmit all data",
+        "Connection timeout; sender should terminate the connection"
+      ],
+      "correct_index": 1,
+      "explanation": "A zero window size indicates the receiver's buffer is full. The sender must stop transmitting data and periodically send window probe segments to check when buffer space becomes available again."
+    },
+    {
+      "question": "A network administrator notices that TCP connections are frequently timing out during the three-way handshake in a high-latency satellite network. What is the most effective solution?",
+      "options": [
+        "Switch to UDP protocol instead",
+        "Increase the TCP timeout values",
+        "Reduce the maximum segment size (MSS)",
+        "Enable TCP fast retransmit"
+      ],
+      "correct_index": 1,
+      "explanation": "In high-latency networks like satellite connections, the default TCP timeout values may be too short for the round-trip time. Increasing timeout values allows sufficient time for handshake completion without premature connection abandonment."
+    },
+    {
+      "question": "An application requires guaranteed delivery of financial transaction data with minimal bandwidth overhead. Which combination of TCP features makes it most suitable for this requirement compared to implementing custom reliability in UDP?",
+      "options": [
+        "Only the checksum error detection feature",
+        "Three-way handshake and connection termination only",
+        "Acknowledgments, retransmission, and sequence numbering working together",
+        "Flow control and congestion control mechanisms only"
+      ],
+      "correct_index": 2,
+      "explanation": "TCP's reliability comes from the integrated system of acknowledgments confirming receipt, automatic retransmission of lost data, and sequence numbering ensuring proper ordering. This combination provides guaranteed delivery with less overhead than implementing equivalent reliability mechanisms at the application layer."
+    }
+  ],
+  "passing_score": 80
+}

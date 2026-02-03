@@ -1,0 +1,61 @@
+{
+  "topic_name": "Data Pipeline Design",
+  "questions": [
+    {
+      "question": "When designing a data pipeline for a real-time fraud detection system, which architectural pattern would be MOST appropriate and why?",
+      "options": [
+        "Batch processing with daily ETL jobs because it's simpler to implement",
+        "Stream processing with event-driven architecture to enable immediate fraud detection",
+        "Hybrid batch-stream processing to balance cost and performance",
+        "Database replication with triggers to capture changes as they occur"
+      ],
+      "correct_index": 1,
+      "explanation": "Real-time fraud detection requires immediate processing of transactions as they occur. Stream processing with event-driven architecture provides the low latency needed to detect and prevent fraudulent activities before they complete, which is critical for this use case."
+    },
+    {
+      "question": "Your data pipeline frequently fails due to occasional corrupted records in the source data. What design principle should you prioritize to make the pipeline more robust?",
+      "options": [
+        "Implementing strict schema validation that rejects any malformed data",
+        "Building fault tolerance with error handling, dead letter queues, and retry mechanisms",
+        "Increasing pipeline parallelism to process data faster",
+        "Adding more monitoring and alerting to detect failures quickly"
+      ],
+      "correct_index": 1,
+      "explanation": "Fault tolerance with proper error handling ensures the pipeline can gracefully handle corrupted records without complete failure. Dead letter queues isolate bad data for later analysis, while retry mechanisms handle transient issues, making the overall system more robust."
+    },
+    {
+      "question": "A data pipeline processes 10GB daily but is expected to grow to 1TB daily within a year. Which scalability consideration is MOST critical in the initial design?",
+      "options": [
+        "Choosing the most powerful single machine to handle peak loads",
+        "Designing for horizontal scaling with distributed processing frameworks",
+        "Optimizing the current pipeline for maximum single-threaded performance",
+        "Implementing aggressive data compression to reduce storage costs"
+      ],
+      "correct_index": 1,
+      "explanation": "A 100x growth in data volume requires horizontal scaling capabilities. Distributed processing frameworks can scale by adding more nodes as data grows, while single-machine solutions will eventually hit hardware limits regardless of optimization."
+    },
+    {
+      "question": "In a multi-team organization, why is implementing proper data lineage and documentation especially important for pipeline maintainability?",
+      "options": [
+        "It reduces the computational overhead of pipeline execution",
+        "It enables teams to understand data flow, debug issues, and make changes safely",
+        "It automatically fixes data quality issues in the pipeline",
+        "It eliminates the need for data validation and testing"
+      ],
+      "correct_index": 1,
+      "explanation": "Data lineage and documentation provide visibility into how data flows through the pipeline, enabling teams to understand dependencies, trace issues to their source, and make changes without breaking downstream consumers - essential for maintainability in collaborative environments."
+    },
+    {
+      "question": "When should you implement backpressure mechanisms in your data pipeline design?",
+      "options": [
+        "Only when using cloud-based infrastructure to manage costs",
+        "When downstream systems cannot keep pace with upstream data production rates",
+        "When you need to encrypt data for security compliance",
+        "When implementing real-time analytics dashboards"
+      ],
+      "correct_index": 1,
+      "explanation": "Backpressure mechanisms are essential when there's a speed mismatch between data producers and consumers. They prevent system overload by controlling the flow rate, ensuring downstream systems aren't overwhelmed and maintaining overall pipeline stability."
+    }
+  ],
+  "passing_score": 80
+}

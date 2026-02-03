@@ -1,0 +1,61 @@
+{
+  "topic_name": "Zero Trust Network Access",
+  "questions": [
+    {
+      "question": "What is the fundamental principle that distinguishes Zero Trust Network Access (ZTNA) from traditional network security models?",
+      "options": [
+        "All network traffic must be encrypted",
+        "Never trust, always verify - regardless of location",
+        "Only authenticated users can access the network",
+        "All devices must have antivirus software installed"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA operates on the principle of 'never trust, always verify' - meaning every access request is authenticated, authorized, and validated regardless of whether it comes from inside or outside the network perimeter."
+    },
+    {
+      "question": "A company has remote employees accessing sensitive financial applications through a traditional VPN. Users currently gain broad network access once connected. Which scenario best demonstrates when ZTNA would provide superior security compared to the existing VPN solution?",
+      "options": [
+        "When employees need faster internet speeds for video calls",
+        "When a contractor needs temporary access to only one specific application without network visibility",
+        "When the company wants to reduce bandwidth costs",
+        "When employees are traveling internationally"
+      ],
+      "correct_index": 1,
+      "explanation": "ZTNA excels at providing granular, application-specific access without exposing the broader network. Traditional VPNs grant broad network access, which is unnecessary and risky for contractors who only need access to specific applications."
+    },
+    {
+      "question": "In a ZTNA implementation, what combination of factors typically determines access decisions for a user attempting to reach a cloud application?",
+      "options": [
+        "Username and password only",
+        "Device location and time of access",
+        "User identity, device posture, application sensitivity, and contextual factors",
+        "Network bandwidth and application performance"
+      ],
+      "correct_index": 2,
+      "explanation": "ZTNA uses multiple contextual factors including user identity verification, device security posture, application classification/sensitivity, location, time, and behavioral patterns to make dynamic access decisions."
+    },
+    {
+      "question": "A security architect is designing network access for a hybrid workforce where some applications are on-premises and others are in the cloud. Why would implementing ZTNA be more effective than simply upgrading to a newer VPN solution?",
+      "options": [
+        "ZTNA provides faster connection speeds than any VPN",
+        "ZTNA eliminates the need for user authentication entirely",
+        "ZTNA creates application-specific encrypted tunnels and applies policies per application rather than providing broad network access",
+        "ZTNA only works with cloud applications, making it perfect for hybrid environments"
+      ],
+      "correct_index": 2,
+      "explanation": "ZTNA creates secure, application-specific connections rather than broad network tunnels. This allows for precise policy enforcement per application, whether on-premises or cloud-based, and reduces attack surface compared to traditional VPN broad network access."
+    },
+    {
+      "question": "An organization implements ZTNA and notices that a user's access to a financial application is automatically restricted during unusual login times. This represents which key ZTNA capability?",
+      "options": [
+        "Static policy enforcement based on user roles",
+        "Dynamic risk assessment and adaptive access controls",
+        "Application performance optimization",
+        "Network traffic load balancing"
+      ],
+      "correct_index": 1,
+      "explanation": "This scenario demonstrates ZTNA's dynamic risk assessment capability, where access decisions are continuously evaluated based on contextual factors like time, location, and behavioral patterns, allowing for real-time policy adjustments."
+    }
+  ],
+  "passing_score": 80
+}

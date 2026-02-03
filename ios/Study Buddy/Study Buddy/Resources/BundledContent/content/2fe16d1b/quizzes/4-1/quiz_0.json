@@ -1,0 +1,61 @@
+{
+  "topic_name": "Backpropagation",
+  "questions": [
+    {
+      "question": "What is the primary purpose of backpropagation in neural network training?",
+      "options": [
+        "To forward data through the network layers",
+        "To calculate how much each weight contributed to the total error",
+        "To determine the optimal network architecture",
+        "To initialize weights randomly before training"
+      ],
+      "correct_index": 1,
+      "explanation": "Backpropagation calculates gradients that show how much each weight contributed to the error, enabling the network to adjust weights in the direction that minimizes loss."
+    },
+    {
+      "question": "Why does backpropagation require differentiable activation functions?",
+      "options": [
+        "To ensure faster computation during forward pass",
+        "To prevent overfitting during training",
+        "To compute gradients using the chain rule",
+        "To maintain stable weight initialization"
+      ],
+      "correct_index": 2,
+      "explanation": "Backpropagation uses the chain rule to compute gradients, which requires taking derivatives of activation functions. Non-differentiable functions would break this process."
+    },
+    {
+      "question": "In which scenario would backpropagation be LEAST suitable for training a neural network?",
+      "options": [
+        "Training a deep convolutional network for image classification",
+        "Training a recurrent network for sequence prediction",
+        "Training a network with binary step activation functions",
+        "Training a multilayer perceptron for regression"
+      ],
+      "correct_index": 2,
+      "explanation": "Binary step functions are non-differentiable, making it impossible to compute gradients needed for backpropagation. The other scenarios all use differentiable components."
+    },
+    {
+      "question": "During backpropagation, what happens to gradient magnitudes as they propagate backward through many layers?",
+      "options": [
+        "They remain constant due to weight normalization",
+        "They typically increase exponentially",
+        "They can vanish or explode depending on weights and activations",
+        "They automatically adjust to optimal values"
+      ],
+      "correct_index": 2,
+      "explanation": "Gradients can vanish (become very small) or explode (become very large) as they propagate backward, especially in deep networks, due to repeated multiplication of weights and derivatives."
+    },
+    {
+      "question": "A neural network's loss decreases during the first few epochs but then stops improving despite continued training. What does this suggest about the backpropagation process?",
+      "options": [
+        "The learning rate is too high and should be increased",
+        "The network has likely reached a local minimum or plateau",
+        "More hidden layers need to be added to the architecture",
+        "The training data is insufficient for the problem"
+      ],
+      "correct_index": 1,
+      "explanation": "When loss stops decreasing despite continued training, it typically indicates the optimization has reached a local minimum or flat region where gradients are very small, preventing further progress."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "iNode : direct data block address, single indirect, .. triple indirect, \u2014> determines max file size",
+  "questions": [
+    {
+      "question": "An inode has 12 direct pointers, each pointing to a 4KB block. If the filesystem uses 32-bit block addresses, what is the maximum file size that can be addressed using ONLY direct pointers?",
+      "options": [
+        "48KB",
+        "192KB",
+        "384KB",
+        "12KB"
+      ],
+      "correct_index": 0,
+      "explanation": "With 12 direct pointers and 4KB blocks, the maximum size using only direct pointers is 12 \u00d7 4KB = 48KB. The size of block addresses doesn't affect this calculation."
+    },
+    {
+      "question": "Why does a filesystem use indirect addressing (single, double, triple) instead of just increasing the number of direct pointers in an inode?",
+      "options": [
+        "Indirect addressing is faster to access",
+        "It keeps inode size fixed while allowing very large files",
+        "Direct pointers can only address small blocks",
+        "Indirect addressing uses less disk space"
+      ],
+      "correct_index": 1,
+      "explanation": "Indirect addressing allows the inode structure to remain a fixed, small size while still supporting very large files. Adding more direct pointers would make every inode larger, wasting space for small files."
+    },
+    {
+      "question": "In a filesystem with 4KB blocks and 32-bit addressing, a single indirect block can contain how many block addresses, and what's the maximum additional file size it can address?",
+      "options": [
+        "1024 addresses, 4MB additional",
+        "1000 addresses, 4MB additional",
+        "1024 addresses, 4KB additional",
+        "512 addresses, 2MB additional"
+      ],
+      "correct_index": 0,
+      "explanation": "A 4KB block can hold 4096 bytes \u00f7 4 bytes per address = 1024 addresses. Each address points to a 4KB block, so 1024 \u00d7 4KB = 4MB additional file size."
+    },
+    {
+      "question": "When would a file system need to use triple indirect addressing for a file?",
+      "options": [
+        "When the file is larger than what direct + single + double indirect can address",
+        "When the file needs faster access times",
+        "When the file is fragmented across the disk",
+        "When the file needs better security"
+      ],
+      "correct_index": 0,
+      "explanation": "Triple indirect addressing is only used when a file grows beyond the capacity of direct pointers, single indirect, and double indirect combined. It's the last resort for addressing very large files."
+    },
+    {
+      "question": "Consider a filesystem where accessing each level of indirection requires one disk read. A file using triple indirect addressing would require how many disk reads to access a data block (assuming no caching)?",
+      "options": [
+        "3 reads (triple indirect \u2192 double \u2192 single)",
+        "4 reads (triple \u2192 double \u2192 single \u2192 data)",
+        "2 reads (triple indirect \u2192 data)",
+        "5 reads (inode \u2192 triple \u2192 double \u2192 single \u2192 data)"
+      ],
+      "correct_index": 1,
+      "explanation": "To reach data through triple indirect: 1st read gets the single indirect address from double indirect block, 2nd read gets the data block address from single indirect block, 3rd read gets the double indirect address from triple indirect block, 4th read gets the actual data block."
+    }
+  ],
+  "passing_score": 80
+}

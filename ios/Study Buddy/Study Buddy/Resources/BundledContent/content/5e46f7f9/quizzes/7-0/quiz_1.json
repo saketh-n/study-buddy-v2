@@ -1,0 +1,61 @@
+{
+  "topic_name": "Network Diagnostic Commands",
+  "questions": [
+    {
+      "question": "A network administrator notices that users can access websites by IP address but not by domain name. Which diagnostic command would be MOST appropriate to investigate this issue?",
+      "options": [
+        "ping",
+        "nslookup",
+        "netstat",
+        "arp"
+      ],
+      "correct_index": 1,
+      "explanation": "Since users can access sites by IP but not domain name, this indicates a DNS resolution problem. The nslookup command is specifically designed to test DNS functionality and resolve domain names to IP addresses."
+    },
+    {
+      "question": "When troubleshooting intermittent connectivity to a remote server, you want to identify which router along the path is causing packet delays. Which command provides the BEST information for this scenario?",
+      "options": [
+        "ping with large packet size",
+        "tracert/traceroute",
+        "netstat -r",
+        "route print"
+      ],
+      "correct_index": 1,
+      "explanation": "Tracert/traceroute shows the path packets take to reach a destination and the response time at each hop, making it ideal for identifying where delays or failures occur along the network path."
+    },
+    {
+      "question": "A user reports they cannot connect to a specific web service. You run 'netstat -an' and see the connection in a 'TIME_WAIT' state. What does this indicate?",
+      "options": [
+        "The connection is actively transferring data",
+        "The connection was recently closed and is in cleanup phase",
+        "The connection is waiting for authentication",
+        "There is a firewall blocking the connection"
+      ],
+      "correct_index": 1,
+      "explanation": "TIME_WAIT state indicates that a TCP connection has been closed but the system is waiting to ensure all packets have been processed before fully releasing the connection resources."
+    },
+    {
+      "question": "You suspect a device on your local network might be impersonating another device's MAC address. Which combination of commands would be MOST effective to investigate this ARP spoofing attack?",
+      "options": [
+        "ping and route",
+        "arp -a and repeated arp queries to the suspicious IP",
+        "nslookup and dig",
+        "netstat and ifconfig"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP spoofing involves MAC address manipulation, so examining the ARP table with 'arp -a' and monitoring changes through repeated queries to specific IPs can reveal if MAC addresses are changing unexpectedly for the same IP."
+    },
+    {
+      "question": "A server administrator needs to verify that their web server is listening on port 443 and accepting connections. Which netstat command syntax would provide the MOST relevant information?",
+      "options": [
+        "netstat -r",
+        "netstat -s",
+        "netstat -ln | grep 443",
+        "netstat -i"
+      ],
+      "correct_index": 2,
+      "explanation": "The '-l' flag shows listening ports, '-n' shows numerical addresses instead of resolving hosts, and grep filters for port 443. This combination specifically shows if the server is listening on the HTTPS port."
+    }
+  ],
+  "passing_score": 80
+}

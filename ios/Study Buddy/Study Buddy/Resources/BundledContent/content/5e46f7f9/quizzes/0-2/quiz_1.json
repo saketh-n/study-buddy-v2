@@ -1,0 +1,61 @@
+{
+  "topic_name": "IP Addressing and Subnetting",
+  "questions": [
+    {
+      "question": "A company with 500 employees needs to set up an internal network that won't conflict with internet routing. Which IP address range would be most appropriate and why?",
+      "options": [
+        "10.1.0.0/16 because it provides enough addresses and is guaranteed not to be routed on the internet",
+        "192.168.1.0/24 because it's the most commonly used private range",
+        "172.31.0.0/16 because it's in the middle of the private ranges",
+        "8.8.8.0/24 because Google uses it so it must be reliable"
+      ],
+      "correct_index": 0,
+      "explanation": "10.1.0.0/16 from the 10.0.0.0/8 private range provides 65,534 host addresses, which is sufficient for 500+ employees with room for growth. Private IP ranges are non-routable on the internet, preventing conflicts. Option D uses Google's public DNS range, which would cause routing conflicts."
+    },
+    {
+      "question": "You need to subnet a /24 network to create 6 separate departments with at least 25 hosts each. What subnet mask should you use and why?",
+      "options": [
+        "/27 (255.255.255.224) because it creates 8 subnets with 30 hosts each",
+        "/26 (255.255.255.192) because it creates 4 subnets with 62 hosts each",
+        "/28 (255.255.255.240) because it creates 16 subnets with 14 hosts each",
+        "/25 (255.255.255.128) because it creates 2 subnets with 126 hosts each"
+      ],
+      "correct_index": 0,
+      "explanation": "A /27 subnet mask borrows 3 bits for subnets (2\u00b3 = 8 subnets) and leaves 5 bits for hosts (2\u2075 - 2 = 30 usable hosts per subnet). This meets the requirement of 6 subnets with at least 25 hosts each. /28 provides too few hosts (14), while /26 and /25 don't provide enough subnets."
+    },
+    {
+      "question": "An organization is transitioning to IPv6. What is the primary advantage of IPv6 addressing over IPv4 in terms of network design?",
+      "options": [
+        "IPv6 is faster because it has shorter headers",
+        "IPv6 eliminates the need for NAT in most scenarios due to its vast address space",
+        "IPv6 automatically provides better security than IPv4",
+        "IPv6 uses simpler routing protocols that require less configuration"
+      ],
+      "correct_index": 1,
+      "explanation": "IPv6's 128-bit address space (compared to IPv4's 32-bit) provides approximately 3.4 \u00d7 10\u00b3\u2078 addresses, eliminating address scarcity. This removes the need for Network Address Translation (NAT) in most cases, simplifying network architecture and enabling end-to-end connectivity. The other options contain misconceptions about IPv6's inherent capabilities."
+    },
+    {
+      "question": "A network administrator discovers that devices on subnet 192.168.1.0/26 cannot communicate with devices on 192.168.1.64/26, even though they're connected to the same physical switch. What is the most likely cause?",
+      "options": [
+        "The subnets are using different private IP ranges that cannot communicate",
+        "The devices are on different logical subnets and need a router to communicate",
+        "There's a hardware failure in the switch preventing communication",
+        "The subnet masks are incorrectly configured on the devices"
+      ],
+      "correct_index": 1,
+      "explanation": "192.168.1.0/26 covers addresses 192.168.1.1-62, while 192.168.1.64/26 covers 192.168.1.65-126. These are separate logical subnets that require Layer 3 routing to communicate, even on the same physical switch. Devices in different subnets cannot communicate directly at Layer 2."
+    },
+    {
+      "question": "When would you choose to use the 172.16.0.0/12 private range instead of 10.0.0.0/8 or 192.168.0.0/16 for your network design?",
+      "options": [
+        "When you need exactly 12 bits for host addressing",
+        "When you need a medium-sized address space that balances between the very large 10.x.x.x range and the small 192.168.x.x range",
+        "When your network equipment only supports Class B addressing",
+        "When you want to avoid conflicts with home router default configurations"
+      ],
+      "correct_index": 3,
+      "explanation": "The 172.16.0.0/12 range (172.16.0.0-172.31.255.255) is less commonly used in home/small office environments compared to 192.168.x.x, reducing potential VPN and remote access conflicts. While it does provide a medium address space, the primary practical reason for choosing it is often to avoid the ubiquitous use of 192.168.x.x in consumer devices and 10.x.x.x in many corporate environments."
+    }
+  ],
+  "passing_score": 80
+}

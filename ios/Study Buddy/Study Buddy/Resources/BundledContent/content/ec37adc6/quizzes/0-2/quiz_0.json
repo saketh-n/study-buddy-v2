@@ -1,0 +1,61 @@
+{
+  "topic_name": "Incretin Hormone System",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes shows elevated postprandial glucose levels despite normal fasting glucose. Which physiological mechanism involving incretin hormones is most likely impaired?",
+      "options": [
+        "Glucose-dependent insulin secretion from pancreatic beta cells",
+        "Basal insulin secretion during fasting states",
+        "Hepatic glucose uptake independent of meals",
+        "Renal glucose reabsorption in the proximal tubules"
+      ],
+      "correct_index": 0,
+      "explanation": "Incretin hormones like GLP-1 and GIP are released in response to nutrient intake and stimulate glucose-dependent insulin secretion, which is crucial for managing postprandial glucose levels. Impaired incretin function leads to inadequate insulin response to meals."
+    },
+    {
+      "question": "Why does the incretin hormone GLP-1 cause glucose-dependent insulin secretion rather than continuous insulin release?",
+      "options": [
+        "GLP-1 receptors are only expressed when glucose levels are elevated",
+        "GLP-1 enhances insulin secretion only when glucose concentrations are above a threshold level",
+        "GLP-1 is rapidly degraded by DPP-4 enzyme within minutes",
+        "GLP-1 production stops completely during fasting states"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1's glucose-dependency is a built-in safety mechanism - it only stimulates insulin secretion when glucose levels are elevated, preventing hypoglycemia. This occurs because GLP-1's insulinotropic effects require sufficient glucose concentrations to activate the cellular pathways."
+    },
+    {
+      "question": "A researcher observes that GIP (glucose-dependent insulinotropic polypeptide) levels rise significantly after a mixed meal containing carbohydrates, fats, and proteins. What is the primary physiological advantage of this multi-nutrient response?",
+      "options": [
+        "It prevents excessive weight gain by blocking fat absorption",
+        "It coordinates insulin release with the actual nutrient load to optimize metabolic responses",
+        "It selectively promotes protein synthesis while inhibiting carbohydrate metabolism",
+        "It triggers satiety signals before significant caloric intake occurs"
+      ],
+      "correct_index": 1,
+      "explanation": "GIP's response to multiple macronutrients allows the body to appropriately coordinate insulin secretion with the total metabolic demand from the meal, ensuring optimal glucose homeostasis and nutrient utilization regardless of meal composition."
+    },
+    {
+      "question": "In type 2 diabetes, the 'incretin effect' is often diminished. When would therapeutic intervention targeting this system be most clinically appropriate?",
+      "options": [
+        "In newly diagnosed patients with severe ketoacidosis requiring immediate intervention",
+        "In patients with predominantly postprandial hyperglycemia who retain some beta-cell function",
+        "In patients with complete pancreatic beta-cell failure from autoimmune destruction",
+        "In patients with normal HbA1c but elevated fasting glucose levels"
+      ],
+      "correct_index": 1,
+      "explanation": "Incretin-based therapies work by enhancing the body's natural glucose-dependent mechanisms, so they are most effective when some beta-cell function remains and when the primary problem is postprandial glucose control - the classic incretin defect scenario."
+    },
+    {
+      "question": "The incretin hormone GLP-1 has multiple physiological effects beyond insulin secretion. Which combination of effects makes it particularly valuable for diabetes management?",
+      "options": [
+        "Increased gastric motility and enhanced appetite to prevent malnutrition",
+        "Delayed gastric emptying and glucagon suppression during hyperglycemia",
+        "Stimulated hepatic glucose production and increased renal glucose excretion",
+        "Enhanced muscle glucose uptake and reduced insulin sensitivity"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1's dual action of slowing gastric emptying (which moderates nutrient absorption and postprandial glucose spikes) and suppressing inappropriate glucagon release during hyperglycemia creates a comprehensive glucose-lowering effect that addresses multiple pathophysiologic defects in diabetes."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Tissue Distribution and Effects",
+  "questions": [
+    {
+      "question": "A patient with type 2 diabetes develops gastroparesis as a side effect of GLP-1 receptor agonist therapy. Which mechanism best explains this adverse effect?",
+      "options": [
+        "Direct toxic damage to vagal nerve fibers",
+        "GLP-1 receptor activation in the stomach causing delayed gastric emptying",
+        "Hypoglycemia-induced autonomic dysfunction",
+        "Pancreatic enzyme deficiency from beta-cell overstimulation"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptors in the GI tract mediate delayed gastric emptying as part of the incretin effect, which helps regulate postprandial glucose but can cause gastroparesis in some patients."
+    },
+    {
+      "question": "Why do GLP-1 receptor agonists typically cause weight loss rather than weight gain, unlike many other diabetes medications?",
+      "options": [
+        "They increase metabolic rate through thyroid hormone activation",
+        "They cause malabsorption by inhibiting pancreatic enzymes",
+        "They activate satiety centers in the hypothalamus and delay gastric emptying",
+        "They block glucose absorption in the small intestine"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptors in the hypothalamus regulate appetite and satiety, while GI tract receptors slow gastric emptying, both contributing to reduced food intake and weight loss."
+    },
+    {
+      "question": "A cardiologist considers GLP-1 receptor agonists for a diabetic patient with heart failure. What cardiovascular mechanism makes this therapeutic choice particularly beneficial?",
+      "options": [
+        "Direct positive inotropic effects on cardiac muscle",
+        "Reduction in cardiac afterload through peripheral vasodilation",
+        "Improved endothelial function and potential cardioprotective effects",
+        "Increased heart rate variability through autonomic modulation"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 receptors in cardiovascular tissues contribute to endothelial function improvement and cardioprotection, explaining the cardiovascular benefits seen in clinical trials beyond glucose control."
+    },
+    {
+      "question": "When would the pancreatic effects of GLP-1 receptor agonists be most clinically relevant for glucose control?",
+      "options": [
+        "During fasting states when baseline insulin is needed",
+        "In the postprandial period when glucose levels are elevated",
+        "Only in patients with complete beta-cell failure",
+        "Equally at all times regardless of glucose levels"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1's glucose-dependent insulin release from pancreatic beta cells is most active when glucose levels are elevated, making it particularly effective for postprandial glucose control with low hypoglycemia risk."
+    },
+    {
+      "question": "A patient experiences nausea and early satiety when starting GLP-1 therapy. Understanding tissue distribution, which approach would be most appropriate for management?",
+      "options": [
+        "Switch to a different class of medication immediately",
+        "Gradually titrate the dose to allow GI tract adaptation",
+        "Add a prokinetic agent to counteract all GLP-1 effects",
+        "Recommend taking the medication only with large meals"
+      ],
+      "correct_index": 1,
+      "explanation": "GI side effects result from GLP-1 receptor activation in the GI tract. Gradual dose titration allows adaptation while maintaining therapeutic benefits from pancreatic, CNS, and cardiovascular receptor activation."
+    }
+  ],
+  "passing_score": 80
+}

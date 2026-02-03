@@ -1,0 +1,61 @@
+{
+  "topic_name": "Drug Mechanisms and Effectiveness",
+  "questions": [
+    {
+      "question": "Finasteride works as a hair loss treatment by inhibiting which enzyme, and what is the primary biological consequence of this inhibition?",
+      "options": [
+        "5\u03b1-reductase type II, reducing conversion of testosterone to DHT",
+        "Aromatase, increasing estrogen production in hair follicles",
+        "Phosphodiesterase-5, improving blood flow to the scalp",
+        "Acetylcholinesterase, enhancing nerve signaling to follicles"
+      ],
+      "correct_index": 0,
+      "explanation": "Finasteride specifically inhibits 5\u03b1-reductase type II, which converts testosterone to dihydrotestosterone (DHT). Since DHT is the primary hormone responsible for androgenetic alopecia, reducing its levels helps preserve hair follicles."
+    },
+    {
+      "question": "A 35-year-old man has been using minoxidil for 6 months with minimal results. He asks about adding finasteride to his regimen. What is the most appropriate reasoning for this combination approach?",
+      "options": [
+        "Both drugs work identically, so combining them doubles the effect",
+        "Minoxidil targets blood flow while finasteride addresses hormonal causes, attacking different mechanisms",
+        "Finasteride will neutralize minoxidil's side effects",
+        "The combination works faster because finasteride activates minoxidil"
+      ],
+      "correct_index": 1,
+      "explanation": "Minoxidil works as a vasodilator and potassium channel opener to improve follicle function, while finasteride reduces DHT levels. These complementary mechanisms can provide additive benefits by addressing both vascular and hormonal aspects of hair loss."
+    },
+    {
+      "question": "Why might a hair loss treatment show apparent 'worsening' of hair loss during the first 2-3 months of use, and what does this indicate about the treatment's mechanism?",
+      "options": [
+        "The medication is damaging healthy follicles and should be discontinued",
+        "Allergic reactions always cause initial hair shedding before improvement",
+        "The treatment is accelerating the hair cycle, causing weak hairs to shed before stronger ones grow",
+        "The dosage is too high and needs to be reduced immediately"
+      ],
+      "correct_index": 2,
+      "explanation": "Initial shedding often indicates the treatment is working by shifting follicles from prolonged resting phases into active growth phases. Weak, miniaturized hairs are shed to make way for healthier hair growth, a process called 'treatment-induced shedding.'"
+    },
+    {
+      "question": "Clinical studies show finasteride has approximately 80-90% effectiveness in stopping further hair loss, but only 60-65% of users see visible regrowth. What biological factor best explains this difference?",
+      "options": [
+        "Most users don't take the medication consistently enough for regrowth",
+        "Preventing further miniaturization is easier than reversing already-damaged follicles",
+        "The studies used different measurement techniques for each outcome",
+        "Regrowth requires higher doses than what is typically prescribed"
+      ],
+      "correct_index": 1,
+      "explanation": "Once hair follicles become significantly miniaturized, reversing this process is more challenging than preventing further damage. Finasteride is highly effective at halting progression by reducing DHT, but reversing existing miniaturization requires follicles to recover their previous size and function."
+    },
+    {
+      "question": "A patient experiences sexual side effects from finasteride and asks about dutasteride as an alternative. Based on the mechanisms of these drugs, what would be the most accurate response?",
+      "options": [
+        "Dutasteride has fewer side effects because it's more selective",
+        "Dutasteride blocks both 5\u03b1-reductase types and may have similar or greater side effect risk",
+        "Dutasteride works through a completely different pathway with no sexual side effects",
+        "The side effects will definitely be worse with dutasteride due to its longer half-life"
+      ],
+      "correct_index": 1,
+      "explanation": "Dutasteride inhibits both 5\u03b1-reductase type I and type II, leading to more comprehensive DHT suppression than finasteride (which primarily targets type II). This broader inhibition may increase the risk of similar side effects, though individual responses vary."
+    }
+  ],
+  "passing_score": 80
+}

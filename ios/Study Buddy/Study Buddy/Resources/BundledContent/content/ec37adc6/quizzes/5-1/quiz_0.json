@@ -1,0 +1,61 @@
+{
+  "topic_name": "Emerging Applications",
+  "questions": [
+    {
+      "question": "What is the primary mechanism by which GLP-1 receptor agonists may provide neuroprotective effects in neurological conditions like Alzheimer's disease?",
+      "options": [
+        "Direct binding to amyloid plaques to dissolve them",
+        "Enhancing neuronal glucose uptake and reducing neuroinflammation",
+        "Blocking dopamine reuptake in the prefrontal cortex",
+        "Increasing acetylcholine production in the hippocampus"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptors in the brain can enhance neuronal glucose metabolism and have anti-inflammatory properties, which may protect against neurodegeneration. They do not directly dissolve plaques or primarily affect dopamine or acetylcholine systems."
+    },
+    {
+      "question": "In which clinical scenario would a GLP-1 receptor agonist most likely be considered as an investigational treatment for addiction?",
+      "options": [
+        "A patient with opioid addiction who has failed multiple rehabilitation attempts",
+        "A patient with alcohol use disorder who also has metabolic syndrome",
+        "A patient with nicotine addiction and no other medical conditions",
+        "A patient with gambling addiction and normal BMI"
+      ],
+      "correct_index": 1,
+      "explanation": "Current research suggests GLP-1 agonists may be most beneficial for alcohol use disorder, particularly when combined with metabolic benefits. The dual benefit of addressing both addiction and metabolic health makes this the most appropriate investigational scenario."
+    },
+    {
+      "question": "Why might GLP-1 receptor agonists show promise in treating substance use disorders?",
+      "options": [
+        "They directly block addiction-related neurotransmitter receptors",
+        "They modulate reward pathways and reduce craving behaviors through brain GLP-1 receptors",
+        "They cause severe nausea that deters substance use",
+        "They increase metabolism of addictive substances in the liver"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptors in the brain, particularly in reward-related areas, can modulate dopaminergic pathways and reduce reward-seeking behavior. While nausea is a side effect, it's not the therapeutic mechanism for addiction treatment."
+    },
+    {
+      "question": "What represents the biggest challenge in developing GLP-1 receptor agonists for neurological conditions compared to their established diabetes and obesity indications?",
+      "options": [
+        "Higher risk of severe hypoglycemia in neurological patients",
+        "Need for higher doses that increase gastrointestinal side effects",
+        "Limited blood-brain barrier penetration and unknown optimal dosing",
+        "Increased risk of pancreatitis in elderly patients"
+      ],
+      "correct_index": 2,
+      "explanation": "The blood-brain barrier limits CNS penetration of current GLP-1 agonists, and optimal dosing for neurological effects is not well established. This is different from diabetes/obesity where systemic effects and dosing are well-characterized."
+    },
+    {
+      "question": "A researcher is designing a clinical trial for GLP-1 receptor agonists in Parkinson's disease. Which outcome measure would be most appropriate as a primary endpoint?",
+      "options": [
+        "HbA1c reduction from baseline",
+        "Change in body weight over 12 weeks",
+        "Motor symptom progression using standardized rating scales",
+        "Reduction in daily insulin requirements"
+      ],
+      "correct_index": 2,
+      "explanation": "For neurological applications like Parkinson's disease, the primary endpoint should measure neurological function (motor symptoms) rather than metabolic parameters. Motor rating scales assess the disease-specific outcomes relevant to the investigational use."
+    }
+  ],
+  "passing_score": 80
+}

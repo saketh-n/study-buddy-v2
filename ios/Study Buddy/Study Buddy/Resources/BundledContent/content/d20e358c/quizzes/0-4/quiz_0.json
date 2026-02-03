@@ -1,0 +1,61 @@
+{
+  "topic_name": "LIBVIRT Management",
+  "questions": [
+    {
+      "question": "What is the primary architectural advantage of using libvirt as a virtualization management layer?",
+      "options": [
+        "It provides direct hardware acceleration for VMs",
+        "It abstracts different hypervisor technologies through a unified API",
+        "It eliminates the need for hypervisors entirely",
+        "It automatically optimizes VM performance without configuration"
+      ],
+      "correct_index": 1,
+      "explanation": "Libvirt's main advantage is providing a unified API that abstracts various hypervisor technologies (KVM, Xen, VMware, etc.), allowing administrators to manage different virtualization platforms through consistent interfaces."
+    },
+    {
+      "question": "In which scenario would you most likely choose libvirt over direct hypervisor management?",
+      "options": [
+        "When managing a single VM on a personal laptop",
+        "When building a multi-hypervisor environment requiring centralized management",
+        "When maximum performance is needed for a gaming VM",
+        "When running containers instead of full VMs"
+      ],
+      "correct_index": 1,
+      "explanation": "Libvirt excels in environments with multiple hypervisor types or when you need standardized management interfaces. For single VMs or maximum performance, direct hypervisor management might be preferred."
+    },
+    {
+      "question": "What role does the libvirtd daemon play in the overall libvirt architecture?",
+      "options": [
+        "It replaces the hypervisor and runs VMs directly",
+        "It serves as the management service that handles API requests and communicates with hypervisors",
+        "It provides the graphical interface for VM management",
+        "It stores VM disk images and snapshots"
+      ],
+      "correct_index": 1,
+      "explanation": "The libvirtd daemon is the core service that receives management requests through libvirt APIs and translates them into hypervisor-specific commands, acting as the bridge between management tools and virtualization platforms."
+    },
+    {
+      "question": "Why would an organization implement libvirt-based management instead of using each hypervisor's native management tools?",
+      "options": [
+        "Libvirt provides better VM performance than native tools",
+        "It eliminates licensing costs for all hypervisors",
+        "It enables consistent automation and tooling across different virtualization technologies",
+        "It automatically migrates VMs between different hypervisor types"
+      ],
+      "correct_index": 2,
+      "explanation": "Organizations choose libvirt for operational consistency - the same scripts, tools, and procedures work across KVM, Xen, VMware, etc., reducing complexity and training requirements in mixed environments."
+    },
+    {
+      "question": "When troubleshooting VM lifecycle management issues in a libvirt environment, what is the most logical first step?",
+      "options": [
+        "Restart the hypervisor service immediately",
+        "Check the libvirtd daemon status and logs",
+        "Recreate the VM configuration from scratch",
+        "Verify the VM disk image integrity"
+      ],
+      "correct_index": 1,
+      "explanation": "Since libvirtd is the central management component that handles all VM lifecycle operations, checking its status and logs first helps identify whether issues are in the management layer, configuration, or underlying hypervisor."
+    }
+  ],
+  "passing_score": 80
+}

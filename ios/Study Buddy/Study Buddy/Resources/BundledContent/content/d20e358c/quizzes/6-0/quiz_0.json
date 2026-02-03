@@ -1,0 +1,61 @@
+{
+  "topic_name": "Container Network Interface (CNI)",
+  "questions": [
+    {
+      "question": "What is the primary role of CNI plugins in a Kubernetes cluster?",
+      "options": [
+        "To manage container storage volumes",
+        "To provide standardized network configuration for pods",
+        "To handle container image distribution",
+        "To monitor cluster resource utilization"
+      ],
+      "correct_index": 1,
+      "explanation": "CNI plugins implement the Container Network Interface specification to provide standardized network configuration, IP assignment, and connectivity for pods in Kubernetes clusters."
+    },
+    {
+      "question": "A development team needs to deploy a multi-tier application across different nodes in a Kubernetes cluster, where frontend pods need to communicate with backend pods. Which CNI plugin characteristic is most critical for this scenario?",
+      "options": [
+        "Storage encryption capabilities",
+        "Cross-node pod-to-pod communication",
+        "Container image caching",
+        "CPU resource allocation"
+      ],
+      "correct_index": 1,
+      "explanation": "For multi-tier applications spanning different nodes, the CNI plugin must enable seamless cross-node pod-to-pod communication, which is a core networking requirement that plugins like Calico and Flannel provide."
+    },
+    {
+      "question": "When comparing Calico and Flannel CNI plugins, what is a key architectural difference that would influence your choice?",
+      "options": [
+        "Calico only works with Docker, while Flannel works with any container runtime",
+        "Calico provides Layer 3 routing with BGP, while Flannel typically uses overlay networks",
+        "Flannel requires external load balancers, while Calico has built-in load balancing",
+        "Calico is only for single-node clusters, while Flannel supports multi-node"
+      ],
+      "correct_index": 1,
+      "explanation": "Calico uses Layer 3 routing with BGP protocol for direct routing between nodes, while Flannel typically creates overlay networks (like VXLAN) to encapsulate traffic, representing different approaches to pod networking."
+    },
+    {
+      "question": "In a Kubernetes cluster, when a new pod is created, what sequence of events occurs for CNI network setup?",
+      "options": [
+        "CNI plugin assigns IP first, then kubelet creates the pod",
+        "Pod is created, then CNI plugin is called to configure networking",
+        "Kubernetes API server directly assigns IPs without CNI involvement",
+        "CNI plugin pre-allocates all IPs before any pods are created"
+      ],
+      "correct_index": 1,
+      "explanation": "The kubelet first creates the pod, then calls the configured CNI plugin to set up networking (create network namespace, assign IP, configure routes), ensuring the pod has proper network connectivity."
+    },
+    {
+      "question": "A security-conscious organization needs network policies to isolate different application tiers. Which consideration is most important when selecting a CNI plugin for this requirement?",
+      "options": [
+        "The plugin's container image size",
+        "Whether the plugin supports Kubernetes NetworkPolicy enforcement",
+        "The plugin's installation complexity",
+        "The plugin's compatibility with specific Linux distributions"
+      ],
+      "correct_index": 1,
+      "explanation": "For network isolation using Kubernetes NetworkPolicies, the CNI plugin must support policy enforcement. Calico has built-in policy support, while basic Flannel implementations require additional components for policy enforcement."
+    }
+  ],
+  "passing_score": 80
+}

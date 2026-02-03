@@ -1,0 +1,61 @@
+{
+  "topic_name": "Security Policies and Governance",
+  "questions": [
+    {
+      "question": "A company's security policy states that all employees must use multi-factor authentication, but implementation is inconsistent across departments. What governance structure element is most likely missing?",
+      "options": [
+        "Policy documentation",
+        "Executive sponsorship",
+        "Enforcement mechanisms and accountability",
+        "Technical standards"
+      ],
+      "correct_index": 2,
+      "explanation": "While the policy exists (documentation), the lack of consistent implementation indicates missing enforcement mechanisms, accountability measures, and oversight to ensure compliance across the organization."
+    },
+    {
+      "question": "When should an organization prioritize updating their incident response policy over other security policies?",
+      "options": [
+        "When new software is deployed",
+        "After a security breach reveals gaps in current procedures",
+        "During annual policy reviews only",
+        "When compliance auditors request it"
+      ],
+      "correct_index": 1,
+      "explanation": "Security breaches that expose procedural gaps create an immediate need to update incident response policies to prevent similar issues. This is more urgent than routine updates or software deployments."
+    },
+    {
+      "question": "What is the primary purpose of establishing a security governance committee with representatives from multiple business units?",
+      "options": [
+        "To reduce IT department workload",
+        "To ensure security decisions align with business objectives and gain organizational buy-in",
+        "To meet compliance requirements",
+        "To centralize all security decision-making"
+      ],
+      "correct_index": 1,
+      "explanation": "Cross-functional governance committees ensure security policies support business goals while securing organizational commitment and resources from different departments, making implementation more effective."
+    },
+    {
+      "question": "A financial services company must comply with multiple regulations (SOX, PCI-DSS, GLBA). How should they structure their policy framework to manage this complexity?",
+      "options": [
+        "Create separate, independent policies for each regulation",
+        "Develop a layered framework with overarching policies and specific compliance procedures",
+        "Focus only on the most restrictive regulation",
+        "Delegate compliance to individual departments"
+      ],
+      "correct_index": 1,
+      "explanation": "A layered approach with high-level policies supported by specific compliance procedures prevents conflicts, reduces redundancy, and ensures comprehensive coverage while maintaining consistency across regulations."
+    },
+    {
+      "question": "An organization's data classification policy is rarely followed because employees find it too complex. What governance principle should guide the policy revision?",
+      "options": [
+        "Make policies more detailed to cover all scenarios",
+        "Balance security requirements with usability and business needs",
+        "Increase penalties for non-compliance",
+        "Reduce security requirements to improve adoption"
+      ],
+      "correct_index": 1,
+      "explanation": "Effective security governance requires balancing security needs with practical usability. Overly complex policies fail because they hinder productivity, while oversimplified policies may not provide adequate protection."
+    }
+  ],
+  "passing_score": 80
+}

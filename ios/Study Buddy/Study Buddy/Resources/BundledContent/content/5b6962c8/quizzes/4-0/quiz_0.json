@@ -1,0 +1,61 @@
+{
+  "topic_name": "Threat Landscape and Attack Vectors",
+  "questions": [
+    {
+      "question": "A company's security team notices unusual network traffic patterns where large amounts of data are being exfiltrated slowly over several months through encrypted channels during normal business hours. What type of threat actor motivation and approach does this most likely indicate?",
+      "options": [
+        "Script kiddie seeking immediate recognition",
+        "Advanced Persistent Threat (APT) with espionage goals",
+        "Ransomware group preparing for encryption",
+        "Insider threat conducting financial fraud"
+      ],
+      "correct_index": 1,
+      "explanation": "The slow, methodical exfiltration over months using encrypted channels during business hours indicates sophisticated planning and long-term access typical of APT groups focused on espionage rather than immediate financial gain or recognition."
+    },
+    {
+      "question": "When implementing a defense-in-depth strategy, why would an organization prioritize protecting against social engineering attacks even after deploying advanced technical security controls?",
+      "options": [
+        "Social engineering is the most expensive attack to remediate",
+        "Technical controls cannot address the human element of security",
+        "Social engineering attacks always target executive-level personnel",
+        "Legal compliance requires equal investment in all attack vectors"
+      ],
+      "correct_index": 1,
+      "explanation": "Social engineering exploits human psychology and decision-making, which cannot be fully addressed through technical controls alone. Even with strong firewalls, encryption, and monitoring, humans remain a potential entry point that requires separate awareness and training measures."
+    },
+    {
+      "question": "An organization discovers that attackers gained initial access through a phishing email, then used legitimate system administration tools to move laterally through the network. This attack pattern is primarily an example of:",
+      "options": [
+        "Zero-day exploitation requiring immediate patching",
+        "Living-off-the-land techniques to avoid detection",
+        "Distributed denial of service to overwhelm defenses",
+        "Supply chain compromise affecting multiple organizations"
+      ],
+      "correct_index": 1,
+      "explanation": "Using legitimate administrative tools for malicious purposes after initial compromise is a classic 'living-off-the-land' technique that helps attackers blend in with normal network activity and avoid detection by security tools."
+    },
+    {
+      "question": "A security analyst must choose between focusing limited resources on preventing either ransomware attacks or data exfiltration. What factor should most influence this decision?",
+      "options": [
+        "Ransomware is always more damaging than data theft",
+        "The organization's specific risk profile and business impact tolerance",
+        "Data exfiltration requires more sophisticated attackers",
+        "Regulatory requirements always prioritize data protection"
+      ],
+      "correct_index": 1,
+      "explanation": "Security resource allocation should be based on the organization's specific risk assessment, including business impact, regulatory environment, threat landscape, and recovery capabilities, rather than assuming one threat type is universally more important."
+    },
+    {
+      "question": "Why do threat actors often combine multiple attack vectors in a single campaign rather than relying on one primary method?",
+      "options": [
+        "To demonstrate their technical capabilities to other criminals",
+        "To increase the complexity and cost of defensive measures",
+        "To improve success rates and maintain persistence despite detection",
+        "To ensure they can demand higher ransom payments"
+      ],
+      "correct_index": 2,
+      "explanation": "Combining attack vectors creates redundancy and multiple pathways to achieve objectives. If one vector is detected or blocked, others may still succeed, and different vectors can serve different phases of the attack lifecycle (initial access, persistence, data exfiltration, etc.)."
+    }
+  ],
+  "passing_score": 80
+}

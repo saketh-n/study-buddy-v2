@@ -1,0 +1,61 @@
+{
+  "topic_name": "DHCP and Network Configuration",
+  "questions": [
+    {
+      "question": "A company's IT administrator notices that some devices on the network intermittently lose connectivity and receive IP addresses in the 169.254.x.x range. What is the most likely cause of this issue?",
+      "options": [
+        "The DHCP server is unavailable or unreachable",
+        "The network is using static IP addressing",
+        "The devices have malware infections",
+        "The subnet mask is incorrectly configured"
+      ],
+      "correct_index": 0,
+      "explanation": "When devices cannot reach a DHCP server, they fall back to APIPA (Automatic Private IP Addressing) and assign themselves addresses in the 169.254.x.x range. This indicates DHCP service failure or network connectivity issues to the DHCP server."
+    },
+    {
+      "question": "In which scenario would configuring DHCP reservations be the most appropriate solution?",
+      "options": [
+        "For guest devices that connect temporarily",
+        "For servers that need consistent IP addresses but centralized management",
+        "For increasing network security through IP randomization",
+        "For reducing network traffic and bandwidth usage"
+      ],
+      "correct_index": 1,
+      "explanation": "DHCP reservations ensure specific devices always receive the same IP address based on their MAC address, combining the consistency needed for servers with the centralized management benefits of DHCP. This is ideal for servers, printers, and other infrastructure devices."
+    },
+    {
+      "question": "A network administrator wants to ensure that laptops receive shorter IP address lease times than desktop computers. Why might this configuration be beneficial?",
+      "options": [
+        "Laptops consume more bandwidth than desktops",
+        "Laptops are more likely to leave the network, and shorter leases free up IP addresses faster",
+        "Laptops require more frequent security updates",
+        "Laptops have less reliable network interfaces"
+      ],
+      "correct_index": 1,
+      "explanation": "Shorter lease times for mobile devices like laptops help prevent IP address pool exhaustion by quickly reclaiming addresses when devices leave the network. This ensures efficient use of the available IP address space in dynamic environments."
+    },
+    {
+      "question": "During the DHCP process, what is the primary purpose of the DHCPNAK (Negative Acknowledgment) message?",
+      "options": [
+        "To request a lease renewal from the client",
+        "To inform the client that the requested IP address is invalid or unavailable",
+        "To broadcast the client's MAC address to other servers",
+        "To initiate the four-way DHCP handshake process"
+      ],
+      "correct_index": 1,
+      "explanation": "DHCPNAK is sent by the server to reject a client's request, typically when the client requests an IP address that is no longer valid for its network segment or is already assigned to another device. This forces the client to start the discovery process over."
+    },
+    {
+      "question": "An organization has multiple VLANs but only one DHCP server located on the management VLAN. What network component is essential to enable DHCP functionality across all VLANs?",
+      "options": [
+        "A DHCP relay agent or IP helper configured on each VLAN's router interface",
+        "Multiple network interface cards on the DHCP server",
+        "A dedicated DHCP server for each VLAN",
+        "Static routing tables on all client devices"
+      ],
+      "correct_index": 0,
+      "explanation": "DHCP uses broadcast messages that don't cross VLAN boundaries by default. A DHCP relay agent (IP helper) on each VLAN's router interface forwards DHCP requests to the centralized server and returns responses to clients, enabling one server to serve multiple VLANs."
+    }
+  ],
+  "passing_score": 80
+}

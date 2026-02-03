@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Installation and Setup",
+  "questions": [
+    {
+      "question": "When installing Docker on a Linux VM, why is it recommended to add your user to the 'docker' group rather than running Docker commands with sudo?",
+      "options": [
+        "It improves container performance by reducing system overhead",
+        "It prevents security vulnerabilities and follows the principle of least privilege",
+        "It allows multiple users to run containers simultaneously",
+        "It enables automatic container startup on system boot"
+      ],
+      "correct_index": 1,
+      "explanation": "Adding users to the docker group eliminates the need for sudo with every Docker command while maintaining proper access control. Running Docker with sudo can create security risks and file permission issues."
+    },
+    {
+      "question": "A developer wants to run Docker containers on their MacBook for local development. What is the primary reason Docker Desktop uses a lightweight Linux VM on macOS?",
+      "options": [
+        "To improve container performance compared to native execution",
+        "Because Docker containers share the host OS kernel, which must be Linux",
+        "To provide better isolation between containers and the host system",
+        "To enable compatibility with Windows containers"
+      ],
+      "correct_index": 1,
+      "explanation": "Docker containers are built on Linux kernel features like namespaces and cgroups. Since macOS doesn't have a Linux kernel, Docker Desktop runs a lightweight Linux VM to provide the necessary kernel environment."
+    },
+    {
+      "question": "During Docker installation verification, what does the command 'docker run hello-world' primarily test?",
+      "options": [
+        "Whether the Docker daemon can communicate with Docker Hub and run containers",
+        "If the Docker networking configuration is properly set up",
+        "Whether sufficient disk space is available for container storage",
+        "If the Docker CLI tools are correctly installed"
+      ],
+      "correct_index": 0,
+      "explanation": "The hello-world container tests the complete Docker workflow: pulling an image from Docker Hub, creating a container, running it, and displaying output. This verifies daemon functionality and registry connectivity."
+    },
+    {
+      "question": "A system administrator notices Docker installation failed on a Linux server with the error 'package not found'. What is the most likely cause and solution?",
+      "options": [
+        "The server lacks sufficient memory; add more RAM",
+        "The Docker repository wasn't added to the package manager sources",
+        "The server's firewall is blocking Docker installation",
+        "The user doesn't have sufficient disk space"
+      ],
+      "correct_index": 1,
+      "explanation": "Most Linux distributions don't include Docker in their default repositories. The official Docker repository must be added to the package manager before installation can succeed."
+    },
+    {
+      "question": "When would you choose to install Docker Engine (Community Edition) on a Linux VM instead of using Docker Desktop on your local machine?",
+      "options": [
+        "When you need a graphical user interface for container management",
+        "For production deployments or when you need lightweight, headless container runtime",
+        "When you want to run both Linux and Windows containers",
+        "To get access to premium Docker features and support"
+      ],
+      "correct_index": 1,
+      "explanation": "Docker Engine is ideal for servers and production environments where you need a lightweight, command-line-only container runtime without the GUI overhead and additional features of Docker Desktop."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Public Key Infrastructure (PKI)",
+  "questions": [
+    {
+      "question": "A company wants to ensure that employees can securely exchange encrypted emails with external partners without having to pre-share secret keys. Which PKI component is most critical for solving this problem?",
+      "options": [
+        "Private key storage systems",
+        "Certificate Authorities (CAs)",
+        "Symmetric encryption algorithms",
+        "Firewall configurations"
+      ],
+      "correct_index": 1,
+      "explanation": "Certificate Authorities are essential because they provide trusted verification of public keys, allowing parties who have never met to establish secure communication without pre-sharing keys. The CA's digital signature on certificates creates the trust foundation needed for secure key exchange."
+    },
+    {
+      "question": "An employee receives a digital certificate error when trying to access a company website, stating 'Certificate has expired.' What is the primary security risk if they choose to proceed anyway?",
+      "options": [
+        "The website will load slower than normal",
+        "An attacker could be impersonating the legitimate website",
+        "The employee's password will be stored in plain text",
+        "The company's firewall will block future access attempts"
+      ],
+      "correct_index": 1,
+      "explanation": "An expired certificate means the cryptographic binding between the website's identity and its public key is no longer trustworthy. This creates an opportunity for man-in-the-middle attacks where an attacker could present their own certificate and intercept communications intended for the legitimate site."
+    },
+    {
+      "question": "Why does PKI use asymmetric (public-private key) cryptography instead of only symmetric encryption for secure communications?",
+      "options": [
+        "Asymmetric encryption is faster than symmetric encryption",
+        "Symmetric encryption cannot provide data confidentiality",
+        "Asymmetric cryptography solves the key distribution problem",
+        "Public keys are more secure than private keys"
+      ],
+      "correct_index": 2,
+      "explanation": "The key distribution problem - how to securely share secret keys between parties who haven't communicated before - is solved by asymmetric cryptography. Public keys can be shared openly, while private keys remain secret, eliminating the need to securely pre-distribute shared secrets."
+    },
+    {
+      "question": "A Certificate Authority's private key has been compromised. What is the most appropriate immediate response to maintain the security of the PKI system?",
+      "options": [
+        "Generate new public-private key pairs for all end users",
+        "Issue a Certificate Revocation List (CRL) and establish a new CA",
+        "Increase the key length of all existing certificates",
+        "Switch to symmetric encryption temporarily"
+      ],
+      "correct_index": 1,
+      "explanation": "When a CA's private key is compromised, all certificates signed by that CA become untrustworthy since an attacker could forge new certificates. The CA must be revoked (via CRL or OCSP), and a new trusted CA must be established to restore the chain of trust."
+    },
+    {
+      "question": "An organization is implementing PKI for 10,000 employees across multiple departments. Which approach would best balance security and manageability?",
+      "options": [
+        "Each employee generates and manages their own root certificate",
+        "Create a single certificate shared by all employees in each department",
+        "Establish a hierarchical CA structure with department-level intermediate CAs",
+        "Use only self-signed certificates to avoid external dependencies"
+      ],
+      "correct_index": 2,
+      "explanation": "A hierarchical CA structure with intermediate CAs provides the best balance by distributing certificate management responsibilities, enabling department-specific policies, containing security breaches, and maintaining a clear chain of trust back to a root CA while remaining scalable and manageable."
+    }
+  ],
+  "passing_score": 80
+}

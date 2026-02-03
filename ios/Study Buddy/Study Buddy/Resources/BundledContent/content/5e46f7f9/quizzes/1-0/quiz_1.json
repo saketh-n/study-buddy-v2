@@ -1,0 +1,61 @@
+{
+  "topic_name": "ARP and Address Resolution",
+  "questions": [
+    {
+      "question": "Why is ARP necessary in Ethernet networks when devices already have IP addresses?",
+      "options": [
+        "Because routers cannot understand IP addresses without MAC translation",
+        "Because Ethernet frames require physical MAC addresses for Layer 2 delivery within the local network",
+        "Because IP addresses change frequently and MAC addresses provide stability",
+        "Because ARP encrypts the communication between IP and MAC addresses"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP is necessary because Ethernet operates at Layer 2 and requires MAC addresses to deliver frames within the local network segment. Even though devices have IP addresses, the actual frame delivery mechanism needs the physical hardware address."
+    },
+    {
+      "question": "A host needs to send data to IP address 192.168.1.100 but doesn't have the corresponding MAC address in its ARP table. What happens next?",
+      "options": [
+        "The host sends the data directly using the IP address without MAC resolution",
+        "The host broadcasts an ARP request asking 'Who has 192.168.1.100?' to all devices on the local network",
+        "The host contacts the DNS server to resolve the MAC address",
+        "The host drops the packet and waits for the destination to initiate contact"
+      ],
+      "correct_index": 1,
+      "explanation": "When a host needs a MAC address that's not in its ARP table, it broadcasts an ARP request to all devices on the local network segment asking which device owns the target IP address."
+    },
+    {
+      "question": "In which scenario would ARP NOT be used by a host when sending data?",
+      "options": [
+        "Sending data to another host on the same subnet",
+        "Sending data to a host on a different subnet through a router",
+        "Sending data to the default gateway",
+        "Accessing a local network printer"
+      ],
+      "correct_index": 3,
+      "explanation": "ARP is not used when sending data to a host on a different subnet. In this case, the host uses ARP to find the MAC address of its default gateway/router, not the destination host, since the router will handle the inter-network delivery."
+    },
+    {
+      "question": "What potential security issue can arise from ARP's design, and why does this vulnerability exist?",
+      "options": [
+        "ARP cache poisoning, because ARP responses are not authenticated and hosts trust any ARP reply",
+        "IP address exhaustion, because ARP creates too many broadcast requests",
+        "Network congestion, because ARP tables become too large to process efficiently",
+        "DNS hijacking, because ARP can redirect domain name resolution"
+      ],
+      "correct_index": 0,
+      "explanation": "ARP cache poisoning is possible because the ARP protocol was designed without authentication mechanisms. Hosts will accept and cache ARP responses even if they didn't request them, allowing malicious actors to send false MAC-to-IP mappings."
+    },
+    {
+      "question": "A network administrator notices that ARP tables on hosts are being updated every 2 minutes instead of the typical 10-20 minute timeout. What is the most likely cause and why would this happen?",
+      "options": [
+        "Normal network optimization to improve performance",
+        "A misconfigured DHCP server assigning duplicate IP addresses",
+        "An ARP spoofing attack where an attacker is sending frequent gratuitous ARP responses",
+        "High network traffic causing faster ARP cache expiration"
+      ],
+      "correct_index": 2,
+      "explanation": "Frequent ARP table updates typically indicate an ARP spoofing attack where an attacker sends gratuitous (unsolicited) ARP responses to update victim machines' ARP caches with false information, often to redirect traffic through the attacker's system."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Stateful Firewalls",
+  "questions": [
+    {
+      "question": "What is the primary advantage of stateful firewalls over stateless firewalls when handling TCP connections?",
+      "options": [
+        "They can decrypt encrypted traffic",
+        "They track connection state and only allow packets that belong to established sessions",
+        "They provide faster packet processing due to simplified rule sets",
+        "They automatically block all UDP traffic since it's connectionless"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateful firewalls maintain connection state tables that track legitimate sessions, allowing return traffic for established connections while blocking unsolicited inbound packets. This provides better security than stateless firewalls that evaluate each packet independently."
+    },
+    {
+      "question": "In Linux iptables with conntrack, what would happen if you applied the rule 'iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT' without any other INPUT rules?",
+      "options": [
+        "All incoming traffic would be blocked",
+        "Only return traffic for outbound connections and related traffic (like FTP data channels) would be allowed in",
+        "All TCP traffic would be allowed but UDP would be blocked",
+        "The firewall would enter promiscuous mode and allow everything"
+      ],
+      "correct_index": 1,
+      "explanation": "The ESTABLISHED state allows return packets for connections initiated from inside, while RELATED allows associated traffic like FTP data channels. Without additional rules allowing NEW connections inbound, this creates an effective 'default deny' policy for unsolicited incoming traffic."
+    },
+    {
+      "question": "Why might a network administrator choose pfSense over a simple Linux iptables setup for a small business firewall deployment?",
+      "options": [
+        "pfSense provides better raw performance than Linux",
+        "pfSense offers a web GUI, integrated services, and easier management for non-command-line users",
+        "pfSense can handle more concurrent connections than Linux conntrack",
+        "pfSense uses proprietary algorithms that are more secure than open-source solutions"
+      ],
+      "correct_index": 1,
+      "explanation": "pfSense provides a comprehensive web-based management interface, integrated VPN services, traffic monitoring, and package management system, making it more accessible for administrators who prefer GUI-based management over command-line configuration."
+    },
+    {
+      "question": "When configuring a Cisco ASA for a web server in a DMZ, what is the most appropriate approach for allowing inbound HTTP traffic while maintaining security?",
+      "options": [
+        "Create a static NAT and access-list allowing HTTP from any source to the web server",
+        "Disable the security-level restrictions entirely for the DMZ interface",
+        "Configure the DMZ with a higher security level than the outside interface",
+        "Use only dynamic NAT without any access-lists to allow automatic connections"
+      ],
+      "correct_index": 0,
+      "explanation": "Static NAT with appropriate access-lists allows controlled inbound access to specific services while maintaining the stateful connection tracking. The ASA will automatically allow return traffic due to its stateful nature, and the access-list provides granular control over what traffic can initiate connections to the server."
+    },
+    {
+      "question": "A company's application uses dynamic port ranges for client connections, and users report intermittent connectivity issues. The Linux firewall uses conntrack with default timeouts. What is the most likely cause and solution?",
+      "options": [
+        "The dynamic ports are being blocked; configure iptables to allow all high-numbered ports",
+        "Connection tracking table is full or timeout values are too short; increase conntrack table size or adjust timeout values",
+        "The application needs static ports; reconfigure it to use fixed port numbers",
+        "Stateful tracking doesn't work with dynamic ports; switch to a stateless firewall"
+      ],
+      "correct_index": 1,
+      "explanation": "Connection tracking maintains state tables with finite size and timeout values. High numbers of dynamic connections can exhaust the table or have connections timing out prematurely, causing intermittent issues. Tuning conntrack parameters addresses the root cause while maintaining security."
+    }
+  ],
+  "passing_score": 80
+}

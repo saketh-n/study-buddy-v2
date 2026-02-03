@@ -1,0 +1,61 @@
+{
+  "topic_name": "Business Continuity and Disaster Recovery",
+  "questions": [
+    {
+      "question": "What is the primary difference between Business Continuity Planning (BCP) and Disaster Recovery Planning (DRP)?",
+      "options": [
+        "BCP focuses on maintaining operations during disruptions, while DRP focuses on restoring systems after disruptions",
+        "BCP is for natural disasters only, while DRP covers all security incidents",
+        "BCP is implemented by management, while DRP is handled by IT teams",
+        "BCP deals with financial recovery, while DRP handles technical recovery"
+      ],
+      "correct_index": 0,
+      "explanation": "BCP is proactive and focuses on keeping critical business functions running during disruptions, while DRP is reactive and concentrates on restoring IT systems and data after an incident has occurred."
+    },
+    {
+      "question": "A manufacturing company experiences a ransomware attack that encrypts their production control systems. According to business continuity principles, what should be their FIRST priority?",
+      "options": [
+        "Immediately pay the ransom to restore systems quickly",
+        "Activate manual backup processes to continue critical production",
+        "Conduct a full forensic investigation to determine the attack vector",
+        "Notify all customers about potential delivery delays"
+      ],
+      "correct_index": 1,
+      "explanation": "The first priority in business continuity is to maintain critical operations. Activating predetermined manual backup processes ensures production can continue while recovery efforts are underway, minimizing business impact."
+    },
+    {
+      "question": "When determining Recovery Time Objectives (RTO) for different business systems, which factor should have the GREATEST influence on setting priorities?",
+      "options": [
+        "The technical complexity of the system",
+        "The cost of the system hardware and software",
+        "The business impact of system downtime on revenue and operations",
+        "The age and maintenance requirements of the system"
+      ],
+      "correct_index": 2,
+      "explanation": "RTO should be primarily driven by business impact analysis. Systems that cause the greatest financial loss, regulatory issues, or operational disruption when down should have the shortest RTOs, regardless of their technical specifications."
+    },
+    {
+      "question": "A financial services company is designing their disaster recovery strategy. They need to recover critical trading systems within 2 hours and can tolerate losing no more than 15 minutes of transaction data. Which DR approach would be most appropriate?",
+      "options": [
+        "Cold site with daily backups",
+        "Warm site with real-time data replication",
+        "Hot site with real-time data replication",
+        "Mobile recovery unit with weekly backups"
+      ],
+      "correct_index": 2,
+      "explanation": "With an RTO of 2 hours and RPO of 15 minutes, a hot site (fully equipped and immediately available) with real-time replication is necessary. Warm sites require several hours to become operational, which exceeds the RTO requirement."
+    },
+    {
+      "question": "During a business continuity exercise, the alternate communication system fails to work properly. From a continuous improvement perspective, what is the MOST valuable outcome of this discovery?",
+      "options": [
+        "The exercise should be considered a failure and repeated immediately",
+        "The communication system vendor should be replaced due to poor reliability",
+        "The failure provides an opportunity to identify and fix a critical gap before a real incident",
+        "The exercise timeline should be extended to allow for communication system repairs"
+      ],
+      "correct_index": 2,
+      "explanation": "The primary value of BC/DR testing is to identify weaknesses in a controlled environment. Discovering failures during exercises allows organizations to address vulnerabilities before they impact real incident response, making the plan more robust."
+    }
+  ],
+  "passing_score": 80
+}

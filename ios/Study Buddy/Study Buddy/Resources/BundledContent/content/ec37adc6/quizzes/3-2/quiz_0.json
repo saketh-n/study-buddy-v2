@@ -1,0 +1,61 @@
+{
+  "topic_name": "Cardiovascular Benefits",
+  "questions": [
+    {
+      "question": "A 58-year-old patient with type 2 diabetes and established coronary artery disease is currently on metformin and insulin. Their HbA1c is 8.2% and they have a history of myocardial infarction. Which statement best explains why adding a GLP-1 receptor agonist would be most appropriate in this clinical scenario?",
+      "options": [
+        "The primary benefit is superior glycemic control compared to other antidiabetic agents",
+        "GLP-1 RAs provide demonstrated cardiovascular risk reduction in patients with established cardiovascular disease",
+        "GLP-1 RAs are the only diabetes medications that can be used safely with insulin",
+        "The weight loss effect is the main reason for cardiovascular benefit"
+      ],
+      "correct_index": 1,
+      "explanation": "GLP-1 receptor agonists have demonstrated cardiovascular risk reduction in major clinical trials, particularly in patients with established cardiovascular disease. This makes them a preferred choice for secondary prevention, independent of their glycemic effects."
+    },
+    {
+      "question": "The LEADER trial demonstrated cardiovascular benefits with liraglutide. What was the primary mechanism researchers believe contributed most significantly to the reduction in major adverse cardiovascular events (MACE)?",
+      "options": [
+        "Direct vasodilation through GLP-1 receptors in coronary arteries",
+        "Reduction in inflammatory markers and improved endothelial function",
+        "Significant weight loss leading to reduced cardiac workload",
+        "Improved insulin sensitivity reducing metabolic stress"
+      ],
+      "correct_index": 1,
+      "explanation": "While GLP-1 RAs have multiple effects, the primary cardiovascular benefits are attributed to anti-inflammatory effects, improved endothelial function, and direct cardioprotective mechanisms rather than indirect effects from weight loss or glycemic control alone."
+    },
+    {
+      "question": "A cardiologist is considering GLP-1 receptor agonist therapy for a diabetic patient following acute myocardial infarction. Based on clinical trial evidence, when would be the most appropriate timing to initiate this therapy?",
+      "options": [
+        "Immediately during acute hospitalization to maximize cardioprotective effects",
+        "After 6 months of cardiac rehabilitation to avoid potential complications",
+        "Once the patient is clinically stable, as early initiation shows sustained benefit",
+        "Only after other cardiovascular medications have been optimized for 1 year"
+      ],
+      "correct_index": 2,
+      "explanation": "Clinical trials suggest that GLP-1 RAs can be initiated once patients are clinically stable after acute events. Early initiation (not during acute phase) allows for maximum long-term cardiovascular benefit without waiting unnecessarily long periods."
+    },
+    {
+      "question": "Which patient population showed the LEAST cardiovascular benefit from GLP-1 receptor agonists in major clinical trials?",
+      "options": [
+        "Patients with established coronary artery disease",
+        "Patients with diabetic nephropathy and high cardiovascular risk",
+        "Patients with type 2 diabetes but no prior cardiovascular events (primary prevention)",
+        "Patients with heart failure and reduced ejection fraction"
+      ],
+      "correct_index": 2,
+      "explanation": "While GLP-1 RAs show cardiovascular benefits across populations, the most robust evidence and greatest absolute risk reduction is seen in secondary prevention (established CVD) rather than primary prevention in patients without prior cardiovascular events."
+    },
+    {
+      "question": "A patient asks why their GLP-1 receptor agonist is beneficial for their heart when they haven't lost significant weight on the medication. What is the most accurate explanation of the cardiovascular benefits independent of weight loss?",
+      "options": [
+        "The medication primarily works by lowering blood pressure through sodium excretion",
+        "GLP-1 receptors in cardiac tissue directly improve heart muscle contractility",
+        "The drug reduces atherosclerotic plaque formation through anti-inflammatory and anti-atherogenic mechanisms",
+        "Cardiovascular benefits only occur with significant weight loss, so the medication may not be effective"
+      ],
+      "correct_index": 2,
+      "explanation": "GLP-1 RAs provide cardiovascular benefits through direct anti-inflammatory, anti-atherogenic, and endothelial protective effects that are independent of weight loss. These mechanisms help reduce atherosclerotic plaque progression and stabilize existing plaques."
+    }
+  ],
+  "passing_score": 80
+}

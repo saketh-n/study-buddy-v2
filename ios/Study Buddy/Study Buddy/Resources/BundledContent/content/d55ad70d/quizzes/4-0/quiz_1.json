@@ -1,0 +1,61 @@
+{
+  "topic_name": "Filesystem driver",
+  "questions": [
+    {
+      "question": "What is the primary role of a filesystem driver in a computer storage system?",
+      "options": [
+        "To physically read and write data directly to disk sectors",
+        "To translate high-level file operations into low-level storage commands",
+        "To manage network connections between storage devices",
+        "To encrypt all data before it reaches the storage medium"
+      ],
+      "correct_index": 1,
+      "explanation": "A filesystem driver acts as a translation layer between the high-level filesystem operations (like opening files, reading directories) and the low-level storage device operations (like reading specific disk blocks)."
+    },
+    {
+      "question": "Why would an operating system need different filesystem drivers for different storage devices?",
+      "options": [
+        "Because each storage device uses a different electrical voltage",
+        "Because different devices require different filesystem drivers to handle their unique data organization methods",
+        "Because storage devices from different manufacturers are incompatible",
+        "Because newer devices are always faster and need specialized drivers"
+      ],
+      "correct_index": 1,
+      "explanation": "Different filesystems (like NTFS, ext4, FAT32) organize data differently on storage media. Each requires its own driver to properly interpret and manipulate the specific data structures and metadata formats."
+    },
+    {
+      "question": "When a user saves a file named 'document.txt' to their desktop, what does the filesystem driver need to accomplish?",
+      "options": [
+        "Convert the filename to binary and store it in RAM",
+        "Translate the save operation into specific storage block writes and update filesystem metadata",
+        "Compress the file automatically to save space",
+        "Send the file directly to the graphics card for display"
+      ],
+      "correct_index": 1,
+      "explanation": "The filesystem driver must translate the high-level 'save file' operation into multiple low-level tasks: allocating storage blocks, writing file data to those blocks, updating directory entries, and managing filesystem metadata like file allocation tables."
+    },
+    {
+      "question": "In what scenario would you most likely need to install a new filesystem driver?",
+      "options": [
+        "When upgrading your computer's RAM",
+        "When connecting a storage device formatted with a filesystem your OS doesn't natively support",
+        "When installing a new graphics card",
+        "When updating your web browser"
+      ],
+      "correct_index": 1,
+      "explanation": "Filesystem drivers are needed when the operating system encounters a filesystem format it doesn't recognize. For example, a Windows system might need an ext4 driver to read Linux-formatted drives."
+    },
+    {
+      "question": "How does a filesystem driver handle the concept of 'files' when the underlying storage device only understands blocks of data?",
+      "options": [
+        "It stores each file in exactly one storage block regardless of file size",
+        "It creates a mapping system that tracks which storage blocks belong to each file",
+        "It converts all files to the same size to match storage blocks",
+        "It stores files in alphabetical order across sequential blocks"
+      ],
+      "correct_index": 1,
+      "explanation": "The filesystem driver maintains data structures (like file allocation tables or inodes) that map logical files to physical storage blocks. Large files may span multiple blocks, while small files might share blocks, and the driver manages these relationships."
+    }
+  ],
+  "passing_score": 80
+}

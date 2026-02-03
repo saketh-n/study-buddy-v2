@@ -1,0 +1,60 @@
+{
+  "score": 60,
+  "correct_count": 3,
+  "total_questions": 5,
+  "passed": false,
+  "quiz_version": 1,
+  "fallback_mode": true,
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": true,
+      "student_choice": "10.1.0.0/16 because it provides enough addresses and is guaranteed not to be routed on the internet",
+      "correct_answer": "10.1.0.0/16 because it provides enough addresses and is guaranteed not to be routed on the internet",
+      "analysis": "Great job!",
+      "explanation": "10.1.0.0/16 from the 10.0.0.0/8 private range provides 65,534 host addresses, which is sufficient for 500+ employees with room for growth. Private IP ranges are non-routable on the internet, preventing conflicts. Option D uses Google's public DNS range, which would cause routing conflicts."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "/27 (255.255.255.224) because it creates 8 subnets with 30 hosts each",
+      "correct_answer": "/27 (255.255.255.224) because it creates 8 subnets with 30 hosts each",
+      "analysis": "Great job!",
+      "explanation": "A /27 subnet mask borrows 3 bits for subnets (2\u00b3 = 8 subnets) and leaves 5 bits for hosts (2\u2075 - 2 = 30 usable hosts per subnet). This meets the requirement of 6 subnets with at least 25 hosts each. /28 provides too few hosts (14), while /26 and /25 don't provide enough subnets."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "IPv6 eliminates the need for NAT in most scenarios due to its vast address space",
+      "correct_answer": "IPv6 eliminates the need for NAT in most scenarios due to its vast address space",
+      "analysis": "Great job!",
+      "explanation": "IPv6's 128-bit address space (compared to IPv4's 32-bit) provides approximately 3.4 \u00d7 10\u00b3\u2078 addresses, eliminating address scarcity. This removes the need for Network Address Translation (NAT) in most cases, simplifying network architecture and enabling end-to-end connectivity. The other options contain misconceptions about IPv6's inherent capabilities."
+    },
+    {
+      "question_num": 4,
+      "is_correct": false,
+      "student_choice": "There's a hardware failure in the switch preventing communication",
+      "correct_answer": "The devices are on different logical subnets and need a router to communicate",
+      "analysis": "The correct answer was: The devices are on different logical subnets and need a router to communicate",
+      "explanation": "192.168.1.0/26 covers addresses 192.168.1.1-62, while 192.168.1.64/26 covers 192.168.1.65-126. These are separate logical subnets that require Layer 3 routing to communicate, even on the same physical switch. Devices in different subnets cannot communicate directly at Layer 2."
+    },
+    {
+      "question_num": 5,
+      "is_correct": false,
+      "student_choice": "When you need a medium-sized address space that balances between the very large 10.x.x.x range and the small 192.168.x.x range",
+      "correct_answer": "When you want to avoid conflicts with home router default configurations",
+      "analysis": "The correct answer was: When you want to avoid conflicts with home router default configurations",
+      "explanation": "The 172.16.0.0/12 range (172.16.0.0-172.31.255.255) is less commonly used in home/small office environments compared to 192.168.x.x, reducing potential VPN and remote access conflicts. While it does provide a medium address space, the primary practical reason for choosing it is often to avoid the ubiquitous use of 192.168.x.x in consumer devices and 10.x.x.x in many corporate environments."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Review the questions you missed above"
+    ],
+    "focus_areas": [
+      "Check the explanations for each incorrect answer"
+    ],
+    "encouragement": "\u26a0\ufe0f AI feedback temporarily unavailable. Your score has been calculated and progress saved. You scored 60%. Review the explanations below and try again!",
+    "recommendation": "Review the lesson and try a new quiz when ready."
+  }
+}

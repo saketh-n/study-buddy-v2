@@ -1,0 +1,61 @@
+{
+  "topic_name": "SSL VPNs",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using TLS-based SSL VPNs over IPsec VPNs in corporate environments with restrictive firewalls?",
+      "options": [
+        "SSL VPNs provide stronger encryption than IPsec",
+        "SSL VPNs operate over standard HTTPS port 443, avoiding firewall blocks",
+        "SSL VPNs have lower latency than IPsec connections",
+        "SSL VPNs consume less bandwidth than IPsec tunnels"
+      ],
+      "correct_index": 1,
+      "explanation": "SSL VPNs use TLS over standard HTTPS port 443, which is typically allowed through corporate firewalls, unlike IPsec which may require specific ports and protocols that are often blocked."
+    },
+    {
+      "question": "A company needs to provide secure access to internal applications for employees using personal devices without installing software. Which SSL VPN implementation would be most appropriate?",
+      "options": [
+        "Daemon-based implementation with TUN interface",
+        "Client-based implementation like AnyConnect",
+        "Browser-based clientless SSL VPN",
+        "TAP interface with full network emulation"
+      ],
+      "correct_index": 2,
+      "explanation": "Browser-based clientless SSL VPNs allow access through web browsers without requiring software installation, making them ideal for personal devices where software installation may be restricted or undesired."
+    },
+    {
+      "question": "What is the key difference between TUN and TAP interfaces in SSL VPN implementations?",
+      "options": [
+        "TUN operates at Layer 2 while TAP operates at Layer 3",
+        "TUN provides Layer 3 IP tunneling while TAP provides Layer 2 Ethernet bridging",
+        "TUN is used for browser-based VPNs while TAP is for client-based VPNs",
+        "TUN supports only TCP traffic while TAP supports UDP traffic"
+      ],
+      "correct_index": 1,
+      "explanation": "TUN interfaces operate at Layer 3 and handle IP packets, while TAP interfaces operate at Layer 2 and can handle full Ethernet frames, allowing for more complex networking scenarios like bridging."
+    },
+    {
+      "question": "Why would an organization choose a daemon-based SSL VPN implementation over a browser-based solution for remote access?",
+      "options": [
+        "Daemon-based solutions provide better encryption algorithms",
+        "Daemon-based solutions offer full network layer access and support for all applications",
+        "Daemon-based solutions work better with mobile devices",
+        "Daemon-based solutions require less server resources"
+      ],
+      "correct_index": 1,
+      "explanation": "Daemon-based implementations create full network tunnels that allow any application to use the VPN connection, whereas browser-based solutions are limited to web applications accessible through the browser."
+    },
+    {
+      "question": "In an SSL VPN architecture, when would you encounter the limitation of not being able to access network resources that require specific protocols or ports?",
+      "options": [
+        "When using a daemon-based implementation with TUN interface",
+        "When using a client-based solution like AnyConnect",
+        "When using a browser-based clientless implementation",
+        "When using TAP interface with Layer 2 bridging"
+      ],
+      "correct_index": 2,
+      "explanation": "Browser-based clientless SSL VPNs are limited to web-based applications and cannot provide access to resources requiring specific protocols, ports, or non-HTTP applications, unlike full tunnel solutions."
+    }
+  ],
+  "passing_score": 80
+}

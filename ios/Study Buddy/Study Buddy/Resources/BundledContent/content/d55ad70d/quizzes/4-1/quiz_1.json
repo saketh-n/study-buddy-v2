@@ -1,0 +1,61 @@
+{
+  "topic_name": "Local Filesystem layout : Boot block, Root block (meta data and inodes), data blocks,,.. Driver program translates stuff;",
+  "questions": [
+    {
+      "question": "Why is the boot block typically placed at the beginning of a storage device rather than at the end or middle?",
+      "options": [
+        "The hardware bootloader knows to look for boot code at a fixed, predictable location at the start of the device",
+        "Boot blocks are larger than other blocks and need more space at the beginning",
+        "The operating system runs faster when boot code is at the start",
+        "Boot blocks contain the most frequently accessed data"
+      ],
+      "correct_index": 0,
+      "explanation": "The boot block is placed at the beginning because the hardware's bootloader (BIOS/UEFI) is programmed to look for executable boot code at a predetermined location, typically the first sectors of the storage device."
+    },
+    {
+      "question": "A file is deleted from the filesystem, but its data blocks are not immediately overwritten. What filesystem component is primarily responsible for tracking which data blocks are now available for reuse?",
+      "options": [
+        "The boot block maintains a deletion log",
+        "The inode table marks blocks as deleted in each inode",
+        "The free space bitmap or free block list in the metadata area",
+        "The driver program automatically zeros out deleted blocks"
+      ],
+      "correct_index": 2,
+      "explanation": "The filesystem metadata includes structures like free space bitmaps or free block lists that track which data blocks are available for allocation. When a file is deleted, its blocks are marked as free in these structures."
+    },
+    {
+      "question": "When an application requests to read a specific file, what is the most likely sequence of operations performed by the filesystem driver?",
+      "options": [
+        "Read boot block \u2192 locate file in data blocks \u2192 return data to application",
+        "Search all data blocks \u2192 find file content \u2192 cache in memory",
+        "Access inode table \u2192 follow block pointers \u2192 read data blocks \u2192 return data",
+        "Check free space bitmap \u2192 allocate temporary blocks \u2192 copy file data"
+      ],
+      "correct_index": 2,
+      "explanation": "The driver first locates the file's inode (which contains metadata and pointers to data blocks), then follows those pointers to read the actual data blocks containing the file content."
+    },
+    {
+      "question": "A filesystem becomes corrupted and the inode table is damaged. Which of the following problems would most likely occur?",
+      "options": [
+        "The system cannot boot because the boot block is inaccessible",
+        "Files cannot be accessed because their metadata and block locations are unknown",
+        "New files cannot be created because data blocks are full",
+        "The filesystem driver stops working completely"
+      ],
+      "correct_index": 1,
+      "explanation": "Inodes contain critical metadata about files including their size, permissions, and pointers to data blocks. Without this information, the filesystem cannot locate or access file contents, even though the data blocks themselves may be intact."
+    },
+    {
+      "question": "Why do modern filesystems typically separate metadata (like inodes) into dedicated areas rather than storing file metadata directly with each file's data blocks?",
+      "options": [
+        "Metadata blocks are larger and need special storage allocation",
+        "Separating metadata improves performance by enabling sequential access patterns and better caching",
+        "Mixed storage would make the boot block too large",
+        "Driver programs can only read one type of block at a time"
+      ],
+      "correct_index": 1,
+      "explanation": "Separating metadata allows for more efficient access patterns - metadata can be cached separately, directory operations don't require reading data blocks, and filesystem operations like checking free space or scanning directories become much faster."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "HA n Perf improvements using RAID (RAID 0,1, 10,..)",
+  "questions": [
+    {
+      "question": "A video editing company needs to maximize read/write performance for large media files but can tolerate some risk of data loss since they maintain separate backups. Which RAID configuration would be most appropriate?",
+      "options": [
+        "RAID 0 (striping)",
+        "RAID 1 (mirroring)",
+        "RAID 5 (striping with parity)",
+        "RAID 10 (mirrored stripes)"
+      ],
+      "correct_index": 0,
+      "explanation": "RAID 0 provides maximum performance by striping data across multiple drives without redundancy overhead. Since they have separate backups and prioritize speed over fault tolerance, RAID 0 is optimal."
+    },
+    {
+      "question": "Why does RAID 1 provide better read performance compared to a single drive, even though it doesn't stripe data?",
+      "options": [
+        "Data is compressed before writing to both drives",
+        "Read requests can be served simultaneously from both mirrored drives",
+        "The RAID controller caches more data with two drives",
+        "Data is automatically optimized when mirrored"
+      ],
+      "correct_index": 1,
+      "explanation": "RAID 1 can improve read performance because read requests can be distributed across both mirrored drives simultaneously, effectively doubling read throughput while maintaining full redundancy."
+    },
+    {
+      "question": "A database server experiences one drive failure in a RAID 10 array with 8 drives (4 mirrored pairs). What is the current fault tolerance status?",
+      "options": [
+        "The array can tolerate 3 more drive failures from any remaining drives",
+        "The array can tolerate up to 3 more failures, but only from specific drives",
+        "The array has no remaining fault tolerance",
+        "The array can tolerate exactly 1 more failure from any drive"
+      ],
+      "correct_index": 1,
+      "explanation": "In RAID 10, after one drive fails, the array can tolerate additional failures only from the 3 remaining intact mirror pairs, not from the mirror pair that already lost one drive. Losing the remaining drive from the damaged pair would cause data loss."
+    },
+    {
+      "question": "When comparing RAID 5 and RAID 10 for a high-transaction database system, what is the primary performance consideration that would favor RAID 10?",
+      "options": [
+        "RAID 10 uses less storage space for the same capacity",
+        "RAID 5 requires more drives to implement",
+        "RAID 5 has a write penalty due to parity calculation overhead",
+        "RAID 10 provides better protection against multiple drive failures"
+      ],
+      "correct_index": 2,
+      "explanation": "RAID 5 suffers from write penalty because each write operation requires reading old data and parity, calculating new parity, then writing both new data and parity. RAID 10 avoids this overhead by simply mirroring writes."
+    },
+    {
+      "question": "An organization needs to choose between RAID 6 and RAID 10 for their critical file server. They have 8 drives available and need maximum data protection. Which factor should most influence their decision?",
+      "options": [
+        "RAID 6 provides more usable storage capacity",
+        "RAID 10 offers better write performance",
+        "RAID 6 can survive any two drive failures",
+        "Both provide identical rebuild times"
+      ],
+      "correct_index": 2,
+      "explanation": "While RAID 10 can survive multiple drive failures, it's only guaranteed to survive two failures if they're in different mirror pairs. RAID 6 can survive ANY two drive failures regardless of which drives fail, making it more reliable for maximum data protection."
+    }
+  ],
+  "passing_score": 80
+}

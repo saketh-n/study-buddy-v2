@@ -1,0 +1,61 @@
+{
+  "topic_name": "Docker Architecture",
+  "questions": [
+    {
+      "question": "What is the primary architectural benefit of Docker's separation between dockerd and containerd?",
+      "options": [
+        "It allows containers to run faster by reducing overhead",
+        "It enables container lifecycle management to continue even if the Docker daemon is restarted",
+        "It provides better security by isolating container processes from the host",
+        "It reduces memory usage by sharing resources between containers"
+      ],
+      "correct_index": 1,
+      "explanation": "The separation allows containerd to manage running containers independently of dockerd, ensuring container continuity during Docker daemon updates or restarts."
+    },
+    {
+      "question": "When would you encounter RunC being used directly instead of through the full Docker stack?",
+      "options": [
+        "When running containers in production environments",
+        "When building custom container images",
+        "When implementing lightweight container orchestration or specialized container runtimes",
+        "When debugging network connectivity issues"
+      ],
+      "correct_index": 2,
+      "explanation": "RunC is the low-level container runtime that can be used directly for custom implementations, embedded systems, or when building specialized container platforms that don't need Docker's full feature set."
+    },
+    {
+      "question": "What problem does container-shim solve in Docker's architecture?",
+      "options": [
+        "It provides networking capabilities between containers",
+        "It manages container image layers and storage",
+        "It acts as an intermediary to keep containers running when containerd restarts",
+        "It handles container security and access controls"
+      ],
+      "correct_index": 2,
+      "explanation": "Container-shim serves as a lightweight process that maintains the connection between containerd and the actual container process, allowing containerd to be upgraded or restarted without affecting running containers."
+    },
+    {
+      "question": "A developer notices that their containers continue running even after upgrading Docker. Which component is primarily responsible for this behavior?",
+      "options": [
+        "dockerd maintaining backward compatibility",
+        "RunC's process isolation capabilities",
+        "The container-shim preserving container state during upgrades",
+        "Container images being stored independently of the Docker daemon"
+      ],
+      "correct_index": 2,
+      "explanation": "Container-shim processes remain running and maintain container state even when higher-level components like dockerd or containerd are upgraded, ensuring container continuity."
+    },
+    {
+      "question": "Why does Docker use containerd as an intermediate layer instead of having dockerd communicate directly with RunC?",
+      "options": [
+        "To improve container startup performance",
+        "To provide a stable, vendor-neutral interface for container lifecycle management",
+        "To reduce the size of Docker images",
+        "To enable containers to share the same network namespace"
+      ],
+      "correct_index": 1,
+      "explanation": "Containerd provides a standardized, industry-neutral API for container lifecycle management, allowing Docker and other tools to use the same underlying container management layer while enabling ecosystem interoperability."
+    }
+  ],
+  "passing_score": 80
+}

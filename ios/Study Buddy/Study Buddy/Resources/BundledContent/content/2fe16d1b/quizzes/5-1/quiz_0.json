@@ -1,0 +1,61 @@
+{
+  "topic_name": "ML Frameworks",
+  "questions": [
+    {
+      "question": "What is the primary advantage of using a machine learning framework like TensorFlow or PyTorch compared to implementing neural networks from scratch?",
+      "options": [
+        "They automatically choose the best algorithm for your data",
+        "They provide optimized implementations of common operations and automatic differentiation",
+        "They guarantee better accuracy than custom implementations",
+        "They only work with specific types of data formats"
+      ],
+      "correct_index": 1,
+      "explanation": "ML frameworks provide pre-built, optimized implementations of mathematical operations and automatic differentiation capabilities, which handle the complex calculus needed for backpropagation automatically."
+    },
+    {
+      "question": "A research team needs to experiment with novel neural network architectures and wants maximum flexibility to modify the computational graph during runtime. Which framework characteristic would be most important for their needs?",
+      "options": [
+        "Static computational graphs for better optimization",
+        "Dynamic computational graphs for flexible execution",
+        "Pre-built model templates",
+        "Distributed training capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "Dynamic computational graphs (like PyTorch's eager execution) allow researchers to modify the network structure during runtime, making it easier to experiment with novel architectures and debug models."
+    },
+    {
+      "question": "When would you choose TensorFlow over PyTorch for a machine learning project?",
+      "options": [
+        "When you need the fastest training speed regardless of other factors",
+        "When you're primarily doing computer vision tasks",
+        "When you need robust production deployment tools and model serving capabilities",
+        "When you want to use only pre-trained models"
+      ],
+      "correct_index": 2,
+      "explanation": "TensorFlow has mature production ecosystem tools like TensorFlow Serving, TensorFlow Lite, and TensorFlow.js, making it well-suited for deployment scenarios where models need to be served at scale."
+    },
+    {
+      "question": "What is the main purpose of automatic differentiation in machine learning frameworks?",
+      "options": [
+        "To automatically select the best optimization algorithm",
+        "To compute gradients needed for backpropagation without manual derivation",
+        "To automatically preprocess input data",
+        "To prevent overfitting during training"
+      ],
+      "correct_index": 1,
+      "explanation": "Automatic differentiation automatically computes the gradients of complex functions with respect to their inputs, eliminating the need to manually derive and implement gradient calculations for backpropagation."
+    },
+    {
+      "question": "A startup wants to deploy a lightweight image classification model on mobile devices with limited computational resources. Which framework feature would be most critical for their success?",
+      "options": [
+        "Support for the largest possible model architectures",
+        "Model optimization and quantization tools",
+        "Distributed training across multiple GPUs",
+        "Real-time data streaming capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "Model optimization and quantization tools help reduce model size and computational requirements, making models suitable for deployment on resource-constrained mobile devices while maintaining acceptable performance."
+    }
+  ],
+  "passing_score": 80
+}

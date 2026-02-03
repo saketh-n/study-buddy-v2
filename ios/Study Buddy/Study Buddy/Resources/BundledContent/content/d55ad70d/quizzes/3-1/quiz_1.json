@@ -1,0 +1,61 @@
+{
+  "topic_name": "Sample File IO and Seek",
+  "questions": [
+    {
+      "question": "When opening a file in 'w' mode versus 'a' mode, what is the key difference in how the file pointer is positioned?",
+      "options": [
+        "'w' mode positions at the end, 'a' mode positions at the beginning",
+        "'w' mode truncates and positions at beginning, 'a' mode positions at end",
+        "'w' mode positions randomly, 'a' mode positions at beginning",
+        "Both modes position at the same location but behave differently when writing"
+      ],
+      "correct_index": 1,
+      "explanation": "Write mode ('w') truncates the file to zero length and positions the pointer at the beginning, while append mode ('a') positions the pointer at the end of existing content."
+    },
+    {
+      "question": "You need to read a specific record from the middle of a large binary file without loading the entire file into memory. Which approach would be most efficient?",
+      "options": [
+        "Read the entire file sequentially until you reach the desired record",
+        "Use seek() to jump directly to the calculated position of the record",
+        "Open the file multiple times and read different portions",
+        "Load the file in chunks and search each chunk"
+      ],
+      "correct_index": 1,
+      "explanation": "Using seek() allows direct positioning to any byte offset in the file, making it the most efficient method for accessing specific locations in large files without reading unnecessary data."
+    },
+    {
+      "question": "What happens when you attempt to seek beyond the end of a file in most operating systems?",
+      "options": [
+        "An immediate error is thrown",
+        "The operation succeeds, and writing creates a sparse file with gaps",
+        "The file pointer is automatically reset to the beginning",
+        "The file is automatically extended with null bytes"
+      ],
+      "correct_index": 1,
+      "explanation": "Most operating systems allow seeking beyond EOF. If you then write data, the gap between the original end and new data may be filled with zeros or create a sparse file, depending on the filesystem."
+    },
+    {
+      "question": "When implementing a simple database index file, why would you choose to use seek() operations rather than sequential file reading?",
+      "options": [
+        "Sequential reading is not supported by database files",
+        "Seek operations provide better error handling capabilities",
+        "Random access via seek() allows O(1) record lookup instead of O(n) sequential search",
+        "Seek operations automatically handle file locking"
+      ],
+      "correct_index": 2,
+      "explanation": "Seek operations enable direct access to any file position, providing constant-time O(1) access to records when you know their position, versus O(n) time for sequential searching through the file."
+    },
+    {
+      "question": "In a program that processes a log file by reading entries and occasionally updating status flags within those entries, which file opening strategy would be most appropriate?",
+      "options": [
+        "Open in read-only mode and create a separate output file",
+        "Open in write-only mode to ensure data integrity",
+        "Open in read-write mode ('r+') to allow both reading and in-place updates",
+        "Open in append mode to add updates at the end"
+      ],
+      "correct_index": 2,
+      "explanation": "Read-write mode ('r+') allows both reading existing content and writing updates at specific positions using seek(), enabling in-place modification of the log entries without creating separate files."
+    }
+  ],
+  "passing_score": 80
+}

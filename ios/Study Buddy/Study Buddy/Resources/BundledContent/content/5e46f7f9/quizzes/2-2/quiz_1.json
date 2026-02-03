@@ -1,0 +1,61 @@
+{
+  "topic_name": "Email Protocols",
+  "questions": [
+    {
+      "question": "A user reports that emails they send from their smartphone don't appear in the 'Sent' folder when they check email on their laptop. What is the most likely cause of this issue?",
+      "options": [
+        "The SMTP server is not properly configured",
+        "The user is using POP3 instead of IMAP",
+        "The email client is using an outdated version",
+        "The firewall is blocking port 25"
+      ],
+      "correct_index": 1,
+      "explanation": "POP3 downloads emails to a single device and doesn't synchronize folders across multiple devices. IMAP keeps emails on the server and synchronizes all folders, including Sent items, across all devices."
+    },
+    {
+      "question": "Why would a company choose IMAP over POP3 for their employees' email access?",
+      "options": [
+        "IMAP provides better security encryption",
+        "IMAP allows faster email sending through SMTP",
+        "IMAP enables seamless email access across multiple devices",
+        "IMAP requires less server storage space"
+      ],
+      "correct_index": 2,
+      "explanation": "IMAP stores emails on the server and synchronizes them across all devices, making it ideal for users who access email from multiple locations. POP3 downloads emails to one device, making multi-device access problematic."
+    },
+    {
+      "question": "When an email client sends an email, which sequence of events typically occurs?",
+      "options": [
+        "IMAP authenticates \u2192 SMTP sends \u2192 POP3 delivers",
+        "POP3 retrieves \u2192 SMTP sends \u2192 IMAP stores",
+        "SMTP sends to recipient's server \u2192 recipient uses POP3 or IMAP to retrieve",
+        "IMAP sends \u2192 SMTP routes \u2192 POP3 confirms delivery"
+      ],
+      "correct_index": 2,
+      "explanation": "SMTP handles outgoing mail transmission between servers. Once delivered to the recipient's mail server, the recipient uses either POP3 or IMAP to retrieve and read the message. IMAP and POP3 are retrieval protocols, not sending protocols."
+    },
+    {
+      "question": "A traveling executive needs to access email from various locations using different devices, often with limited storage space on mobile devices. Which email protocol configuration would best meet these requirements?",
+      "options": [
+        "POP3 with 'leave messages on server' disabled",
+        "POP3 with 'leave messages on server' enabled",
+        "IMAP with selective synchronization",
+        "SMTP with local caching"
+      ],
+      "correct_index": 2,
+      "explanation": "IMAP with selective synchronization allows access from multiple devices while conserving local storage by keeping emails on the server. Users can choose which folders to sync locally, perfect for mobile devices with limited storage."
+    },
+    {
+      "question": "An organization's email server logs show successful SMTP connections but users report they cannot receive new emails. What is the most likely issue?",
+      "options": [
+        "The IMAP/POP3 services are down while SMTP is functioning",
+        "The SMTP server is rejecting authentication",
+        "Users need to reconfigure their outgoing mail settings",
+        "The DNS MX records are misconfigured"
+      ],
+      "correct_index": 0,
+      "explanation": "SMTP handles outgoing mail (sending), while IMAP/POP3 handle incoming mail retrieval. If SMTP is working but users can't receive emails, the issue is likely with the retrieval protocols (IMAP/POP3 services) being down or misconfigured."
+    }
+  ],
+  "passing_score": 80
+}

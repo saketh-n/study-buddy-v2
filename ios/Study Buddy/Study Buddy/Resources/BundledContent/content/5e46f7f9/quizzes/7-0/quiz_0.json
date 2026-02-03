@@ -1,0 +1,61 @@
+{
+  "topic_name": "Network Diagnostic Commands",
+  "questions": [
+    {
+      "question": "You're troubleshooting a network connectivity issue where users can access websites by IP address but not by domain names. Which diagnostic command would be MOST appropriate to investigate this problem?",
+      "options": [
+        "ping",
+        "nslookup",
+        "arp",
+        "netstat"
+      ],
+      "correct_index": 1,
+      "explanation": "Since users can access sites by IP but not domain names, this indicates a DNS resolution problem. nslookup (or dig) is the appropriate tool to test and troubleshoot DNS functionality."
+    },
+    {
+      "question": "A network administrator notices that packets to a remote server are taking an unusual path through the network. Which command would help identify the specific routers and network hops the packets are traversing?",
+      "options": [
+        "route print",
+        "tracert/traceroute",
+        "netstat -r",
+        "ping -t"
+      ],
+      "correct_index": 1,
+      "explanation": "tracert (Windows) or traceroute (Linux/Unix) shows the path packets take through the network, revealing each hop and router along the route to the destination."
+    },
+    {
+      "question": "When would you use the ARP command during network troubleshooting?",
+      "options": [
+        "To test connectivity to remote hosts across the internet",
+        "To resolve issues with local network communication and MAC address mapping",
+        "To check which ports are listening on your system",
+        "To verify DNS server responses"
+      ],
+      "correct_index": 1,
+      "explanation": "ARP (Address Resolution Protocol) maps IP addresses to MAC addresses on the local network segment. It's useful for troubleshooting local network communication issues, such as duplicate IP addresses or MAC address conflicts."
+    },
+    {
+      "question": "A server administrator suspects that unauthorized connections are being made to their system. Which command would provide the BEST information about active network connections and listening ports?",
+      "options": [
+        "ping -a",
+        "nslookup",
+        "netstat",
+        "ifconfig"
+      ],
+      "correct_index": 2,
+      "explanation": "netstat displays active network connections, listening ports, and network statistics. This makes it ideal for identifying unauthorized connections and monitoring what services are accepting network connections."
+    },
+    {
+      "question": "You're configuring a new network interface and need to verify that the IP address, subnet mask, and default gateway have been properly assigned. Which approach would give you the most comprehensive view of the network configuration?",
+      "options": [
+        "Use ping to test connectivity only",
+        "Use ip/ifconfig to view interface configuration, then test with ping",
+        "Use only nslookup to verify DNS settings",
+        "Use tracert to check routing paths"
+      ],
+      "correct_index": 1,
+      "explanation": "ip (Linux) or ifconfig (Unix/older Linux) commands show the complete network interface configuration including IP address, subnet mask, and interface status. Following up with ping tests connectivity and validates that the configuration is working properly."
+    }
+  ],
+  "passing_score": 80
+}

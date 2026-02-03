@@ -1,0 +1,61 @@
+{
+  "topic_name": "Intrusion Detection and Prevention Systems",
+  "questions": [
+    {
+      "question": "What is the primary difference between an Intrusion Detection System (IDS) and an Intrusion Prevention System (IPS) in terms of network deployment and response capabilities?",
+      "options": [
+        "An IDS actively blocks threats while an IPS only monitors and alerts",
+        "An IDS operates out-of-band and alerts on threats, while an IPS operates inline and can block threats in real-time",
+        "An IDS uses signature-based detection while an IPS uses behavior-based detection",
+        "An IDS monitors internal network traffic while an IPS monitors external network traffic"
+      ],
+      "correct_index": 1,
+      "explanation": "The key difference is deployment architecture and response capability. IDS operates out-of-band (passively monitoring copies of traffic) and can only alert, while IPS operates inline (all traffic passes through it) enabling real-time blocking of detected threats."
+    },
+    {
+      "question": "A company's network experiences high volumes of legitimate traffic with frequent protocol variations. Which detection approach would be MOST appropriate for their IDPS to minimize false positives while maintaining security effectiveness?",
+      "options": [
+        "Signature-based detection only, as it provides the most accurate threat identification",
+        "Anomaly-based detection only, as it adapts to changing network patterns",
+        "A hybrid approach combining signature-based detection with carefully tuned anomaly-based detection",
+        "Protocol analysis only, focusing on standards compliance"
+      ],
+      "correct_index": 2,
+      "explanation": "A hybrid approach is most suitable for dynamic environments. Signature-based detection provides reliable identification of known threats with low false positives, while carefully tuned anomaly-based detection can identify unknown threats. Using both methods together balances accuracy and coverage."
+    },
+    {
+      "question": "An organization implements a Network-based IPS (NIPS) but notices that encrypted HTTPS traffic containing malware is passing through undetected. What is the PRIMARY limitation being encountered and what would be the most effective solution?",
+      "options": [
+        "The NIPS signature database is outdated; update signatures immediately",
+        "NIPS cannot inspect encrypted traffic content; implement SSL/TLS inspection or deploy Host-based IPS (HIPS) on endpoints",
+        "The NIPS is experiencing performance bottlenecks; upgrade hardware capacity",
+        "The NIPS is misconfigured for HTTPS traffic; adjust protocol settings"
+      ],
+      "correct_index": 1,
+      "explanation": "NIPS cannot inspect the contents of encrypted traffic, creating a significant blind spot. The solution requires either SSL/TLS inspection (decrypting traffic at the network level) or complementing with HIPS that can monitor endpoint behavior and detect malware after decryption."
+    },
+    {
+      "question": "During a security incident investigation, an analyst discovers that the IDPS generated thousands of alerts but failed to detect a sophisticated Advanced Persistent Threat (APT) that used legitimate administrative tools. What detection challenge does this scenario primarily illustrate?",
+      "options": [
+        "Inadequate signature coverage requiring database updates",
+        "Alert fatigue and the difficulty of detecting low-and-slow attacks that mimic legitimate behavior",
+        "Network segmentation issues preventing proper traffic visibility",
+        "Insufficient processing power causing missed detections"
+      ],
+      "correct_index": 1,
+      "explanation": "This scenario illustrates two key challenges: alert fatigue (too many alerts making it hard to identify real threats) and the difficulty of detecting sophisticated attacks that use legitimate tools and blend in with normal network behavior, requiring advanced behavioral analysis."
+    },
+    {
+      "question": "A financial institution needs to deploy an IDPS solution that can handle high-frequency trading traffic (microsecond latency requirements) while maintaining regulatory compliance for threat detection. Which deployment strategy would BEST balance performance and security requirements?",
+      "options": [
+        "Deploy IPS inline for all traffic to ensure complete threat prevention",
+        "Deploy IDS out-of-band for monitoring with separate incident response procedures to avoid latency impact",
+        "Use a hybrid approach: IPS for non-critical traffic and IDS for latency-sensitive trading traffic",
+        "Implement only host-based detection to avoid network latency"
+      ],
+      "correct_index": 2,
+      "explanation": "A hybrid approach best balances the competing requirements. High-frequency trading traffic requires minimal latency (favoring IDS monitoring), while other network traffic can tolerate inline IPS protection. This maintains regulatory compliance through comprehensive monitoring while preserving critical application performance."
+    }
+  ],
+  "passing_score": 80
+}

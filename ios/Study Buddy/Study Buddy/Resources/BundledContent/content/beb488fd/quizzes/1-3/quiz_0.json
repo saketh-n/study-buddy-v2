@@ -1,0 +1,61 @@
+{
+  "topic_name": "Cloud Storage Solutions",
+  "questions": [
+    {
+      "question": "A company needs to store millions of log files of varying sizes (1KB to 100MB) for long-term analytics. The files are written once but may be accessed frequently in the first month, then rarely afterward. Which storage approach is most appropriate?",
+      "options": [
+        "Object storage with tiered storage policies",
+        "Traditional file system with scheduled archiving",
+        "Relational database with BLOB columns",
+        "Block storage with manual file management"
+      ],
+      "correct_index": 0,
+      "explanation": "Object storage with tiered storage policies is ideal for this use case because it can automatically move infrequently accessed data to cheaper storage classes, handles varying file sizes efficiently, and provides the scalability needed for millions of files without manual intervention."
+    },
+    {
+      "question": "What is the primary architectural difference between a data lake and a traditional data warehouse when implemented using cloud storage?",
+      "options": [
+        "Data lakes require structured data while warehouses accept unstructured data",
+        "Data lakes store raw data in native formats while warehouses require predefined schemas",
+        "Data lakes can only use object storage while warehouses use block storage",
+        "Data lakes are always cheaper than warehouses regardless of usage patterns"
+      ],
+      "correct_index": 1,
+      "explanation": "The key difference is that data lakes follow a 'schema-on-read' approach, storing raw data in its native format and applying structure when accessed, while traditional warehouses use 'schema-on-write', requiring data to be transformed and structured before storage."
+    },
+    {
+      "question": "When designing a multi-region data processing pipeline, why would you choose to replicate data across AWS S3, Azure Blob Storage, and Google Cloud Storage simultaneously?",
+      "options": [
+        "To improve query performance by distributing compute load",
+        "To avoid vendor lock-in and ensure business continuity across cloud providers",
+        "To automatically synchronize data transformations across platforms",
+        "To reduce storage costs through cross-cloud competition"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-cloud storage replication is primarily used for avoiding vendor lock-in and ensuring business continuity. It allows organizations to maintain operations even if one cloud provider experiences outages and provides flexibility to migrate workloads between providers."
+    },
+    {
+      "question": "A data engineering team notices that their ETL jobs reading from cloud object storage are experiencing inconsistent performance. The jobs process many small files (< 1MB) that were created by streaming ingestion. What is the most likely cause and solution?",
+      "options": [
+        "Network latency; solution is to use a different storage class",
+        "Small file problem; solution is to implement file compaction/consolidation",
+        "Insufficient storage throughput; solution is to upgrade storage tier",
+        "Authentication overhead; solution is to use service accounts"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'small file problem' is common in big data processing where many small files create overhead due to metadata operations and reduce parallelization efficiency. Compacting small files into larger ones improves read performance and reduces API calls."
+    },
+    {
+      "question": "An organization wants to implement a data lake that supports both batch analytics and real-time streaming queries. Which combination of cloud storage features and access patterns would best support this requirement?",
+      "options": [
+        "Cold storage with scheduled batch transfers to hot storage",
+        "Object storage with multiple access APIs and query-in-place capabilities",
+        "Block storage with database replication between batch and streaming systems",
+        "Archive storage with automated data restoration triggers"
+      ],
+      "correct_index": 1,
+      "explanation": "Modern cloud object storage services (like S3 with Athena, Azure Data Lake with Synapse, or GCS with BigQuery) provide multiple access APIs and query-in-place capabilities, allowing the same data to be accessed via both batch processing frameworks and real-time query engines without data duplication."
+    }
+  ],
+  "passing_score": 80
+}

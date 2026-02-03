@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Load Balancing Services",
+  "questions": [
+    {
+      "question": "A gaming company needs to distribute UDP traffic for their real-time multiplayer game servers while maintaining ultra-low latency and handling millions of requests per second. Which AWS load balancer would be most appropriate?",
+      "options": [
+        "Application Load Balancer (ALB)",
+        "Network Load Balancer (NLB)",
+        "Classic Load Balancer",
+        "Gateway Load Balancer (GWLB)"
+      ],
+      "correct_index": 1,
+      "explanation": "Network Load Balancer operates at Layer 4 and can handle UDP traffic with ultra-low latency and millions of requests per second. ALB only handles HTTP/HTTPS, Classic LB has performance limitations, and GWLB is for traffic inspection scenarios."
+    },
+    {
+      "question": "Your organization requires all incoming web traffic to pass through third-party security appliances for deep packet inspection before reaching your application servers. Which load balancer architecture should you implement?",
+      "options": [
+        "ALB with WAF integration",
+        "NLB with security groups",
+        "GWLB with security appliances as targets",
+        "Multiple ALBs in series"
+      ],
+      "correct_index": 2,
+      "explanation": "Gateway Load Balancer is specifically designed for scenarios where traffic needs to be transparently routed through third-party virtual appliances (like firewalls or IDS/IPS systems) before reaching the destination."
+    },
+    {
+      "question": "An e-commerce application uses microservices architecture with different services running on various paths (/users, /products, /orders). The application needs SSL termination and content-based routing. Which load balancer feature set is most suitable?",
+      "options": [
+        "NLB with target groups and health checks",
+        "ALB with path-based routing and SSL certificates",
+        "GWLB with GENEVE protocol",
+        "Classic LB with sticky sessions"
+      ],
+      "correct_index": 1,
+      "explanation": "Application Load Balancer operates at Layer 7 and provides advanced routing capabilities including path-based routing, SSL termination, and content-based routing rules, which are perfect for microservices architectures."
+    },
+    {
+      "question": "Why would you choose Network Load Balancer over Application Load Balancer for a financial trading application that processes market data feeds?",
+      "options": [
+        "NLB provides better security features",
+        "NLB offers advanced content routing capabilities",
+        "NLB maintains static IP addresses and provides predictable performance",
+        "NLB has lower costs than ALB"
+      ],
+      "correct_index": 2,
+      "explanation": "Financial trading applications require predictable, ultra-low latency performance. NLB provides static IP addresses, preserves source IP, and offers consistent performance without the overhead of Layer 7 processing that ALB performs."
+    },
+    {
+      "question": "A company wants to implement a load balancing solution that can automatically scale based on application metrics, perform health checks at the application level, and integrate with AWS WAF for security. What combination would best meet these requirements?",
+      "options": [
+        "NLB with CloudWatch and Security Groups",
+        "ALB with Auto Scaling Groups and WAF",
+        "GWLB with third-party security appliances",
+        "Classic LB with CloudFront"
+      ],
+      "correct_index": 1,
+      "explanation": "ALB integrates natively with Auto Scaling Groups for automatic scaling, performs sophisticated health checks including custom application-level checks, and has direct integration with AWS WAF for application-layer security."
+    }
+  ],
+  "passing_score": 80
+}

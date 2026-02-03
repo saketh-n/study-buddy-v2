@@ -1,0 +1,61 @@
+{
+  "topic_name": "Basic Firewalls",
+  "questions": [
+    {
+      "question": "What is the fundamental limitation of stateless firewalls operating at L3/L4 when filtering TCP traffic?",
+      "options": [
+        "They cannot inspect packet payloads for malicious content",
+        "They cannot track connection state to distinguish between new and established connections",
+        "They cannot filter based on source and destination IP addresses",
+        "They cannot operate at wire speed due to processing overhead"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateless firewalls examine each packet independently without maintaining connection state information, making it difficult to distinguish between legitimate return traffic and potentially malicious packets that appear to be part of an established connection."
+    },
+    {
+      "question": "In a scenario where you need to allow HTTP traffic from internal users to external websites while blocking external users from accessing internal web servers, which approach would be most effective with stateless firewalls?",
+      "options": [
+        "Block all traffic on port 80 in both directions",
+        "Allow outbound traffic on port 80 and block all inbound traffic on port 80",
+        "Allow outbound traffic on port 80 and allow inbound traffic only on high-numbered ports (1024-65535)",
+        "Allow all traffic on port 80 but inspect packet contents"
+      ],
+      "correct_index": 2,
+      "explanation": "Since stateless firewalls cannot track connections, allowing outbound HTTP (port 80) and inbound traffic on high-numbered ports accommodates the fact that return HTTP traffic comes back to the client on the original high-numbered source port used for the outbound connection."
+    },
+    {
+      "question": "Which statement best explains why the order of rules matters in both iptables and Cisco ACLs?",
+      "options": [
+        "Rules are processed in parallel, so order affects performance optimization",
+        "Rules are processed sequentially top-down, and processing stops at the first matching rule",
+        "Rules with higher priority numbers are always processed first regardless of position",
+        "Order only matters for performance; all rules are eventually evaluated"
+      ],
+      "correct_index": 1,
+      "explanation": "Both iptables and Cisco ACLs process rules sequentially from top to bottom, and when a packet matches a rule, the specified action is taken and no further rules are processed for that packet."
+    },
+    {
+      "question": "When would you choose to implement stateless packet filtering instead of stateful inspection for a network security solution?",
+      "options": [
+        "When you need to inspect application-layer protocols",
+        "When you require the highest possible throughput and have predictable traffic patterns",
+        "When you need to track user sessions across multiple connections",
+        "When you need to defend against connection hijacking attacks"
+      ],
+      "correct_index": 1,
+      "explanation": "Stateless filtering is preferred when maximum performance is needed and traffic patterns are predictable, as it requires less processing overhead and memory compared to stateful inspection, making it suitable for high-speed environments with well-defined traffic flows."
+    },
+    {
+      "question": "A network administrator notices that legitimate FTP data connections are being blocked despite allowing FTP control traffic (port 21). What characteristic of stateless firewalls best explains this issue?",
+      "options": [
+        "Stateless firewalls cannot handle encrypted FTP traffic",
+        "Stateless firewalls cannot dynamically allow the random high-numbered ports used for FTP data connections",
+        "Stateless firewalls are incompatible with FTP protocol specifications",
+        "Stateless firewalls require special FTP modules to function"
+      ],
+      "correct_index": 1,
+      "explanation": "FTP uses dynamic port allocation for data connections, where the port numbers are negotiated through the control channel. Stateless firewalls cannot inspect this negotiation or dynamically open the required data ports, unlike stateful firewalls that can track and automatically allow related connections."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Pods and Workload Units",
+  "questions": [
+    {
+      "question": "Why does Kubernetes use pods as the basic scheduling unit instead of individual containers?",
+      "options": [
+        "To enable containers within the same unit to share networking and storage while maintaining atomic deployment",
+        "To reduce memory usage by combining multiple container processes into a single process",
+        "To automatically load balance traffic between containers in the same application",
+        "To prevent containers from communicating with each other for security purposes"
+      ],
+      "correct_index": 0,
+      "explanation": "Pods enable containers to share the same network namespace (IP address) and storage volumes while ensuring they are scheduled, deployed, and scaled together as an atomic unit. This design supports tightly coupled container patterns like sidecars."
+    },
+    {
+      "question": "A development team needs to deploy a web application with a logging sidecar that processes the application's log files. How should the containers share the log data?",
+      "options": [
+        "Configure the containers to communicate over the pod's shared network using localhost",
+        "Mount a shared volume in both containers where the web app writes logs and the sidecar reads them",
+        "Use Kubernetes Services to route log data between the containers",
+        "Store logs in a ConfigMap that both containers can access"
+      ],
+      "correct_index": 1,
+      "explanation": "Containers in a pod share storage volumes, making shared volumes the appropriate mechanism for file-based data sharing like logs. The sidecar pattern commonly uses this approach for log processing, monitoring, or backup scenarios."
+    },
+    {
+      "question": "What happens to the IP address when a pod is rescheduled to a different node in the cluster?",
+      "options": [
+        "The pod retains the same IP address regardless of which node it runs on",
+        "The pod gets a new IP address from the new node's IP range",
+        "The pod gets a new IP address from the cluster's pod network, regardless of the node",
+        "The pod temporarily shares the IP address of the node it's scheduled on"
+      ],
+      "correct_index": 2,
+      "explanation": "Pod IP addresses are ephemeral and assigned from the cluster's pod network (like 10.244.0.0/16). When rescheduled, pods receive new IPs from this cluster-wide range, which is why Services are needed for stable networking."
+    },
+    {
+      "question": "When would you choose to run multiple containers in a single pod rather than separate pods?",
+      "options": [
+        "When you want to independently scale different components of your application",
+        "When containers need to share the same lifecycle and have tight coupling requiring shared resources",
+        "When you want to distribute containers across multiple nodes for high availability",
+        "When containers need different security policies and resource limits"
+      ],
+      "correct_index": 1,
+      "explanation": "Multi-container pods are appropriate for tightly coupled containers that must share lifecycle, networking, and storage. Examples include sidecar patterns for logging, proxies, or data synchronization. Independent scaling and security policies favor separate pods."
+    },
+    {
+      "question": "A pod contains two containers: a web server and a database proxy. The web server container fails and restarts. What happens to the database proxy container?",
+      "options": [
+        "The proxy container continues running unaffected since containers in a pod are independent",
+        "The proxy container is automatically restarted when the web server container restarts",
+        "The entire pod is marked as failed and both containers are restarted together",
+        "The proxy container is moved to a different pod to maintain availability"
+      ],
+      "correct_index": 0,
+      "explanation": "Container restarts within a pod are independent - if one container fails and restarts due to its restart policy, other containers in the pod continue running normally. The pod itself only fails if all containers fail or if there are pod-level issues."
+    }
+  ],
+  "passing_score": 80
+}

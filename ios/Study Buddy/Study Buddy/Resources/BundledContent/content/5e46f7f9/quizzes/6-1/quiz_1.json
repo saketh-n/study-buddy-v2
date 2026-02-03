@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layer 7 Application Load Balancing",
+  "questions": [
+    {
+      "question": "A company has a microservices architecture where different API endpoints (/auth, /orders, /inventory) need to route to different backend services. Which load balancing approach would be most appropriate and why?",
+      "options": [
+        "Layer 7 ALB with path-based routing rules to direct traffic based on URL paths",
+        "Layer 4 NLB with round-robin distribution across all backend services",
+        "Layer 7 ALB with weighted routing to distribute traffic evenly",
+        "Layer 4 NLB with health checks on each microservice"
+      ],
+      "correct_index": 0,
+      "explanation": "Layer 7 ALB with path-based routing is ideal for microservices because it can inspect HTTP request paths and route /auth to authentication services, /orders to order services, etc. Layer 4 load balancers cannot inspect application-layer content like URL paths."
+    },
+    {
+      "question": "When implementing SSL termination at the Application Load Balancer level, what is the primary security and performance benefit?",
+      "options": [
+        "Backend servers are relieved of SSL processing overhead and the ALB can inspect encrypted traffic for routing decisions",
+        "SSL certificates are automatically renewed without any configuration",
+        "All traffic between ALB and backend servers is automatically encrypted",
+        "The ALB provides built-in DDoS protection for SSL handshakes"
+      ],
+      "correct_index": 0,
+      "explanation": "SSL termination at ALB reduces CPU overhead on backend servers and allows the ALB to inspect decrypted HTTP content for intelligent routing decisions. Traffic between ALB and backends is typically re-encrypted separately, and certificate management still requires configuration."
+    },
+    {
+      "question": "A web application needs to ensure users remain connected to the same backend server throughout their session. Which Layer 7 load balancing feature would best accomplish this?",
+      "options": [
+        "Weighted round-robin algorithm with health checks",
+        "Cookie-based session affinity (sticky sessions)",
+        "Least connections algorithm with connection draining",
+        "IP hash-based routing with consistent hashing"
+      ],
+      "correct_index": 1,
+      "explanation": "Cookie-based session affinity ensures users stick to the same backend server by using application cookies or load balancer-generated cookies. IP hash can be unreliable due to NAT and proxies, while weighted algorithms don't guarantee session persistence."
+    },
+    {
+      "question": "In what scenario would using AWS ALB as an API Gateway be most beneficial compared to traditional API gateway solutions?",
+      "options": [
+        "When you need complex API transformations and extensive third-party integrations",
+        "When you have simple routing needs and want to leverage existing AWS infrastructure with cost-effective Layer 7 features",
+        "When you require advanced rate limiting and API versioning capabilities",
+        "When you need to support non-HTTP protocols like WebSocket exclusively"
+      ],
+      "correct_index": 1,
+      "explanation": "AWS ALB works well as a simple API gateway when you need basic routing, SSL termination, and health checks while leveraging existing AWS infrastructure cost-effectively. For complex transformations, advanced rate limiting, or extensive API management features, dedicated API gateway services are more appropriate."
+    },
+    {
+      "question": "When configuring Nginx as a Layer 7 load balancer, why might you choose the 'least_conn' directive over 'round_robin' for a backend pool serving database-intensive API requests?",
+      "options": [
+        "least_conn provides better SSL certificate management than round_robin",
+        "least_conn ensures requests go to servers with the fewest active connections, better handling variable processing times",
+        "least_conn automatically enables health checks while round_robin does not",
+        "least_conn provides better caching capabilities for database responses"
+      ],
+      "correct_index": 1,
+      "explanation": "The least_conn method is ideal for applications with variable processing times (like database-intensive requests) because it routes new requests to the server handling the fewest active connections, preventing overloading slow-processing servers. Round_robin doesn't consider current server load."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Container Network Interface (CNI)",
+  "questions": [
+    {
+      "question": "What is the primary purpose of CNI plugins in Kubernetes cluster networking?",
+      "options": [
+        "To provide a standardized interface for configuring network connectivity between pods and assigning IP addresses",
+        "To manage container storage volumes and persistent data across nodes",
+        "To handle authentication and authorization for network access controls",
+        "To monitor network traffic and provide logging capabilities for debugging"
+      ],
+      "correct_index": 0,
+      "explanation": "CNI plugins serve as a standardized interface that handles pod-to-pod networking, IP address assignment, and network configuration when pods are created or destroyed in Kubernetes clusters."
+    },
+    {
+      "question": "A company needs to deploy a Kubernetes cluster across multiple cloud providers with complex network policies and BGP routing requirements. Which CNI plugin would be most appropriate for this scenario?",
+      "options": [
+        "Flannel, because it provides simple overlay networking",
+        "Calico, because it supports advanced network policies and BGP routing",
+        "Bridge CNI, because it offers basic container connectivity",
+        "Host-local CNI, because it manages IP allocation efficiently"
+      ],
+      "correct_index": 1,
+      "explanation": "Calico is designed for complex networking scenarios and provides advanced features like network policies, BGP routing, and multi-cloud networking capabilities, making it ideal for enterprise environments with sophisticated requirements."
+    },
+    {
+      "question": "When a pod is created in a Kubernetes cluster, what sequence of events occurs regarding CNI plugin execution?",
+      "options": [
+        "The CNI plugin runs before the container runtime starts, reserves an IP, then creates the pod",
+        "The container runtime creates the pod first, then calls the CNI plugin to configure networking",
+        "The CNI plugin and container runtime work simultaneously to create and configure the pod",
+        "The scheduler assigns the pod to a node, then the CNI plugin handles both placement and networking"
+      ],
+      "correct_index": 1,
+      "explanation": "The container runtime (like containerd or CRI-O) first creates the pod and its network namespace, then invokes the CNI plugin to configure the network interfaces, assign IP addresses, and set up routing for the newly created pod."
+    },
+    {
+      "question": "Why might an organization choose Flannel over Calico for their Kubernetes networking needs?",
+      "options": [
+        "Flannel provides better security features and encryption capabilities",
+        "Flannel offers more advanced network policy enforcement mechanisms",
+        "Flannel is simpler to configure and manage, with lower resource overhead for basic networking needs",
+        "Flannel has superior performance for high-throughput network applications"
+      ],
+      "correct_index": 2,
+      "explanation": "Flannel is designed for simplicity and ease of use, making it ideal for organizations that need basic pod-to-pod networking without complex policy requirements. It has lower operational overhead and is easier to troubleshoot than more feature-rich solutions like Calico."
+    },
+    {
+      "question": "In a scenario where pods cannot communicate across different nodes in a Kubernetes cluster, which CNI-related component would be the most likely cause of the issue?",
+      "options": [
+        "Incorrect kubelet configuration preventing CNI plugin execution",
+        "Missing or misconfigured network routing between nodes in the CNI overlay network",
+        "Insufficient CPU resources allocated to the CNI plugin pods",
+        "Incompatible CNI plugin version with the Kubernetes API server"
+      ],
+      "correct_index": 1,
+      "explanation": "Cross-node pod communication failures are typically caused by routing issues in the overlay network that the CNI plugin creates. This could involve misconfigured routing tables, firewall rules, or overlay network encapsulation problems that prevent traffic from flowing between nodes."
+    }
+  ],
+  "passing_score": 80
+}

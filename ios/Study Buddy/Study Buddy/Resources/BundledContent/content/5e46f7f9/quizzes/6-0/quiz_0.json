@@ -1,0 +1,61 @@
+{
+  "topic_name": "Layer 4 Load Balancing",
+  "questions": [
+    {
+      "question": "A company's e-commerce application experiences high traffic during flash sales, causing server overload. Which characteristic of Layer 4 load balancing makes it most suitable for handling these traffic spikes compared to Layer 7 load balancing?",
+      "options": [
+        "Lower latency and higher throughput due to operating at the transport layer without inspecting application data",
+        "Better security because it can filter malicious HTTP requests",
+        "More intelligent routing based on application content and user sessions",
+        "Automatic SSL certificate management and termination"
+      ],
+      "correct_index": 0,
+      "explanation": "Layer 4 load balancing operates at the transport layer, making routing decisions based only on IP addresses and ports without inspecting packet contents. This results in lower latency and higher throughput, making it ideal for high-traffic scenarios where speed is crucial."
+    },
+    {
+      "question": "An organization needs to distribute TCP traffic across multiple database servers while maintaining client connection persistence. Why would AWS Network Load Balancer (NLB) be preferred over Application Load Balancer (ALB) for this scenario?",
+      "options": [
+        "NLB provides better HTTP header manipulation capabilities",
+        "NLB offers advanced content-based routing rules",
+        "NLB operates at Layer 4, preserving source IP addresses and enabling direct TCP connection handling",
+        "NLB automatically handles SSL certificate rotation"
+      ],
+      "correct_index": 2,
+      "explanation": "NLB operates at Layer 4 (transport layer) and preserves client source IP addresses while handling raw TCP connections. This is essential for database connections that often require source IP preservation and direct TCP handling, unlike ALB which operates at Layer 7 and is designed for HTTP/HTTPS traffic."
+    },
+    {
+      "question": "A system architect is configuring HAProxy for a gaming application that requires ultra-low latency. Which HAProxy mode should be used and why?",
+      "options": [
+        "HTTP mode because it provides better error handling for game sessions",
+        "TCP mode because it operates at Layer 4 without application layer processing overhead",
+        "Health check mode because it ensures game servers are always available",
+        "Round-robin mode because it distributes players evenly across servers"
+      ],
+      "correct_index": 1,
+      "explanation": "TCP mode in HAProxy operates at Layer 4, treating traffic as raw TCP streams without HTTP processing overhead. This minimizes latency since HAProxy doesn't need to parse application-layer data, making it ideal for gaming applications where every millisecond matters."
+    },
+    {
+      "question": "When would you choose Layer 4 load balancing over Layer 7 load balancing for a microservices architecture?",
+      "options": [
+        "When you need to route requests based on HTTP headers and URL paths",
+        "When you need to implement advanced authentication and authorization",
+        "When you have mixed protocols (TCP, UDP, HTTP) and need maximum performance with protocol transparency",
+        "When you need to perform content compression and caching"
+      ],
+      "correct_index": 2,
+      "explanation": "Layer 4 load balancing is protocol-agnostic and can handle any TCP/UDP traffic without modification, making it ideal for mixed protocol environments. It provides maximum performance by avoiding application-layer processing, which is beneficial in microservices architectures where services may use different protocols."
+    },
+    {
+      "question": "A financial trading platform experiences microsecond-sensitive transactions. The current Layer 7 load balancer introduces unacceptable latency. What is the primary reason Layer 4 load balancing would resolve this issue?",
+      "options": [
+        "Layer 4 load balancing can cache trading data more efficiently",
+        "Layer 4 load balancing eliminates deep packet inspection and application-layer processing delays",
+        "Layer 4 load balancing provides better encryption for financial data",
+        "Layer 4 load balancing offers more sophisticated trading algorithm routing"
+      ],
+      "correct_index": 1,
+      "explanation": "Layer 4 load balancing makes routing decisions based solely on network and transport layer information (IP addresses and ports) without examining application data. This eliminates the processing overhead of deep packet inspection and application-layer analysis that Layer 7 performs, significantly reducing latency critical for financial trading systems."
+    }
+  ],
+  "passing_score": 80
+}

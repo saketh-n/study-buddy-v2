@@ -1,0 +1,61 @@
+{
+  "topic_name": "Mechanisms of Action",
+  "questions": [
+    {
+      "question": "Which mechanism best explains why DHT (dihydrotestosterone) causes hair follicle miniaturization in androgenetic alopecia?",
+      "options": [
+        "DHT blocks blood flow to hair follicles",
+        "DHT binds to androgen receptors and shortens the anagen phase while extending telogen",
+        "DHT directly destroys hair shaft proteins",
+        "DHT prevents sebaceous glands from producing oils"
+      ],
+      "correct_index": 1,
+      "explanation": "DHT binds to androgen receptors in genetically susceptible hair follicles, triggering cellular changes that progressively shorten the growth (anagen) phase and extend the resting (telogen) phase, leading to follicle miniaturization over successive hair cycles."
+    },
+    {
+      "question": "A 25-year-old woman experiences diffuse hair thinning 3 months after a severe illness. Understanding telogen effluvium mechanisms, when would you expect her hair to begin recovering?",
+      "options": [
+        "Immediately upon treatment",
+        "Within 2-4 weeks",
+        "Around 6-9 months after the triggering event",
+        "Only with hormone therapy"
+      ],
+      "correct_index": 2,
+      "explanation": "In telogen effluvium, the stressor pushes follicles from anagen to telogen simultaneously. Since telogen lasts 3-4 months and new anagen hair takes 2-3 months to become visible, recovery typically occurs 6-9 months after the initial trigger."
+    },
+    {
+      "question": "Why do 5-alpha reductase inhibitors like finasteride primarily affect scalp hair loss rather than beard or body hair loss in men?",
+      "options": [
+        "Scalp follicles have higher concentrations of 5-alpha reductase",
+        "Different hair follicles have varying sensitivity to DHT based on their androgen receptor expression and co-activator proteins",
+        "Scalp hair has a shorter growth cycle",
+        "Blood circulation is poorest to the scalp"
+      ],
+      "correct_index": 1,
+      "explanation": "While 5-alpha reductase converts testosterone to DHT throughout the body, different hair follicles have varying genetic programming for androgen receptor sensitivity and co-regulatory proteins, making scalp follicles uniquely susceptible to DHT-induced miniaturization."
+    },
+    {
+      "question": "At the molecular level, what is the primary reason why hair transplanted from the back of the head to balding areas typically continues to grow permanently?",
+      "options": [
+        "The new location has better blood supply",
+        "Donor follicles maintain their original genetic programming and androgen receptor sensitivity",
+        "Transplanted hair grows faster than original hair",
+        "The surgical process removes DHT sensitivity"
+      ],
+      "correct_index": 1,
+      "explanation": "Hair follicles from the donor area (typically occipital region) retain their intrinsic genetic characteristics, including lower androgen receptor density and reduced sensitivity to DHT, even when moved to previously balding areas."
+    },
+    {
+      "question": "In alopecia areata, which cellular mechanism best explains the patchy, often reversible nature of the hair loss?",
+      "options": [
+        "Permanent destruction of hair follicle stem cells",
+        "Autoimmune attack creates inflammation that disrupts the hair cycle but preserves stem cells",
+        "Hormonal imbalances affect only certain scalp regions",
+        "Fungal infections target specific hair follicles"
+      ],
+      "correct_index": 1,
+      "explanation": "Alopecia areata involves T-cell mediated autoimmune attack on anagen hair follicles, causing abrupt transition to catagen/telogen phases. However, the hair follicle stem cells in the bulge region typically survive, allowing for potential regrowth when inflammation subsides."
+    }
+  ],
+  "passing_score": 80
+}

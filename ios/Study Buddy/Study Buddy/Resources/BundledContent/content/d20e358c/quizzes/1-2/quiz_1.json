@@ -1,0 +1,61 @@
+{
+  "topic_name": "Amazon EC2",
+  "questions": [
+    {
+      "question": "What is the primary advantage of Amazon EC2's elastic nature compared to traditional physical servers?",
+      "options": [
+        "You can dynamically scale compute capacity up or down based on demand without hardware procurement delays",
+        "EC2 instances are always faster than physical servers",
+        "EC2 automatically backs up all your data to multiple regions",
+        "EC2 instances never fail or require maintenance"
+      ],
+      "correct_index": 0,
+      "explanation": "The key benefit of EC2's elasticity is the ability to quickly provision or terminate compute resources based on changing needs, eliminating the time and cost of purchasing, installing, and configuring physical hardware."
+    },
+    {
+      "question": "A startup expects highly variable traffic patterns with potential viral growth. Which EC2 pricing model would be most cost-effective for their unpredictable workload?",
+      "options": [
+        "Reserved Instances for guaranteed capacity",
+        "Dedicated Hosts for compliance requirements",
+        "Auto Scaling with On-Demand and Spot Instances",
+        "On-Demand Instances only for predictable billing"
+      ],
+      "correct_index": 2,
+      "explanation": "Auto Scaling with a mix of On-Demand and Spot Instances provides cost optimization for variable workloads by automatically adjusting capacity and using cheaper Spot Instances when possible, while maintaining availability with On-Demand instances."
+    },
+    {
+      "question": "Why would you choose an EC2 instance with SSD-backed instance store over EBS-backed storage for a specific application?",
+      "options": [
+        "Instance store provides persistent storage that survives instance termination",
+        "Instance store offers higher IOPS and lower latency for temporary high-performance computing tasks",
+        "Instance store is always cheaper than EBS storage",
+        "Instance store automatically replicates data across multiple Availability Zones"
+      ],
+      "correct_index": 1,
+      "explanation": "Instance store provides very high IOPS and low latency because it's physically attached to the host, making it ideal for temporary storage needs like caches, buffers, or high-performance computing workloads that can handle data loss."
+    },
+    {
+      "question": "When designing a multi-tier web application on EC2, what is the most important factor for placing instances across multiple Availability Zones?",
+      "options": [
+        "To reduce network latency between application tiers",
+        "To achieve high availability and fault tolerance against infrastructure failures",
+        "To automatically load balance traffic between instances",
+        "To increase the total compute capacity available to the application"
+      ],
+      "correct_index": 1,
+      "explanation": "Distributing instances across multiple Availability Zones protects against single points of failure at the infrastructure level, ensuring the application remains available even if an entire AZ experiences problems."
+    },
+    {
+      "question": "A company needs to run a memory-intensive analytics workload that processes large datasets overnight. Which approach would be most cost-effective?",
+      "options": [
+        "Use the largest general-purpose instance type with Reserved Instance pricing",
+        "Use memory-optimized instances with Scheduled Reserved Instances for the specific time period",
+        "Use compute-optimized instances with On-Demand pricing for flexibility",
+        "Use GPU-optimized instances to accelerate the memory operations"
+      ],
+      "correct_index": 1,
+      "explanation": "Memory-optimized instances provide the best price-performance for memory-intensive workloads, and Scheduled Reserved Instances offer significant cost savings for predictable, recurring workloads that run during specific time windows."
+    }
+  ],
+  "passing_score": 80
+}

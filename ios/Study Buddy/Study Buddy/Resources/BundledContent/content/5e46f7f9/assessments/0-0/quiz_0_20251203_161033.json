@@ -1,0 +1,62 @@
+{
+  "question_feedback": [
+    {
+      "question_num": 1,
+      "is_correct": false,
+      "student_choice": "Data Link Layer",
+      "correct_answer": "Physical Layer",
+      "analysis": "The student likely chose Data Link Layer because they correctly identified that data corruption is occurring, and the Data Link Layer does handle error detection and correction. However, they missed the key detail that packets are being 'correctly routed between networks' - this indicates that all upper layer functions are working properly, including Data Link Layer error detection.",
+      "explanation": "When packets are successfully routed between networks but arrive corrupted, this points to Physical Layer issues. The Physical Layer is responsible for the actual transmission of raw bits over physical media (cables, wireless signals, etc.). Since the routing is working (Network Layer) and the packets are getting through (indicating Data Link Layer frame structure is intact), the corruption is happening at the bit transmission level - typical of physical issues like electromagnetic interference, faulty cables, or signal degradation."
+    },
+    {
+      "question_num": 2,
+      "is_correct": true,
+      "student_choice": "Session and Presentation layers",
+      "correct_answer": "Session and Presentation layers",
+      "analysis": "Excellent understanding demonstrated. The student correctly identified that establishing secure communication channels involves the Session Layer (managing the connection/session between applications) and the Presentation Layer (handling encryption/decryption and data format conversion).",
+      "explanation": "The Session Layer manages the establishment, maintenance, and termination of sessions between applications, while the Presentation Layer handles encryption, decryption, and data formatting. Together, these layers provide the secure communication channel functionality described in the question."
+    },
+    {
+      "question_num": 3,
+      "is_correct": true,
+      "student_choice": "Presentation Layer - data formatting/encoding issues",
+      "correct_answer": "Presentation Layer - data formatting/encoding issues",
+      "analysis": "Strong analytical skills shown. The student correctly reasoned that since TCP connections are established (Transport Layer working) but the data appears garbled, this is a data representation/encoding issue handled by the Presentation Layer.",
+      "explanation": "The Presentation Layer is responsible for data formatting, encoding/decoding, encryption/decryption, and character set conversion. When messages appear as garbled text while the connection works fine, this indicates the data is being transmitted successfully but not properly formatted or encoded for display."
+    },
+    {
+      "question_num": 4,
+      "is_correct": true,
+      "student_choice": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "correct_answer": "It must make forwarding decisions based on logical network addresses like IP addresses",
+      "analysis": "Perfect understanding of Network Layer functionality. The student correctly identified that routers operate at Layer 3 because they make forwarding decisions based on logical addressing (IP addresses) rather than physical addressing.",
+      "explanation": "Routers operate at the Network Layer because they need to examine logical network addresses (like IP addresses) to determine the best path for packet forwarding between different network segments. This logical addressing allows routers to make intelligent forwarding decisions across complex internetworks."
+    },
+    {
+      "question_num": 5,
+      "is_correct": true,
+      "student_choice": "Transport Layer - providing reliable, connection-oriented communication",
+      "correct_answer": "Transport Layer - providing reliable, connection-oriented communication",
+      "analysis": "Good grasp of Transport Layer responsibilities. The student correctly identified that QoS for reliable, ordered delivery of packets is primarily a Transport Layer function, particularly for connection-oriented protocols like TCP.",
+      "explanation": "The Transport Layer is responsible for reliable, ordered delivery of data and manages connection-oriented communication. For QoS implementation requiring reliable delivery of video packets with proper ordering and congestion management, the Transport Layer protocols (like TCP) provide these essential services."
+    }
+  ],
+  "summary": {
+    "misconceptions": [
+      "Confusion between Physical Layer and Data Link Layer responsibilities when troubleshooting data corruption issues",
+      "May not fully distinguish between different types of data corruption and which layer is responsible for each type"
+    ],
+    "focus_areas": [
+      "Physical Layer vs Data Link Layer distinctions - understanding when corruption occurs at bit transmission level vs frame level",
+      "Troubleshooting methodology - using symptoms to identify the correct OSI layer",
+      "Understanding the relationship between successful routing/delivery and the layers involved"
+    ],
+    "encouragement": "Great job! You scored 80% and demonstrated strong understanding of most OSI layer concepts, particularly the upper layers (Session, Presentation, Transport, Application). Your analytical thinking in questions 3-5 was excellent.",
+    "recommendation": "Focus on reviewing the Physical Layer and its relationship to data transmission issues. Practice more troubleshooting scenarios that help distinguish between Physical Layer corruption (bit-level transmission problems) and Data Link Layer issues (frame-level problems). Consider studying real-world examples of network troubleshooting to strengthen your diagnostic skills."
+  },
+  "score": 80,
+  "correct_count": 4,
+  "total_questions": 5,
+  "passed": true,
+  "quiz_version": 0
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "Storage media",
+  "questions": [
+    {
+      "question": "A photographer needs to store 50GB of RAW image files that will be accessed frequently for the next month, then archived for long-term storage with occasional access. Which storage strategy would be most cost-effective?",
+      "options": [
+        "Store everything on SSD permanently",
+        "Store on SSD initially, then move to HDD for archival",
+        "Store everything on optical discs from the start",
+        "Store on HDD throughout the entire process"
+      ],
+      "correct_index": 1,
+      "explanation": "SSDs provide fast access for frequent use, but HDDs are more cost-effective for long-term storage of large files that are accessed occasionally. This hybrid approach balances performance and cost."
+    },
+    {
+      "question": "Why do solid-state drives (SSDs) typically have better performance than traditional hard disk drives (HDDs) for random access operations?",
+      "options": [
+        "SSDs have larger storage capacity",
+        "SSDs have no moving mechanical parts",
+        "SSDs use optical technology",
+        "SSDs have better error correction"
+      ],
+      "correct_index": 1,
+      "explanation": "SSDs use flash memory with no moving parts, allowing instant access to any location. HDDs must physically move read/write heads to different tracks, creating delays for random access patterns."
+    },
+    {
+      "question": "A company needs to distribute software to customers on physical media that can be read by any computer but cannot be accidentally modified. Which storage medium would be most appropriate?",
+      "options": [
+        "USB flash drives",
+        "DVD-R discs",
+        "External hard drives",
+        "SD cards"
+      ],
+      "correct_index": 1,
+      "explanation": "DVD-R discs are read-only after burning, preventing accidental modification, have universal compatibility with optical drives, and are cost-effective for distribution purposes."
+    },
+    {
+      "question": "What is the primary reason why magnetic storage devices are susceptible to data loss from strong magnetic fields, while optical and solid-state storage are not?",
+      "options": [
+        "Magnetic devices have moving parts",
+        "Magnetic devices store data using magnetic field orientations",
+        "Magnetic devices are older technology",
+        "Magnetic devices have lower storage density"
+      ],
+      "correct_index": 1,
+      "explanation": "Magnetic storage encodes data as different magnetic field orientations on the medium. Strong external magnetic fields can alter these orientations, corrupting data. Optical and solid-state storage use different physical principles that are not affected by magnetism."
+    },
+    {
+      "question": "A data center needs storage for a database that requires very low latency for frequent read/write operations, high reliability, and moderate capacity (2TB). Cost is not the primary concern. Which storage technology would be most suitable?",
+      "options": [
+        "High-capacity HDD with large cache",
+        "Enterprise-grade SSD",
+        "Optical storage with fast access time",
+        "Hybrid drive (SSHD) with SSD cache"
+      ],
+      "correct_index": 1,
+      "explanation": "Enterprise SSDs provide the lowest latency due to no mechanical delays, highest reliability through advanced wear leveling and error correction, and can easily handle 2TB capacity requirements for mission-critical database operations."
+    }
+  ],
+  "passing_score": 80
+}

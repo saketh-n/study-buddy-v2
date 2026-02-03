@@ -1,0 +1,61 @@
+{
+  "topic_name": "OSI Model Layers",
+  "questions": [
+    {
+      "question": "A network administrator notices that data packets are being corrupted between two directly connected switches. At which OSI layer should they focus their troubleshooting efforts?",
+      "options": [
+        "Physical Layer (Layer 1)",
+        "Data Link Layer (Layer 2)",
+        "Network Layer (Layer 3)",
+        "Transport Layer (Layer 4)"
+      ],
+      "correct_index": 1,
+      "explanation": "The Data Link Layer (Layer 2) is responsible for error detection and correction between directly connected devices. While the Physical Layer handles the actual transmission medium, the Data Link Layer ensures frame integrity and handles corruption issues through error detection mechanisms like CRC checks. Since the switches are directly connected, this is a Layer 2 issue rather than a routing (Layer 3) or end-to-end reliability (Layer 4) problem."
+    },
+    {
+      "question": "When a web browser displays a secure HTTPS webpage, which OSI layers are primarily responsible for encrypting the data and establishing the secure connection?",
+      "options": [
+        "Session Layer only",
+        "Presentation and Session Layers",
+        "Transport and Network Layers",
+        "Application Layer only"
+      ],
+      "correct_index": 1,
+      "explanation": "The Presentation Layer handles encryption, compression, and data formatting (SSL/TLS encryption occurs here), while the Session Layer manages the establishment, maintenance, and termination of the secure session between the browser and web server. Together, these layers ensure that data is properly encrypted and the secure session is maintained throughout the HTTPS connection."
+    },
+    {
+      "question": "A company wants to implement Quality of Service (QoS) to prioritize video conference traffic over regular web browsing. At which OSI layer would this traffic prioritization primarily be implemented?",
+      "options": [
+        "Data Link Layer (Layer 2)",
+        "Network Layer (Layer 3)",
+        "Transport Layer (Layer 4)",
+        "Application Layer (Layer 7)"
+      ],
+      "correct_index": 1,
+      "explanation": "QoS traffic prioritization is primarily implemented at the Network Layer (Layer 3) through techniques like DSCP (Differentiated Services Code Point) markings in IP headers and traffic shaping policies. While some QoS marking can occur at Layer 2, the routing decisions and traffic prioritization across networks happen at Layer 3, where routers can examine packet headers and apply appropriate priority queuing and bandwidth allocation."
+    },
+    {
+      "question": "An application developer needs to ensure reliable, ordered delivery of data between client and server applications. Which combination of OSI layers should they primarily rely on?",
+      "options": [
+        "Physical and Data Link Layers",
+        "Network and Data Link Layers",
+        "Transport and Network Layers",
+        "Session and Application Layers"
+      ],
+      "correct_index": 2,
+      "explanation": "The Transport Layer (Layer 4) provides reliable, ordered delivery through protocols like TCP, which handles error recovery, flow control, and sequencing. The Network Layer (Layer 3) handles the routing of packets across networks to ensure they reach the correct destination. Together, these layers provide end-to-end reliable communication - Layer 3 gets the data to the right place, and Layer 4 ensures it arrives reliably and in order."
+    },
+    {
+      "question": "A network technician is troubleshooting why employees cannot access a specific web application, but other websites work fine. The DNS resolution is working, and ping tests to the server succeed. Which OSI layers should be investigated next?",
+      "options": [
+        "Physical and Data Link Layers",
+        "Transport and Application Layers",
+        "Session and Presentation Layers",
+        "Network Layer only"
+      ],
+      "correct_index": 1,
+      "explanation": "Since DNS works (indicating Network Layer connectivity) and ping succeeds (confirming basic IP connectivity), the issue likely exists at higher layers. The Transport Layer (Layer 4) should be checked for port-specific issues - the web application might use specific ports that are blocked. The Application Layer (Layer 7) should also be investigated for application-specific problems like authentication, application server issues, or protocol-specific failures. These layers handle the actual application communication beyond basic network connectivity."
+    }
+  ],
+  "passing_score": 80
+}

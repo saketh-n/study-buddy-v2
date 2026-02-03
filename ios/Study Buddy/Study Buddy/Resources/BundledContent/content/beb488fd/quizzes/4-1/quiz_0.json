@@ -1,0 +1,61 @@
+{
+  "topic_name": "Infrastructure as Code",
+  "questions": [
+    {
+      "question": "What is the primary benefit of using Infrastructure as Code (IaC) tools like Terraform and CloudFormation for data infrastructure management?",
+      "options": [
+        "Reduced cloud costs through automatic optimization",
+        "Version-controlled, reproducible, and consistent infrastructure deployments",
+        "Faster data processing through optimized resource allocation",
+        "Automatic backup and disaster recovery capabilities"
+      ],
+      "correct_index": 1,
+      "explanation": "IaC's main advantage is enabling version control, reproducibility, and consistency in infrastructure deployments, allowing teams to treat infrastructure like application code with proper change management and rollback capabilities."
+    },
+    {
+      "question": "A data engineering team needs to deploy identical data processing environments across development, staging, and production. Which scenario best demonstrates when IaC would be most valuable?",
+      "options": [
+        "When the team wants to reduce monthly cloud bills",
+        "When they need to ensure consistent configurations and eliminate manual setup errors across environments",
+        "When they want to automatically scale resources based on data volume",
+        "When they need to implement real-time data streaming"
+      ],
+      "correct_index": 1,
+      "explanation": "IaC excels at solving the problem of environment consistency by using the same configuration files to create identical infrastructure across multiple environments, eliminating configuration drift and manual errors."
+    },
+    {
+      "question": "In Terraform, what does the 'terraform plan' command accomplish in the context of managing data infrastructure?",
+      "options": [
+        "Automatically applies all pending infrastructure changes",
+        "Shows a preview of what changes will be made without actually executing them",
+        "Creates a backup of the current infrastructure state",
+        "Validates syntax errors in configuration files only"
+      ],
+      "correct_index": 1,
+      "explanation": "The 'terraform plan' command creates an execution plan showing what actions Terraform will take to reach the desired state defined in configuration files, allowing review before actual changes are applied with 'terraform apply'."
+    },
+    {
+      "question": "When comparing Terraform and AWS CloudFormation for a multi-cloud data pipeline project, what is the key deciding factor?",
+      "options": [
+        "CloudFormation is always faster at provisioning resources",
+        "Terraform supports multiple cloud providers while CloudFormation is AWS-specific",
+        "CloudFormation has better error handling capabilities",
+        "Terraform requires less technical expertise to implement"
+      ],
+      "correct_index": 1,
+      "explanation": "Terraform's cloud-agnostic nature allows it to manage resources across multiple cloud providers (AWS, Azure, GCP, etc.) using a single tool and syntax, while CloudFormation is designed specifically for AWS services only."
+    },
+    {
+      "question": "A data engineering team's Terraform configuration for their data lake infrastructure keeps failing during 'terraform apply' due to resource dependencies. What is the most likely cause and solution?",
+      "options": [
+        "Insufficient cloud permissions - increase IAM privileges",
+        "Missing explicit dependency declarations between resources that must be created in a specific order",
+        "Outdated Terraform version - upgrade to the latest release",
+        "Network connectivity issues - check internet connection"
+      ],
+      "correct_index": 1,
+      "explanation": "Resource dependency issues in Terraform typically occur when resources that depend on each other aren't properly linked using resource references or explicit 'depends_on' declarations, causing Terraform to attempt creation in the wrong order."
+    }
+  ],
+  "passing_score": 80
+}

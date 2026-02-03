@@ -1,0 +1,61 @@
+{
+  "topic_name": "King William's War and Early Anglo-French Conflicts",
+  "questions": [
+    {
+      "question": "What was the primary underlying cause that made King William's War in North America inevitable by 1689?",
+      "options": [
+        "Religious differences between Catholic France and Protestant England",
+        "Competing claims over the lucrative fur trade routes and territory",
+        "Native American tribes forcing European powers into conflict",
+        "Spanish expansion threatening both French and English colonies"
+      ],
+      "correct_index": 1,
+      "explanation": "While religious differences existed, the fundamental cause was economic competition over fur trade routes and territorial expansion, as both powers sought to control profitable trade networks and strategic locations."
+    },
+    {
+      "question": "Why did French forces initially have tactical advantages over English colonial forces during King William's War?",
+      "options": [
+        "France had significantly more settlers in North America",
+        "French colonists received better military training in Europe",
+        "French alliances with Native American tribes provided superior knowledge of terrain and guerrilla tactics",
+        "The French navy controlled all major waterways"
+      ],
+      "correct_index": 2,
+      "explanation": "French success came largely from their collaborative relationships with Native American allies who provided crucial local knowledge, scouting, and guerrilla warfare expertise that English colonists initially lacked."
+    },
+    {
+      "question": "The Treaty of Ryswick (1697) ending King William's War returned most conquered territories to their original owners. What does this outcome reveal about the nature of this conflict?",
+      "options": [
+        "Neither side had the resources to maintain distant territorial conquests",
+        "The war was primarily a European conflict with North American territories used as bargaining chips",
+        "Native American resistance made permanent conquest impossible",
+        "Both powers realized cooperation was more profitable than conflict"
+      ],
+      "correct_index": 1,
+      "explanation": "The treaty's mutual restoration of territories demonstrates that King William's War was fundamentally a European conflict, with North American campaigns serving European diplomatic goals rather than permanent colonial expansion."
+    },
+    {
+      "question": "A colonial governor in 1695 needs to decide whether to attack a French settlement or focus on defending existing territory. Which factor from King William's War would be most important for making this strategic decision?",
+      "options": [
+        "The religious composition of the target settlement",
+        "Whether local Native American tribes support the French or remain neutral",
+        "The agricultural productivity of the target area",
+        "The number of European-trained soldiers available"
+      ],
+      "correct_index": 1,
+      "explanation": "Native American alliances were crucial determining factors in colonial warfare success. Attacking settlements with strong Native support would likely fail, while areas with neutral or hostile Native relations with the French offered better prospects."
+    },
+    {
+      "question": "How did King William's War establish patterns that would influence future Anglo-French conflicts in North America?",
+      "options": [
+        "It proved that European-style warfare was most effective in colonial settings",
+        "It demonstrated the importance of naval power over land-based strategies",
+        "It showed that colonial conflicts would mirror European diplomatic cycles and depend heavily on Native American alliances",
+        "It established that religious conversion was the key to territorial control"
+      ],
+      "correct_index": 2,
+      "explanation": "King William's War established the pattern where North American colonial conflicts would follow European political cycles, while success depended critically on securing Native American partnerships rather than purely European military tactics."
+    }
+  ],
+  "passing_score": 80
+}

@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Service Mesh",
+  "questions": [
+    {
+      "question": "When would you choose AWS App Mesh over AWS Application Load Balancer for managing traffic between microservices?",
+      "options": [
+        "When you need advanced service-to-service communication features like retries, circuit breakers, and distributed tracing across multiple services",
+        "When you only need to distribute traffic between multiple instances of a single service",
+        "When you want to reduce infrastructure costs by eliminating the need for proxies",
+        "When you need to handle traffic from external users to your application"
+      ],
+      "correct_index": 0,
+      "explanation": "App Mesh provides advanced service mesh capabilities including retries, circuit breakers, observability, and traffic management between services, while ALB is primarily for load balancing external traffic to services."
+    },
+    {
+      "question": "What is the primary role of Envoy proxy sidecars in AWS App Mesh architecture?",
+      "options": [
+        "To replace the need for service discovery mechanisms",
+        "To intercept and manage all network traffic between services while implementing mesh policies",
+        "To store application data and provide caching capabilities",
+        "To serve as the primary application runtime environment"
+      ],
+      "correct_index": 1,
+      "explanation": "Envoy sidecars act as intelligent proxies that intercept service-to-service communication and enforce mesh policies like routing, retries, circuit breaking, and observability without requiring application code changes."
+    },
+    {
+      "question": "Which scenario best illustrates when to implement circuit breakers in a service mesh?",
+      "options": [
+        "When you need to encrypt all traffic between services",
+        "When a downstream service is experiencing failures and you want to prevent cascading failures by temporarily stopping requests to it",
+        "When you want to distribute traffic evenly across multiple service instances",
+        "When you need to authenticate requests between services"
+      ],
+      "correct_index": 1,
+      "explanation": "Circuit breakers monitor service health and temporarily block requests to failing services to prevent cascading failures and allow time for recovery, improving overall system resilience."
+    },
+    {
+      "question": "How does AWS Lattice differ from AWS App Mesh in terms of service mesh implementation?",
+      "options": [
+        "Lattice requires manual installation of sidecar proxies while App Mesh is serverless",
+        "Lattice provides application-layer service networking without requiring sidecar proxies, while App Mesh uses Envoy sidecars",
+        "Lattice only works with Lambda functions while App Mesh works with containers",
+        "Lattice is designed for monolithic applications while App Mesh is for microservices"
+      ],
+      "correct_index": 1,
+      "explanation": "AWS Lattice provides service-to-service connectivity and traffic management without requiring sidecar proxies, operating at the VPC level, while App Mesh uses Envoy sidecars for traffic interception and management."
+    },
+    {
+      "question": "In a microservices architecture experiencing intermittent network issues, what combination of service mesh features would best improve reliability?",
+      "options": [
+        "Load balancing and SSL termination only",
+        "Service discovery and API gateway integration",
+        "Automatic retries with exponential backoff and circuit breakers to handle transient failures and service degradation",
+        "Container orchestration and auto-scaling policies"
+      ],
+      "correct_index": 2,
+      "explanation": "Retries with exponential backoff handle transient network issues by automatically retrying failed requests, while circuit breakers prevent overwhelming degraded services, together providing comprehensive resilience against intermittent failures."
+    }
+  ],
+  "passing_score": 80
+}

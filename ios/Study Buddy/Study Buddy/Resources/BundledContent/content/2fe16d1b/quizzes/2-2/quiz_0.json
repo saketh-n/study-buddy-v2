@@ -1,0 +1,61 @@
+{
+  "topic_name": "Decision Trees",
+  "questions": [
+    {
+      "question": "What is the primary advantage of decision trees over other machine learning algorithms when interpretability is crucial?",
+      "options": [
+        "They always achieve the highest accuracy",
+        "They provide clear, human-readable decision rules",
+        "They require the least computational resources",
+        "They work only with numerical features"
+      ],
+      "correct_index": 1,
+      "explanation": "Decision trees create explicit if-then rules that can be easily understood and explained to stakeholders, making them highly interpretable compared to black-box models like neural networks."
+    },
+    {
+      "question": "When would you NOT recommend using a decision tree for a machine learning problem?",
+      "options": [
+        "When you need to handle both categorical and numerical features",
+        "When you need high interpretability for regulatory compliance",
+        "When you have a small dataset with complex non-linear relationships",
+        "When you need to perform both classification and regression tasks"
+      ],
+      "correct_index": 2,
+      "explanation": "Decision trees can overfit easily on small datasets and may struggle to capture complex relationships that require many splits, making them less suitable for small datasets with intricate patterns."
+    },
+    {
+      "question": "What does the Gini impurity measure in the context of building a decision tree?",
+      "options": [
+        "The depth of the tree at each node",
+        "The computational cost of making a split",
+        "The homogeneity of class labels within a node",
+        "The correlation between different features"
+      ],
+      "correct_index": 2,
+      "explanation": "Gini impurity measures how mixed the class labels are within a node. A Gini impurity of 0 means all samples in the node belong to the same class (pure node), while higher values indicate more mixed classes."
+    },
+    {
+      "question": "A decision tree keeps splitting until each leaf node contains only one training sample, achieving 100% training accuracy. What problem does this indicate?",
+      "options": [
+        "The features are not relevant to the target variable",
+        "The model is overfitting to the training data",
+        "The dataset is too large for decision trees",
+        "The algorithm implementation has a bug"
+      ],
+      "correct_index": 1,
+      "explanation": "When a decision tree achieves perfect training accuracy by creating very specific rules for individual samples, it's likely overfitting and will perform poorly on new, unseen data. This is why pruning and limiting tree depth are important."
+    },
+    {
+      "question": "You're building a decision tree to predict customer churn and notice that one feature (account_age_days) dominates the early splits. The tree keeps splitting on slightly different thresholds of this feature. What technique would best address this issue?",
+      "options": [
+        "Remove the account_age_days feature entirely",
+        "Use feature scaling to normalize account_age_days",
+        "Set a minimum samples per leaf parameter to prevent excessive splitting",
+        "Convert account_age_days to a categorical variable"
+      ],
+      "correct_index": 2,
+      "explanation": "Setting minimum samples per leaf prevents the tree from making splits that result in very small, potentially overfitted leaf nodes. This addresses the excessive splitting on similar thresholds while preserving the useful information in the feature."
+    }
+  ],
+  "passing_score": 80
+}

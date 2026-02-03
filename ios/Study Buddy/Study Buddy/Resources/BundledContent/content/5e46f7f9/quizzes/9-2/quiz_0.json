@@ -1,0 +1,61 @@
+{
+  "topic_name": "AWS Global Services",
+  "questions": [
+    {
+      "question": "A global e-commerce company notices that users in Asia are experiencing slow load times for their website hosted in US East. Which AWS service would be the MOST appropriate first step to address this issue?",
+      "options": [
+        "Route 53 health checks",
+        "CloudFront CDN",
+        "Elastic Load Balancer",
+        "Auto Scaling Groups"
+      ],
+      "correct_index": 1,
+      "explanation": "CloudFront CDN is designed specifically to reduce latency by caching content at edge locations closer to users globally. While other options help with availability and scaling, they don't address the geographic distance issue causing slow load times."
+    },
+    {
+      "question": "When would you choose Route 53's weighted routing policy over geolocation routing policy?",
+      "options": [
+        "When you want to distribute traffic based on user's physical location",
+        "When you want to test new application versions with a percentage of users",
+        "When you want to route traffic only to healthy endpoints",
+        "When you want to route traffic to the closest geographic region"
+      ],
+      "correct_index": 1,
+      "explanation": "Weighted routing allows you to assign percentages of traffic to different endpoints, making it ideal for A/B testing or gradual deployments. Geolocation routing is for directing users based on their geographic location, not for controlled traffic distribution testing."
+    },
+    {
+      "question": "A streaming video service wants to deliver content globally while minimizing bandwidth costs and improving user experience. Which combination of CloudFront features would be MOST effective?",
+      "options": [
+        "Origin Access Control and Lambda@Edge",
+        "Price Classes and TTL optimization",
+        "SSL certificates and custom domains",
+        "Real-time logs and CloudWatch metrics"
+      ],
+      "correct_index": 1,
+      "explanation": "Price Classes allow you to control which edge locations are used to manage costs, while TTL optimization ensures content is cached appropriately to reduce origin requests and improve performance. The other options provide security and monitoring benefits but don't directly address cost optimization and global delivery efficiency."
+    },
+    {
+      "question": "Your application uses Route 53 with failover routing, but during a recent outage, traffic continued routing to the failed primary endpoint for several minutes. What is the MOST likely cause?",
+      "options": [
+        "Route 53 health check frequency is set too high",
+        "DNS TTL values are set too high",
+        "The secondary endpoint is in the wrong availability zone",
+        "CloudFront is caching the DNS responses"
+      ],
+      "correct_index": 1,
+      "explanation": "High DNS TTL values cause DNS resolvers to cache responses for longer periods, delaying the propagation of failover changes. Even if Route 53 detects the failure quickly, clients will continue using cached DNS responses until the TTL expires."
+    },
+    {
+      "question": "A company needs to serve different versions of their website to users in different countries due to regulatory requirements, while also ensuring optimal performance. Which AWS architecture would BEST meet these requirements?",
+      "options": [
+        "Single CloudFront distribution with Lambda@Edge for content modification",
+        "Multiple CloudFront distributions with Route 53 geolocation routing",
+        "Route 53 geolocation routing to different regional load balancers",
+        "Single global load balancer with path-based routing"
+      ],
+      "correct_index": 1,
+      "explanation": "Multiple CloudFront distributions allow for country-specific content optimization and compliance, while Route 53 geolocation routing ensures users are directed to the appropriate distribution based on their location. This provides both regulatory compliance and CDN performance benefits."
+    }
+  ],
+  "passing_score": 80
+}

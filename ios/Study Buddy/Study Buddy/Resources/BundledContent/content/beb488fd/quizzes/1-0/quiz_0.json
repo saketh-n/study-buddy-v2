@@ -1,0 +1,61 @@
+{
+  "topic_name": "Relational Databases",
+  "questions": [
+    {
+      "question": "You have a table with 10 million rows where users frequently query by 'user_id' and 'created_date' together, but also often filter by 'created_date' alone. What indexing strategy would be most effective?",
+      "options": [
+        "Create separate indexes on user_id and created_date",
+        "Create a composite index on (user_id, created_date)",
+        "Create a composite index on (created_date, user_id)",
+        "Create a single index only on created_date"
+      ],
+      "correct_index": 2,
+      "explanation": "A composite index on (created_date, user_id) is optimal because it can efficiently serve both query patterns: filtering by created_date alone (using the leftmost prefix) and filtering by both columns together. The most selective column (created_date) should come first."
+    },
+    {
+      "question": "In PostgreSQL, you notice that a query with multiple JOINs is performing poorly. The EXPLAIN ANALYZE shows high cost estimates and sequential scans. What should be your first optimization approach?",
+      "options": [
+        "Increase the work_mem configuration parameter",
+        "Add indexes on the JOIN columns",
+        "Rewrite the query using subqueries instead of JOINs",
+        "Use VACUUM ANALYZE on all tables involved"
+      ],
+      "correct_index": 1,
+      "explanation": "Adding indexes on JOIN columns is typically the most impactful first step. Sequential scans during JOINs usually indicate missing indexes on the columns being joined, which prevents the optimizer from using more efficient nested loop or hash join strategies."
+    },
+    {
+      "question": "When designing a data warehouse fact table that will store billions of rows and be queried primarily for time-series analytics, which approach would best balance query performance and storage efficiency?",
+      "options": [
+        "Use CLUSTERED indexes on all dimension foreign keys",
+        "Implement table partitioning by date range with appropriate indexes",
+        "Create a covering index that includes all commonly queried columns",
+        "Normalize the table further to reduce redundancy"
+      ],
+      "correct_index": 1,
+      "explanation": "Table partitioning by date range is ideal for time-series data as it allows partition pruning (eliminating irrelevant partitions), enables parallel processing, and makes maintenance operations more efficient. Combined with appropriate indexes, this provides optimal performance for analytical queries."
+    },
+    {
+      "question": "You're comparing MySQL InnoDB and PostgreSQL for a high-concurrency OLTP application. A key requirement is handling many concurrent read-write transactions with minimal blocking. Which database feature difference is most relevant to this decision?",
+      "options": [
+        "MySQL's query cache vs PostgreSQL's shared buffers",
+        "InnoDB's row-level locking vs PostgreSQL's MVCC implementation",
+        "MySQL's storage engine flexibility vs PostgreSQL's extensibility",
+        "InnoDB's clustered indexes vs PostgreSQL's heap tables"
+      ],
+      "correct_index": 1,
+      "explanation": "While both systems use MVCC, PostgreSQL's implementation generally provides better concurrency for mixed read-write workloads because it doesn't require readers to wait for writers and has more advanced vacuum processing. InnoDB's MVCC implementation can have more blocking in high-concurrency scenarios."
+    },
+    {
+      "question": "In a query that joins 4 tables and uses WHERE clauses with multiple conditions, the execution plan shows it's taking much longer than expected. You run EXPLAIN and see that table statistics are outdated. Why is this problematic for query optimization?",
+      "options": [
+        "Outdated statistics cause syntax errors in complex queries",
+        "The optimizer uses statistics to estimate costs and choose join order, which affects performance dramatically",
+        "Outdated statistics prevent the use of indexes entirely",
+        "Statistics are only needed for INSERT and UPDATE operations, not SELECT"
+      ],
+      "correct_index": 1,
+      "explanation": "The query optimizer relies heavily on table statistics (row counts, data distribution, etc.) to estimate the cost of different execution plans and choose the most efficient join order and access methods. Outdated statistics can lead to poor plan choices, resulting in dramatically slower query performance."
+    }
+  ],
+  "passing_score": 80
+}

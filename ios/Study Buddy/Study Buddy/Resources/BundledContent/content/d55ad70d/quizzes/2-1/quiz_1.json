@@ -1,0 +1,61 @@
+{
+  "topic_name": "File Storage: Remote and shared, .. NFS/CIFS-SMB",
+  "questions": [
+    {
+      "question": "What is the primary architectural difference between NFS and CIFS/SMB that affects their implementation in heterogeneous networks?",
+      "options": [
+        "NFS is stateless while CIFS/SMB maintains session state",
+        "NFS uses TCP while CIFS/SMB uses UDP",
+        "NFS requires authentication while CIFS/SMB does not",
+        "NFS works only with databases while CIFS/SMB works with files"
+      ],
+      "correct_index": 0,
+      "explanation": "NFS operates as a stateless protocol, meaning the server doesn't maintain information about client connections between requests, while CIFS/SMB maintains session state and connection information, which affects reliability, recovery, and resource management."
+    },
+    {
+      "question": "A company needs to share files between Linux servers, Windows workstations, and macOS clients while ensuring optimal performance for each platform. Which approach would be most appropriate?",
+      "options": [
+        "Use only NFS for all platforms since it's faster",
+        "Use only CIFS/SMB since it's more secure",
+        "Implement both NFS for Unix/Linux systems and CIFS/SMB for Windows systems",
+        "Use FTP for cross-platform compatibility"
+      ],
+      "correct_index": 2,
+      "explanation": "A hybrid approach using both protocols leverages the strengths of each: NFS provides optimal performance for Unix/Linux environments, while CIFS/SMB offers native integration with Windows systems and better support for Windows-specific features like ACLs."
+    },
+    {
+      "question": "When would you choose NFS over CIFS/SMB for a network file system implementation?",
+      "options": [
+        "When you need strong Windows integration and complex permissions",
+        "When you have primarily Unix/Linux environments requiring high-performance file access",
+        "When you need built-in file locking and caching mechanisms",
+        "When security is the primary concern"
+      ],
+      "correct_index": 1,
+      "explanation": "NFS is typically preferred in Unix/Linux environments due to its lightweight design, lower protocol overhead, and better performance characteristics for these systems, especially in high-throughput scenarios."
+    },
+    {
+      "question": "What happens when an NFS server crashes and then restarts, compared to a CIFS/SMB server in the same situation?",
+      "options": [
+        "Both require all clients to reconnect and lose their work",
+        "NFS clients can continue seamlessly while CIFS/SMB clients must re-establish sessions",
+        "CIFS/SMB clients recover faster due to better error handling",
+        "Both protocols handle crashes identically"
+      ],
+      "correct_index": 1,
+      "explanation": "Due to NFS's stateless design, clients can resume operations immediately when the server returns without losing state information. CIFS/SMB clients must re-establish their sessions and may lose some connection state, though modern implementations have improved recovery mechanisms."
+    },
+    {
+      "question": "A database application needs to store files on a network storage system where multiple servers will simultaneously read and write data. Which consideration is most critical for choosing between NFS and CIFS/SMB?",
+      "options": [
+        "The operating system of the client machines",
+        "The file locking and concurrency control mechanisms of each protocol",
+        "The maximum file size supported by each protocol",
+        "The encryption capabilities of each protocol"
+      ],
+      "correct_index": 1,
+      "explanation": "For applications requiring concurrent access with data integrity, the file locking and concurrency mechanisms are crucial. CIFS/SMB generally provides more robust byte-range locking and opportunistic locking features, while NFS locking can be more complex to implement correctly for such scenarios."
+    }
+  ],
+  "passing_score": 80
+}

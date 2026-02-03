@@ -1,0 +1,61 @@
+{
+  "topic_name": "French-Indigenous Relations and Intermarriage",
+  "questions": [
+    {
+      "question": "Why did French colonial policy encourage intermarriage between French colonists and Indigenous peoples, unlike other European colonial powers?",
+      "options": [
+        "To quickly increase the Catholic population and create cultural allies in the fur trade",
+        "To eliminate Indigenous cultures through forced assimilation",
+        "To prevent Indigenous peoples from trading with British colonies",
+        "To reduce the cost of maintaining military garrisons"
+      ],
+      "correct_index": 0,
+      "explanation": "French colonial policy promoted intermarriage to expand the Catholic population, create kinship ties that facilitated trade relationships, and develop cultural intermediaries who could navigate both French and Indigenous societies."
+    },
+    {
+      "question": "The emergence of the M\u00e9tis people in New France demonstrates which aspect of French-Indigenous relations?",
+      "options": [
+        "The failure of French assimilation policies",
+        "The creation of a distinct cultural group that blended French and Indigenous traditions",
+        "The rejection of European culture by Indigenous peoples",
+        "The temporary nature of French-Indigenous alliances"
+      ],
+      "correct_index": 1,
+      "explanation": "The M\u00e9tis developed as a distinct cultural group that combined French and Indigenous (particularly Cree and Ojibwe) languages, customs, and ways of life, representing successful cultural synthesis rather than assimilation."
+    },
+    {
+      "question": "When analyzing French-Indigenous conflicts in New France, which factor most commonly triggered tensions despite generally cooperative relations?",
+      "options": [
+        "Religious conversion disputes",
+        "Competition over agricultural land",
+        "Disagreements over fur trade territories and Indigenous alliance systems",
+        "French attempts to impose European legal systems"
+      ],
+      "correct_index": 2,
+      "explanation": "Most French-Indigenous conflicts arose from competing claims over fur trade routes and territories, and when French alliances with certain Indigenous groups created tensions with their traditional enemies."
+    },
+    {
+      "question": "A historian wants to understand why French-Indigenous relations differed from English-Indigenous relations in colonial North America. Which comparison would be most accurate?",
+      "options": [
+        "French colonists were more peaceful while English colonists were always aggressive",
+        "French colonists focused on trade and adaptation while English colonists emphasized agricultural expansion and territorial control",
+        "French colonists respected Indigenous religions while English colonists did not",
+        "French colonists had superior military technology"
+      ],
+      "correct_index": 1,
+      "explanation": "The key difference was economic focus: French colonists prioritized fur trade which required Indigenous partnerships and knowledge, while English colonists sought land for farming which often displaced Indigenous peoples."
+    },
+    {
+      "question": "In what situation would understanding French-Indigenous intermarriage patterns be most useful for analyzing broader colonial history?",
+      "options": [
+        "Studying European military tactics in North America",
+        "Examining the development of trade networks and cultural exchange in colonial societies",
+        "Analyzing agricultural techniques in New France",
+        "Understanding European political conflicts"
+      ],
+      "correct_index": 1,
+      "explanation": "French-Indigenous intermarriage created kinship networks that were essential for trade relationships, cultural exchange, and the development of communities that served as bridges between different societies, making it crucial for understanding colonial social and economic systems."
+    }
+  ],
+  "passing_score": 80
+}
