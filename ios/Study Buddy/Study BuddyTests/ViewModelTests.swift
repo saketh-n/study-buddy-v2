@@ -15,6 +15,9 @@ final class ViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.rawText.isEmpty)
         XCTAssertFalse(viewModel.isCreating)
         XCTAssertEqual(viewModel.creationProgress, 0)
+        XCTAssertFalse(viewModel.isDownloadingAll)
+        XCTAssertEqual(viewModel.downloadAllProgress, 0)
+        XCTAssertTrue(viewModel.downloadAllStatus.isEmpty)
     }
     
     // MARK: - CurriculumViewModel Tests

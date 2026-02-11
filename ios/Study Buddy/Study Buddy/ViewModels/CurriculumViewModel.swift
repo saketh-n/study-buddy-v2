@@ -19,6 +19,7 @@ class CurriculumViewModel: ObservableObject {
     
     private let apiService = APIService.shared
     private let cacheService = CacheService.shared
+    private var curriculumRecord: SavedCurriculumRecord?
     
     init(curriculumId: String) {
         self.curriculumId = curriculumId
@@ -52,6 +53,7 @@ class CurriculumViewModel: ObservableObject {
         do {
             // Try API first
             let record = try await apiService.getCurriculum(curriculumId)
+            curriculumRecord = record
             curriculum = record.curriculum
             
             // Load progress
@@ -130,9 +132,15 @@ class CurriculumViewModel: ObservableObject {
         downloadStatus = "Starting download..."
         
         do {
+            // Use stored record, or construct one from available data
+            let record = curriculumRecord ?? SavedCurriculumRecord(
+                id: curriculumId,
+                createdAt: ISO8601DateFormatter().string(from: Date()),
+                curriculum: curriculum
+            )
+            
             try await cacheService.downloadAllContent(
-                curriculumId: curriculumId,
-                curriculum: curriculum,
+                record: record,
                 apiService: apiService
             ) { [weak self] progress, status in
                 Task { @MainActor in

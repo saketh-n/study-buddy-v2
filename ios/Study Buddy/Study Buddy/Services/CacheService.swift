@@ -354,11 +354,32 @@ actor CacheService {
     
     /// Download all content for a curriculum (for offline use)
     func downloadAllContent(
-        curriculumId: String,
-        curriculum: Curriculum,
+        record: SavedCurriculumRecord,
         apiService: APIService,
         onProgress: @escaping (Double, String) -> Void
     ) async throws {
+        let curriculumId = record.id
+        let curriculum = record.curriculum
+        
+        // Save curriculum record to curriculums.json
+        try saveCurriculum(record)
+        
+        // Fetch and save progress to progress.json
+        let progress: LearningProgress
+        do {
+            progress = try await apiService.getLearningProgress(curriculumId)
+        } catch {
+            // No existing progress — create an empty entry
+            let now = ISO8601DateFormatter().string(from: Date())
+            progress = LearningProgress(
+                curriculumId: curriculumId,
+                topics: [:],
+                startedAt: now,
+                lastActivity: now
+            )
+        }
+        try saveProgress(progress)
+        
         let flatTopics = curriculum.flattenTopics()
         let totalItems = flatTopics.count * 2 // lessons + quizzes
         var completed = 0

@@ -61,6 +61,42 @@ struct SavedCurriculumsView: View {
                         }
                     }
                 }
+                
+                // Download all progress
+                if viewModel.isDownloadingAll {
+                    VStack(spacing: 8) {
+                        ProgressView(value: viewModel.downloadAllProgress)
+                            .progressViewStyle(.linear)
+                            .tint(.electric400)
+                        
+                        Text(viewModel.downloadAllStatus)
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.6))
+                    }
+                    .padding()
+                    .glassBackground()
+                }
+                
+                // Download All for Offline button
+                Button(action: {
+                    Task {
+                        await viewModel.downloadAllCurricula()
+                    }
+                }) {
+                    HStack(spacing: 12) {
+                        if viewModel.isDownloadingAll {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .midnight950))
+                                .scaleEffect(0.8)
+                        } else {
+                            Image(systemName: "arrow.down.circle")
+                        }
+                        Text(viewModel.isDownloadingAll ? "Downloading..." : "Download All for Offline")
+                            .fontWeight(.bold)
+                    }
+                }
+                .buttonStyle(ElectricButtonStyle(isEnabled: !viewModel.isDownloadingAll))
+                .disabled(viewModel.isDownloadingAll)
             }
         }
     }
