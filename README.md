@@ -1,370 +1,154 @@
-# Study Buddy
+<div align="center">
 
-An AI-powered application that transforms your learning topics into structured, optimized curricula with interactive lessons and quizzes.
+# 📚 Study Buddy
+
+**Paste your learning topics — get a structured curriculum with AI-generated lessons and quizzes.**
+
+<img src="docs/screenshots/curriculum.png" alt="Curriculum overview" width="850" />
+
+</div>
+
+## Features
+
+- **Curriculum generation** — paste a list of topics and Claude organizes them into an ordered learning path (streamed live over SSE)
+- **One-click content preparation** — batch-generate every lesson and quiz for a curriculum up front, with live progress
+- **Interactive lessons** — markdown lessons with problem/solution framing and a topic sidebar
+- **Mastery quizzes** — per-topic quizzes with an optional **AI grading** toggle; without an API key, grading falls back to deterministic scoring
+- **Progress tracking & quiz history** — completion tracking per topic and reviewable past quiz attempts
+
+## Screenshots
+
+| | |
+|:---:|:---:|
+| <img src="docs/screenshots/home.png" alt="Home — paste topics" width="440" /> | <img src="docs/screenshots/lesson.png" alt="Lesson view" width="440" /> |
+| *Paste topics to generate a learning path* | *Lessons with topic sidebar and progress* |
+<div align="center">
+<img src="docs/screenshots/quiz.png" alt="Quiz view" width="850" />
+
+*Mastery quizzes with optional AI grading*
+</div>
+
+## Quick Start
+
+An `ANTHROPIC_API_KEY` is **optional**: the app runs without one (browsing, lessons, quizzes, and fallback grading all work on already-generated content), but generating *new* curricula/content and AI grading require it.
+
+### Docker Compose
+
+```bash
+echo "ANTHROPIC_API_KEY=your_api_key_here" > .env
+docker-compose up -d
+```
+
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8000
+
+Data persists in `./data` (mounted to `/app/data` in the backend container).
+
+### Local development
+
+**Backend** (Python 3.10+):
+
+```bash
+cd backend
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY=your_api_key_here   # optional, see above
+uvicorn app.main:app --reload                # http://localhost:8000
+```
+
+**Frontend** (Node 18+):
+
+```bash
+cd frontend
+npm install
+npm run dev                                  # http://localhost:5173
+```
+
+<details>
+<summary><strong>LAN access (e.g. testing from other devices)</strong></summary>
+
+Bind the backend to all interfaces and open up CORS:
+
+```bash
+ALLOWED_ORIGINS=* uvicorn app.main:app --reload --host 0.0.0.0
+```
+
+The API is then reachable at your machine's LAN IP (e.g. `http://192.168.x.x:8000`). `ALLOWED_ORIGINS=*` enables CORS for all origins — for anything beyond local testing, list exact origins instead:
+
+```bash
+ALLOWED_ORIGINS=http://localhost:5173,http://192.168.1.50:5173 uvicorn app.main:app --host 0.0.0.0
+```
+
+</details>
+
+## Configuration
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `ANTHROPIC_API_KEY` | Enables curriculum/lesson/quiz generation and AI grading | No — content browsing and fallback grading work without it |
+| `ALLOWED_ORIGINS` | Comma-separated CORS origins (or `*`) | No — defaults to `http://localhost:5173` |
+| `FRONTEND_PORT` | Port used to build the default CORS origins | No — defaults to `5173` |
+
+> The frontend calls the API at `http://localhost:8000` (hardcoded in `frontend/src/api.ts`).
+
+## API
+
+<details>
+<summary><strong>Endpoints</strong></summary>
+
+### Curriculum
+- `POST /api/parse/stream` — parse topics into a curriculum (SSE)
+- `GET /api/curriculums` — list saved curriculums
+- `GET /api/curriculums/{id}` — get a curriculum
+- `DELETE /api/curriculums/{id}` — delete a curriculum
+- `GET /api/curriculums/{id}/content-status` — which lessons/quizzes are cached
+- `POST /api/curriculums/{id}/prepare` — batch-generate all lessons & quizzes (SSE)
+
+### Learning
+- `POST /api/lesson` — get or generate a lesson
+- `POST /api/quiz` — get or generate a quiz
+- `POST /api/quiz/new` — force-generate a new quiz version
+- `GET /api/quiz/{id}/{cluster}/{topic}/{version}` — get a specific quiz version
+- `POST /api/quiz/submit` — submit answers (AI or fallback grading via `use_ai_grading`)
+- `GET /api/assessments/{id}/{cluster}/{topic}` — past assessments for a topic
+- `GET /api/history/quiz/{id}/{cluster}/{topic}` — quiz history for a topic
+
+### Progress & misc
+- `GET /api/curriculums/{id}/progress` — learning progress
+- `POST /api/curriculums/{id}/progress/start` — mark learning started
+- `GET /api/status` — whether an API key is configured
+- `GET /health` — health check
+
+</details>
+
+Data is stored as flat files under `backend/data/`: `curriculums.json`, `progress.json`, and `content/<curriculum_id>/{lessons,quizzes}/`.
 
 ## Project Structure
 
 ```
 study-buddy-v2/
-├── frontend/              # React + TypeScript + Tailwind
-│   ├── src/
-│   │   ├── components/    # UI components
-│   │   ├── pages/         # Route pages
-│   │   ├── api.ts         # API client
-│   │   └── types.ts       # TypeScript types
-│   ├── Dockerfile
-│   └── package.json
-├── backend/               # Python FastAPI
-│   ├── app/
-│   │   ├── main.py        # API routes
-│   │   ├── models.py      # Pydantic models
-│   │   ├── learning.py    # AI lesson/quiz generation
-│   │   ├── storage.py     # Data persistence
-│   │   └── content_cache.py # Caching layer
-│   ├── Dockerfile
-│   └── requirements.txt
-├── docker-compose.yml
-└── README.md
+├── frontend/       # React 19 + TypeScript + Tailwind 4 (Vite)
+│   └── src/        # pages/, components/, api.ts, types.ts
+├── backend/        # FastAPI
+│   └── app/        # main.py (routes), learning.py (AI generation),
+│                   # curriculum_parser.py, storage.py, content_cache.py
+├── ios/            # Native SwiftUI companion app (experimental — not production-bound)
+├── docs/           # TESTING.md, screenshots
+└── docker-compose.yml
 ```
-
-## Features
-
-- **Curriculum Generation**: Paste topics → AI organizes them into a structured learning path
-- **Interactive Lessons**: AI-generated lessons with problem/solution framing
-- **Mastery Quizzes**: Test your understanding with AI-powered assessment
-- **Progress Tracking**: Track your learning progress across topics
-- **Quiz History**: Review past quizzes and assessments
-
-## Getting Started
-
-### Option 1: Docker (Recommended for Deployment)
-
-#### Prerequisites
-- Docker & Docker Compose installed
-- Anthropic API Key
-
-#### Build Docker Images
-
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd study-buddy-v2
-
-# Build both images
-docker-compose build
-```
-
-Or build individually:
-
-```bash
-# Build backend image
-docker build -t study-buddy-backend ./backend
-
-# Build frontend image
-docker build -t study-buddy-frontend ./frontend
-```
-
-#### Run with Docker Compose
-
-```bash
-# Create .env file with your API key
-echo "ANTHROPIC_API_KEY=your_api_key_here" > .env
-
-# Start all services
-docker-compose up -d
-```
-
-The app will be available at:
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:8000`
-
-#### Run Individual Containers
-
-```bash
-# Create a network for the containers
-docker network create study-buddy-network
-
-# Create a data directory for persistence
-mkdir -p ./data
-
-# Run backend
-docker run -d \
-  --name study-buddy-backend \
-  --network study-buddy-network \
-  -p 8000:8000 \
-  -e ANTHROPIC_API_KEY=your_api_key_here \
-  -v $(pwd)/data:/app/data \
-  study-buddy-backend
-
-# Run frontend
-docker run -d \
-  --name study-buddy-frontend \
-  --network study-buddy-network \
-  -p 5173:5173 \
-  study-buddy-frontend
-```
-
-#### Deploy to Another Computer
-
-1. **Save the Docker images:**
-```bash
-# Export images to tar files
-docker save study-buddy-backend > study-buddy-backend.tar
-docker save study-buddy-frontend > study-buddy-frontend.tar
-```
-
-2. **Transfer files to the target computer:**
-   - Copy `study-buddy-backend.tar`, `study-buddy-frontend.tar`, and `docker-compose.yml`
-
-3. **On the target computer:**
-```bash
-# Load the images
-docker load < study-buddy-backend.tar
-docker load < study-buddy-frontend.tar
-
-# Create .env with your API key
-echo "ANTHROPIC_API_KEY=your_api_key_here" > .env
-
-# Start the services
-docker-compose up -d
-```
-
-#### Docker Image Tags
-
-To push to a container registry (Docker Hub, etc.):
-
-```bash
-# Tag images
-docker tag study-buddy-backend your-registry/study-buddy-backend:latest
-docker tag study-buddy-frontend your-registry/study-buddy-frontend:latest
-
-# Push to registry
-docker push your-registry/study-buddy-backend:latest
-docker push your-registry/study-buddy-frontend:latest
-```
-
-### Option 2: Local Development
-
-#### Prerequisites
-- Node.js 18+
-- Python 3.10+
-- Anthropic API Key
-
-#### Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY=your_api_key_here
-
-# Run the server
-uvicorn app.main:app --reload
-```
-
-The API will be available at `http://localhost:8000`
-
-#### Running for iOS/LAN Access
-
-To access the backend from other devices on your network (e.g., iOS app testing):
-
-```bash
-# Run the server on all network interfaces
-ALLOWED_ORIGINS=* uvicorn app.main:app --reload --host 0.0.0.0
-```
-
-This binds the server to `0.0.0.0:8000`, allowing connections from:
-- Localhost (`http://localhost:8000`)
-- Your machine's LAN IP (e.g., `http://192.168.x.x:8000`)
-- iOS devices on the same network
-
-**Note:** `ALLOWED_ORIGINS=*` enables CORS for all origins. For production, specify exact origins:
-```bash
-ALLOWED_ORIGINS=http://localhost:5173,http://192.168.50.81:5173 uvicorn app.main:app --host 0.0.0.0
-```
-
-#### Frontend Setup
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-```
-
-The app will be available at `http://localhost:5173`
-
-## API Endpoints
-
-### Curriculum
-- `POST /api/parse-stream` - Parse topics into curriculum (SSE)
-- `GET /api/curriculums` - List all saved curriculums
-- `GET /api/curriculums/{id}` - Get specific curriculum
-- `DELETE /api/curriculums/{id}` - Delete a curriculum
-
-### Learning
-- `POST /api/lesson` - Generate lesson for a topic
-- `POST /api/quiz` - Get or generate quiz
-- `POST /api/quiz/new` - Force generate new quiz
-- `POST /api/quiz/submit` - Submit quiz for AI assessment
-- `GET /api/history/quiz/{id}/{cluster}/{topic}` - Get quiz history
-
-### Progress
-- `GET /api/curriculums/{id}/progress` - Get learning progress
-
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `ANTHROPIC_API_KEY` | Your Anthropic API key | Yes |
-
-## Data Persistence
-
-All data is stored in the `data/` directory:
-- `data/curriculums/` - Saved curriculum JSON files
-- `data/content/` - Cached lessons and quizzes
-
-When using Docker, mount a volume to `/app/data` to persist data.
 
 ## Tech Stack
 
-- **Frontend**: React 18, TypeScript, Tailwind CSS, Vite, React Router
-- **Backend**: FastAPI, Pydantic, Anthropic Claude API
-- **Styling**: Custom glassmorphism design with Syne & JetBrains Mono fonts
-- **AI**: Claude claude-sonnet-4-20250514 for curriculum parsing, lesson generation, and assessment
+- **Frontend:** React 19, TypeScript, Tailwind CSS 4, Vite 7, React Router 7
+- **Backend:** FastAPI, Pydantic v2, Anthropic SDK (`claude-sonnet-4-20250514`)
+- **Testing:** pytest, Vitest, Playwright
 
 ## Testing
 
-This project supports **backend**, **frontend**, and **end-to-end (E2E)** testing.
-
-For E2E and CI-related changes, it is **strongly recommended** to use `act` to run the actual GitHub Actions workflow locally before pushing commits.
-
----
-
-## Backend Tests
-
 ```bash
-cd backend
-pytest tests/ -v
-pytest tests/ --cov=app --cov-report=html   # With coverage
+cd backend && pytest tests/ -v      # backend
+cd frontend && npm run test:run     # frontend
+cd frontend && npm run test:e2e     # end-to-end (Playwright)
 ```
 
----
-
-## Frontend Tests
-
-```bash
-cd frontend
-npm run test             # Watch mode
-npm run test:run         # Single run
-npm run test:coverage    # With coverage
-```
-
----
-
-## E2E Tests (Playwright)
-
-From the `frontend/` directory:
-
-```bash
-npm run test:e2e
-npm run test:e2e:ui          # Playwright UI mode
-npm run test:e2e:headed      # Run in headed browser
-```
-
-### Frontend port override
-If the frontend is running on a port other than `5173`, set:
-
-```bash
-FRONTEND_PORT=XXXX
-```
-
----
-
-## Local CI Simulation with GitHub Actions (`act`) ⭐ Recommended
-
-To avoid pushing commits just to test CI or workflow changes, use **`act`** to run the real GitHub Actions jobs locally.
-
-`act` runs workflows **inside Docker containers**, so it is safe:
-- your real local data is not modified
-- backend seeding only affects the container filesystem
-- artifacts are not uploaded anywhere
-
-### Requirements
-- Docker (Docker Desktop or Docker Engine)
-- `act` installed
-
-macOS:
-```bash
-brew install act
-```
-
----
-
-## Run Comprehensive Test Suite (Backend, Frontend, E2E) CI Job Locally
-
-From the **repo root**:
-
-```bash
-ACT=true && act -j e2e-tests \
-  -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-22.04
-```
-
----
-
-### About ACT
-
-- Flag to indicate this is running in a container not on GitHub
-- Ensures playwright reports are properly accessible
-
----
-
-## Backend Data Seeding (E2E)
-
-During E2E runs in CI (and `act`), backend data is seeded automatically:
-
-```yaml
-- name: Seed backend data for E2E
-  run: cp -R backend/sample-data backend/data
-```
-
-This runs **inside the container only**.  
-`backend/data` is gitignored and never touches real local data.
-
----
-
-## Playwright Artifacts (Local)
-
-When running E2E tests locally or via `act`, Playwright outputs:
-
-- HTML report: `frontend/playwright-report/`
-- Traces, screenshots, videos: `frontend/test-results/`
-
-View the report locally with:
-
-```bash
-npx playwright show-report frontend/playwright-report
-```
-
-Artifact upload steps only run on GitHub Actions and are skipped locally.
-
----
-
-## Summary
-
-- Use unit tests for fast feedback
-- Use Playwright directly for UI debugging
-- Use `act` to validate CI workflows before pushing
-- E2E seeding is container-only and safe by design
-- No local data is deleted or overwritten
-
+Full details — including running the real CI workflow locally with `act` and how E2E data seeding works — are in **[docs/TESTING.md](docs/TESTING.md)**.
